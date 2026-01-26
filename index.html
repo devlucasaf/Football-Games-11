@@ -7,20 +7,59 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <h1>Formação de Futebol</h1>
-            </div>
+        <div class="container">
+            <header class="main-header">
+                <div class="logo">
+                    <i class="fas fa-futbol"></i>
+                    <h1>Formação de Futebol - Escale seu time!</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#inicio-section" id="nav-home" class="active"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="#selecao-historica-section" id="nav-mount"><i class="fas fa-history"></i> Times Históricos</a></li>
+                        <li><a href="#selecao-historica-section"><i class="fas fa-history"></i> Seleções Histórica</a></li>
+                        <li><a href="#convocacao-section"><i class="fas fa-user-check"></i> Convocação</a></li>
+                        <li><a href="#monte-seu-time-section"><i class="fas fa-users"></i> Monte o seu time!</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-            <nav>
-                <ul>
-                    <li><a href="#inicio-section" >Início</a></li>
-                    <li><a href="#selecao-historica-section" >Seleção Histórica</a></li>
-                    <li><a href="#convocacao-section" >Convocação</a></li>
-                    <li><a href="#monte-seu-time-section" >Monte o seu time!</a></li>
-                </ul>
-            </nav>
-        </header>
+            <main>
+                <section id="home-screen" class="screen-active">
+                    <div class="hero">
+                        <h2>Escale seus times histórios</h2>
+                        <p>Reviva os grandes momentos de cada time do futebol mundial e venha acompanhar o Brasileirão rodada por rodada!</p>
+                    </div>
+
+                    <div class="options-grid">
+                        <div class="option-card" data-option="brasileirao">
+                            <div class="option-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3>Brasileirão</h3>
+                            <p>Monte seu time a cada rodada do campeonato</p>
+                        </div>
+
+                        <div class="option-card" data-option="historical-teams">
+                            <div class="option-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h3>Times Históricos</h3>
+                            <p>Confira as escalações dos maiores times da história do futebol</p>
+                        </div>
+
+                        <div class="option-card" data-option="world-cup-teams">
+                            <div class="option-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Seleções da Copa do Mundo</h3>
+                            <p>Veja as escalações das seleções que marcaram época nas Copas do Mundo</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
         <script src="js/script.js"></script>
     </body>
 </html>
