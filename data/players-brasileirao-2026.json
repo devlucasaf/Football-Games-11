@@ -1,0 +1,162 @@
+{
+    "Athletico-PR": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Atletico-MG": {
+        "goleiro": ["Gabriel Delfim", "Everson", "Pedro Cobra"],
+        "zagueiro": ["Ivan Román", "Ruan Tressoldi", "Junior Alonso", "Lyanco", "Vitor Hugo", "Samuel Lima", "Vitão"],
+        "lateral": ["Natanael", "Renan Lodi", "Preciado", "Luís Gustavo", "Pascini"],
+        "volante": ["Alexander", "Maycon", "Patrick", "Alan Franco", "Igor Toledo", "Victor Hugo"],
+        "meioCampo": ["Gustavo Scarpa", "Bernard", "Igor Gomes", "Reinier", "Índio", "Mamady Cissé", "Iseppe"],
+        "atacante": ["Hulk", "Cassierra", "Alan Miranda", "Cauã Soares", "Rony", "Cuello", "Júnior Santos", "Murillo Cardoso", "Cadu", "Biel", "Dudu"]
+    },
+    "Bahia": {
+        "goleiro": ["João Paulo", "Ronaldo"],
+        "zagueiro": ["David Duarte", "Marcos Victor", "Ramos Mingo", "Luiz Gustavo", "Gabriel Xavier", "Kanu"],
+        "lateral": ["Gilberto", "Iago Borduchi", "Zé Guilherme", "Roman Gomez", "Luciano Juba"],
+        "volante": ["Rezende", "Jean Lucas", "Erick", "Nicolás Acevedo", "Jota"],
+        "meioCampo": ["Cauly", "Éverton Ribeiro", "Rodrigo Nestor", "Michel Araújo", "CAio Alexandre"],
+        "atacante": ["Ademir", "Erick Pulga", "Willian José", "Kayky", "Sanabria", "Kike Oliveira"]
+    },
+    "Botafogo": {
+        "goleiro": ["Raul", "Neto", "Léo Linck", "Christian Loor"],
+        "zagueiro": ["Bastos", "Alexander Barboza", "Gabriel"],
+        "lateral": ["Vitinho", "Mateo Ponte", "Alex Telles", "Marçal"],
+        "volante": ["Allan", "Newton", "Danilo"],
+        "meioCampo": ["Álvaro Montoro", "Santiago Rodríguez"],
+        "atacante": ["Artur", "Chris Ramos", "Matheus Martins", "Jordan Barrera", "Nathan Fernandes", "Joaquín Correa", "Arthur Cabral"]
+    },
+    "Bragantino": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Chapecoense": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Corinthians": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Coritiba": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Cruzeiro": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Flamengo": {
+        "goleiro": ["Rossi", "Andrew", "Dyogo Alves"],
+        "zagueiro": ["Léo Ortiz", "Léo Pereira", "Danilo", "Vitão", "João Victor"],
+        "lateral": ["Varela", "Ayrton Lucas", "Emerson Royal", "Alex Sandro"],
+        "volante": ["Erick Pulgar", "Jorginho", "Allan", "Evertton Araújo"],
+        "meioCampo": ["Saúl", "De Arrascaeta", "Jorge Carrascal", "De la Cruz"],
+        "atacante": ["Luiz Araújo", "Pedro", "Everton", "Samuel Lino", "Bruno Henrique", "Michael", "Gonzalo Plata"]
+    },
+    "Fluminense": {
+        "goleiro": ["Fábio", "Vitor Eudes", "Marcelo Pitaluga"],
+        "zagueiro": ["Jemmes", "Ignácio", "Freytes", "Igor Rabello" ],
+        "lateral": ["Samuel Xavier", "Renê", "Gabriel Fuentes", "Guilherme Arana", "Guga"],
+        "volante": ["Facundo Bernal", "Martinelli", "Nonato", "Hércules", "Otávio"],
+        "meioCampo": ["Paulo Henrique Ganso", "Lucho Acosta", "Lima", "Rubén Lezcano", "Jefferson Savarino"],
+        "atacante": ["Soteldo", "Everaldo", "Germán Cano", "Canobbio", "Riquelme", "Santi Moreno", "Kevin Serna", "Jhon Kennedy"]
+    },
+    "Grêmio": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Internacional": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Mirassol": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Palmeiras": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Remo": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Santos": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "São Paulo": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Vasco": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    },
+    "Vitória": {
+        "goleiro": ["a"],
+        "zagueiro": ["b", "c"],
+        "lateral": ["d", "e"],
+        "volante": ["f", "g"],
+        "meioCampo": ["h", "i", "j"],
+        "atacante": ["k", "l", "m"]
+    }
+}
