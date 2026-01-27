@@ -1,0 +1,106 @@
+{
+    "clubes": [
+        {
+            "nome": "Barcelona",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
+        },
+        {
+            "nome": "Real Madrid",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"
+        },
+        {
+            "nome": "Atletico de Madrid",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_logo.svg"
+        },
+        {
+            "nome": "Villarreal",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/7/70/Villarreal_CF_logo.svg"
+        },
+        {
+            "nome": "Milan",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/d/d0/AC_Milan_logo.svg"
+        },
+        {
+            "nome": "PSG",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg"
+        },
+        {
+            "nome": "Flamengo",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Flamengo_braz_logo.svg"
+        },
+        {
+            "nome": "Palmeiras",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/1/10/Palmeiras_logo.svg"
+        },
+        {
+            "nome": "Fluminense",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/8/8e/Fluminense_FC_logo.svg"
+        },
+        {
+            "nome": "Bayern de Munique",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg"
+        },
+        {
+            "nome": "Borussia Dortmund",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Borussia_Dortmund_logo.svg"
+        },
+        {
+            "nome": "Bayer Leverkusen",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg"
+        },
+        {
+            "nome": "Juventus",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Juventus_FC_2017_logo.svg"
+        },
+        {
+            "nome": "Manchester United",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"
+        },
+        {
+            "nome": "Manchester City",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"
+        },
+        {
+            "nome": "Chelsea",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"
+        },
+        {
+            "nome": "Liverpool",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"
+        },
+        {
+            "nome": "Tottenham",
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/6/6d/Tottenham_Hotspur.png?20100907131757"
+        }
+    ],
+    "selecoes": [
+        "Brasil",
+        "Alemanha",
+        "Argentina",
+        "França",
+        "Itália",
+        "Holanda"
+    ],
+    "jogadores": [
+        {
+        "nome": "Ronaldinho",
+        "clubes": ["Barcelona", "Milan", "PSG"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Cristiano Ronaldo",
+        "clubes": ["Real Madrid", "Juventus", "Manchester United"],
+        "selecoes": ["Portugal"]
+        },
+        {
+        "nome": "Romário",
+        "clubes": ["Barcelona", "Flamengo"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        }
+    ]
+}
