@@ -32,12 +32,12 @@
         "atacante": ["Artur", "Chris Ramos", "Matheus Martins", "Jordan Barrera", "Nathan Fernandes", "Joaquín Correa", "Arthur Cabral"]
     },
     "Bragantino": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro": ["Cleiton", "Fernando Costa", "Fabrício", "Lucão"],
+        "zagueiro": ["Guzmán Rodriguez", "Eduardo Santos", "Alix Vinicius", "Pedro Henrique", "Gustavo Marques"],
+        "lateral": ["Vanderlan", "Juninho Capixaba", "Guilherme Lopes", "Agustín Sant'Anna", "Andrés Hurtado", "Nathan Mendes"],
+        "volante": ["Fabinho", "Gabriel", "Matheus Fernandes"],
+        "meioCampo": ["Ramires", "Jhon Jhon", "Gustavo Neves", "Praxedes", "João Neto"],
+        "atacante": ["Eduardo Sasha", "Pitta", "Fernando", "Vinicinho", "Thiago Borbas", "Lucas Barbosa", "Mosquera", "Nacho", "Marcelinho Braz", "Athyrson"]
     },
     "Chapecoense": {
         "goleiro": ["a"],
