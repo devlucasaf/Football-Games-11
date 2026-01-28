@@ -32,17 +32,42 @@ O **Formação Futebol** é um projeto em **HTML, CSS e JavaScript** que permite
 
 ## 📂 Estrutura do Projeto
 ```
-/Formacao-Futebol
-├── index.html
+/Football-Games-11
+├── index.html                      # Homepage (hub de jogos)
+├── pages/                          # Páginas HTML de cada minigame
+│   ├── grid.html                   # Página do Futbol Grid
+│   ├── selection.html              # Página de Seleções Históricas
+│   └── quiz.html                   # (Futuro) Página de Quiz
 ├── css/
-│   ├── style.css
-│   └── field.css
+│   ├── reset.css                   # Reset de estilos
+│   ├── variables.css               # Variáveis CSS (cores, fontes)
+│   ├── common.css                  # Estilos comuns a todas as páginas
+│   ├── home.css                    # Estilos da homepage
+│   ├── grid.css                    # Estilos do Futbol Grid
+│   ├── selection.css               # Estilos das Seleções Históricas
+│   └── field.css                   # Estilos do campo de futebol
 ├── js/
-│   ├── script.js
-│   └── formations.js
+│   ├── main.js                     # Código comum a todas as páginas
+│   ├── router.js                   # Gerenciador de navegação (SPA)
+│   ├── modules/
+│   │   ├── futbol-grid.js          # Lógica do Futbol Grid
+│   │   ├── selection-builder.js    # Lógica das Seleções Históricas
+│   │   └── quiz.js                 # (Futuro) Lógica do Quiz
+│   ├── utils/
+│   │   ├── data-loader.js          # Carregador de JSONs
+│   │   └── validators.js           # Funções de validação
+│   └── components/
+│       ├── header.js               # Componente do cabeçalho
+│       ├── footer.js               # Componente do rodapé
+│       └── game-card.js            # Componente dos cards de jogos
 ├── data/
-│   ├── players-brasileirao-2026.json
-│   └── players-selecao-historica.json
+│   ├── futbol-grid-data.json       # Dados para o grid (jogadores e critérios)
+│   ├── historical-teams.json       # Dados para seleções históricas
+│   └── quiz-questions.json         # (Futuro) Perguntas para quiz
+├── assets/
+│   ├── images/                     # Imagens do site
+│   ├── icons/                      # Ícones e logos
+│   └── fonts/                      # Fontes personalizadas
 ├── README.md
 └── LICENSE
 ```

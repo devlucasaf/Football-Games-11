@@ -1,147 +1,94 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar a aplicação
-    if (typeof appState !== 'undefined') {
-        appState.init();
-    } else {
-        console.error('appState não foi carregado. Verifique formations.js');
+// ===== FUNCIONALIDADE DO TEMA CLARO/ESCURO =====
+
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // Verificar se o botão existe
+    if (!themeToggle) {
+        console.warn('Botão de tema não encontrado');
+        return;
     }
     
-    // Configurar navegação básica
-    setupBasicNavigation();
+    const themeIcon = themeToggle.querySelector('i');
     
-    // Inicializar funcionalidades adicionais
-    initAdditionalFeatures();
+    // Verificar tema salvo no localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme, themeIcon);
+    
+    // Adicionar evento de clique
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Aplicar novo tema
+        document.documentElement.setAttribute('data-theme', newTheme);
+        
+        // Salvar preferência
+        localStorage.setItem('theme', newTheme);
+        
+        // Atualizar ícone
+        updateThemeIcon(newTheme, themeIcon);
+        
+        // Adicionar efeito visual
+        themeToggle.style.transform = 'rotate(180deg) scale(1.1)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'rotate(0deg) scale(1)';
+        }, 300);
+    });
+}
+
+function updateThemeIcon(theme, iconElement) {
+    if (!iconElement) return;
+    
+    if (theme === 'dark') {
+        iconElement.className = 'fas fa-sun';
+        iconElement.parentElement.title = 'Alternar para tema claro';
+    } else {
+        iconElement.className = 'fas fa-moon';
+        iconElement.parentElement.title = 'Alternar para tema escuro';
+    }
+}
+
+// ===== INICIALIZAÇÃO =====
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar apenas o toggle do tema
+    initThemeToggle();
+    
+    // Remover quaisquer event listeners antigos dos botões "Em Breve"
+    // (como você já tem os botões no HTML, não precisamos mais deste código)
+    
+    // Apenas adicionar animação aos cards que já existem no HTML
+    const comingSoonCards = document.querySelectorAll('.coming-soon-card');
+    comingSoonCards.forEach((card, index) => {
+        card.style.animation = `fadeInUp 0.6s ease ${index * 0.2}s both`;
+    });
+    
+    // Adicionar animação aos game-cards que já existem no HTML
+    const gameCards = document.querySelectorAll('.game-card');
+    gameCards.forEach((card, index) => {
+        card.style.animation = `fadeInUp 0.6s ease ${index * 0.15}s both`;
+    });
 });
 
-function setupBasicNavigation() {
-    // Configurar navegação do header
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const view = this.dataset.view;
-            
-            // Atualizar botões ativos
-            navButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Mostrar view correspondente
-            if (typeof appState !== 'undefined') {
-                appState.switchView(view);
+// ===== FUNÇÃO AUXILIAR PARA ANIMAÇÕES =====
+
+// Se não tiver a animação fadeInUp definida no CSS, adicione:
+if (!document.querySelector('#fadeInUpAnimation')) {
+    const style = document.createElement('style');
+    style.id = 'fadeInUpAnimation';
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-        });
-    });
-}
-
-function initAdditionalFeatures() {
-    // Inicializar tooltips
-    initTooltips();
-    
-    // Inicializar modais
-    initModals();
-    
-    // Configurar busca
-    initSearch();
-}
-
-function initTooltips() {
-    const tooltipElements = document.querySelectorAll('[data-tooltip]');
-    tooltipElements.forEach(el => {
-        el.addEventListener('mouseenter', function() {
-            const tooltipText = this.dataset.tooltip;
-            const tooltip = document.createElement('div');
-            tooltip.className = 'tooltip';
-            tooltip.textContent = tooltipText;
-            
-            const rect = this.getBoundingClientRect();
-            tooltip.style.position = 'fixed';
-            tooltip.style.top = (rect.top - 35) + 'px';
-            tooltip.style.left = (rect.left + rect.width / 2) + 'px';
-            tooltip.style.transform = 'translateX(-50%)';
-            
-            tooltip.id = 'current-tooltip';
-            document.body.appendChild(tooltip);
-        });
-        
-        el.addEventListener('mouseleave', function() {
-            const tooltip = document.getElementById('current-tooltip');
-            if (tooltip) {
-                document.body.removeChild(tooltip);
-            }
-        });
-    });
-}
-
-function initModals() {
-    // Fechar modais ao clicar fora
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('modal')) {
-            e.target.classList.remove('active');
-        }
-    });
-    
-    // Botões para abrir/fechar modais
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('modal-open')) {
-            const modalId = e.target.dataset.modal;
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('active');
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        
-        if (e.target.classList.contains('modal-close')) {
-            const modal = e.target.closest('.modal');
-            if (modal) {
-                modal.classList.remove('active');
-            }
-        }
-    });
+    `;
+    document.head.appendChild(style);
 }
-
-function initSearch() {
-    const searchInput = document.getElementById('player-search');
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const playerItems = document.querySelectorAll('.player-item');
-            
-            playerItems.forEach(item => {
-                const playerName = item.querySelector('h4').textContent.toLowerCase();
-                if (playerName.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    }
-}
-
-// Funções utilitárias globais
-function formatDate(date) {
-    return new Date(date).toLocaleDateString('pt-BR');
-}
-
-function getPositionColor(position) {
-    const colors = {
-        'GK': '#E74C3C',
-        'ZAG': '#3498DB',
-        'LD': '#9B59B6',
-        'LE': '#9B59B6',
-        'VOL': '#F1C40F',
-        'MC': '#2ECC71',
-        'PE': '#E67E22',
-        'PD': '#E67E22',
-        'ATA': '#E74C3C'
-    };
-    return colors[position] || '#95A5A6';
-}
-
-// Exportar funções para uso global
-window.appUtils = {
-    formatDate,
-    getPositionColor,
-    initTooltips,
-    initModals
-};
