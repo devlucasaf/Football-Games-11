@@ -39,32 +39,28 @@ O **Formação Futebol** é um projeto em **HTML, CSS e JavaScript** que permite
 │   ├── selection.html              # Página de Seleções Históricas
 │   └── quiz.html                   # (Futuro) Página de Quiz
 ├── css/
-│   ├── reset.css                   # Reset de estilos
-│   ├── variables.css               # Variáveis CSS (cores, fontes)
-│   ├── common.css                  # Estilos comuns a todas as páginas
-│   ├── home.css                    # Estilos da homepage
 │   ├── grid.css                    # Estilos do Futbol Grid
-│   ├── selection.css               # Estilos das Seleções Históricas
+│   ├── style.css                   # Estilo principal
 │   └── field.css                   # Estilos do campo de futebol
 ├── js/
-│   ├── main.js                     # Código comum a todas as páginas
+│   ├── script.js                   # Código comum a todas as páginas
 │   ├── router.js                   # Gerenciador de navegação (SPA)
 │   ├── modules/
 │   │   ├── futbol-grid.js          # Lógica do Futbol Grid
 │   │   ├── selection-builder.js    # Lógica das Seleções Históricas
 │   │   └── quiz.js                 # (Futuro) Lógica do Quiz
-│   ├── utils/
+│   ├── utils/ 
 │   │   ├── data-loader.js          # Carregador de JSONs
 │   │   └── validators.js           # Funções de validação
-│   └── components/
+│   └── components/ 
 │       ├── header.js               # Componente do cabeçalho
 │       ├── footer.js               # Componente do rodapé
 │       └── game-card.js            # Componente dos cards de jogos
-├── data/
+├── data/ 
 │   ├── futbol-grid-data.json       # Dados para o grid (jogadores e critérios)
 │   ├── historical-teams.json       # Dados para seleções históricas
 │   └── quiz-questions.json         # (Futuro) Perguntas para quiz
-├── assets/
+├── assets/ 
 │   ├── images/                     # Imagens do site
 │   ├── icons/                      # Ícones e logos
 │   └── fonts/                      # Fontes personalizadas
