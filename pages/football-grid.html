@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Football Grid | Football Games 11</title>
-        <link rel="stylesheet" href="../css/minigames.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    </head>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol11 Grid Clone</title>
+    <link rel="stylesheet" href="../css/football-grid.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1 class="logo">FUTBOL<span>11</span> GRID</h1>
+        </header>
+
+        <div class="grid-wrapper">
+            <div class="grid-row header-row">
+                <div class="grid-cell logo-cell">GRID</div>
+                <div class="grid-cell club-header" data-club="Man Utd">MAN UTD</div>
+                <div class="grid-cell club-header" data-club="Inter">INTER</div>
+                <div class="grid-cell club-header" data-club="Barcelona">BARCELONA</div>
+            </div>
+
+            <div class="grid-row">
+                <div class="grid-cell club-side" data-club="Tottenham">TOTTENHAM</div>
+                <div class="grid-cell play-cell" id="cell-0-0" data-row="Tottenham" data-col="Man Utd"></div>
+                <div class="grid-cell play-cell" id="cell-0-1" data-row="Tottenham" data-col="Inter"></div>
+                <div class="grid-cell play-cell" id="cell-0-2" data-row="Tottenham" data-col="Barcelona"></div>
+            </div>
+
+            <div class="grid-row">
+                <div class="grid-cell club-side" data-club="Milan">AC MILAN</div>
+                <div class="grid-cell play-cell" id="cell-1-0" data-row="Milan" data-col="Man Utd"></div>
+                <div class="grid-cell play-cell" id="cell-1-1" data-row="Milan" data-col="Inter"></div>
+                <div class="grid-cell play-cell" id="cell-1-2" data-row="Milan" data-col="Barcelona"></div>
+            </div>
+
+            <div class="grid-row">
+                <div class="grid-cell club-side" data-club="Chelsea">CHELSEA</div>
+                <div class="grid-cell play-cell" id="cell-2-0" data-row="Chelsea" data-col="Man Utd"></div>
+                <div class="grid-cell play-cell" id="cell-2-1" data-row="Chelsea" data-col="Inter"></div>
+                <div class="grid-cell play-cell" id="cell-2-2" data-row="Chelsea" data-col="Barcelona"></div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="playerInput" placeholder="Digite o nome do jogador aqui">
+            <button id="searchBtn">🚩</button>
+        </div>
+    </div>
+    <script src="../js/minigames/football_grid.js"></script>
+</body>
 </html>
