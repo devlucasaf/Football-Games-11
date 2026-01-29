@@ -1,12 +1,4 @@
-// Banco de dados fake para demonstração
-const playersDB = [
-    { name: "Zlatan Ibrahimovic", clubs: ["Milan", "Inter", "Barcelona", "Man Utd", "Ajax"] },
-    { name: "Alexis Sanchez", clubs: ["Man Utd", "Inter", "Barcelona", "Arsenal"] },
-    { name: "Cesc Fabregas", clubs: ["Barcelona", "Chelsea", "Arsenal"] },
-    { name: "Christian Eriksen", clubs: ["Tottenham", "Inter", "Man Utd"] },
-    { name: "Thiago Silva", clubs: ["Milan", "Chelsea", "PSG"] },
-    { name: "Samuel Eto'o", clubs: ["Barcelona", "Inter", "Chelsea"] }
-];
+
 
 const input = document.getElementById('playerInput');
 const btn = document.getElementById('searchBtn');

@@ -13,7 +13,7 @@
             "escudo": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_logo.svg"
         },
         {
-            "nome": "Villarreal",
+            "nome": "Real Bétis",
             "escudo": "https://upload.wikimedia.org/wikipedia/en/7/70/Villarreal_CF_logo.svg"
         },
         {
@@ -50,6 +50,10 @@
         },
         {
             "nome": "Juventus",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Juventus_FC_2017_logo.svg"
+        },
+        {
+            "nome": "Milan",
             "escudo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Juventus_FC_2017_logo.svg"
         },
         {
