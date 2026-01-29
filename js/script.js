@@ -92,3 +92,7 @@ if (!document.querySelector('#fadeInUpAnimation')) {
     `;
     document.head.appendChild(style);
 }
+
+document.getElementById('btn-football-grid').addEventListener('click', function() {
+    window.location.href = 'pages/football-grid.html';
+}); 

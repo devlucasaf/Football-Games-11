@@ -1001,6 +1001,8 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    margin-top: 15px;
+    width: fit-content;
 }
 
 .btn-play::before {
@@ -1081,6 +1083,38 @@ body {
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Coloca um item embaixo do outro */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente (opcional) */
+    text-align: center;     /* Garante que o texto também centralize */
+    padding: 20px;
+}
+
+.btn-play {
+    display: inline-block;
+    background-color: #00d1ff; /* Azul neon da imagem */
+    color: #011627; /* Cor escura para o texto */
+    padding: 8px 20px;
+    margin: 10px 0;
+    border-radius: 90px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-play:hover {
+    background-color: #ffcc00; /* Muda para amarelo ao passar o mouse */
+    transform: scale(1.05);
+}
+
+/* Garante que o badge não fique em cima do botão se houver pouco espaço */
+.badge {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.7rem;
+    opacity: 0.8;
 }
 
 .coming-soon-card::before {
