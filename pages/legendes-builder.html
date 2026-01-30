@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montar Escalação | Football Legends</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/field.css">
+    <link rel="stylesheet" href="../css/football-legends.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="football-legends.html" style="text-decoration: none; color: inherit;">
+                    <h1>
+                        <i class="fas fa-arrow-left" style="font-size: 1.2rem; margin-right: 10px;"></i>
+                        <i class="fas fa-crown"></i>
+                        <span id="teamName">Carregando...</span>
+                    </h1>
+                </a>
+            </div>
+            <div class="builder-controls">
+                <button class="btn-formation" id="formationToggle">
+                    <i class="fas fa-sitemap"></i>
+                    <span id="currentFormation">4-3-3</span>
+                </button>
+                <button class="btn-theme" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="builder-container">
+        <div class="container">
+            <!-- Builder Header -->
+            <div class="builder-header">
+                <div class="team-info">
+                    <div class="team-badge" id="teamBadge">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h2 id="teamFullName">Carregando time...</h2>
+                        <p class="team-stats">
+                            <span id="playerCount">0</span> jogadores disponíveis
+                        </p>
+                    </div>
+                </div>
+                <div class="builder-actions">
+                    <button class="btn-action" id="resetTeam">
+                        <i class="fas fa-redo"></i>
+                        Reiniciar
+                    </button>
+                    <button class="btn-action" id="saveTeam">
+                        <i class="fas fa-save"></i>
+                        Salvar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Formations Menu (Hidden by default) -->
+            <div class="formations-menu" id="formationsMenu">
+                <h3><i class="fas fa-sitemap"></i> Escolha uma Formação</h3>
+                <div class="formations-grid">
+                    <button class="formation-option" data-formation="4-3-3">
+                        <span class="formation-label">4-3-3</span>
+                        <span class="formation-desc">Ofensiva</span>
+                    </button>
+                    <button class="formation-option" data-formation="4-4-2">
+                        <span class="formation-label">4-4-2</span>
+                        <span class="formation-desc">Clássica</span>
+                    </button>
+                    <button class="formation-option" data-formation="3-5-2">
+                        <span class="formation-label">3-5-2</span>
+                        <span class="formation-desc">Controle</span>
+                    </button>
+                    <button class="formation-option" data-formation="4-2-3-1">
+                        <span class="formation-label">4-2-3-1</span>
+                        <span class="formation-desc">Moderno</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Builder Content -->
+            <div class="builder-content">
+                <!-- Players Panel -->
+                <div class="players-panel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-users"></i> Jogadores Disponíveis</h3>
+                        <div class="position-filter">
+                            <select id="positionFilter">
+                                <option value="all">Todas as Posições</option>
+                                <option value="GK">Goleiros</option>
+                                <option value="ZAG">Zagueiros</option>
+                                <option value="LD/LE">Laterais</option>
+                                <option value="VOL/MEI">Meio-Campo</option>
+                                <option value="ATA">Atacantes</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="players-list" id="playersList">
+                        <!-- Players will be loaded here -->
+                    </div>
+
+                    <div class="loading-players" id="loadingPlayers">
+                        <div class="loading-spinner">
+                            <i class="fas fa-futbol fa-spin"></i>
+                        </div>
+                        <p>Carregando jogadores...</p>
+                    </div>
+                </div>
+
+                <!-- Field Container -->
+                <div class="field-container">
+                    <div class="field-header">
+                        <h3><i class="fas fa-futbol"></i> Campo</h3>
+                        <div class="field-stats">
+                            <span id="fieldCount">0/11</span> jogadores escalados
+                        </div>
+                    </div>
+                    
+                    <!-- Football Field -->
+                    <div class="football-field-wrapper">
+                        <div class="football-field" id="footballField">
+                            <!-- Field will be rendered here -->
+                        </div>
+                        
+                        <!-- Formation Positions -->
+                        <div class="formation-positions" id="formationPositions">
+                            <!-- Position slots will be added here -->
+                        </div>
+                    </div>
+
+                    <!-- Selected Players -->
+                    <div class="selected-players" id="selectedPlayers">
+                        <div class="empty-state">
+                            <i class="fas fa-hand-pointer"></i>
+                            <p>Arraste jogadores para o campo ou clique nas posições vazias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Save Modal -->
+    <div class="modal-overlay" id="saveModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Escalação Salva!</h3>
+                <button class="btn-close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Sua escalação histórica foi salva com sucesso!</p>
+                <div class="modal-actions">
+                    <button class="btn-action" id="shareTeam">
+                        <i class="fas fa-share"></i>
+                        Compartilhar
+                    </button>
+                    <button class="btn-action" id="newTeam">
+                        <i class="fas fa-plus"></i>
+                        Novo Time
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/minigames/legends.js"></script>
+    <script>
+        // Inicializa o builder
+        document.addEventListener('DOMContentLoaded', () => {
+            FootballLegends.initBuilderPage();
+        });
+    </script>
+</body>
+</html>
