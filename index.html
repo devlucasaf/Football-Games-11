@@ -126,7 +126,20 @@
                             </div>
                             <h4>Football Grid</h4>
                             <p>Football Grid 3x3</p>
-                            <a href="pages/football-grid.html" class="btn-play">Jogar</a>
+                            <a href="pages/football-grid.html" class="btn-play" onclick="openTimeSelection()">Jogar</a>
+                        </div>
+
+                        <div id="timeModal" class="modal-overplay" style="display: none;">
+                            <div class="modal-content">
+                                <h3>Modo de Jogo</h3>
+                                <p>Escolhe o limite de tempo:</p>
+                                <div class="time-options">
+                                    <button class="btn-time-opt" onclick="startGame('unlimited')">Sem tempo</button>
+                                    <button class="btn-time-opt" onclick="startGame(3)">3 Minutos</button>
+                                    <button class="btn-time-opt" onclick="startGame(5)">5 Minutos</button>
+                                </div>
+                                <button class="btn-close-modal" onclick="closeModal()">Voltar</button>
+                            </div>
                         </div>
 
                         <div class="coming-soon-card">

@@ -22,6 +22,9 @@
 
     let gameStopped = false;
 
+    let timerInterval = null;
+    let timeLeft = 0;
+
     let rawData = null;                 // Valor nulo
     let playersDataBase = [];           // Lista para mostrar [{nome, clubes: [canon], seleções}]
     let listaClube = [];                // [clubeCanon]
@@ -437,6 +440,8 @@
         });
 
         newGridBtn?.addEventListener("click", () => {
+            location.reload();
+
             const cfg = createGridConfig();
             if (!cfg) {
                 alert("Não foi possível gerar uma grade válida. Tente novamente.");
@@ -463,7 +468,7 @@
             inputEl.disabled = true;
             btnEl.disabled = true;
 
-            alert("Você desistiu! Clique em 🔄 para gerar um novo Grid.");
+            stopGame("Você desistiu! Clique em 🔄 para gerar um novo Grid.");
         });
     }
 
@@ -474,15 +479,22 @@
 
             const cfg = createGridConfig();
             if (!cfg) {
-                throw new Error("Falha ao gerar uma grade jogável após várias tentativas.");
+                throw new Error("Falha ao gerar uma grade jogável.");
             }
 
             currentGrid = cfg;
             applyGridToDOM(cfg);
             setupEvents();
+
+            // --- LÓGICA DE INÍCIO DO TIMER ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const timeMode = urlParams.get('time') || 'unlimited';
+            startTimer(timeMode);
+            // ---------------------------------
+
         } catch (err) {
             console.error(err);
-            alert(`Erro ao inicializar o Football Grid: ${err.message}`);
+            alert(`Erro ao inicializar: ${err.message}`);
         }
     }
 
@@ -490,5 +502,54 @@
         document.addEventListener("DOMContentLoaded", initFootballGrid);
     } else {
         initFootballGrid();
+    }
+
+    function startTimer(minutes) {
+        if (minutes === 'unlimited') {
+            updateTimerDisplay("∞");
+            return;
+        }
+
+        timeLeft = parseInt(minutes) * 60;
+        updateTimerDisplay(formatTime(timeLeft));
+
+        // Limpa qualquer timer anterior se existir
+        if (timerInterval) clearInterval(timerInterval);
+
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            updateTimerDisplay(formatTime(timeLeft));
+
+            if (timeLeft <= 0) {
+                stopGame("Tempo esgotado!");
+            }
+        }, 1000);
+    }
+
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function updateTimerDisplay(text) {
+        // Procura por um elemento de timer ou cria um no cabeçalho
+        let timerEl = document.getElementById('timer-display');
+        if (!timerEl) {
+            const header = document.querySelector('.game-header');
+            timerEl = document.createElement('div');
+            timerEl.id = 'timer-display';
+            timerEl.style = "font-size: 1.5rem; font-weight: bold; color: #e74c3c; margin-top: 10px;";
+            header.appendChild(timerEl);
+        }
+        timerEl.textContent = `Tempo: ${text}`;
+    }
+
+    function stopGame(message) {
+        gameStopped = true;
+        clearInterval(timerInterval);
+        inputEl.disabled = true;
+        btnEl.disabled = true;
+        alert(message);
     }
 })();

@@ -98,3 +98,24 @@ if (!document.querySelector('#fadeInUpAnimation')) {
 document.getElementById('btn-football-grid').addEventListener('click', function() {
     window.location.href = 'pages/football-grid.html';
 }); 
+
+function openTimeSelection() {
+    document.getElementById('timeModal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('timeModal').style.display = 'none';
+}
+
+function startGame(mode) {
+    // Redireciona para a página do jogo enviando o tempo escolhido na URL
+    window.location.href = `pages/football-grid.html?time=${mode}`;
+}
+
+// Fechar o modal se clicar fora da caixa preta
+window.onclick = function(event) {
+    const modal = document.getElementById('timeModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
