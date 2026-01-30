@@ -58,9 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar apenas o toggle do tema
     initThemeToggle();
     
-    // Remover quaisquer event listeners antigos dos botões "Em Breve"
-    // (como você já tem os botões no HTML, não precisamos mais deste código)
-    
     // Apenas adicionar animação aos cards que já existem no HTML
     const comingSoonCards = document.querySelectorAll('.coming-soon-card');
     comingSoonCards.forEach((card, index) => {

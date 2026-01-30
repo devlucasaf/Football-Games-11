@@ -318,7 +318,9 @@ const FootballLegends = {
             loadingElement.style.display = 'none';
         }
         
-        if (!playersList) return;
+        if (!playersList) {
+            return;
+        }
         
         // Clear list
         playersList.innerHTML = '';
@@ -477,7 +479,9 @@ const FootballLegends = {
     addPlayerToPosition: function(playerIndex, position) {
         const player = this.currentTeam.players[playerIndex];
         
-        if (!player) return;
+        if (!player) {
+            return;
+        }
         
         // Remove player from any other position
         this.removePlayerFromAllPositions(player.name);
@@ -516,7 +520,9 @@ const FootballLegends = {
     // Update selected players display
     updateSelectedPlayers: function() {
         const selectedPlayersElement = document.getElementById('selectedPlayers');
-        if (!selectedPlayersElement) return;
+        if (!selectedPlayersElement) {
+            return;
+        }
         
         if (this.selectedPlayers.size === 0) {
             selectedPlayersElement.innerHTML = `
