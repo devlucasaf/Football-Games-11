@@ -135,6 +135,14 @@
         {
             "nome": "Nottingham Forest",
             "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Nottingham_Forest.png"
+        },
+        {
+            "nome": "Ajax",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:AFC_Ajax_Amsterdam.svg"
+        },
+        {
+            "nome": "PSV",
+            "escudo": "https://pt.wikipedia.org/wiki/PSV_Eindhoven"
         }
     ],
     "selecoes": [
@@ -165,13 +173,853 @@
         },
         {
         "nome": "Romário",
-        "clubes": ["Barcelona", "Flamengo"],
+        "clubes": ["Barcelona", "Flamengo", "Vasco da Gama", "PSV", "Valencia", "Fluminense", "Al-Sadd", "Miami FC", "Adelaide United", "América-RJ"],
         "selecoes": ["Brasil"]
         },
         {
         "nome": "Zidane",
-        "clubes": ["Real Madrid", "Juventus"],
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
         "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Rogério Ceni",
+        "clubes": ["São Paulo"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Dida",
+        "clubes": ["Vitória", "Cruzeiro", "Lugano", "Milan", "Corinthians", "Portuguesa", "Grêmio", "Internacional"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Cafu",
+        "clubes": ["São Paulo", "Zaragoza", "Juventude", "Palmeiras", "Roma", "Milan"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Roberto Carlos",
+        "clubes": ["União São João", "Atlético Mineiro", "Palmeiras", "Inter de Milão", "Real Madrid", "Fenerbahçe", "Corinthians", "Anzhi", "Delhi Dynamos"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Kaka",
+        "clubes": ["São Paulo", "Real Madrid", "Milan", "Orlando City"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Rivaldo",
+        "clubes": ["Santa Cruz", "Mogi Mirim", "Corinthians", "Palmeiras", "Deportivo La Coruña", "Barcelona", "Milan", "Cruzeiro", "AEK Atenas", "Bunyodkor", "São Paulo", "Kabuscorp", "São Caetano"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Nilton Santos",
+        "clubes": ["Botafogo"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Garrincha",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Pelé",
+        "clubes": ["Santos", "Real Madrid"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
+        },
+        {
+        "nome": "Zidane",
+        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+        "selecoes": ["França"]
+        },
+        {
+        "nome": "Ronaldo",
+        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+        "selecoes": ["Brasil"]
         }
     ]
 }
