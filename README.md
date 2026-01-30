@@ -13,7 +13,7 @@ Um aplicativo web interativo para montar escalações de futebol, reviver seleç
 
 **Football Games 11** é um projeto web em **HTML, CSS e Java Script** com foco em **minigames interativos de futebol**.
 
-A proposta é reunir em um único site diversos jogos inspirados em plataformas como **futbol11.com** e **playfootball.games**, oferecendo desafios baseados em memória esportiva, jogadores históricos, clubes e seleções.
+A proposta é reunir em um único site diversos jogos inspirados em plataformas como [futbol11.com](**https://futbol-11.com/**) e [playfootball.games](**https://playfootball.games/**), oferecendo desafios baseados em memória esportiva, jogadores históricos, clubes e seleções.
 
 ---
 
