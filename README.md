@@ -31,6 +31,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 ├── index.html                          # Homepage (hub de jogos)
 ├── pages/                              # Páginas HTML de cada minigame
 │   ├── football-legends.css            # Página do Football Legends
+│   ├── football-builder.css            # Página do Football Legends Builder
 │   └── football-grid.html              # Página do Football Grid
 ├── css/    
 │   ├── football-grid.css               # Estilos do Football Grid
