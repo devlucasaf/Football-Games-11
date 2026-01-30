@@ -13,12 +13,8 @@
             "escudo": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_logo.svg"
         },
         {
-            "nome": "Real Bétis",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/7/70/Villarreal_CF_logo.svg"
-        },
-        {
-            "nome": "Milan",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/d/d0/AC_Milan_logo.svg"
+            "nome": "Sevilla",
+            "escudo": "https://pt.wikipedia.org/wiki/Sevilla_F%C3%BAtbol_Club"
         },
         {
             "nome": "PSG",
@@ -35,6 +31,42 @@
         {
             "nome": "Fluminense",
             "escudo": "https://upload.wikimedia.org/wikipedia/en/8/8e/Fluminense_FC_logo.svg"
+        },
+        {
+            "nome": "Botafogo",
+            "escudo": "https://pt.wikipedia.org/wiki/Botafogo_de_Futebol_e_Regatas"
+        },
+        {
+            "nome": "Vasco da Gama",
+            "escudo": "https://pt.wikipedia.org/wiki/Club_de_Regatas_Vasco_da_Gama"
+        },
+        {
+            "nome": "Corinthians",
+            "escudo": "https://pt.wikipedia.org/wiki/Sport_Club_Corinthians_Paulista"
+        },
+        {
+            "nome": "São Paulo",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Brasao_do_Sao_Paulo_Futebol_Clube.svg"
+        },
+        {
+            "nome": "Santos",
+            "escudo": "https://pt.wikipedia.org/wiki/Santos_Futebol_Clube"
+        },
+        {
+            "nome": "Atlético Mineiro",
+            "escudo": "https://pt.wikipedia.org/wiki/Clube_Atl%C3%A9tico_Mineiro"
+        },
+        {
+            "nome": "Cruzeiro",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Cruzeiro_Esporte_Clube_%28logo%29.svg"
+        },
+        {
+            "nome": "Grêmio",
+            "escudo": "https://pt.wikipedia.org/wiki/Gr%C3%AAmio_Foot-Ball_Porto_Alegrense"
+        },
+        {
+            "nome": "Internacional",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Escudo_do_Sport_Club_Internacional.svg"
         },
         {
             "nome": "Bayern de Munique",
@@ -57,6 +89,18 @@
             "escudo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Juventus_FC_2017_logo.svg"
         },
         {
+            "nome": "Inter de Milão",
+            "escudo": "https://pt.wikipedia.org/wiki/Football_Club_Internazionale_Milano"
+        },
+        {
+            "nome": "Napoli",
+            "escudo": "https://nn.wikipedia.org/wiki/SSC_Napoli"
+        },
+        {
+            "nome": "Roma",
+            "escudo": "https://pt.wikipedia.org/wiki/Associazione_Sportiva_Roma"
+        },
+        {
             "nome": "Manchester United",
             "escudo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"
         },
@@ -75,6 +119,22 @@
         {
             "nome": "Tottenham",
             "escudo": "https://upload.wikimedia.org/wikipedia/pt/6/6d/Tottenham_Hotspur.png?20100907131757"
+        },
+        {
+            "nome": "Arsenal",
+            "escudo": "https://pt.wikipedia.org/wiki/Arsenal_Football_Club"
+        },
+        {
+            "nome": "Aston Villa",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Aston_Villa.svg"
+        },
+        {
+            "nome": "West Ham",
+            "escudo": "https://pt.wikipedia.org/wiki/West_Ham_United_Football_Club"
+        },
+        {
+            "nome": "Nottingham Forest",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Nottingham_Forest.png"
         }
     ],
     "selecoes": [
@@ -93,13 +153,14 @@
     ],
     "jogadores": [
         {
-        "nome": "Ronaldinho",
-        "clubes": ["Barcelona", "Milan", "PSG"],
-        "selecoes": ["Brasil"]
+        "nome": "Ronaldinho Gaúcho",
+        "clubes": ["Grêmio", "Barcelona", "Milan", "PSG", "Flamengo", "Atlético Mineiro", "Querétaro", "Fluminense"],
+        "selecoes": ["Brasil"],
+        "foto": "https://www.efootballdb.com/fr/players/profile?id=88032334187984"
         },
         {
         "nome": "Cristiano Ronaldo",
-        "clubes": ["Real Madrid", "Juventus", "Manchester United"],
+        "clubes": ["Real Madrid", "Juventus", "Manchester United", "Sporting", "Al-Nassr"],
         "selecoes": ["Portugal"]
         },
         {

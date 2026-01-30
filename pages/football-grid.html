@@ -68,9 +68,11 @@
                 </div>
 
                 <div class="input-container">
-                    <input type="text" id="playerInput" placeholder="Digite o nome do jogador aqui">
-                    <button id="searchBtn">🚩</button>
-                    <button id="searchBtn">🛑</button>
+                    <input type="text" id="playerInput" placeholder="Digite o nome do jogador aqui" autocomplete="off">
+
+                    <button type="button" id="searchBtn" title="Enviar">🚩</button>
+                    <button type="button" id="stopBtn" title="Limpar">🛑</button>
+                    <button type="button" id="newGridBtn" title="Novo Grid">🔄</button>
                 </div>
             </div>
         </main>
@@ -102,7 +104,7 @@
             </div>
         </footer>
 
-        <script src="../js/minigames/football_grid.js"></script>
         <script src="../js/script.js"></script>
+        <script src="../js/minigames/football_grid.js"></script>
     </body>
 </html>

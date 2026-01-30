@@ -213,6 +213,56 @@ main {
     transform: translateY(-1px);
 }
 
+#stopBtn {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #011627;
+    font-weight: 700;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+}
+
+#stopBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+}
+
+#stopBtn:active {
+    transform: translateY(-1px);
+}
+
+#newGridBtn {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #011627;
+    font-weight: 700;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+}
+
+#newGridBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+}
+
+#newGridBtn:active {
+    transform: translateY(-1px);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .game-container {
@@ -246,6 +296,14 @@ main {
     #searchBtn {
         padding: 12px 20px;
     }
+
+    #stopBtn {
+        padding: 12px 20px;
+    }
+
+    #returnBtn {
+        padding: 12px 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -276,6 +334,16 @@ main {
     #searchBtn {
         width: 100%;
         max-width: 200px;
+    }
+
+    #stopBtn {
+        width: 100%;
+        max-width: 200%;
+    }
+
+    #returnBtn {
+        width: 100%;
+        max-width: 200%;
     }
 }
 

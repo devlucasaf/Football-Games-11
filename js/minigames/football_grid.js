@@ -1,9 +1,10 @@
 (() => {
     // Configuração do MiniGame Grid
     const GRID_SIZE = 3;
-    const JSON_PATH = "..data/players-grid.json";
+    const JSON_PATH = "../data/football-grid.json";
     const MIN_VALID_CELLS = 3;
     const MAX_ATTEMPTS = 50; 
+
     const MODE_WEIGHTS = {
         rowsCountry_colsClub: 0.6,     
         rowsClub_colsClub:    0.4 
@@ -13,8 +14,13 @@
     const btnEl = document.getElementById('searchBtn');
     const newGridBtn = document.getElementById('newGridBtn');
     const cells = Array.from(document.querySelectorAll('.play-cell'));
-    const colHeaders = Array.from(document.querySelectorAll('.col-label'));
-    const rowHeaders = Array.from(document.querySelectorAll('row-label'));
+
+    const colHeaders = Array.from(document.querySelectorAll('.club-header'));
+    const rowHeaders = Array.from(document.querySelectorAll('.club-side'));
+
+    const stopBtn = document.getElementById("stopBtn");
+
+    let gameStopped = false;
 
     let rawData = null;                 // Valor nulo
     let playersDataBase = [];           // Lista para mostrar [{nome, clubes: [canon], seleções}]
@@ -101,20 +107,21 @@
         for (const it of items) {
             const key = canon(getName(it));
 
-            if (seen.has(key)) 
+            if (seen.has(key)) {
                 continue;
+            }
 
             seen.add(key);
-            res.push({key, item: it});
+            res.push({ key, item: it });
         }
         return res;
     }
 
     async function loadData() {
-        const res = await fetch(JSON_PATH, {
-            cache: 'no-store'
+        const res = await fetch(JSON_PATH, { 
+            cache: "no-store" 
         });
-
+        
         if (!res.ok) {
             throw new Error(`Falha ao carregar JSON (${res.status})`);
         }
@@ -124,18 +131,20 @@
     function buildData(data) {
         rawData = data;
 
-        // Clubes (dedup + display maps)
+        // Clubes
         const clubePairs = dedupByCanon(data.clubes ?? [], (c) => c.nome);
         listaClube = clubePairs.map((p) => p.key);
-
         clubeDisplay = new Map(
-            clubePairs.map(({key, item}) => [key, {nome: item.nome, escudo: item.escudo ?? null}])
+            clubePairs.map(({ key, item }) => [key, { 
+                nome: item.nome,
+                escudo: item.escudo ?? null 
+            }])
         );
 
-        // Seleções
-        const countryPairs = dedupByCanon((data.selecoes ?? []).map((s) => ({ nome: s })), (x) => x.nome);
-        countryList = countryPairs.map((p) => p.key);
-        countryDisplay = new Map(countryPairs.map(({ key, item }) => [key, item.nome]));
+        // Países/Seleções
+        const paisPairs = dedupByCanon((data.selecoes ?? []).map((s) => ({ nome: s })), (x) => x.nome);
+        listaPaises = paisPairs.map((p) => p.key);
+        paisDisplay = new Map(paisPairs.map(({ key, item }) => [key, item.nome]));
 
         // Jogadores
         playersDataBase = (data.jogadores ?? []).map((p) => ({
@@ -151,38 +160,43 @@
 
         playersDataBase.forEach((p, idx) => {
             p.clubes.forEach((cl) => {
-                if (!clubeIndex.has(cl)) clubeIndex.set(cl, []);
-                clubeIndex.get(c1).push(idx);
+                if (!clubeIndex.has(cl)) {
+                    clubeIndex.set(cl, []);
+                }
+                clubeIndex.get(cl).push(idx);
             });
+
             p.selecoes.forEach((ct) => {
-                if (!paisIndex.has(ct)) paisDisplay.set(ct, []);
+                if (!paisIndex.has(ct)) {
+                    paisIndex.set(ct, []);
+                }
                 paisIndex.get(ct).push(idx);
             });
         });
     }
 
-    // Sorteio e validação da grade
     function randomChoiceWeighted(weightObject) {
         const entries = Object.entries(weightObject);
         const total = entries.reduce((acc, [, w]) => acc + w, 0);
-        let r = Math.ramdom() * total;
+        let r = Math.random() * total;
 
-        for (const [k, w] of entrues) {
-            if ((r -= w) <= 0)
+        for (const [k, w] of entries) {
+            r -= w;
+            if (r <= 0) {
                 return k;
+            }
         }
         return entries[entries.length - 1][0];
     }
 
     function pickRandomUnique(pool, n, excludeSet = new Set()) {
         const filtered = pool.filter((x) => !excludeSet.has(x));
-
-        if(filtered.length < n) 
+        if (filtered.length < n) {
             return null;
-        
-        const arr = filtered.slice();
+        }
 
-        for (let i = arr.length -1; i > 0; i--) {
+        const arr = filtered.slice();
+        for (let i = arr.length - 1; i > 0; i--) {
             const j = (Math.random() * (i + 1)) | 0;
             [arr[i], arr[j]] = [arr[j], arr[i]];
         }
@@ -190,54 +204,52 @@
     }
 
     function hasIntersectionPlayers(rowKey, rowType, colKey, colType) {
-        if (rowType === 'clube' && colType === 'clube') {
+        if (rowType === "clube" && colType === "clube") {
             const a = clubeIndex.get(rowKey) || [];
             const bSet = new Set(clubeIndex.get(colKey) || []);
-            return a.some((idx) => bSet.has(idx)); 
+            return a.some((idx) => bSet.has(idx));
         }
 
-        const isRowPaisesColClube = rowType === 'pais' && colType === 'clube';
-        const paisKey = isRowPaisesColClube ? rowKey : colKey;
-        const clubeKey = isRowPaisesColClube ? colKey : rowKey;
+        const isRowPaisColClube = rowType === "pais" && colType === "clube";
+        const paisKey = isRowPaisColClube ? rowKey : colKey;
+        const clubeKey = isRowPaisColClube ? colKey : rowKey;
 
-        const byPaises = countryIndex.get(paisKey) || [];
-        const byClubeSet = new Set(clubIndex.get(clubeKey) || []);
-        return byPaises.some((idx) => byClubeSet.has(idx));
+        const byPais = paisIndex.get(paisKey) || [];
+        const byClubeSet = new Set(clubeIndex.get(clubeKey) || []);
+        return byPais.some((idx) => byClubeSet.has(idx));
     }
 
     function validateGrid(rows, cols, rowsType, colsType) {
         let validCount = 0;
-        const matrix = Array.from({ length: GRID_SIZE}, () =>
-            Array.from({ length: GRID_SIZE }, () => false)
-        );
+        const matrix = Array.from({ length: GRID_SIZE }, () => Array.from({ length: GRID_SIZE }, () => false));
 
         for (let i = 0; i < GRID_SIZE; i++) {
             for (let j = 0; j < GRID_SIZE; j++) {
                 const ok = hasIntersectionPlayers(rows[i], rowsType, cols[j], colsType);
                 matrix[i][j] = ok;
+
                 if (ok) {
                     validCount++;
                 }
             }
         }
-        return {
-            validCount, matrix
+        return { 
+            validCount, 
+            matrix 
         };
     }
 
-    // Evita "clube × clube" com o MESMO clube cruzando 
     function drawRowsCols(rowsType, colsType) {
-        const rowsPool = rowsType === 'clube' ? listaClube : listaPaises;
-        const colsPool = colsType === 'clube' ? listaClube : listaPaises;
+        const rowsPool = rowsType === "clube" ? listaClube : listaPaises;
+        const colsPool = colsType === "clube" ? listaClube : listaPaises;
 
-        // Linhas
         const rows = pickRandomUnique(rowsPool, GRID_SIZE);
         if (!rows) {
             return null;
         }
 
         let exclude = new Set();
-        if (rowsType === 'clube' && colsType === 'club') {
+        if (rowsType === "clube" && colsType === "clube") {
             exclude = new Set(rows);
         }
 
@@ -245,26 +257,33 @@
         if (!cols) {
             return null;
         }
-        return {
-            rows, cols
+
+        return { 
+            rows, 
+            cols 
         };
     }
 
     function chooseMode() {
         const pick = randomChoiceWeighted(MODE_WEIGHTS);
-        if (pick === 'rowsPais_colsClube') {
-            return {
-                rowsType: 'pais',
-                colsType: 'clube'
+        if (pick === "rowsPais_colsClube") {
+            return { 
+                rowsType: "pais", 
+                colsType: "clube" 
             };
         }
+
+        return { 
+            rowsType: "clube", 
+            colsType: "clube" 
+        };
     }
 
-    function createdGridConfig() {
+    function createGridConfig() {
         for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
             const { rowsType, colsType } = chooseMode();
             const drawn = drawRowsCols(rowsType, colsType);
-
+            
             if (!drawn) {
                 continue;
             }
@@ -286,22 +305,16 @@
     }
 
     function displayName(type, key) {
-        if (type === 'clube') {
-            return clubeDisplay.get(key)?.nome ?? key;
-        }
-        return paisDisplay.get(key) ?? key;
-    }
-
-    function displayBadge(type, key) {
-        if (type === 'clube') {
+        if (type === "clube") {
             return clubeDisplay.get(key)?.nome ?? key;
         }
         return paisDisplay.get(key) ?? key;
     }
 
     function applyHeaders(headersEls, keys, type) {
-        if (headersEls.length !== GRID_SIZE) 
+        if (headersEls.length !== GRID_SIZE) {
             return;
+        }
 
         for (let i = 0; i < GRID_SIZE; i++) {
             const key = keys[i];
@@ -309,50 +322,34 @@
             el.textContent = displayName(type, key);
             el.dataset.type = type;
             el.dataset.key = key;
-
-            // Se quiser mostrar escudo nos cabeçalhos (quando tipo = club)
-            const badge = displayBadge(type, key);
-            if (badge) {
-                el.setAttribute('data-badge', badge);
-                // Você pode usar CSS para exibir a imagem via attr(data-badge) -> content ou background.
-            } else {
-                el.removeAttribute('data-badge');
-            }
         }
     }
 
-    
     function applyGridToDOM(config) {
         const { rows, cols, rowsType, colsType } = config;
 
-        // Aplica rótulos
         applyHeaders(colHeaders, cols, colsType);
         applyHeaders(rowHeaders, rows, rowsType);
 
-        // Limpa estado
         usedPlayers.clear();
 
-        // Prepara células (assume 3×3)
         cells.forEach((cell, idx) => {
-        const r = cell.dataset.rowIndex ? parseInt(cell.dataset.rowIndex, 10) : Math.floor(idx / GRID_SIZE);
-        const c = cell.dataset.colIndex ? parseInt(cell.dataset.colIndex, 10) : (idx % GRID_SIZE);
+            const r = Math.floor(idx / GRID_SIZE);
+            const c = idx % GRID_SIZE;
 
-        const rowKey = rows[r];
-        const colKey = cols[c];
+            const rowKey = rows[r];
+            const colKey = cols[c];
 
-        cell.textContent = '';
-        cell.classList.remove('correct');
+            cell.textContent = "";
+            cell.classList.remove("correct");
 
-        // Tipos e chaves canônicas
-        cell.dataset.row = rowKey;
-        cell.dataset.col = colKey;
-        cell.dataset.rowType = rowsType;
-        cell.dataset.colType = colsType;
+            cell.dataset.row = rowKey;
+            cell.dataset.col = colKey;
+            cell.dataset.rowType = rowsType;
+            cell.dataset.colType = colsType;
         });
     }
 
-    
-    // === Validação do palpite ===
     function findPlayerByName(text) {
         const n = normalize(text);
         return playersDataBase.find((p) => p.nomeCanon === n) || null;
@@ -362,48 +359,55 @@
         const pClubes = new Set(player.clubes);
         const pPaises = new Set(player.selecoes);
 
-        if (rowType === 'club' && colType === 'club') {
-            // Precisa ter passado pelos dois clubes (ordem não importa)
+        if (rowType === "clube" && colType === "clube") {
             return pClubes.has(rowKey) && pClubes.has(colKey);
         }
-        if (rowType === 'country' && colType === 'club') {
+
+        if (rowType === "pais" && colType === "clube") {
             return pPaises.has(rowKey) && pClubes.has(colKey);
         }
-        if (rowType === 'club' && colType === 'country') {
+
+        if (rowType === "clube" && colType === "pais") {
             return pClubes.has(rowKey) && pPaises.has(colKey);
         }
-        return false; // Nunca país×país neste minigame
+        return false;
     }
 
-    
     function handleGuess() {
-        if (!inputEl) 
+        if (gameStopped) {
+            alert("Jogo encerrado. Clique em 🔄 para jogar novamente.")
             return;
+        }
+
+        if (!inputEl) {
+            return;
+        }
 
         const guess = inputEl.value.trim();
 
-        if (!guess) 
+        if (!guess) {
             return;
+        }
 
         const player = findPlayerByName(guess);
-
         if (!player) {
-            alert('Jogador não encontrado no banco de dados.');
-            inputEl.value = '';
+            alert("Jogador não encontrado no banco de dados.");
+            inputEl.value = "";
             return;
         }
 
         const usedKey = normalize(player.nome);
         if (usedPlayers.has(usedKey)) {
-            alert('Este jogador já foi usado nesta grade.');
-            inputEl.value = '';
+            alert("Este jogador já foi usado nesta grade.");
+            inputEl.value = "";
             return;
         }
 
-        // Tenta inserir na primeira célula válida e vazia
         let placed = false;
         for (const cell of cells) {
-            if (cell.textContent.trim() !== '') continue;
+            if (cell.textContent.trim() !== "") {
+                continue;
+            }
 
             const rowKey = cell.dataset.row;
             const colKey = cell.dataset.col;
@@ -412,36 +416,54 @@
 
             if (playerMatchesCell(player, rowKey, rowType, colKey, colType)) {
                 cell.textContent = player.nome;
-                cell.classList.add('correct');
+                cell.classList.add("correct");
                 usedPlayers.add(usedKey);
                 placed = true;
                 break;
             }
         }
 
-        if (placed) {
-            alert('Jogador inserido na grade.');
-        } else {
-            alert('Este jogador não preenche nenhum requisito da grade atual.');
-        }
-        inputEl.value = '';
+        alert(placed ? "Jogador inserido na grade." : "Este jogador não preenche nenhum requisito da grade atual.");
+        inputEl.value = "";
     }
 
     function setupEvents() {
-        btnEl?.addEventListener('click', handleGuess);
-        inputEl?.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') 
+        btnEl?.addEventListener("click", handleGuess);
+        
+        inputEl?.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
                 handleGuess();
+            }
         });
 
-        newGridBtn?.addEventListener('click', () => {
+        newGridBtn?.addEventListener("click", () => {
             const cfg = createGridConfig();
             if (!cfg) {
-                alert('Não foi possível gerar uma grade válida. Tente novamente.');
+                alert("Não foi possível gerar uma grade válida. Tente novamente.");
                 return;
             }
-            currentGrid = cfg;
-            applyGridToDOM(cfg);
+        });
+
+        gameStopped = false;
+
+        inputEl.disabled = false;
+        btnEl.disabled = false;
+        stopBtn.disabled = false;
+
+        inputEl.value = "";
+        inputEl.focus();
+
+        currentGrid = cfg;
+        applyGridToDOM(cfg);
+
+        stopBtn?.addEventListener("click", () => {
+            gameStopped = true;
+
+            // desabilita interação
+            inputEl.disabled = true;
+            btnEl.disabled = true;
+
+            alert("Você desistiu! Clique em 🔄 para gerar um novo Grid.");
         });
     }
 
@@ -450,10 +472,11 @@
             const data = await loadData();
             buildData(data);
 
-            const cfg = createdGridConfig();
+            const cfg = createGridConfig();
             if (!cfg) {
-                throw new Error('Falha ao gerar uma grade jogável após várias tentativas.');
+                throw new Error("Falha ao gerar uma grade jogável após várias tentativas.");
             }
+
             currentGrid = cfg;
             applyGridToDOM(cfg);
             setupEvents();
@@ -463,8 +486,8 @@
         }
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener(`DOMContentLoaded`, initFootballGrid);
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initFootballGrid);
     } else {
         initFootballGrid();
     }
