@@ -53,6 +53,10 @@
             "escudo": "https://pt.wikipedia.org/wiki/Santos_Futebol_Clube"
         },
         {
+            "nome": "Portuguesa",
+            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Portuguesa_de_desportos_Escudo_2012-Presente.png"
+        },
+        {
             "nome": "Atlético Mineiro",
             "escudo": "https://pt.wikipedia.org/wiki/Clube_Atl%C3%A9tico_Mineiro"
         },
@@ -161,865 +165,944 @@
     ],
     "jogadores": [
         {
-        "nome": "Ronaldinho Gaúcho",
-        "clubes": ["Grêmio", "Barcelona", "Milan", "PSG", "Flamengo", "Atlético Mineiro", "Querétaro", "Fluminense"],
-        "selecoes": ["Brasil"],
-        "foto": "https://www.efootballdb.com/fr/players/profile?id=88032334187984"
+            "nome": "Ronaldinho Gaúcho",
+            "clubes": ["Grêmio", "Barcelona", "Milan", "PSG", "Flamengo", "Atlético Mineiro", "Querétaro", "Fluminense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.efootballdb.com/fr/players/profile?id=88032334187984"
         },
         {
-        "nome": "Cristiano Ronaldo",
-        "clubes": ["Real Madrid", "Juventus", "Manchester United", "Sporting", "Al-Nassr"],
-        "selecoes": ["Portugal"]
+            "nome": "Cristiano Ronaldo",
+            "clubes": ["Real Madrid", "Juventus", "Manchester United", "Sporting", "Al-Nassr"],
+            "selecoes": ["Portugal"]
         },
         {
-        "nome": "Romário",
-        "clubes": ["Barcelona", "Flamengo", "Vasco da Gama", "PSV", "Valencia", "Fluminense", "Al-Sadd", "Miami FC", "Adelaide United", "América-RJ"],
-        "selecoes": ["Brasil"]
+            "nome": "Romário",
+            "clubes": ["Barcelona", "Flamengo", "Vasco da Gama", "PSV", "Valencia", "Fluminense", "Al-Sadd", "Miami FC", "Adelaide United", "América-RJ"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Zidane",
+            "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
+            "selecoes": ["França"]
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Ronaldo",
+            "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Rogério Ceni",
-        "clubes": ["São Paulo"],
-        "selecoes": ["Brasil"]
+            "nome": "Dida",
+            "clubes": ["Vitória", "Cruzeiro", "Lugano", "Milan", "Corinthians", "Portuguesa", "Grêmio", "Internacional"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Dida",
-        "clubes": ["Vitória", "Cruzeiro", "Lugano", "Milan", "Corinthians", "Portuguesa", "Grêmio", "Internacional"],
-        "selecoes": ["Brasil"]
+            "nome": "Cafu",
+            "clubes": ["São Paulo", "Zaragoza", "Juventude", "Palmeiras", "Roma", "Milan"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Cafu",
-        "clubes": ["São Paulo", "Zaragoza", "Juventude", "Palmeiras", "Roma", "Milan"],
-        "selecoes": ["Brasil"]
+            "nome": "Roberto Carlos",
+            "clubes": ["União São João", "Atlético Mineiro", "Palmeiras", "Inter de Milão", "Real Madrid", "Fenerbahçe", "Corinthians", "Anzhi", "Delhi Dynamos"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Roberto Carlos",
-        "clubes": ["União São João", "Atlético Mineiro", "Palmeiras", "Inter de Milão", "Real Madrid", "Fenerbahçe", "Corinthians", "Anzhi", "Delhi Dynamos"],
-        "selecoes": ["Brasil"]
+            "nome": "Kaka",
+            "clubes": ["São Paulo", "Real Madrid", "Milan", "Orlando City"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Kaka",
-        "clubes": ["São Paulo", "Real Madrid", "Milan", "Orlando City"],
-        "selecoes": ["Brasil"]
+            "nome": "Garrincha",
+            "clubes": ["Botafogo", "Corinthians", "Portuguesa Santista", "Fortaleza", "Junior de Barranquilla", "Flamengo", "Novo Hamburgo", "Riograndense", "Cordeiros", "Olaria"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Rivaldo",
-        "clubes": ["Santa Cruz", "Mogi Mirim", "Corinthians", "Palmeiras", "Deportivo La Coruña", "Barcelona", "Milan", "Cruzeiro", "AEK Atenas", "Bunyodkor", "São Paulo", "Kabuscorp", "São Caetano"],
-        "selecoes": ["Brasil"]
+            "nome": "Pelé",
+            "clubes": ["Santos", "New York Cosmos"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Nilton Santos",
-        "clubes": ["Botafogo"],
-        "selecoes": ["Brasil"]
+            "nome": "Félix",
+            "clubes": ["Juventus-SP", "Portuguesa", "Nacional-SP", "Fluminense"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Garrincha",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Emerson Leão",
+            "clubes": ["Comercial", "Palmeiras", "Vasco da Gama", "Grêmio", "Corinthians", "Sport"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Pelé",
-        "clubes": ["Santos", "Real Madrid"],
-        "selecoes": ["Brasil"]
+            "nome": "Carlos Alberto Torres",
+            "clubes": ["Fluminense", "Santos", "Botafogo", "Flamengo", "New York Cosmos", "California Surf"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "José Maria",
+            "clubes": ["Corinthians", "Portuguesa", "Inter de Limeira"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Marco Antônio",
+            "clubes": ["Portuguesa Santista", "Fluminense", "Vasco da Gama", "Bangu", "Botafogo"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Brito",
+            "clubes": ["Vasco da Gama", "Internacional", "Flamengo", "Cruzeiro", "Botafogo", "Corinthians", "Atlético Paranaense", "Montreal Castors", "Deportivo Galicia", "Democrata-GV", "River-PI"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Baldocchi",
+            "clubes": ["Palmeiras", "Corinthians"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Fontana",
+            "clubes": ["Vasco da Gama", "Cruzeiro"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Gerson",
+            "clubes": ["Flamengo", "Botafogo", "Fluminense", "São Paulo"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Rivellino",
+            "clubes": ["Corinthians", "Fluminense", "Al-Hilal", "PSV"],
+            "selecoes": ["Brasil"]
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Neymar Jr",
+            "clubes": ["Santos", "Barcelona", "Paris Saint-Germain", "Al-Hilal"],
+            "selecoes": ["Brasil"],
+            "foto": "https://purespng.com/public/uploads/large/purepng.com-neymar-jrneymarneymar-da-silva-santos-juniorbrazilian-footballernational-team-brazil-1701528148386w37t3.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Thiago Silva",
+            "clubes": ["RS Futebol", "Juventude", "Porto", "Dinamo Moscou", "Fluminense", "Milan", "Paris Saint-Germain", "Chelsea"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngarts.com/files/5/Thiago-Silva-PNG-Free-Download.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Marcelo",
+            "clubes": ["Fluminense", "Real Madrid", "Olympiacos"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngarts.com/files/5/Marcelo-Vieira-PNG-High-Quality-Image.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Daniel Alves",
+            "clubes": ["Bahia", "Sevilla", "Barcelona", "Juventus", "Paris Saint-Germain", "São Paulo", "Pumas UNAM"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Dani-Alves-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "David Luiz",
+            "clubes": ["Vitória", "Benfica", "Chelsea", "Paris Saint-Germain", "Arsenal", "Flamengo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/David-Luiz-PNG-Pic.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Hulk",
+            "clubes": ["Vitória", "Kawasaki Frontale", "Consadole Sapporo", "Tokyo Verdy", "Porto", "Zenit", "Shanghai SIPG", "Atlético Mineiro"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Hulk-Footballer-PNG-Photo.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Oscar",
+            "clubes": ["São Paulo", "Internacional", "Chelsea", "Shanghai Port"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Oscar-Footballer-PNG-Image.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Fernandinho",
+            "clubes": ["Athletico Paranaense", "Shakhtar Donetsk", "Manchester City"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Fernandinho-PNG-HD-Isolated.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Willian",
+            "clubes": ["Corinthians", "Shakhtar Donetsk", "Anzhi Makhachkala", "Chelsea", "Arsenal", "Fulham"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Willian-PNG-Clipart.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Fred",
+            "clubes": ["América Mineiro", "Cruzeiro", "Lyon", "Fluminense", "Atlético Mineiro"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Fred-Footballer-PNG-Photos.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Júlio César",
+            "clubes": ["Flamengo", "Inter de Milão", "Chievo", "Queens Park Rangers", "Toronto FC", "Benfica"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngarts.com/files/5/Julio-Cesar-PNG-Background-Image.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Dante",
+            "clubes": ["Juventude", "Lille", "Charleroi", "Standard Liège", "Borussia Mönchengladbach", "Bayern de Munique", "Wolfsburg", "Nice"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Dante-Footballer-PNG-Transparent.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Ramires",
+            "clubes": ["Joinville", "Cruzeiro", "Benfica", "Chelsea", "Jiangsu Suning", "Palmeiras"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Ramires-PNG-Free-Download.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Luiz Gustavo",
+            "clubes": ["Corinthians Alagoano", "CRB", "Hoffenheim", "Bayern de Munique", "Wolfsburg", "Olympique de Marseille", "Fenerbahçe", "Al-Nassr", "São Paulo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Luiz-Gustavo-PNG-Isolated-Photo.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Hernanes",
+            "clubes": ["São Paulo", "Santo André", "Lazio", "Inter de Milão", "Juventus", "Hebei China Fortune", "Sport"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Hernanes-PNG-Isolated-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Maicon",
+            "clubes": ["Cruzeiro", "Monaco", "Inter de Milão", "Manchester City", "Roma", "Avaí"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngarts.com/files/5/Maicon-PNG-Download-Image.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Paulinho",
+            "clubes": ["Pão de Açúcar", "Vilnius", "Łódź", "Bragantino", "Corinthians", "Tottenham", "Guangzhou Evergrande", "Barcelona", "Al-Ahli"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Paulinho-PNG-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Maxwell",
+            "clubes": ["Cruzeiro", "Ajax", "Empoli", "Inter de Milão", "Barcelona", "Paris Saint-Germain"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Maxwell-Footballer-PNG-Clipart.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Jefferson",
+            "clubes": ["Cruzeiro", "Botafogo", "Trabzonspor", "Konyaspor"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Jefferson-Footballer-PNG-Image.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Bernard",
+            "clubes": ["Atlético Mineiro", "Shakhtar Donetsk", "Everton", "Sharjah", "Panathinaikos"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Bernard-Footballer-PNG-Photo.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Alisson Becker",
+            "clubes": ["Internacional", "Roma", "Liverpool"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Alisson-Becker-PNG-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Ederson",
+            "clubes": ["Ribeirão", "Rio Ave", "Benfica", "Manchester City"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Ederson-Moraes-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Cássio",
+            "clubes": ["Grêmio", "PSV Eindhoven", "Sparta Rotterdam", "Corinthians", "Cruzeiro"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Cassio-Ramos-PNG-HD-Isolated.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Marquinhos",
+            "clubes": ["Corinthians", "Roma", "Paris Saint-Germain"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Marquinhos-PNG-Isolated-Pic.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Miranda",
+            "clubes": ["Coritiba", "Sochaux", "São Paulo", "Atlético de Madrid", "Inter de Milão", "Jiangsu Suning"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Miranda-Footballer-PNG-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Pedro Geromel",
+            "clubes": ["Chaves", "Vitória de Guimarães", "Colônia", "Mallorca", "Grêmio"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Pedro-Geromel-PNG-Transparent.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Fagner",
+            "clubes": ["Corinthians", "PSV Eindhoven", "Vasco da Gama", "Wolfsburg"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Fagner-Conservas-Lemos-PNG-Isolated-Photo.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Filipe Luís",
+            "clubes": ["Figueirense", "Ajax", "Real Madrid B", "Deportivo La Coruña", "Atlético de Madrid", "Chelsea", "Flamengo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Filipe-Luis-PNG-Clipart.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Danilo",
+            "clubes": ["América Mineiro", "Santos", "Porto", "Real Madrid", "Manchester City", "Juventus"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Danilo-Footballer-PNG-Photo.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Casemiro",
+            "clubes": ["São Paulo", "Real Madrid", "Porto", "Manchester United"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Casemiro-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Philippe Coutinho",
+            "clubes": ["Vasco da Gama", "Inter de Milão", "Espanyol", "Liverpool", "Barcelona", "Bayern de Munique", "Aston Villa", "Al-Duhail"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Philippe-Coutinho-PNG-Photos.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Renato Augusto",
+            "clubes": ["Flamengo", "Bayer Leverkusen", "Corinthians", "Beijing Guoan", "Fluminense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Renato-Augusto-PNG-Image.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Fred (Midfielder)",
+            "clubes": ["Internacional", "Shakhtar Donetsk", "Manchester City", "Fenerbahçe"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Fred-Manchester-United-PNG-Isolated-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gabriel Jesus",
+            "clubes": ["Palmeiras", "Manchester City", "Arsenal"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Gabriel-Jesus-PNG-Clipart.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Roberto Firmino",
+            "clubes": ["CRB", "Figueirense", "Hoffenheim", "Liverpool", "Al-Ahli"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Roberto-Firmino-PNG-Photo.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Douglas Costa",
+            "clubes": ["Grêmio", "Shakhtar Donetsk", "Bayern de Munique", "Juventus", "Los Angeles Galaxy", "Fluminense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Douglas-Costa-PNG-File.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Taison",
+            "clubes": ["Internacional", "Metalist Kharkiv", "Shakhtar Donetsk", "PAOK"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Taison-PNG-Isolated-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Weverton",
+            "clubes": ["Corinthians", "Remo", "Portuguesa", "Botafogo-SP", "Athletico Paranaense", "Palmeiras"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Weverton-Pereira-da-Silva-PNG-Photo.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Éder Militão",
+            "clubes": ["São Paulo", "Porto", "Real Madrid"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Eder-Militao-PNG-Photos.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Alex Sandro",
+            "clubes": ["Athletico Paranaense", "Santos", "Porto", "Juventus", "Flamengo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Alex-Sandro-PNG-Transparent.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Alex Telles",
+            "clubes": ["Juventude", "Grêmio", "Galatasaray", "Inter de Milão", "Porto", "Manchester United", "Sevilla", "Al-Nassr", "Botafogo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Alex-Telles-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Bremer",
+            "clubes": ["Desportivo Brasil", "Atlético Mineiro", "Torino", "Juventus"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Gleison-Bremer-PNG-Isolated-Pic.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Bruno Guimarães",
+            "clubes": ["Audax", "Athletico Paranaense", "Lyon", "Newcastle United"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Bruno-Guimaraes-PNG-Isolated-File.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Fabinho",
+            "clubes": ["Fluminense", "Rio Ave", "Real Madrid", "Monaco", "Liverpool", "Al-Ittihad"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Fabinho-Footballer-PNG-Photo.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Lucas Paquetá",
+            "clubes": ["Flamengo", "Milan", "Lyon", "West Ham United"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Lucas-Paqueta-PNG-Image.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Everton Ribeiro",
+            "clubes": ["Corinthians", "São Caetano", "Coritiba", "Cruzeiro", "Al-Ahli", "Flamengo", "Bahia"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Everton-Ribeiro-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Vinícius Júnior",
+            "clubes": ["Flamengo", "Real Madrid"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Vinicius-Junior-PNG-Clipart.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Rodrygo",
+            "clubes": ["Santos", "Real Madrid"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Rodrygo-Goes-PNG-Isolated-Pic.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Richarlison",
+            "clubes": ["América Mineiro", "Fluminense", "Watford", "Everton", "Tottenham Hotspur"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Richarlison-PNG-File.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Raphinha",
+            "clubes": ["Avaí", "Vitória de Guimarães", "Sporting", "Rennes", "Leeds United", "Barcelona"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Raphinha-PNG-Transparent.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Antony",
+            "clubes": ["São Paulo", "Ajax", "Manchester United"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Antony-Santos-PNG-Clipart.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gabriel Martinelli",
+            "clubes": ["Ituano", "Arsenal"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Gabriel-Martinelli-PNG-Isolated-Pic.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Pedro",
+            "clubes": ["Fluminense", "Fiorentina", "Flamengo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Pedro-Guilherme-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Lúcio",
+            "clubes": ["Internacional", "Bayer Leverkusen", "Bayern de Munique", "Inter de Milão", "Juventus", "São Paulo", "Palmeiras", "FC Goa", "Gama", "Brasiliense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Lucio-Footballer-PNG-Clipart.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Juan",
+            "clubes": ["Flamengo", "Bayer Leverkusen", "Roma", "Internacional"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Juan-Silveira-dos-Santos-PNG-Isolated-Pic.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Luis Fabiano",
+            "clubes": ["Ponte Preta", "São Paulo", "Rennes", "Porto", "Sevilla", "Tianjin Quanjian", "Vasco da Gama"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Luis-Fabiano-PNG-Image.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Felipe Melo",
+            "clubes": ["Flamengo", "Cruzeiro", "Grêmio", "Mallorca", "Racing Santander", "Almería", "Fiorentina", "Juventus", "Galatasaray", "Inter de Milão", "Palmeiras", "Fluminense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Felipe-Melo-PNG-Isolated-Photo.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gilberto Silva",
+            "clubes": ["América Mineiro", "Atlético Mineiro", "Arsenal", "Panathinaikos", "Grêmio"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Gilberto-Silva-PNG-Transparent.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Michel Bastos",
+            "clubes": ["Pelotas", "Feyenoord", "Excelsior", "Athletico Paranaense", "Grêmio", "Figueirense", "Lille", "Lyon", "Schalke 04", "Al-Ain", "Roma", "São Paulo", "Palmeiras", "Sport"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Michel-Bastos-PNG-Transparent.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Elano",
+            "clubes": ["Guarani", "Santos", "Shakhtar Donetsk", "Manchester City", "Galatasaray", "Grêmio", "Flamengo", "Chennaiyin"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Elano-Blumer-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Grafite",
+            "clubes": ["Ferroviária", "Santa Cruz", "Anyang LG Cheetahs", "Goiás", "São Paulo", "Le Mans", "Wolfsburg", "Al-Ahli", "Al-Sadd", "Atlético Paranaense"],
+            "selecoes": "Brasil",
+            "foto": "https://www.pngmart.com/files/22/Grafite-Footballer-PNG-Photo.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Nilmar",
+            "clubes": ["Internacional", "Lyon", "Corinthians", "Villarreal", "Al-Rayyan", "El-Jaish", "Al-Nasr", "Santos"],
+            "selecoes": "Brasil",
+            "foto": "https://www.pngmart.com/files/22/Nilmar-PNG-Isolated-Pic.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Josué",
+            "clubes": ["Goiás", "Vitória", "São Paulo", "Wolfsburg", "Atlético Mineiro"],
+            "selecoes": "Brasil",
+            "foto": "https://www.pngmart.com/files/22/Josue-Anunciado-de-Oliveira-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Kléberson",
+            "clubes": ["Athletico Paranaense", "Manchester United", "Besiktas", "Flamengo", "Bahia", "Philadelphia Union", "Indy Eleven", "Fort Lauderdale Strikers"],
+            "selecoes": "Brasil",
+            "foto": "https://www.pngmart.com/files/22/Kleberson-PNG-Clipart.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Gomes",
+            "clubes": ["Cruzeiro", "PSV Eindhoven", "Tottenham Hotspur", "Hoffenheim", "Watford"],
+            "selecoes": "Brasil",
+            "foto": "https://www.pngmart.com/files/22/Heurelho-Gomes-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Luisão",
+            "clubes": ["Juventus-SP", "Cruzeiro", "Benfica"],
+            "selecoes": "Brasil",
+            "foto": "https://www.pngmart.com/files/22/Luisao-PNG-Isolated-File.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Gilberto",
+            "clubes": ["América-RJ", "Flamengo", "Cruzeiro", "Inter de Milão", "Vasco da Gama", "Grêmio", "Hertha BSC", "Tottenham Hotspur", "Vitória"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Gilberto-da-Silva-Melo-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Adriano Imperador",
+            "clubes": ["Flamengo", "Inter de Milão", "Fiorentina", "Parma", "São Paulo", "Roma", "Corinthians", "Athletico Paranaense", "Miami United"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Adriano-Leite-Ribeiro-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Emerson",
+            "clubes": ["Grêmio", "Bayer Leverkusen", "Roma", "Juventus", "Real Madrid", "Milan", "Santos"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Emerson-Ferreira-da-Rosa-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Juninho Pernambucano",
+            "clubes": ["Sport", "Vasco da Gama", "Lyon", "Al-Gharafa", "New York Red Bulls"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Juninho-Pernambucano-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Zé Roberto",
+            "clubes": ["Portuguesa", "Real Madrid", "Flamengo", "Bayer Leverkusen", "Bayern de Munique", "Santos", "Hamburgo", "Al-Gharafa", "Grêmio", "Palmeiras"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Ze-Roberto-PNG-Isolated-File.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Cicinho",
+            "clubes": ["Botafogo-SP", "Atlético Mineiro", "Botafogo", "São Paulo", "Real Madrid", "Roma", "Villarreal", "Sport", "Sivasspor"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Cicinho-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Cris",
+            "clubes": ["Corinthians", "Cruzeiro", "Bayer Leverkusen", "Lyon", "Galatasaray", "Grêmio", "Vasco da Gama"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Cristiano-Marques-Gomes-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Ricardinho",
+            "clubes": ["Paraná", "Bordeaux", "Corinthians", "São Paulo", "Middlesbrough", "Santos", "Besiktas", "Atlético Mineiro", "Bahia"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Ricardinho-Footballer-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Marcos",
+            "clubes": ["Palmeiras"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Marcos-Roberto-Silveira-Reis-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Rivaldo",
+            "clubes": ["Santa Cruz", "Mogi Mirim", "Corinthians", "Palmeiras", "Deportivo La Coruña", "Barcelona", "Milan", "Cruzeiro", "Olympiacos", "AEK Atenas", "Bunyodkor", "São Paulo", "São Caetano"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Rivaldo-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Denílson",
+            "clubes": ["São Paulo", "Real Betis", "Flamengo", "Bordeaux", "Al-Nassr", "FC Dallas", "Palmeiras", "Itumbiara", "Kavala"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Denilson-Oliveira-Araujo-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Edmílson",
+            "clubes": ["XV de Jaú", "São Paulo", "Lyon", "Barcelona", "Villarreal", "Palmeiras", "Zaragoza", "Ceará"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Edmilson-Moraes-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Roque Júnior",
+            "clubes": ["São José", "Palmeiras", "Milan", "Leeds United", "Siena", "Bayer Leverkusen", "Duisburg", "Al-Rayyan", "Ituano"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Roque-Junior-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Juninho Paulista",
+            "clubes": ["Ituano", "São Paulo", "Middlesbrough", "Atlético de Madrid", "Vasco da Gama", "Flamengo", "Celtic", "Palmeiras", "Sydney FC"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Juninho-Paulista-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Vampeta",
+            "clubes": ["Vitória", "PSV Eindhoven", "VVV-Venlo", "Fluminense", "Corinthians", "Inter de Milão", "Paris Saint-Germain", "Flamengo", "Brasiliense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Vampeta-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Luizão",
+            "clubes": ["Guarani", "Paraná", "Palmeiras", "Deportivo La Coruña", "Vasco da Gama", "Corinthians", "Grêmio", "Hertha BSC", "Botafogo", "São Paulo", "Nagoya Grampus", "Santos", "Flamengo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Luizao-Goulart-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Belletti",
+            "clubes": ["Cruzeiro", "São Paulo", "Atlético Mineiro", "Villarreal", "Barcelona", "Chelsea", "Fluminense"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Juliano-Belletti-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Edílson Capetinha",
+            "clubes": ["Industrial", "Tanabi", "Guarani", "Palmeiras", "Benfica", "Corinthians", "Flamengo", "Cruzeiro", "Kashiwa Reysol", "Vitoria", "Al-Ain", "São Caetano"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Edilson-Capetinha-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Rogério Ceni",
+            "clubes": ["Sinop", "São Paulo"],
+            "selecoes": ["Brasil"],
+            "foto": "https://www.pngmart.com/files/22/Rogerio-Ceni-PNG-Isolated-HD.png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Emiliano Martínez",
+            "clubes": ["Independiente", "Arsenal", "Oxford United", "Sheffield Wednesday", "Rotherham United", "Wolverhampton", "Getafe", "Reading", "Aston Villa"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Emiliano+Martinez+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Franco Armani",
+            "clubes": ["Ferro Carril Oeste", "Deportivo Merlo", "Atlético Nacional", "River Plate"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Franco+Armani+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gerónimo Rulli",
+            "clubes": ["Estudiantes", "Real Sociedad", "Montpellier", "Villarreal", "Ajax"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Geronimo+Rulli+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Nahuel Molina",
+            "clubes": ["Boca Juniors", "Defensa y Justicia", "Rosario Central", "Udinese", "Atlético de Madrid"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Nahuel+Molina+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gonzalo Montiel",
+            "clubes": ["River Plate", "Sevilla", "Nottingham Forest"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Gonzalo+Montiel+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Cristian Romero",
+            "clubes": ["Belgrano", "Genoa", "Juventus", "Atalanta", "Tottenham Hotspur"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Cristian+Romero+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Germán Pezzella",
+            "clubes": ["River Plate", "Real Betis", "Fiorentina"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=German+Pezzella+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Nicolás Otamendi",
+            "clubes": ["Vélez Sarsfield", "Porto", "Valencia", "Atlético Mineiro", "Manchester City", "Benfica"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Nicolas+Otamendi+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Lisandro Martínez",
+            "clubes": ["Newell's Old Boys", "Defensa y Justicia", "Ajax", "Manchester United"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Lisandro+Martinez+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Marcos Acuña",
+            "clubes": ["Ferro Carril Oeste", "Racing", "Sporting CP", "Sevilla"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Marcos+Acuna+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Nicolás Tagliafico",
+            "clubes": ["Banfield", "Real Murcia", "Independiente", "Ajax", "Lyon"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Nicolas+Tagliafico+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Juan Foyth",
+            "clubes": ["Estudiantes", "Tottenham Hotspur", "Villarreal"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Juan+Foyth+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Rodrigo De Paul",
+            "clubes": ["Racing", "Valencia", "Udinese", "Atlético de Madrid"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Rodrigo+De+Paul+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Leandro Paredes",
+            "clubes": ["Boca Juniors", "Chievo", "Roma", "Empoli", "Zenit", "PSG", "Juventus"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Leandro+Paredes+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Alexis Mac Allister",
+            "clubes": ["Argentinos Juniors", "Boca Juniors", "Brighton", "Liverpool"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Alexis+Mac+Allister+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Guido Rodríguez",
+            "clubes": ["River Plate", "Defensa y Justicia", "Tijuana", "América", "Real Betis"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Guido+Rodriguez+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Alejandro Gómez",
+            "clubes": ["Arsenal de Sarandí", "San Lorenzo", "Catania", "Metalist Kharkiv", "Atalanta", "Sevilla", "Monza"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Alejandro+Gomez+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Enzo Fernández",
+            "clubes": ["River Plate", "Defensa y Justicia", "Benfica", "Chelsea"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Enzo+Fernandez+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Exequiel Palacios",
+            "clubes": ["River Plate", "Bayer Leverkusen"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Exequiel+Palacios+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Lionel Messi",
+            "clubes": ["Barcelona", "PSG", "Inter Miami"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Lionel+Messi+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Ángel Di María",
+            "clubes": ["Rosario Central", "Benfica", "Real Madrid", "Manchester United", "PSG", "Juventus"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Angel+Di+Maria+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Lautaro Martínez",
+            "clubes": ["Racing", "Inter de Milão"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Lautaro+Martinez+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Julián Álvarez",
+            "clubes": ["River Plate", "Manchester City"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Julian+Alvarez+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Paulo Dybala",
+            "clubes": ["Instituto de Córdoba", "Palermo", "Juventus", "Roma"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Paulo+Dybala+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Ángel Correa",
+            "clubes": ["San Lorenzo", "Atlético de Madrid"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Angel+Correa+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Thiago Almada",
+            "clubes": ["Vélez Sarsfield", "Atlanta United", "Botafogo", "Lyon", "Atlético de Madrid"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Thiago+Almada+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Nahuel Guzmán",
+            "clubes": ["Newell's Old Boys", "Independiente Rivadavia", "Tigres UANL"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Nahuel+Guzman+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Willy Caballero",
+            "clubes": ["Boca Juniors", "Elche", "Arsenal de Sarandí", "Málaga", "Manchester City", "Chelsea", "Southampton"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Willy+Caballero+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gabriel Mercado",
+            "clubes": ["Racing", "Estudiantes", "River Plate", "Sevilla", "Al-Rayyan", "Internacional"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Gabriel+Mercado+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Federico Fazio",
+            "clubes": ["Ferro Carril Oeste", "Sevilla", "Tottenham Hotspur", "Roma", "Salernitana"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Federico+Fazio+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Marcos Rojo",
+            "clubes": ["Estudiantes", "Spartak Moscow", "Sporting CP", "Manchester United", "Boca Juniors"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Marcos+Rojo+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Eduardo Salvio",
+            "clubes": ["Lanús", "Atlético de Madrid", "Benfica", "Boca Juniors", "UNAM Pumas"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Eduardo+Salvio+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Javier Mascherano",
+            "clubes": ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Javier+Mascherano+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Ever Banega",
+            "clubes": ["Boca Juniors", "Valencia", "Atlético de Madrid", "Newell's Old Boys", "Sevilla", "Inter de Milão", "Al-Shabab"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Ever+Banega+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Lucas Biglia",
+            "clubes": ["Argentinos Juniors", "Independiente", "Anderlecht", "Lazio", "Milan", "Karagümrük", "Başakşehir"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Lucas+Biglia+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Enzo Pérez",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Giovani Lo Celso",
+            "clubes": ["Rosario Central", "PSG", "Betis", "Tottenham Hotspur", "Villarreal"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Giovani+Lo+Celso+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Maximilian Meza",
+            "clubes": ["Gimnasia LP", "Independiente", "Monterrey"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Maximilian+Meza+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Cristian Pavón",
+            "clubes": ["Talleres", "Boca Juniors", "Colón", "LA Galaxy", "Atlético Mineiro", "Grêmio"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Cristian+Pavon+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Sergio Agüero",
+            "clubes": ["Independiente", "Atlético de Madrid", "Manchester City", "Barcelona"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Sergio+Aguero+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Gonzalo Higuaín",
+            "clubes": ["River Plate", "Real Madrid", "Napoli", "Juventus", "Milan", "Chelsea", "Inter Miami"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Gonzalo+Higuain+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Sergio Romero",
+            "clubes": ["Racing", "AZ Alkmaar", "Sampdoria", "Monaco", "Manchester United", "Venezia", "Boca Juniors"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Sergio+Romero+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Agustín Orión",
+            "clubes": ["San Lorenzo", "Estudiantes", "Boca Juniors", "Racing", "Colo-Colo"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Agustin+Orion+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Mariano Andújar",
+            "clubes": ["Huracán", "Palermo", "Estudiantes", "Catania", "Napoli"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Mariano+Andujar+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Pablo Zabaleta",
+            "clubes": ["San Lorenzo", "Espanyol", "Manchester City", "West Ham United"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Pablo+Zabaleta+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Ezequiel Garay",
+            "clubes": ["Newell's Old Boys", "Racing Santander", "Real Madrid", "Benfica", "Zenit", "Valencia"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Ezequiel+Garay+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Hugo Campagnaro",
+            "clubes": ["Deportivo Morón", "Piacenza", "Sampdoria", "Napoli", "Inter de Milão", "Pescara"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Hugo+Campagnaro+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Martín Demichelis",
+            "clubes": ["River Plate", "Bayern de Munique", "Málaga", "Atlético de Madrid", "Manchester City", "Espanyol"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Martin+Demichelis+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "José María Basanta",
+            "clubes": ["Estudiantes", "Olimpo", "Monterrey", "Fiorentina"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Jose+Maria+Basanta+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Fernando Gago",
+            "clubes": ["Boca Juniors", "Real Madrid", "Roma", "Valencia", "Vélez Sarsfield"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Fernando+Gago+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Augusto Fernández",
+            "clubes": ["River Plate", "Saint-Étienne", "Vélez Sarsfield", "Celta de Vigo", "Atlético de Madrid", "Beijing Renhe", "Cádiz"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Augusto+Fernandez+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Ricardo Álvarez",
+            "clubes": ["Vélez Sarsfield", "Inter de Milão", "Sunderland", "Sampdoria", "Atlas"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Ricardo+Alvarez+transparent+background+png"
         },
         {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
+            "nome": "Ezequiel Lavezzi",
+            "clubes": ["Estudiantes (BA)", "San Lorenzo", "Napoli", "PSG", "Hebei China Fortune"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Ezequiel+Lavezzi+transparent+background+png"
         },
         {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
-        },
-        {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
-        },
-        {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
-        },
-        {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
-        },
-        {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
-        },
-        {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
-        },
-        {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
-        },
-        {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
-        },
-        {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
-        },
-        {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
-        },
-        {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
-        },
-        {
-        "nome": "Zidane",
-        "clubes": ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-        "selecoes": ["França"]
-        },
-        {
-        "nome": "Ronaldo",
-        "clubes": ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-        "selecoes": ["Brasil"]
+            "nome": "Rodrigo Palacio",
+            "clubes": ["Huracán (TA)", "Banfield", "Boca Juniors", "Genoa", "Inter de Milão", "Bologna", "Brescia"],
+            "selecoes": "Argentina",
+            "foto": "https://www.google.com/search?q=Rodrigo+Palacio+transparent+background+png"
         }
     ]
 }
