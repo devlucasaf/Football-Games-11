@@ -39,7 +39,9 @@ function initThemeToggle() {
 }
 
 function updateThemeIcon(theme, iconElement) {
-    if (!iconElement) return;
+    if (!iconElement) {
+        return;
+    }
     
     if (theme === 'dark') {
         iconElement.className = 'fas fa-sun';
