@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Football Legends | Football Games 11</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-legends.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a></h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="legends-container">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="legends-hero">
+                    <div class="hero-content">
+                        <h1><i class="fas fa-crown"></i> Monte o Melhor XI da História</h1>
+                        <p>Escolha um time e monte a escalação histórica com os maiores ídolos!</p>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="totalTeams">0</span>
+                            <span class="stat-label">Times Disponíveis</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="totalPlayers">0</span>
+                            <span class="stat-label">Jogadores</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Combinações</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Teams Grid -->
+                <section class="teams-section">
+                    <h2><i class="fas fa-trophy"></i> Escolha um Time</h2>
+                    <p class="section-subtitle">Clique em um time para montar o seu melhor XI histórico</p>
+                    
+                    <div class="teams-grid" id="teamsGrid"></div>
+
+                    <div class="loading-teams" id="loadingTeams">
+                        <div class="loading-spinner">
+                            <i class="fas fa-futbol fa-spin"></i>
+                        </div>
+                        <p>Carregando times...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div class="error-state" id="errorState" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Erro ao carregar os times. Tente recarregar a página.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                    <p>© 2026 Football Legends. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Siga-nos</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="copyright">Desenvolvido com ❤️ por fãs de futebol</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="../js/script.js"></script>
+        <script src="../js/minigames/football_legends.js"></script>
+        <script>
+            // Inicializa a página de times
+            document.addEventListener('DOMContentLoaded', () => {
+                FootballLegends.initTeamsPage();
+            });
+        </script>
+    </body>
+</html>
