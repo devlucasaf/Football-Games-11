@@ -1103,6 +1103,234 @@
             "clubes": ["Huracán (TA)", "Banfield", "Boca Juniors", "Genoa", "Inter de Milão", "Bologna", "Brescia"],
             "selecoes": "Argentina",
             "foto": "https://www.google.com/search?q=Rodrigo+Palacio+transparent+background+png"
+        },
+        {
+            "nome": "Manuel Neuer",
+            "clubes": ["Schalke 04", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/5243.png"
+        },
+        {
+            "nome": "Marc-André ter Stegen",
+            "clubes": ["Borussia Mönchengladbach", "Barcelona"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/1234.png"
+        },
+        {
+            "nome": "Kevin Trapp",
+            "clubes": ["Kaiserslautern", "Eintracht Frankfurt", "PSG"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/trapp.png"
+        },
+        {
+            "nome": "Armel Bella-Kotchap",
+            "clubes": ["VfL Bochum", "Southampton"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/bella.png"
+        },
+        {
+            "nome": "Matthias Ginter",
+            "clubes": ["Freiburg", "Borussia Dortmund", "Borussia Mönchengladbach"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/ginter.png"
+        },
+        {
+            "nome": "Christian Günter",
+            "clubes": ["Freiburg"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/guenter.png"
+        },
+        {
+            "nome": "Thilo Kehrer",
+            "clubes": ["Schalke 04", "PSG", "West Ham"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/kehrer.png"
+        },
+        {
+            "nome": "Lukas Klostermann",
+            "clubes": ["Bochum", "RB Leipzig"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/klostermann.png"
+        },
+        {
+            "nome": "David Raum",
+            "clubes": ["Greuther Fürth", "Hoffenheim", "RB Leipzig"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/raum.png"
+        },
+        {
+            "nome": "Antonio Rüdiger",
+            "clubes": ["Stuttgart", "Roma", "Chelsea", "Real Madrid"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/ruediger.png"
+        },
+        {
+            "nome": "Nico Schlotterbeck",
+            "clubes": ["Freiburg", "Union Berlin", "Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/schlotterbeck.png"
+        },
+        {
+            "nome": "Niklas Süle",
+            "clubes": ["Hoffenheim", "Bayern de Munique", "Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/suele.png"
+        },
+        {
+            "nome": "Julian Brandt",
+            "clubes": ["Bayer Leverkusen", "Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/brandt.png"
+        },
+        {
+            "nome": "Niclas Füllkrug",
+            "clubes": ["Werder Bremen", "Greuther Fürth", "Nürnberg", "Hannover 96"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/fuellkrug.png"
+        },
+        {
+            "nome": "Leon Goretzka",
+            "clubes": ["Bochum", "Schalke 04", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/goretzka.png"
+        },
+        {
+            "nome": "Mario Götze",
+            "clubes": ["Borussia Dortmund", "Bayern de Munique", "PSV", "Eintracht Frankfurt"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/goetze.png"
+        },
+        {
+            "nome": "Ilkay Gündogan",
+            "clubes": ["Nürnberg", "Borussia Dortmund", "Manchester City"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/guendogan.png"
+        },
+        {
+            "nome": "Kai Havertz",
+            "clubes": ["Bayer Leverkusen", "Chelsea"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/havertz.png"
+        },
+        {
+            "nome": "Jonas Hofmann",
+            "clubes": ["Mainz 05", "Borussia Dortmund", "Borussia Mönchengladbach"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/hofmann.png"
+        },
+        {
+            "nome": "Joshua Kimmich",
+            "clubes": ["Stuttgart", "RB Leipzig", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/kimmich.png"
+        },
+        {
+            "nome": "Youssoufa Moukoko",
+            "clubes": ["Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/moukoko.png"
+        },
+        {
+            "nome": "Thomas Müller",
+            "clubes": ["Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/mueller.png"
+        },
+        {
+            "nome": "Jamal Musiala",
+            "clubes": ["Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/musiala.png"
+        },
+        {
+            "nome": "Serge Gnabry",
+            "clubes": ["Arsenal", "West Bromwich", "Werder Bremen", "Hoffenheim", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/gnabry.png"
+        },
+        {
+            "nome": "Leroy Sané",
+            "clubes": ["Schalke 04", "Manchester City", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/sane.png"
+        },
+        {
+            "nome": "Karim Adeyemi",
+            "clubes": ["Red Bull Salzburg", "Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2022/11/adeyemi.png"
+        },
+        {
+            "nome": "Jérôme Boateng",
+            "clubes": ["Hertha BSC", "Hamburgo", "Manchester City", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/boateng.png"
+        },
+        {
+            "nome": "Mats Hummels",
+            "clubes": ["Bayern de Munique", "Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/hummels.png"
+        },
+        {
+            "nome": "Jonas Hector",
+            "clubes": ["Colônia"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/hector.png"
+        },
+        {
+            "nome": "Marvin Plattenhardt",
+            "clubes": ["Nürnberg", "Hertha BSC"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/plattenhardt.png"
+        },
+        {
+            "nome": "Toni Kroos",
+            "clubes": ["Bayern de Munique", "Bayer Leverkusen", "Real Madrid"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/kroos.png"
+        },
+        {
+            "nome": "Mesut Özil",
+            "clubes": ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/oezil.png"
+        },
+        {
+            "nome": "Sami Khedira",
+            "clubes": ["Stuttgart", "Real Madrid", "Juventus"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/khedira.png"
+        },
+        {
+            "nome": "Marco Reus",
+            "clubes": ["Rot Weiss Ahlen", "Borussia Mönchengladbach", "Borussia Dortmund"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/reus.png"
+        },
+        {
+            "nome": "Sebastian Rudy",
+            "clubes": ["Stuttgart", "Hoffenheim", "Bayern de Munique"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/rudy.png"
+        },
+        {
+            "nome": "Timo Werner",
+            "clubes": ["Stuttgart", "RB Leipzig"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/werner.png"
+        },
+        {
+            "nome": "Mario Gómez",
+            "clubes": ["Stuttgart", "Bayern de Munique", "Fiorentina", "Beşiktaş", "Wolfsburg"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/gomez.png"
+        },
+        {
+            "nome": "Julian Draxler",
+            "clubes": ["Schalke 04", "Wolfsburg", "PSG"],
+            "selecoes": ["Alemanha"],
+            "foto": "https://img.bundesliga.com/tachyon/sites/2/2018/06/draxler.png"
         }
     ]
 }
