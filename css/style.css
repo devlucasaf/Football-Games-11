@@ -7,20 +7,37 @@
 
 :root {
     /* Cores - Tema Claro (padrão) */
-    --primary-blue: #1a237e;
-    --primary-purple: #6a1b9a;
-    --primary-pink: #d81b60;
-    --primary-red: #c62828;
-    --accent-blue: #2962ff;
-    --accent-purple: #9c27b0;
-    --accent-pink: #f50057;
-    --accent-red: #ff5252;
+    --primary-green: #1a7e30;
+    --primary-dark-green: #076316;
+    --primary-cyan: #0ac3aa;
+    --primary-medium-sea-green: #35a655;
+    --accent-light-green: #3bdf32;
+    --accent-water-green: #17ddab;
+    --accent-white: #ffffff;
+    --accent-red: #a7291c;
     
     /* Gradientes principais */
-    --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-    --gradient-secondary: linear-gradient(135deg, var(--primary-pink), var(--primary-red));
-    --gradient-accent: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-    --gradient-card: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--primary-pink));
+    --gradient-primary: linear-gradient(
+        135deg, 
+        var(--primary-green), 
+        var(--primary-dark-green)
+    );
+    --gradient-secondary: linear-gradient(
+        135deg, 
+        var(--primary-cyan), 
+        var(--primary-medium-sea-green)
+    );
+    --gradient-accent: linear-gradient(
+        135deg, 
+        var(--accent-light-green), 
+        var(--accent-water-green)
+        );
+    --gradient-card: linear-gradient(
+        135deg, 
+        var(--primary-green), 
+        var(--primary-dark-green), 
+        var(--primary-cyan)
+    );
     
     /* Cores de fundo e texto */
     --bg-primary: #ffffff;
@@ -69,14 +86,14 @@
 
 /* Tema Escuro */
 [data-theme="dark"] {
-    --primary-blue: #283593;
-    --primary-purple: #7b1fa2;
-    --primary-pink: #c2185b;
-    --primary-red: #b71c1c;
-    --accent-blue: #448aff;
-    --accent-purple: #ba68c8;
-    --accent-pink: #ff4081;
-    --accent-red: #ff6b6b;
+    --primary-green: #1a7e30;
+    --primary-dark-green: #076316;
+    --primary-cyan: #0ac3aa;
+    --primary-medium-sea-green: #35a655;
+    --accent-light-green: #3bdf32;
+    --accent-water-green: #17ddab;
+    --accent-white: #ffffff;
+    --accent-red: #a7291c;
     
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
@@ -90,7 +107,12 @@
     --overlay-light: rgba(255, 255, 255, 0.05);
     --overlay-dark: rgba(0, 0, 0, 0.3);
     
-    --gradient-card: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--primary-pink));
+    --gradient-card: linear-gradient(
+        135deg, 
+        var(--primary-green), 
+        var(--primary-dark-green), 
+        var(--primary-cyan)
+    );
 }
 
 html {
@@ -128,6 +150,7 @@ body {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -153,7 +176,7 @@ body {
 }
 
 .logo h1 i {
-    color: var(--accent-pink);
+    color: var(--accent-white);
     animation: spin 20s linear infinite;
 }
 
@@ -161,6 +184,7 @@ body {
     from {
         transform: rotate(0deg);
     }
+    
     to {
         transform: rotate(360deg);
     }
@@ -566,7 +590,7 @@ body {
 }
 
 .score-team i {
-    color: var(--accent-pink);
+    color: var(--accent-white);
     font-size: 1.2rem;
 }
 
@@ -574,7 +598,7 @@ body {
     min-width: 30px;
     text-align: center;
     font-size: 1.6rem;
-    background: linear-gradient(45deg, var(--accent-pink), var(--accent-red));
+    background: linear-gradient(45deg, var(--accent-white), var(--accent-red));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -583,7 +607,7 @@ body {
 }
 
 .score-separator {
-    color: var(--accent-pink);
+    color: var(--accent-white);
     font-weight: 900;
     opacity: 0.8;
 }
@@ -787,7 +811,7 @@ body {
 
 .section-header h2 i {
     font-size: 2rem;
-    color: var(--accent-pink);
+    color: var(--accent-white);
     transition: color var(--transition-normal);
 }
 
@@ -955,7 +979,7 @@ body {
 }
 
 .game-card-features li i {
-    color: var(--accent-pink);
+    color: var(--accent-white);
     font-size: 0.8rem;
 }
 
@@ -983,7 +1007,7 @@ body {
 
 .difficulty-dot.active {
     background: var(--gradient-primary);
-    box-shadow: 0 0 8px var(--primary-purple);
+    box-shadow: 0 0 8px var(--primary-dark-green);
 }
 
 .btn-play {
@@ -1055,7 +1079,7 @@ body {
 }
 
 .coming-soon h3 i {
-    color: var(--accent-purple);
+    color: var(--accent-water-green);
     animation: pulse 2s infinite;
 }
 
@@ -1130,13 +1154,13 @@ body {
 .coming-soon-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--accent-blue);
+    border-color: var(--accent-light-green);
 }
 
 .coming-soon-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+    background: linear-gradient(135deg, var(--primary-dark-green), var(--primary-cyan));
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -1183,7 +1207,7 @@ body {
 
 /* ===== FOOTER ===== */
 .main-footer {
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
     color: white;
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
     position: relative;
@@ -1221,7 +1245,7 @@ body {
 }
 
 .footer-logo h3 i {
-    color: var(--accent-pink);
+    color: var(--accent-white);
 }
 
 .footer-logo p {
