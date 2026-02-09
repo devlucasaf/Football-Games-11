@@ -1,110 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Football Grid | Football Games 11</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Football Grid | Football Games 11</title>
 
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/football-grid.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/football-grid.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
-    <body>
-        <header class="main-header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo">
-                        <h1>
-                            <i class="fas fa-futbol"></i>
-                            <a href="../index.html" class="home-link">Football Games 11</a></h1>
-                    </div>
+<body>
+    <header class="main-header">
+    <div class="container">
+        <div class="header-content">
+        <div class="logo">
+            <h1>
+            <i class="fas fa-futbol"></i>
+            <a href="../index.html" class="home-link">Football Games 11</a>
+            </h1>
+        </div>
+        <div class="header-actions">
+            <button class="btn-theme" id="themeToggle" title="Alterar tema">
+            <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+    </header>
 
-                    <div class="header-actions">
-                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
+    <main class="container">
+    <div class="game-container">
+        <div class="game-header">
+        <h2 class="game-title">Football Grid</h2>
+        <p class="game-description">Encontre jogadores que jogaram por ambos os clubes ou país + clube!</p>
+        </div>
 
-        <main class="container">
-            <div class="game-container">
-                <div class="game-header">
-                    <h2 class="game-title">Football Grid</h2>
-                    <p class="game-description">Encontre jogadores que jogaram por ambos os clubes!</p>
-                </div>
+        <div class="grid-wrapper">
+        <div class="grid-row header-row">
+            <div class="grid-cell logo-cell">GRID</div>
+            <div class="grid-cell club-header"></div>
+            <div class="grid-cell club-header"></div>
+            <div class="grid-cell club-header"></div>
+        </div>
 
-                <div class="grid-wrapper">
-                    <div class="grid-row header-row">
-                        <div class="grid-cell logo-cell">GRID</div>
-                        <div class="grid-cell club-header" data-club="Man Utd">MAN UTD</div>
-                        <div class="grid-cell club-header" data-club="Inter">INTER</div>
-                        <div class="grid-cell club-header" data-club="Barcelona">BARCELONA</div>
-                    </div>
+        <div class="grid-row">
+            <div class="grid-cell club-side"></div>
+            <div class="grid-cell play-cell"></div>
+            <div class="grid-cell play-cell"></div>
+            <div class="grid-cell play-cell"></div>
+        </div>
 
-                    <div class="grid-row">
-                        <div class="grid-cell club-side" data-club="Tottenham">TOTTENHAM</div>
-                        <div class="grid-cell play-cell" id="cell-0-0" data-row="Tottenham" data-col="Man Utd"></div>
-                        <div class="grid-cell play-cell" id="cell-0-1" data-row="Tottenham" data-col="Inter"></div>
-                        <div class="grid-cell play-cell" id="cell-0-2" data-row="Tottenham" data-col="Barcelona"></div>
-                    </div>
+        <div class="grid-row">
+            <div class="grid-cell club-side"></div>
+            <div class="grid-cell play-cell"></div>
+            <div class="grid-cell play-cell"></div>
+            <div class="grid-cell play-cell"></div>
+        </div>
 
-                    <div class="grid-row">
-                        <div class="grid-cell club-side" data-club="Milan">AC MILAN</div>
-                        <div class="grid-cell play-cell" id="cell-1-0" data-row="Milan" data-col="Man Utd"></div>
-                        <div class="grid-cell play-cell" id="cell-1-1" data-row="Milan" data-col="Inter"></div>
-                        <div class="grid-cell play-cell" id="cell-1-2" data-row="Milan" data-col="Barcelona"></div>
-                    </div>
+        <div class="grid-row">
+            <div class="grid-cell club-side"></div>
+            <div class="grid-cell play-cell"></div>
+            <div class="grid-cell play-cell"></div>
+            <div class="grid-cell play-cell"></div>
+        </div>
+        </div>
 
-                    <div class="grid-row">
-                        <div class="grid-cell club-side" data-club="Chelsea">CHELSEA</div>
-                        <div class="grid-cell play-cell" id="cell-2-0" data-row="Chelsea" data-col="Man Utd"></div>
-                        <div class="grid-cell play-cell" id="cell-2-1" data-row="Chelsea" data-col="Inter"></div>
-                        <div class="grid-cell play-cell" id="cell-2-2" data-row="Chelsea" data-col="Barcelona"></div>
-                    </div>
-                </div>
+        <div class="input-container">
+        <input type="text" id="playerInput" placeholder="Digite o nome do jogador" autocomplete="off">
+        <button id="searchBtn">🚩</button>
+        <button id="stopBtn">🛑</button>
+        <button id="newGridBtn">🔄</button>
+        </div>
+    </div>
+    </main>
 
-                <div class="input-container">
-                    <input type="text" id="playerInput" placeholder="Digite o nome do jogador aqui" autocomplete="off">
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+        <div class="footer-logo">
+            <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+            <p>Feito com ❤️ para fãs de futebol</p>
+        </div>
+        </div>
+    </div>
+    </footer>
 
-                    <button type="button" id="searchBtn" title="Enviar">🚩</button>
-                    <button type="button" id="stopBtn" title="Limpar">🛑</button>
-                    <button type="button" id="newGridBtn" title="Novo Grid">🔄</button>
-                </div>
-            </div>
-        </main>
-
-        <footer class="main-footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-logo">
-                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
-                        <p>Feito com ❤️ para fãs de futebol</p>
-                    </div>
-
-                    <div class="footer-social">
-                        <h4>Conecte-se</h4>
-                        <div class="social-icons">
-                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
-                                <i class="fab fa-gitlab"></i>
-                            </a>
-                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                        <p class="copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <script src="../js/script.js"></script>
-        <script src="../js/minigames/football_grid.js"></script>
-    </body>
+    <script src="../js/script.js"></script>
+    <script src="../js/minigames/football_grid.js"></script>
+</body>
 </html>

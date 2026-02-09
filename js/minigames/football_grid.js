@@ -6,17 +6,17 @@
     const MAX_ATTEMPTS = 50; 
 
     const MODE_WEIGHTS = {
-        rowsCountry_colsClub: 0.6,     
-        rowsClub_colsClub:    0.4 
+        rowsPais_colsClube: 0.6,     
+        rowsClube_colsClube: 0.4 
     };
 
-    const inputEl = document.getElementById('playerInput');
-    const btnEl = document.getElementById('searchBtn');
-    const newGridBtn = document.getElementById('newGridBtn');
-    const cells = Array.from(document.querySelectorAll('.play-cell'));
+    const inputEl = document.getElementById("playerInput");
+    const btnEl = document.getElementById("searchBtn");
+    const newGridBtn = document.getElementById("newGridBtn");
+    const cells = Array.from(document.querySelectorAll(".play-cell"));
 
-    const colHeaders = Array.from(document.querySelectorAll('.club-header'));
-    const rowHeaders = Array.from(document.querySelectorAll('.club-side'));
+    const colHeaders = Array.from(document.querySelectorAll(".club-header"));
+    const rowHeaders = Array.from(document.querySelectorAll(".club-side"));
 
     const stopBtn = document.getElementById("stopBtn");
 
@@ -37,68 +37,68 @@
     let currentGrid = null;             // { rows, cols, rowsType, colsType }
 
     const normalize = (s) =>
-        (s ?? '')
+        (s ?? "")
         .toString()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
         .trim();
     
     const alias = new Map([
         // CLubes
-        ['psg', 'psg'],
-        ['paris saint-germain', 'psg'],
-        ['real betis', 'real betis'],
-        ['real betis balompie', 'real betis'],
-        ['real betis balompié', 'real betis'],
-        ['real betis balompie s.a.d', 'real betis'],
-        ['real betis balompie sad', 'real betis'],
-        ['real betis balompié sad', 'real betis'],
-        ['real bétis', 'real betis'],
-        ['betis', 'real betis'],
+        ["psg", "psg"],
+        ["paris saint-germain", "psg"],
+        ["real betis", "real betis"],
+        ["real betis balompie", "real betis"],
+        ["real betis balompié", "real betis"],
+        ["real betis balompie s.a.d", "real betis"],
+        ["real betis balompie sad", "real betis"],
+        ["real betis balompié sad", "real betis"],
+        ["real bétis", "real betis"],
+        ["betis", "real betis"],
 
-        ['atletico de madrid', 'atletico de madrid'],
-        ['atlético de madrid', 'atletico de madrid'],
+        ["atletico de madrid", "atletico de madrid"],
+        ["atlético de madrid", "atletico de madrid"],
 
-        ['bayern de munique', 'bayern de munique'],
-        ['bayern munich', 'bayern de munique'],
-        ['fc bayern munich', 'bayern de munique'],
-        ['fc bayern münchen', 'bayern de munique'],
+        ["bayern de munique", "bayern de munique"],
+        ["bayern munich", "bayern de munique"],
+        ["fc bayern munich", "bayern de munique"],
+        ["fc bayern münchen", "bayern de munique"],
 
-        ['manchester united', 'manchester united'],
-        ['man united', 'manchester united'],
-        ['man utd', 'manchester united'],
+        ["manchester united", "manchester united"],
+        ["man united", "manchester united"],
+        ["man utd", "manchester united"],
 
-        ['manchester city', 'manchester city'],
-        ['man city', 'manchester city'],
+        ["manchester city", "manchester city"],
+        ["man city", "manchester city"],
 
-        ['ac milan', 'milan'],
-        ['milan', 'milan'],
+        ["ac milan", "milan"],
+        ["milan", "milan"],
         
-        ['borussia dortmund', 'borussia dortmund'],
-        ['bvb', 'borussia dortmund'],
+        ["borussia dortmund", "borussia dortmund"],
+        ["bvb", "borussia dortmund"],
 
         // Seleções
 
-        ['brasil', 'brasil'],
-        ['portugal', 'portugal'],
-        ['alemanha', 'alemanha'],
-        ['argentina', 'argentina'],
-        ['franca', 'franca'],
-        ['frança', 'franca'],
-        ['italia', 'italia'],
-        ['itália', 'italia'],
-        ['holanda', 'holanda'],
-        ['paises baixos', 'holanda'],
-        ['países baixos', 'holanda'],
-        ['espanha', 'espanha'],
-        ['inglaterra', 'inglaterra'],
-        ['japao', 'japao'],
-        ['japão', 'japao'],
-        ['colombia', 'colombia'],
-        ['colômbia', 'colombia'],
-        ['polonia', 'polonia'],
-        ['polônia', 'polonia']
+        ["brasil", "brasil"],
+        ["portugal", "portugal"],
+        ["alemanha", "alemanha"],
+        ["argentina", "argentina"],
+        ["franca", "franca"],
+        ["frança", "franca"],
+        ["italia", "italia"],
+        ["itália", "italia"],
+        ["holanda", "holanda"],
+        ["paises baixos", "holanda"],
+        ["países baixos", "holanda"],
+        ["espanha", "espanha"],
+        ["inglaterra", "inglaterra"],
+        ["japao", "japao"],
+        ["japão", "japao"],
+        ["colombia", "colombia"],
+        ["colômbia", "colombia"],
+        ["polonia", "polonia"],
+        ["polônia", "polonia"]
     ]);
 
     const canon = (s) => alias.get(normalize(s)) || normalize(s);
@@ -247,11 +247,14 @@
         const colsPool = colsType === "clube" ? listaClube : listaPaises;
 
         const rows = pickRandomUnique(rowsPool, GRID_SIZE);
+
         if (!rows) {
             return null;
         }
 
         let exclude = new Set();
+
+        // Evita repetir o mesmo clube nos dois eixos (vertical e horizontal)
         if (rowsType === "clube" && colsType === "clube") {
             exclude = new Set(rows);
         }
@@ -275,7 +278,6 @@
                 colsType: "clube" 
             };
         }
-
         return { 
             rowsType: "clube", 
             colsType: "clube" 
@@ -308,10 +310,13 @@
     }
 
     function displayName(type, key) {
+        let name = "";
         if (type === "clube") {
-            return clubeDisplay.get(key)?.nome ?? key;
+            name = clubeDisplay.get(key)?.nome ?? key;
+        } else {
+            name = paisDisplay.get(key) ?? key;
         }
-        return paisDisplay.get(key) ?? key;
+        return name.toUpperCase();
     }
 
     function applyHeaders(headersEls, keys, type) {
@@ -331,8 +336,12 @@
     function applyGridToDOM(config) {
         const { rows, cols, rowsType, colsType } = config;
 
-        applyHeaders(colHeaders, cols, colsType);
-        applyHeaders(rowHeaders, rows, rowsType);
+        const colHeaders = document.querySelectorAll(".club-header");
+        const rowHeaders = document.querySelectorAll(".club-side");
+        const cells = document.querySelectorAll(".play-cell");
+
+        applyHeaders(Array.from(colHeaders), cols, colsType);
+        applyHeaders(Array.from(rowHeaders), rows, rowsType);
 
         usedPlayers.clear();
 
@@ -340,11 +349,11 @@
             const r = Math.floor(idx / GRID_SIZE);
             const c = idx % GRID_SIZE;
 
-            const rowKey = rows[r];
-            const colKey = cols[c];
-
             cell.textContent = "";
             cell.classList.remove("correct");
+
+            const rowKey = rows[r];
+            const colKey = cols[c];
 
             cell.dataset.row = rowKey;
             cell.dataset.col = colKey;
@@ -430,47 +439,39 @@
         inputEl.value = "";
     }
 
-    function setupEvents() {
-        btnEl?.addEventListener("click", handleGuess);
-        
-        inputEl?.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                handleGuess();
-            }
-        });
+        function setupEvents() {
+            btnEl?.addEventListener("click", handleGuess);
 
-        newGridBtn?.addEventListener("click", () => {
-            location.reload();
+            inputEl?.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    handleGuess();
+                }
+            });
 
-            const cfg = createGridConfig();
-            if (!cfg) {
-                alert("Não foi possível gerar uma grade válida. Tente novamente.");
-                return;
-            }
-        });
+            newGridBtn?.addEventListener("click", () => {
+                const cfg = createGridConfig();
+                if (!cfg) {
+                    alert("Não foi possível gerar uma grade válida. Tente novamente.");
+                    return;
+                }
 
-        gameStopped = false;
+                // reativa jogo
+                gameStopped = false;
+                inputEl.disabled = false;
+                btnEl.disabled = false;
+                stopBtn.disabled = false;
+                inputEl.value = "";
+                inputEl.focus();
 
-        inputEl.disabled = false;
-        btnEl.disabled = false;
-        stopBtn.disabled = false;
+                currentGrid = cfg;
+                applyGridToDOM(cfg);
+            });
 
-        inputEl.value = "";
-        inputEl.focus();
+            stopBtn?.addEventListener("click", () => {
+                stopGame("Você desistiu! Clique em 🔄 para gerar um novo Grid.");
+            });
+        }
 
-        currentGrid = cfg;
-        applyGridToDOM(cfg);
-
-        stopBtn?.addEventListener("click", () => {
-            gameStopped = true;
-
-            // desabilita interação
-            inputEl.disabled = true;
-            btnEl.disabled = true;
-
-            stopGame("Você desistiu! Clique em 🔄 para gerar um novo Grid.");
-        });
-    }
 
     async function initFootballGrid() {
         try {
@@ -488,7 +489,7 @@
 
             // --- LÓGICA DE INÍCIO DO TIMER ---
             const urlParams = new URLSearchParams(window.location.search);
-            const timeMode = urlParams.get('time') || 'unlimited';
+            const timeMode = urlParams.get("time") || "unlimited";
             startTimer(timeMode);
             // ---------------------------------
 
@@ -505,7 +506,7 @@
     }
 
     function startTimer(minutes) {
-        if (minutes === 'unlimited') {
+        if (minutes === "unlimited") {
             updateTimerDisplay("∞");
             return;
         }
@@ -529,16 +530,16 @@
     function formatTime(seconds) {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
+        return `${mins}:${secs.toString().padStart(2, "0")}`;
     }
 
     function updateTimerDisplay(text) {
         // Procura por um elemento de timer ou cria um no cabeçalho
-        let timerEl = document.getElementById('timer-display');
+        let timerEl = document.getElementById("timer-display");
         if (!timerEl) {
-            const header = document.querySelector('.game-header');
-            timerEl = document.createElement('div');
-            timerEl.id = 'timer-display';
+            const header = document.querySelector(".game-header");
+            timerEl = document.createElement("div");
+            timerEl.id = "timer-display";
             timerEl.style = "font-size: 1.5rem; font-weight: bold; color: #e74c3c; margin-top: 10px;";
             header.appendChild(timerEl);
         }
