@@ -150,18 +150,58 @@
         }
     ],
     "selecoes": [
-        "Brasil",
-        "Alemanha",
-        "Argentina",
-        "França",
-        "Itália",
-        "Holanda",
-        "Portugal",
-        "Espanha",
-        "Inglaterra",
-        "Japão",
-        "Colômbia",
-        "Polônia"
+        {
+            "pais": "Brasil",
+            "bandeira": "https://bandeira.net/bandeira-do-brasil/"
+        },
+        {
+            "pais": "Argentina",
+            "bandeira": "https://logodownload.org/bandeira-da-argentina/"
+        },
+        {
+            "pais": "Colômbia",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Col%C3%B4mbia"
+        },
+        {
+            "pais": "Equador",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_do_Equador"
+        },
+        {
+            "pais": "Uruguai",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_do_Uruguai"
+        },
+        {
+            "pais": "Portugal",
+            "bandeira": "https://bandeira.net/wp-content/uploads/2018/10/bandeira-de-portugal-01.png"
+        },
+        {
+            "pais": "Espanha",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Espanha"
+        },
+        {
+            "pais": "Alemanha",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Alemanha"
+        },
+        {
+            "pais": "França",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Fran%C3%A7a"
+        },
+        {
+            "pais": "Itália",
+            "bandeira": "https://pt.wikipedia.org/wiki/Ficheiro:Flag_of_Italy.svg"
+        },
+        {
+            "pais": "Inglaterra",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Inglaterra"
+        },
+        {
+            "pais": "Polônia",
+            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Pol%C3%B3nia"
+        },
+        {
+            "pais": "Japão",
+            "bandeira": "https://pt.wikipedia.org/wiki/Ficheiro:Flag_of_Japan.svg"
+        }
     ],
     "jogadores": [
         {
