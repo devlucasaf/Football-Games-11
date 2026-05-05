@@ -22,14 +22,14 @@ const formations = {
     '4-3-3': {
         name: '4-3-3',
         positions: {
-            GK: [{x: 50, y: 90}], // goleiro
-            LD: [{x: 85, y: 75}], // lateral direito
+            GK:  [{x: 50, y: 90}], // goleiro
+            LD:  [{x: 85, y: 75}], // lateral direito
             ZAG: [{x: 35, y: 80}, {x: 65, y: 80}], // zagueiros
-            LE: [{x: 15, y: 75}], // lateral esquerdo
+            LE:  [{x: 15, y: 75}], // lateral esquerdo
             VOL: [{x: 50, y: 60}], // volante
-            MC: [{x: 30, y: 45}, {x: 70, y: 45}], // meio-campistas
-            PE: [{x: 15, y: 20}], // ponta esquerda
-            PD: [{x: 85, y: 20}], // ponta direita
+            MC:  [{x: 30, y: 45}, {x: 70, y: 45}], // meio-campistas
+            PE:  [{x: 15, y: 20}], // ponta esquerda
+            PD:  [{x: 85, y: 20}], // ponta direita
             ATA: [{x: 50, y: 15}] // centroavante
         },
         stats: {
@@ -80,13 +80,13 @@ const formations = {
     '5-4-1': {
         name: '5-4-1',
         positions: {
-            GK: [{x: 50, y: 90}], // goleiro
+            GK:  [{x: 50, y: 90}], // goleiro
             ZAG: [{x: 30, y: 80}, {x: 50, y: 80}, {x: 70, y: 80}], // zagueiros
-            LD: [{x: 90, y: 65}], // ala direito
-            LE: [{x: 10, y: 65}], // ala esquerdo
+            LD:  [{x: 90, y: 65}], // ala direito
+            LE:  [{x: 10, y: 65}], // ala esquerdo
             VOL: [{x: 40, y: 50}, {x: 60, y: 50}], // volantes
-            PE: [{x: 20, y: 35}], // meia/ponta esquerda
-            PD: [{x: 80, y: 35}], // meia/ponta direita
+            PE:  [{x: 20, y: 35}], // meia/ponta esquerda
+            PD:  [{x: 80, y: 35}], // meia/ponta direita
             ATA: [{x: 50, y: 15}] // centroavante
         },
         stats: {

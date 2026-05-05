@@ -1,5 +1,4 @@
 (() => {
-    // Configuração do MiniGame Grid
     const GRID_SIZE = 3;
     const JSON_PATH = "../data/football-grid.json";
     const MIN_VALID_CELLS = 3;
@@ -35,6 +34,8 @@
     let paisIndex = new Map();          // paisesCanon
     let usedPlayers = new Set();        // nomes canônicos já usados
     let currentGrid = null;             // { rows, cols, rowsType, colsType }
+    let selectedCell = null;            // célula selecionada atualmente
+    let suggestionsEl = null;           // elemento de sugestões
 
     const normalize = (s) =>
         (s ?? "")
@@ -145,7 +146,7 @@
         );
 
         // Países/Seleções
-        const paisPairs = dedupByCanon((data.selecoes ?? []).map((s) => ({ nome: s })), (x) => x.nome);
+        const paisPairs = dedupByCanon((data.selecoes ?? []).map((s) => ({ nome: s.pais || s })), (x) => x.nome);
         listaPaises = paisPairs.map((p) => p.key);
         paisDisplay = new Map(paisPairs.map(({ key, item }) => [key, item.nome]));
 
@@ -364,7 +365,13 @@
 
     function findPlayerByName(text) {
         const n = normalize(text);
-        return playersDataBase.find((p) => p.nomeCanon === n) || null;
+        // --- BUSCA EXATA ---
+        const exact = playersDataBase.find((p) => p.nomeCanon === n);
+        if (exact) {
+            return exact;
+        }
+        // --- FALLBACK ---
+        return playersDataBase.find((p) => p.nomeCanon.includes(n) || n.includes(p.nomeCanon)) || null;
     }
 
     function playerMatchesCell(player, rowKey, rowType, colKey, colType) {
@@ -401,10 +408,21 @@
             return;
         }
 
+        if (!selectedCell) {
+            alert("Selecione uma célula do grid primeiro!");
+            return;
+        }
+
+        if (selectedCell.textContent.trim() !== "") {
+            alert("Esta célula já foi preenchida. Selecione outra.");
+            return;
+        }
+
         const player = findPlayerByName(guess);
         if (!player) {
             alert("Jogador não encontrado no banco de dados.");
             inputEl.value = "";
+            hideSuggestions();
             return;
         }
 
@@ -412,31 +430,96 @@
         if (usedPlayers.has(usedKey)) {
             alert("Este jogador já foi usado nesta grade.");
             inputEl.value = "";
+            hideSuggestions();
             return;
         }
 
-        let placed = false;
-        for (const cell of cells) {
-            if (cell.textContent.trim() !== "") {
-                continue;
-            }
+        const rowKey = selectedCell.dataset.row;
+        const colKey = selectedCell.dataset.col;
+        const rowType = selectedCell.dataset.rowType;
+        const colType = selectedCell.dataset.colType;
 
-            const rowKey = cell.dataset.row;
-            const colKey = cell.dataset.col;
-            const rowType = cell.dataset.rowType;
-            const colType = cell.dataset.colType;
+        if (playerMatchesCell(player, rowKey, rowType, colKey, colType)) {
+            selectedCell.textContent = player.nome;
+            selectedCell.classList.add("correct");
+            selectedCell.classList.remove("selected");
+            usedPlayers.add(usedKey);
+            selectedCell = null;
+            inputEl.value = "";
+            hideSuggestions();
+            checkWin();
+        } else {
+            selectedCell.classList.add("wrong");
+            setTimeout(() => selectedCell.classList.remove("wrong"), 600);
+            alert("Este jogador não atende aos critérios desta célula.");
+            inputEl.value = "";
+            hideSuggestions();
+        }
+    }
 
-            if (playerMatchesCell(player, rowKey, rowType, colKey, colType)) {
-                cell.textContent = player.nome;
-                cell.classList.add("correct");
-                usedPlayers.add(usedKey);
-                placed = true;
-                break;
-            }
+    function checkWin() {
+        const allFilled = cells.every((c) => c.textContent.trim() !== "");
+        if (allFilled) {
+            stopGame("Parabéns! Você completou o grid! 🎉");
+        }
+    }
+
+    function selectCell(cell) {
+        if (gameStopped) {
+            return;
         }
 
-        alert(placed ? "Jogador inserido na grade." : "Este jogador não preenche nenhum requisito da grade atual.");
-        inputEl.value = "";
+        if (cell.textContent.trim() !== "") {
+            return;
+        }
+
+        cells.forEach((c) => c.classList.remove("selected"));
+        cell.classList.add("selected");
+        selectedCell = cell;
+        inputEl.focus();
+    }
+
+    function showSuggestions(query) {
+        if (!suggestionsEl) {
+            return;
+        }
+
+        if (!query || query.length < 2) {
+            hideSuggestions();
+            return;
+        }
+
+        const normalizedQuery = normalize(query);
+        const matches = playersDataBase
+            .filter((p) => !usedPlayers.has(normalize(p.nome)))
+            .filter((p) => p.nomeCanon.includes(normalizedQuery))
+            .slice(0, 8);
+
+        if (matches.length === 0) {
+            hideSuggestions();
+            return;
+        }
+
+        suggestionsEl.innerHTML = "";
+        matches.forEach((p) => {
+            const item = document.createElement("div");
+            item.className = "suggestion-item";
+            item.textContent = p.nome;
+            item.addEventListener("click", () => {
+                inputEl.value = p.nome;
+                hideSuggestions();
+                handleGuess();
+            });
+            suggestionsEl.appendChild(item);
+        });
+        suggestionsEl.style.display = "block";
+    }
+
+    function hideSuggestions() {
+        if (suggestionsEl) {
+            suggestionsEl.style.display = "none";
+            suggestionsEl.innerHTML = "";
+        }
     }
 
         function setupEvents() {
@@ -448,6 +531,20 @@
                 }
             });
 
+            inputEl?.addEventListener("input", () => {
+                showSuggestions(inputEl.value);
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".input-container")) {
+                    hideSuggestions();
+                }
+            });
+
+            cells.forEach((cell) => {
+                cell.addEventListener("click", () => selectCell(cell));
+            });
+
             newGridBtn?.addEventListener("click", () => {
                 const cfg = createGridConfig();
                 if (!cfg) {
@@ -455,13 +552,16 @@
                     return;
                 }
 
-                // reativa jogo
+                // --- REATIVA JOGO ---
                 gameStopped = false;
                 inputEl.disabled = false;
                 btnEl.disabled = false;
                 stopBtn.disabled = false;
                 inputEl.value = "";
                 inputEl.focus();
+                selectedCell = null;
+                cells.forEach((c) => c.classList.remove("selected"));
+                hideSuggestions();
 
                 currentGrid = cfg;
                 applyGridToDOM(cfg);
@@ -472,9 +572,18 @@
             });
         }
 
-
     async function initFootballGrid() {
         try {
+            // --- CRIA ELEMENTO DE SUGESTÕES ---
+            const inputContainer = document.querySelector(".input-container");
+            if (inputContainer) {
+                suggestionsEl = document.createElement("div");
+                suggestionsEl.className = "suggestions-dropdown";
+                suggestionsEl.style.display = "none";
+                inputContainer.style.position = "relative";
+                inputContainer.appendChild(suggestionsEl);
+            }
+
             const data = await loadData();
             buildData(data);
 
@@ -491,8 +600,6 @@
             const urlParams = new URLSearchParams(window.location.search);
             const timeMode = urlParams.get("time") || "unlimited";
             startTimer(timeMode);
-            // ---------------------------------
-
         } catch (err) {
             console.error(err);
             alert(`Erro ao inicializar: ${err.message}`);
@@ -514,7 +621,7 @@
         timeLeft = parseInt(minutes) * 60;
         updateTimerDisplay(formatTime(timeLeft));
 
-        // Limpa qualquer timer anterior se existir
+        // --- LIMPA QUALQUER TIMER ANTERIOR SE EXISTIR ---
         if (timerInterval) clearInterval(timerInterval);
 
         timerInterval = setInterval(() => {
@@ -534,7 +641,7 @@
     }
 
     function updateTimerDisplay(text) {
-        // Procura por um elemento de timer ou cria um no cabeçalho
+        // --- PROCURA POR UM ELEMENTO DE TIMER OU CRIA UM NO CABEÇALHO ---
         let timerEl = document.getElementById("timer-display");
         if (!timerEl) {
             const header = document.querySelector(".game-header");
