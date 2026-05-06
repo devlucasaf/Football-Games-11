@@ -1,5 +1,5 @@
 const LegendsConfig = {
-    CAMINHO_JSON: "../data/historical-teams.json",
+    CAMINHO_JSON: "../data/football-legends.json",
 
     // --- CONFIGURAÇÕES DE FORMAÇÕES ---
     formacoes: {

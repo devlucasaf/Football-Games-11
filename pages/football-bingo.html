@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Bingo | Football Games 11</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-bingo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        </head>
+
+    <body>
+        <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+            <div class="logo">
+                <h1>
+                <i class="fas fa-futbol"></i>
+                <a href="../index.html" class="home-link">Football Games 11</a>
+                </h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        </header>
+
+        <main class="container">
+        <div class="bingo-container">
+            <div class="bingo-header">
+            <h2 class="game-title">Football Bingo</h2>
+            <p class="game-description">Marque os times em que os jogadores atuaram!</p>
+            <button id="novoJogoBtn" class="btn-novo-jogo">
+                <i class="fas fa-sync-alt"></i> Novo Jogo
+            </button>
+            </div>
+
+            <div class="bingo-players" id="bingoPlayers">
+                <!-- Nomes dos jogadores serão inseridos via JS -->
+            </div>
+
+            <div class="bingo-grid" id="bingoGrid">
+                <!-- 36 botões serão inseridos via JS -->
+            </div>
+        </div>
+        </main>
+
+        <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-logo">
+                <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                <p>Feito com ❤️ para fãs de futebol</p>
+            </div>
+            </div>
+        </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script src="../js/minigames/football-bingo/main.js"></script>
+    </body>
+</html>

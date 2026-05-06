@@ -1,5 +1,6 @@
 const LegendsDados = {
     dadosTimes: null,
+    timesProcessados: [],
     timeAtual: null,
     jogadoresSelecionados: new Map(),
     formacaoAtual: '4-3-3',
@@ -10,6 +11,40 @@ const LegendsDados = {
             throw new Error('Falha ao carregar dados dos times');
         }
         this.dadosTimes = await resposta.json();
+        this.processarDados();
+    },
+
+    processarDados() {
+        this.timesProcessados = [];
+
+        const mapaPosicao = {
+            goleiro: 'GK',
+            zagueiro: 'ZAG',
+            lateral: 'LAT',
+            meioCampo: 'MEI',
+            atacante: 'ATA'
+        };
+
+        for (const [pais, edicoes] of Object.entries(this.dadosTimes)) {
+            for (const [ano, dados] of Object.entries(edicoes)) {
+                const jogadores = [];
+
+                for (const [posicaoChave, nomes] of Object.entries(dados.jogadores || {})) {
+                    const posAbreviada = mapaPosicao[posicaoChave] || posicaoChave;
+                    nomes.forEach(nome => {
+                        jogadores.push({ name: nome, pos: posAbreviada });
+                    });
+                }
+
+                this.timesProcessados.push({
+                    key: `${pais.toLowerCase()}-${ano}`,
+                    name: `${pais} ${ano}`,
+                    type: 'selecao',
+                    tecnico: dados.tecnico || '',
+                    players: jogadores
+                });
+            }
+        }
     },
 
     obterContagemPosicoes(jogadores) {
@@ -24,7 +59,7 @@ const LegendsDados = {
             const pos = jogador.pos.toUpperCase();
             if (pos.includes('GK')) {
                 contagem.GK++;
-            } else if (pos.includes('ZAG') || pos.includes('LD') || pos.includes('LE') || pos.includes('LAT')) {
+            } else if (pos.includes('ZAG') || pos.includes('LAT') || pos.includes('LD') || pos.includes('LE')) {
                 contagem.DEF++;
             } else if (pos.includes('VOL') || pos.includes('MEI') || pos.includes('ME') || pos.includes('MD') || pos.includes('CAM')) {
                 contagem.MID++;

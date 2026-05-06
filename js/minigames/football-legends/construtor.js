@@ -12,7 +12,7 @@ const LegendsConstrutor = {
 
             await LegendsDados.carregarDados();
 
-            LegendsDados.timeAtual = LegendsDados.dadosTimes.teams.find(t => t.key === chaveTime);
+            LegendsDados.timeAtual = LegendsDados.timesProcessados.find(t => t.key === chaveTime);
 
             if (!LegendsDados.timeAtual) {
                 window.location.href = 'football-legends.html';
@@ -73,7 +73,7 @@ const LegendsConstrutor = {
 
     criarElementoJogador(jogador, indice) {
         const div = document.createElement('div');
-        
+
         div.className = 'player-item';
         div.dataset.playerIndex = indice;
         div.draggable = true;

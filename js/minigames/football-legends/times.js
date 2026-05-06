@@ -16,7 +16,7 @@ const LegendsTimes = {
         const gridTimes = document.getElementById('teamsGrid');
         const elementoCarregando = document.getElementById('loadingTeams');
 
-        if (!LegendsDados.dadosTimes || !LegendsDados.dadosTimes.teams) {
+        if (!LegendsDados.timesProcessados || LegendsDados.timesProcessados.length === 0) {
             this.mostrarEstadoErro();
             return;
         }
@@ -27,7 +27,7 @@ const LegendsTimes = {
 
         gridTimes.innerHTML = '';
 
-        LegendsDados.dadosTimes.teams.forEach(time => {
+        LegendsDados.timesProcessados.forEach(time => {
             const cartao = this.criarCartaoTime(time);
             gridTimes.appendChild(cartao);
         });
@@ -51,9 +51,13 @@ const LegendsTimes = {
                 ${time.type === 'club' ? 'Clube' : 'Seleção'}
             </div>
 
+            <div class="team-info">
+                ${time.tecnico ? `<div class="team-coach"><i class="fas fa-user-tie"></i> ${time.tecnico}</div>` : ''}
+            </div>
+
             <div class="team-count">
                 <i class="fas fa-users"></i>
-                ${time.players.length} jogadores históricos
+                ${time.players.length} jogadores
             </div>
 
             <div class="position-breakdown">
@@ -72,7 +76,7 @@ const LegendsTimes = {
     },
 
     atualizarEstatisticas() {
-        if (!LegendsDados.dadosTimes) {
+        if (!LegendsDados.timesProcessados.length) {
             return;
         }
 
@@ -80,11 +84,11 @@ const LegendsTimes = {
         const totalJogadoresEl = document.getElementById('totalPlayers');
 
         if (totalTimesEl) {
-            totalTimesEl.textContent = LegendsDados.dadosTimes.teams.length;
+            totalTimesEl.textContent = LegendsDados.timesProcessados.length;
         }
 
         if (totalJogadoresEl) {
-            const contagem = LegendsDados.dadosTimes.teams.reduce((total, time) => total + time.players.length, 0);
+            const contagem = LegendsDados.timesProcessados.reduce((total, time) => total + time.players.length, 0);
             totalJogadoresEl.textContent = contagem;
         }
     },
