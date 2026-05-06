@@ -28,25 +28,28 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 ## 📂 Estrutura do Projeto
 ```
 /Football-Games-11
-├── index.html                          # Homepage (hub de jogos)
-├── pages/                              # Páginas HTML de cada minigame
-│   ├── football-legends.css            # Página do Football Legends
-│   ├── football-builder.css            # Página do Football Legends Builder
-│   └── football-grid.html              # Página do Football Grid
+├── index.html                          # Página Principal
+├── pages/                              
+│   ├── football-bingo.html				# Página do Football Bingo
+│   ├── football-grid.html              # Página do Football Grid
+│   ├── football-legends.html           # Página do Football Legends
+│   └── football-builder.html           # Página do Football Legends Builder
 ├── css/    
+│   ├── field.css                       # Estilos do campo de futebol
+│   ├── football-bingo.css				# Estilos do Football Bingo
 │   ├── football-grid.css               # Estilos do Football Grid
 │   ├── football-legends.css            # Estilos do Football Legends
-│   ├── style.css                       # Estilo principal
-│   └── field.css                       # Estilos do campo de futebol
+│   └── style.css                       # Estilo principal
 ├── js/     
 │   ├── script.js                       # Código comum a todas as páginas
-│   ├── formation.js                    
+│   ├── formation.js                    # Código que define as formações
 │   ├── minigames/    
-│   │   ├── football_legends.js         # Lógica do Football Legends
-│   │   └── football_grid.js            # Lógica do Football Grid
+│   │   ├── football_bingo/             # Lógica do Football Bingo
+│   │   ├── football_grid/              # Lógica do Football Grid
+│   │   └── football_legends/           # Lógica do Football Legends
 │   │
 ├── data/       
-│   ├── football-grid.json              # Dados para o grid (jogadores e critérios)
+│   ├── football-grid.json              # Dados para o grid 
 │   ├── players-brasileirao-2026.json   # Dados para jogadores do brasileirão 2026
 │   └── football-legends.json           # Dados para jogadores lendários de times e seleções
 ├── README.md
