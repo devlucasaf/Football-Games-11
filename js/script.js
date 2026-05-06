@@ -1,9 +1,9 @@
-// ===== FUNCIONALIDADE DO TEMA CLARO/ESCURO =====
+// --- FUNCIONALIDADE DO TEMA CLARO/ESCURO ---
 
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     
-    // Verificar se o botão existe
+    // --- VERIFICAR SE O BOTÃO EXISTE ---
     if (!themeToggle) {
         console.warn('Botão de tema não encontrado');
         return;
@@ -11,26 +11,26 @@ function initThemeToggle() {
     
     const themeIcon = themeToggle.querySelector('i');
     
-    // Verificar tema salvo no localStorage
+    // --- VERIFICAR TEMA SALVO NO LOCALSTORAGE ---
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme, themeIcon);
     
-    // Adicionar evento de clique
+    // --- ADICIONAR EVENTO DE CLIQUE ---
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         
-        // Aplicar novo tema
+        // --- APLICAR NOVO TEMA ---
         document.documentElement.setAttribute('data-theme', newTheme);
         
-        // Salvar preferência
+        // --- SALVAR PREFERÊNCIA ---
         localStorage.setItem('theme', newTheme);
         
-        // Atualizar ícone
+        // --- ATUALIZAR ÍCONE ---
         updateThemeIcon(newTheme, themeIcon);
         
-        // Adicionar efeito visual
+        // --- ADICIONAR EFEITO VISUAL ---
         themeToggle.style.transform = 'rotate(180deg) scale(1.1)';
         setTimeout(() => {
             themeToggle.style.transform = 'rotate(0deg) scale(1)';
@@ -52,28 +52,25 @@ function updateThemeIcon(theme, iconElement) {
     }
 }
 
-// ===== INICIALIZAÇÃO =====
+// --- INICIALIZAÇÃO ---
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar apenas o toggle do tema
+    // --- INICIALIZAR APENAS O TOGGLE DO TEMA ---
     initThemeToggle();
     
-    // Apenas adicionar animação aos cards que já existem no HTML
     const comingSoonCards = document.querySelectorAll('.coming-soon-card');
     comingSoonCards.forEach((card, index) => {
         card.style.animation = `fadeInUp 0.6s ease ${index * 0.2}s both`;
     });
     
-    // Adicionar animação aos game-cards que já existem no HTML
     const gameCards = document.querySelectorAll('.game-card');
     gameCards.forEach((card, index) => {
         card.style.animation = `fadeInUp 0.6s ease ${index * 0.15}s both`;
     });
 });
 
-// ===== FUNÇÃO AUXILIAR PARA ANIMAÇÕES =====
+// --- FUNÇÃO AUXILIAR PARA ANIMAÇÕES ---
 
-// Se não tiver a animação fadeInUp definida no CSS, adicione:
 if (!document.querySelector('#fadeInUpAnimation')) {
     const style = document.createElement('style');
     style.id = 'fadeInUpAnimation';
@@ -104,12 +101,12 @@ function closeModal() {
     document.getElementById('timeModal').style.display = 'none';
 }
 
+// --- REDIRECIONA PARA A PÁGINA DO JOGO ENVIANDO O TEMPO ESCOLHIDO NA URL ---
 function startGame(mode) {
-    // Redireciona para a página do jogo enviando o tempo escolhido na URL
     window.location.href = `pages/football-grid.html?time=${mode}`;
 }
 
-// Fechar o modal se clicar fora da caixa preta
+// --- FECHAR O MODAL SE CLICAR FORA DA CAIXA PRETA ---
 window.onclick = function(event) {
     const modal = document.getElementById('timeModal');
     if (event.target == modal) {
