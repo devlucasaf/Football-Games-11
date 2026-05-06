@@ -1,12 +1,12 @@
-/* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== TEMAS ===== */
 :root {
-    /* Cores - Tema Claro (padrão) */
+    /* --- TEMA CLARO --- */
     --primary-green: #1a7e30;
     --primary-dark-green: #076316;
     --primary-cyan: #0ac3aa;
@@ -16,7 +16,7 @@
     --accent-white: #ffffff;
     --accent-red: #a7291c;
     
-    /* Gradientes principais */
+    /* --- GRADIENTES --- */
     --gradient-primary: linear-gradient(
         135deg, 
         var(--primary-green), 
@@ -39,7 +39,7 @@
         var(--primary-cyan)
     );
     
-    /* Cores de fundo e texto */
+    /* --- CORES DE FUNDO E TEXTO --- */
     --bg-primary: #ffffff;
     --bg-secondary: #f8f9fa;
     --bg-card: #ffffff;
@@ -47,23 +47,23 @@
     --text-secondary: #4a5568;
     --text-muted: #718096;
     
-    /* Cores de interface */
+    /* --- CORES DE INTERFACE --- */
     --border-color: #e2e8f0;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --overlay-light: rgba(255, 255, 255, 0.9);
     --overlay-dark: rgba(0, 0, 0, 0.1);
     
-    /* Efeitos */
+    /* --- EFEITOS --- */
     --shadow-sm: 0 1px 3px var(--shadow-color);
     --shadow-md: 0 4px 6px -1px var(--shadow-color);
     --shadow-lg: 0 10px 15px -3px var(--shadow-color);
     --shadow-xl: 0 20px 25px -5px var(--shadow-color);
     
-    /* Tipografia */
+    /* --- TIPOGRAFIA --- */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
     
-    /* Espaçamento */
+    /* --- ESPAÇAMENTO --- */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -71,20 +71,20 @@
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
     
-    /* Bordas */
+    /* --- BORDAS --- */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-full: 9999px;
     
-    /* Transições */
+    /* --- TRANSIÇÕES --- */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Tema Escuro */
+/* --- TEMA ESCURO --- */
 [data-theme="dark"] {
     --primary-green: #1a7e30;
     --primary-dark-green: #076316;
@@ -135,7 +135,7 @@ body {
     padding: 0 var(--spacing-md);
 }
 
-/* ===== HEADER ===== */
+/* --- HEADER --- */
 .main-header {
     background: var(--gradient-primary);
     position: sticky;
@@ -213,7 +213,6 @@ body {
 }
 
 /* ===== HERO SECTION ===== */
-
 .hero-field {
     position: relative;
     z-index: 1;
@@ -236,7 +235,7 @@ body {
     transform-style: preserve-3d;
 }
 
-/* Padrão de gramado */
+/* --- PADRÃO DE GRAMADO --- */
 .field-grass::before {
     content: '';
     position: absolute;
@@ -262,7 +261,7 @@ body {
 
 /* ===== LINHAS PRINCIPAIS DO CAMPO ===== */
 
-/* Linhas externas do campo */
+/* --- LINHAS EXTERNAS DO CAMPO --- */
 .field-lines {
     position: absolute;
     top: 20px;
@@ -274,7 +273,7 @@ body {
     z-index: 2;
 }
 
-/* Linha do meio de campo */
+/* --- LINHA DO MEIO DE CAMPO --- */
 .halfway-line {
     position: absolute;
     top: 20px;
@@ -285,7 +284,7 @@ body {
     transform: translateX(-50%);
 }
 
-/* Marca do meio de campo (sobre a linha do meio) */
+/* --- MARCA DO MEIO DE CAMPO --- */
 .center-mark {
     position: absolute;
     top: 50%;
@@ -297,7 +296,7 @@ body {
     z-index: 3;
 }
 
-/* ===== CÍRCULO CENTRAL ===== */
+/* --- CÍRCULO CENTRAL --- */
 .center-circle {
     position: absolute;
     top: 50%;
@@ -310,7 +309,7 @@ body {
     z-index: 3;
 }
 
-/* Ponto central */
+/* --- PONTO CENTRAL --- */
 .center-spot {
     position: absolute;
     top: 50%;
@@ -324,9 +323,9 @@ body {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
-/* ===== ÁREAS DE META (GOAL AREA) ===== */
+/* ===== ÁREAS DE META ===== */
 
-/* Pequena área ESQUERDA */
+/* --- PEQUENA ÁREA ESQUERDA --- */
 .goal-area-left {
     position: absolute;
     left: 20px;
@@ -340,7 +339,7 @@ body {
     z-index: 3;
 }
 
-/* Pequena área DIREITA */
+/* --- PEQUENA ÁREA DIREITA --- */
 .goal-area-right {
     position: absolute;
     right: 20px;
@@ -354,15 +353,15 @@ body {
     z-index: 3;
 }
 
-/* ===== ÁREAS PENALIDADES (PENALTY AREA) ===== */
+/* ===== ÁREAS DE PENALIDADES ===== */
 
-/* Grande área ESQUERDA */
+/* --- GRANDE ÁREA ESQUERDA --- */
 .penalty-area-left {
     position: absolute;
     left: 20px;
     top: 50%;
-    width: 160px; /* 16.5m em escala */
-    height: 300px; /* 40.32m em escala */
+    width: 160px; 
+    height: 300px; 
     border: 3px solid white;
     border-left: none;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -370,7 +369,7 @@ body {
     z-index: 2;
 }
 
-/* Grande área DIREITA */
+/* --- GRANDE ÁREA DIREITA --- */
 .penalty-area-right {
     position: absolute;
     right: 20px;
@@ -386,10 +385,10 @@ body {
 
 /* ===== MARCAS DE PÊNALTI ===== */
 
-/* Marca do pênalti ESQUERDA */
+/* --- MARCA DO PÊNALTI ESQUERDA --- */
 .penalty-spot-left {
     position: absolute;
-    left: 140px; /* 11m da linha de fundo */
+    left: 140px; 
     top: 50%;
     width: 12px;
     height: 12px;
@@ -400,7 +399,7 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Marca do pênalti DIREITA */
+/* --- MARCA DO PÊNALTI DIREITA --- */
 .penalty-spot-right {
     position: absolute;
     right: 140px;
@@ -416,12 +415,12 @@ body {
 
 /* ===== ARCO DO PÊNALTI ===== */
 
-/* Arco do pênalti ESQUERDO */
+/* --- ARCO DO PÊNALTI ESQUERDO --- */
 .penalty-arc-left {
     position: absolute;
-    left: 178px; /* No limite da grande área */
+    left: 178px; 
     top: 50%;
-    width: 40px; /* 9.15m de raio */
+    width: 40px; 
     height: 80px;
     border: 3px solid white;
     border-right: none;
@@ -430,7 +429,7 @@ body {
     z-index: 2;
 }
 
-/* Arco do pênalti DIREITO */
+/* --- ARCO DO PÊNALTI DIREITO --- */
 .penalty-arc-right {
     position: absolute;
     right: 178px;
@@ -446,13 +445,13 @@ body {
 
 /* ===== GOLS ===== */
 
-/* Gol ESQUERDO */
+/* --- GOL ESQUERDO --- */
 .goal-left {
     position: absolute;
     left: 16px;
     top: 50%;
     width: 4px;
-    height: 140px; /* 7.32m em escala */
+    height: 140px; 
     background: linear-gradient(to right, #e0e0e0, #ffffff, #e0e0e0);
     border-radius: 2px 0 0 2px;
     transform: translateY(-50%);
@@ -462,7 +461,7 @@ body {
     z-index: 4;
 }
 
-/* Gol DIREITO */
+/* --- GOL DIREITO --- */
 .goal-right {
     position: absolute;
     right: 16px;
@@ -478,7 +477,7 @@ body {
     z-index: 4;
 }
 
-/* Rede do gol ESQUERDO */
+/* --- REDE DO GOL ESQUERDO --- */
 .goal-net-left {
     position: absolute;
     left: 8px;
@@ -506,7 +505,7 @@ body {
     opacity: 0.8;
 }
 
-/* Rede do gol DIREITO */
+/* --- REDE DO GOL DIREITO --- */
 .goal-net-right {
     position: absolute;
     right: 8px;
@@ -536,7 +535,7 @@ body {
 
 /* ===== MARCAS ADICIONAIS ===== */
 
-/* Linhas de meio-campo (marcas de 10 jardas) */
+/* --- LINHAS DE MEIO-CAMPO --- */
 .ten-yard-mark-left {
     position: absolute;
     top: 50%;
@@ -617,6 +616,7 @@ body {
     0%, 100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-15px);
     }
@@ -631,7 +631,7 @@ body {
     }
 }
 
-/* Efeito de luzes do estádio */
+/* --- EFEITO DE LUZES DO ESTÁDIO --- */
 .field-lights {
     position: absolute;
     top: -100px;
@@ -816,7 +816,7 @@ body {
 }
 
 [data-theme="dark"] .section-header h2 i {
-    color: #ffffff; /* Ícone também branco no modo escuro */
+    color: #ffffff;
 }
 
 .section-header p {
@@ -825,7 +825,6 @@ body {
     transition: color var(--transition-normal);
 }
 
-/* Para garantir que todos os títulos H2 na seção sigam a mesma regra */
 .minigames-section h2 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -845,7 +844,7 @@ body {
     color: #ffffff;
 }
 
-/* Grid de Minigames */
+/* ===== GRID DE MINIGAMES ===== */
 .minigames-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1061,7 +1060,7 @@ body {
     box-shadow: none;
 }
 
-/* Coming Soon Section */
+/* ===== COMING SOON SECTION ===== */
 .coming-soon {
     margin-top: var(--spacing-xl);
     padding-top: var(--spacing-xl);
@@ -1108,17 +1107,17 @@ body {
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Coloca um item embaixo do outro */
-    align-items: center;    /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente (opcional) */
-    text-align: center;     /* Garante que o texto também centralize */
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center; 
+    text-align: center;      
     padding: 20px;
 }
 
 .btn-play {
     display: inline-block;
-    background-color: #00d1ff; /* Azul neon da imagem */
-    color: #011627; /* Cor escura para o texto */
+    background-color: #00d1ff; 
+    color: #011627; 
     padding: 8px 20px;
     margin: 10px 0;
     border-radius: 90px;
@@ -1129,11 +1128,10 @@ body {
 }
 
 .btn-play:hover {
-    background-color: #ffcc00; /* Muda para amarelo ao passar o mouse */
+    background-color: #ffcc00; 
     transform: scale(1.05);
 }
 
-/* Garante que o badge não fique em cima do botão se houver pouco espaço */
 .badge {
     display: block;
     margin-top: 5px;
@@ -1311,6 +1309,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1383,7 +1382,7 @@ body {
     }
 }
 
-/* Scrollbar personalizada */
+/* ===== SCROLLBAR PERSONALIZADA ===== */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -1401,7 +1400,7 @@ body {
     background: var(--gradient-secondary);
 }
 
-/* Fundo escurecido */
+/* ===== FUNDO ESCURECIDO ===== */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1415,7 +1414,7 @@ body {
     z-index: 9999;
 }
 
-/* Caixa do Modal */
+/* ===== CAIXA DO MODAL ===== */
 .modal-content {
     background: #1a1a1a;
     padding: 2rem;
@@ -1434,7 +1433,7 @@ body {
     margin: 20px 0;
 }
 
-/* Botões de Opção */
+/* ===== BOTÕES DE OPÇÃO ===== */
 .btn-time-opt {
     background: #27ae60;
     color: white;
@@ -1451,6 +1450,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* ===== BOTÃO DE FECHAR MODAL ===== */
 .btn-close-modal {
     background: transparent;
     color: #999;

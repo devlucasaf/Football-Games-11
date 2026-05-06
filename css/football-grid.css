@@ -1,5 +1,3 @@
-/* football-grid.css - Atualizado */
-
 :root {
     --bg-color: #011627;
     --border-color: #00d1ff;
@@ -276,7 +274,7 @@ main {
     transform: translateY(-1px);
 }
 
-/* Responsividade */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .game-container {
         max-width: 90%;
@@ -360,7 +358,7 @@ main {
     }
 }
 
-/* Estilo para o link do título */
+/* --- ESTILO PARA O LINK DO TÍTULO --- */
 .home-link {
     color: white;
     text-decoration: none;
@@ -390,7 +388,7 @@ main {
     transform: scaleX(1);
 }
 
-/* Célula selecionada */
+/* --- CÉLULA SELECIONADA --- */
 .play-cell.selected {
     border-color: #ffcc00;
     box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), inset 0 0 10px rgba(255, 204, 0, 0.1);
@@ -408,7 +406,7 @@ main {
     }
 }
 
-/* Célula com resposta errada */
+/* --- CÉLULA COM RESPOSTA ERRADA --- */
 .play-cell.wrong {
     border-color: #e74c3c;
     box-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
@@ -438,7 +436,7 @@ main {
     }
 }
 
-/* Dropdown de sugestões */
+/* --- DROPDOWN DE SUGESTÕES --- */
 .suggestions-dropdown {
     position: absolute;
     top: 100%;

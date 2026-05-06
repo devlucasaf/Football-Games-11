@@ -1,13 +1,13 @@
 /* ===== FOOTBALL LEGENDS STYLES ===== */
 
-/* Container Principal */
+/* --- CONTAINER PRINCIPAL --- */
 .legends-container {
     min-height: 100vh;
     background: var(--bg-primary);
     padding: var(--spacing-xl) 0;
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .legends-hero {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
@@ -76,7 +76,7 @@
     margin-top: var(--spacing-xs);
 }
 
-/* Teams Section */
+/* --- TEAMS SECTION --- */
 .teams-section {
     margin-top: var(--spacing-2xl);
 }
@@ -94,7 +94,7 @@
     font-size: 1.1rem;
 }
 
-/* Teams Grid */
+/* --- TEAMS GRID --- */
 .teams-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -171,7 +171,7 @@
     font-size: 0.9rem;
 }
 
-/* Loading State */
+/* --- LOADING STATE --- */
 .loading-teams {
     text-align: center;
     padding: var(--spacing-2xl);
@@ -187,7 +187,7 @@
     color: var(--text-secondary);
 }
 
-/* Error State */
+/* --- ERROR STATE --- */
 .error-state {
     text-align: center;
     padding: var(--spacing-2xl);
@@ -199,7 +199,7 @@
     margin-bottom: var(--spacing-md);
 }
 
-/* Builder Styles */
+/* --- BUILDER STYLES --- */
 .builder-container {
     min-height: 100vh;
     background: var(--bg-primary);
@@ -292,7 +292,7 @@
     background: var(--overlay-light);
 }
 
-/* Formations Menu */
+/* --- FORMATIONS MENU --- */
 .formations-menu {
     background: var(--bg-card);
     border-radius: var(--radius-lg);
@@ -356,7 +356,7 @@
     color: var(--text-secondary);
 }
 
-/* Builder Content */
+/* --- BUILDER CONTENT --- */
 .builder-content {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -364,7 +364,7 @@
     margin-bottom: var(--spacing-2xl);
 }
 
-/* Players Panel */
+/* --- PLAYERS PANEL --- */
 .players-panel {
     background: var(--bg-card);
     border-radius: var(--radius-lg);
@@ -453,7 +453,7 @@
     gap: 0.5rem;
 }
 
-/* Field Container */
+/* --- FIELD CONTAINER --- */
 .field-container {
     display: flex;
     flex-direction: column;
@@ -479,7 +479,7 @@
     font-size: 0.9rem;
 }
 
-/* Football Field Wrapper */
+/* --- FOOTBALL FIELD WRAPPER --- */
 .football-field-wrapper {
     position: relative;
     background: var(--bg-card);
@@ -498,7 +498,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Formation Positions */
+/* --- FORMATION POSITIONS --- */
 .formation-positions {
     position: absolute;
     top: 0;
@@ -540,7 +540,7 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Selected Players */
+/* --- SELECTED PLAYERS --- */
 .selected-players {
     background: var(--bg-card);
     border-radius: var(--radius-lg);
@@ -587,13 +587,13 @@
     opacity: 0.5;
 }
 
-/* Loading Players */
+/* --- LOADING PLAYERS --- */
 .loading-players {
     text-align: center;
     padding: var(--spacing-xl);
 }
 
-/* Modal */
+/* --- MODAL --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -658,7 +658,7 @@
     justify-content: center;
 }
 
-/* Responsive */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
     .builder-content {
         grid-template-columns: 1fr;
@@ -723,12 +723,13 @@
     }
 }
 
-/* Animations */
+/* --- ANIMAÇÕES --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -739,6 +740,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -749,6 +751,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+    
     to {
         opacity: 1;
         transform: translateY(0);
