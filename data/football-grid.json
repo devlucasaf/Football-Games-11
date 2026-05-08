@@ -10,11 +10,11 @@
         },
         {
             "nome": "Atletico de Madrid",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_logo.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/1/19/AtleticoMadrid2017.png/250px-AtleticoMadrid2017.png"
         },
         {
             "nome": "Sevilla",
-            "escudo": "https://pt.wikipedia.org/wiki/Sevilla_F%C3%BAtbol_Club"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/c/cd/Sevilla_cf.png"
         },
         {
             "nome": "PSG",
@@ -26,7 +26,7 @@
         },
         {
             "nome": "Palmeiras",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/1/10/Palmeiras_logo.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/500px-Palmeiras_logo.svg.png"
         },
         {
             "nome": "Fluminense",
@@ -34,51 +34,59 @@
         },
         {
             "nome": "Botafogo",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Botafogo_de_Futebol_e_Regatas_logo.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Escudo_Botafogo.png"
         },
         {
             "nome": "Vasco da Gama",
-            "escudo": "https://pt.wikipedia.org/wiki/Club_de_Regatas_Vasco_da_Gama"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/8/8b/EscudoDoVascoDaGama.svg/1920px-EscudoDoVascoDaGama.svg.png"
         },
         {
             "nome": "Corinthians",
-            "escudo": "https://pt.wikipedia.org/wiki/Sport_Club_Corinthians_Paulista"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Corinthians_simbolo.png/250px-Corinthians_simbolo.png"
         },
         {
             "nome": "São Paulo",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Brasao_do_Sao_Paulo_Futebol_Clube.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/500px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png"
         },
         {
             "nome": "Santos",
-            "escudo": "https://pt.wikipedia.org/wiki/Santos_Futebol_Clube"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/1/15/Santos_Logo.png"
         },
         {
             "nome": "Portuguesa",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Portuguesa_de_desportos_Escudo_2012-Presente.png"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/d/db/Portuguesa_de_Desportos.png"
         },
         {
             "nome": "Atlético Mineiro",
-            "escudo": "https://pt.wikipedia.org/wiki/Clube_Atl%C3%A9tico_Mineiro"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Atletico_mineiro_galo.png/250px-Atletico_mineiro_galo.png"
         },
         {
             "nome": "Cruzeiro",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Cruzeiro_Esporte_Clube_%28logo%29.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/e/e4/Logo_oficial_do_Cruzeiro.png"
+        },
+        {
+            "nome": "Athletico Paranaense",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/4/43/Athletico_Paranaense_%28Logo_2019%29.svg"
+        },
+        {
+            "nome": "Coritiba",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Coritiba_Foot_Ball_Club_logo.svg/250px-Coritiba_Foot_Ball_Club_logo.svg.png"
         },
         {
             "nome": "Grêmio",
-            "escudo": "https://pt.wikipedia.org/wiki/Gr%C3%AAmio_Foot-Ball_Porto_Alegrense"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Gremio_logo.svg/960px-Gremio_logo.svg.png"
         },
         {
             "nome": "Internacional",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Escudo_do_Sport_Club_Internacional.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Escudo_do_Sport_Club_Internacional.svg"
         },
         {
             "nome": "Bayern de Munique",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/500px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
         },
         {
             "nome": "Borussia Dortmund",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Borussia_Dortmund_logo.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/500px-Borussia_Dortmund_logo.svg.png"
         },
         {
             "nome": "Bayer Leverkusen",
@@ -86,23 +94,23 @@
         },
         {
             "nome": "Juventus",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Juventus_FC_2017_logo.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/51/Juventus_FC_2017_logo.png"
         },
         {
             "nome": "Milan",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Juventus_FC_2017_logo.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1920px-Logo_of_AC_Milan.svg.png"
         },
         {
             "nome": "Inter de Milão",
-            "escudo": "https://pt.wikipedia.org/wiki/Football_Club_Internazionale_Milano"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1280px-FC_Internazionale_Milano_2021.svg.png"
         },
         {
             "nome": "Napoli",
-            "escudo": "https://nn.wikipedia.org/wiki/SSC_Napoli"
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/SSC_Napoli.svg/3840px-SSC_Napoli.svg.png"
         },
         {
             "nome": "Roma",
-            "escudo": "https://pt.wikipedia.org/wiki/Associazione_Sportiva_Roma"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/8/8c/AS_Roma_logo.png"
         },
         {
             "nome": "Manchester United",
@@ -126,81 +134,93 @@
         },
         {
             "nome": "Arsenal",
-            "escudo": "https://pt.wikipedia.org/wiki/Arsenal_Football_Club"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/5/53/Arsenal_FC.svg/1920px-Arsenal_FC.svg.png"
         },
         {
             "nome": "Aston Villa",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Aston_Villa.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/1/15/Aston_Villa.svg/960px-Aston_Villa.svg.png"
         },
         {
             "nome": "West Ham",
-            "escudo": "https://pt.wikipedia.org/wiki/West_Ham_United_Football_Club"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/1/1d/West_Ham_United_FC_logo.png"
         },
         {
             "nome": "Nottingham Forest",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:Nottingham_Forest.png"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/a/a2/Nottingham_Forest.png"
         },
         {
             "nome": "Ajax",
-            "escudo": "https://pt.wikipedia.org/wiki/Ficheiro:AFC_Ajax_Amsterdam.svg"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/a/a2/Nottingham_Forest.png"
         },
         {
             "nome": "PSV",
-            "escudo": "https://pt.wikipedia.org/wiki/PSV_Eindhoven"
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/c/ca/PSV_Eindhoven_escudo.png/250px-PSV_Eindhoven_escudo.png"
+        },
+        {
+            "nome": "Al-Nassr",
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/2/26/Al-Nassr_FC.png"
+        },
+        {
+            "nome": "Al-Hilal",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/55/Al_Hilal_SFC_Logo.svg"
         }
     ],
     "selecoes": [
         {
             "pais": "Brasil",
-            "bandeira": "https://bandeira.net/bandeira-do-brasil/"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/330px-Flag_of_Brazil.svg.png"
         },
         {
             "pais": "Argentina",
-            "bandeira": "https://logodownload.org/bandeira-da-argentina/"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1280px-Flag_of_Argentina.svg.png"
         },
         {
             "pais": "Colômbia",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Col%C3%B4mbia"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/330px-Flag_of_Colombia.svg.png"
         },
         {
             "pais": "Equador",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_do_Equador"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg"
         },
         {
             "pais": "Uruguai",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_do_Uruguai"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/1280px-Flag_of_Uruguay.svg.png"
         },
         {
             "pais": "Portugal",
-            "bandeira": "https://bandeira.net/wp-content/uploads/2018/10/bandeira-de-portugal-01.png"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/3840px-Flag_of_Portugal.svg.png?utm_source=br.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
         },
         {
             "pais": "Espanha",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Espanha"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/330px-Flag_of_Spain.svg.png"
         },
         {
             "pais": "Alemanha",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Alemanha"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/330px-Flag_of_Germany.svg.png"
         },
         {
             "pais": "França",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Fran%C3%A7a"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"
         },
         {
             "pais": "Itália",
-            "bandeira": "https://pt.wikipedia.org/wiki/Ficheiro:Flag_of_Italy.svg"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1280px-Flag_of_Italy.svg.png"
         },
         {
             "pais": "Inglaterra",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Inglaterra"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_England.svg"
         },
         {
             "pais": "Polônia",
-            "bandeira": "https://pt.wikipedia.org/wiki/Bandeira_da_Pol%C3%B3nia"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg"
         },
         {
             "pais": "Japão",
-            "bandeira": "https://pt.wikipedia.org/wiki/Ficheiro:Flag_of_Japan.svg"
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/960px-Flag_of_Japan.svg.png"
+        },
+        {
+            "pais": "Belgica",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg"
         }
     ],
     "jogadores": [
@@ -208,12 +228,13 @@
             "nome": "Ronaldinho Gaúcho",
             "clubes": ["Grêmio", "Barcelona", "Milan", "PSG", "Flamengo", "Atlético Mineiro", "Querétaro", "Fluminense"],
             "selecoes": ["Brasil"],
-            "foto": "https://www.efootballdb.com/fr/players/profile?id=88032334187984"
+            "foto": "https://cdn-img.staticzz.com/img/planteis/new/21/40/162140_ronaldinho_gaucho_20240509194032.jpg"
         },
         {
             "nome": "Cristiano Ronaldo",
             "clubes": ["Real Madrid", "Juventus", "Manchester United", "Sporting", "Al-Nassr"],
-            "selecoes": ["Portugal"]
+            "selecoes": ["Portugal"],
+            "foto": "https://assets.realmadrid.com/is/image/realmadrid/1330603286208?$Mobile$&fit=wrap&wid=312"
         },
         {
             "nome": "Romário",
