@@ -27,7 +27,7 @@ const GridJogo = {
         const celulas = GridInterface.elementos.celulas;
 
         if (this.jogoParado) {
-            alert("Jogo encerrado. Clique em 🔄 para jogar novamente.");
+            alert("Jogo encerrado. Clique no botão de reiniciar para jogar novamente.");
             return;
         }
 
@@ -37,16 +37,6 @@ const GridJogo = {
 
         const palpite = inputJogador.value.trim();
         if (!palpite) {
-            return;
-        }
-
-        if (!this.celulaSelecionada) {
-            alert("Selecione uma célula do grid primeiro!");
-            return;
-        }
-
-        if (this.celulaSelecionada.textContent.trim() !== "") {
-            alert("Esta célula já foi preenchida. Selecione outra.");
             return;
         }
 
@@ -66,24 +56,44 @@ const GridJogo = {
             return;
         }
 
-        const linhaChave    = this.celulaSelecionada.dataset.linha;
-        const colunaChave   = this.celulaSelecionada.dataset.coluna;
-        const linhaTipo     = this.celulaSelecionada.dataset.linhaTipo;
-        const colunaTipo    = this.celulaSelecionada.dataset.colunaTipo;
+        const celulasVazias = celulas.filter((c) => c.textContent.trim() === "");
+        let celulaAlvo = null;
 
-        if (this.jogadorAtendeCelula(jogador, linhaChave, linhaTipo, colunaChave, colunaTipo)) {
-            this.celulaSelecionada.textContent = jogador.nome;
-            this.celulaSelecionada.classList.add("correct");
-            this.celulaSelecionada.classList.remove("selected");
+        if (this.celulaSelecionada && this.celulaSelecionada.textContent.trim() === "") {
+            const ok = this.jogadorAtendeCelula(
+                jogador,
+                this.celulaSelecionada.dataset.linha,
+                this.celulaSelecionada.dataset.linhaTipo,
+                this.celulaSelecionada.dataset.coluna,
+                this.celulaSelecionada.dataset.colunaTipo
+            );
+            if (ok) celulaAlvo = this.celulaSelecionada;
+        }
+
+        if (!celulaAlvo) {
+            celulaAlvo = celulasVazias.find((c) =>
+                this.jogadorAtendeCelula(
+                    jogador,
+                    c.dataset.linha,
+                    c.dataset.linhaTipo,
+                    c.dataset.coluna,
+                    c.dataset.colunaTipo
+                )
+            );
+        }
+
+        if (celulaAlvo) {
+            celulaAlvo.textContent = jogador.nome;
+            celulaAlvo.classList.add("correct");
+            celulaAlvo.classList.remove("selected");
             this.jogadoresUsados.add(chaveUsada);
             this.celulaSelecionada = null;
+            celulas.forEach((c) => c.classList.remove("selected"));
             inputJogador.value = "";
             GridInterface.esconderSugestoes();
             this.verificarVitoria();
         } else {
-            this.celulaSelecionada.classList.add("wrong");
-            setTimeout(() => this.celulaSelecionada.classList.remove("wrong"), 600);
-            alert("Este jogador não atende aos critérios desta célula.");
+            alert("Este jogador não se encaixa em nenhuma célula disponível.");
             inputJogador.value = "";
             GridInterface.esconderSugestoes();
         }
@@ -169,7 +179,7 @@ const GridJogo = {
         });
 
         btnParar?.addEventListener("click", () => {
-            GridTemporizador.pararJogo("Você desistiu! Clique em 🔄 para gerar um novo Grid.");
+            GridTemporizador.pararJogo("Você desistiu! Clique no botão de reiniciar para gerar um novo Grid.");
         });
     }
 };
