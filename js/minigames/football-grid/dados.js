@@ -36,6 +36,17 @@ const GridDados = {
         return resposta.json();
     },
 
+    paraArray(valor) {
+        if (Array.isArray(valor)) {
+            return valor;
+        }
+
+        if (typeof valor === "string" && valor.trim()) {
+            return [valor];
+        }
+        return [];
+    },
+
     construirDados(dados) {
         this.dadosBrutos = dados;
 
@@ -51,18 +62,21 @@ const GridDados = {
 
         // --- PAÍSES ---
         const paresPaises = this.deduplicarPorCanon(
-            (dados.selecoes ?? []).map((s) => ({ nome: s.pais || s })),
+            (dados.selecoes ?? []).map((s) => ({ nome: s.pais || s, bandeira: s.bandeira ?? null })),
             (x) => x.nome
         );
         this.listaPaises = paresPaises.map((p) => p.chave);
-        this.paisExibicao = new Map(paresPaises.map(({ chave, item }) => [chave, item.nome]));
+        this.paisExibicao = new Map(paresPaises.map(({ chave, item }) => [chave, {
+            nome: item.nome,
+            bandeira: item.bandeira
+        }]));
 
         // --- JOGADORES ---
         this.bancoJogadores = (dados.jogadores ?? []).map((j) => ({
             nome: j.nome,
             nomeCanon: GridConfig.normalizar(j.nome),
-            clubes: (j.clubes ?? []).map((c) => GridConfig.canonizar(c)),
-            selecoes: (j.selecoes ?? []).map((s) => GridConfig.canonizar(s))
+            clubes: this.paraArray(j.clubes).map((c) => GridConfig.canonizar(c)),
+            selecoes: this.paraArray(j.selecoes).map((s) => GridConfig.canonizar(s))
         }));
 
         // --- ÍNDICES ---
