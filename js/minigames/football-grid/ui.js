@@ -31,13 +31,12 @@ const GridInterface = {
     },
 
     obterNomeExibicao(tipo, chave) {
-        let nome = "";
         if (tipo === "clube") {
-            nome = GridDados.clubeExibicao.get(chave)?.nome ?? chave;
-        } else {
-            nome = GridDados.paisExibicao.get(chave) ?? chave;
+            const info = GridDados.clubeExibicao.get(chave);
+            return { nome: (info?.nome ?? chave).toUpperCase(), imagem: info?.escudo ?? null };
         }
-        return nome.toUpperCase();
+        const info = GridDados.paisExibicao.get(chave);
+        return { nome: (info?.nome ?? chave).toUpperCase(), imagem: info?.bandeira ?? null };
     },
 
     aplicarCabecalhos(elementosCabecalho, chaves, tipo) {
@@ -49,7 +48,20 @@ const GridInterface = {
         for (let i = 0; i < TAMANHO_GRID; i++) {
             const chave = chaves[i];
             const el = elementosCabecalho[i];
-            el.textContent = this.obterNomeExibicao(tipo, chave);
+            const { nome, imagem } = this.obterNomeExibicao(tipo, chave);
+
+            el.innerHTML = "";
+            if (imagem) {
+                const img = document.createElement("img");
+                img.src = imagem;
+                img.alt = nome;
+                img.title = nome;
+                img.className = "header-badge";
+                img.onerror = () => { el.textContent = nome; };
+                el.appendChild(img);
+            } else {
+                el.textContent = nome;
+            }
             el.dataset.type = tipo;
             el.dataset.key = chave;
         }
