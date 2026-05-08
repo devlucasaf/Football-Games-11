@@ -1,5 +1,5 @@
 .bingo-container {
-    max-width: 900px;
+    max-width: 860px;
     margin: var(--spacing-lg) auto;
     padding: var(--spacing-md);
 }
@@ -13,69 +13,62 @@
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 800;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     margin-bottom: var(--spacing-xs);
 }
 
 .bingo-header .game-description {
     font-family: var(--font-body);
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: var(--spacing-sm);
 }
 
 .btn-novo-jogo {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+    padding: 0.55rem 1.3rem;
     border: none;
-    border-radius: var(--radius-full);
-    background: var(--gradient-primary);
-    color: var(--accent-white);
+    border-radius: var(--radius-sm);
+    background: var(--primary-green, #1a5632);
+    color: white;
     cursor: pointer;
-    transition: var(--transition-fast);
-    box-shadow: var(--shadow-sm);
+    transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .btn-novo-jogo:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: var(--primary-medium-sea-green, #2a7a48);
+    transform: translateY(-1px);
 }
 
-/* ===== AREA DOS JOGADORES ===== */
-
+/* --- JOGADORES --- */
 .bingo-players {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    gap: 6px;
     margin-bottom: var(--spacing-sm);
 }
 
 .bingo-player-name {
-    background: var(--gradient-card);
-    color: var(--accent-white);
+    background: var(--primary-green, #1a5632);
+    color: white;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     text-align: center;
-    padding: 0.6rem 0.3rem;
+    padding: 0.5rem 0.25rem;
     border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* ===== GRID DO BINGO ===== */
-
+/* --- GRID --- */
 .bingo-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    gap: 6px;
 }
 
 .bingo-cell {
@@ -86,73 +79,66 @@
     text-align: center;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.7rem;
-    padding: 0.4rem;
-    border: 2px solid var(--border-color);
+    font-size: 0.68rem;
+    padding: 0.35rem;
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
     background: var(--bg-card);
     color: var(--text-primary);
     cursor: pointer;
-    transition: var(--transition-fast);
-    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
     word-break: break-word;
     line-height: 1.2;
 }
 
 .bingo-cell:hover {
-    transform: scale(1.05);
-    border-color: var(--primary-green);
-    box-shadow: var(--shadow-md);
+    transform: scale(1.04);
+    border-color: var(--primary-green, #1a5632);
 }
 
 .bingo-cell.marcado {
-    background: var(--gradient-secondary);
-    color: var(--accent-white);
-    border-color: var(--primary-cyan);
-    box-shadow: 0 0 12px rgba(10, 195, 170, 0.4);
+    background: var(--primary-green, #1a5632);
+    color: white;
+    border-color: var(--primary-medium-sea-green, #2a7a48);
 }
 
-.bingo-cell.marcado:hover {
-    transform: scale(1.05);
-}
-
-/* ===== RESPONSIVIDADE ===== */
-
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 600px) {
-    .bingo-container {
-        padding: var(--spacing-sm);
+    .bingo-container { 
+        padding: var(--spacing-sm); 
     }
 
-    .bingo-players {
-        gap: 4px;
+    .bingo-players { 
+        gap: 4px; 
     }
 
-    .bingo-player-name {
-        font-size: 0.6rem;
-        padding: 0.4rem 0.2rem;
+    .bingo-player-name { 
+        font-size: 0.58rem; 
+        padding: 0.35rem 0.15rem; 
     }
 
-    .bingo-grid {
-        gap: 4px;
+    .bingo-grid { 
+        gap: 4px; 
     }
 
-    .bingo-cell {
-        font-size: 0.6rem;
-        padding: 0.3rem;
-        border-width: 1.5px;
+    .bingo-cell { 
+        font-size: 0.58rem; 
+        padding: 0.25rem; 
     }
 
-    .bingo-header .game-title {
-        font-size: 1.5rem;
+    .bingo-header .game-title { 
+        font-size: 1.5rem; 
     }
 }
+
 
 @media (max-width: 400px) {
-    .bingo-player-name {
-        font-size: 0.5rem;
+    .bingo-player-name { 
+        font-size: 0.5rem; 
     }
 
-    .bingo-cell {
-        font-size: 0.5rem;
+    .bingo-cell { 
+        font-size: 0.48rem; 
     }
 }
+

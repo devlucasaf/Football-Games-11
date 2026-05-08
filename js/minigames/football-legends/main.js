@@ -161,7 +161,7 @@ const LegendsConstrutor = {
             slot.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 if (!slot.classList.contains('filled')) {
-                    slot.style.borderColor = 'var(--accent-pink)';
+                    slot.style.borderColor = 'var(--accent-purple)';
                 }
             });
 
