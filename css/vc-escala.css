@@ -451,6 +451,12 @@
     display: flex;
     flex-direction: column;
     max-height: 780px;
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.players-panel.highlight {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255,215,0,.3);
 }
 
 .panel-header {
@@ -625,6 +631,23 @@
 .position-slot.filled {
     border: 2px solid var(--esc-green-light);
     background: rgba(90,185,122,.22);
+}
+
+.position-slot.active {
+    border: 2px solid #ffd700;
+    background: rgba(255,215,0,.25);
+    box-shadow: 0 0 12px rgba(255,215,0,.5);
+    animation: pulse-slot .8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-slot {
+    from { 
+        box-shadow: 0 0 8px rgba(255,215,0,.4); 
+    }
+
+    to   { 
+        box-shadow: 0 0 18px rgba(255,215,0,.7); 
+    }
 }
 
 .position-label {

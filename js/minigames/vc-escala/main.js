@@ -1,5 +1,7 @@
 const EscalaConstrutor = {
 
+    posicaoSelecionada: null,
+
     async iniciar() {
         try {
             const parametrosUrl = new URLSearchParams(window.location.search);
@@ -23,7 +25,6 @@ const EscalaConstrutor = {
             this.renderizarListaJogadores();
             this.renderizarFormacao();
             this.configurarEventos();
-            this.configurarArrastarSoltar();
 
         } catch (erro) {
             console.error('Erro ao inicializar construtor:', erro);
@@ -84,7 +85,6 @@ const EscalaConstrutor = {
             div.classList.add('selected');
         }
         div.dataset.playerIndex = indice;
-        div.draggable = true;
 
         const grupoPosicao = EscalaDados.obterGrupoPosicao(jogador.pos);
 
@@ -98,6 +98,14 @@ const EscalaConstrutor = {
                 <i class="fas fa-${EscalaDados.jogadorEstaSelecionado(jogador.name) ? 'check-circle' : 'plus-circle'}"></i>
             </div>
         `;
+
+        div.addEventListener('click', () => {
+            if (this.posicaoSelecionada) {
+                EscalaDados.adicionarJogadorNaPosicao(indice, this.posicaoSelecionada);
+                this.posicaoSelecionada = null;
+                this.atualizarTudo();
+            }
+        });
 
         return div;
     },
@@ -139,65 +147,81 @@ const EscalaConstrutor = {
             slot.innerHTML = `<div class="position-label">${posicao.id}</div>`;
         }
 
+        if (this.posicaoSelecionada === posicao.id) {
+            slot.classList.add('active');
+        }
+
         slot.addEventListener('click', (e) => {
             e.stopPropagation();
             if (jogador) {
                 EscalaDados.removerJogadorDaPosicao(posicao.id);
+                this.posicaoSelecionada = null;
                 this.atualizarTudo();
+            } else {
+                this.selecionarPosicao(posicao.id);
             }
         });
 
         return slot;
     },
 
-    configurarArrastarSoltar() {
-        const itensJogador = document.querySelectorAll('.player-item');
-        const slotsPosicao = document.querySelectorAll('.position-slot');
+    selecionarPosicao(posicaoId) {
+        this.posicaoSelecionada = posicaoId;
+        this.renderizarFormacao();
+        this.filtrarJogadoresPorPosicaoSlot(posicaoId);
 
-        itensJogador.forEach(item => {
-            item.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', item.dataset.playerIndex);
-                item.classList.add('dragging');
-            });
-
-            item.addEventListener('dragend', () => {
-                item.classList.remove('dragging');
-            });
-        });
-
-        slotsPosicao.forEach(slot => {
-            slot.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                if (!slot.classList.contains('filled')) {
-                    slot.style.borderColor = '#66bb6a';
-                }
-            });
-
-            slot.addEventListener('dragleave', () => {
-                slot.style.borderColor = '';
-            });
-
-            slot.addEventListener('drop', (e) => {
-                e.preventDefault();
-                const indiceJogador = e.dataTransfer.getData('text/plain');
-                const posicao = slot.dataset.position;
-
-                if (indiceJogador && posicao) {
-                    EscalaDados.adicionarJogadorNaPosicao(parseInt(indiceJogador), posicao);
-                    this.atualizarTudo();
-                }
-
-                slot.style.borderColor = '';
-            });
-        });
+        const painel = document.querySelector('.players-panel');
+        if (painel) {
+            painel.classList.add('highlight');
+            painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     },
+
+    filtrarJogadoresPorPosicaoSlot(posicaoId) {
+        const listaJogadores = document.getElementById('playersList');
+        if (!listaJogadores) return;
+
+        const itens = listaJogadores.querySelectorAll('.player-item');
+        const posBase = posicaoId.replace(/[0-9]/g, '');
+
+        let filtro;
+        if (posBase === 'GK') filtro = 'GK';
+        else if (posBase === 'ZAG') filtro = 'ZAG';
+        else if (posBase === 'LD' || posBase === 'LE' || posBase === 'LAT') filtro = 'LD/LE';
+        else if (['VOL', 'MEI', 'ME', 'MD', 'CAM', 'MOD', 'MOE'].includes(posBase)) filtro = 'VOL/MEI';
+        else if (['ATA', 'CA', 'PD', 'PE', 'SA'].includes(posBase)) filtro = 'ATA';
+        else filtro = 'all';
+
+        const filtroPosicao = document.getElementById('positionFilter');
+        if (filtroPosicao) filtroPosicao.value = filtro;
+
+        this.filtrarJogadoresPorPosicao(filtro);
+    },
+
+
 
     atualizarTudo() {
         this.renderizarFormacao();
         this.renderizarListaJogadores();
         this.atualizarJogadoresSelecionados();
         this.atualizarContagemCampo();
-        this.configurarArrastarSoltar();
+
+        const painel = document.querySelector('.players-panel');
+        if (painel) {
+            if (this.posicaoSelecionada) {
+                painel.classList.add('highlight');
+            } else {
+                painel.classList.remove('highlight');
+            }
+        }
+
+        if (!this.posicaoSelecionada) {
+            const filtroPosicao = document.getElementById('positionFilter');
+            if (filtroPosicao) {
+                filtroPosicao.value = 'all';
+            }
+            this.filtrarJogadoresPorPosicao('all');
+        }
     },
 
     atualizarJogadoresSelecionados() {
@@ -210,7 +234,7 @@ const EscalaConstrutor = {
             elementoSelecionados.innerHTML = `
                 <div class="empty-state">
                     <i class="fas fa-hand-pointer"></i>
-                    <p>Arraste jogadores para o campo ou clique nas posições vazias</p>
+                    <p>Clique numa posição no campo e depois selecione o jogador</p>
                 </div>
             `;
             return;
