@@ -458,7 +458,6 @@
     }
 }
 
-
 /* --- ESTADOS ESPECIAIS --- */
 .player-spot.required {
     animation: slotPulse 2s infinite;

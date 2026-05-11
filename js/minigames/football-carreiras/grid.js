@@ -10,11 +10,13 @@ export function criarGrid() {
 
     clubes.forEach((clube, idx) => {
         const card = document.createElement("div");
+
         card.className = "clube-card hidden-club";
         card.dataset.index = idx;
 
         // --- NÚMERO ---
         const numero = document.createElement("div");
+
         numero.className = "clube-number";
         numero.textContent = idx + 1;
         card.appendChild(numero);
@@ -24,14 +26,14 @@ export function criarGrid() {
         escudoContainer.className = "clube-escudo";
         const escudo = buscarEscudo(clube);
         if (escudo) {
-            const img = document.createElement("img");
+            const imagem = document.createElement("img");
 
-            img.src = escudo;
-            img.alt = clube;
-            img.title = clube;
-            img.onerror = () => { escudoContainer.textContent = clube; };
+            imagem.src = escudo;
+            imagem.alt = clube;
+            imagem.title = clube;
+            imagem.onerror = () => { escudoContainer.textContent = clube; };
 
-            escudoContainer.appendChild(img);
+            escudoContainer.appendChild(imagem);
         } else {
             escudoContainer.style.fontSize = "0.65rem";
             escudoContainer.style.fontWeight = "700";
@@ -44,8 +46,10 @@ export function criarGrid() {
 
         // --- NOME DO CLUBE ---
         const nome = document.createElement("div");
+
         nome.className = "clube-nome";
         nome.textContent = clube;
+
         card.appendChild(nome);
 
         grid.appendChild(card);
@@ -63,8 +67,10 @@ export function revelarProximo() {
     }
 
     const card = cards[estado.clubesRevelados];
+
     card.classList.remove("hidden-club");
     card.classList.add("revealed");
+    
     estado.clubesRevelados++;
     atualizarInfo();
 }

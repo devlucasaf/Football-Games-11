@@ -35,7 +35,6 @@
             </div>
         </div>
 
-        <!-- Header -->
         <header class="main-header">
             <div class="container">
                 <div class="header-content">
@@ -54,10 +53,8 @@
             </div>
         </header>
 
-        <!-- Main Content -->
         <main class="legends-container">
             <div class="container">
-                <!-- Hero Section -->
                 <section class="legends-hero">
                     <div class="hero-content">
                         <h1><i class="fas fa-crown"></i> Monte o Melhor XI da História</h1>
@@ -79,7 +76,6 @@
                     </div>
                 </section>
 
-                <!-- Teams Grid -->
                 <section class="teams-section">
                     <h2><i class="fas fa-trophy"></i> Escolha um Time</h2>
                     <p class="section-subtitle">Clique em um time para montar o seu melhor XI histórico</p>
@@ -93,7 +89,6 @@
                         <p>Carregando times...</p>
                     </div>
 
-                    <!-- Error State -->
                     <div class="error-state" id="errorState" style="display: none;">
                         <i class="fas fa-exclamation-triangle"></i>
                         <p>Erro ao carregar os times. Tente recarregar a página.</p>
@@ -102,7 +97,6 @@
             </div>
         </main>
 
-        <!-- Footer -->
         <footer class="main-footer">
             <div class="container footer-content">
                 <div class="footer-logo">
@@ -130,14 +124,12 @@
             </div>
         </footer>
 
-        <!-- Scripts -->
         <script src="../js/script.js"></script>
         <script src="../js/minigames/football-legends/config.js"></script>
         <script src="../js/minigames/football-legends/dados.js"></script>
         <script src="../js/minigames/football-legends/utils.js"></script>
         <script src="../js/minigames/football-legends/times.js"></script>
         <script>
-            // Inicializa a página de times
             document.addEventListener('DOMContentLoaded', () => {
                 LegendsTimes.iniciar();
             });

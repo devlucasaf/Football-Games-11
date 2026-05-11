@@ -7,6 +7,7 @@ export async function carregarDados() {
         "../data/football-carreiras.json",
         { cache: "no-store" }
     );
+    
     if (!respostaCarreiras.ok) {
         throw new Error(`Erro ao carregar carreiras (${respostaCarreiras.status})`);
     }
@@ -18,6 +19,7 @@ export async function carregarDados() {
         "../data/football-grid.json",
         { cache: "no-store" }
     );
+
     if (!respostaGrid.ok) {
         throw new Error(`Erro ao carregar escudos (${respostaGrid.status})`);
     }
