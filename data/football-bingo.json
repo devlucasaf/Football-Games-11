@@ -1,0 +1,771 @@
+{
+    "categorias": [
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Barcelona",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Real Madrid",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no PSG",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Manchester United",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Manchester City",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Milan",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou na Juventus",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/51/Juventus_FC_2017_logo.png"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Chelsea",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Liverpool",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Bayern de Munique",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/500px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Flamengo",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Inter de Milão",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Arsenal",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Tottenham",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Atlético de Madrid",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/1/19/AtleticoMadrid2017.png/250px-AtleticoMadrid2017.png"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Brasileiro",
+            "icone": "fa-flag",
+            "bandeira": "🇧🇷"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Argentino",
+            "icone": "fa-flag",
+            "bandeira": "🇦🇷"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Francês",
+            "icone": "fa-flag",
+            "bandeira": "🇫🇷"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Português",
+            "icone": "fa-flag",
+            "bandeira": "🇵🇹"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Alemão",
+            "icone": "fa-flag",
+            "bandeira": "🇩🇪"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Espanhol",
+            "icone": "fa-flag",
+            "bandeira": "🇪🇸"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Italiano",
+            "icone": "fa-flag",
+            "bandeira": "🇮🇹"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Holandês",
+            "icone": "fa-flag",
+            "bandeira": "🇳🇱"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Inglês",
+            "icone": "fa-flag",
+            "bandeira": "🇬🇧"
+        },
+        {
+            "tipo": "selecao",
+            "texto": "Colombiano",
+            "icone": "fa-flag",
+            "bandeira": "🇨🇴"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Bola de Ouro",
+            "icone": "fa-award"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Champions League",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Copa do Mundo",
+            "icone": "fa-globe"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Libertadores",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Artilheiro de Copa do Mundo",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Goleiro",
+            "icone": "fa-hand-paper"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Zagueiro",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Lateral",
+            "icone": "fa-arrows-alt-h"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Meio-campista",
+            "icone": "fa-cogs"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Atacante",
+            "icone": "fa-crosshairs"
+        }
+    ],
+    "jogadores": [
+        {
+            "nome": "Pelé",
+            "clubes": ["Santos", "New York Cosmos"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Maradona",
+            "clubes": ["Barcelona", "Napoli", "Boca Juniors"],
+            "selecao": "Argentina",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Messi",
+            "clubes": ["Barcelona", "PSG", "Inter Miami"],
+            "selecao": "Argentina",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Cristiano Ronaldo",
+            "clubes": ["Sporting", "Manchester United", "Real Madrid", "Juventus", "Al-Nassr"],
+            "selecao": "Portugal",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League"]
+        },
+        {
+            "nome": "Ronaldinho",
+            "clubes": ["Grêmio", "PSG", "Barcelona", "Milan", "Flamengo", "Atlético Mineiro"],
+            "selecao": "Brasil",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Ronaldo Fenômeno",
+            "clubes": ["Cruzeiro", "PSV", "Barcelona", "Inter de Milão", "Real Madrid", "Milan", "Corinthians"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Copa do Mundo", "Artilheiro de Copa do Mundo"]
+        },
+        {
+            "nome": "Zidane",
+            "clubes": ["Bordeaux", "Juventus", "Real Madrid"],
+            "selecao": "França",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Neymar",
+            "clubes": ["Santos", "Barcelona", "PSG", "Al-Hilal"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Libertadores"]
+        },
+        {
+            "nome": "Mbappé",
+            "clubes": ["Monaco", "PSG", "Real Madrid"],
+            "selecao": "França",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Kaká",
+            "clubes": ["São Paulo", "Milan", "Real Madrid", "Orlando City"],
+            "selecao": "Brasil",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Beckham",
+            "clubes": ["Manchester United", "Real Madrid", "Milan", "PSG", "LA Galaxy"],
+            "selecao": "Inglaterra",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Henry",
+            "clubes": ["Monaco", "Juventus", "Arsenal", "Barcelona", "New York Red Bulls"],
+            "selecao": "França",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Buffon",
+            "clubes": ["Parma", "Juventus", "PSG"],
+            "selecao": "Itália",
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Casillas",
+            "clubes": ["Real Madrid", "Porto"],
+            "selecao": "Espanha",
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Xavi",
+            "clubes": ["Barcelona", "Al-Sadd"],
+            "selecao": "Espanha",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Iniesta",
+            "clubes": ["Barcelona", "Vissel Kobe"],
+            "selecao": "Espanha",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Pirlo",
+            "clubes": ["Brescia", "Inter de Milão", "Milan", "Juventus", "New York City"],
+            "selecao": "Itália",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Ibrahimovic",
+            "clubes": ["Ajax", "Juventus", "Inter de Milão", "Barcelona", "Milan", "PSG", "Manchester United", "LA Galaxy"],
+            "selecao": "Suécia",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Lewandowski",
+            "clubes": ["Borussia Dortmund", "Bayern de Munique", "Barcelona"],
+            "selecao": "Polônia",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Modric",
+            "clubes": ["Tottenham", "Real Madrid"],
+            "selecao": "Croácia",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League"]
+        },
+        {
+            "nome": "Drogba",
+            "clubes": ["Marseille", "Chelsea", "Galatasaray", "Shanghai Shenhua", "Montreal Impact"],
+            "selecao": "Costa do Marfim",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Lampard",
+            "clubes": ["West Ham", "Chelsea", "Manchester City", "New York City"],
+            "selecao": "Inglaterra",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Gerrard",
+            "clubes": ["Liverpool", "LA Galaxy"],
+            "selecao": "Inglaterra",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Cafu",
+            "clubes": ["São Paulo", "Roma", "Milan"],
+            "selecao": "Brasil",
+            "posicao": "Lateral",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo", "Ganhou a Libertadores"]
+        },
+        {
+            "nome": "Roberto Carlos",
+            "clubes": ["Palmeiras", "Inter de Milão", "Real Madrid", "Fenerbahçe", "Corinthians"],
+            "selecao": "Brasil",
+            "posicao": "Lateral",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Maldini",
+            "clubes": ["Milan"],
+            "selecao": "Itália",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Ramos",
+            "clubes": ["Sevilla", "Real Madrid", "PSG"],
+            "selecao": "Espanha",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Piqué",
+            "clubes": ["Manchester United", "Barcelona"],
+            "selecao": "Espanha",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Thiago Silva",
+            "clubes": ["Fluminense", "Milan", "PSG", "Chelsea"],
+            "selecao": "Brasil",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Neuer",
+            "clubes": ["Schalke 04", "Bayern de Munique"],
+            "selecao": "Alemanha",
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "De Bruyne",
+            "clubes": ["Chelsea", "Manchester City"],
+            "selecao": "Bélgica",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Suárez",
+            "clubes": ["Ajax", "Liverpool", "Barcelona", "Atletico de Madrid", "Nacional", "Inter Miami"],
+            "selecao": "Uruguai",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Agüero",
+            "clubes": ["Atletico de Madrid", "Manchester City", "Barcelona"],
+            "selecao": "Argentina",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Rooney",
+            "clubes": ["Everton", "Manchester United", "DC United"],
+            "selecao": "Inglaterra",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Van Persie",
+            "clubes": ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahçe"],
+            "selecao": "Holanda",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Rivaldo",
+            "clubes": ["Palmeiras", "Barcelona", "Milan", "Olympiacos"],
+            "selecao": "Brasil",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Romário",
+            "clubes": ["Vasco da Gama", "PSV", "Barcelona", "Flamengo", "Fluminense"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Seedorf",
+            "clubes": ["Ajax", "Real Madrid", "Inter de Milão", "Milan", "Botafogo"],
+            "selecao": "Holanda",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Robben",
+            "clubes": ["PSV", "Chelsea", "Real Madrid", "Bayern de Munique"],
+            "selecao": "Holanda",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Ribéry",
+            "clubes": ["Marseille", "Bayern de Munique", "Fiorentina"],
+            "selecao": "França",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Torres",
+            "clubes": ["Atletico de Madrid", "Liverpool", "Chelsea", "Milan"],
+            "selecao": "Espanha",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Hazard",
+            "clubes": ["Lille", "Chelsea", "Real Madrid"],
+            "selecao": "Bélgica",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Salah",
+            "clubes": ["Basel", "Chelsea", "Fiorentina", "Roma", "Liverpool"],
+            "selecao": "Egito",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Haaland",
+            "clubes": ["RB Salzburg", "Borussia Dortmund", "Manchester City"],
+            "selecao": "Noruega",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Vinícius Jr.",
+            "clubes": ["Flamengo", "Real Madrid"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League"]
+        },
+        {
+            "nome": "Benzema",
+            "clubes": ["Lyon", "Real Madrid", "Al-Ittihad"],
+            "selecao": "França",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Kroos",
+            "clubes": ["Bayern de Munique", "Real Madrid"],
+            "selecao": "Alemanha",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Müller",
+            "clubes": ["Bayern de Munique"],
+            "selecao": "Alemanha",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Klose",
+            "clubes": ["Kaiserslautern", "Werder Bremen", "Bayern de Munique", "Lazio"],
+            "selecao": "Alemanha",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Copa do Mundo", "Artilheiro de Copa do Mundo"]
+        },
+        {
+            "nome": "James Rodríguez",
+            "clubes": ["Porto", "Monaco", "Real Madrid", "Bayern de Munique", "Everton", "São Paulo"],
+            "selecao": "Colômbia",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Falcao",
+            "clubes": ["River Plate", "Porto", "Atletico de Madrid", "Monaco", "Manchester United", "Chelsea"],
+            "selecao": "Colômbia",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Di María",
+            "clubes": ["Benfica", "Real Madrid", "Manchester United", "PSG", "Juventus"],
+            "selecao": "Argentina",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Mascherano",
+            "clubes": ["River Plate", "Corinthians", "West Ham", "Liverpool", "Barcelona"],
+            "selecao": "Argentina",
+            "posicao": "Meio-campista",
+            "titulos": []
+        },
+        {
+            "nome": "Tevez",
+            "clubes": ["Boca Juniors", "Corinthians", "West Ham", "Manchester United", "Manchester City", "Juventus"],
+            "selecao": "Argentina",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Libertadores"]
+        },
+        {
+            "nome": "Adriano",
+            "clubes": ["Flamengo", "Inter de Milão", "São Paulo", "Corinthians", "Roma", "Parma"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Dani Alves",
+            "clubes": ["Sevilla", "Barcelona", "Juventus", "PSG", "São Paulo"],
+            "selecao": "Brasil",
+            "posicao": "Lateral",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Libertadores"]
+        },
+        {
+            "nome": "Marcelo",
+            "clubes": ["Fluminense", "Real Madrid"],
+            "selecao": "Brasil",
+            "posicao": "Lateral",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Sergio Ramos",
+            "clubes": ["Sevilla", "Real Madrid", "PSG"],
+            "selecao": "Espanha",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Puyol",
+            "clubes": ["Barcelona"],
+            "selecao": "Espanha",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Champions League", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Cannavaro",
+            "clubes": ["Napoli", "Parma", "Inter de Milão", "Juventus", "Real Madrid"],
+            "selecao": "Itália",
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Zanetti",
+            "clubes": ["Inter de Milão"],
+            "selecao": "Argentina",
+            "posicao": "Lateral",
+            "titulos": []
+        },
+        {
+            "nome": "Gabigol",
+            "clubes": ["Santos", "Inter de Milão", "Benfica", "Flamengo", "Cruzeiro"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores"]
+        },
+        {
+            "nome": "Firmino",
+            "clubes": ["Hoffenheim", "Liverpool", "Al-Ahli"],
+            "selecao": "Brasil",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Alisson",
+            "clubes": ["Internacional", "Roma", "Liverpool"],
+            "selecao": "Brasil",
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Courtois",
+            "clubes": ["Genk", "Atletico de Madrid", "Chelsea", "Real Madrid"],
+            "selecao": "Bélgica",
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Son",
+            "clubes": ["Hamburgo", "Bayer Leverkusen", "Tottenham"],
+            "selecao": "Coreia do Sul",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Kane",
+            "clubes": ["Tottenham", "Bayern de Munique"],
+            "selecao": "Inglaterra",
+            "posicao": "Atacante",
+            "titulos": []
+        },
+        {
+            "nome": "Griezmann",
+            "clubes": ["Real Sociedad", "Atletico de Madrid", "Barcelona"],
+            "selecao": "França",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Pogba",
+            "clubes": ["Manchester United", "Juventus"],
+            "selecao": "França",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Bale",
+            "clubes": ["Tottenham", "Real Madrid", "LAFC"],
+            "selecao": "País de Gales",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Özil",
+            "clubes": ["Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahçe"],
+            "selecao": "Alemanha",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "David Silva",
+            "clubes": ["Valencia", "Manchester City", "Real Sociedad"],
+            "selecao": "Espanha",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Copa do Mundo"]
+        },
+        {
+            "nome": "Kompany",
+            "clubes": ["Hamburgo", "Manchester City", "Anderlecht"],
+            "selecao": "Bélgica",
+            "posicao": "Zagueiro",
+            "titulos": []
+        },
+        {
+            "nome": "Shevchenko",
+            "clubes": ["Dynamo Kyiv", "Milan", "Chelsea"],
+            "selecao": "Ucrânia",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League"]
+        },
+        {
+            "nome": "Raúl",
+            "clubes": ["Real Madrid", "Schalke 04", "Al-Sadd"],
+            "selecao": "Espanha",
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Figo",
+            "clubes": ["Sporting", "Barcelona", "Real Madrid", "Inter de Milão"],
+            "selecao": "Portugal",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Bola de Ouro", "Ganhou a Champions League"]
+        },
+        {
+            "nome": "Deco",
+            "clubes": ["Porto", "Barcelona", "Chelsea", "Fluminense"],
+            "selecao": "Portugal",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Champions League"]
+        },
+        {
+            "nome": "Zico",
+            "clubes": ["Flamengo", "Udinese"],
+            "selecao": "Brasil",
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Libertadores"]
+        },
+        {
+            "nome": "Sócrates",
+            "clubes": ["Corinthians", "Fiorentina"],
+            "selecao": "Brasil",
+            "posicao": "Meio-campista",
+            "titulos": []
+        }
+    ],
+    "mapeamentoSelecao": {
+        "Brasil": "Brasileiro",
+        "Argentina": "Argentino",
+        "França": "Francês",
+        "Portugal": "Português",
+        "Alemanha": "Alemão",
+        "Espanha": "Espanhol",
+        "Itália": "Italiano",
+        "Holanda": "Holandês",
+        "Inglaterra": "Inglês",
+        "Colômbia": "Colombiano"
+    }
+}
