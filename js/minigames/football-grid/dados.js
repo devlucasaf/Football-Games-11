@@ -76,7 +76,8 @@ const GridDados = {
             nome: j.nome,
             nomeCanon: GridConfig.normalizar(j.nome),
             clubes: this.paraArray(j.clubes).map((c) => GridConfig.canonizar(c)),
-            selecoes: this.paraArray(j.selecoes).map((s) => GridConfig.canonizar(s))
+            selecoes: this.paraArray(j.selecoes).map((s) => GridConfig.canonizar(s)),
+            foto: j.foto ?? null
         }));
 
         // --- ÍNDICES ---

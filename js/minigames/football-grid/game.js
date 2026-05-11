@@ -56,10 +56,10 @@ const GridJogo = {
             return;
         }
 
-        const celulasVazias = celulas.filter((c) => c.textContent.trim() === "");
+        const celulasVazias = celulas.filter((c) => !c.classList.contains("correct"));
         let celulaAlvo = null;
 
-        if (this.celulaSelecionada && this.celulaSelecionada.textContent.trim() === "") {
+        if (this.celulaSelecionada && !this.celulaSelecionada.classList.contains("correct")) {
             const ok = this.jogadorAtendeCelula(
                 jogador,
                 this.celulaSelecionada.dataset.linha,
@@ -67,7 +67,9 @@ const GridJogo = {
                 this.celulaSelecionada.dataset.coluna,
                 this.celulaSelecionada.dataset.colunaTipo
             );
-            if (ok) celulaAlvo = this.celulaSelecionada;
+            if (ok) {
+                celulaAlvo = this.celulaSelecionada;
+            }
         }
 
         if (!celulaAlvo) {
@@ -83,7 +85,23 @@ const GridJogo = {
         }
 
         if (celulaAlvo) {
-            celulaAlvo.textContent = jogador.nome;
+            celulaAlvo.textContent = "";
+            celulaAlvo.innerHTML = "";
+
+            if (jogador.foto) {
+                const imagem = document.createElement("imagem");
+
+                imagem.src = jogador.foto;
+                imagem.alt = jogador.nome;
+                imagem.title = jogador.nome;
+                imagem.className = "player-photo";
+                imagem.onerror = () => { celulaAlvo.textContent = jogador.nome; };
+
+                celulaAlvo.appendChild(imagem);
+            } else {
+                celulaAlvo.textContent = jogador.nome;
+            }
+
             celulaAlvo.classList.add("correct");
             celulaAlvo.classList.remove("selected");
             this.jogadoresUsados.add(chaveUsada);
@@ -101,7 +119,7 @@ const GridJogo = {
 
     verificarVitoria() {
         const celulas = GridInterface.elementos.celulas;
-        const todasPreenchidas = celulas.every((c) => c.textContent.trim() !== "");
+        const todasPreenchidas = celulas.every((c) => c.classList.contains("correct"));
         if (todasPreenchidas) {
             GridTemporizador.pararJogo("Parabéns! Você completou o grid! 🎉");
         }
@@ -112,7 +130,7 @@ const GridJogo = {
             return;
         }
 
-        if (celula.textContent.trim() !== "") {
+        if (celula.classList.contains("correct")) {
             return;
         }
 
