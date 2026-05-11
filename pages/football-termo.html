@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Termo | Football Games 11</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-termo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-termo">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-keyboard"></i>
+                    <h2>Como jogar Football Termo</h2>
+                    <p>Adivinhe o nome do jogador de futebol!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li>
+                        <span class="tutorial-step-number">1</span> 
+                        Você tem 6 tentativas para adivinhar o nome do jogador.
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">2</span> 
+                        Digite um nome e pressione ENTER para confirmar.
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">3</span> 
+                        <strong style="color:#538d4e">Verde</strong> = letra certa no lugar certo.
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">4</span> 
+                        <strong style="color:#b59f3b">Amarelo</strong> = letra certa no lugar errado.
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">5</span> 
+                        <strong style="color:#3a3a3c">Cinza</strong> = letra não existe no nome.
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">6</span> Alguns nomes possuem espaço (ex: DE BRUYNE).
+                    </li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="game-container">
+                <div class="game-header">
+                    <h2 class="game-title"><i class="fas fa-keyboard"></i> Football Termo</h2>
+                    <p class="game-description">Adivinhe o nome do jogador de futebol!</p>
+                    <p class="game-hint" id="hintText"></p>
+                </div>
+
+                <!-- --- GRID DE TENTATIVAS --- -->
+                <div class="termo-board" id="termoBoard"></div>
+
+                <!-- --- TECLADO VIRTUAL --- -->
+                <div class="keyboard" id="keyboard">
+                    <div class="keyboard-row">
+                        <button class="key" data-key="Q">Q</button>
+                        <button class="key" data-key="W">W</button>
+                        <button class="key" data-key="E">E</button>
+                        <button class="key" data-key="R">R</button>
+                        <button class="key" data-key="T">T</button>
+                        <button class="key" data-key="Y">Y</button>
+                        <button class="key" data-key="U">U</button>
+                        <button class="key" data-key="I">I</button>
+                        <button class="key" data-key="O">O</button>
+                        <button class="key" data-key="P">P</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button class="key" data-key="A">A</button>
+                        <button class="key" data-key="S">S</button>
+                        <button class="key" data-key="D">D</button>
+                        <button class="key" data-key="F">F</button>
+                        <button class="key" data-key="G">G</button>
+                        <button class="key" data-key="H">H</button>
+                        <button class="key" data-key="J">J</button>
+                        <button class="key" data-key="K">K</button>
+                        <button class="key" data-key="L">L</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button class="key key-wide" data-key="ENTER"><i class="fas fa-check"></i></button>
+                        <button class="key" data-key="Z">Z</button>
+                        <button class="key" data-key="X">X</button>
+                        <button class="key" data-key="C">C</button>
+                        <button class="key" data-key="V">V</button>
+                        <button class="key" data-key="B">B</button>
+                        <button class="key" data-key="N">N</button>
+                        <button class="key" data-key="M">M</button>
+                        <button class="key key-wide" data-key="BACKSPACE"><i class="fas fa-backspace"></i></button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button class="key" data-key=" ">ESPAÇO</button>
+                    </div>
+                </div>
+
+                <!-- --- BOTÕES --- -->
+                <div class="actions-container">
+                    <button id="newGameBtn" class="btn-action"><i class="fas fa-redo"></i> Novo Jogo</button>
+                </div>
+
+                <!-- --- MENSAGEM --- -->
+                <div class="message-overlay" id="messageOverlay">
+                    <div class="message-box" id="messageBox">
+                        <p id="messageText"></p>
+                        <button id="messageCloseBtn" class="btn-action"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                        <p>Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4>Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script type="module" src="../js/minigames/football-termo/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,378 @@
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 520px;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-color);
+    margin: 0 auto;
+    position: relative;
+}
+
+.game-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.game-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.game-title i {
+    color: var(--primary-green);
+    margin-right: 6px;
+}
+
+.game-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.game-hint {
+    color: var(--accent-light-green);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* --- BOARD --- */
+.termo-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.termo-row {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.termo-cell {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    transition: transform 0.1s ease, border-color 0.2s ease;
+}
+
+.termo-cell.active {
+    border-color: var(--text-secondary);
+}
+
+.termo-cell.filled {
+    border-color: var(--text-primary);
+    animation: popIn 0.1s ease;
+}
+
+/* --- CORES DAS LETRAS --- */
+.termo-cell.correct {
+    background: #538d4e;
+    border-color: #538d4e;
+    color: white;
+}
+
+.termo-cell.present {
+    background: #b59f3b;
+    border-color: #b59f3b;
+    color: white;
+}
+
+.termo-cell.absent {
+    background: #3a3a3c;
+    border-color: #3a3a3c;
+    color: white;
+}
+
+/* --- ANIMAÇÃO DE REVELAÇÃO --- */
+.termo-cell.flip {
+    animation: flipCell 0.5s ease forwards;
+}
+
+@keyframes flipCell {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.85);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* --- ANIMAÇÃO DE VITÓRIA --- */
+.termo-cell.bounce {
+    animation: bounceCell 0.6s ease;
+}
+
+@keyframes bounceCell {
+    0%, 
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+/* --- ANIMAÇÃO DE ERRO (SHAKE) --- */
+.termo-row.shake {
+    animation: shakeRow 0.4s ease;
+}
+
+@keyframes shakeRow {
+    0%, 
+    100% { 
+        transform: translateX(0); 
+    }
+
+    20% { 
+        transform: translateX(-6px); 
+    }
+
+    40% { 
+        transform: translateX(6px); 
+    }
+
+    60% { 
+        transform: translateX(-4px); 
+    }
+
+    80% { 
+        transform: translateX(4px); 
+    }
+}
+
+
+/* --- TECLADO --- */
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.key {
+    min-width: 34px;
+    height: 50px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.1s ease;
+    border: 1px solid var(--border-color);
+    padding: 0 8px;
+}
+
+.key:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.key:active {
+    transform: translateY(0);
+}
+
+.key-wide {
+    min-width: 56px;
+    font-size: 0.75rem;
+}
+
+.key.key-correct {
+    background: #538d4e;
+    border-color: #538d4e;
+    color: white;
+}
+
+.key.key-present {
+    background: #b59f3b;
+    border-color: #b59f3b;
+    color: white;
+}
+
+.key.key-absent {
+    background: #3a3a3c;
+    border-color: #3a3a3c;
+    color: #888;
+}
+
+/* --- BOTÕES --- */
+.actions-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.btn-action {
+    background: var(--primary-green);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-action:hover {
+    background: var(--primary-medium-sea-green);
+    transform: translateY(-1px);
+}
+
+/* --- OVERLAY DE MENSAGEM --- */
+.message-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-overlay.show {
+    display: flex;
+}
+
+.message-box {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+    animation: popIn 0.3s ease;
+}
+
+.message-box p {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.5;
+}
+
+/* --- LINK HOME --- */
+.home-link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.home-link::after {
+    display: none;
+}
+
+.home-link:hover {
+    opacity: 0.85;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 480px) {
+    .game-container {
+        max-width: 95%;
+        padding: var(--spacing-md);
+    }
+
+    .game-title {
+        font-size: 1.6rem;
+    }
+
+    .termo-cell {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .key {
+        min-width: 28px;
+        height: 42px;
+        font-size: 0.75rem;
+        padding: 0 5px;
+    }
+
+    .key-wide {
+        min-width: 44px;
+    }
+}
