@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Impostor | Football Games 11</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-impostor.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- --- TUTORIAL --- -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-impostor">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-user-secret"></i>
+                    <h2>Como jogar Football Impostor</h2>
+                    <p>Encontre o jogador que não pertence ao grupo!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Um tema é exibido no topo (ex: "Jogaram no Barcelona").</li>
+                    <li><span class="tutorial-step-number">2</span> 7 jogadores aparecem embaralhados — 6 seguem o tema.</li>
+                    <li><span class="tutorial-step-number">3</span> Clique no jogador que você acha que é o <strong>impostor</strong>.</li>
+                    <li><span class="tutorial-step-number">4</span> Você tem apenas <strong>1 tentativa</strong> por rodada!</li>
+                    <li><span class="tutorial-step-number">5</span> Tente manter a maior sequência de acertos!</li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- CABEÇALHO --- -->
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- --- CONTEÚDO PRINCIPAL --- -->
+        <main class="container">
+            <div class="game-container">
+                <!-- --- CABEÇALHO DO JOGO --- -->
+                <div class="game-header">
+                    <h2 class="game-title"><i class="fas fa-user-secret"></i> Football Impostor</h2>
+                    <p class="game-description">Encontre o jogador que não pertence ao grupo!</p>
+                </div>
+
+                <!-- --- PLACAR --- -->
+                <div class="impostor-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>Acertos: <strong id="acertosCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Total: <strong id="totalCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Sequência: <strong id="sequenciaCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Melhor: <strong id="melhorCount">0</strong></span>
+                    </div>
+                </div>
+
+                <!-- --- TEMA DA RODADA --- -->
+                <div class="tema-container">
+                    <div class="tema-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="tema-label">Tema:</span>
+                    </div>
+                    <div class="tema-texto" id="temaTexto"></div>
+                    <span class="dificuldade-badge" id="dificuldadeBadge"></span>
+                </div>
+
+                <!-- --- GRID DE JOGADORES --- -->
+                <div class="impostor-grid" id="impostorGrid">
+                </div>
+
+                <!-- --- RESULTADO --- -->
+                <div class="result-overlay" id="resultOverlay">
+                    <div class="result-box">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p class="impostor-name" id="impostorName"></p>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="nextRoundBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Rodada</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- --- RODAPÉ --- -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                        <p>Feito com ❤️ para fãs de futebol</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- --- SCRIPTS --- -->
+        <script src="../js/script.js"></script>
+        <script type="module" src="../js/minigames/football-impostor/main.js"></script>
+    </body>
+</html>
