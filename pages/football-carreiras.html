@@ -20,6 +20,7 @@
                     <h2>Como jogar Football Carreiras</h2>
                     <p>Adivinhe o jogador pela carreira nos clubes!</p>
                 </div>
+
                 <ul class="tutorial-steps">
                     <li><span class="tutorial-step-number">1</span> Os escudos dos clubes aparecem escondidos no grid.</li>
                     <li><span class="tutorial-step-number">2</span> A cada erro, um novo clube da carreira é revelado.</li>
@@ -27,6 +28,7 @@
                     <li><span class="tutorial-step-number">4</span> Se acertar, todos os clubes são revelados!</li>
                     <li><span class="tutorial-step-number">5</span> Quanto menos tentativas, melhor!</li>
                 </ul>
+
                 <div class="tutorial-footer">
                     <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
                     <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
@@ -44,6 +46,7 @@
                             <a href="../index.html" class="home-link">Football Games 11</a>
                         </h1>
                     </div>
+
                     <div class="header-actions">
                         <button class="btn-theme" id="themeToggle" title="Alterar tema">
                             <i class="fas fa-moon"></i>
@@ -56,7 +59,6 @@
         <!-- --- CONTEÚDO PRINCIPAL --- -->
         <main class="container">
             <div class="game-container">
-                <!-- --- CABEÇALHO DO JOGO --- -->
                 <div class="game-header">
                     <h2 class="game-title"><i class="fas fa-road"></i> Football Carreiras</h2>
                     <p class="game-description">Descubra o jogador pelos clubes da carreira!</p>
@@ -68,20 +70,19 @@
                         <i class="fas fa-shield-alt"></i>
                         <span>Clubes: <strong id="clubesCount">0</strong></span>
                     </div>
+
                     <div class="info-item">
                         <i class="fas fa-times-circle"></i>
                         <span>Erros: <strong id="errosCount">0</strong></span>
                     </div>
+
                     <div class="info-item">
                         <i class="fas fa-eye"></i>
                         <span>Revelados: <strong id="reveladosCount">0</strong></span>
                     </div>
                 </div>
 
-                <!-- --- GRID DE CLUBES --- -->
-                <div class="carreiras-grid" id="carreirasGrid">
-                    <!-- --- ESCUDOS SERÃO INSERIDOS VIA JS --- -->
-                </div>
+                <div class="carreiras-grid" id="carreirasGrid"></div>
 
                 <!-- --- INPUT --- -->
                 <div class="input-container">

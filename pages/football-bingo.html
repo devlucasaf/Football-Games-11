@@ -1,14 +1,14 @@
 <!DOCTYPE html>
     <html lang="pt-BR">
         <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Football Bingo | Football Games 11</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Football Bingo | Football Games 11</title>
 
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/football-bingo.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="../css/football-bingo.css">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         </head>
 
     <body>
@@ -20,12 +20,14 @@
                     <h2>Como jogar Football Bingo</h2>
                     <p>Marque os times em que os jogadores atuaram!</p>
                 </div>
+
                 <ul class="tutorial-steps">
                     <li><span class="tutorial-step-number">1</span> Veja os nomes dos jogadores no topo.</li>
                     <li><span class="tutorial-step-number">2</span> O tabuleiro mostra escudos de clubes.</li>
                     <li><span class="tutorial-step-number">3</span> Clique nos clubes em que os jogadores atuaram.</li>
                     <li><span class="tutorial-step-number">4</span> Complete linhas, colunas ou diagonais para marcar bingo!</li>
                 </ul>
+
                 <div class="tutorial-footer">
                     <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
                     <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
@@ -34,71 +36,68 @@
         </div>
 
         <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-            <div class="logo">
-                <h1>
-                <i class="fas fa-futbol"></i>
-                <a href="../index.html" class="home-link">Football Games 11</a>
-                </h1>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                        <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="header-actions">
-                <button class="btn-theme" id="themeToggle" title="Alterar tema">
-                <i class="fas fa-moon"></i>
-                </button>
-            </div>
-            </div>
-        </div>
         </header>
 
         <main class="container">
-        <div class="bingo-container">
-            <div class="bingo-header">
-            <h2 class="game-title">Football Bingo</h2>
-            <p class="game-description">Marque os times em que os jogadores atuaram!</p>
-            <button id="novoJogoBtn" class="btn-novo-jogo">
-                <i class="fas fa-sync-alt"></i> Novo Jogo
-            </button>
-            </div>
+            <div class="bingo-container">
+                <div class="bingo-header">
+                    <h2 class="game-title">Football Bingo</h2>
+                    <p class="game-description">Marque os times em que os jogadores atuaram!</p>
+                    <button id="novoJogoBtn" class="btn-novo-jogo">
+                        <i class="fas fa-sync-alt"></i> Novo Jogo
+                    </button>
+                </div>
 
-            <div class="bingo-players" id="bingoPlayers">
-                <!-- Nomes dos jogadores serão inseridos via JS -->
-            </div>
+                <div class="bingo-players" id="bingoPlayers"></div>
 
-            <div class="bingo-grid" id="bingoGrid">
-                <!-- 36 botões serão inseridos via JS -->
+                <div class="bingo-grid" id="bingoGrid"></div>
             </div>
-        </div>
         </main>
 
         <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
-                    <p>Feito com ❤️ para fãs de futebol</p>
-                </div>
-
-                <div class="footer-social">
-                    <h4>Conecte-se</h4>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
-                            <i class="fab fa-gitlab"></i>
-                        </a>
-                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                        <p>Feito com ❤️ para fãs de futebol</p>
                     </div>
-                    <p class="copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+
+                    <div class="footer-social">
+                        <h4>Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </footer>
 
         <script src="../js/script.js"></script>
