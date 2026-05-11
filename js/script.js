@@ -89,7 +89,7 @@ if (!document.querySelector('#fadeInUpAnimation')) {
     document.head.appendChild(style);
 }
 
-document.getElementById('btn-football-grid').addEventListener('click', function() {
+document.getElementById('btn-football-grid')?.addEventListener('click', function() {
     window.location.href = 'pages/football-grid.html';
 }); 
 
@@ -109,7 +109,48 @@ function startGame(mode) {
 // --- FECHAR O MODAL SE CLICAR FORA DA CAIXA PRETA ---
 window.onclick = function(event) {
     const modal = document.getElementById('timeModal');
-    if (event.target == modal) {
+    if (modal && event.target == modal) {
         closeModal();
     }
 }
+
+// --- SISTEMA DE TUTORIAL ---
+function initTutorial() {
+    const tutorial = document.getElementById('tutorialOverlay');
+    if (!tutorial) {
+        return;
+    }
+
+    const gameId = tutorial.dataset.game;
+    if (!gameId) {
+        return;
+    }
+
+    const chave = `tutorial_visto_${gameId}`;
+
+    if (localStorage.getItem(chave)) {
+        tutorial.classList.add('hidden');
+        return;
+    }
+
+    tutorial.classList.remove('hidden');
+
+    const btnStart = document.getElementById('tutorialStartBtn');
+    const btnSkip = document.getElementById('tutorialSkipBtn');
+
+    function fecharTutorial() {
+        localStorage.setItem(chave, 'true');
+        tutorial.classList.add('hidden');
+    }
+
+    btnStart?.addEventListener('click', fecharTutorial);
+    btnSkip?.addEventListener('click', fecharTutorial);
+
+    tutorial.addEventListener('click', (e) => {
+        if (e.target === tutorial) fecharTutorial();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTutorial();
+});

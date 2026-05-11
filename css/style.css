@@ -1193,3 +1193,174 @@ body {
         transform: scale(1.05); 
     }
 }
+
+/* --- TUTORIAL OVERLAY --- */
+.tutorial-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+}
+
+.tutorial-overlay.hidden {
+    display: none;
+}
+
+.tutorial-box {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 480px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+    animation: tutorialSlideIn 0.4s ease;
+    position: relative;
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tutorial-header i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.tutorial-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.tutorial-header p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+.tutorial-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+.tutorial-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.tutorial-steps li:last-child {
+    border-bottom: none;
+}
+
+.tutorial-step-number {
+    min-width: 28px;
+    height: 28px;
+    background: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.tutorial-footer {
+    text-align: center;
+}
+
+.btn-tutorial-start {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-tutorial-start:hover {
+    background: var(--primary-medium-sea-green);
+    transform: translateY(-2px);
+}
+
+.tutorial-skip {
+    display: block;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tutorial-skip:hover {
+    color: var(--text-secondary);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+    }
+
+    to { 
+        opacity: 1; 
+    }
+}
+
+@keyframes tutorialSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-box {
+        padding: var(--spacing-lg);
+        max-width: 95%;
+    }
+
+    .tutorial-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .tutorial-header i {
+        font-size: 2rem;
+    }
+}

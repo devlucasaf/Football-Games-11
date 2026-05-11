@@ -1,99 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Football Grid | Football Games 11</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Grid | Football Games 11</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/football-grid.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-grid.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
-<body>
-    <header class="main-header">
-    <div class="container">
-        <div class="header-content">
-        <div class="logo">
-            <h1>
-            <i class="fas fa-futbol"></i>
-            <a href="../index.html" class="home-link">Football Games 11</a>
-            </h1>
-        </div>
-        <div class="header-actions">
-            <button class="btn-theme" id="themeToggle" title="Alterar tema">
-            <i class="fas fa-moon"></i>
-            </button>
-        </div>
-        </div>
-    </div>
-    </header>
-
-    <main class="container">
-    <div class="game-container">
-        <div class="game-header">
-        <h2 class="game-title">Football Grid</h2>
-        <p class="game-description">Encontre jogadores que jogaram por ambos os clubes ou país + clube!</p>
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-grid">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-chess-board"></i>
+                    <h2>Como jogar Football Grid</h2>
+                    <p>Encontre jogadores que conectam clubes e seleções!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> O grid mostra clubes e/ou seleções nos cabeçalhos das linhas e colunas.</li>
+                    <li><span class="tutorial-step-number">2</span> Clique em uma célula vazia para selecioná-la.</li>
+                    <li><span class="tutorial-step-number">3</span> Digite o nome de um jogador que tenha jogado em ambos os times da linha e da coluna.</li>
+                    <li><span class="tutorial-step-number">4</span> Cada jogador só pode ser usado uma vez.</li>
+                    <li><span class="tutorial-step-number">5</span> Preencha todas as 9 células para vencer!</li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
         </div>
 
-        <div class="grid-wrapper">
-        <div class="grid-row header-row">
-            <div class="grid-cell logo-cell">GRID</div>
-            <div class="grid-cell club-header"></div>
-            <div class="grid-cell club-header"></div>
-            <div class="grid-cell club-header"></div>
+        <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>
+                        <i class="fas fa-futbol"></i>
+                        <a href="../index.html" class="home-link">Football Games 11</a>
+                    </h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </div>
+        </header>
 
-        <div class="grid-row">
-            <div class="grid-cell club-side"></div>
-            <div class="grid-cell play-cell"></div>
-            <div class="grid-cell play-cell"></div>
-            <div class="grid-cell play-cell"></div>
-        </div>
+        <main class="container">
+            <div class="game-container">
+                <div class="game-header">
+                    <h2 class="game-title">Football Grid</h2>
+                    <p class="game-description">Encontre jogadores que jogaram por ambos os clubes ou país + clube!</p>
+                </div>
 
-        <div class="grid-row">
-            <div class="grid-cell club-side"></div>
-            <div class="grid-cell play-cell"></div>
-            <div class="grid-cell play-cell"></div>
-            <div class="grid-cell play-cell"></div>
-        </div>
+                <div class="grid-wrapper">
+                    <div class="grid-row header-row">
+                        <div class="grid-cell logo-cell">GRID</div>
+                        <div class="grid-cell club-header"></div>
+                        <div class="grid-cell club-header"></div>
+                        <div class="grid-cell club-header"></div>
+                    </div>
 
-        <div class="grid-row">
-            <div class="grid-cell club-side"></div>
-            <div class="grid-cell play-cell"></div>
-            <div class="grid-cell play-cell"></div>
-            <div class="grid-cell play-cell"></div>
-        </div>
-        </div>
+                    <div class="grid-row">
+                        <div class="grid-cell club-side"></div>
+                        <div class="grid-cell play-cell"></div>
+                        <div class="grid-cell play-cell"></div>
+                        <div class="grid-cell play-cell"></div>
+                    </div>
 
-        <div class="input-container">
-        <input type="text" id="playerInput" placeholder="Digite o nome do jogador" autocomplete="off">
-        <button id="searchBtn"><i class="fas fa-search"></i></button>
-        <button id="stopBtn"><i class="fas fa-flag"></i></button>
-        <button id="newGridBtn"><i class="fas fa-redo"></i></button>
-        </div>
-    </div>
-    </main>
+                    <div class="grid-row">
+                        <div class="grid-cell club-side"></div>
+                        <div class="grid-cell play-cell"></div>
+                        <div class="grid-cell play-cell"></div>
+                        <div class="grid-cell play-cell"></div>
+                    </div>
 
-    <footer class="main-footer">
-    <div class="container">
-        <div class="footer-content">
-        <div class="footer-logo">
-            <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
-            <p>Feito com ❤️ para fãs de futebol</p>
-        </div>
-        </div>
-    </div>
-    </footer>
+                    <div class="grid-row">
+                        <div class="grid-cell club-side"></div>
+                        <div class="grid-cell play-cell"></div>
+                        <div class="grid-cell play-cell"></div>
+                        <div class="grid-cell play-cell"></div>
+                    </div>
+                </div>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/minigames/football-grid/config.js"></script>
-    <script src="../js/minigames/football-grid/dados.js"></script>
-    <script src="../js/minigames/football-grid/grid.js"></script>
-    <script src="../js/minigames/football-grid/ui.js"></script>
-    <script src="../js/minigames/football-grid/timer.js"></script>
-    <script src="../js/minigames/football-grid/game.js"></script>
-    <script src="../js/minigames/football-grid/main.js"></script>
-</body>
+                <div class="input-container">
+                    <input type="text" id="playerInput" placeholder="Digite o nome do jogador" autocomplete="off">
+                    <button id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button id="stopBtn">
+                        <i class="fas fa-flag"></i>
+                    </button>
+
+                    <button id="newGridBtn">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                        <p>Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4>Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script src="../js/minigames/football-grid/config.js"></script>
+        <script src="../js/minigames/football-grid/dados.js"></script>
+        <script src="../js/minigames/football-grid/grid.js"></script>
+        <script src="../js/minigames/football-grid/ui.js"></script>
+        <script src="../js/minigames/football-grid/timer.js"></script>
+        <script src="../js/minigames/football-grid/game.js"></script>
+        <script src="../js/minigames/football-grid/main.js"></script>
+    </body>
 </html>

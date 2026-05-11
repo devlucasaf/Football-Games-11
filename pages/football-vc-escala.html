@@ -11,6 +11,27 @@
     </head>
 
     <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-vc-escala">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-shirt"></i>
+                    <h2>Como jogar Vc Escala!</h2>
+                    <p>Monte a escalação ideal do seu time do Brasileirão 2026!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Escolha um time do Brasileirão 2026.</li>
+                    <li><span class="tutorial-step-number">2</span> Selecione uma formação tática.</li>
+                    <li><span class="tutorial-step-number">3</span> Clique em uma posição no campo para escalar um jogador.</li>
+                    <li><span class="tutorial-step-number">4</span> Monte o time dos seus sonhos com o elenco atual!</li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Header -->
         <header class="main-header">
             <div class="container">
@@ -40,15 +61,18 @@
                         <h1><i class="fas fa-shirt"></i> Vc Escala!</h1>
                         <p>Escolha um time do Brasileirão 2026 e monte a escalação ideal!</p>
                     </div>
+
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number" id="totalTeams">0</span>
                             <span class="stat-label">Times Disponíveis</span>
                         </div>
+
                         <div class="stat">
                             <span class="stat-number" id="totalPlayers">0</span>
                             <span class="stat-label">Jogadores</span>
                         </div>
+                        
                         <div class="stat">
                             <span class="stat-number">∞</span>
                             <span class="stat-label">Combinações</span>
@@ -97,6 +121,9 @@
                         </a>
                         <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
                             <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                     <p class="copyright">Desenvolvido com ❤️ por fãs de futebol</p>

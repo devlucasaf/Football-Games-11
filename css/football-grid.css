@@ -141,6 +141,14 @@ main {
     text-overflow: ellipsis;
 }
 
+.player-photo {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
 .play-cell.selected {
     border-color: var(--accent-purple, #5b2d8e);
     box-shadow: 0 0 0 2px rgba(91, 45, 142, 0.2);
