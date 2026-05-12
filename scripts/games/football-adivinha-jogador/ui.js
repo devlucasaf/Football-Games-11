@@ -93,10 +93,8 @@ export function mostrarFeedbackErro(texto) {
     const el = document.getElementById("feedbackErro");
     document.getElementById("feedbackTexto").textContent = texto;
     el.style.display = "";
-
-    // Remover e re-adicionar para re-trigger animation
     el.style.animation = "none";
-    el.offsetHeight; // reflow
+    el.offsetHeight; 
     el.style.animation = "";
 
     setTimeout(() => { el.style.display = "none"; }, 3000);

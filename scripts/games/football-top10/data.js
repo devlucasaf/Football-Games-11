@@ -1,6 +1,6 @@
 import estado from './core.js';
 
-const JSON_PATH = '../../data/football-top10.json';
+const JSON_PATH = '../data/football-top10.json';
 
 export async function carregarDados() {
     const res  = await fetch(JSON_PATH);

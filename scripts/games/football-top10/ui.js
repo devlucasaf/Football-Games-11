@@ -112,7 +112,9 @@ export function inicializarSugestoes(onSelecionar) {
         const valorN = normalizar(valor);
 
         const sugestoes = nomes.filter((nome, idx) => {
-            if (estado.itensAcertados.has(idx)) return false;
+            if (estado.itensAcertados.has(idx)) { 
+                return false;
+            }
             return normalizar(nome).includes(valorN);
         });
 
