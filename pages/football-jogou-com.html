@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Jogou Com | Football Games 11</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-jogou-com.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-jogou-com">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-link"></i>
+                    <h2>Como jogar Football Jogou Com</h2>
+                    <p>Descubra o jogador misterioso pelos companheiros!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Um companheiro de equipe é revelado no primeiro card.</li>
+                    <li><span class="tutorial-step-number">2</span> Digite o nome do jogador que jogou com todos os companheiros mostrados.</li>
+                    <li><span class="tutorial-step-number">3</span> Se não souber, pule para revelar o próximo companheiro.</li>
+                    <li><span class="tutorial-step-number">4</span> Após os 5 companheiros revelados, você tem uma última chance!</li>
+                    <li><span class="tutorial-step-number">5</span> Quanto menos pistas usar, mais pontos você ganha!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="jogou-container">
+                <!-- --- CABEÇALHO --- -->
+                <div class="jogou-header">
+                    <h2 class="game-title"><i class="fas fa-link"></i> Football Jogou Com</h2>
+                    <p class="game-description">Descubra quem jogou com todos os companheiros!</p>
+                </div>
+
+                <!-- --- PLACAR --- -->
+                <div class="jogou-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>Acertos: <strong id="acertosCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Rodadas: <strong id="rodadasCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Sequência: <strong id="sequenciaCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>Pontos: <strong id="pontosCount">0</strong></span>
+                    </div>
+                </div>
+
+                <!-- --- CARD DO JOGADOR MISTERIOSO (TOPO) --- -->
+                <div class="jogou-resposta-card" id="respostaCard">
+                    <div class="resposta-conteudo">
+                        <i class="fas fa-question resposta-icone" id="respostaIcone"></i>
+                        <span class="resposta-nome" id="respostaNome">???</span>
+                    </div>
+                </div>
+
+                <!-- --- GRID DOS 5 COMPANHEIROS --- -->
+                <div class="jogou-grid" id="jogouGrid">
+                    <div class="companheiro-card oculto" data-idx="0">
+                        <div class="card-frente"><i class="fas fa-user"></i><span class="card-numero">1</span></div>
+                        <div class="card-verso"><span class="card-nome"></span></div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="1">
+                        <div class="card-frente"><i class="fas fa-user"></i><span class="card-numero">2</span></div>
+                        <div class="card-verso"><span class="card-nome"></span></div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="2">
+                        <div class="card-frente"><i class="fas fa-user"></i><span class="card-numero">3</span></div>
+                        <div class="card-verso"><span class="card-nome"></span></div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="3">
+                        <div class="card-frente"><i class="fas fa-user"></i><span class="card-numero">4</span></div>
+                        <div class="card-verso"><span class="card-nome"></span></div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="4">
+                        <div class="card-frente"><i class="fas fa-user"></i><span class="card-numero">5</span></div>
+                        <div class="card-verso"><span class="card-nome"></span></div>
+                    </div>
+                </div>
+
+                <!-- --- ÁREA DE PALPITE --- -->
+                <div class="jogou-input-area" id="inputArea">
+                    <div class="input-wrapper">
+                        <input type="text" id="palpiteInput" class="palpite-input" placeholder="Digite o nome do jogador..." autocomplete="off">
+                        <div class="sugestoes-lista" id="sugestoesLista"></div>
+                    </div>
+
+                    <div class="input-actions">
+                        <button id="confirmarBtn" class="btn-confirmar" title="Confirmar palpite">
+                            <i class="fas fa-check"></i> Confirmar
+                        </button>
+                        
+                        <button id="pularBtn" class="btn-pular" title="Pular e revelar próximo">
+                            <i class="fas fa-forward"></i> Pular
+                        </button>
+                    </div>
+                </div>
+
+                <!-- --- DICA --- -->
+                <div class="jogou-dica" id="dicaContainer" style="display:none;">
+                    <i class="fas fa-lightbulb"></i>
+                    <span id="dicaTexto"></span>
+                </div>
+
+                <!-- --- RESULTADO DA RODADA --- -->
+                <div class="result-overlay" id="resultOverlay">
+                    <div class="result-box">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Rodada</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script type="module" src="../js/minigames/football-jogou-com/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,525 @@
+/* --- CONTAINER --- */
+.jogou-container {
+    max-width: 680px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+/* --- CABEÇALHO --- */
+.jogou-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.jogou-header .game-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.jogou-header .game-title i {
+    color: var(--primary-green);
+}
+
+.jogou-header .game-description {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
+/* --- PLACAR --- */
+.jogou-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.jogou-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.jogou-stats .stat-item i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
+}
+
+.jogou-stats .stat-item strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* --- CARD DO JOGADOR MISTERIOSO (TOPO) --- */
+.jogou-resposta-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    min-height: 90px;
+    transition: all var(--transition-normal);
+}
+
+.jogou-resposta-card.revelado {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    animation: cardReveal 0.6s ease;
+}
+
+.jogou-resposta-card.errado {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.resposta-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.resposta-icone {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all var(--transition-normal);
+}
+
+.jogou-resposta-card.revelado .resposta-icone {
+    color: white;
+}
+
+.resposta-nome {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+@keyframes cardReveal {
+    0% { 
+        transform: scale(0.9); 
+        opacity: 0.5; 
+    }
+
+    50% { 
+        transform: scale(1.05); 
+    }
+
+    100% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+
+/* --- GRID DOS COMPANHEIROS --- */
+.jogou-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- CARD COMPANHEIRO --- */
+.companheiro-card {
+    aspect-ratio: 0.8;
+    position: relative;
+    perspective: 800px;
+    cursor: default;
+}
+
+.companheiro-card .card-frente,
+.companheiro-card .card-verso {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: var(--radius-md);
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    font-family: var(--font-heading);
+}
+
+.companheiro-card .card-frente {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    color: var(--text-muted);
+}
+
+.companheiro-card .card-frente i {
+    font-size: 1.4rem;
+    opacity: 0.4;
+}
+
+.companheiro-card .card-frente .card-numero {
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0.5;
+}
+
+.companheiro-card .card-verso {
+    background: var(--gradient-accent);
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 4px 12px rgba(26, 86, 50, 0.2);
+    transform: rotateY(180deg);
+    padding: 8px;
+}
+
+.companheiro-card .card-verso .card-nome {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+/* --- ESTADO: REVELADO --- */
+.companheiro-card.revelado .card-frente {
+    transform: rotateY(180deg);
+}
+
+.companheiro-card.revelado .card-verso {
+    transform: rotateY(0);
+}
+
+/* --- ESTADO: OCULTO --- */
+.companheiro-card.oculto .card-frente {
+    transform: rotateY(0);
+}
+
+.companheiro-card.oculto .card-verso {
+    transform: rotateY(180deg);
+}
+
+/* --- ÁREA DE INPUT --- */
+.jogou-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: var(--spacing-md);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.palpite-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast);
+    outline: none;
+}
+
+.palpite-input:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(26, 86, 50, 0.1);
+}
+
+.palpite-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* --- SUGESTÕES AUTOCOMPLETE --- */
+.sugestoes-lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 50;
+    display: none;
+    box-shadow: var(--shadow-md);
+}
+
+.sugestoes-lista.ativa {
+    display: block;
+}
+
+.sugestao-item {
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.sugestao-item:hover,
+.sugestao-item.selecionado {
+    background: rgba(26, 86, 50, 0.08);
+}
+
+/* --- BOTÕES --- */
+.input-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-confirmar,
+.btn-pular {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-confirmar {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.btn-confirmar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 86, 50, 0.4);
+}
+
+.btn-pular {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-pular:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.btn-pular:disabled,
+.btn-confirmar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- DICA --- */
+.jogou-dica {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(241, 196, 15, 0.1);
+    border: 1px solid rgba(241, 196, 15, 0.3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    animation: fadeIn 0.3s ease;
+}
+
+.jogou-dica i {
+    color: #f1c40f;
+    font-size: 1rem;
+}
+
+.jogou-dica span {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-5px); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+
+/* --- OVERLAY RESULTADO --- */
+.result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(4px);
+}
+
+.result-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.result-box {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: var(--shadow-xl);
+    animation: resultSlideIn 0.4s ease;
+}
+
+@keyframes resultSlideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.95); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+
+.result-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.result-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.result-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 28px;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 86, 50, 0.4);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
+    .jogou-container {
+        padding: var(--spacing-sm);
+    }
+
+    .jogou-header .game-title {
+        font-size: 1.4rem;
+    }
+
+    .jogou-grid {
+        gap: 6px;
+    }
+
+    .companheiro-card .card-verso .card-nome {
+        font-size: 0.65rem;
+    }
+
+    .companheiro-card .card-frente i {
+        font-size: 1rem;
+    }
+
+    .resposta-nome {
+        font-size: 1.2rem;
+    }
+
+    .resposta-icone {
+        font-size: 1.5rem;
+    }
+
+    .jogou-resposta-card {
+        min-height: 70px;
+        padding: var(--spacing-sm);
+    }
+
+    .jogou-stats {
+        gap: var(--spacing-sm);
+    }
+
+    .jogou-stats .stat-item {
+        font-size: 0.75rem;
+    }
+
+    .input-actions {
+        flex-direction: column;
+    }
+
+    .btn-confirmar,
+    .btn-pular {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .jogou-grid {
+        gap: 4px;
+    }
+
+    .companheiro-card .card-verso .card-nome {
+        font-size: 0.55rem;
+    }
+}
