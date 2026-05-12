@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Top 10 | Football Games 11</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-top10.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-top10">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-list-ol"></i>
+                    <h2>Como jogar Football Top 10</h2>
+                    <p>Acerte todos os 10 itens da lista!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Um tema é apresentado (ex: "Maiores artilheiros da Champions").</li>
+                    <li><span class="tutorial-step-number">2</span> Digite os nomes para completar a lista de 10.</li>
+                    <li><span class="tutorial-step-number">3</span> Se acertar, o item é revelado na posição correta.</li>
+                    <li><span class="tutorial-step-number">4</span> Você tem 3 erros antes do jogo acabar.</li>
+                    <li><span class="tutorial-step-number">5</span> Tente completar a lista toda para pontuar o máximo!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="top10-container">
+                <!-- --- CABEÇALHO --- -->
+                <div class="top10-header">
+                    <h2 class="game-title"><i class="fas fa-list-ol"></i> Football Top 10</h2>
+                    <p class="game-description">Complete a lista dos 10!</p>
+                </div>
+
+                <!-- --- PLACAR --- -->
+                <div class="top10-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>Acertos: <strong id="acertosCount">0</strong>/10</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Vidas: <strong id="vidasCount">3</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>Pontos: <strong id="pontosCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Rodadas: <strong id="rodadasCount">0</strong></span>
+                    </div>
+                </div>
+
+                <!-- --- TEMA DA RODADA --- -->
+                <div class="top10-tema" id="temaContainer">
+                    <div class="tema-icone"><i class="fas fa-trophy" id="temaIcone"></i></div>
+                    <h3 class="tema-texto" id="temaTexto">Carregando...</h3>
+                    <span class="tema-categoria" id="temaCategoria"></span>
+                </div>
+
+                <!-- --- LISTA DOS 10 --- -->
+                <div class="top10-lista" id="top10Lista">
+                    <!-- Gerado via JS -->
+                </div>
+
+                <!-- --- ÁREA DE INPUT --- -->
+                <div class="top10-input-area" id="inputArea">
+                    <div class="input-wrapper">
+                        <input type="text" id="palpiteInput" class="palpite-input" placeholder="Digite um nome da lista..." autocomplete="off">
+                        <div class="sugestoes-lista" id="sugestoesLista"></div>
+                    </div>
+
+                    <div class="input-actions">
+                        <button id="confirmarBtn" class="btn-confirmar" title="Confirmar">
+                            <i class="fas fa-check"></i> Confirmar
+                        </button>
+                        <button id="desistirBtn" class="btn-desistir" title="Desistir e revelar">
+                            <i class="fas fa-flag"></i> Desistir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- --- FEEDBACK --- -->
+                <div class="top10-feedback" id="feedbackArea" style="display:none;">
+                    <i id="feedbackIcone"></i>
+                    <span id="feedbackTexto"></span>
+                </div>
+
+                <!-- --- RESULTADO --- -->
+                <div class="result-overlay" id="resultOverlay">
+                    <div class="result-box">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Lista</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script type="module" src="../js/minigames/football-top10/main.js"></script>
+    </body>
+</html>
