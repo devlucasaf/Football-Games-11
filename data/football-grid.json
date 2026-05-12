@@ -234,22 +234,25 @@
             "nome": "Cristiano Ronaldo",
             "clubes":   ["Real Madrid", "Juventus", "Manchester United", "Sporting", "Al-Nassr"],
             "selecoes": ["Portugal"],
-            "foto": "https://assets.realmadrid.com/is/image/realmadrid/1330603286208?$Mobile$&fit=wrap&wid=312"
+            "foto": "https://cdn.soccerwiki.org/images/player/1131.png"
         },
         {
             "nome": "Romário",
             "clubes":   ["Barcelona", "Flamengo", "Vasco da Gama", "PSV", "Valencia", "Fluminense", "Al-Sadd", "Miami FC", "Adelaide United", "América-RJ"],
-            "selecoes": ["Brasil"]
+            "selecoes": ["Brasil"],
+            "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw8LkD8RHbtU8ihBpr2L9lVfB4jeONzcazwg&s"
         },
         {
             "nome": "Zidane",
             "clubes":   ["Cannes", "Bordeaux", "Real Madrid", "Juventus"],
-            "selecoes": ["França"]
+            "selecoes": ["França"],
+            "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ronaldinho_Ga%C3%BAcho.jpg/440px-Ronaldinho_Ga%C3%BAcho.jpg"
         },
         {
             "nome": "Ronaldo",
             "clubes":   ["Barcelona", "Real Madrid", "Milan", "PSV", "Inter de Milão", "Corinthians", "Cruzeiro"],
-            "selecoes": ["Brasil"]
+            "selecoes": ["Brasil"],
+            "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ronaldinho_Ga%C3%BAcho.jpg/440px-Ronaldinho_Ga%C3%BAcho.jpg"
         },
         {
             "nome": "Dida",
@@ -611,7 +614,7 @@
             "nome": "Vinícius Júnior",
             "clubes":   ["Flamengo", "Real Madrid"],
             "selecoes": ["Brasil"],
-            "foto": "https://www.pngmart.com/files/22/Vinicius-Junior-PNG-Clipart.png"
+            "foto": "https://cdn.soccerwiki.org/images/player/90068.png"
         },
         {
             "nome": "Rodrygo",
@@ -845,7 +848,7 @@
             "nome": "Emiliano Martínez",
             "clubes":   ["Independiente", "Arsenal", "Oxford United", "Sheffield Wednesday", "Rotherham United", "Wolverhampton", "Getafe", "Reading", "Aston Villa"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Emiliano+Martinez+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/61102.png"
         },
         {
             "nome": "Franco Armani",
@@ -863,7 +866,7 @@
             "nome": "Nahuel Molina",
             "clubes":   ["Boca Juniors", "Defensa y Justicia", "Rosario Central", "Udinese", "Atlético de Madrid"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Nahuel+Molina+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/85672.png"
         },
         {
             "nome": "Gonzalo Montiel",
@@ -875,7 +878,7 @@
             "nome": "Cristian Romero",
             "clubes":   ["Belgrano", "Genoa", "Juventus", "Atalanta", "Tottenham Hotspur"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Cristian+Romero+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/86903.png"
         },
         {
             "nome": "Germán Pezzella",
@@ -893,7 +896,7 @@
             "nome": "Lisandro Martínez",
             "clubes":   ["Newell's Old Boys", "Defensa y Justicia", "Ajax", "Manchester United"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Lisandro+Martinez+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/95243.png"
         },
         {
             "nome": "Marcos Acuña",
@@ -915,21 +918,21 @@
         },
         {
             "nome": "Rodrigo De Paul",
-            "clubes":   ["Racing", "Valencia", "Udinese", "Atlético de Madrid"],
+        "clubes":   ["Racing", "Valencia", "Udinese", "Atlético de Madrid", "Inter Miami"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Rodrigo+De+Paul+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/64586.png"
         },
         {
             "nome": "Leandro Paredes",
             "clubes":   ["Boca Juniors", "Chievo", "Roma", "Empoli", "Zenit", "PSG", "Juventus"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Leandro+Paredes+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/47375.png"
         },
         {
             "nome": "Alexis Mac Allister",
             "clubes":   ["Argentinos Juniors", "Boca Juniors", "Brighton", "Liverpool"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Alexis+Mac+Allister+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/95236.png"
         },
         {
             "nome": "Guido Rodríguez",
@@ -947,55 +950,55 @@
             "nome": "Enzo Fernández",
             "clubes":   ["River Plate", "Defensa y Justicia", "Benfica", "Chelsea"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Enzo+Fernandez+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/104679.png"
         },
         {
             "nome": "Exequiel Palacios",
             "clubes":   ["River Plate", "Bayer Leverkusen"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Exequiel+Palacios+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/87019.png"
         },
         {
             "nome": "Lionel Messi",
             "clubes":   ["Barcelona", "PSG", "Inter Miami"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Lionel+Messi+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/2772.png"
         },
         {
             "nome": "Ángel Di María",
             "clubes":   ["Rosario Central", "Benfica", "Real Madrid", "Manchester United", "PSG", "Juventus"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Angel+Di+Maria+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/18422.png"
         },
         {
             "nome": "Lautaro Martínez",
             "clubes":   ["Racing", "Inter de Milão"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Lautaro+Martinez+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/82491.png"
         },
         {
             "nome": "Julián Álvarez",
             "clubes":   ["River Plate", "Manchester City", "Atlético de Madrid"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Julian+Alvarez+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/99727.png"
         },
         {
             "nome": "Paulo Dybala",
             "clubes":   ["Instituto de Córdoba", "Palermo", "Juventus", "Roma"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Paulo+Dybala+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/52849.png"
         },
         {
             "nome": "Ángel Correa",
             "clubes":   ["San Lorenzo", "Atlético de Madrid"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Angel+Correa+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/66894.png"
         },
         {
             "nome": "Thiago Almada",
             "clubes":   ["Vélez Sarsfield", "Atlanta United", "Botafogo", "Lyon", "Atlético de Madrid"],
             "selecoes": ["Argentina"],
-            "foto": "https://www.google.com/search?q=Thiago+Almada+transparent+background+png"
+            "foto": "https://cdn.soccerwiki.org/images/player/99239.png"
         },
         {
             "nome": "Nahuel Guzmán",
@@ -1164,6 +1167,60 @@
             "clubes":   ["Huracán (TA)", "Banfield", "Boca Juniors", "Genoa", "Inter de Milão", "Bologna", "Brescia"],
             "selecoes": ["Argentina"],
             "foto": "https://www.google.com/search?q=Rodrigo+Palacio+transparent+background+png"
+        },
+        {
+            "nome": "Giuliano Simeone",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Nico González",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Leonardo Balerdi",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Taty Castellanos",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Emiliano Buendía",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Alejandro Garnacho",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Matías Soulé",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Alan Varela",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
+        },
+        {
+            "nome": "Facundo Medina",
+            "clubes": ["Godoy Cruz", "Estudiantes", "Benfica", "Valencia", "River Plate"],
+            "selecoes": ["Argentina"],
+            "foto": "https://www.google.com/search?q=Enzo+Perez+transparent+background+png"
         },
         {
             "nome": "Manuel Neuer",
@@ -1398,6 +1455,90 @@
             "clubes":   ["Beveren", "Metallurh", "Olympiacos", "Monaco", "Barcelona", "Manchester City", "Qingdao Huanghai"],
             "selecoes": ["Costa do Marfim"],
             "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Yaya_Touré_2012.jpg/440px-Yaya_Touré_2012.jpg"
+        },
+        {
+            "nome": "Andrea Pirlo",
+            "clubes":   ["Brescia", "Inter de Milão", "Reggina", "Brescia", "Milan", "Juventus", "New York City"],
+            "selecoes": ["Italia"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Alphonse Areola",
+            "clubes":   ["Paris Saint-Germain", "Lens", "Bastia", "Villarreal", "Real Madrid", "Fulham", "West Ham"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Hugo Lloris",
+            "clubes":   ["Nice", "Lyon", "Tottenham", "Los Angeles FC"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Steve Mandanda",
+            "clubes":   ["Le Havre", "Olympique de Marseille", "Crystal Palace", "Rennes"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Presel Kimpembe",
+            "clubes":   ["Paris Saint-Germain", "Qatar SC"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Ibrahima Konaté",
+            "clubes":   ["Sochaux", "RB Leipzig", "Liverpool"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Jules Koundé",
+            "clubes":   ["Bordeaux", "Sevilla", "Barcelona"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Lucas Hernández",
+            "clubes":   ["Atlético de Madrid", "Bayern de Munique", "Paris Saint-Germain"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "William Saliba",
+            "clubes":   ["Saint-Étienne", "Arsenal", "Nice", "Olympique de Marseille"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome":     "Dayot Upamecano",
+            "clubes":   ["Red Bull Salzburg", "Liefering", "RB Leipzig", "Bayern de Munique"],
+            "selecoes": ["França"],
+            "foto":     "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome":     "Raphaël Varane",
+            "clubes":   ["Lens", "Real Madrid", "Manchester United", "Como"],
+            "selecoes": ["França"],
+            "foto":     "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome":     "Theo Hernández",
+            "clubes":   ["Atlético de Madridrescia", "Deportivo Alavés", "Real Madrid", "Real Sociedad", "Milan", "Al-Hilal"],
+            "selecoes": ["França"],
+            "foto":     "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Benjamin Pavard",
+            "clubes":   ["Lille", "Stuttgart", "Bayern de Munique", "Inter de Milão", "Olympique de Marseille"],
+            "selecoes": ["França"],
+            "foto": "https://futbol-11.com/images/10.webp"
+        },
+        {
+            "nome": "Eduardo Camavinga",
+            "clubes":   ["Rennes", "Real Madrid"],
+            "selecoes": ["Italia"],
+            "foto": "https://futbol-11.com/images/10.webp"
         }
     ]
 }
