@@ -86,7 +86,7 @@ export function esconderResultado() {
     document.getElementById("resultOverlay").classList.remove("active");
 }
 
-// --- VERIFICAR BINGO (LINHAS, COLUNAS, DIAGONAIS) ---
+// --- VERIFICAR BINGO ---
 export function verificarBingos() {
     const marcadas = estado.celulasMarcadas;
     let bingos = 0;
