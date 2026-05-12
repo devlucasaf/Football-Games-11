@@ -15,7 +15,8 @@
                 { "posicao": 8, "nome": "Brasil", "detalhe": "1994 (EUA)" },
                 { "posicao": 9, "nome": "Alemanha", "detalhe": "1990 (Itália)" },
                 { "posicao": 10, "nome": "Argentina", "detalhe": "1986 (México)" }
-            ]
+            ],
+            "opcoes": ["Argentina", "França", "Alemanha", "Espanha", "Itália", "Brasil", "Uruguai", "Inglaterra", "Portugal", "Holanda", "Bélgica", "Croácia", "Colômbia", "México", "Japão", "Coreia do Sul", "EUA", "Suécia", "Rússia", "Suíça", "Chile", "Paraguai", "Peru", "Dinamarca", "Polônia", "Nigéria", "Camarões", "Gana", "Senegal", "Austrália"]
         },
         {
             "tema": "Maiores artilheiros da história da Champions League",
@@ -32,7 +33,8 @@
                 { "posicao": 8,  "nome": "Shevchenko",          "detalhe": "48 gols" },
                 { "posicao": 9,  "nome": "Mbappé",              "detalhe": "48 gols" },
                 { "posicao": 10, "nome": "Haaland",             "detalhe": "46 gols" }
-            ]
+            ],
+            "opcoes": ["Cristiano Ronaldo", "Messi", "Lewandowski", "Benzema", "Raúl", "Van Nistelrooy", "Henry", "Shevchenko", "Mbappé", "Haaland", "Neymar", "Suárez", "Agüero", "Ibrahimović", "Rooney", "Drogba", "Torres", "Inzaghi", "Del Piero", "Cavani", "Griezmann", "Salah", "Firmino", "Müller", "David Villa", "Eto'o", "Robben", "Ribéry", "Bale", "Di María", "Vinícius Jr.", "De Bruyne", "Kane", "Lukaku", "Sterling"]
         },
         {
             "tema": "Clubes com mais títulos de Champions League",
@@ -49,7 +51,8 @@
                 { "posicao": 8, "nome": "Manchester United", "detalhe": "3 títulos" },
                 { "posicao": 9, "nome": "Juventus", "detalhe": "2 títulos" },
                 { "posicao": 10, "nome": "Benfica", "detalhe": "2 títulos" }
-            ]
+            ],
+            "opcoes": ["Real Madrid", "Milan", "Bayern de Munique", "Liverpool", "Barcelona", "Ajax", "Inter de Milão", "Manchester United", "Juventus", "Benfica", "Chelsea", "Manchester City", "Borussia Dortmund", "Porto", "PSG", "Atlético de Madrid", "Arsenal", "Tottenham", "Roma", "Lazio", "Napoli", "Olympique de Marseille", "Celtic", "Rangers", "Feyenoord", "PSV", "Sporting", "Hamburgo", "Nottingham Forest", "Aston Villa", "Estrela Vermelha", "Steaua Bucareste"]
         },
         {
             "tema": "Maiores artilheiros da história das Copas do Mundo",
@@ -60,13 +63,14 @@
                 { "posicao": 2, "nome": "Ronaldo", "detalhe": "15 gols" },
                 { "posicao": 3, "nome": "Gerd Müller", "detalhe": "14 gols" },
                 { "posicao": 4, "nome": "Just Fontaine", "detalhe": "13 gols" },
-                { "posicao": 5, "nome": "Pelé", "detalhe": "12 gols" },
-                { "posicao": 6, "nome": "Mbappé", "detalhe": "12 gols" },
-                { "posicao": 7, "nome": "Sándor Kocsis", "detalhe": "11 gols" },
-                { "posicao": 8, "nome": "Jürgen Klinsmann", "detalhe": "11 gols" },
-                { "posicao": 9, "nome": "Helmut Rahn", "detalhe": "10 gols" },
-                { "posicao": 10, "nome": "Messi", "detalhe": "13 gols" }
-            ]
+                { "posicao": 5, "nome": "Messi", "detalhe": "13 gols" },
+                { "posicao": 6, "nome": "Pelé", "detalhe": "12 gols" },
+                { "posicao": 7, "nome": "Mbappé", "detalhe": "12 gols" },
+                { "posicao": 8, "nome": "Sándor Kocsis", "detalhe": "11 gols" },
+                { "posicao": 9, "nome": "Jürgen Klinsmann", "detalhe": "11 gols" },
+                { "posicao": 10, "nome": "Helmut Rahn", "detalhe": "10 gols" }
+            ],
+            "opcoes": ["Miroslav Klose", "Ronaldo", "Gerd Müller", "Just Fontaine", "Messi", "Pelé", "Mbappé", "Sándor Kocsis", "Jürgen Klinsmann", "Helmut Rahn", "Neymar", "Batistuta", "Rivaldo", "Zidane", "Beckham", "Maradona", "Romário", "Vavá", "Garrincha", "Eusébio", "Lineker", "Suárez", "David Villa", "Thomas Müller", "James Rodríguez", "Hakan Şükür", "Davor Šuker", "Ademir", "Bebeto", "Cristiano Ronaldo"]
         },
         {
             "tema": "Seleções com mais títulos de Copa do Mundo",
@@ -83,7 +87,8 @@
                 { "posicao": 8, "nome": "Espanha", "detalhe": "1 título" },
                 { "posicao": 9, "nome": "Japão", "detalhe": "0 títulos (4ª de lugar)" },
                 { "posicao": 10, "nome": "Croácia", "detalhe": "0 títulos (vice 2018)" }
-            ]
+            ],
+            "opcoes": ["Brasil", "Alemanha", "Itália", "Argentina", "França", "Uruguai", "Inglaterra", "Espanha", "Japão", "Croácia", "Holanda", "Portugal", "Bélgica", "Suécia", "Polônia", "Hungria", "Colômbia", "México", "Chile", "Paraguai", "Peru", "EUA", "Coreia do Sul", "Rússia", "Suíça", "Dinamarca", "Sérvia", "Turquia", "Nigéria", "Camarões"]
         },
         {
             "tema": "Jogadores com mais Bolas de Ouro",
@@ -100,7 +105,8 @@
                 { "posicao": 8, "nome": "Alfredo Di Stéfano", "detalhe": "2 Bolas de Ouro" },
                 { "posicao": 9, "nome": "Kevin Keegan", "detalhe": "2 Bolas de Ouro" },
                 { "posicao": 10, "nome": "Karl-Heinz Rummenigge", "detalhe": "2 Bolas de Ouro" }
-            ]
+            ],
+            "opcoes": ["Messi", "Cristiano Ronaldo", "Johan Cruyff", "Michel Platini", "Marco van Basten", "Beckenbauer", "Ronaldo", "Alfredo Di Stéfano", "Kevin Keegan", "Karl-Heinz Rummenigge", "Zidane", "Ronaldinho", "Kaká", "Nedvěd", "Owen", "Figo", "Rivaldo", "Shevchenko", "Stoichkov", "Baggio", "Matthäus", "Maradona", "Pelé", "George Best", "Eusébio", "Bobby Charlton", "Lev Yashin", "Modric", "Benzema", "Lewandowski", "Neymar", "Mbappé", "Haaland", "Vinícius Jr.", "Rodri"]
         },
         {
             "tema": "Últimos 10 vencedores da Champions League",
@@ -117,7 +123,8 @@
                 { "posicao": 8, "nome": "Real Madrid", "detalhe": "2016-17" },
                 { "posicao": 9, "nome": "Real Madrid", "detalhe": "2015-16" },
                 { "posicao": 10, "nome": "Barcelona", "detalhe": "2014-15" }
-            ]
+            ],
+            "opcoes": ["Real Madrid", "Manchester City", "Chelsea", "Bayern de Munique", "Liverpool", "Barcelona", "Juventus", "PSG", "Borussia Dortmund", "Atlético de Madrid", "Inter de Milão", "Milan", "Manchester United", "Arsenal", "Tottenham", "Napoli", "Roma", "Sevilla", "Porto", "Benfica", "Ajax", "RB Leipzig", "Olympique de Lyon", "Monaco", "Villarreal", "Atalanta"]
         },
         {
             "tema": "Maiores artilheiros da história do futebol (clubes + seleções)",
@@ -134,7 +141,8 @@
                 { "posicao": 8, "nome": "Suárez", "detalhe": "550+ gols" },
                 { "posicao": 9, "nome": "Eusébio", "detalhe": "620 gols" },
                 { "posicao": 10, "nome": "Zlatan", "detalhe": "570+ gols" }
-            ]
+            ],
+            "opcoes": ["Cristiano Ronaldo", "Messi", "Pelé", "Romário", "Lewandowski", "Gerd Müller", "Ferenc Puskás", "Suárez", "Eusébio", "Zlatan", "Neymar", "Benzema", "Cavani", "Rooney", "Henry", "Agüero", "David Villa", "Raúl", "Rivaldo", "Batistuta", "Zico", "Ronaldinho", "Maradona", "Haaland", "Salah", "Mbappé", "Del Piero", "Totti", "Roberto Carlos", "Drogba", "Eto'o", "Van Persie", "Falcao", "Bebeto", "Adriano"]
         },
         {
             "tema": "Clubes com mais títulos de Libertadores",
@@ -151,7 +159,8 @@
                 { "posicao": 8, "nome": "São Paulo", "detalhe": "3 títulos" },
                 { "posicao": 9, "nome": "Nacional", "detalhe": "3 títulos" },
                 { "posicao": 10, "nome": "Olimpia", "detalhe": "3 títulos" }
-            ]
+            ],
+            "opcoes": ["Independiente", "Boca Juniors", "Peñarol", "River Plate", "Estudiantes", "Grêmio", "Santos", "São Paulo", "Nacional", "Olimpia", "Flamengo", "Palmeiras", "Cruzeiro", "Corinthians", "Internacional", "Vasco", "Athletico-PR", "Atlético-MG", "Racing", "San Lorenzo", "Vélez Sársfield", "Colo-Colo", "LDU Quito", "Once Caldas", "América de Cali", "Deportivo Cali", "Cerro Porteño", "Libertad", "Universitario", "Fluminense", "Botafogo"]
         },
         {
             "tema": "Jogadores com mais jogos por seleções nacionais",
@@ -168,7 +177,8 @@
                 { "posicao": 8, "nome": "Iker Casillas", "detalhe": "167 jogos" },
                 { "posicao": 9, "nome": "Xavi", "detalhe": "133 jogos" },
                 { "posicao": 10, "nome": "Andrés Iniesta", "detalhe": "131 jogos" }
-            ]
+            ],
+            "opcoes": ["Cristiano Ronaldo", "Bader Al-Mutawa", "Sergio Ramos", "Luka Modrić", "Messi", "Ahmed Hassan", "Buffon", "Iker Casillas", "Xavi", "Andrés Iniesta", "Neymar", "Dani Alves", "Marcelo", "Piqué", "Chiellini", "Bonucci", "Neuer", "Kroos", "Özil", "Müller", "Lewandowski", "Ibrahimović", "Mbappé", "Griezmann", "Pogba", "Hazard", "De Bruyne", "Suárez", "Cavani", "Higuaín", "Godín", "Thiago Silva", "Busquets", "Kimmich"]
         },
         {
             "tema": "Últimos 10 vencedores da Bola de Ouro",
@@ -185,7 +195,8 @@
                 { "posicao": 8, "nome": "Cristiano Ronaldo", "detalhe": "2017" },
                 { "posicao": 9, "nome": "Cristiano Ronaldo", "detalhe": "2016" },
                 { "posicao": 10, "nome": "Messi", "detalhe": "2015" }
-            ]
+            ],
+            "opcoes": ["Rodri", "Messi", "Benzema", "Lewandowski", "Luka Modrić", "Cristiano Ronaldo", "Neymar", "Mbappé", "Salah", "Haaland", "Vinícius Jr.", "De Bruyne", "Kane", "Van Dijk", "Griezmann", "Suárez", "Neuer", "Ribéry", "Bale", "Hazard", "Agüero", "Pogba", "Kroos", "Dybala", "Firmino", "Mané", "Son", "Bellingham", "Yamal"]
         },
         {
             "tema": "Clubes com mais títulos de Premier League",
@@ -194,15 +205,16 @@
             "itens": [
                 { "posicao": 1, "nome": "Manchester United", "detalhe": "20 títulos" },
                 { "posicao": 2, "nome": "Liverpool", "detalhe": "19 títulos" },
-                { "posicao": 3, "nome": "Manchester City", "detalhe": "10 títulos" },
-                { "posicao": 4, "nome": "Arsenal", "detalhe": "13 títulos" },
-                { "posicao": 5, "nome": "Chelsea", "detalhe": "6 títulos" },
-                { "posicao": 6, "nome": "Everton", "detalhe": "9 títulos" },
-                { "posicao": 7, "nome": "Tottenham", "detalhe": "2 títulos" },
-                { "posicao": 8, "nome": "Aston Villa", "detalhe": "7 títulos" },
-                { "posicao": 9, "nome": "Sunderland", "detalhe": "6 títulos" },
+                { "posicao": 3, "nome": "Arsenal", "detalhe": "13 títulos" },
+                { "posicao": 4, "nome": "Manchester City", "detalhe": "10 títulos" },
+                { "posicao": 5, "nome": "Everton", "detalhe": "9 títulos" },
+                { "posicao": 6, "nome": "Aston Villa", "detalhe": "7 títulos" },
+                { "posicao": 7, "nome": "Chelsea", "detalhe": "6 títulos" },
+                { "posicao": 8, "nome": "Sunderland", "detalhe": "6 títulos" },
+                { "posicao": 9, "nome": "Tottenham", "detalhe": "2 títulos" },
                 { "posicao": 10, "nome": "Leicester", "detalhe": "1 título" }
-            ]
+            ],
+            "opcoes": ["Manchester United", "Liverpool", "Arsenal", "Manchester City", "Everton", "Aston Villa", "Chelsea", "Sunderland", "Tottenham", "Leicester", "Newcastle", "West Ham", "Leeds United", "Nottingham Forest", "Wolverhampton", "Sheffield United", "Blackburn", "Burnley", "Derby County", "Southampton", "Crystal Palace", "Brighton", "Brentford", "Fulham", "Bournemouth", "Ipswich Town"]
         },
         {
             "tema": "Maiores artilheiros da história da La Liga",
@@ -219,6 +231,38 @@
                 { "posicao": 8, "nome": "Benzema", "detalhe": "192 gols" },
                 { "posicao": 9, "nome": "Quini", "detalhe": "219 gols" },
                 { "posicao": 10, "nome": "Pahiño", "detalhe": "210 gols" }
+            ],
+            "opcoes": [
+                "Messi", 
+                "Cristiano Ronaldo", 
+                "Telmo Zarra", 
+                "Hugo Sánchez", 
+                "Raúl", 
+                "Alfredo Di Stéfano", 
+                "César", 
+                "Benzema", 
+                "Quini", 
+                "Pahiño", 
+                "Suárez", 
+                "Griezmann", 
+                "David Villa", 
+                "Samuel Eto'o", 
+                "Lewandowski", 
+                "Neymar", 
+                "Xavi", 
+                "Iniesta", 
+                "Luka Modric", 
+                "Fernando Torres", 
+                "Diego Forlán", 
+                "Zlatan Ibrahimović", 
+                "Gareth Bale", 
+                "Sergio Agüero", 
+                "Ousmane Dembélé", 
+                "Vinícius Jr.", 
+                "Pedri", 
+                "Yamal", 
+                "Gonzalo Higuaín", 
+                "Radamel Falcao"
             ]
         },
         {
@@ -236,6 +280,36 @@
                 { "posicao": 8, "nome": "Vasco", "detalhe": "4 títulos" },
                 { "posicao": 9, "nome": "Internacional", "detalhe": "3 títulos" },
                 { "posicao": 10, "nome": "Grêmio", "detalhe": "2 títulos" }
+            ],
+            "opcoes": [
+                "Palmeiras", 
+                "Santos", 
+                "Flamengo", 
+                "Corinthians",
+                "São Paulo", 
+                "Cruzeiro", 
+                "Fluminense", 
+                "Vasco", 
+                "Internacional", 
+                "Grêmio", 
+                "Atlético-MG", 
+                "Botafogo", 
+                "Bahia", 
+                "Sport", 
+                "Guarani", 
+                "Coritiba", 
+                "Athletico-PR", 
+                "Fortaleza", 
+                "Ceará", 
+                "Goiás", 
+                "Vitória", 
+                "Ponte Preta", 
+                "Portuguesa", 
+                "América-MG", 
+                "Juventude", 
+                "Chapecoense", 
+                "Cuiabá", 
+                "Bragantino"
             ]
         },
         {
@@ -253,6 +327,28 @@
                 { "posicao": 8, "nome": "Bolívia", "detalhe": "1 título" },
                 { "posicao": 9, "nome": "Equador", "detalhe": "0 títulos" },
                 { "posicao": 10, "nome": "Venezuela", "detalhe": "0 títulos" }
+            ],
+            "opcoes": [
+                "Argentina", 
+                "Uruguai", 
+                "Brasil", 
+                "Paraguai", 
+                "Chile", 
+                "Peru", 
+                "Colômbia", 
+                "Bolívia", 
+                "Equador", 
+                "Venezuela", 
+                "México", 
+                "EUA", 
+                "Costa Rica", 
+                "Jamaica", 
+                "Panamá", 
+                "Honduras", 
+                "Canadá", 
+                "Japão", 
+                "Qatar", 
+                "Trinidade e Tobago"
             ]
         },
         {
@@ -270,24 +366,26 @@
                 { "posicao": 8, "nome": "Sevilla", "detalhe": "1 título" },
                 { "posicao": 9, "nome": "Real Betis", "detalhe": "1 título" },
                 { "posicao": 10, "nome": "Celta de Vigo", "detalhe": "0 títulos" }
-            ]
+            ],
+            "opcoes": ["Real Madrid", "Barcelona", "Atlético de Madrid", "Athletic Bilbao", "Valencia", "Real Sociedad", "Deportivo La Coruña", "Sevilla", "Real Betis", "Celta de Vigo", "Villarreal", "Espanyol", "Real Valladolid", "Osasuna", "Girona", "Mallorca", "Alavés", "Getafe", "Las Palmas", "Rayo Vallecano", "Levante", "Granada", "Cádiz", "Eibar", "Leganés"]
         },
         {
             "tema": "Maiores artilheiros da história da Premier League",
             "categoria": "jogadores",
             "icone": "fa-futbol",
             "itens": [
-                { "posicao": 1, "nome": "Alan Shearer", "detalhe": "260 gols" },
-                { "posicao": 2, "nome": "Wayne Rooney", "detalhe": "208 gols" },
-                { "posicao": 3, "nome": "Andrew Cole", "detalhe": "187 gols" },
-                { "posicao": 4, "nome": "Sergio Agüero", "detalhe": "184 gols" },
-                { "posicao": 5, "nome": "Frank Lampard", "detalhe": "177 gols" },
-                { "posicao": 6, "nome": "Thierry Henry", "detalhe": "175 gols" },
-                { "posicao": 7, "nome": "Robbie Fowler", "detalhe": "163 gols" },
-                { "posicao": 8, "nome": "Jermain Defoe", "detalhe": "162 gols" },
-                { "posicao": 9, "nome": "Salah", "detalhe": "160+ gols" },
-                { "posicao": 10, "nome": "Harry Kane", "detalhe": "213 gols" }
-            ]
+                { "posicao": 1, "nome": "Alan Shearer",     "detalhe": "260 gols" },
+                { "posicao": 2, "nome": "Harry Kane",       "detalhe": "213 gols" },
+                { "posicao": 3, "nome": "Wayne Rooney",     "detalhe": "208 gols" },
+                { "posicao": 4, "nome": "Andrew Cole",      "detalhe": "187 gols" },
+                { "posicao": 5, "nome": "Sergio Agüero",    "detalhe": "184 gols" },
+                { "posicao": 6, "nome": "Frank Lampard",    "detalhe": "177 gols" },
+                { "posicao": 7, "nome": "Thierry Henry",    "detalhe": "175 gols" },
+                { "posicao": 8, "nome": "Robbie Fowler",    "detalhe": "163 gols" },
+                { "posicao": 9, "nome": "Jermain Defoe",    "detalhe": "162 gols" },
+                { "posicao": 10, "nome": "Salah",           "detalhe": "160+ gols" }
+            ],
+            "opcoes": ["Alan Shearer", "Harry Kane", "Wayne Rooney", "Andrew Cole", "Sergio Agüero", "Frank Lampard", "Thierry Henry", "Robbie Fowler", "Jermain Defoe", "Salah", "Les Ferdinand", "Teddy Sheringham", "Robin van Persie", "Michael Owen", "Drogba", "Torres", "Vardy", "Lukaku", "Son", "Firmino", "Mané", "Sterling", "Aubameyang", "Haaland", "Bergkamp", "Gerrard", "Scholes", "Beckham", "Cantona", "Suárez"]
         },
         {
             "tema": "Seleções campeãs da Eurocopa (últimas edições)",
@@ -304,23 +402,57 @@
                 { "posicao": 8, "nome": "Alemanha", "detalhe": "1996" },
                 { "posicao": 9, "nome": "Dinamarca", "detalhe": "1992" },
                 { "posicao": 10, "nome": "Holanda", "detalhe": "1988" }
-            ]
+            ],
+            "opcoes": ["Espanha", "Itália", "Portugal", "Grécia", "França", "Alemanha", "Dinamarca", "Holanda", "Inglaterra", "Bélgica", "Croácia", "Suíça", "Suécia", "Noruega", "Polônia", "República Tcheca", "Eslováquia", "Romênia", "Bulgária", "Turquia", "Rússia", "Ucrânia", "Áustria", "Hungria", "Irlanda", "Escócia", "País de Gales", "Sérvia", "Geórgia", "Albânia", "Finlândia", "Islândia"]
         },
         {
             "tema": "Técnicos com mais títulos de Champions League",
             "categoria": "jogadores",
             "icone": "fa-chess-king",
             "itens": [
-                { "posicao": 1, "nome": "Carlo Ancelotti", "detalhe": "5 títulos" },
-                { "posicao": 2, "nome": "Bob Paisley", "detalhe": "3 títulos" },
-                { "posicao": 3, "nome": "Zinedine Zidane", "detalhe": "3 títulos" },
-                { "posicao": 4, "nome": "Pep Guardiola", "detalhe": "2 títulos" },
-                { "posicao": 5, "nome": "Alex Ferguson", "detalhe": "2 títulos" },
-                { "posicao": 6, "nome": "Brian Clough", "detalhe": "2 títulos" },
-                { "posicao": 7, "nome": "Arrigo Sacchi", "detalhe": "1 título" },
-                { "posicao": 8, "nome": "José Mourinho", "detalhe": "2 títulos" },
-                { "posicao": 9, "nome": "Jürgen Klopp", "detalhe": "1 título" },
-                { "posicao": 10, "nome": "Vicente del Bosque", "detalhe": "2 títulos" }
+                { "posicao": 1, "nome": "Carlo Ancelotti",      "detalhe": "5 títulos" },
+                { "posicao": 2, "nome": "Bob Paisley",          "detalhe": "3 títulos" },
+                { "posicao": 3, "nome": "Zinedine Zidane",      "detalhe": "3 títulos" },
+                { "posicao": 4, "nome": "Pep Guardiola",        "detalhe": "2 títulos" },
+                { "posicao": 5, "nome": "Alex Ferguson",        "detalhe": "2 títulos" },
+                { "posicao": 6, "nome": "Brian Clough",         "detalhe": "2 títulos" },
+                { "posicao": 7, "nome": "José Mourinho",        "detalhe": "2 títulos" },
+                { "posicao": 8, "nome": "Vicente del Bosque",   "detalhe": "2 título" },
+                { "posicao": 9, "nome": "Jürgen Klopp",         "detalhe": "1 título" },
+                { "posicao": 10, "nome": "Arrigo Sacchi",       "detalhe": "1 títulos" }
+            ],
+            "opcoes": [
+                "Carlo Ancelotti", 
+                "Bob Paisley", 
+                "Zinedine Zidane", 
+                "Pep Guardiola", 
+                "Alex Ferguson", 
+                "Brian Clough", 
+                "José Mourinho", 
+                "Arrigo Sacchi", 
+                "Jürgen Klopp", 
+                "Vicente del Bosque", 
+                "Rafa Benítez", 
+                "Luis Enrique", 
+                "Thomas Tuchel", 
+                "Hansi Flick", 
+                "Diego Simeone", 
+                "Antonio Conte", 
+                "Mauricio Pochettino", 
+                "Arsène Wenger", 
+                "Fabio Capello", 
+                "Marcello Lippi", 
+                "Louis van Gaal", 
+                "Ottmar Hitzfeld", 
+                "Jupp Heynckes", 
+                "Johan Cruyff", 
+                "Frank Rijkaard", 
+                "Massimiliano Allegri", 
+                "Julian Nagelsmann", 
+                "Xabi Alonso", 
+                "Mikel Arteta",
+                "Fernando Diniz",
+                "Tite"
             ]
         },
         {
@@ -328,16 +460,51 @@
             "categoria": "clubes",
             "icone": "fa-shield-alt",
             "itens": [
-                { "posicao": 1, "nome": "Cruzeiro", "detalhe": "6 títulos" },
-                { "posicao": 2, "nome": "Flamengo", "detalhe": "5 títulos" },
-                { "posicao": 3, "nome": "Palmeiras", "detalhe": "4 títulos" },
-                { "posicao": 4, "nome": "Grêmio", "detalhe": "5 títulos" },
-                { "posicao": 5, "nome": "Corinthians", "detalhe": "3 títulos" },
-                { "posicao": 6, "nome": "Fluminense", "detalhe": "1 título" },
-                { "posicao": 7, "nome": "São Paulo", "detalhe": "1 título" },
-                { "posicao": 8, "nome": "Athletico-PR", "detalhe": "1 título" },
-                { "posicao": 9, "nome": "Sport", "detalhe": "1 título" },
-                { "posicao": 10, "nome": "Santos", "detalhe": "1 título" }
+                { "posicao": 1,  "nome": "Cruzeiro",     "detalhe": "6 títulos"  },
+                { "posicao": 2,  "nome": "Grêmio",       "detalhe": "5 títulos"  },
+                { "posicao": 3,  "nome": "Flamengo",     "detalhe": "5 títulos"  },
+                { "posicao": 4,  "nome": "Palmeiras",    "detalhe": "4 títulos"  },
+                { "posicao": 5,  "nome": "Corinthians",  "detalhe": "4 títulos"  },
+                { "posicao": 6,  "nome": "Atlético-MG",  "detalhe": "2 títulos"   },
+                { "posicao": 7,  "nome": "São Paulo",    "detalhe": "1 título"   },
+                { "posicao": 8,  "nome": "Athletico-PR", "detalhe": "1 título"   },
+                { "posicao": 9,  "nome": "Fluminense",   "detalhe": "1 título"   },
+                { "posicao": 10, "nome": "Santos",       "detalhe": "1 título"   }
+            ],
+            "opcoes": [
+                "Cruzeiro", 
+                "Grêmio", 
+                "Flamengo", 
+                "Palmeiras", 
+                "Corinthians", 
+                "Fluminense", 
+                "São Paulo", 
+                "Athletico-PR", 
+                "Sport", 
+                "Santos", 
+                "Internacional", 
+                "Vasco", 
+                "Atlético-MG", 
+                "Botafogo", 
+                "Bahia", 
+                "Fortaleza", 
+                "Ceará", 
+                "Goiás", 
+                "Ponte Preta", 
+                "Coritiba", 
+                "Guarani", 
+                "Juventude", 
+                "Vitória", 
+                "América-MG", 
+                "Bragantino", 
+                "Paysandu", 
+                "Santo André", 
+                "Paulista de Jundiaí",
+                "Aparecidense",
+                "ABC de Natal",
+                "Atlético Acreano",
+                "Botafogo-PB",
+                "Mirassol"
             ]
         }
     ]

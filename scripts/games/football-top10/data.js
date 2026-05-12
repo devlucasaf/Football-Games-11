@@ -25,6 +25,15 @@ export function escolherLista() {
 }
 
 export function obterNomesItens() {
-    if (!estado.listaAtual) return [];
+    if (!estado.listaAtual) {
+        return [];
+    }
     return estado.listaAtual.itens.map(item => item.nome);
+}
+
+export function obterOpcoes() {
+    if (!estado.listaAtual) {
+        return [];
+    }
+    return estado.listaAtual.opcoes || estado.listaAtual.itens.map(item => item.nome);
 }

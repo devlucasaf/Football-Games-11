@@ -1,6 +1,6 @@
 import estado from './core.js';
 import { normalizar } from './utils.js';
-import { obterNomesItens } from './data.js';
+import { obterNomesItens, obterOpcoes } from './data.js';
 
 const $lista          = document.getElementById('top10Lista');
 const $temaIcone      = document.getElementById('temaIcone');
@@ -108,11 +108,15 @@ export function inicializarSugestoes(onSelecionar) {
             return;
         }
 
-        const nomes = obterNomesItens();
+        const opcoes = obterOpcoes();
         const valorN = normalizar(valor);
 
-        const sugestoes = nomes.filter((nome, idx) => {
-            if (estado.itensAcertados.has(idx)) { 
+        const nomesAcertados = new Set(
+            [...estado.itensAcertados].map(idx => normalizar(estado.listaAtual.itens[idx].nome))
+        );
+
+        const sugestoes = opcoes.filter(nome => {
+            if (nomesAcertados.has(normalizar(nome))) {
                 return false;
             }
             return normalizar(nome).includes(valorN);
