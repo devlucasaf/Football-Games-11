@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Adivinha Jogador | Football Games 11</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/football-adivinha-jogador.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-adivinha-jogador">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <h2>Como jogar Adivinha Jogador</h2>
+                    <p>Use as pistas para descobrir o jogador misterioso!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Uma pista é revelada no início (posição do jogador).</li>
+                    <li><span class="tutorial-step-number">2</span> Tente adivinhar ou peça mais pistas clicando nos cards.</li>
+                    <li><span class="tutorial-step-number">3</span> Cada card oculto contém uma informação: país, clube, títulos, etc.</li>
+                    <li><span class="tutorial-step-number">4</span> Quanto menos pistas usar, mais pontos você ganha!</li>
+                    <li><span class="tutorial-step-number">5</span> São 6 pistas no total. Use-as com sabedoria!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="adivinha-container">
+                <div class="adivinha-header">
+                    <h2 class="game-title"><i class="fas fa-magnifying-glass"></i> Adivinha Jogador</h2>
+                    <p class="game-description">Descubra o jogador misterioso pelas pistas!</p>
+                </div>
+
+                <div class="adivinha-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>Acertos: <strong id="acertosCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Rodadas: <strong id="rodadasCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Sequência: <strong id="sequenciaCount">0</strong></span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>Pontos: <strong id="pontosCount">0</strong></span>
+                    </div>
+                </div>
+
+                <div class="pistas-grid" id="pistasGrid">
+                    <div class="pista-card" data-pista="posicao" data-idx="0">
+                        <div class="pista-frente">
+                            <i class="fas fa-running"></i>
+                            <span class="pista-label">Posição</span>
+                        </div>
+
+                        <div class="pista-verso">
+                            <i class="fas fa-running pista-icone"></i>
+                            <span class="pista-categoria">Posição</span>
+                            <span class="pista-valor" id="pistaVal0"></span>
+                        </div>
+                    </div>
+
+                    <div class="pista-card oculto" data-pista="pais" data-idx="1">
+                        <div class="pista-frente">
+                            <i class="fas fa-lock"></i>
+                            <span class="pista-label">País</span>
+                        </div>
+
+                        <div class="pista-verso">
+                            <span class="pista-bandeira" id="pistaBandeira"></span>
+                            <span class="pista-categoria">País</span>
+                            <span class="pista-valor" id="pistaVal1"></span>
+                        </div>
+                    </div>
+
+                    <div class="pista-card oculto" data-pista="idade" data-idx="2">
+                        <div class="pista-frente">
+                            <i class="fas fa-lock"></i>
+                            <span class="pista-label">Idade</span>
+                        </div>
+
+                        <div class="pista-verso">
+                            <i class="fas fa-calendar pista-icone"></i>
+                            <span class="pista-categoria">Idade</span>
+                            <span class="pista-valor" id="pistaVal2"></span>
+                        </div>
+                    </div>
+
+                    <div class="pista-card oculto" data-pista="principalClube" data-idx="3">
+                        <div class="pista-frente">
+                            <i class="fas fa-lock"></i>
+                            <span class="pista-label">Principal Clube</span>
+                        </div>
+
+                        <div class="pista-verso">
+                            <i class="fas fa-shield-alt pista-icone"></i>
+                            <span class="pista-categoria">Principal Clube</span>
+                            <span class="pista-valor" id="pistaVal3"></span>
+                        </div>
+                    </div>
+
+                    <div class="pista-card oculto" data-pista="titulos" data-idx="4">
+                        <div class="pista-frente">
+                            <i class="fas fa-lock"></i>
+                            <span class="pista-label">Títulos</span>
+                        </div>
+                        
+                        <div class="pista-verso">
+                            <i class="fas fa-trophy pista-icone"></i>
+                            <span class="pista-categoria">Títulos</span>
+                            <span class="pista-valor" id="pistaVal4"></span>
+                        </div>
+                    </div>
+
+                    <div class="pista-card oculto" data-pista="curiosidade" data-idx="5">
+                        <div class="pista-frente">
+                            <i class="fas fa-lock"></i>
+                            <span class="pista-label">Curiosidade</span>
+                        </div>
+                        <div class="pista-verso">
+                            <i class="fas fa-lightbulb pista-icone"></i>
+                            <span class="pista-categoria">Curiosidade</span>
+                            <span class="pista-valor" id="pistaVal5"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pistas-counter">
+                    <span>Pistas reveladas: <strong id="pistasReveladas">1</strong>/6</span>
+                </div>
+
+                <div class="adivinha-input-area" id="inputArea">
+                    <div class="input-wrapper">
+                        <input type="text" id="palpiteInput" class="palpite-input" placeholder="Digite o nome do jogador..." autocomplete="off">
+                        <div class="sugestoes-lista" id="sugestoesLista"></div>
+                    </div>
+
+                    <div class="input-actions">
+                        <button id="confirmarBtn" class="btn-confirmar" title="Confirmar palpite">
+                            <i class="fas fa-check"></i> Confirmar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feedback-erro" id="feedbackErro" style="display:none;">
+                    <i class="fas fa-times-circle"></i>
+                    <span id="feedbackTexto">Não é esse! Tente novamente ou revele mais pistas.</span>
+                </div>
+
+                <div class="result-overlay" id="resultOverlay">
+                    <div class="result-box">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Rodada</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+        <script type="module" src="../js/minigames/football-adivinha-jogador/main.js"></script>
+    </body>
+</html>

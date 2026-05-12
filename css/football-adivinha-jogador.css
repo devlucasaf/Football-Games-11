@@ -1,0 +1,487 @@
+/* --- CONTAINER --- */
+.adivinha-container {
+    max-width: 680px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+/* --- CABEÇALHO --- */
+.adivinha-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.adivinha-header .game-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.adivinha-header .game-title i {
+    color: var(--primary-green);
+}
+
+.adivinha-header .game-description {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
+/* --- PLACAR --- */
+.adivinha-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.adivinha-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.adivinha-stats .stat-item i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
+}
+
+.adivinha-stats .stat-item strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* --- GRID DE PISTAS --- */
+.pistas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- CARD DE PISTA --- */
+.pista-card {
+    position: relative;
+    perspective: 800px;
+    min-height: 130px;
+    cursor: pointer;
+}
+
+.pista-card .pista-frente,
+.pista-card .pista-verso {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: var(--radius-md);
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    font-family: var(--font-heading);
+    padding: 12px 8px;
+    text-align: center;
+}
+
+.pista-card .pista-frente {
+    background: var(--bg-card);
+    border: 2px dashed var(--border-color);
+    color: var(--text-muted);
+    box-shadow: var(--shadow-sm);
+}
+
+.pista-card .pista-frente i {
+    font-size: 1.6rem;
+    opacity: 0.4;
+}
+
+.pista-card .pista-frente .pista-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.pista-card.oculto:hover .pista-frente {
+    border-color: var(--primary-green);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(26, 86, 50, 0.15);
+}
+
+.pista-card .pista-verso {
+    background: var(--gradient-accent);
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 4px 14px rgba(26, 86, 50, 0.2);
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.pista-card .pista-verso .pista-icone {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.pista-card .pista-verso .pista-bandeira {
+    font-size: 2rem;
+}
+
+.pista-card .pista-verso .pista-categoria {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.pista-card .pista-verso .pista-valor {
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+/* --- ESTADOS DO CARD --- */
+.pista-card.revelado .pista-frente {
+    transform: rotateY(180deg);
+}
+
+.pista-card.revelado .pista-verso {
+    transform: rotateY(0);
+}
+
+.pista-card.oculto .pista-frente {
+    transform: rotateY(0);
+}
+
+.pista-card.oculto .pista-verso {
+    transform: rotateY(180deg);
+}
+
+/* Primeiro card (posição) - já revelado */
+.pista-card:not(.oculto) {
+    cursor: default;
+}
+
+.pista-card:not(.oculto) .pista-frente {
+    transform: rotateY(180deg);
+}
+
+.pista-card:not(.oculto) .pista-verso {
+    transform: rotateY(0);
+}
+
+/* --- COUNTER --- */
+.pistas-counter {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.pistas-counter strong {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+/* --- ÁREA DE INPUT --- */
+.adivinha-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.palpite-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast);
+    outline: none;
+}
+
+.palpite-input:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(26, 86, 50, 0.1);
+}
+
+.palpite-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* --- SUGESTÕES --- */
+.sugestoes-lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 50;
+    display: none;
+    box-shadow: var(--shadow-md);
+}
+
+.sugestoes-lista.ativa {
+    display: block;
+}
+
+.sugestao-item {
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.sugestao-item:hover {
+    background: rgba(26, 86, 50, 0.08);
+}
+
+/* --- BOTÕES --- */
+.input-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-confirmar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-confirmar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 86, 50, 0.4);
+}
+
+.btn-confirmar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- FEEDBACK ERRO --- */
+.feedback-erro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(231, 76, 60, 0.08);
+    border: 1px solid rgba(231, 76, 60, 0.25);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    animation: shakeIn 0.4s ease;
+}
+
+.feedback-erro i {
+    color: #e74c3c;
+    font-size: 1rem;
+}
+
+.feedback-erro span {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+@keyframes shakeIn {
+    0%, 
+    100% { 
+        transform: translateX(0); 
+    }
+
+    20% { 
+        transform: translateX(-5px); 
+    }
+
+    40% { 
+        transform: translateX(5px); 
+    }
+
+    60% { 
+        transform: translateX(-3px); 
+    }
+
+    80% { 
+        transform: translateX(3px); 
+    }
+}
+
+
+/* --- OVERLAY RESULTADO --- */
+.result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(4px);
+}
+
+.result-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.result-box {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: var(--shadow-xl);
+    animation: resultSlideIn 0.4s ease;
+}
+
+@keyframes resultSlideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.95); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+.result-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.result-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.result-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 28px;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 86, 50, 0.4);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
+    .adivinha-container {
+        padding: var(--spacing-sm);
+    }
+
+    .adivinha-header .game-title {
+        font-size: 1.4rem;
+    }
+
+    .pistas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .pista-card {
+        min-height: 110px;
+    }
+
+    .pista-card .pista-verso .pista-valor {
+        font-size: 0.75rem;
+    }
+
+    .adivinha-stats {
+        gap: var(--spacing-sm);
+    }
+
+    .adivinha-stats .stat-item {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .pistas-grid {
+        gap: 6px;
+    }
+
+    .pista-card {
+        min-height: 95px;
+    }
+
+    .pista-card .pista-frente i {
+        font-size: 1.2rem;
+    }
+
+    .pista-card .pista-verso .pista-valor {
+        font-size: 0.65rem;
+    }
+}
