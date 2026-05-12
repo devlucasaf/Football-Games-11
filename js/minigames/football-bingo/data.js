@@ -2,14 +2,20 @@ import estado from "./core.js";
 import { embaralhar } from "./utils.js";
 
 export async function carregarDados() {
-    const resposta = await fetch("../data/football-bingo.json", { cache: "no-store" });
+    const resposta = await fetch(
+        "../data/football-bingo.json", 
+        { 
+            cache: "no-store" 
+        }
+    );
+    
     if (!resposta.ok) {
         throw new Error(`Erro ao carregar dados (${resposta.status})`);
     }
     const dados = await resposta.json();
-    estado.categorias = dados.categorias;
-    estado.jogadores = dados.jogadores;
-    estado.mapeamentoSelecao = dados.mapeamentoSelecao;
+    estado.categorias         = dados.categorias;
+    estado.jogadores          = dados.jogadores;
+    estado.mapeamentoSelecao  = dados.mapeamentoSelecao;
 }
 
 export function selecionarGrid() {

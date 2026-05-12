@@ -30,18 +30,16 @@ function confirmarMarcacoes() {
             return;
         }
 
-        const selecionado = cell.classList.contains("selecionado");
-        const cat = estado.gridCategorias[idx];
-        const corresponde = jogadorCorresponde(jogador, cat);
+        const selecionado   = cell.classList.contains("selecionado");
+        const cat           = estado.gridCategorias[idx];
+        const corresponde   = jogadorCorresponde(jogador, cat);
 
         if (selecionado && corresponde) {
-            // --- ACERTOU ---
             cell.classList.remove("selecionado");
             cell.classList.add("correto", "locked");
             estado.celulasMarcadas.add(idx);
             acertosRodada++;
         } else if (selecionado && !corresponde) {
-            // --- ERROU ---
             cell.classList.remove("selecionado");
             cell.classList.add("errado");
             errosRodada++;
@@ -103,9 +101,9 @@ function novoJogo() {
 
 // --- CONFIGURAR EVENTOS GLOBAIS ---
 function configurarEventos() {
-    document.getElementById("confirmarBtn").addEventListener("click", () => confirmarMarcacoes());
-    document.getElementById("proximoBtn").addEventListener("click", () => avancarJogador());
-    document.getElementById("novoJogoBtn").addEventListener("click", () => novoJogo());
+    document.getElementById("confirmarBtn").addEventListener("click",   () => confirmarMarcacoes());
+    document.getElementById("proximoBtn").addEventListener("click",     () => avancarJogador());
+    document.getElementById("novoJogoBtn").addEventListener("click",    () => novoJogo());
     document.getElementById("resultCloseBtn").addEventListener("click", () => novoJogo());
 }
 

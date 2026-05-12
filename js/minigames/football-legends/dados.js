@@ -18,11 +18,11 @@ const LegendsDados = {
         this.timesProcessados = [];
 
         const mapaPosicao = {
-            goleiro: 'GK',
-            zagueiro: 'ZAG',
-            lateral: 'LAT',
-            meioCampo: 'MEI',
-            atacante: 'ATA'
+            goleiro:    'GK',
+            zagueiro:   'ZAG',
+            lateral:    'LAT',
+            meioCampo:  'MEI',
+            atacante:   'ATA'
         };
 
         for (const [pais, edicoes] of Object.entries(this.dadosTimes)) {
@@ -49,10 +49,10 @@ const LegendsDados = {
 
     obterContagemPosicoes(jogadores) {
         const contagem = { 
-            GK: 0, 
-            DEF: 0, 
-            MID: 0, 
-            ATT: 0 
+            GK:   0, 
+            DEF:  0, 
+            MID:  0, 
+            ATT:  0 
         };
 
         jogadores.forEach(jogador => {

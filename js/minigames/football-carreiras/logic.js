@@ -21,18 +21,15 @@ export function tratarPalpite() {
     esconderSugestoes();
 
     if (palpiteNorm === nomeNorm || nomeNorm.includes(palpiteNorm) || palpiteNorm.includes(nomeNorm)) {
-        // --- ACERTOU ---
         estado.jogoAtivo = false;
         revelarTodos();
         setTimeout(() => {
             mostrarResultado(true);
         }, estado.jogadorAtual.clubes.length * 80 + 400);
     } else {
-        // --- ERROU ---
         estado.erros++;
         atualizarInfo();
 
-        // --- SHAKE NO INPUT ---
         input.classList.add("shake");
         setTimeout(() => input.classList.remove("shake"), 500);
 
@@ -40,7 +37,6 @@ export function tratarPalpite() {
         if (estado.clubesRevelados < estado.jogadorAtual.clubes.length) {
             revelarProximo();
         } else {
-            // --- TODOS REVELADOS E AINDA ERROU ---
             estado.jogoAtivo = false;
             mostrarResultado(false);
         }
@@ -51,6 +47,7 @@ export function pular() {
     if (!estado.jogoAtivo) {
         return;
     }
+
     estado.jogoAtivo = false;
     revelarTodos();
     setTimeout(() => {
