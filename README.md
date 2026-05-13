@@ -29,8 +29,13 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 6 | **Football Impostor** | Encontre o jogador que não pertence ao grupo |
 | 7 | **Football Jogou Com** | Descubra quem jogou com todos os companheiros mostrados |
 | 8 | **Football Adivinha Jogador** | Adivinhe o jogador por pistas |
-| 9 | **Football Top 10** | Complete listas de 10  |
+| 9 | **Football Top 10** | Complete listas de 10 maiores do futebol |
 | 10 | **Football Vc Escala!** | Monte sua escalação ideal com jogadores do Brasileirão |
+| 11 | **Football Vc Convoca!** | Convoque 26 jogadores para representar a sua seleção |
+| 12 | **Football Transferências** | Descubra o jogador pela sequência de clubes da carreira revelados um a um |
+| 13 | **Football Conexões** | Agrupe 16 jogadores em 4 categorias secretas |
+| 14 | **Football Escudo Quebrado** | Descubra o clube pelas dicas progressivas sobre o escudo |
+| 15 | **Football Duelo de Elencos** | Associe cada jogador ao elenco correto em duelos históricos |
 
 ---
 
@@ -53,7 +58,12 @@ Football-Games-11/
 │       ├── football-jogou-com/
 │       ├── football-adivinha-jogador/
 │       ├── football-top10/
-│       └── football-vc-escala/
+│       ├── football-vc-escala/
+│       ├── football-vc-convoca/
+│       ├── football-transferencias/
+│       ├── football-conexoes/
+│       ├── football-escudo-quebrado/
+│       └── football-duelo-elencos/
 ├── data/                       # Arquivos JSON com dados dos jogos
 ├── README.md
 └── LICENSE
