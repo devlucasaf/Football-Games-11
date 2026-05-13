@@ -1,0 +1,416 @@
+.duelo-container {
+    padding: 2rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+/* Game Info */
+.game-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.game-score {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.game-score i {
+    margin-right: 0.3rem;
+}
+
+.game-round {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.game-progress {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    background: var(--bg-secondary, rgba(0,0,0,0.05));
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+/* Contexto */
+.duelo-contexto {
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-color), #6c5ce7);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.duelo-contexto i {
+    margin-right: 0.5rem;
+}
+
+/* Arena */
+.duelo-arena {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Sides */
+.duelo-side {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.duelo-side:hover {
+    border-color: var(--accent-color);
+}
+
+.side-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.side-temporada {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.side-score {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin: 0.8rem 0;
+}
+
+.btn-choose {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-choose:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-choose:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.side-a .btn-choose {
+    background: #2980b9;
+}
+
+.side-b .btn-choose {
+    background: #c0392b;
+}
+
+/* Center */
+.duelo-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-card {
+    background: var(--card-bg);
+    border: 3px solid var(--accent-color);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    min-width: 160px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: playerEnter 0.4s ease;
+}
+
+@keyframes playerEnter {
+    from { 
+        opacity: 0; 
+        transform: scale(0.8) translateY(20px); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+}
+
+.player-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.8rem;
+    font-size: 1.3rem;
+}
+
+.player-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+}
+
+.vs-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Quick Feedback */
+.quick-feedback {
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.quick-feedback.correct {
+    background: rgba(39, 174, 96, 0.15);
+    color: #27ae60;
+    border: 2px solid #27ae60;
+}
+
+.quick-feedback.wrong {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(5px); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+
+/* Duelo Result */
+.duelo-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.4s ease;
+}
+
+.duelo-result h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.duelo-result-details {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.btn-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-next:hover {
+    transform: translateY(-2px);
+}
+
+/* Final Result */
+.final-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.final-result h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.final-result h2 i {
+    color: var(--accent-color);
+}
+
+.final-score {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.final-points {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.final-label {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+}
+
+.final-details {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-retry,
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.btn-retry {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.btn-retry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-home {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-home:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Hidden */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .duelo-arena {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .duelo-center {
+        order: -1;
+    }
+
+    .vs-badge {
+        display: none;
+    }
+
+    .player-card {
+        min-width: auto;
+        padding: 1rem 1.5rem;
+    }
+
+    .duelo-side {
+        padding: 1rem;
+    }
+
+    .side-score {
+        font-size: 2rem;
+        margin: 0.5rem 0;
+    }
+
+    .game-info {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-choose {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}

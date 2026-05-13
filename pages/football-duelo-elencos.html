@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Duelo de Elencos | Football Games 11</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/football-duelo-elencos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-duelo-elencos">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-users"></i>
+                    <h2>Como jogar Duelo de Elencos</h2>
+                    <p>Associe cada jogador ao elenco correto!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Dois elencos históricos se enfrentam.</li>
+                    <li><span class="tutorial-step-number">2</span> Jogadores aparecem um a um — escolha a qual elenco pertencem.</li>
+                    <li><span class="tutorial-step-number">3</span> Cada acerto vale pontos. São 5 duelos com 6 jogadores cada.</li>
+                    <li><span class="tutorial-step-number">4</span> Quanto mais acertar, maior a pontuação!</li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="duelo-container">
+            <div class="container">
+                <!-- Info bar -->
+                <div class="game-info">
+                    <div class="game-score">
+                        <i class="fas fa-star"></i> <span id="pontuacao">0</span> pts
+                    </div>
+                    <div class="game-round">
+                        Duelo <span id="rodadaAtual">1</span>/5
+                    </div>
+                    <div class="game-progress">
+                        <span id="jogadorIdx">0</span>/6
+                    </div>
+                </div>
+
+                <!-- Contexto -->
+                <div class="duelo-contexto" id="dueloContexto">
+                    <i class="fas fa-trophy"></i>
+                    <span id="contextoTexto"></span>
+                </div>
+
+                <!-- Arena de duelo -->
+                <section class="duelo-arena" id="dueloArena">
+                    <div class="duelo-side side-a" id="sideA">
+                        <div class="side-header">
+                            <h3 id="timeANome">Time A</h3>
+                            <span class="side-temporada" id="timeATemp"></span>
+                        </div>
+                        <div class="side-score" id="scoreA">0</div>
+                        <button class="btn-choose" id="btnChooseA">
+                            <i class="fas fa-arrow-left"></i> Este elenco
+                        </button>
+                    </div>
+
+                    <div class="duelo-center">
+                        <div class="player-card" id="playerCard">
+                            <div class="player-icon"><i class="fas fa-user"></i></div>
+                            <span class="player-name" id="playerName">?</span>
+                        </div>
+                        <div class="vs-badge">VS</div>
+                    </div>
+
+                    <div class="duelo-side side-b" id="sideB">
+                        <div class="side-header">
+                            <h3 id="timeBNome">Time B</h3>
+                            <span class="side-temporada" id="timeBTemp"></span>
+                        </div>
+                        <div class="side-score" id="scoreB">0</div>
+                        <button class="btn-choose" id="btnChooseB">
+                            Este elenco <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Feedback rápido -->
+                <div class="quick-feedback hidden" id="quickFeedback">
+                    <span id="quickFeedbackText"></span>
+                </div>
+
+                <!-- Resultado do Duelo -->
+                <div class="duelo-result hidden" id="dueloResult">
+                    <h3 id="dueloResultTitle"></h3>
+                    <div class="duelo-result-details" id="dueloResultDetails"></div>
+                    <button class="btn-next" id="btnNext">
+                        <i class="fas fa-arrow-right"></i> Próximo Duelo
+                    </button>
+                </div>
+
+                <!-- Resultado Final -->
+                <section class="final-result hidden" id="finalResult">
+                    <h2><i class="fas fa-trophy"></i> Fim de Jogo!</h2>
+                    <div class="final-score">
+                        <span class="final-points" id="finalPoints">0</span>
+                        <span class="final-label">pontos</span>
+                    </div>
+                    <div class="final-details" id="finalDetails"></div>
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="../scripts/script.js"></script>
+        <script type="module" src="../scripts/games/football-duelo-elencos/main.js"></script>
+    </body>
+</html>
