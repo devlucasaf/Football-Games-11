@@ -1,0 +1,381 @@
+{
+    "clubes": [
+        {
+            "nome": "Barcelona",
+            "pais": "Espanha",
+            "liga": "La Liga",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul-grená e vermelho escuro", "cores": ["#004D98", "#A50044"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma cruz de São Jorge no canto superior esquerdo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Listras verticais azuis e grená na parte inferior"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "A sigla 'FCB' aparecia nas versões antigas. Fundado em 1899"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Catalunha, Espanha — Camp Nou / Spotify Camp Nou"}
+            ],
+            "opcoes": ["Barcelona", "Atlético de Madrid", "Espanyol", "Real Sociedad", "Valencia", "Osasuna", "Athletic Bilbao", "Levante"]
+        },
+        {
+            "nome": "Real Madrid",
+            "pais": "Espanha",
+            "liga": "La Liga",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Branco e dourado", "cores": ["#FFFFFF", "#FEBE10"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma coroa no topo do escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "As letras entrelaçadas formam um monograma"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Faixa diagonal roxa/violeta que foi adicionada historicamente"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Capital da Espanha — Santiago Bernabéu"}
+            ],
+            "opcoes": ["Real Madrid", "Atlético de Madrid", "Getafe", "Rayo Vallecano", "Real Valladolid", "Leganés", "Valencia", "Sevilla"]
+        },
+        {
+            "nome": "Manchester United",
+            "pais": "Inglaterra",
+            "liga": "Premier League",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, amarelo e preto", "cores": ["#DA291C", "#FBE122"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um diabo vermelho segurando um tridente"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Um navio na parte superior do escudo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Faixa com o lema do clube e a rosa de Lancashire"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Manchester, Inglaterra — Old Trafford"}
+            ],
+            "opcoes": ["Manchester United", "Manchester City", "Liverpool", "Arsenal", "Chelsea", "Tottenham", "Everton", "Nottingham Forest"]
+        },
+        {
+            "nome": "Juventus",
+            "pais": "Itália",
+            "liga": "Serie A",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Preto e branco", "cores": ["#000000", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "A letra 'J' estilizada no design moderno"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Listras verticais preto e brancas no escudo clássico"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Um touro na versão clássica — símbolo da cidade de Turim"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Turim, Itália — Allianz Stadium"}
+            ],
+            "opcoes": ["Juventus", "Inter de Milão", "Milan", "Napoli", "Roma", "Udinese", "Atalanta", "Lazio"]
+        },
+        {
+            "nome": "Bayern de Munique",
+            "pais": "Alemanha",
+            "liga": "Bundesliga",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, azul e branco", "cores": ["#DC052D", "#0066B2", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Losangos azuis e brancos no centro (bandeira da Baviera)"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Escudo circular com as letras do clube ao redor"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Fundado em 1900. As iniciais 'FCB' no anel externo"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Munique, Alemanha — Allianz Arena"}
+            ],
+            "opcoes": ["Bayern de Munique", "Borussia Dortmund", "Bayer Leverkusen", "RB Leipzig", "Schalke 04", "Hamburg", "Stuttgart", "Wolfsburg"]
+        },
+        {
+            "nome": "Liverpool",
+            "pais": "Inglaterra",
+            "liga": "Premier League",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho e dourado", "cores": ["#C8102E", "#F6EB61"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um pássaro mitológico com asas abertas (Liver Bird)"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Chamas eternas dos dois lados em homenagem a Hillsborough"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O lema 'You'll Never Walk Alone' no topo do escudo"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Liverpool, Inglaterra — Anfield"}
+            ],
+            "opcoes": ["Liverpool", "Everton", "Manchester United", "Arsenal", "Tottenham", "Newcastle", "West Ham", "Aston Villa"]
+        },
+        {
+            "nome": "PSG",
+            "pais": "França",
+            "liga": "Ligue 1",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul escuro, vermelho e branco", "cores": ["#004170", "#DA291C", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "A Torre Eiffel no centro do escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Uma flor-de-lis abaixo da torre"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O berço (berceau) e o ano 1970 estão presentes"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Paris, França — Parc des Princes"}
+            ],
+            "opcoes": ["PSG", "Olympique de Marseille", "Lyon", "Monaco", "Lille", "Nice", "Bordeaux", "Saint-Étienne"]
+        },
+        {
+            "nome": "Flamengo",
+            "pais": "Brasil",
+            "liga": "Brasileirão",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho e preto", "cores": ["#E3000E", "#000000"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "As letras 'CRF' entrelaçadas no centro"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Formato circular com borda dourada"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Fundado em 1895 como clube de regatas"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Rio de Janeiro, Brasil — Maracanã"}
+            ],
+            "opcoes": ["Flamengo", "Fluminense", "Vasco", "Botafogo", "São Paulo", "Corinthians", "Atlético-MG", "Internacional"]
+        },
+        {
+            "nome": "Milan",
+            "pais": "Itália",
+            "liga": "Serie A",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, preto e branco", "cores": ["#FB090B", "#000000", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma cruz vermelha sobre fundo branco (Cruz de São Jorge)"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Listras verticais vermelhas e pretas no topo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "As iniciais 'ACM' e o ano 1899"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Milão, Itália — San Siro"}
+            ],
+            "opcoes": ["Milan", "Inter de Milão", "Roma", "Juventus", "Napoli", "Fiorentina", "Genoa", "Bologna"]
+        },
+        {
+            "nome": "Borussia Dortmund",
+            "pais": "Alemanha",
+            "liga": "Bundesliga",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Amarelo e preto", "cores": ["#FDE100", "#000000"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "As letras 'BVB' em destaque no centro"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Escudo circular com fundo amarelo intenso"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O '09' representa o ano de fundação (1909)"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Dortmund, Alemanha — Signal Iduna Park"}
+            ],
+            "opcoes": ["Borussia Dortmund", "Bayern de Munique", "Schalke 04", "Wolfsburg", "Borussia Mönchengladbach", "Stuttgart", "Eintracht Frankfurt", "Hamburg"]
+        },
+        {
+            "nome": "Inter de Milão",
+            "pais": "Itália",
+            "liga": "Serie A",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul, preto e dourado", "cores": ["#010E80", "#000000", "#CBA135"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "As letras 'IM' entrelaçadas no centro"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Escudo circular com listras verticais"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Fundado em 1908. 'FC Internazionale' ao redor"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Milão, Itália — San Siro / Giuseppe Meazza"}
+            ],
+            "opcoes": ["Inter de Milão", "Milan", "Atalanta", "Napoli", "Lazio", "Sampdoria", "Hellas Verona", "Brescia"]
+        },
+        {
+            "nome": "Chelsea",
+            "pais": "Inglaterra",
+            "liga": "Premier League",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul royal e branco", "cores": ["#034694", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um leão segurando um bastão/cetro"},
+                {"nivel": 3, "tipo": "elemento", "texto": "O leão está de perfil, olhando para trás"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Rosas e um futebol na base do escudo"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Londres (Fulham), Inglaterra — Stamford Bridge"}
+            ],
+            "opcoes": ["Chelsea", "Tottenham", "Arsenal", "West Ham", "Crystal Palace", "Fulham", "QPR", "Millwall"]
+        },
+        {
+            "nome": "Ajax",
+            "pais": "Holanda",
+            "liga": "Eredivisie",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, branco e preto", "cores": ["#D2122E", "#FFFFFF", "#000000"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "O perfil de um herói grego/mitológico"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Linhas verticais formando o rosto estilizado"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Nome vem do herói da mitologia grega, Ajax"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Amsterdã, Holanda — Johan Cruyff Arena"}
+            ],
+            "opcoes": ["Ajax", "Feyenoord", "PSV", "AZ Alkmaar", "Utrecht", "Twente", "Vitesse", "Heerenveen"]
+        },
+        {
+            "nome": "Boca Juniors",
+            "pais": "Argentina",
+            "liga": "Liga Profesional",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul e amarelo/dourado", "cores": ["#003DA5", "#FFCE00"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Faixa horizontal amarela no meio do escudo azul"},
+                {"nivel": 3, "tipo": "elemento", "texto": "As letras 'CABJ' dentro do escudo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Cores escolhidas pela bandeira de um navio sueco no porto"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Buenos Aires (La Boca), Argentina — La Bombonera"}
+            ],
+            "opcoes": ["Boca Juniors", "River Plate", "Racing", "Independiente", "San Lorenzo", "Vélez", "Estudiantes", "Rosario Central"]
+        },
+        {
+            "nome": "Benfica",
+            "pais": "Portugal",
+            "liga": "Liga Portugal",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho e branco", "cores": ["#FF0000", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma águia de asas abertas no topo do escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Uma roda de bicicleta no escudo (origem no ciclismo)"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O lema 'E Pluribus Unum' e fundado em 1904"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Lisboa, Portugal — Estádio da Luz"}
+            ],
+            "opcoes": ["Benfica", "Porto", "Sporting CP", "Braga", "Vitória de Guimarães", "Belenenses", "Boavista", "Marítimo"]
+        },
+        {
+            "nome": "River Plate",
+            "pais": "Argentina",
+            "liga": "Liga Profesional",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Branco e vermelho", "cores": ["#FFFFFF", "#E4002B"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma faixa diagonal vermelha cruzando o escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "As letras 'CARP' no escudo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Fundado em 1901 no bairro de La Boca"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Buenos Aires (Núñez), Argentina — Monumental"}
+            ],
+            "opcoes": ["River Plate", "Boca Juniors", "San Lorenzo", "Racing", "Independiente", "Banfield", "Lanús", "Vélez"]
+        },
+        {
+            "nome": "Corinthians",
+            "pais": "Brasil",
+            "liga": "Brasileirão",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Preto e branco", "cores": ["#000000", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma âncora no centro do escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Dois remos cruzados atrás da âncora"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Nome inspirado no Corinthian FC da Inglaterra (1910)"},
+                {"nivel": 5, "tipo": "cidade", "texto": "São Paulo, Brasil — Neo Química Arena"}
+            ],
+            "opcoes": ["Corinthians", "São Paulo", "Palmeiras", "Santos", "Ponte Preta", "Guarani", "Portuguesa", "XV de Piracicaba"]
+        },
+        {
+            "nome": "Tottenham",
+            "pais": "Inglaterra",
+            "liga": "Premier League",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul escuro/marinho e branco", "cores": ["#132257", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um galo (rooster) em cima de uma bola"},
+                {"nivel": 3, "tipo": "elemento", "texto": "O galo tem esporas nas patas ('Spurs')"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O apelido Spurs vem de Harry Hotspur"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Londres (Tottenham), Inglaterra — Tottenham Hotspur Stadium"}
+            ],
+            "opcoes": ["Tottenham", "Chelsea", "Arsenal", "West Ham", "Crystal Palace", "Fulham", "Watford", "Brighton"]
+        },
+        {
+            "nome": "Palmeiras",
+            "pais": "Brasil",
+            "liga": "Brasileirão",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Verde e branco", "cores": ["#006437", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "A letra 'P' no centro do escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Escudo circular com bordas brancas e estrelas"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Originalmente chamado Palestra Itália (1914)"},
+                {"nivel": 5, "tipo": "cidade", "texto": "São Paulo, Brasil — Allianz Parque"}
+            ],
+            "opcoes": ["Palmeiras", "Corinthians", "São Paulo", "Guarani", "Goiás", "Coritiba", "Chapecoense", "Juventude"]
+        },
+        {
+            "nome": "Arsenal",
+            "pais": "Inglaterra",
+            "liga": "Premier League",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, branco e dourado", "cores": ["#EF0107", "#FFFFFF", "#9C824A"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um canhão apontando para a direita"},
+                {"nivel": 3, "tipo": "elemento", "texto": "O canhão é uma referência à fábrica de armas (Arsenal)"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Fundado em 1886 por trabalhadores de Woolwich Arsenal"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Londres (Holloway), Inglaterra — Emirates Stadium"}
+            ],
+            "opcoes": ["Arsenal", "Chelsea", "Tottenham", "West Ham", "Crystal Palace", "Fulham", "Brentford", "Charlton"]
+        },
+        {
+            "nome": "Santos",
+            "pais": "Brasil",
+            "liga": "Brasileirão",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Preto e branco", "cores": ["#000000", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma baleia estilizada no escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "As letras 'SFC' no escudo circular"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Clube onde Pelé fez história (1956-1974)"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Santos (litoral de SP), Brasil — Vila Belmiro"}
+            ],
+            "opcoes": ["Santos", "Corinthians", "São Paulo", "Ponte Preta", "Botafogo", "Vasco", "ABC", "Operário"]
+        },
+        {
+            "nome": "Roma",
+            "pais": "Itália",
+            "liga": "Serie A",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Amarelo/dourado e vermelho escuro", "cores": ["#FDB913", "#8E1F2F"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma loba amamentando dois bebês"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Referência à lenda de Rômulo e Remo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "As iniciais 'ASR' e o ano 1927"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Roma, Itália — Stadio Olimpico"}
+            ],
+            "opcoes": ["Roma", "Lazio", "Napoli", "Fiorentina", "Milan", "Juventus", "Genoa", "Cagliari"]
+        },
+        {
+            "nome": "Atlético de Madrid",
+            "pais": "Espanha",
+            "liga": "La Liga",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, branco e azul", "cores": ["#CB3524", "#FFFFFF", "#004B87"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um urso abraçando uma árvore (madroño)"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Listras verticais vermelhas e brancas"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O urso e o madroño são símbolos da cidade"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Madrid, Espanha — Civitas Metropolitano"}
+            ],
+            "opcoes": ["Atlético de Madrid", "Real Madrid", "Getafe", "Rayo Vallecano", "Sevilla", "Athletic Bilbao", "Osasuna", "Granada"]
+        },
+        {
+            "nome": "Porto",
+            "pais": "Portugal",
+            "liga": "Liga Portugal",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul e branco", "cores": ["#003893", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um dragão no topo do escudo"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Um coração com as letras 'FCP' abaixo do dragão"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O apelido é 'Os Dragões'. Fundado em 1893"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Porto, Portugal — Estádio do Dragão"}
+            ],
+            "opcoes": ["Porto", "Benfica", "Sporting CP", "Braga", "Vitória de Guimarães", "Boavista", "Rio Ave", "Gil Vicente"]
+        },
+        {
+            "nome": "Manchester City",
+            "pais": "Inglaterra",
+            "liga": "Premier League",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul celeste e branco", "cores": ["#6CABDD", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Uma águia dourada e um navio"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Três linhas diagonais e uma rosa vermelha"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "As iniciais 'MCFC' e o ano 1894"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Manchester, Inglaterra — Etihad Stadium"}
+            ],
+            "opcoes": ["Manchester City", "Manchester United", "Everton", "Leicester City", "Coventry City", "Birmingham City", "Leeds United", "Brighton"]
+        },
+        {
+            "nome": "São Paulo",
+            "pais": "Brasil",
+            "liga": "Brasileirão",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Vermelho, preto e branco", "cores": ["#FF0000", "#000000", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Triângulo invertido no centro com as iniciais"},
+                {"nivel": 3, "tipo": "elemento", "texto": "As letras 'SPFC' dentro do triângulo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "O 'Tricolor Paulista'. Fundado em 1930"},
+                {"nivel": 5, "tipo": "cidade", "texto": "São Paulo, Brasil — MorumBIS"}
+            ],
+            "opcoes": ["São Paulo", "Corinthians", "Palmeiras", "Santos", "Flamengo", "Fluminense", "Internacional", "Atlético-MG"]
+        },
+        {
+            "nome": "Napoli",
+            "pais": "Itália",
+            "liga": "Serie A",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul celeste e branco", "cores": ["#12A0D7", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "A letra 'N' grande e estilizada no centro"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Formato circular simples com bordas brancas"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Clube de Maradona nos anos 80. Refundado em 2004"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Nápoles, Itália — Estádio Diego Armando Maradona"}
+            ],
+            "opcoes": ["Napoli", "Lazio", "Roma", "Sampdoria", "Empoli", "Pescara", "Milan", "Atalanta"]
+        },
+        {
+            "nome": "Sporting CP",
+            "pais": "Portugal",
+            "liga": "Liga Portugal",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Verde e branco", "cores": ["#008848", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "Um leão rampante no centro"},
+                {"nivel": 3, "tipo": "elemento", "texto": "As iniciais 'SCP' no escudo"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Clube onde Cristiano Ronaldo foi revelado"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Lisboa, Portugal — Estádio José Alvalade"}
+            ],
+            "opcoes": ["Sporting CP", "Benfica", "Porto", "Sporting de Braga", "Vitória de Guimarães", "Palmeiras", "Celtic", "Panathinaikos"]
+        },
+        {
+            "nome": "Olympique de Marseille",
+            "pais": "França",
+            "liga": "Ligue 1",
+            "dicas": [
+                {"nivel": 1, "tipo": "cores", "texto": "Azul celeste e branco", "cores": ["#2FAEE0", "#FFFFFF"]},
+                {"nivel": 2, "tipo": "simbolo", "texto": "A letra 'O' e 'M' estilizadas"},
+                {"nivel": 3, "tipo": "elemento", "texto": "Uma estrela dourada acima (Champions 1993)"},
+                {"nivel": 4, "tipo": "detalhe", "texto": "Único clube francês campeão da Champions League"},
+                {"nivel": 5, "tipo": "cidade", "texto": "Marselha, França — Stade Vélodrome"}
+            ],
+            "opcoes": ["Olympique de Marseille", "PSG", "Lyon", "Monaco", "Nice", "Lille", "Bordeaux", "Nantes"]
+        }
+    ]
+}
