@@ -292,6 +292,10 @@
     background: rgba(26, 86, 50, 0.08);
 }
 
+.sugestao-item.ativa {
+    background: rgba(26, 86, 50, 0.15);
+}
+
 /* --- BOTÕES --- */
 .input-actions {
     display: flex;

@@ -119,10 +119,14 @@ function finalizarRodada() {
 
 $confirmarBtn.addEventListener('click', verificarPalpite);
 
+const $sugestoes = document.getElementById('sugestoesLista');
 $input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        e.preventDefault();
-        verificarPalpite();
+        const temSugestaoAtiva = $sugestoes.querySelector('.sugestao-item.ativa');
+        if (!temSugestaoAtiva) {
+            e.preventDefault();
+            verificarPalpite();
+        }
     }
 });
 

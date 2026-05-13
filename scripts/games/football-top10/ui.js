@@ -21,6 +21,7 @@ const $resultTitle    = document.getElementById('resultTitle');
 const $resultText     = document.getElementById('resultText');
 
 let feedbackTimer = null;
+let indiceSugestao = -1;
 
 export function renderizarTema(lista) {
     $temaIcone.className = lista.icone;
@@ -102,6 +103,7 @@ export function mostrarFeedback(tipo, texto) {
 
 export function inicializarSugestoes(onSelecionar) {
     $input.addEventListener('input', () => {
+        indiceSugestao = -1;
         const valor = $input.value.trim();
         if (valor.length < 2) {
             fecharSugestoes();
@@ -153,10 +155,36 @@ export function inicializarSugestoes(onSelecionar) {
         $sugestoes.classList.add('ativa');
     });
 
+    $input.addEventListener('keydown', (e) => {
+        const itens = $sugestoes.querySelectorAll('.sugestao-item');
+        if (!itens.length || !$sugestoes.classList.contains('ativa')) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            indiceSugestao = (indiceSugestao + 1) % itens.length;
+            atualizarSugestaoAtiva(itens);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            indiceSugestao = indiceSugestao <= 0 ? itens.length - 1 : indiceSugestao - 1;
+            atualizarSugestaoAtiva(itens);
+        } else if (e.key === 'Enter' && indiceSugestao >= 0) {
+            e.preventDefault();
+            $input.value = itens[indiceSugestao].textContent;
+            fecharSugestoes();
+            onSelecionar();
+        }
+    });
+
     document.addEventListener('click', (e) => {
         if (!$input.contains(e.target) && !$sugestoes.contains(e.target)) {
             fecharSugestoes();
         }
+    });
+}
+
+function atualizarSugestaoAtiva(itens) {
+    itens.forEach((item, i) => {
+        item.classList.toggle('ativa', i === indiceSugestao);
     });
 }
 
