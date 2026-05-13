@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transferências | Football Games 11</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/football-transferencias.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-transferencias">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h2>Como jogar Transferências</h2>
+                    <p>Descubra o jogador pela sequência de clubes!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Os clubes da carreira serão revelados um por um.</li>
+                    <li><span class="tutorial-step-number">2</span> Tente adivinhar o jogador com o menor número de dicas.</li>
+                    <li><span class="tutorial-step-number">3</span> Quanto menos clubes precisar ver, mais pontos ganha!</li>
+                    <li><span class="tutorial-step-number">4</span> São 5 rodadas. Boa sorte!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="transferencias-container">
+            <div class="container">
+                <div class="game-info">
+                    <div class="game-score">
+                        <i class="fas fa-star"></i> <span id="pontuacao">0</span> pts
+                    </div>
+
+                    <div class="game-round">
+                        Rodada <span id="rodadaAtual">1</span>/5
+                    </div>
+                </div>
+
+                <!-- Área de clubes revelados -->
+                <section class="clubs-area" id="clubsArea">
+                    <h2 class="clubs-title">Clubes da Carreira</h2>
+                    <div class="clubs-timeline" id="clubsTimeline"></div>
+                    <button class="btn-reveal" id="btnReveal">
+                        <i class="fas fa-eye"></i> Revelar próximo clube
+                    </button>
+                </section>
+
+                <!-- Área de palpite -->
+                <section class="guess-area" id="guessArea">
+                    <div class="input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="guessInput" placeholder="Quem é o jogador?" autocomplete="off">
+                        <div class="autocomplete-list" id="autocompleteList"></div>
+                    </div>
+
+                    <button class="btn-guess" id="btnGuess">
+                        <i class="fas fa-check"></i> Confirmar
+                    </button>
+                </section>
+
+                <div class="feedback hidden" id="feedback">
+                    <div class="feedback-icon" id="feedbackIcon"></div>
+                    <p class="feedback-text" id="feedbackText"></p>
+                    <div class="feedback-answer hidden" id="feedbackAnswer"></div>
+                    <button class="btn-next" id="btnNext">
+                        <i class="fas fa-arrow-right"></i> Próxima Rodada
+                    </button>
+                </div>
+
+                <section class="final-result hidden" id="finalResult">
+                    <h2><i class="fas fa-trophy"></i> Fim de Jogo!</h2>
+                    <div class="final-score">
+                        <span class="final-points" id="finalPoints">0</span>
+                        <span class="final-label">pontos</span>
+                    </div>
+
+                    <div class="final-details" id="finalDetails"></div>
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="../scripts/script.js"></script>
+        <script type="module" src="../scripts/games/football-transferencias/main.js"></script>
+    </body>
+</html>
