@@ -3,39 +3,77 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
-# Formação Futebol ⚽
+# Football Games 11 ⚽
 
-Um aplicativo web interativo para montar escalações de futebol, reviver seleções históricas e jogar minigames.
+Um hub de minigames interativos de futebol — teste sua memória esportiva, monte escalações lendárias e desafie seus conhecimentos!
 
 ---
 
 ## 📖 Descrição
 
-**Football Games 11** é um projeto web em **HTML, CSS e Java Script** com foco em **minigames interativos de futebol**.
+**Football Games 11** é um projeto web feito com **HTML, CSS e JavaScript (ES6+ Modules)** com foco em **minigames interativos de futebol**.
 
-A proposta é reunir em um único site diversos jogos inspirados em plataformas como [futbol11.com](**https://futbol-11.com/**) e [playfootball.games](**https://playfootball.games/**), oferecendo desafios baseados em memória esportiva, jogadores históricos, clubes e seleções.
+A proposta é reunir em um único site diversos jogos inspirados em plataformas como [futbol11.com](https://futbol-11.com/) e [playfootball.games](https://playfootball.games/), oferecendo desafios baseados em memória esportiva, jogadores históricos, clubes e seleções.
 
 ---
 
 ## 🎮 Minigames
 
-- **Football Grid**: jogo estilo trivia onde o objetivo é preencher um grid com jogadores que passaram por ambos os clubes (ou critérios definidos).
-- **Football Legends** (planejado): montagem de escalações históricas (melhor XI) de clubes e seleções.
-- **Quizzes e desafios diários** (futuro): adivinhar campeões, artilheiros e outros dados históricos do futebol.
+| # | Jogo | Descrição |
+|---|------|-----------|
+| 1 | **Football Grid** | Preencha o grid 3×3 com jogadores que passaram por ambos os clubes/seleções |
+| 2 | **Football Legends** | Monte o melhor XI histórico do seu clube ou seleção |
+| 3 | **Football Bingo** | Bingo 5×5 — associe jogadores às categorias corretas |
+| 4 | **Football Termo** | Adivinhe o nome do jogador em 6 tentativas |
+| 5 | **Football Carreiras** | Descubra o jogador pela sequência de clubes da carreira |
+| 6 | **Football Impostor** | Encontre o jogador que não pertence ao grupo |
+| 7 | **Football Jogou Com** | Descubra quem jogou com todos os companheiros mostrados |
+| 8 | **Football Adivinha Jogador** | Adivinhe o jogador por pistas |
+| 9 | **Football Top 10** | Complete listas de 10  |
+| 10 | **Football Vc Escala!** | Monte sua escalação ideal com jogadores do Brasileirão |
 
 ---
 
 ## 📂 Estrutura do Projeto
+
 ```
-/Football-Games-11
- ├── index.html              # Página principal
- ├── pages/                  # Páginas dos minigames
- ├── css/                    # Estilos (campo, minigames e estilo global)
- ├── js/                     # Scripts principais e lógicas dos minigames
- ├── data/                   # Arquivos JSON com dados dos jogos e jogadores
- ├── README.md
- └── LICENSE
+Football-Games-11/
+├── index.html                  # Hub principal com todos os minigames
+├── pages/                      # Páginas HTML de cada minigame
+├── styles/                     # CSS global + estilos de cada jogo
+├── scripts/
+│   ├── script.js               # Tema, tutorial e utilitários globais
+│   └── games/                  # Módulos JS de cada minigame
+│       ├── football-grid/
+│       ├── football-bingo/
+│       ├── football-legends/
+│       ├── football-termo/
+│       ├── football-carreiras/
+│       ├── football-impostor/
+│       ├── football-jogou-com/
+│       ├── football-adivinha-jogador/
+│       ├── football-top10/
+│       └── football-vc-escala/
+├── data/                       # Arquivos JSON com dados dos jogos
+├── README.md
+└── LICENSE
 ```
+
+---
+
+## 🚀 Como rodar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/devlucasaf/football-games-11.git
+   ```
+2. Abra a pasta no VS Code
+3. Use a extensão **Live Server** (clique direito no `index.html` → "Open with Live Server")
+4. Acesse `http://localhost:5500` no navegador
+
+> ⚠️ É necessário servir via HTTP (Live Server). O protocolo `file://` bloqueia módulos ES e `fetch()`.
+
+---
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -43,7 +81,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
     <img 
         align="center"
         alt="JavaScript"
-        tittle="JavaScript"
+        title="JavaScript"
         height="40" 
         style="padding-right: 10px;"
         src="https://skillicons.dev/icons?i=javascript" 
@@ -67,7 +105,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
     <img
         align="center"
         alt="VsCode"
-        tittle="VsCode"
+        title="VsCode"
         height="40" 
         style="padding-right: 10px;" 
         src="https://skillicons.dev/icons?i=vscode"
@@ -75,7 +113,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
     <img
         align="center"
         alt="git"
-        tittle="Git"
+        title="Git"
         height="40" 
         style="padding-right: 10px;" 
         src="https://skillicons.dev/icons?i=git"
@@ -83,20 +121,14 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
     <img
         align="center"
         alt="github"
-        tittle="GitHub"
+        title="GitHub"
         height="40" 
         style="padding-right: 10px;" 
         src="https://skillicons.dev/icons?i=github"
     />
-    <img
-        align="center"
-        alt="gitlab"
-        tittle="GitLab"
-        height="40" 
-        style="padding-right: 10px;" 
-        src="https://skillicons.dev/icons?i=gitlab"
-    />
 </div>
+
+---
 
 ## 🏆 License
 
