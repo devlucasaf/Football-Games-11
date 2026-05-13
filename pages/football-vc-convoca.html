@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vc Convoca! | Football Games 11</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/football-vc-convoca.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-vc-convoca">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h2>Como jogar Vc Convoca!</h2>
+                    <p>Monte a convocação ideal da sua seleção!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Escolha o modo: Copa 2026 ou Melhor de Todos os Tempos.</li>
+                    <li><span class="tutorial-step-number">2</span> Selecione uma seleção.</li>
+                    <li><span class="tutorial-step-number">3</span> Convoque 26 jogadores (3 GOL, 8 DEF, 8 MEI, 7 ATA).</li>
+                    <li><span class="tutorial-step-number">4</span> Veja quantos acertos você fez comparando com a convocação oficial!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="convoca-container">
+            <div class="container">
+                <section class="mode-selection" id="modeSelection">
+                    <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Vc Convoca!</h2>
+                    <p class="section-subtitle">Escolha o modo de jogo</p>
+                    <div class="mode-cards">
+                        <button class="mode-card" data-mode="copa2026">
+                            <i class="fas fa-trophy"></i>
+                            <h3>Copa do Mundo 2026</h3>
+                            <p>Convoque a seleção para a Copa do Mundo 2026</p>
+                        </button>
+                        <button class="mode-card" data-mode="alltime">
+                            <i class="fas fa-star"></i>
+                            <h3>Melhor de Todos os Tempos</h3>
+                            <p>Monte a melhor seleção da história</p>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Tela de seleção de time -->
+                <section class="team-selection hidden" id="teamSelection">
+                    <h2 class="section-title"><i class="fas fa-flag"></i> Escolha a Seleção</h2>
+                    <p class="section-subtitle" id="modeLabel"></p>
+                    <div class="teams-grid" id="teamsGrid"></div>
+                    <button class="btn-back" id="btnBackMode"><i class="fas fa-arrow-left"></i> Voltar</button>
+                </section>
+
+                <!-- Tela de convocação -->
+                <section class="squad-builder hidden" id="squadBuilder">
+                    <div class="squad-header">
+                        <div class="squad-info">
+                            <span class="team-flag" id="selectedFlag"></span>
+                            <h2 id="selectedTeamName"></h2>
+                        </div>
+                        <div class="squad-counter">
+                            <span id="squadCount">0</span>/26 convocados
+                        </div>
+                    </div>
+
+                    <!-- Autocomplete input -->
+                    <div class="player-input-area">
+                        <div class="input-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="playerInput" placeholder="Digite o nome do jogador..." autocomplete="off">
+                            <div class="autocomplete-list" id="autocompleteList"></div>
+                        </div>
+
+                        <div class="position-selector">
+                            <button class="pos-btn active" data-pos="GOL">GOL <span id="countGOL">0</span>/3</button>
+                            <button class="pos-btn" data-pos="DEF">DEF <span id="countDEF">0</span>/8</button>
+                            <button class="pos-btn" data-pos="MEI">MEI <span id="countMEI">0</span>/8</button>
+                            <button class="pos-btn" data-pos="ATA">ATA <span id="countATA">0</span>/7</button>
+                        </div>
+                    </div>
+
+                    <!-- Lista de convocados -->
+                    <div class="squad-lists">
+                        <div class="squad-position-group" id="groupGOL">
+                            <h3><i class="fas fa-hands"></i> Goleiros (0/3)</h3>
+                            <ul class="player-list" id="listGOL"></ul>
+                        </div>
+
+                        <div class="squad-position-group" id="groupDEF">
+                            <h3><i class="fas fa-shield-halved"></i> Defensores (0/8)</h3>
+                            <ul class="player-list" id="listDEF"></ul>
+                        </div>
+
+                        <div class="squad-position-group" id="groupMEI">
+                            <h3><i class="fas fa-arrows-turn-to-dots"></i> Meio-campistas (0/8)</h3>
+                            <ul class="player-list" id="listMEI"></ul>
+                        </div>
+
+                        <div class="squad-position-group" id="groupATA">
+                            <h3><i class="fas fa-crosshairs"></i> Atacantes (0/7)</h3>
+                            <ul class="player-list" id="listATA"></ul>
+                        </div>
+                    </div>
+
+                    <div class="squad-actions">
+                        <button class="btn-back" id="btnBackTeam"><i class="fas fa-arrow-left"></i> Voltar</button>
+                        <button class="btn-confirm" id="btnConfirm" disabled><i class="fas fa-check"></i> Confirmar Convocação</button>
+                    </div>
+                </section>
+
+                <!-- Tela de resultados -->
+                <section class="results hidden" id="results">
+                    <div class="results-header">
+                        <h2><i class="fas fa-chart-bar"></i> Resultado da Convocação</h2>
+                        <div class="score-display">
+                            <span class="score-number" id="scoreNumber">0</span>
+                            <span class="score-label">/26 acertos</span>
+                        </div>
+                    </div>
+
+                    <div class="results-comparison">
+                        <div class="result-column">
+                            <h3>Sua Convocação</h3>
+                            <div id="yourSquadResult"></div>
+                        </div>
+                        
+                        <div class="result-column">
+                            <h3>Convocação Oficial</h3>
+                            <div id="officialSquadResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="results-actions">
+                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="../scripts/script.js"></script>
+        <script type="module" src="../scripts/games/football-vc-convoca/main.js"></script>
+    </body>
+</html>
