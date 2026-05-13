@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conexões | Football Games 11</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/football-conexoes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-conexoes">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h2>Como jogar Conexões</h2>
+                    <p>Encontre os 4 grupos de 4 jogadores!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Há 16 jogadores divididos em 4 grupos secretos.</li>
+                    <li><span class="tutorial-step-number">2</span> Selecione 4 jogadores que você acha que pertencem ao mesmo grupo.</li>
+                    <li><span class="tutorial-step-number">3</span> Confirme sua seleção. Se acertar, o grupo é revelado!</li>
+                    <li><span class="tutorial-step-number">4</span> Você tem 4 tentativas erradas. Boa sorte!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="conexoes-container">
+            <div class="container">
+                <h2 class="game-title"><i class="fas fa-puzzle-piece"></i> Football Conexões</h2>
+                <p class="game-subtitle">Encontre os 4 grupos de 4 jogadores relacionados</p>
+
+                <div class="solved-groups" id="solvedGroups"></div>
+
+                <div class="players-grid" id="playersGrid"></div>
+
+                <div class="lives-area">
+                    <span class="lives-label">Tentativas restantes:</span>
+                    <div class="lives-dots" id="livesDots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="game-actions">
+                    <button class="btn-deselect" id="btnDeselect" disabled>
+                        <i class="fas fa-rotate-left"></i> Limpar
+                    </button>
+                    <button class="btn-shuffle" id="btnShuffle">
+                        <i class="fas fa-shuffle"></i> Embaralhar
+                    </button>
+                    <button class="btn-submit" id="btnSubmit" disabled>
+                        <i class="fas fa-check"></i> Confirmar
+                    </button>
+                </div>
+
+                <!-- Mensagem de feedback -->
+                <div class="feedback-msg hidden" id="feedbackMsg"></div>
+
+                <!-- Resultado final -->
+                <section class="final-result hidden" id="finalResult">
+                    <div class="final-icon" id="finalIcon"></div>
+                    <h2 id="finalTitle"></h2>
+                    <p id="finalText"></p>
+                    <div class="final-groups" id="finalGroups"></div>
+                    
+                    <div class="final-actions">
+                        <button class="btn-next-puzzle" id="btnNextPuzzle"><i class="fas fa-arrow-right"></i> Próximo Puzzle</button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="../scripts/script.js"></script>
+        <script type="module" src="../scripts/games/football-conexoes/main.js"></script>
+    </body>
+</html>

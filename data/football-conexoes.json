@@ -1,0 +1,379 @@
+{
+    "puzzles": [
+        {
+            "id": 1,
+            "grupos": [
+                {
+                    "categoria": "Ganharam a Bola de Ouro",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Modric", "Benzema", "Messi", "Ronaldinho"]
+                },
+                {
+                    "categoria": "Jogaram no Milan",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Kaká", "Pirlo", "Shevchenko", "Ibrahimovic"]
+                },
+                {
+                    "categoria": "Seleção da Holanda",
+                    "cor": "#e67e22",
+                    "jogadores": ["Cruyff", "Van Basten", "Robben", "Sneijder"]
+                },
+                {
+                    "categoria": "Campeões da Champions 2015",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Marcelo", "Kroos", "James", "Casemiro"]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "grupos": [
+                {
+                    "categoria": "Jogaram no Barcelona e PSG",
+                    "cor": "#3498db",
+                    "jogadores": ["Neymar", "Messi", "Dani Alves", "Rafinha"]
+                },
+                {
+                    "categoria": "Artilheiros de Copa do Mundo",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Ronaldo", "Klose", "Fontaine", "Müller"]
+                },
+                {
+                    "categoria": "Ídolos do Liverpool",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Gerrard", "Dalglish", "Salah", "Torres"]
+                },
+                {
+                    "categoria": "Zagueiros campeões mundiais",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Cannavaro", "Thiago Silva", "Desailly", "Beckenbauer"]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "grupos": [
+                {
+                    "categoria": "Jogaram no Real Madrid e Chelsea",
+                    "cor": "#3498db",
+                    "jogadores": ["Hazard", "Courtois", "Morata", "Essien"]
+                },
+                {
+                    "categoria": "Brasileiros campeões em 2002",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Ronaldo", "Rivaldo", "Cafu", "Roberto Carlos"]
+                },
+                {
+                    "categoria": "Goleadores da Premier League",
+                    "cor": "#9b59b6",
+                    "jogadores": ["Shearer", "Rooney", "Henry", "Aguero"]
+                },
+                {
+                    "categoria": "Jogaram no Juventus e Inter",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Pirlo", "Vidal", "Ibrahimovic", "Cannavaro"]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "grupos": [
+                {
+                    "categoria": "Meio-campistas argentinos",
+                    "cor": "#3498db",
+                    "jogadores": ["Riquelme", "Di María", "Redondo", "Aimar"]
+                },
+                {
+                    "categoria": "Goleiros lendários",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Buffon", "Casillas", "Neuer", "Yashin"]
+                },
+                {
+                    "categoria": "Jogaram no Manchester United",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Cantona", "Beckham", "Van Persie", "Rooney"]
+                },
+                {
+                    "categoria": "Seleção Francesa campeã 2018",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Mbappé", "Griezmann", "Pogba", "Varane"]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "grupos": [
+                {
+                    "categoria": "Atacantes brasileiros na Europa",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Romário", "Adriano", "Firmino", "Hulk"]
+                },
+                {
+                    "categoria": "Campeões da Euro 2020",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Donnarumma", "Bonucci", "Jorginho", "Insigne"]
+                },
+                {
+                    "categoria": "Jogaram no Bayern e Dortmund",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Lewandowski", "Götze", "Hummels", "Guerreiro"]
+                },
+                {
+                    "categoria": "Laterais-direitos icônicos",
+                    "cor": "#9b59b6",
+                    "jogadores": ["Cafu", "Lahm", "Zanetti", "Dani Alves"]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "grupos": [
+                {
+                    "categoria": "Jogadores com número 10 icônico",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Pelé", "Maradona", "Zidane", "Platini"]
+                },
+                {
+                    "categoria": "Colombianos históricos",
+                    "cor": "#e67e22",
+                    "jogadores": ["Valderrama", "Higuita", "Falcao", "James"]
+                },
+                {
+                    "categoria": "Jogaram no Tottenham",
+                    "cor": "#3498db",
+                    "jogadores": ["Bale", "Modric", "Klinsmann", "Lineker"]
+                },
+                {
+                    "categoria": "Campeões da Libertadores com Flamengo",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Zico", "Gabigol", "Arrascaeta", "Bruno Henrique"]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "grupos": [
+                {
+                    "categoria": "Africanos na Premier League",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Drogba", "Eto'o", "Touré", "Salah"]
+                },
+                {
+                    "categoria": "Espanhóis campeões em 2010",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Iniesta", "Xavi", "Puyol", "Villa"]
+                },
+                {
+                    "categoria": "Jogaram no Porto",
+                    "cor": "#3498db",
+                    "jogadores": ["Deco", "Falcao", "Hulk", "James"]
+                },
+                {
+                    "categoria": "Pontas-direita da história",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Garrincha", "Figo", "Robben", "Best"]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "grupos": [
+                {
+                    "categoria": "Jogaram Arsenal e Barcelona",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Henry", "Fàbregas", "Overmars", "Vermaelen"]
+                },
+                {
+                    "categoria": "Uruguaios lendários",
+                    "cor": "#3498db",
+                    "jogadores": ["Suárez", "Forlán", "Recoba", "Francescoli"]
+                },
+                {
+                    "categoria": "Ballon d'Or nos anos 2000",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Ronaldinho", "Kaká", "Zidane", "Figo"]
+                },
+                {
+                    "categoria": "Defensores italianos",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Maldini", "Baresi", "Cannavaro", "Nesta"]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "grupos": [
+                {
+                    "categoria": "Jogaram no Atlético de Madrid",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Griezmann", "Agüero", "Torres", "Falcao"]
+                },
+                {
+                    "categoria": "Meias-atacantes brasileiros",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Zico", "Kaká", "Rivaldo", "Sócrates"]
+                },
+                {
+                    "categoria": "Seleção Alemã campeã 2014",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Özil", "Khedira", "Götze", "Lahm"]
+                },
+                {
+                    "categoria": "Jogaram no Manchester City",
+                    "cor": "#3498db",
+                    "jogadores": ["Kompany", "De Bruyne", "Touré", "Silva"]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "grupos": [
+                {
+                    "categoria": "Croatas famosos",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Modrić", "Šuker", "Rakitić", "Boban"]
+                },
+                {
+                    "categoria": "Atacantes que jogaram no Inter de Milão",
+                    "cor": "#3498db",
+                    "jogadores": ["Ronaldo", "Adriano", "Eto'o", "Milito"]
+                },
+                {
+                    "categoria": "Jogadores que usaram 7 no Real Madrid",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Cristiano Ronaldo", "Raúl", "Butragueño", "Juanito"]
+                },
+                {
+                    "categoria": "Goleiros brasileiros",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Taffarel", "Dida", "Alisson", "Marcos"]
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "grupos": [
+                {
+                    "categoria": "Revelados pelo Santos",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Pelé", "Neymar", "Robinho", "Diego"]
+                },
+                {
+                    "categoria": "Jogaram na Serie A e La Liga",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Higuaín", "Suárez", "Vidal", "Alexis Sánchez"]
+                },
+                {
+                    "categoria": "Ingleses em Copas do Mundo",
+                    "cor": "#3498db",
+                    "jogadores": ["Beckham", "Owen", "Lineker", "Charlton"]
+                },
+                {
+                    "categoria": "Técnicos que foram grandes jogadores",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Guardiola", "Zidane", "Ancelotti", "Conte"]
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "grupos": [
+                {
+                    "categoria": "Campeões da Copa 2022 (Argentina)",
+                    "cor": "#3498db",
+                    "jogadores": ["Messi", "Di María", "Mac Allister", "Enzo Fernández"]
+                },
+                {
+                    "categoria": "Craques dos anos 90",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Baggio", "Romário", "Bergkamp", "Zola"]
+                },
+                {
+                    "categoria": "Jogaram no PSG",
+                    "cor": "#9b59b6",
+                    "jogadores": ["Neymar", "Mbappé", "Beckham", "Ronaldinho"]
+                },
+                {
+                    "categoria": "Suecos históricos",
+                    "cor": "#e67e22",
+                    "jogadores": ["Ibrahimovic", "Larsson", "Ljungberg", "Dahlin"]
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "grupos": [
+                {
+                    "categoria": "Jogaram Flamengo e Seleção Brasileira",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Zico", "Romário", "Adriano", "Vinicius Jr."]
+                },
+                {
+                    "categoria": "Meio-campistas da Premier League",
+                    "cor": "#3498db",
+                    "jogadores": ["Lampard", "Gerrard", "Scholes", "Vieira"]
+                },
+                {
+                    "categoria": "Jogadores que fizeram hat-trick em final",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Hurst", "Bale", "Pelé", "Kopa"]
+                },
+                {
+                    "categoria": "Portugueses no futebol mundial",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Eusébio", "Figo", "Cristiano Ronaldo", "Rui Costa"]
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "grupos": [
+                {
+                    "categoria": "Jogadores revelados pelo Ajax",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Cruyff", "Van Basten", "Bergkamp", "Seedorf"]
+                },
+                {
+                    "categoria": "Camisa 9 emblemáticos",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Ronaldo", "Van Nistelrooy", "Lewandowski", "Batistuta"]
+                },
+                {
+                    "categoria": "Jogadores que atuaram no Japão",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Iniesta", "Villa", "Torres", "Podolski"]
+                },
+                {
+                    "categoria": "Laterais-esquerdos lendários",
+                    "cor": "#3498db",
+                    "jogadores": ["Roberto Carlos", "Maldini", "Ashley Cole", "Marcelo"]
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "grupos": [
+                {
+                    "categoria": "Jogaram Chelsea e Real Madrid",
+                    "cor": "#3498db",
+                    "jogadores": ["Hazard", "Morata", "Essien", "Makelele"]
+                },
+                {
+                    "categoria": "Atacantes franceses",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Henry", "Trezeguet", "Benzema", "Papin"]
+                },
+                {
+                    "categoria": "Jogadores nascidos na década de 80",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Messi", "Cristiano Ronaldo", "Neymar", "Suárez"]
+                },
+                {
+                    "categoria": "Capitães de seleções em Copas",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Cafu", "Beckham", "Ramos", "Buffon"]
+                }
+            ]
+        }
+    ]
+}

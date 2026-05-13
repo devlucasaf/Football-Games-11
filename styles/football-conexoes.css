@@ -1,0 +1,405 @@
+.conexoes-container {
+    padding: 2rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+.game-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.game-title i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.game-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Solved Groups */
+.solved-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.solved-group {
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    animation: groupReveal 0.5s ease;
+}
+
+@keyframes groupReveal {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+.solved-group .group-category {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    color: #fff;
+}
+
+.solved-group .group-players {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Players Grid */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.player-tile {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    font-family: inherit;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-tile:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.player-tile.selected {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+    transform: scale(0.97);
+}
+
+.player-tile.shake {
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 
+    100% { 
+        transform: translateX(0); 
+    }
+
+    25% { 
+        transform: translateX(-4px); 
+    }
+
+    50% { 
+        transform: translateX(4px); 
+    }
+
+    75% { 
+        transform: translateX(-4px); 
+    }
+}
+
+
+.player-tile.almost {
+    animation: almostPulse 0.6s ease;
+}
+
+@keyframes almostPulse {
+    0%, 100% { 
+        background: var(--card-bg); 
+    }
+
+    50% { 
+        background: rgba(241, 196, 15, 0.3); 
+    }
+}
+
+
+/* Lives */
+.lives-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.lives-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.lives-dots {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.lives-dots .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.lives-dots .dot.lost {
+    background: var(--border-color);
+    transform: scale(0.7);
+    opacity: 0.4;
+}
+
+/* Game Actions */
+.game-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-deselect,
+.btn-shuffle,
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.3rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.btn-deselect {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-deselect:hover:not(:disabled) {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-shuffle {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-shuffle:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-submit {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-deselect:disabled,
+.btn-submit:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Feedback Message */
+.feedback-msg {
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback-msg.wrong {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.feedback-msg.almost {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f39c12;
+    border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-5px); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Final Result */
+.final-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.final-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.final-result h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.final-result p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.final-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.final-group-item {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.final-group-item .fg-cat {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.final-group-item .fg-players {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-next-puzzle,
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.btn-next-puzzle {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.btn-next-puzzle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-home {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-home:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Hidden */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .players-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.35rem;
+    }
+
+    .player-tile {
+        padding: 0.7rem 0.3rem;
+        font-size: 0.75rem;
+        min-height: 50px;
+    }
+
+    .game-title {
+        font-size: 1.4rem;
+    }
+
+    .game-actions {
+        gap: 0.5rem;
+    }
+
+    .btn-deselect,
+    .btn-shuffle,
+    .btn-submit {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
