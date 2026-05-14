@@ -5,19 +5,39 @@
             "evento": "Final da Libertadores 2019",
             "formacao": "4-4-2",
             "jogadores": [
-                { "nome": "Diego Alves", "posicao": "GOL" },
-                { "nome": "Rafinha", "posicao": "LD" },
-                { "nome": "Rodrigo Caio", "posicao": "ZAG1" },
-                { "nome": "Pablo Marí", "posicao": "ZAG2" },
-                { "nome": "Filipe Luís", "posicao": "LE" },
-                { "nome": "Willian Arão", "posicao": "VOL1" },
-                { "nome": "Gerson", "posicao": "VOL2" },
-                { "nome": "Éverton Ribeiro", "posicao": "MD" },
-                { "nome": "Arrascaeta", "posicao": "ME" },
-                { "nome": "Bruno Henrique", "posicao": "ATA1" },
-                { "nome": "Gabigol", "posicao": "ATA2" }
+                { "nome": "Diego Alves",        "posicao": "GOL"    },
+                { "nome": "Rafinha",            "posicao": "LD"     },
+                { "nome": "Rodrigo Caio",       "posicao": "ZAG1"   },
+                { "nome": "Pablo Marí",         "posicao": "ZAG2"   },
+                { "nome": "Filipe Luís",        "posicao": "LE"     },
+                { "nome": "Willian Arão",       "posicao": "VOL1"   },
+                { "nome": "Gerson",             "posicao": "VOL2"   },
+                { "nome": "Éverton Ribeiro",    "posicao": "MD"     },
+                { "nome": "De Arrascaeta",      "posicao": "ME"     },
+                { "nome": "Bruno Henrique",     "posicao": "ATA1"   },
+                { "nome": "Gabigol",            "posicao": "ATA2"   }
             ],
-            "extras": ["César", "Rodinei", "Thuler", "Renê", "Piris da Motta", "Diego", "Vitinho", "Lincoln", "Reinier", "Berrío"]
+            "extras": [
+                "César", 
+                "Rodinei", 
+                "Thuler", 
+                "Renê", 
+                "Piris da Motta", 
+                "Vinícius Souza",
+                "Hugo Moura",
+                "Lucas Silva",
+                "Gabriel Batista",
+                "João Lucas",
+                "Pepê",
+                "Rhodolfo",
+                "Dantas",
+                "Rafael Santos",
+                "Diego Ribas", 
+                "Vitinho", 
+                "Lincoln", 
+                "Reinier", 
+                "Berrío"
+            ]
         },
         {
             "time": "Barcelona",
@@ -208,12 +228,24 @@
                 { "nome": "Germán Cano", "posicao": "CA" }
             ],
             "extras": [
+                "Pedro Rangel",
+                "Guga",
+                "Marlon",
+                "David Braz",
+                "Thiago Santos",
+                "Leo Fernandez",
+                "Danielzinho",
                 "Manoel", 
                 "Diogo Barbosa", 
                 "Lima", 
                 "Alexsander", 
-                "John Kennedy", 
-            "Yony González"]
+                "John Kennedy",
+                "Giovanni",
+                "Vitor Eudes",
+                "Lelê",
+                "Jorge", 
+                "Yony González"
+            ]
             
         },
         {

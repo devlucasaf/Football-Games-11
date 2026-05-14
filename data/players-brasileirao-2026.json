@@ -13,7 +13,7 @@
         "lateral": ["Natanael", "Renan Lodi", "Preciado", "Luís Gustavo", "Pascini"],
         "volante": ["Alexander", "Maycon", "Patrick", "Alan Franco", "Igor Toledo", "Victor Hugo"],
         "meioCampo": ["Gustavo Scarpa", "Bernard", "Igor Gomes", "Reinier", "Índio", "Mamady Cissé", "Iseppe"],
-        "atacante": ["Hulk", "Cassierra", "Alan Miranda", "Cauã Soares", "Rony", "Cuello", "Júnior Santos", "Murillo Cardoso", "Cadu", "Biel", "Dudu"]
+        "atacante": ["Cassierra", "Alan Miranda", "Cauã Soares", "Rony", "Cuello", "Júnior Santos", "Murillo Cardoso", "Cadu", "Biel", "Dudu"]
     },
     "Bahia": {
         "goleiro": ["João Paulo", "Ronaldo"],
@@ -59,7 +59,7 @@
         "goleiro": ["Pedro Morisco", "Pedro Rangel", "Benassi", "Gabriel Leite"],
         "zagueiro": ["Maicon", "Rodrigo Moledo", "Guilherme Aquino", "Tiago Cóser"],
         "lateral": ["Matías Fracchia", "João Almeida", "Alex Silva", "Felipe Guimarães", "Zeca"],
-        "volante": ["Geovane", "Filipe Machado", "Sebastián Gomez", "Thisgo Santos"],
+        "volante": ["Geovane", "Filipe Machado", "Sebastián Gomez", "Thiago Santos"],
         "meioCampo": ["h", "i", "j"],
         "atacante": ["k", "l", "m"]
     },
@@ -81,11 +81,11 @@
     },
     "Fluminense": {
         "goleiro": ["Fábio", "Vitor Eudes", "Marcelo Pitaluga"],
-        "zagueiro": ["Jemmes", "Ignácio", "Freytes", "Igor Rabello" ],
-        "lateral": ["Samuel Xavier", "Renê", "Gabriel Fuentes", "Guilherme Arana", "Guga"],
+        "zagueiro": ["Jemmes", "Ignácio", "Freytes", "Igor Rabello", "Millan" ],
+        "lateral": ["Samuel Xavier", "Renê", "Julio Fideles", "Guilherme Arana", "Guga"],
         "volante": ["Facundo Bernal", "Martinelli", "Nonato", "Hércules", "Otávio"],
-        "meioCampo": ["Paulo Henrique Ganso", "Lucho Acosta", "Lima", "Rubén Lezcano", "Jefferson Savarino"],
-        "atacante": ["Soteldo", "Everaldo", "Germán Cano", "Canobbio", "Riquelme", "Santi Moreno", "Kevin Serna", "Jhon Kennedy"]
+        "meioCampo": ["Paulo Henrique Ganso", "Lucho Acosta", "Alisson", "Rubén Lezcano", "Jefferson Savarino"],
+        "atacante": ["Soteldo", "Castillo", "Germán Cano", "Canobbio", "Riquelme", "Hulk", "Kevin Serna", "Jhon Kennedy"]
     },
     "Grêmio": {
         "goleiro": ["Weverton", "Gabriel Grando", "Thiago Beltrame", "Gabriel Menegon"],

@@ -115,18 +115,6 @@
             ]
         },
         {
-            "nome": "Robinho",
-            "clubes": [
-                {"clube": "Santos", "periodo": "2002-2005"},
-                {"clube": "Real Madrid", "periodo": "2005-2008"},
-                {"clube": "Manchester City", "periodo": "2008-2010"},
-                {"clube": "Milan", "periodo": "2010-2014"},
-                {"clube": "Santos", "periodo": "2014-2015"},
-                {"clube": "Guangzhou Evergrande", "periodo": "2015"},
-                {"clube": "Atlético Mineiro", "periodo": "2016"}
-            ]
-        },
-        {
             "nome": "Andriy Shevchenko",
             "clubes": [
                 {"clube": "Dynamo Kyiv", "periodo": "1994-1999"},
@@ -168,7 +156,7 @@
             ]
         },
         {
-            "nome": "Drogba",
+            "nome": "Didier Drogba",
             "clubes": [
                 {"clube": "Le Mans", "periodo": "2001-2002"},
                 {"clube": "Guingamp", "periodo": "2002-2003"},
@@ -288,7 +276,7 @@
                 {"clube": "Atlético de Madrid", "periodo": "2020-2022"},
                 {"clube": "Nacional", "periodo": "2022"},
                 {"clube": "Grêmio", "periodo": "2023"},
-                {"clube": "Inter Miami", "periodo": "2023-2024"}
+                {"clube": "Inter Miami", "periodo": "2024-"}
             ]
         },
         {
@@ -298,7 +286,8 @@
                 {"clube": "Chelsea", "periodo": "2012-2014"},
                 {"clube": "Werder Bremen", "periodo": "2012-2013 (emp.)"},
                 {"clube": "Wolfsburg", "periodo": "2014-2015"},
-                {"clube": "Manchester City", "periodo": "2015-2025"}
+                {"clube": "Manchester City", "periodo": "2015-2025"},
+                {"clube": "Napoli", "periodo": "2025-"}
             ]
         },
         {
@@ -316,8 +305,11 @@
             "nome": "Luka Modrić",
             "clubes": [
                 {"clube": "Dinamo Zagreb", "periodo": "2003-2008"},
+                {"clube": "Zrinjski", "periodo": "2003-2004 (emp.)"},
+                {"clube": "Inter Zaprešić", "periodo": "2004-2005 (emp.)"},
                 {"clube": "Tottenham", "periodo": "2008-2012"},
-                {"clube": "Real Madrid", "periodo": "2012-"}
+                {"clube": "Real Madrid", "periodo": "2012-2025"},
+                {"clube": "Milan", "periodo": "2025-"}
             ]
         },
         {
@@ -356,7 +348,9 @@
                 {"clube": "Arsenal", "periodo": "2018-2022"},
                 {"clube": "Barcelona", "periodo": "2022"},
                 {"clube": "Chelsea", "periodo": "2022-2023"},
-                {"clube": "Olympique de Marseille", "periodo": "2023-2024"}
+                {"clube": "Olympique de Marseille", "periodo": "2023-2024"},
+                {"clube": "Al-Qadsiah", "periodo": "2024-2025"},
+                {"clube": "Olympique de Marseille", "periodo": "2025-"}
             ]
         },
         {
@@ -408,24 +402,26 @@
         {
             "nome": "Oscar",
             "clubes": [
-                {"clube": "São Paulo", "periodo": "2008-2009"},
+                {"clube": "São Paulo", "periodo": "2008-2010"},
                 {"clube": "Internacional", "periodo": "2010-2012"},
-                {"clube": "Chelsea", "periodo": "2012-2017"},
-                {"clube": "Shanghai SIPG", "periodo": "2017-2023"},
-                {"clube": "Flamengo", "periodo": "2023-2024"}
+                {"clube": "Chelsea", "periodo": "2012-2016"},
+                {"clube": "Shanghai SIPG", "periodo": "2017-2024"},
+                {"clube": "Flamengo", "periodo": "2024-2025"}
             ]
         },
         {
             "nome": "Willian",
             "clubes": [
                 {"clube": "Corinthians", "periodo": "2006-2007"},
-                {"clube": "Shakhtar Donetsk", "periodo": "2007-2013"},
+                {"clube": "Shakhtar Donetsk", "periodo": "2007-2012"},
                 {"clube": "Anzhi", "periodo": "2013"},
                 {"clube": "Chelsea", "periodo": "2013-2020"},
                 {"clube": "Arsenal", "periodo": "2020-2021"},
                 {"clube": "Corinthians", "periodo": "2021-2022"},
-                {"clube": "Fulham", "periodo": "2022-2023"},
-                {"clube": "Olympiacos", "periodo": "2023-2024"}
+                {"clube": "Fulham", "periodo": "2022-2024"},
+                {"clube": "Olympiacos", "periodo": "2024"},
+                {"clube": "Fulham", "periodo": "2025"},
+                {"clube": "Grêmio", "periodo": "2025-"}
             ]
         },
         {
@@ -440,25 +436,216 @@
             ]
         },
         {
-            "nome": "Dani Alves",
-            "clubes": [
-                {"clube": "Bahia", "periodo": "2001-2002"},
-                {"clube": "Sevilla", "periodo": "2002-2008"},
-                {"clube": "Barcelona", "periodo": "2008-2016"},
-                {"clube": "Juventus", "periodo": "2016-2017"},
-                {"clube": "PSG", "periodo": "2017-2019"},
-                {"clube": "São Paulo", "periodo": "2019-2021"},
-                {"clube": "Barcelona", "periodo": "2021-2022"},
-                {"clube": "UNAM Pumas", "periodo": "2022-2023"}
-            ]
-        },
-        {
             "nome": "Raphaël Varane",
             "clubes": [
                 {"clube": "Lens", "periodo": "2010-2011"},
                 {"clube": "Real Madrid", "periodo": "2011-2021"},
                 {"clube": "Manchester United", "periodo": "2021-2024"},
                 {"clube": "Como", "periodo": "2024"}
+            ]
+        },
+        {
+            "nome": "Achraf Hakimi",
+            "clubes": [
+                {"clube": "Real Madrid", "periodo": "2016-2020"},
+                {"clube": "Borussia Dortmund", "periodo": "2018-2020 (emp.)"},
+                {"clube": "Inter de Milão", "periodo": "2020-2021"},
+                {"clube": "Paris Saint-Germain", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Khvicha Kvaratskhelia",
+            "clubes": [
+                {"clube": "Dinamo Tbilisi", "periodo": "2017-2018"},
+                {"clube": "Rustavi", "periodo": "2018-2019"},
+                {"clube": "Lokomotiv Moscow", "periodo": "2019"},
+                {"clube": "Rubin Kazan", "periodo": "2019-2022"},
+                {"clube": "Napoli", "periodo": "2022-2025"},
+                {"clube": "Paris Saint-Germain", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Lucas Beraldo",
+            "clubes": [
+                {"clube": "São Paulo", "periodo": "2022-2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Marquinhos",
+            "clubes": [
+                {"clube": "Corinthians", "periodo": "2012-2013"},
+                {"clube": "Roma", "periodo": "2012-2013 (emp.)"},
+                {"clube": "Roma", "periodo": "2013"},
+                {"clube": "Paris Saint-Germain", "periodo": "2013-"}
+            ]
+        },
+        {
+            "nome": "Illya Zabarnyi",
+            "clubes": [
+                {"clube": "Dínamo de Kiev", "periodo": "2019–2023"},
+                {"clube": "Bournemouth", "periodo": "2023–2025"},
+                {"clube": "Paris Saint-Germain", "periodo": "2025-"}
+            ]
+        },
+        {
+            "nome": "Fabián Ruiz",
+            "clubes": [
+                {"clube": "Real Betis", "periodo": "2014-2018"},
+                {"clube": "Elche", "periodo": "2017 (emp.)"},
+                {"clube": "Napoli", "periodo": "2018-2022"},
+                {"clube": "Paris Saint-Germain", "periodo": "2022-"}
+            ]
+        },
+        {
+            "nome": "Gonçalo Ramos",
+            "clubes": [
+                {"clube": "Benfica", "periodo": "2020-2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2023-2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Ousmane Dembélé",
+            "clubes": [
+                {"clube": "Rennes", "periodo": "2015-2016"},
+                {"clube": "Borussia Dortmund", "periodo": "2016-2017"},
+                {"clube": "Barcelona", "periodo": "2017-2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Désiré Doué",
+            "clubes": [
+                {"clube": "Rennes", "periodo": "2022-2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Vitinha",
+            "clubes": [
+                {"clube": "Porto", "periodo": "2020-2022"},
+                {"clube": "Wolverhampton Wanderers", "periodo": "2020-2021 (emp."},
+                {"clube": "Paris Saint-Germain", "periodo": "2022-"}
+            ]
+        },
+        {
+            "nome": "Lee Kang-in",
+            "clubes": [
+                {"clube": "Valencia", "periodo": "2019-2021"},
+                {"clube": "Mallorca", "periodo": "2021-2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Lucas Hernández",
+            "clubes": [
+                {"clube": "Atlético de Madrid", "periodo": "2014–2019"},
+                {"clube": "Bayern de Munique", "periodo": "2019–2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Senny Mayulu",
+            "clubes": [
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Nuno Mendes",
+            "clubes": [
+                {"clube": "Sporting CP", "periodo": "2014–2019"},
+                {"clube": "Paris Saint-Germain", "periodo": "2021-2022 (emp.)"},
+                {"clube": "Paris Saint-Germain", "periodo": "2022-"}
+            ]
+        },
+        {
+            "nome": "Dro Fernández",
+            "clubes": [
+                {"clube": "Barcelona", "periodo": "2025–2026"},
+                {"clube": "Paris Saint-Germain", "periodo": "2026-"}
+            ]
+        },
+        {
+            "nome": "Bradley Barcola",
+            "clubes": [
+                {"clube": "Lyon", "periodo": "2021–2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Lucas Chevalier",
+            "clubes": [
+                {"clube": "Lille", "periodo": "2021-2025"},
+                {"clube": "Valenciennes", "periodo": "2021 (emp.)"},
+                {"clube": "Paris Saint-Germain", "periodo": "2025-"}
+            ]
+        },
+        {
+            "nome": "Warren Zaïre-Emery",
+            "clubes": [
+                {"clube": "Paris Saint-Germain", "periodo": "2022-"}
+            ]
+        },
+        {
+            "nome": "Matvei Safonov",
+            "clubes": [
+                {"clube": "Krasnodar", "periodo": "2017–2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Ibrahim Mbaye",
+            "clubes": [
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Willian Pacho",
+            "clubes": [
+                {"clube": "Independiente del Valle", "periodo": "2019–2022"},
+                {"clube": "Royal Antwerp", "periodo": "2022–2023"},
+                {"clube": "Eintracht Frankfurt", "periodo": "2023–2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "João Neves",
+            "clubes": [
+                {"clube": "Benfica", "periodo": "2022–2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Manuel Neuer",
+            "clubes": [
+                {"clube": "Schalke 04", "periodo": "2006–2011"},
+                {"clube": "Bayern de Munique", "periodo": "2011-"}
+            ]
+        },
+        {
+            "nome": "Dayot Upamecano",
+            "clubes": [
+                {"clube": "Red Bull Salzburg", "periodo": "2015–2017"},
+                {"clube": "Liefering ", "periodo": "2015–2016 (emp.)"},
+                {"clube": "RB Leipzig", "periodo": "2017–2021"},
+                {"clube": "Bayern de Munique", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Willian Pacho",
+            "clubes": [
+                {"clube": "Independiente del Valle", "periodo": "2019–2022"},
+                {"clube": "Royal Antwerp", "periodo": "2022–2023"},
+                {"clube": "Eintracht Frankfurt", "periodo": "2023–2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "João Neves",
+            "clubes": [
+                {"clube": "Benfica", "periodo": "2022–2024"},
+                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
             ]
         }
     ]
