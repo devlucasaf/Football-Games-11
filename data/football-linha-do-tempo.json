@@ -1,0 +1,124 @@
+{
+    "rodadas": [
+        {
+            "tema": "Títulos do Brasil em Copas",
+            "eventos": [
+                { "texto": "Brasil vence a Suécia na final", "ano": 1958 },
+                { "texto": "Brasil vence a Checoslováquia na final", "ano": 1962 },
+                { "texto": "Brasil vence a Itália na final (Pelé brilha)", "ano": 1970 },
+                { "texto": "Brasil vence a Itália nos pênaltis", "ano": 1994 },
+                { "texto": "Brasil vence a Alemanha na final (Ronaldo 2 gols)", "ano": 2002 }
+            ]
+        },
+        {
+            "tema": "Finais de Champions League",
+            "eventos": [
+                { "texto": "Milan vira sobre o Liverpool em Istambul", "ano": 2005 },
+                { "texto": "Barcelona vence o Arsenal (Belletti gol)", "ano": 2006 },
+                { "texto": "Manchester United vence o Chelsea nos pênaltis", "ano": 2008 },
+                { "texto": "Barcelona vence o Manchester United (Messi brilha)", "ano": 2011 },
+                { "texto": "Chelsea vence o Bayern nos pênaltis", "ano": 2012 }
+            ]
+        },
+        {
+            "tema": "Transferências históricas",
+            "eventos": [
+                { "texto": "Ronaldo vai do Barcelona para a Inter", "ano": 1997 },
+                { "texto": "Zidane vai da Juventus para o Real Madrid", "ano": 2001 },
+                { "texto": "Cristiano Ronaldo vai do Man United para o Real Madrid", "ano": 2009 },
+                { "texto": "Neymar vai do Santos para o Barcelona", "ano": 2013 },
+                { "texto": "Neymar vai do Barcelona para o PSG", "ano": 2017 }
+            ]
+        },
+        {
+            "tema": "Gols históricos em Copas do Mundo",
+            "eventos": [
+                { "texto": "Maradona faz o 'Gol do Século' contra a Inglaterra", "ano": 1986 },
+                { "texto": "Roberto Baggio perde pênalti na final", "ano": 1994 },
+                { "texto": "Zidane faz 2 gols de cabeça na final contra o Brasil", "ano": 1998 },
+                { "texto": "Ronaldo marca 2 gols na final contra a Alemanha", "ano": 2002 },
+                { "texto": "Götze marca o gol do título na prorrogação", "ano": 2014 }
+            ]
+        },
+        {
+            "tema": "Libertadores — Títulos brasileiros",
+            "eventos": [
+                { "texto": "Santos de Pelé vence a Libertadores", "ano": 1962 },
+                { "texto": "Grêmio vence o Peñarol na final", "ano": 1983 },
+                { "texto": "São Paulo vence a Libertadores (Telê)", "ano": 1992 },
+                { "texto": "Corinthians vence a Libertadores (primeira vez)", "ano": 2012 },
+                { "texto": "Flamengo vence o River Plate (Gabigol 2 gols)", "ano": 2019 }
+            ]
+        },
+        {
+            "tema": "Bolas de Ouro de Messi",
+            "eventos": [
+                { "texto": "Messi ganha sua primeira Bola de Ouro", "ano": 2009 },
+                { "texto": "Messi ganha a 4ª Bola de Ouro consecutiva", "ano": 2012 },
+                { "texto": "Messi ganha a 5ª Bola de Ouro", "ano": 2015 },
+                { "texto": "Messi ganha a 7ª Bola de Ouro (pós-Copa América)", "ano": 2021 },
+                { "texto": "Messi ganha a 8ª Bola de Ouro (pós-Copa do Mundo)", "ano": 2023 }
+            ]
+        },
+        {
+            "tema": "Marcos do futebol feminino",
+            "eventos": [
+                { "texto": "Primeira Copa do Mundo Feminina (China)", "ano": 1991 },
+                { "texto": "EUA vencem a Copa do Mundo em casa", "ano": 1999 },
+                { "texto": "Marta ganha a primeira Bola de Ouro feminina", "ano": 2006 },
+                { "texto": "Marta se torna maior artilheira de Copas", "ano": 2019 },
+                { "texto": "Espanha vence a Copa do Mundo Feminina", "ano": 2023 }
+            ]
+        },
+        {
+            "tema": "Recordes de gols",
+            "eventos": [
+                { "texto": "Pelé marca seu milésimo gol", "ano": 1969 },
+                { "texto": "Gerd Müller marca 85 gols em um ano", "ano": 1972 },
+                { "texto": "Ronaldo chega a 15 gols em Copas do Mundo", "ano": 2006 },
+                { "texto": "Messi marca 91 gols em um ano civil", "ano": 2012 },
+                { "texto": "Cristiano Ronaldo se torna maior artilheiro de seleções", "ano": 2021 }
+            ]
+        },
+        {
+            "tema": "Mundiais de Clubes / Intercontinentais",
+            "eventos": [
+                { "texto": "Santos de Pelé vence o Milan no Intercontinental", "ano": 1963 },
+                { "texto": "Grêmio vence o Hamburg no Intercontinental", "ano": 1983 },
+                { "texto": "São Paulo vence o Barcelona no Intercontinental", "ano": 1992 },
+                { "texto": "Corinthians vence o Chelsea no Mundial de Clubes", "ano": 2012 },
+                { "texto": "Real Madrid vence o Grêmio no Mundial de Clubes", "ano": 2017 }
+            ]
+        },
+        {
+            "tema": "Copas do Mundo — Sedes marcantes",
+            "eventos": [
+                { "texto": "Copa do Mundo no México (Maradona)", "ano": 1986 },
+                { "texto": "Copa do Mundo na França (Zidane)", "ano": 1998 },
+                { "texto": "Copa do Mundo na Coreia/Japão (Ronaldo)", "ano": 2002 },
+                { "texto": "Copa do Mundo na África do Sul (Espanha)", "ano": 2010 },
+                { "texto": "Copa do Mundo no Brasil (7x1)", "ano": 2014 }
+            ]
+        },
+        {
+            "tema": "Ascensão do Manchester City",
+            "eventos": [
+                { "texto": "City é comprado pelo grupo Abu Dhabi", "ano": 2008 },
+                { "texto": "Agüero marca gol do título no último minuto", "ano": 2012 },
+                { "texto": "Guardiola assume o City", "ano": 2016 },
+                { "texto": "City faz 100 pontos na Premier League", "ano": 2018 },
+                { "texto": "City vence a Champions League (Tríplice Coroa)", "ano": 2023 }
+            ]
+        },
+        {
+            "tema": "Despedidas lendárias",
+            "eventos": [
+                { "texto": "Pelé se aposenta no Cosmos", "ano": 1977 },
+                { "texto": "Maradona se despede do futebol", "ano": 1997 },
+                { "texto": "Zidane se aposenta após cabeçada na Copa", "ano": 2006 },
+                { "texto": "Ronaldinho Gaúcho se aposenta", "ano": 2018 },
+                { "texto": "Messi ganha a Copa do Mundo antes da despedida", "ano": 2022 }
+            ]
+        }
+    ]
+}

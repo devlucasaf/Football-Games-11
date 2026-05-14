@@ -1,0 +1,144 @@
+{
+    "desafios": [
+        {
+            "tema": "Artilheiros da Copa de 2014",
+            "categoria": "copas",
+            "lista": ["James Rodríguez", "Thomas Müller", "Neymar", "Messi", "Robin van Persie", "Benzema"],
+            "escondido": 3,
+            "dica": "Argentino que ganhou a Bola de Ouro do torneio"
+        },
+        {
+            "tema": "Brasil 2002 — Ataque titular",
+            "categoria": "selecoes",
+            "lista": ["Ronaldo", "Rivaldo", "Ronaldinho"],
+            "escondido": 0,
+            "dica": "Fenômeno que marcou 2 gols na final"
+        },
+        {
+            "tema": "MSN do Barcelona",
+            "categoria": "clubes",
+            "lista": ["Messi", "Suárez", "Neymar"],
+            "escondido": 1,
+            "dica": "Uruguaio que veio do Liverpool"
+        },
+        {
+            "tema": "Ballon d'Or 2010 — Top 3",
+            "categoria": "premios",
+            "lista": ["Messi", "Iniesta", "Xavi"],
+            "escondido": 2,
+            "dica": "Maestro do Barcelona e da Espanha"
+        },
+        {
+            "tema": "Quarteto mágico do Real Madrid 2017 — Meio-campo",
+            "categoria": "clubes",
+            "lista": ["Modric", "Kroos", "Casemiro", "Isco"],
+            "escondido": 0,
+            "dica": "Croata que viria a ganhar a Bola de Ouro em 2018"
+        },
+        {
+            "tema": "Zagueiros da Itália 2006 — Final",
+            "categoria": "selecoes",
+            "lista": ["Cannavaro", "Materazzi", "Zambrotta", "Grosso"],
+            "escondido": 0,
+            "dica": "Capitão que ganhou a Bola de Ouro naquele ano"
+        },
+        {
+            "tema": "Últimos 5 campeões da Champions League",
+            "categoria": "clubes",
+            "lista": ["Real Madrid", "Manchester City", "Real Madrid", "Chelsea", "Bayern de Munique"],
+            "escondido": 1,
+            "dica": "Clube inglês que venceu em 2023 com Haaland"
+        },
+        {
+            "tema": "BBC do Real Madrid",
+            "categoria": "clubes",
+            "lista": ["Bale", "Benzema", "Cristiano Ronaldo"],
+            "escondido": 2,
+            "dica": "Português, maior artilheiro da história do clube"
+        },
+        {
+            "tema": "Argentina 2022 — Linha defensiva titular (final)",
+            "categoria": "selecoes",
+            "lista": ["Molina", "Romero", "Otamendi", "Tagliafico"],
+            "escondido": 2,
+            "dica": "Zagueiro veterano que jogava no Benfica"
+        },
+        {
+            "tema": "Campeões brasileiros da Libertadores desde 2019",
+            "categoria": "clubes",
+            "lista": ["Flamengo", "Palmeiras", "Palmeiras", "Fluminense", "Botafogo"],
+            "escondido": 4,
+            "dica": "Campeão em 2024, primeiro título libertador do clube"
+        },
+        {
+            "tema": "Hat-trick de Bale — Copa do Rei 2014",
+            "categoria": "momento",
+            "lista": ["Real Madrid", "Barcelona"],
+            "escondido": 0,
+            "dica": "Time de branco que venceu a final com gol antológico de Bale"
+        },
+        {
+            "tema": "Trio de ataque do Liverpool 2019",
+            "categoria": "clubes",
+            "lista": ["Salah", "Firmino", "Mané"],
+            "escondido": 2,
+            "dica": "Senegalês que depois foi para o Bayern"
+        },
+        {
+            "tema": "Flamengo 2019 — Meio-campo titular (Libertadores)",
+            "categoria": "clubes",
+            "lista": ["Willian Arão", "Gerson", "Éverton Ribeiro", "Arrascaeta"],
+            "escondido": 3,
+            "dica": "Uruguaio meia-atacante, camisa 14"
+        },
+        {
+            "tema": "Seleções campeãs da Copa (1998-2022)",
+            "categoria": "copas",
+            "lista": ["França", "Brasil", "Itália", "Espanha", "Alemanha", "França", "Argentina"],
+            "escondido": 6,
+            "dica": "Campeã em 2022, liderada por Messi"
+        },
+        {
+            "tema": "Galácticos do Real Madrid (2003)",
+            "categoria": "clubes",
+            "lista": ["Zidane", "Ronaldo", "Figo", "Beckham", "Raúl"],
+            "escondido": 4,
+            "dica": "Espanhol, ídolo máximo e artilheiro do clube na época"
+        },
+        {
+            "tema": "Dupla de zaga do Barcelona 2015",
+            "categoria": "clubes",
+            "lista": ["Piqué", "Mascherano"],
+            "escondido": 1,
+            "dica": "Argentino que jogava de volante na seleção"
+        },
+        {
+            "tema": "Brasileiros Ballon d'Or (todos)",
+            "categoria": "premios",
+            "lista": ["Ronaldo", "Ronaldinho", "Rivaldo", "Kaká"],
+            "escondido": 3,
+            "dica": "Meia do Milan que ganhou em 2007"
+        },
+        {
+            "tema": "Artilheiros da história da Copa do Mundo — Top 3",
+            "categoria": "copas",
+            "lista": ["Miroslav Klose", "Ronaldo", "Gerd Müller"],
+            "escondido": 0,
+            "dica": "Alemão com 16 gols, recorde atual"
+        },
+        {
+            "tema": "Santos 2011 — Dupla de ataque (Libertadores)",
+            "categoria": "clubes",
+            "lista": ["Neymar", "Ganso"],
+            "escondido": 1,
+            "dica": "Meia elegante, camisa 10 do Santos"
+        },
+        {
+            "tema": "Botafogo 2024 — Trio de meio-campo (Libertadores)",
+            "categoria": "clubes",
+            "lista": ["Marlon Freitas", "Gregore", "Thiago Almada"],
+            "escondido": 2,
+            "dica": "Argentino contratado do Atlanta United"
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+{
+    "conexoes": [
+        {
+            "clube1": "Barcelona",
+            "clube2": "Milan",
+            "respostas": ["Ronaldinho", "Ibrahimović", "Boateng", "Rivaldo", "Zambrotta", "Thiago Motta", "Edgar Davids"]
+        },
+        {
+            "clube1": "Real Madrid",
+            "clube2": "Juventus",
+            "respostas": ["Cristiano Ronaldo", "Zidane", "Higuaín", "Cannavaro", "Emerson", "Khedira"]
+        },
+        {
+            "clube1": "Barcelona",
+            "clube2": "PSG",
+            "respostas": ["Neymar", "Messi", "Ronaldinho", "Dani Alves", "Rafinha", "Sarabia"]
+        },
+        {
+            "clube1": "Manchester United",
+            "clube2": "Real Madrid",
+            "respostas": ["Cristiano Ronaldo", "Beckham", "Van Nistelrooy", "Di María", "Casemiro", "Varane"]
+        },
+        {
+            "clube1": "Flamengo",
+            "clube2": "Corinthians",
+            "respostas": ["Adriano", "Vagner Love", "Guerrero", "Emerson Sheik", "Renato Augusto"]
+        },
+        {
+            "clube1": "Inter de Milão",
+            "clube2": "Milan",
+            "respostas": ["Pirlo", "Ronaldo", "Ibrahimović", "Seedorf", "Hakan Çalhanoğlu", "Vieri"]
+        },
+        {
+            "clube1": "Chelsea",
+            "clube2": "Manchester City",
+            "respostas": ["Lampard", "Cole Palmer", "Sterling", "Kovačić", "Ké Ké"]
+        },
+        {
+            "clube1": "Santos",
+            "clube2": "Barcelona",
+            "respostas": ["Neymar", "Gabriel Barbosa"]
+        },
+        {
+            "clube1": "Liverpool",
+            "clube2": "Barcelona",
+            "respostas": ["Suárez", "Coutinho", "Mascherano", "Thiago"]
+        },
+        {
+            "clube1": "Bayern de Munique",
+            "clube2": "Real Madrid",
+            "respostas": ["Kroos", "Alaba", "Robben", "James", "Xabi Alonso"]
+        },
+        {
+            "clube1": "Palmeiras",
+            "clube2": "São Paulo",
+            "respostas": ["Marcos Assunção", "Denílson", "Cafu", "Alex", "Ricardo Oliveira"]
+        },
+        {
+            "clube1": "Flamengo",
+            "clube2": "Vasco",
+            "respostas": ["Romário", "Edmundo", "Felipe", "Petkovic"]
+        },
+        {
+            "clube1": "Manchester United",
+            "clube2": "Juventus",
+            "respostas": ["Pogba", "Tevez", "Ronaldo", "Vidal", "Evra"]
+        },
+        {
+            "clube1": "Real Madrid",
+            "clube2": "PSG",
+            "respostas": ["Mbappé", "Sergio Ramos", "Di María", "Navas", "Beckham", "Ronaldinho"]
+        },
+        {
+            "clube1": "Barcelona",
+            "clube2": "Atlético de Madrid",
+            "respostas": ["Griezmann", "Suárez", "David Villa", "Arda Turan", "Felipe Luís"]
+        },
+        {
+            "clube1": "Chelsea",
+            "clube2": "Real Madrid",
+            "respostas": ["Hazard", "Courtois", "Casillas", "Essien"]
+        },
+        {
+            "clube1": "Flamengo",
+            "clube2": "Santos",
+            "respostas": ["Neymar", "Robinho", "Léo Moura", "Bruno Henrique"]
+        },
+        {
+            "clube1": "Tottenham",
+            "clube2": "Real Madrid",
+            "respostas": ["Bale", "Modric", "Van der Vaart"]
+        },
+        {
+            "clube1": "Juventus",
+            "clube2": "Milan",
+            "respostas": ["Pirlo", "Bonucci", "Higuaín", "Ibrahimović", "Inzaghi"]
+        },
+        {
+            "clube1": "Grêmio",
+            "clube2": "Internacional",
+            "respostas": ["D'Alessandro", "Tinga", "Léo Moura", "Giuliano"]
+        },
+        {
+            "clube1": "Bayern de Munique",
+            "clube2": "Borussia Dortmund",
+            "respostas": ["Lewandowski", "Götze", "Hummels", "Süle"]
+        },
+        {
+            "clube1": "Arsenal",
+            "clube2": "Barcelona",
+            "respostas": ["Henry", "Fàbregas", "Vermaelen", "Song", "Overmars"]
+        },
+        {
+            "clube1": "Corinthians",
+            "clube2": "Palmeiras",
+            "respostas": ["Tevez", "Edmundo", "Rivaldo", "Marcos Assunção", "Zé Roberto"]
+        },
+        {
+            "clube1": "Manchester City",
+            "clube2": "Barcelona",
+            "respostas": ["Agüero", "Bravo", "García", "Yaya Touré"]
+        },
+        {
+            "clube1": "Flamengo",
+            "clube2": "Real Madrid",
+            "respostas": ["Vinícius Júnior", "Marcelo", "Gerson"]
+        }
+    ]
+}

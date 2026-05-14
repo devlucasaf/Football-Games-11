@@ -1,0 +1,521 @@
+.escalacao-container {
+    padding: 1.5rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+/* --- MODE SELECT --- */
+.mode-select {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.mode-select h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.mode-select h2 i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.mode-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.mode-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    min-width: 200px;
+}
+
+.mode-btn:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mode-btn i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.mode-btn .mode-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.mode-btn .mode-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* --- GAME INFO --- */
+.game-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.game-timer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.game-timer.hidden {
+    display: none !important;
+}
+
+.game-timer.danger {
+    color: #e74c3c;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 
+    100% { 
+        opacity: 1; 
+    }
+
+    50% { 
+        opacity: 0.5; 
+    }
+}
+
+.game-match {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.game-score {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+/* --- INPUT AREA --- */
+.guess-input-area {
+    margin-bottom: 1rem;
+    position: relative;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.autocomplete-wrapper {
+    position: relative;
+}
+
+#guessInput {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+#guessInput:focus {
+    border-color: var(--accent-color);
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.autocomplete-list li {
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.15s;
+}
+
+.autocomplete-list li:hover,
+.autocomplete-list li.active {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* --- FOOTBALL FIELD --- */
+.field-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.football-field {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 3/4;
+    background: #2d8a4e;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #1a5c32;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.field-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.field-half-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.field-center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.field-penalty-top {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    height: 18%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top: none;
+}
+
+.field-penalty-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    height: 18%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-bottom: none;
+}
+
+.field-goal-top {
+    position: absolute;
+    top: 0;
+    left: 37%;
+    right: 37%;
+    height: 6%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top: none;
+}
+
+.field-goal-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 37%;
+    right: 37%;
+    height: 6%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-bottom: none;
+}
+
+/* --- PLAYERS LAYER --- */
+.players-layer {
+    position: absolute;
+    inset: 0;
+}
+
+.player-slot {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    transform: translate(-50%, -50%);
+    cursor: default;
+}
+
+.player-slot .player-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px dashed rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.player-slot .player-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    text-align: center;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.player-slot.revealed .player-circle {
+    background: #fff;
+    border: 2px solid #27ae60;
+    color: #27ae60;
+    animation: revealPop 0.4s ease;
+}
+
+.player-slot.revealed .player-label {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+@keyframes revealPop {
+    0% { 
+        transform: scale(0.5); 
+    }
+
+    60% { 
+        transform: scale(1.2); 
+    }
+
+    100% { 
+        transform: scale(1); 
+    }
+}
+
+
+.player-slot.missed .player-circle {
+    background: rgba(231, 76, 60, 0.3);
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.player-slot.missed .player-label {
+    color: #ffcccc;
+}
+
+/* --- GIVE UP --- */
+.give-up-area {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-give-up {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-give-up:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+/* --- FINAL RESULT --- */
+.final-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+
+.final-result h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.final-result h2 i {
+    color: var(--accent-color);
+}
+
+.final-score {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.final-points {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.final-label {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+}
+
+.final-details {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-retry,
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.btn-retry {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.btn-retry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-home {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-home:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* --- HIDDEN --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .football-field {
+        max-width: 100%;
+        aspect-ratio: 3/4.5;
+    }
+
+    .player-slot .player-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 0.6rem;
+    }
+
+    .player-slot .player-label {
+        font-size: 0.55rem;
+        max-width: 55px;
+    }
+
+    .game-info {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 0.6rem 1rem;
+    }
+
+    .game-match {
+        order: -1;
+        width: 100%;
+        font-size: 0.85rem;
+    }
+}

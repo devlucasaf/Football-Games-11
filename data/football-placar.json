@@ -1,0 +1,184 @@
+{
+    "partidas": [
+        {
+            "mandante": "Brasil",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2014 — Semifinal",
+            "placarMandante": 1,
+            "placarVisitante": 7
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Milan",
+            "competicao": "Champions League 2005 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 3,
+            "detalhe": "Liverpool venceu nos pênaltis (3-2)"
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "PSG",
+            "competicao": "Champions League 2017 — Oitavas (volta)",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Eintracht Frankfurt",
+            "competicao": "Champions League 1960 — Final",
+            "placarMandante": 7,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2014 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "França",
+            "competicao": "Copa do Mundo 2022 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 3,
+            "detalhe": "Argentina venceu nos pênaltis (4-2)"
+        },
+        {
+            "mandante": "Espanha",
+            "visitante": "Holanda",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "QPR",
+            "competicao": "Premier League 2012 — Última rodada",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "River Plate",
+            "competicao": "Libertadores 2019 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Corinthians",
+            "visitante": "Chelsea",
+            "competicao": "Mundial de Clubes 2012 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Manchester United",
+            "visitante": "Bayern de Munique",
+            "competicao": "Champions League 1999 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Itália",
+            "competicao": "Copa do Mundo 1970 — Final",
+            "placarMandante": 4,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Palmeiras",
+            "visitante": "Santos",
+            "competicao": "Libertadores 2020 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 0,
+            "detalhe": "Placar agregado: 1-0 para o Palmeiras"
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Atlético Mineiro",
+            "competicao": "Libertadores 2024 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Boca Juniors",
+            "competicao": "Libertadores 2023 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Itália",
+            "visitante": "França",
+            "competicao": "Copa do Mundo 2006 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Itália venceu nos pênaltis (5-3)"
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Real Madrid",
+            "competicao": "La Liga 2009 — El Clásico (Camp Nou)",
+            "placarMandante": 2,
+            "placarVisitante": 6
+        },
+        {
+            "mandante": "Inglaterra",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 1966 — Final",
+            "placarMandante": 4,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Santos",
+            "visitante": "Peñarol",
+            "competicao": "Libertadores 2011 — Final (volta)",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "PSG",
+            "competicao": "Champions League 2020 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Liverpool",
+            "competicao": "Champions League 2018 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "França",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2018 — Final",
+            "placarMandante": 4,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2002 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Chelsea",
+            "visitante": "Bayern de Munique",
+            "competicao": "Champions League 2012 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Chelsea venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "Tottenham",
+            "visitante": "Ajax",
+            "competicao": "Champions League 2019 — Semifinal (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        }
+    ]
+}

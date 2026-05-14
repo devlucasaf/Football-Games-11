@@ -172,7 +172,7 @@
     transform: rotateY(180deg);
 }
 
-/* Primeiro card (posição) - já revelado */
+/* --- PRIMEIRO CARD --- */
 .pista-card:not(.oculto) {
     cursor: default;
 }

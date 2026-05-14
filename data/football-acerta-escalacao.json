@@ -1,0 +1,391 @@
+{
+    "escalacoes": [
+        {
+            "time": "Flamengo",
+            "evento": "Final da Libertadores 2019",
+            "formacao": "4-4-2",
+            "jogadores": [
+                { "nome": "Diego Alves", "posicao": "GOL" },
+                { "nome": "Rafinha", "posicao": "LD" },
+                { "nome": "Rodrigo Caio", "posicao": "ZAG1" },
+                { "nome": "Pablo Marí", "posicao": "ZAG2" },
+                { "nome": "Filipe Luís", "posicao": "LE" },
+                { "nome": "Willian Arão", "posicao": "VOL1" },
+                { "nome": "Gerson", "posicao": "VOL2" },
+                { "nome": "Éverton Ribeiro", "posicao": "MD" },
+                { "nome": "Arrascaeta", "posicao": "ME" },
+                { "nome": "Bruno Henrique", "posicao": "ATA1" },
+                { "nome": "Gabigol", "posicao": "ATA2" }
+            ],
+            "extras": ["César", "Rodinei", "Thuler", "Renê", "Piris da Motta", "Diego", "Vitinho", "Lincoln", "Reinier", "Berrío"]
+        },
+        {
+            "time": "Barcelona",
+            "evento": "Final da Champions League 2015",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Ter Stegen", "posicao": "GOL" },
+                { "nome": "Dani Alves", "posicao": "LD" },
+                { "nome": "Piqué", "posicao": "ZAG1" },
+                { "nome": "Mascherano", "posicao": "ZAG2" },
+                { "nome": "Jordi Alba", "posicao": "LE" },
+                { "nome": "Rakitić", "posicao": "VOL1" },
+                { "nome": "Busquets", "posicao": "VOL2" },
+                { "nome": "Iniesta", "posicao": "MEI" },
+                { "nome": "Messi", "posicao": "PD" },
+                { "nome": "Suárez", "posicao": "CA" },
+                { "nome": "Neymar", "posicao": "PE" }
+            ],
+            "extras": ["Bravo", "Mathieu", "Bartra", "Adriano", "Xavi", "Pedro", "Rafinha", "Vermaelen", "Sergi Roberto", "Munir"]
+        },
+        {
+            "time": "Brasil",
+            "evento": "Final da Copa do Mundo 2002",
+            "formacao": "3-4-1-2",
+            "jogadores": [
+                { "nome": "Marcos", "posicao": "GOL" },
+                { "nome": "Lúcio", "posicao": "ZAG1" },
+                { "nome": "Edmílson", "posicao": "ZAG2" },
+                { "nome": "Roque Júnior", "posicao": "ZAG3" },
+                { "nome": "Cafu", "posicao": "MD" },
+                { "nome": "Gilberto Silva", "posicao": "VOL1" },
+                { "nome": "Kléberson", "posicao": "VOL2" },
+                { "nome": "Roberto Carlos", "posicao": "ME" },
+                { "nome": "Ronaldinho", "posicao": "MEI" },
+                { "nome": "Ronaldo", "posicao": "ATA1" },
+                { "nome": "Rivaldo", "posicao": "ATA2" }
+            ],
+            "extras": ["Rogério Ceni", "Dida", "Belletti", "Júnior", "Anderson Polga", "Denílson", "Vampeta", "Ricardinho", "Luizão", "Edílson"]
+        },
+        {
+            "time": "Argentina",
+            "evento": "Final da Copa do Mundo 2022",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Emiliano Martínez", "posicao": "GOL" },
+                { "nome": "Molina", "posicao": "LD" },
+                { "nome": "Romero", "posicao": "ZAG1" },
+                { "nome": "Otamendi", "posicao": "ZAG2" },
+                { "nome": "Tagliafico", "posicao": "LE" },
+                { "nome": "De Paul", "posicao": "VOL1" },
+                { "nome": "Enzo Fernández", "posicao": "VOL2" },
+                { "nome": "Mac Allister", "posicao": "MEI" },
+                { "nome": "Messi", "posicao": "PD" },
+                { "nome": "Julián Álvarez", "posicao": "CA" },
+                { "nome": "Di María", "posicao": "PE" }
+            ],
+            "extras": ["Rulli", "Montiel", "Lisandro Martínez", "Pezzella", "Acuña", "Paredes", "Lo Celso", "Dybala", "Lautaro Martínez", "Correa"]
+        },
+        {
+            "time": "Real Madrid",
+            "evento": "Final da Champions League 2017",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Navas", "posicao": "GOL" },
+                { "nome": "Carvajal", "posicao": "LD" },
+                { "nome": "Ramos", "posicao": "ZAG1" },
+                { "nome": "Varane", "posicao": "ZAG2" },
+                { "nome": "Marcelo", "posicao": "LE" },
+                { "nome": "Modric", "posicao": "VOL1" },
+                { "nome": "Casemiro", "posicao": "VOL2" },
+                { "nome": "Kroos", "posicao": "MEI" },
+                { "nome": "Isco", "posicao": "PD" },
+                { "nome": "Benzema", "posicao": "CA" },
+                { "nome": "Cristiano Ronaldo", "posicao": "PE" }
+            ],
+            "extras": ["Casilla", "Nacho", "Danilo", "Coentrao", "James", "Kovačić", "Asensio", "Lucas Vázquez", "Morata", "Bale"]
+        },
+        {
+            "time": "Corinthians",
+            "evento": "Final do Mundial de Clubes 2012",
+            "formacao": "4-5-1",
+            "jogadores": [
+                { "nome": "Cássio", "posicao": "GOL" },
+                { "nome": "Alessandro", "posicao": "LD" },
+                { "nome": "Chicão", "posicao": "ZAG1" },
+                { "nome": "Paulo André", "posicao": "ZAG2" },
+                { "nome": "Fábio Santos", "posicao": "LE" },
+                { "nome": "Ralf", "posicao": "VOL1" },
+                { "nome": "Paulinho", "posicao": "VOL2" },
+                { "nome": "Danilo", "posicao": "MD" },
+                { "nome": "Jorge Henrique", "posicao": "ME" },
+                { "nome": "Emerson Sheik", "posicao": "SS" },
+                { "nome": "Guerrero", "posicao": "CA" }
+            ],
+            "extras": ["Júlio César", "Edenílson", "Guilherme", "Wallace", "Ibson", "Ramírez", "Douglas", "Romarinho", "Martínez", "Iarley"]
+        },
+        {
+            "time": "Liverpool",
+            "evento": "Final da Champions League 2005",
+            "formacao": "4-4-2",
+            "jogadores": [
+                { "nome": "Dudek", "posicao": "GOL" },
+                { "nome": "Finnan", "posicao": "LD" },
+                { "nome": "Carragher", "posicao": "ZAG1" },
+                { "nome": "Hyypiä", "posicao": "ZAG2" },
+                { "nome": "Traoré", "posicao": "LE" },
+                { "nome": "Gerrard", "posicao": "MD" },
+                { "nome": "Xabi Alonso", "posicao": "VOL1" },
+                { "nome": "Šmicer", "posicao": "ME" },
+                { "nome": "Luis García", "posicao": "VOL2" },
+                { "nome": "Kewell", "posicao": "ATA1" },
+                { "nome": "Baroš", "posicao": "ATA2" }
+            ],
+            "extras": ["Carson", "Josemi", "Riise", "Biscan", "Hamann", "Núñez", "Cissé", "Pongolle", "Morientes", "Warnock"]
+        },
+        {
+            "time": "Palmeiras",
+            "evento": "Final da Libertadores 2021",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Weverton", "posicao": "GOL" },
+                { "nome": "Marcos Rocha", "posicao": "LD" },
+                { "nome": "Gustavo Gómez", "posicao": "ZAG1" },
+                { "nome": "Luan", "posicao": "ZAG2" },
+                { "nome": "Piquerez", "posicao": "LE" },
+                { "nome": "Felipe Melo", "posicao": "VOL1" },
+                { "nome": "Zé Rafael", "posicao": "VOL2" },
+                { "nome": "Raphael Veiga", "posicao": "MEI" },
+                { "nome": "Dudu", "posicao": "PD" },
+                { "nome": "Rony", "posicao": "CA" },
+                { "nome": "Wesley", "posicao": "PE" }
+            ],
+            "extras": ["Jailson", "Mayke", "Kuscevic", "Renan", "Jorge", "Danilo", "Patrick de Paula", "Gustavo Scarpa", "Breno Lopes", "Deyverson"]
+        },
+        {
+            "time": "Manchester City",
+            "evento": "Final da Champions League 2023",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Ederson", "posicao": "GOL" },
+                { "nome": "Walker", "posicao": "LD" },
+                { "nome": "Rúben Dias", "posicao": "ZAG1" },
+                { "nome": "Akanji", "posicao": "ZAG2" },
+                { "nome": "Stones", "posicao": "LE" },
+                { "nome": "Rodri", "posicao": "VOL1" },
+                { "nome": "De Bruyne", "posicao": "VOL2" },
+                { "nome": "Bernardo Silva", "posicao": "MEI" },
+                { "nome": "Mahrez", "posicao": "PD" },
+                { "nome": "Haaland", "posicao": "CA" },
+                { "nome": "Grealish", "posicao": "PE" }
+            ],
+            "extras": ["Ortega", "Cancelo", "Laporte", "Aké", "Gündogan", "Foden", "Álvarez", "Palmer", "Phillips", "Rico Lewis"]
+        },
+        {
+            "time": "Espanha",
+            "evento": "Final da Copa do Mundo 2010",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Iker Casillas", "posicao": "GOL" },
+                { "nome": "Sergio Ramos", "posicao": "LD" },
+                { "nome": "Gerard Piqué", "posicao": "ZAG1" },
+                { "nome": "Carles Puyol", "posicao": "ZAG2" },
+                { "nome": "Joan Capdevila", "posicao": "LE" },
+                { "nome": "Xavi", "posicao": "VOL1" },
+                { "nome": "Sergio Busquets", "posicao": "VOL2" },
+                { "nome": "Xabi Alonso", "posicao": "MEI" },
+                { "nome": "Pedro", "posicao": "PD" },
+                { "nome": "David Villa", "posicao": "CA" },
+                { "nome": "Andrés Iniesta", "posicao": "PE" }
+            ],
+            "extras": ["Reina", "Albiol", "Marchena", "Arbeloa", "Fàbregas", "Silva", "Mata", "Jesús Navas", "Torres", "Llorente"]
+        },
+        {
+            "time": "Fluminense",
+            "evento": "Final da Libertadores 2023",
+            "formacao": "4-2-3-1",
+            "jogadores": [
+                { "nome": "Fábio", "posicao": "GOL" },
+                { "nome": "Samuel Xavier", "posicao": "LD" },
+                { "nome": "Nino", "posicao": "ZAG1" },
+                { "nome": "Felipe Melo", "posicao": "ZAG2" },
+                { "nome": "Marcelo", "posicao": "LE" },
+                { "nome": "André", "posicao": "VOL1" },
+                { "nome": "Martinelli", "posicao": "VOL2" },
+                { "nome": "Jhon Arias", "posicao": "PD" },
+                { "nome": "Ganso", "posicao": "MEI" },
+                { "nome": "Keno", "posicao": "PE" },
+                { "nome": "Germán Cano", "posicao": "CA" }
+            ],
+            "extras": [
+                "Manoel", 
+                "Diogo Barbosa", 
+                "Lima", 
+                "Alexsander", 
+                "John Kennedy", 
+                "Yony González"
+            ]
+        },
+        {
+            "time": "Bayern de Munique",
+            "evento": "Final da Champions League 2020",
+            "formacao": "4-2-3-1",
+            "jogadores": [
+                { "nome": "Neuer", "posicao": "GOL" },
+                { "nome": "Kimmich", "posicao": "LD" },
+                { "nome": "Boateng", "posicao": "ZAG1" },
+                { "nome": "Alaba", "posicao": "ZAG2" },
+                { "nome": "Davies", "posicao": "LE" },
+                { "nome": "Goretzka", "posicao": "VOL1" },
+                { "nome": "Thiago", "posicao": "VOL2" },
+                { "nome": "Gnabry", "posicao": "PD" },
+                { "nome": "Müller", "posicao": "MEI" },
+                { "nome": "Coman", "posicao": "PE" },
+                { "nome": "Lewandowski", "posicao": "CA" }
+            ],
+            "extras": ["Ulreich", "Pavard", "Süle", "Hernández", "Perisic", "Tolisso", "Cuisance", "Sané", "Costa", "Javi Martínez"]
+        },
+        {
+            "time": "Santos",
+            "evento": "Final da Libertadores 2011",
+            "formacao": "4-4-2",
+            "jogadores": [
+                { "nome": "Rafael", "posicao": "GOL" },
+                { "nome": "Danilo", "posicao": "LD" },
+                { "nome": "Durval", "posicao": "ZAG1" },
+                { "nome": "Edu Dracena", "posicao": "ZAG2" },
+                { "nome": "Léo", "posicao": "LE" },
+                { "nome": "Arouca", "posicao": "VOL1" },
+                { "nome": "Elano", "posicao": "VOL2" },
+                { "nome": "Ganso", "posicao": "MD" },
+                { "nome": "Borges", "posicao": "ME" },
+                { "nome": "Neymar", "posicao": "ATA1" },
+                { "nome": "Alan Kardec", "posicao": "ATA2" }
+            ],
+            "extras": ["Vladimir", "Pará", "Bruno Aguiar", "Wesley", "Marquinhos", "Henrique", "Marcel", "Giovanni", "Zé Eduardo", "André"]
+        },
+        {
+            "time": "Inter de Milão",
+            "evento": "Final da Champions League 2010",
+            "formacao": "4-3-1-2",
+            "jogadores": [
+                { "nome": "Júlio César", "posicao": "GOL" },
+                { "nome": "Maicon", "posicao": "LD" },
+                { "nome": "Lúcio", "posicao": "ZAG1" },
+                { "nome": "Samuel", "posicao": "ZAG2" },
+                { "nome": "Chivu", "posicao": "LE" },
+                { "nome": "Zanetti", "posicao": "VOL1" },
+                { "nome": "Cambiasso", "posicao": "VOL2" },
+                { "nome": "Sneijder", "posicao": "MEI" },
+                { "nome": "Pandev", "posicao": "SS" },
+                { "nome": "Eto'o", "posicao": "ATA1" },
+                { "nome": "Milito", "posicao": "ATA2" }
+            ],
+            "extras": ["Toldo", "Córdoba", "Materazzi", "Stankovic", "Muntari", "Thiago Motta", "Balotelli", "Mariga", "Santon", "Orlandoni"]
+        },
+        {
+            "time": "Chelsea",
+            "evento": "Final da Champions League 2012",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Čech", "posicao": "GOL" },
+                { "nome": "Bosingwa", "posicao": "LD" },
+                { "nome": "Luiz", "posicao": "ZAG1" },
+                { "nome": "Cahill", "posicao": "ZAG2" },
+                { "nome": "Ashley Cole", "posicao": "LE" },
+                { "nome": "Mikel", "posicao": "VOL1" },
+                { "nome": "Lampard", "posicao": "VOL2" },
+                { "nome": "Kalou", "posicao": "MEI" },
+                { "nome": "Mata", "posicao": "PD" },
+                { "nome": "Drogba", "posicao": "CA" },
+                { "nome": "Bertrand", "posicao": "PE" }
+            ],
+            "extras": ["Turnbull", "Ivanović", "Terry", "Ferreira", "Essien", "Ramires", "Meireles", "Sturridge", "Torres", "Malouda"]
+        },
+        {
+            "time": "Alemanha",
+            "evento": "Final da Copa do Mundo 2014",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Neuer", "posicao": "GOL" },
+                { "nome": "Lahm", "posicao": "LD" },
+                { "nome": "Boateng", "posicao": "ZAG1" },
+                { "nome": "Hummels", "posicao": "ZAG2" },
+                { "nome": "Höwedes", "posicao": "LE" },
+                { "nome": "Schweinsteiger", "posicao": "VOL1" },
+                { "nome": "Kroos", "posicao": "VOL2" },
+                { "nome": "Özil", "posicao": "MEI" },
+                { "nome": "Müller", "posicao": "PD" },
+                { "nome": "Klose", "posicao": "CA" },
+                { "nome": "Götze", "posicao": "PE" }
+            ],
+            "extras": ["Weidenfeller", "Zieler", "Mertesacker", "Durm", "Großkreutz", "Khedira", "Schürrle", "Draxler", "Podolski", "Ginter"]
+        },
+        {
+            "time": "Botafogo",
+            "evento": "Final da Libertadores 2024",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "John", "posicao": "GOL" },
+                { "nome": "Vitinho", "posicao": "LD" },
+                { "nome": "Bastos", "posicao": "ZAG1" },
+                { "nome": "Barboza", "posicao": "ZAG2" },
+                { "nome": "Alex Telles", "posicao": "LE" },
+                { "nome": "Marlon Freitas", "posicao": "VOL1" },
+                { "nome": "Gregore", "posicao": "VOL2" },
+                { "nome": "Thiago Almada", "posicao": "MEI" },
+                { "nome": "Luiz Henrique", "posicao": "PD" },
+                { "nome": "Savarino", "posicao": "PE" },
+                { "nome": "Igor Jesus", "posicao": "CA" }
+            ],
+            "extras": ["Gatito", "Mateo Ponte", "Adryelson", "Lucas Halter", "Cuiabano", "Tchê Tchê", "Allan", "Eduardo", "Júnior Santos", "Tiquinho Soares"]
+        },
+        {
+            "time": "Milan",
+            "evento": "Final da Champions League 2007",
+            "formacao": "4-3-2-1",
+            "jogadores": [
+                { "nome": "Dida", "posicao": "GOL" },
+                { "nome": "Oddo", "posicao": "LD" },
+                { "nome": "Nesta", "posicao": "ZAG1" },
+                { "nome": "Maldini", "posicao": "ZAG2" },
+                { "nome": "Jankulovski", "posicao": "LE" },
+                { "nome": "Gattuso", "posicao": "VOL1" },
+                { "nome": "Pirlo", "posicao": "VOL2" },
+                { "nome": "Ambrosini", "posicao": "MEI" },
+                { "nome": "Kaká", "posicao": "SS" },
+                { "nome": "Seedorf", "posicao": "SS2" },
+                { "nome": "Inzaghi", "posicao": "CA" }
+            ],
+            "extras": ["Kalac", "Cafu", "Bonera", "Favalli", "Simic", "Brocchi", "Serginho", "Gilardino", "Oliveira", "Costacurta"]
+        },
+        {
+            "time": "França",
+            "evento": "Final da Copa do Mundo 2018",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Lloris", "posicao": "GOL" },
+                { "nome": "Pavard", "posicao": "LD" },
+                { "nome": "Varane", "posicao": "ZAG1" },
+                { "nome": "Umtiti", "posicao": "ZAG2" },
+                { "nome": "Hernández", "posicao": "LE" },
+                { "nome": "Kanté", "posicao": "VOL1" },
+                { "nome": "Pogba", "posicao": "VOL2" },
+                { "nome": "Matuidi", "posicao": "MEI" },
+                { "nome": "Mbappé", "posicao": "PD" },
+                { "nome": "Griezmann", "posicao": "CA" },
+                { "nome": "Giroud", "posicao": "PE" }
+            ],
+            "extras": ["Mandanda", "Areola", "Sidibé", "Kimpembe", "Mendy", "Tolisso", "Nzonzi", "Dembélé", "Lemar", "Fekir"]
+        },
+        {
+            "time": "Boca Juniors",
+            "evento": "Final da Libertadores 2007",
+            "formacao": "4-4-2",
+            "jogadores": [
+                { "nome": "Abbondanzieri", "posicao": "GOL" },
+                { "nome": "Ibarra", "posicao": "LD" },
+                { "nome": "Díaz", "posicao": "ZAG1" },
+                { "nome": "Burdisso", "posicao": "ZAG2" },
+                { "nome": "Clemente Rodríguez", "posicao": "LE" },
+                { "nome": "Battaglia", "posicao": "VOL1" },
+                { "nome": "Banega", "posicao": "VOL2" },
+                { "nome": "Riquelme", "posicao": "MD" },
+                { "nome": "Palacio", "posicao": "ME" },
+                { "nome": "Palermo", "posicao": "ATA1" },
+                { "nome": "Cardozo", "posicao": "ATA2" }
+            ],
+            "extras": ["Migliore", "Krupoviesa", "Calvo", "Schiavi", "Gago", "Ledesma", "Ereros", "Insaurralde", "Mouche", "Roncaglia"]
+        }
+    ]
+}

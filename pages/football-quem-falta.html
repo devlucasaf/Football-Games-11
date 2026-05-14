@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quem Falta? | Football Games 11</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/football-quem-falta.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-quem-falta">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-user-question"></i>
+                    <h2>Como jogar Quem Falta?</h2>
+                    <p>Complete a lista com o nome que está faltando!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Uma lista é mostrada com um nome oculto.</li>
+                    <li><span class="tutorial-step-number">2</span> Use a dica se precisar de ajuda.</li>
+                    <li><span class="tutorial-step-number">3</span> Digite quem está faltando.</li>
+                    <li><span class="tutorial-step-number">4</span> São 10 rodadas rápidas!</li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="quem-falta-container">
+            <div class="container">
+                <div class="game-info" id="gameInfo">
+                    <div class="game-round">
+                        Rodada <span id="rodadaAtual">1</span>/10
+                    </div>
+                    <div class="game-score">
+                        <i class="fas fa-check-circle"></i> <span id="acertos">0</span>/10
+                    </div>
+                </div>
+
+                <section class="challenge-card" id="challengeCard">
+                    <h3 class="challenge-tema" id="tema"></h3>
+
+                    <div class="names-list" id="namesList"></div>
+
+                    <div class="hint-area">
+                        <button class="btn-hint" id="btnHint">
+                            <i class="fas fa-lightbulb"></i> Ver Dica
+                        </button>
+                        <p class="hint-text hidden" id="hintText"></p>
+                    </div>
+
+                    <div class="input-row">
+                        <input type="text" id="guessInput" placeholder="Quem falta?" autocomplete="off">
+                        <button class="btn-guess" id="btnGuess">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                    <div class="guess-feedback hidden" id="guessFeedback"></div>
+                </section>
+
+                <section class="round-result hidden" id="roundResult">
+                    <div class="round-icon" id="roundIcon"></div>
+                    <div class="round-text" id="roundText"></div>
+                    <button class="btn-next" id="btnNext">
+                        <i class="fas fa-arrow-right"></i> Próximo
+                    </button>
+                </section>
+
+                <section class="final-result hidden" id="finalResult">
+                    <h2><i class="fas fa-trophy"></i> Fim!</h2>
+                    <div class="final-score">
+                        <span class="final-points" id="finalPoints">0</span>
+                        <span class="final-label">/10 acertos</span>
+                    </div>
+                    <div class="final-details" id="finalDetails"></div>
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry">
+                            <i class="fas fa-redo"></i> Novo Jogo
+                        </button>
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> Menu Principal
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="../scripts/script.js"></script>
+        <script type="module" src="../scripts/games/football-quem-falta/main.js"></script>
+    </body>
+</html>
