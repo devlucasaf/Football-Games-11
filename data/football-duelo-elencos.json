@@ -11,12 +11,12 @@
             },
             "contexto": "Final da Champions League 2009",
             "jogadores": [
-                { "nome": "Xavi", "time": "A" },
-                { "nome": "Iniesta", "time": "A" },
-                { "nome": "Eto'o", "time": "A" },
-                { "nome": "Rooney", "time": "B" },
-                { "nome": "Cristiano Ronaldo", "time": "B" },
-                { "nome": "Vidić", "time": "B" }
+                { "nome": "Xavi",               "time": "A" },
+                { "nome": "Iniesta",            "time": "A" },
+                { "nome": "Eto'o",              "time": "A" },
+                { "nome": "Rooney",             "time": "B" },
+                { "nome": "Cristiano Ronaldo",  "time": "B" },
+                { "nome": "Vidić",              "time": "B" }
             ]
         },
         {
@@ -30,12 +30,37 @@
             },
             "contexto": "Final da Champions League 2017",
             "jogadores": [
-                { "nome": "Casemiro", "time": "A" },
-                { "nome": "Marcelo", "time": "A" },
-                { "nome": "Kroos", "time": "A" },
-                { "nome": "Buffon", "time": "B" },
-                { "nome": "Dybala", "time": "B" },
-                { "nome": "Bonucci", "time": "B" }
+                { "nome": "Casemiro",           "time": "A" },
+                { "nome": "Marcelo",            "time": "A" },
+                { "nome": "Kroos",              "time": "A" },
+                { "nome": "Buffon",             "time": "B" },
+                { "nome": "Dybala",             "time": "B" },
+                { "nome": "Bonucci",            "time": "B" }
+            ]
+        },
+        {
+            "timeA": { 
+                "nome": "Botafogo", 
+                "temporada": "2024" 
+            },
+            "timeB": { 
+                "nome": "Atlético Mineiro", 
+                "temporada": "2024" 
+            },
+            "contexto": "Final da Libertadores 2024",
+            "jogadores": [
+                { "nome": "Luiz Henrique",       "time": "A" },
+                { "nome": "Thiago Almada",       "time": "A" },
+                { "nome": "Savarino",            "time": "A" },
+                { "nome": "Marlon Freitas",      "time": "A" },
+                { "nome": "Alex Telles",         "time": "A" },
+                { "nome": "John",                "time": "A" },
+                { "nome": "Hulk",                "time": "B" },
+                { "nome": "Everson",             "time": "B" },
+                { "nome": "Eduardo Vargas",      "time": "B" },
+                { "nome": "Paulinho",            "time": "B" },
+                { "nome": "Lyanco",              "time": "B" },
+                { "nome": "Fausto Vera",         "time": "B" }
             ]
         },
         {
@@ -115,8 +140,14 @@
             ]
         },
         {
-            "timeA": { "nome": "Barcelona", "temporada": "2010/11" },
-            "timeB": { "nome": "Real Madrid", "temporada": "2010/11" },
+            "timeA": { 
+                "nome": "Barcelona", 
+                "temporada": "2010/11" 
+            },
+            "timeB": { 
+                "nome": "Real Madrid", 
+                "temporada": "2010/11" 
+            },
             "contexto": "Semifinal da Champions League 2011",
             "jogadores": [
                 { "nome": "Messi", "time": "A" },
@@ -128,8 +159,14 @@
             ]
         },
         {
-            "timeA": { "nome": "Inter de Milão", "temporada": "2009/10" },
-            "timeB": { "nome": "Bayern de Munique", "temporada": "2009/10" },
+            "timeA": { 
+                "nome": "Inter de Milão", 
+                "temporada": "2009/10" 
+            },
+            "timeB": { 
+                "nome": "Bayern de Munique", 
+                "temporada": "2009/10" 
+            },
             "contexto": "Final da Champions League 2010",
             "jogadores": [
                 { "nome": "Sneijder", "time": "A" },
@@ -137,12 +174,18 @@
                 { "nome": "Samuel", "time": "A" },
                 { "nome": "Robben", "time": "B" },
                 { "nome": "Ribéry", "time": "B" },
-                { "nome": "Schweinsteiger", "time": "B" }
+                { "nome": "Schweinsteiger", "time":"B" }
             ]
         },
         {
-            "timeA": { "nome": "Chelsea", "temporada": "2011/12" },
-            "timeB": { "nome": "Bayern de Munique", "temporada": "2011/12" },
+            "timeA": { 
+                "nome": "Chelsea", 
+                "temporada": "2011/12" 
+            },
+            "timeB": { 
+                "nome": "Bayern de Munique", 
+                "temporada": "2011/12" 
+            },
             "contexto": "Final da Champions League 2012",
             "jogadores": [
                 { "nome": "Drogba", "time": "A" },
@@ -154,8 +197,14 @@
             ]
         },
         {
-            "timeA": { "nome": "Corinthians", "temporada": "2012" },
-            "timeB": { "nome": "Chelsea", "temporada": "2012" },
+            "timeA": { 
+                "nome": "Corinthians", 
+                "temporada": "2012" 
+            },
+            "timeB": { 
+                "nome": "Chelsea", 
+                "temporada": "2012" 
+            },
             "contexto": "Final do Mundial de Clubes 2012",
             "jogadores": [
                 { "nome": "Cássio", "time": "A" },
@@ -167,8 +216,14 @@
             ]
         },
         {
-            "timeA": { "nome": "Espanha", "temporada": "2010" },
-            "timeB": { "nome": "Holanda", "temporada": "2010" },
+            "timeA": { 
+                "nome": "Espanha", 
+                "temporada": "2010" 
+            },
+            "timeB": { 
+                "nome": "Holanda", 
+                "temporada": "2010" 
+            },
             "contexto": "Final da Copa do Mundo 2010",
             "jogadores": [
                 { "nome": "Xavi", "time": "A" },
@@ -180,8 +235,14 @@
             ]
         },
         {
-            "timeA": { "nome": "Liverpool", "temporada": "2018/19" },
-            "timeB": { "nome": "Tottenham", "temporada": "2018/19" },
+            "timeA": { 
+                "nome": "Liverpool", 
+                "temporada": "2018/19" 
+            },
+            "timeB": { 
+                "nome": "Tottenham", 
+                "temporada": "2018/19" 
+            },
             "contexto": "Final da Champions League 2019",
             "jogadores": [
                 { "nome": "Salah", "time": "A" },
@@ -193,8 +254,14 @@
             ]
         },
         {
-            "timeA": { "nome": "PSG", "temporada": "2019/20" },
-            "timeB": { "nome": "Bayern de Munique", "temporada": "2019/20" },
+            "timeA": { 
+                "nome": "PSG", 
+                "temporada": "2019/20" 
+            },
+            "timeB": { 
+                "nome": "Bayern de Munique", 
+                "temporada": "2019/20" 
+            },
             "contexto": "Final da Champions League 2020",
             "jogadores": [
                 { "nome": "Neymar", "time": "A" },
@@ -206,8 +273,14 @@
             ]
         },
         {
-            "timeA": { "nome": "Palmeiras", "temporada": "2021" },
-            "timeB": { "nome": "Flamengo", "temporada": "2021" },
+            "timeA": { 
+                "nome": "Palmeiras", 
+                "temporada": "2021" 
+            },
+            "timeB": { 
+                "nome": "Flamengo", 
+                "temporada": "2021" 
+            },
             "contexto": "Final da Libertadores 2021",
             "jogadores": [
                 { "nome": "Weverton", "time": "A" },
@@ -215,20 +288,26 @@
                 { "nome": "Dudu", "time": "A" },
                 { "nome": "Gabigol", "time": "B" },
                 { "nome": "Bruno Henrique", "time": "B" },
-                { "nome": "David Luiz", "time": "B" }
+                { "nome": "De Arrascaeta", "time": "B" }
             ]
         },
         {
-            "timeA": { "nome": "Santos", "temporada": "2011" },
-            "timeB": { "nome": "Barcelona", "temporada": "2011" },
+            "timeA": { 
+                "nome": "Santos", 
+                "temporada": "2011" 
+            },
+            "timeB": { 
+                "nome": "Barcelona", 
+                "temporada": "2011" 
+            },
             "contexto": "Final do Mundial de Clubes 2011",
             "jogadores": [
                 { "nome": "Neymar", "time": "A" },
-                { "nome": "Ganso", "time": "A" },
+                { "nome": "Ganso",  "time": "A" },
                 { "nome": "Danilo", "time": "A" },
-                { "nome": "Messi", "time": "B" },
-                { "nome": "Xavi", "time": "B" },
-                { "nome": "Piqué", "time": "B" }
+                { "nome": "Messi",  "time": "B" },
+                { "nome": "Xavi",   "time": "B" },
+                { "nome": "Piqué",  "time": "B" }
             ]
         }
     ]
