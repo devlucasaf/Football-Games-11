@@ -36,6 +36,12 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 13 | **Football Conexões** | Agrupe 16 jogadores em 4 categorias secretas |
 | 14 | **Football Escudo Quebrado** | Descubra o clube pelas dicas progressivas sobre o escudo |
 | 15 | **Football Duelo de Elencos** | Associe cada jogador ao elenco correto em duelos históricos |
+| 16 | **Football Acerta Escalação** | Adivinhe os 11 jogadores que começaram um jogo histórico |
+| 17 | **Football Conecta Clubes** | Encontre o jogador que une dois clubes |
+| 18 | **Football Foto Borrada** | Adivinhe o jogador pela foto desfocada que fica nítida aos poucos |
+| 19 | **Football Linha do Tempo** | Coloque eventos do futebol em ordem cronológica |
+| 20 | **Football Placar** | Acerte o placar exato de jogos históricos |
+| 21 | **Football Quem Falta?** | Complete a lista com o nome que está faltando |
 
 ---
 
@@ -49,21 +55,27 @@ Football-Games-11/
 ├── scripts/
 │   ├── script.js               # Tema, tutorial e utilitários globais
 │   └── games/                  # Módulos JS de cada minigame
-│       ├── football-grid/
+│       ├── football-acerta-escalacao/
+│       ├── football-adivinha-jogador/
 │       ├── football-bingo/
-│       ├── football-legends/
-│       ├── football-termo/
 │       ├── football-carreiras/
+│       ├── football-conecta-clubes/
+│       ├── football-conexoes/
+│       ├── football-duelo-elencos/
+│       ├── football-escudo-quebrado/
+│       ├── football-foto-borrada/
+│       ├── football-grid/
 │       ├── football-impostor/
 │       ├── football-jogou-com/
-│       ├── football-adivinha-jogador/
+│       ├── football-legends/
+│       ├── football-linha-do-tempo/
+│       ├── football-placar/
+│       ├── football-quem-falta/
+│       ├── football-termo/
 │       ├── football-top10/
-│       ├── football-vc-escala/
-│       ├── football-vc-convoca/
 │       ├── football-transferencias/
-│       ├── football-conexoes/
-│       ├── football-escudo-quebrado/
-│       └── football-duelo-elencos/
+│       ├── football-vc-convoca/
+│       └── football-vc-escala/
 ├── data/                       # Arquivos JSON com dados dos jogos
 ├── README.md
 └── LICENSE
