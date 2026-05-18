@@ -83,13 +83,17 @@ function configurarGridEventos() {
 }
 
 // --- NOVO JOGO ---
-function novoJogo() {
+async function novoJogo() {
     estado.acertos = 0;
     estado.erros = 0;
     estado.bingos = 0;
     estado.celulasMarcadas.clear();
 
     esconderResultado();
+
+    const modo = localStorage.getItem("bingo_modo") || "mundial";
+    await carregarDados(modo);
+
     selecionarGrid();
     selecionarFila();
 
@@ -108,9 +112,9 @@ function configurarEventos() {
 }
 
 // --- INICIALIZAR ---
-async function iniciar() {
+async function iniciar(modo = "mundial") {
     try {
-        await carregarDados();
+        await carregarDados(modo);
         selecionarGrid();
         selecionarFila();
         renderizarGrid();
@@ -123,4 +127,32 @@ async function iniciar() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => iniciar());
+document.addEventListener("DOMContentLoaded", () => {
+    const tutorialOverlay = document.getElementById("tutorialOverlay");
+    const skipKey = "tutorial_skip_football-bingo";
+    const modoSalvo = localStorage.getItem("bingo_modo") || "mundial";
+
+    if (localStorage.getItem(skipKey)) {
+        tutorialOverlay.classList.add("hidden");
+        iniciar(modoSalvo);
+    } else {
+        document.getElementById("btnModoMundial").addEventListener("click", () => {
+            localStorage.setItem("bingo_modo", "mundial");
+            tutorialOverlay.classList.add("hidden");
+            iniciar("mundial");
+        });
+
+        document.getElementById("btnModoBrasileiro").addEventListener("click", () => {
+            localStorage.setItem("bingo_modo", "brasileiro");
+            tutorialOverlay.classList.add("hidden");
+            iniciar("brasileiro");
+        });
+
+        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+            localStorage.setItem(skipKey, "true");
+            localStorage.setItem("bingo_modo", "mundial");
+            tutorialOverlay.classList.add("hidden");
+            iniciar("mundial");
+        });
+    }
+});

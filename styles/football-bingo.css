@@ -1,3 +1,51 @@
+/* --- SELEÇÃO DE MODO NO TUTORIAL --- */
+.tutorial-mode-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.tutorial-mode-select .mode-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.btn-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+}
+
+.btn-mode:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#btnModoMundial {
+    background: var(--primary-green);
+    color: #fff;
+}
+
+#btnModoBrasileiro {
+    background: #f4a900;
+    color: #1a5c1a;
+}
+
 .bingo-container {
     max-width: 680px;
     margin: var(--spacing-lg) auto;

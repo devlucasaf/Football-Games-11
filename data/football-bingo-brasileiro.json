@@ -1,0 +1,312 @@
+{
+    "categorias": [
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Flamengo",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Palmeiras",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Corinthians",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no São Paulo",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Santos",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Grêmio",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Internacional",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Cruzeiro",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Atlético Mineiro",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Botafogo",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Fluminense",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Vasco",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Athletico-PR",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Fortaleza",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Bahia",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou o Brasileirão",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Libertadores",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Copa do Brasil",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Convocado para Seleção",
+            "icone": "fa-flag"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Artilheiro do Brasileirão",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Goleiro",
+            "icone": "fa-hand-paper"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Zagueiro",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Lateral",
+            "icone": "fa-arrows-alt-h"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Meio-campista",
+            "icone": "fa-cogs"
+        },
+        {
+            "tipo": "posicao",
+            "texto": "Atacante",
+            "icone": "fa-crosshairs"
+        }
+    ],
+    "jogadores": [
+        {
+            "nome": "Gabigol",
+            "clubes": ["Santos", "Flamengo", "Cruzeiro"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção", "Artilheiro do Brasileirão"]
+        },
+        {
+            "nome": "Arrascaeta",
+            "clubes": ["Cruzeiro", "Flamengo"],
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil"]
+        },
+        {
+            "nome": "Pedro",
+            "clubes": ["Fluminense", "Flamengo"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção", "Artilheiro do Brasileirão"]
+        },
+        {
+            "nome": "Dudu",
+            "clubes": ["Palmeiras", "Cruzeiro"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil"]
+        },
+        {
+            "nome": "Raphael Veiga",
+            "clubes": ["Palmeiras"],
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Weverton",
+            "clubes": ["Athletico-PR", "Palmeiras"],
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Éverton Ribeiro",
+            "clubes": ["Cruzeiro", "Flamengo", "Bahia"],
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Hulk",
+            "clubes": ["Atlético Mineiro"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Copa do Brasil", "Convocado para Seleção", "Artilheiro do Brasileirão"]
+        },
+        {
+            "nome": "Cássio",
+            "clubes": ["Corinthians", "Cruzeiro"],
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Rogério Ceni",
+            "clubes": ["São Paulo"],
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Luiz Henrique",
+            "clubes": ["Fluminense", "Botafogo"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores", "Ganhou o Brasileirão", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Germán Cano",
+            "clubes": ["Vasco", "Fluminense"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores", "Artilheiro do Brasileirão"]
+        },
+        {
+            "nome": "Yuri Alberto",
+            "clubes": ["Santos", "Internacional", "Corinthians"],
+            "posicao": "Atacante",
+            "titulos": ["Artilheiro do Brasileirão", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Fernandão",
+            "clubes": ["Internacional", "São Paulo", "Atlético Mineiro"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores", "Ganhou o Brasileirão"]
+        },
+        {
+            "nome": "D'Alessandro",
+            "clubes": ["Internacional"],
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Renato Gaúcho",
+            "clubes": ["Grêmio", "Flamengo", "Fluminense", "Vasco", "Botafogo"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores", "Ganhou o Brasileirão", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Suárez",
+            "clubes": ["Grêmio", "Internacional"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Galhardo",
+            "clubes": ["Internacional", "Atlético Mineiro", "Fortaleza", "Grêmio"],
+            "posicao": "Atacante",
+            "titulos": ["Artilheiro do Brasileirão"]
+        },
+        {
+            "nome": "Marcos",
+            "clubes": ["Palmeiras"],
+            "posicao": "Goleiro",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Alex de Souza",
+            "clubes": ["Palmeiras", "Cruzeiro", "Atlético Mineiro", "São Paulo", "Internacional"],
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Fred",
+            "clubes": ["Cruzeiro", "Fluminense", "Atlético Mineiro"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Copa do Brasil", "Convocado para Seleção", "Artilheiro do Brasileirão"]
+        },
+        {
+            "nome": "Diego Souza",
+            "clubes": ["Fluminense", "Palmeiras", "Vasco", "São Paulo", "Grêmio", "Botafogo", "Fortaleza"],
+            "posicao": "Meio-campista",
+            "titulos": ["Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Calleri",
+            "clubes": ["São Paulo"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Fagner",
+            "clubes": ["Corinthians"],
+            "posicao": "Lateral",
+            "titulos": ["Ganhou o Brasileirão", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Filipe Luís",
+            "clubes": ["Flamengo"],
+            "posicao": "Lateral",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "David Luiz",
+            "clubes": ["Flamengo", "Fortaleza"],
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Léo Pereira",
+            "clubes": ["Athletico-PR", "Flamengo"],
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Thiago Silva",
+            "clubes": ["Fluminense"],
+            "posicao": "Zagueiro",
+            "titulos": ["Ganhou a Libertadores", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Arana",
+            "clubes": ["Corinthians", "Atlético Mineiro"],
+            "posicao": "Lateral",
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        },
+        {
+            "nome": "Marinho",
+            "clubes": ["Santos", "Flamengo", "Fortaleza", "Grêmio"],
+            "posicao": "Atacante",
+            "titulos": ["Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+        }
+    ],
+    "mapeamentoSelecao": {}
+}

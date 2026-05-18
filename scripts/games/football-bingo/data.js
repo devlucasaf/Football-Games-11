@@ -1,9 +1,13 @@
 import estado from "./core.js";
 import { embaralhar } from "./utils.js";
 
-export async function carregarDados() {
+export async function carregarDados(modo = "mundial") {
+    const arquivo = modo === "brasileiro" 
+        ? "../data/football-bingo-brasileiro.json" 
+        : "../data/football-bingo.json";
+
     const resposta = await fetch(
-        "../data/football-bingo.json", 
+        arquivo, 
         { 
             cache: "no-store" 
         }
@@ -15,7 +19,7 @@ export async function carregarDados() {
     const dados = await resposta.json();
     estado.categorias         = dados.categorias;
     estado.jogadores          = dados.jogadores;
-    estado.mapeamentoSelecao  = dados.mapeamentoSelecao;
+    estado.mapeamentoSelecao  = dados.mapeamentoSelecao || {};
 }
 
 export function selecionarGrid() {
