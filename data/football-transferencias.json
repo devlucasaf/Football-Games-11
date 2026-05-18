@@ -18,9 +18,10 @@
                 {"clube": "Ajax", "periodo": "2001-2004"},
                 {"clube": "Juventus", "periodo": "2004-2006"},
                 {"clube": "Inter de Milão", "periodo": "2006-2009"},
-                {"clube": "Barcelona", "periodo": "2009-2010"},
-                {"clube": "Milan", "periodo": "2010-2012"},
-                {"clube": "PSG", "periodo": "2012-2016"},
+                {"clube": "Barcelona", "periodo": "2009-2011"},
+                {"clube": "Milan", "periodo": "2010-2011"},
+                {"clube": "Milan", "periodo": "2011-2012"},
+                {"clube": "Paris Saint-Germain", "periodo": "2012-2016"},
                 {"clube": "Manchester United", "periodo": "2016-2018"},
                 {"clube": "LA Galaxy", "periodo": "2018-2019"},
                 {"clube": "Milan", "periodo": "2020-2023"}
@@ -31,7 +32,7 @@
             "clubes": [
                 {"clube": "Santos", "periodo": "2009-2013"},
                 {"clube": "Barcelona", "periodo": "2013-2017"},
-                {"clube": "PSG", "periodo": "2017-2023"},
+                {"clube": "Paris Saint-Germain", "periodo": "2017-2023"},
                 {"clube": "Al-Hilal", "periodo": "2023-2025"},
                 {"clube": "Santos", "periodo": "2025-"}
             ]
@@ -43,14 +44,15 @@
                 {"clube": "Juventus", "periodo": "1999"},
                 {"clube": "Arsenal", "periodo": "1999-2007"},
                 {"clube": "Barcelona", "periodo": "2007-2010"},
-                {"clube": "New York Red Bulls", "periodo": "2010-2014"}
+                {"clube": "New York Red Bulls", "periodo": "2010-2014"},
+                {"clube": "Arsenal", "periodo": "2012 (emp.)"}
             ]
         },
         {
             "nome": "Ronaldinho",
             "clubes": [
                 {"clube": "Grêmio", "periodo": "1998-2001"},
-                {"clube": "PSG", "periodo": "2001-2003"},
+                {"clube": "Paris Saint-Germain", "periodo": "2001-2003"},
                 {"clube": "Barcelona", "periodo": "2003-2008"},
                 {"clube": "Milan", "periodo": "2008-2010"},
                 {"clube": "Flamengo", "periodo": "2011"},
@@ -63,10 +65,11 @@
             "nome": "David Beckham",
             "clubes": [
                 {"clube": "Manchester United", "periodo": "1992-2003"},
+                {"clube": "Preston North End", "periodo": "1995 (emp.)"},
                 {"clube": "Real Madrid", "periodo": "2003-2007"},
                 {"clube": "LA Galaxy", "periodo": "2007-2012"},
-                {"clube": "Milan", "periodo": "2009 (emp.)"},
-                {"clube": "PSG", "periodo": "2013"}
+                {"clube": "Milan", "periodo": "2009-2010 (emp.)"},
+                {"clube": "Paris Saint-Germain", "periodo": "2013"}
             ]
         },
         {
@@ -76,19 +79,27 @@
                 {"clube": "Milan", "periodo": "2003-2009"},
                 {"clube": "Real Madrid", "periodo": "2009-2013"},
                 {"clube": "Milan", "periodo": "2013-2014"},
-                {"clube": "Orlando City", "periodo": "2014-2017"}
+                {"clube": "Orlando City", "periodo": "2014-2017"},
+                {"clube": "São Paulo", "periodo": "2014 (emp.)"}
             ]
         },
         {
             "nome": "Samuel Eto'o",
             "clubes": [
-                {"clube": "Real Madrid", "periodo": "1997-1999"},
-                {"clube": "Mallorca", "periodo": "1999-2004"},
+                {"clube": "Real Madrid", "periodo": "1997–2000"},
+                {"clube": "Real Madrid Castilla", "periodo": "1997-1998"},
+                {"clube": "Leganés", "periodo": "1999 (emp.)"},
+                {"clube": "Espanyol", "periodo": "2000 (emp.)"},
+                {"clube": "Mallorca", "periodo": "2000-2004"},
                 {"clube": "Barcelona", "periodo": "2004-2009"},
                 {"clube": "Inter de Milão", "periodo": "2009-2011"},
                 {"clube": "Anzhi", "periodo": "2011-2013"},
                 {"clube": "Chelsea", "periodo": "2013-2014"},
-                {"clube": "Everton", "periodo": "2014-2015"}
+                {"clube": "Everton", "periodo": "2014-2015"},
+                {"clube": "Sampdoria", "periodo": "2015"},
+                {"clube": "Antalyaspor", "periodo": "2015–2018"},
+                {"clube": "Konyaspor", "periodo": "2018"},
+                {"clube": "Qatar SC", "periodo": "2018–2019"}
             ]
         },
         {
@@ -97,27 +108,34 @@
                 {"clube": "Feyenoord", "periodo": "2001-2004"},
                 {"clube": "Arsenal", "periodo": "2004-2012"},
                 {"clube": "Manchester United", "periodo": "2012-2015"},
-                {"clube": "Fenerbahçe", "periodo": "2015-2018"},
+                {"clube": "Fenerbahçe", "periodo": "2015-2017"},
                 {"clube": "Feyenoord", "periodo": "2018-2019"}
             ]
         },
         {
             "nome": "Rivaldo",
             "clubes": [
-                {"clube": "Santa Cruz", "periodo": "1991-1993"},
-                {"clube": "Mogi Mirim", "periodo": "1993-1994"},
-                {"clube": "Corinthians", "periodo": "1994-1996"},
-                {"clube": "Palmeiras", "periodo": "1996"},
+                {"clube": "Santa Cruz", "periodo": "1990–1992"},
+                {"clube": "Mogi Mirim", "periodo": "1992-1994"},
+                {"clube": "Corinthians", "periodo": "1993-1994 (emp.)"},
+                {"clube": "Palmeiras", "periodo": "1994-1996"},
                 {"clube": "Deportivo La Coruña", "periodo": "1996-1997"},
                 {"clube": "Barcelona", "periodo": "1997-2002"},
                 {"clube": "Milan", "periodo": "2002-2004"},
-                {"clube": "Olympiacos", "periodo": "2004-2007"}
+                {"clube": "Cruzeiro", "periodo": "2004"},
+                {"clube": "Olympiacos", "periodo": "2004-2007"},
+                {"clube": "AEK Atenas", "periodo": "2007-2008"},
+                {"clube": "Bunyodkor", "periodo": "2008–2010"},
+                {"clube": "São Paulo", "periodo": "2011"},
+                {"clube": "Kabuscorp", "periodo": "2012"},
+                {"clube": "São Caetano", "periodo": "2013"},
+                {"clube": "Mogi Mirim", "periodo": "2014-2015"}
             ]
         },
         {
             "nome": "Andriy Shevchenko",
             "clubes": [
-                {"clube": "Dynamo Kyiv", "periodo": "1994-1999"},
+                {"clube": "Dynamo Kyiv", "periodo": "1993-1999"},
                 {"clube": "Milan", "periodo": "1999-2006"},
                 {"clube": "Chelsea", "periodo": "2006-2009"},
                 {"clube": "Milan", "periodo": "2008-2009 (emp.)"},
@@ -130,8 +148,9 @@
                 {"clube": "Atlético de Madrid", "periodo": "2001-2007"},
                 {"clube": "Liverpool", "periodo": "2007-2011"},
                 {"clube": "Chelsea", "periodo": "2011-2014"},
-                {"clube": "Milan", "periodo": "2014-2015"},
-                {"clube": "Atlético de Madrid", "periodo": "2015-2018"},
+                {"clube": "Milan", "periodo": "2014-2016"},
+                {"clube": "Atlético de Madrid", "periodo": "2015-2016 (emp.)"},
+                {"clube": "Atlético de Madrid", "periodo": "2016-2018"},
                 {"clube": "Sagan Tosu", "periodo": "2018-2019"}
             ]
         },
@@ -158,11 +177,11 @@
         {
             "nome": "Didier Drogba",
             "clubes": [
-                {"clube": "Le Mans", "periodo": "2001-2002"},
+                {"clube": "Le Mans", "periodo": "1998-2002"},
                 {"clube": "Guingamp", "periodo": "2002-2003"},
                 {"clube": "Olympique de Marseille", "periodo": "2003-2004"},
                 {"clube": "Chelsea", "periodo": "2004-2012"},
-                {"clube": "Shanghai Shenhua", "periodo": "2012"},
+                {"clube": "Shanghai Shenhua", "periodo": "2012-2013"},
                 {"clube": "Galatasaray", "periodo": "2013-2014"},
                 {"clube": "Chelsea", "periodo": "2014-2015"},
                 {"clube": "Montreal Impact", "periodo": "2015-2016"},
@@ -182,7 +201,7 @@
         {
             "nome": "James Rodríguez",
             "clubes": [
-                {"clube": "Envigado", "periodo": "2006-2008"},
+                {"clube": "Envigado", "periodo": "2007-2008"},
                 {"clube": "Banfield", "periodo": "2008-2010"},
                 {"clube": "Porto", "periodo": "2010-2013"},
                 {"clube": "Monaco", "periodo": "2013-2014"},
@@ -192,26 +211,37 @@
                 {"clube": "Al-Rayyan", "periodo": "2021-2022"},
                 {"clube": "Olympiacos", "periodo": "2022-2023"},
                 {"clube": "São Paulo", "periodo": "2023-2024"},
-                {"clube": "Rayo Vallecano", "periodo": "2024-2025"}
+                {"clube": "Rayo Vallecano", "periodo": "2024-2025"},
+                {"clube": "León", "periodo": "2025"},
+                {"clube": "Minnesota United", "periodo": "2026-"}
             ]
         },
         {
             "nome": "Romário",
             "clubes": [
                 {"clube": "Vasco da Gama", "periodo": "1985-1988"},
-                {"clube": "PSV", "periodo": "1988-1993"},
-                {"clube": "Barcelona", "periodo": "1993-1995"},
-                {"clube": "Flamengo", "periodo": "1995-1999"},
+                {"clube": "PSV Eindhoven", "periodo": "1988-1993"},
+                {"clube": "Barcelona", "periodo": "1993-1994"},
+                {"clube": "Flamengo", "periodo": "1995-1996"},
                 {"clube": "Valencia", "periodo": "1996-1997"},
-                {"clube": "Fluminense", "periodo": "2002-2004"},
-                {"clube": "Vasco da Gama", "periodo": "2000-2002, 2005-2008"}
+                {"clube": "Flamengo", "periodo": "1997 (emp.)"},
+                {"clube": "Flamengo", "periodo": "1998-1999"},
+                {"clube": "Vasco da Gama", "periodo": "2000-2002"},
+                {"clube": "Fluminense", "periodo": "2002-2003"},
+                {"clube": "Al-Sadd", "periodo": "2003 (emp.)"},
+                {"clube": "Fluminense", "periodo": "2003-2004"},
+                {"clube": "Vasco da Gama", "periodo": "2005-2006"},
+                {"clube": "Miami FC", "periodo": "2006"},
+                {"clube": "Adelaide United", "periodo": "2006 (emp.)"},
+                {"clube": "Vasco da Gama", "periodo": "2007-2008"},
+                {"clube": "América-RJ", "periodo": "2009"}
             ]
         },
         {
             "nome": "Ronaldo Fenômeno",
             "clubes": [
                 {"clube": "Cruzeiro", "periodo": "1993-1994"},
-                {"clube": "PSV", "periodo": "1994-1996"},
+                {"clube": "PSV Eindhoven", "periodo": "1994-1996"},
                 {"clube": "Barcelona", "periodo": "1996-1997"},
                 {"clube": "Inter de Milão", "periodo": "1997-2002"},
                 {"clube": "Real Madrid", "periodo": "2002-2007"},
@@ -234,11 +264,17 @@
             "clubes": [
                 {"clube": "Cobreloa", "periodo": "2005-2006"},
                 {"clube": "Udinese", "periodo": "2006-2011"},
+                {"clube": "Colo-Colo", "periodo": "2006-2007 (emp.)"},
+                {"clube": "River Plate", "periodo": "2007-2008 (emp.)"},
                 {"clube": "Barcelona", "periodo": "2011-2014"},
                 {"clube": "Arsenal", "periodo": "2014-2018"},
                 {"clube": "Manchester United", "periodo": "2018-2019"},
-                {"clube": "Inter de Milão", "periodo": "2019-2023"},
-                {"clube": "Olympique de Marseille", "periodo": "2023-2024"}
+                {"clube": "Inter de Milão", "periodo": "2019–2020 (emp.)"},
+                {"clube": "Inter de Milão", "periodo": "2020-2022"},
+                {"clube": "Olympique de Marseille", "periodo": "2022–2023"},
+                {"clube": "Inter de Milão", "periodo": "2023-2024"},
+                {"clube": "Udinese", "periodo": "2024-2025"},
+                {"clube": "Sevilla", "periodo": "2025-"}
             ]
         },
         {
@@ -248,9 +284,10 @@
                 {"clube": "Benfica", "periodo": "2007-2010"},
                 {"clube": "Real Madrid", "periodo": "2010-2014"},
                 {"clube": "Manchester United", "periodo": "2014-2015"},
-                {"clube": "PSG", "periodo": "2015-2022"},
+                {"clube": "Paris Saint-Germain", "periodo": "2015-2022"},
                 {"clube": "Juventus", "periodo": "2022-2023"},
-                {"clube": "Benfica", "periodo": "2023-2025"}
+                {"clube": "Benfica", "periodo": "2023-2025"},
+                {"clube": "Rosario Central", "periodo": "2025–"}
             ]
         },
         {
@@ -259,10 +296,10 @@
                 {"clube": "Danubio", "periodo": "2005-2007"},
                 {"clube": "Palermo", "periodo": "2007-2010"},
                 {"clube": "Napoli", "periodo": "2010-2013"},
-                {"clube": "PSG", "periodo": "2013-2020"},
+                {"clube": "Paris Saint-Germain", "periodo": "2013-2020"},
                 {"clube": "Manchester United", "periodo": "2020-2022"},
                 {"clube": "Valencia", "periodo": "2022-2023"},
-                {"clube": "Boca Juniors", "periodo": "2023-2024"}
+                {"clube": "Boca Juniors", "periodo": "2023–"}
             ]
         },
         {
@@ -363,7 +400,8 @@
                 {"clube": "Manchester United", "periodo": "2014-2015 (emp.)"},
                 {"clube": "Chelsea", "periodo": "2015-2016 (emp.)"},
                 {"clube": "Galatasaray", "periodo": "2019-2020"},
-                {"clube": "Rayo Vallecano", "periodo": "2021-2022"}
+                {"clube": "Rayo Vallecano", "periodo": "2021-2024"},
+                {"clube": "Millonarios", "periodo": "2024-"}
             ]
         },
         {
@@ -374,7 +412,7 @@
                 {"clube": "Real Madrid", "periodo": "2010-2013"},
                 {"clube": "Arsenal", "periodo": "2013-2021"},
                 {"clube": "Fenerbahçe", "periodo": "2021-2022"},
-                {"clube": "Başakşehir", "periodo": "2022-2023"}
+                {"clube": "İstanbul Başakşehir", "periodo": "2022-2023"}
             ]
         },
         {
@@ -388,13 +426,16 @@
         {
             "nome": "Adriano Imperador",
             "clubes": [
-                {"clube": "Flamengo", "periodo": "1999-2001"},
-                {"clube": "Inter de Milão", "periodo": "2001-2009"},
-                {"clube": "Fiorentina", "periodo": "2008-2009"},
+                {"clube": "Flamengo", "periodo": "2000-2001"},
+                {"clube": "Inter de Milão", "periodo": "2001-2002"},
+                {"clube": "Fiorentina", "periodo": "2002 (emp.)"},
+                {"clube": "Parma", "periodo": "2002-2004"},
+                {"clube": "Inter de Milão", "periodo": "2004-2009"},
                 {"clube": "São Paulo", "periodo": "2008 (emp.)"},
                 {"clube": "Flamengo", "periodo": "2009-2010"},
                 {"clube": "Roma", "periodo": "2010-2011"},
                 {"clube": "Corinthians", "periodo": "2011-2012"},
+                {"clube": "Flamengo", "periodo": "2012"},
                 {"clube": "Atlético Paranaense", "periodo": "2014"},
                 {"clube": "Miami United", "periodo": "2016"}
             ]
@@ -406,7 +447,7 @@
                 {"clube": "Internacional", "periodo": "2010-2012"},
                 {"clube": "Chelsea", "periodo": "2012-2016"},
                 {"clube": "Shanghai SIPG", "periodo": "2017-2024"},
-                {"clube": "Flamengo", "periodo": "2024-2025"}
+                {"clube": "São Paulo", "periodo": "2024-2025"}
             ]
         },
         {
@@ -427,12 +468,15 @@
         {
             "nome": "Franck Ribéry",
             "clubes": [
+                {"clube": "Boulogne", "periodo": "2001-2002"},
+                {"clube": "Olympique Alès", "periodo": "2002–2003"},
+                {"clube": "Brest", "periodo": "2003–2004"},
                 {"clube": "Metz", "periodo": "2004-2005"},
                 {"clube": "Galatasaray", "periodo": "2005"},
                 {"clube": "Olympique de Marseille", "periodo": "2005-2007"},
                 {"clube": "Bayern de Munique", "periodo": "2007-2019"},
-                {"clube": "Fiorentina", "periodo": "2019-2022"},
-                {"clube": "Salernitana", "periodo": "2022"}
+                {"clube": "Fiorentina", "periodo": "2019-2021"},
+                {"clube": "Salernitana", "periodo": "2021-2022"}
             ]
         },
         {
@@ -442,6 +486,125 @@
                 {"clube": "Real Madrid", "periodo": "2011-2021"},
                 {"clube": "Manchester United", "periodo": "2021-2024"},
                 {"clube": "Como", "periodo": "2024"}
+            ]
+        },
+        {
+            "nome": "Thibaut Courtois",
+            "clubes": [
+                {"clube": "Genk", "periodo": "2009-2011"},
+                {"clube": "Chelsea", "periodo": "2011-2018"},
+                {"clube": "Atlético de Madrid", "periodo": "2011-2014 (emp.)"},
+                {"clube": "Real Madrid", "periodo": "2018-"}
+            ]
+        },
+        {
+            "nome": "Dani Carvajal",
+            "clubes": [
+                {"clube": "Bayer Leverkusen", "periodo": "2012–2013"},
+                {"clube": "Real Madrid", "periodo": "2013-"}
+            ]
+        },
+        {
+            "nome": "Éder Militão",
+            "clubes": [
+                {"clube": "São Paulo", "periodo": "2017-2018"},
+                {"clube": "Porto", "periodo": "2018-2019"},
+                {"clube": "Real Madrid", "periodo": "2019-"}
+            ]
+        },
+        {
+            "nome": "David Alaba",
+            "clubes": [
+                {"clube": "Bayern de Munique", "periodo": "2010–2021"},
+                {"clube": "Hoffenheim", "periodo": "2011 (emp.)"},
+                {"clube": "Real Madrid", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Jude Bellingham",
+            "clubes": [
+                {"clube": "Birmingham", "periodo": "2019–2020"},
+                {"clube": "Borussia Dortmund", "periodo": "2020–2023"},
+                {"clube": "Real Madrid", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Eduardo Camavinga",
+            "clubes": [
+                {"clube": "Rennes", "periodo": "2019–2021"},
+                {"clube": "Real Madrid", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Federico Valverde",
+            "clubes": [
+                {"clube": "Peñarol", "periodo": "2015–2016"},
+                {"clube": "Real Madrid", "periodo": "2017-"},
+                {"clube": "Deportivo La Coruña", "periodo": "2017-2018 (emp.)"}
+            ]
+        },
+        {
+            "nome": "Endrick",
+            "clubes": [
+                {"clube": "Palmeiras", "periodo": "2022-2024"},
+                {"clube": "Real Madrid", "periodo": "2024-"},
+                {"clube": "Lyon", "periodo": "2026- (emp.)"}
+            ]
+        },
+        {
+            "nome": "Kylian Mbappé",
+            "clubes": [
+                {"clube": "Monaco", "periodo": "2015–2018"},
+                {"clube": "Paris Saint-Germain", "periodo": "2017–2018 (emp.)"},
+                {"clube": "Paris Saint-Germain", "periodo": "2018-2024"},
+                {"clube": "Real Madrid", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Rodrygo",
+            "clubes": [
+                {"clube": "Santos", "periodo": "2017-2019"},
+                {"clube": "Real Madrid", "periodo": "2019-"}
+            ]
+        },
+        {
+            "nome": "Trent Alexander-Arnold",
+            "clubes": [
+                {"clube": "Liverpool", "periodo": "2016-2025"},
+                {"clube": "Real Madrid", "periodo": "2025-"}
+            ]
+        },
+        {
+            "nome": "Andriy Lunin",
+            "clubes": [
+                {"clube": "Dnipro", "periodo": "2016–2017"},
+                {"clube": "Zorya Luhansk", "periodo": "2017–2018"},
+                {"clube": "Real Madrid", "periodo": "2018-"},
+                {"clube": "Leganés", "periodo": "2018-2019 (emp.)"},
+                {"clube": "Valladolid", "periodo": "2019-2020 (emp.)"},
+                {"clube": "Real Oviedo", "periodo": "2020 (emp.)"}
+            ]
+        },
+        {
+            "nome": "Aurélien Tchouaméni",
+            "clubes": [
+                {"clube": "Bordeaux", "periodo": "2017–2020"},
+                {"clube": "Monaco", "periodo": "2020–2022"},
+                {"clube": "Real Madrid", "periodo": "2022-"}
+            ]
+        },
+        {
+            "nome": "Arda Güler",
+            "clubes": [
+                {"clube": "Fenerbahçe", "periodo": "2021–2023"},
+                {"clube": "Real Madrid", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Rodrygo",
+            "clubes": [
+                {"clube": "Santos", "periodo": "2017-2019"},
+                {"clube": "Real Madrid", "periodo": "2019-"}
             ]
         },
         {
@@ -546,24 +709,11 @@
             ]
         },
         {
-            "nome": "Senny Mayulu",
-            "clubes": [
-                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
-            ]
-        },
-        {
             "nome": "Nuno Mendes",
             "clubes": [
                 {"clube": "Sporting CP", "periodo": "2014–2019"},
                 {"clube": "Paris Saint-Germain", "periodo": "2021-2022 (emp.)"},
                 {"clube": "Paris Saint-Germain", "periodo": "2022-"}
-            ]
-        },
-        {
-            "nome": "Dro Fernández",
-            "clubes": [
-                {"clube": "Barcelona", "periodo": "2025–2026"},
-                {"clube": "Paris Saint-Germain", "periodo": "2026-"}
             ]
         },
         {
@@ -591,12 +741,6 @@
             "nome": "Matvei Safonov",
             "clubes": [
                 {"clube": "Krasnodar", "periodo": "2017–2024"},
-                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
-            ]
-        },
-        {
-            "nome": "Ibrahim Mbaye",
-            "clubes": [
                 {"clube": "Paris Saint-Germain", "periodo": "2024-"}
             ]
         },
@@ -633,20 +777,150 @@
             ]
         },
         {
-            "nome": "Willian Pacho",
+            "nome": "Kim Min-jae",
             "clubes": [
-                {"clube": "Independiente del Valle", "periodo": "2019–2022"},
-                {"clube": "Royal Antwerp", "periodo": "2022–2023"},
-                {"clube": "Eintracht Frankfurt", "periodo": "2023–2024"},
-                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+                {"clube": "Gyeongju KHNP", "periodo": "2016"},
+                {"clube": "Jeonbuk Hyundai Motors", "periodo": "2017–2018"},
+                {"clube": "Beijing Guoan", "periodo": "2019–2021"},
+                {"clube": "Fenerbahçe", "periodo": "2024-"},
+                {"clube": "Paris Saint-Germain", "periodo": "2021–2022"},
+                {"clube": "Napoli", "periodo": "2022–2023"},
+                {"clube": "Bayern de Munique", "periodo": "2023-"}
             ]
         },
         {
-            "nome": "João Neves",
+            "nome": "Jonathan Tah",
             "clubes": [
-                {"clube": "Benfica", "periodo": "2022–2024"},
-                {"clube": "Paris Saint-Germain", "periodo": "2024-"}
+                {"clube": "Hamburgo", "periodo": "2013-2015"},
+                {"clube": "Fortuna Düsseldorf", "periodo": "2014–2015 (emp.)"},
+                {"clube": "Bayer Leverkusen", "periodo": "2015-2025"},
+                {"clube": "Bayern de Munique", "periodo": "2025-"}
             ]
-        }
+        },
+        {
+            "nome": "Joshua Kimmich",
+            "clubes": [
+                {"clube": "RB Leipzig", "periodo": "2013-2015"},
+                {"clube": "Bayern de Munique", "periodo": "2015-"}
+            ]
+        },
+        {
+            "nome": "Serge Gnabry",
+            "clubes": [
+                {"clube": "Arsenal", "periodo": "2012–2016"},
+                {"clube": "West Bromwich", "periodo": "2015–2016 (emp.)"},
+                {"clube": "Werder Bremen", "periodo": "2016-2017"},
+                {"clube": "Bayern de Munique", "periodo": "2017-"},
+                {"clube": "Hoffenheim", "periodo": "2017-2018 (emp.)"}
+            ]
+        },
+        {
+            "nome": "Leon Goretzka",
+            "clubes": [
+                {"clube": "Bochum", "periodo": "2012–2013"},
+                {"clube": "Schalke 04", "periodo": "2013–2018"},
+                {"clube": "Bayern de Munique", "periodo": "2018-2026"}
+            ]
+        },
+        {
+            "nome": "Harry Kane",
+            "clubes": [
+                {"clube": "Tottenham Hotspur", "periodo": "2011-2023"},
+                {"clube": "Leyton Orient ", "periodo": "2011 (emp.)"},
+                {"clube": "Millwall ", "periodo": "2012 (emp.)"},
+                {"clube": "Norwich City ", "periodo": "2012-2013 (emp.)"},
+                {"clube": "Leicester ", "periodo": "2013 (emp.)"},
+                {"clube": "Bayern de Munique", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Jamal Musiala",
+            "clubes": [
+                {"clube": "Bayern de Munique", "periodo": "2020-"}
+            ]
+        },
+        {
+            "nome": "Nicolas Jackson",
+            "clubes": [
+                {"clube": "Villarreal", "periodo": "2020-2023"},
+                {"clube": "Mirandés", "periodo": "2020-2021 (emp.)"},
+                {"clube": "Chelsea", "periodo": "2023-"},
+                {"clube": "Bayern de Munique", "periodo": "2025- (emp.)"}
+            ]
+        },
+        {
+            "nome": "Luis Díaz",
+            "clubes": [
+                {"clube": "Junior de Barranquilla", "periodo": "2016–2019"},
+                {"clube": "Barranquilla", "periodo": "2016–2017 (emp.)"},
+                {"clube": "Porto", "periodo": "2019-2021"},
+                {"clube": "Liverpool", "periodo": "2021-2025"},
+                {"clube": "Bayern de Munique", "periodo": "2025-"}
+            ]
+        },
+        {
+            "nome": "Michael Olise",
+            "clubes": [
+                {"clube": "Reading", "periodo": "2019–2021"},
+                {"clube": "Crystal Palace", "periodo": "2021–2024"},
+                {"clube": "Bayern de Munique", "periodo": "2024-"}
+            ]
+        },
+        {
+            "nome": "Alphonso Davies",
+            "clubes": [
+                {"clube": "Vancouver Whitecaps", "periodo": "2016–2018"},
+                {"clube": "Bayern de Munique", "periodo": "2018-"}
+            ]
+        },
+        {
+            "nome": "Raphaël Guerreiro",
+            "clubes": [
+                {"clube": "Caen", "periodo": "2010-2013"},
+                {"clube": "Lorient", "periodo": "2013–2016"},
+                {"clube": "Borussia Dortmund", "periodo": "2016–2023"},
+                {"clube": "Bayern de Munique", "periodo": "2023-2026"}
+            ]
+        },
+        {
+            "nome": "Sven Ulreich",
+            "clubes": [
+                {"clube": "Stuttgart", "periodo": "2007–2015"},
+                {"clube": "Bayern de Munique", "periodo": "2015–2020"},
+                {"clube": "Hamburgo", "periodo": "2020-2021"},
+                {"clube": "Bayern de Munique", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Konrad Laimer",
+            "clubes": [
+                {"clube": "Liefering", "periodo": "2014–2016"},
+                {"clube": "Red Bull Salzburg", "periodo": "2014–2017"},
+                {"clube": "RB Leipzig", "periodo": "2017–2023"},
+                {"clube": "Bayern de Munique", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Josip Stanišić",
+            "clubes": [
+                {"clube": "Bayern de Munique", "periodo": "2021–"},
+                {"clube": "Bayer Leverkusen", "periodo": "2023–2024 (emp.)"}
+            ]
+        },
+        {
+            "nome": "Aleksandar Pavlović",
+            "clubes": [
+                {"clube": "Bayern de Munique", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Vincent Kompany",
+            "clubes": [
+                {"clube": "Anderlecht", "periodo": "2003-2006"},
+                {"clube": "Hamburgo", "periodo": "2006-2008"},
+                {"clube": "Manchester City", "periodo": "2008-2019"},
+                {"clube": "Anderlecht", "periodo": "2019-2020"}
+            ]
+        }  
     ]
 }
