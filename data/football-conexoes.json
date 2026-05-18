@@ -6,22 +6,22 @@
                 {
                     "categoria": "Ganharam a Bola de Ouro",
                     "cor": "#f1c40f",
-                    "jogadores": ["Modric", "Benzema", "Messi", "Ronaldinho"]
+                    "jogadores": ["Luka Modric", "Karim Benzema", "Lionel Messi", "Ronaldinho"]
                 },
                 {
                     "categoria": "Jogaram no Milan",
                     "cor": "#e74c3c",
-                    "jogadores": ["Kaká", "Pirlo", "Shevchenko", "Ibrahimovic"]
+                    "jogadores": ["Kaká", "Andrea Pirlo", "Andriy Shevchenko", "Zlatan Ibrahimovic"]
                 },
                 {
                     "categoria": "Seleção da Holanda",
                     "cor": "#e67e22",
-                    "jogadores": ["Cruyff", "Van Basten", "Robben", "Sneijder"]
+                    "jogadores": ["Johan Cruyff", "Marco van Basten", "Arjen Robben", "Wesley Sneijder"]
                 },
                 {
                     "categoria": "Campeões da Champions 2015",
                     "cor": "#2ecc71",
-                    "jogadores": ["Marcelo", "Kroos", "James", "Casemiro"]
+                    "jogadores": ["Marcelo", "Toni Kroos", "James Rodríguez", "Casemiro"]
                 }
             ]
         },
@@ -31,22 +31,22 @@
                 {
                     "categoria": "Jogaram no Barcelona e PSG",
                     "cor": "#3498db",
-                    "jogadores": ["Neymar", "Messi", "Dani Alves", "Rafinha"]
+                    "jogadores": ["Neymar", "Lionel Messi", "Dani Alves", "Ronaldinho"]
                 },
                 {
                     "categoria": "Artilheiros de Copa do Mundo",
                     "cor": "#f1c40f",
-                    "jogadores": ["Ronaldo", "Klose", "Fontaine", "Müller"]
+                    "jogadores": ["Ronaldo", "Miroslav Klose", "Just Fontaine", "Gerd Müller"]
                 },
                 {
                     "categoria": "Ídolos do Liverpool",
                     "cor": "#e74c3c",
-                    "jogadores": ["Gerrard", "Dalglish", "Salah", "Torres"]
+                    "jogadores": ["Steven Gerrard", "Kenny Dalglish", "Mohamed Salah", "Fernando Torres"]
                 },
                 {
                     "categoria": "Zagueiros campeões mundiais",
                     "cor": "#2ecc71",
-                    "jogadores": ["Cannavaro", "Thiago Silva", "Desailly", "Beckenbauer"]
+                    "jogadores": ["Fabio Cannavaro", "Thiago Silva", "Sergio Ramos", "Franz Beckenbauer"]
                 }
             ]
         },
@@ -56,7 +56,7 @@
                 {
                     "categoria": "Jogaram no Real Madrid e Chelsea",
                     "cor": "#3498db",
-                    "jogadores": ["Hazard", "Courtois", "Morata", "Essien"]
+                    "jogadores": ["Eden Hazard", "Thibaut Courtois", "Álvaro Morata", "Michael Essien"]
                 },
                 {
                     "categoria": "Brasileiros campeões em 2002",
@@ -66,12 +66,12 @@
                 {
                     "categoria": "Goleadores da Premier League",
                     "cor": "#9b59b6",
-                    "jogadores": ["Shearer", "Rooney", "Henry", "Aguero"]
+                    "jogadores": ["Alan Shearer", "Wayne Rooney", "Thierry Henry", "Sergio Agüero"]
                 },
                 {
                     "categoria": "Jogaram no Juventus e Inter",
                     "cor": "#e74c3c",
-                    "jogadores": ["Pirlo", "Vidal", "Ibrahimovic", "Cannavaro"]
+                    "jogadores": ["Andrea Pirlo", "Arturo Vidal", "Zlatan Ibrahimovic", "Fabio Cannavaro"]
                 }
             ]
         },
@@ -81,22 +81,22 @@
                 {
                     "categoria": "Meio-campistas argentinos",
                     "cor": "#3498db",
-                    "jogadores": ["Riquelme", "Di María", "Redondo", "Aimar"]
+                    "jogadores": ["Juan Román Riquelme", "Ángel Di María", "Fernando Redondo", "Pablo Aimar"]
                 },
                 {
                     "categoria": "Goleiros lendários",
                     "cor": "#f1c40f",
-                    "jogadores": ["Buffon", "Casillas", "Neuer", "Yashin"]
+                    "jogadores": ["Gianluigi Buffon", "Iker Casillas", "Manuel Neuer", "Lev Yashin"]
                 },
                 {
                     "categoria": "Jogaram no Manchester United",
                     "cor": "#e74c3c",
-                    "jogadores": ["Cantona", "Beckham", "Van Persie", "Rooney"]
+                    "jogadores": ["Eric Cantona", "David Beckham", "Robin van Persie", "Wayne Rooney"]
                 },
                 {
                     "categoria": "Seleção Francesa campeã 2018",
                     "cor": "#2ecc71",
-                    "jogadores": ["Mbappé", "Griezmann", "Pogba", "Varane"]
+                    "jogadores": ["Kylian Mbappé", "Antoine Griezmann", "Paul Pogba", "Raphaël Varane"]
                 }
             ]
         },
@@ -106,22 +106,22 @@
                 {
                     "categoria": "Atacantes brasileiros na Europa",
                     "cor": "#f1c40f",
-                    "jogadores": ["Romário", "Adriano", "Firmino", "Hulk"]
+                    "jogadores": ["Rodrygo", "Gabriel Jesus", "Thiago Silva", "Raphinha"]
                 },
                 {
                     "categoria": "Campeões da Euro 2020",
                     "cor": "#2ecc71",
-                    "jogadores": ["Donnarumma", "Bonucci", "Jorginho", "Insigne"]
+                    "jogadores": ["Gianluigi Donnarumma", "Leonardo Bonucci", "Jorginho", "Lorenzo Insigne"]
                 },
                 {
-                    "categoria": "Jogaram no Bayern e Dortmund",
+                    "categoria": "Jogaram no Bayern de Munique e Borussia Dortmund",
                     "cor": "#e74c3c",
-                    "jogadores": ["Lewandowski", "Götze", "Hummels", "Guerreiro"]
+                    "jogadores": ["Robert Lewandowski", "Mario Götze", "Mats Hummels", "Raphaël Guerreiro"]
                 },
                 {
-                    "categoria": "Laterais-direitos icônicos",
+                    "categoria": "Laterais-direitos",
                     "cor": "#9b59b6",
-                    "jogadores": ["Cafu", "Lahm", "Zanetti", "Dani Alves"]
+                    "jogadores": ["Cafu", "Philipp Lahm", "Javier Zanetti", "Dani Alves"]
                 }
             ]
         },
@@ -136,12 +136,12 @@
                 {
                     "categoria": "Colombianos históricos",
                     "cor": "#e67e22",
-                    "jogadores": ["Valderrama", "Higuita", "Falcao", "James"]
+                    "jogadores": ["Carlos Valderrama", "René Higuita", "Radamel Falcao Garcia", "James Rodríguez"]
                 },
                 {
                     "categoria": "Jogaram no Tottenham",
                     "cor": "#3498db",
-                    "jogadores": ["Bale", "Modric", "Klinsmann", "Lineker"]
+                    "jogadores": ["Gareth Bale", "Luka Modric", "Jürgen Klinsmann", "Gary Lineker"]
                 },
                 {
                     "categoria": "Campeões da Libertadores com Flamengo",
@@ -181,12 +181,12 @@
                 {
                     "categoria": "Jogaram Arsenal e Barcelona",
                     "cor": "#e74c3c",
-                    "jogadores": ["Henry", "Fàbregas", "Overmars", "Vermaelen"]
+                    "jogadores": ["Thierry Henry", "Cesc Fàbregas", "Marc Overmars", "Thomas Vermaelen"]
                 },
                 {
-                    "categoria": "Uruguaios lendários",
+                    "categoria": "Jogadores Uruguaios",
                     "cor": "#3498db",
-                    "jogadores": ["Suárez", "Forlán", "Recoba", "Francescoli"]
+                    "jogadores": ["Luis Suárez", "Diego Forlán", "Álvaro Recoba", "Enzo Francescoli"]
                 },
                 {
                     "categoria": "Ballon d'Or nos anos 2000",
@@ -196,7 +196,7 @@
                 {
                     "categoria": "Defensores italianos",
                     "cor": "#2ecc71",
-                    "jogadores": ["Maldini", "Baresi", "Cannavaro", "Nesta"]
+                    "jogadores": ["Paolo Maldini", "Franco Baresi", "Fabio Cannavaro", "Alessandro Nesta"]
                 }
             ]
         },
@@ -206,7 +206,7 @@
                 {
                     "categoria": "Jogaram no Atlético de Madrid",
                     "cor": "#e74c3c",
-                    "jogadores": ["Griezmann", "Agüero", "Torres", "Falcao"]
+                    "jogadores": ["Antoine Griezmann", "Koke", "Fernando Torres", "Radamel Falcao"]
                 },
                 {
                     "categoria": "Meias-atacantes brasileiros",
@@ -216,12 +216,12 @@
                 {
                     "categoria": "Seleção Alemã campeã 2014",
                     "cor": "#2ecc71",
-                    "jogadores": ["Özil", "Khedira", "Götze", "Lahm"]
+                    "jogadores": ["Mesut Özil", "Sami Khedira", "Mario Götze", "Philipp Lahm"]
                 },
                 {
                     "categoria": "Jogaram no Manchester City",
                     "cor": "#3498db",
-                    "jogadores": ["Kompany", "De Bruyne", "Touré", "Silva"]
+                    "jogadores": ["Vincent Kompany", "Kevin De Bruyne", "Yaya Touré", "David Silva"]
                 }
             ]
         },
@@ -231,7 +231,7 @@
                 {
                     "categoria": "Croatas famosos",
                     "cor": "#e74c3c",
-                    "jogadores": ["Modrić", "Šuker", "Rakitić", "Boban"]
+                    "jogadores": ["Luka Modrić", "Davor Šuker", "Ivan Rakitić", "Zvonimir Boban"]
                 },
                 {
                     "categoria": "Atacantes que jogaram no Inter de Milão",
@@ -366,12 +366,37 @@
                 {
                     "categoria": "Jogadores nascidos na década de 80",
                     "cor": "#f1c40f",
-                    "jogadores": ["Messi", "Cristiano Ronaldo", "Neymar", "Suárez"]
+                    "jogadores": ["Lionel Messi", "Cristiano Ronaldo", "Neymar", "Luis Suárez"]
                 },
                 {
                     "categoria": "Capitães de seleções em Copas",
                     "cor": "#2ecc71",
-                    "jogadores": ["Cafu", "Beckham", "Ramos", "Buffon"]
+                    "jogadores": ["Cafu", "David Beckham", "Sergio Ramos", "Buffon"]
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "grupos": [
+                {
+                    "categoria": "Jogaram no Fluminense e Botafogo",
+                    "cor": "#3498db",
+                    "jogadores": ["Luiz Henrique", "Savarino", "Diego Souza", "Marlon Freitas"]
+                },
+                {
+                    "categoria": "Jogadores africanos",
+                    "cor": "#e74c3c",
+                    "jogadores": ["Samuel Eto'o", "Didier Drogba", "George Weah", "Mohamed Salah"]
+                },
+                {
+                    "categoria": "Jogadores Tri Campeões da Libertadores",
+                    "cor": "#f1c40f",
+                    "jogadores": ["Felipe Melo", "Arrascaeta", "Bruno Henrique", "Patrick de Paula"]
+                },
+                {
+                    "categoria": "Jogadores em atividades com mais de 40 anos",
+                    "cor": "#2ecc71",
+                    "jogadores": ["Cristiano Ronaldo", "Fábio", "Nenê", "Roque Santa Cruz"]
                 }
             ]
         }

@@ -2,17 +2,17 @@
     "rodadas": [
         {
             "resposta": "Neymar",
-            "companheiros": ["Messi", "Mbappé", "Dani Alves", "Thiago Silva", "Suárez"],
+            "companheiros": ["Lionel Messi", "Kylian Mbappé", "Dani Alves", "Thiago Silva", "Luis Suárez"],
             "dica": "Atacante brasileiro que brilhou no Santos, Barcelona e PSG"
         },
         {
             "resposta": "Cristiano Ronaldo",
-            "companheiros": ["Rooney", "Benzema", "Dybala", "Fernandes", "Marcelo"],
-            "dica": "Maior artilheiro da história do futebol de seleções"
+            "companheiros": ["Wayne Rooney", "Karim Benzema", "Paulo Dybala", "Bruno Fernandes", "Marcelo"],
+            "dica": "Maior artilheiro da história do Real Madrid"
         },
         {
             "resposta": "Messi",
-            "companheiros": ["Xavi", "Iniesta", "Agüero", "Di María", "Neymar"],
+            "companheiros": ["Xavi", "Andrés Iniesta", "Sergio Agüero", "Ángel Di María", "Neymar"],
             "dica": "Argentino com mais Bolas de Ouro da história"
         },
         {
@@ -42,18 +42,18 @@
         },
         {
             "resposta": "Sergio Ramos",
-            "companheiros": ["Cristiano Ronaldo", "Casillas", "Messi", "Mbappé", "Puyol"],
-            "dica": "Zagueiro espanhol recordista em seleção e capitão do Real"
+            "companheiros": ["Cristiano Ronaldo", "Iker Casillas", "Lionel Messi", "Kylian Mbappé", "Carles Puyol"],
+            "dica": "Zagueiro espanhol"
         },
         {
             "resposta": "Dani Alves",
-            "companheiros": ["Messi", "Neymar", "Xavi", "Thiago Silva", "Mbappé"],
-            "dica": "Lateral brasileiro mais vitorioso da história"
+            "companheiros": ["Lionel Messi", "Neymar", "Xavi", "Thiago Silva", "Kylian Mbappé"],
+            "dica": "Lateral brasileiro"
         },
         {
             "resposta": "Buffon",
             "companheiros": ["Pirlo", "Del Piero", "Cannavaro", "Pogba", "Neymar"],
-            "dica": "Goleiro italiano lendário da Juventus"
+            "dica": "Goleiro italiano"
         },
         {
             "resposta": "Pirlo",
@@ -62,43 +62,43 @@
         },
         {
             "resposta": "Mbappé",
-            "companheiros": ["Neymar", "Messi", "Griezmann", "Pogba", "Cristiano Ronaldo"],
+            "companheiros": ["Neymar", "Lionel Messi", "Antoine Griezmann", "Paul Pogba", "Cristiano Ronaldo"],
             "dica": "Francês mais jovem a marcar em uma final de Copa"
         },
         {
             "resposta": "Pogba",
-            "companheiros": ["Pirlo", "Buffon", "Griezmann", "Fernandes", "Mbappé"],
+            "companheiros": ["Pirlo", "Buffon", "Antoine Griezmann", "Bruno Fernandes", "Kylian Mbappé"],
             "dica": "Meio-campista francês que passou por Juventus e Manchester United"
         },
         {
             "resposta": "Modric",
-            "companheiros": ["Cristiano Ronaldo", "Benzema", "Bale", "Rakitić", "Kroos"],
+            "companheiros": ["Cristiano Ronaldo", "Karim Benzema", "Gareth Bale", "Ivan Rakitić", "Toni Kroos"],
             "dica": "Croata que quebrou a hegemonia Messi-CR7 na Bola de Ouro"
         },
         {
             "resposta": "Suárez",
-            "companheiros": ["Gerrard", "Messi", "Neymar", "Cavani", "Griezmann"],
+            "companheiros": ["Steven Gerrard", "Lionel Messi", "Neymar", "Edinson Cavani", "Antoine Griezmann"],
             "dica": "Uruguaio artilheiro que brilhou em Liverpool e Barcelona"
         },
         {
             "resposta": "Lewandowski",
-            "companheiros": ["Reus", "Müller", "Neuer", "Aubameyang", "Pedri"],
+            "companheiros": ["Marco Reus", "Thomas Müller", "Manuel Neuer", "Pierre-Emerick Aubameyang", "Pedri"],
             "dica": "Polonês artilheiro que dominou a Bundesliga por uma década"
         },
         {
             "resposta": "De Bruyne",
-            "companheiros": ["Hazard", "Haaland", "Agüero", "Salah", "Lukaku"],
-            "dica": "Belga considerado o melhor meia do mundo no City"
+            "companheiros": ["Eden Hazard", "Erling Haaland", "Sergio Agüero", "Mohamed Salah", "Romelu Lukaku"],
+            "dica": "Meio campista belga"
         },
         {
             "resposta": "Hazard",
-            "companheiros": ["De Bruyne", "Courtois", "Kanté", "Modric", "Benzema"],
+            "companheiros": ["Kevin De Bruyne", "Thibaut Courtois", "N'Golo Kanté", "Luka Modric", "Karim Benzema"],
             "dica": "Belga que encantou no Chelsea antes de ir ao Real Madrid"
         },
         {
-            "resposta": "Agüero",
-            "companheiros": ["Messi", "De Bruyne", "Touré", "Forlán", "Tevez"],
-            "dica": "Argentino do gol mais icônico da Premier League"
+            "resposta": "Sergio Agüero",
+            "companheiros": ["Lionel Messi", "Kevin De Bruyne", "Yaya Touré", "Diego Forlán", "Carlos Tevez"],
+            "dica": "Argentino da Premier League"
         },
         {
             "resposta": "Rooney",

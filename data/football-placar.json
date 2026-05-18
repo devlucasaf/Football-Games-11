@@ -17,7 +17,7 @@
         },
         {
             "mandante": "Barcelona",
-            "visitante": "PSG",
+            "visitante": "Paris Saint-Germain",
             "competicao": "Champions League 2017 — Oitavas (volta)",
             "placarMandante": 6,
             "placarVisitante": 1
@@ -25,9 +25,37 @@
         {
             "mandante": "Real Madrid",
             "visitante": "Eintracht Frankfurt",
-            "competicao": "Champions League 1960 — Final",
+            "competicao": "Champions League 1959–60 — Final",
             "placarMandante": 7,
             "placarVisitante": 3
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Inter de Milão",
+            "competicao": "Champions League 2024–2025 — Final",
+            "placarMandante": 5,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Inter de Milão",
+            "visitante": "Barcelona",
+            "competicao": "Champions League 2024–2025 — Semifinal",
+            "placarMandante": 3,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "França",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2018 — Oitavas de Final",
+            "placarMandante": 4,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Portugal",
+            "visitante": "Suíça",
+            "competicao": "Copa do Mundo 2022 — Oitavas de Final",
+            "placarMandante": 6,
+            "placarVisitante": 1
         },
         {
             "mandante": "Alemanha",
@@ -35,6 +63,13 @@
             "competicao": "Copa do Mundo 2014 — Final",
             "placarMandante": 1,
             "placarVisitante": 0
+        },
+        {
+            "mandante": "França",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2018 — Final",
+            "placarMandante": 4,
+            "placarVisitante": 2
         },
         {
             "mandante": "Argentina",
@@ -96,9 +131,23 @@
         },
         {
             "mandante": "Botafogo",
+            "visitante": "Peñarol",
+            "competicao": "Libertadores 2024 — Semifinal (Ida)",
+            "placarMandante": 5,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Botafogo",
             "visitante": "Atlético Mineiro",
             "competicao": "Libertadores 2024 — Final",
             "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "River Plate",
+            "competicao": "Libertadores 2023 — Fase de Grupos",
+            "placarMandante": 5,
             "placarVisitante": 1
         },
         {
@@ -139,7 +188,7 @@
         },
         {
             "mandante": "Bayern de Munique",
-            "visitante": "PSG",
+            "visitante": "Paris Saint-Germain",
             "competicao": "Champions League 2020 — Final",
             "placarMandante": 1,
             "placarVisitante": 0
@@ -179,6 +228,27 @@
             "competicao": "Champions League 2019 — Semifinal (volta)",
             "placarMandante": 3,
             "placarVisitante": 2
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Flamengo",
+            "competicao": "Campeonato Carioca 2023 - Final (volta)",
+            "placarMandante": 4,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Atlético Mineiro",
+            "competicao": "Copa do Brasil 2024 - Final (ida)",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Santos",
+            "visitante": "Flamnengo",
+            "competicao": "Campeonato Brasileiro 2011",
+            "placarMandante": 4,
+            "placarVisitante": 5
         }
     ]
 }
