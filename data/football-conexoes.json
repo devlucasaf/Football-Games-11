@@ -84,19 +84,19 @@
                     "jogadores": ["Juan Román Riquelme", "Ángel Di María", "Fernando Redondo", "Pablo Aimar"]
                 },
                 {
-                    "categoria": "Goleiros lendários",
+                    "categoria": "Jogaram no Real Madrid e Juventus",
                     "cor": "#f1c40f",
-                    "jogadores": ["Gianluigi Buffon", "Iker Casillas", "Manuel Neuer", "Lev Yashin"]
+                    "jogadores": ["Cristiano Ronaldo", "Di Maria", "Higuain", "Anelka"]
                 },
                 {
-                    "categoria": "Jogaram no Manchester United",
+                    "categoria": "Treinadores europeus campeões de Libertadores",
                     "cor": "#e74c3c",
-                    "jogadores": ["Eric Cantona", "David Beckham", "Robin van Persie", "Wayne Rooney"]
+                    "jogadores": ["Jorge Jesus", "Mirko Jozić", "Artur Jorge", "Abel Ferreira"]
                 },
                 {
-                    "categoria": "Seleção Francesa campeã 2018",
+                    "categoria": "Campeões da Libertadores como jogadores e técnicos",
                     "cor": "#2ecc71",
-                    "jogadores": ["Kylian Mbappé", "Antoine Griezmann", "Paul Pogba", "Raphaël Varane"]
+                    "jogadores": ["Marcelo Gallardo", "Renato Gaúcho", "Filipe Luis", "Nery Pumpido"]
                 }
             ]
         },
@@ -104,9 +104,9 @@
             "id": 5,
             "grupos": [
                 {
-                    "categoria": "Atacantes brasileiros na Europa",
+                    "categoria": "Campeões da Champions League como jogadores e técnicos",
                     "cor": "#f1c40f",
-                    "jogadores": ["Rodrygo", "Gabriel Jesus", "Thiago Silva", "Raphinha"]
+                    "jogadores": ["Zinédine Zidane", "Carlo Ancelotti", "Pep Guardiola", "Johan Cruyff"]
                 },
                 {
                     "categoria": "Campeões da Euro 2020",
@@ -156,22 +156,22 @@
                 {
                     "categoria": "Africanos na Premier League",
                     "cor": "#2ecc71",
-                    "jogadores": ["Drogba", "Eto'o", "Touré", "Salah"]
+                    "jogadores": ["Drogba", "Eto'o", "Yaya Touré", "Salah"]
                 },
                 {
-                    "categoria": "Espanhóis campeões em 2010",
+                    "categoria": "Jogadores lendários que não ganharam Copa do Mundo",
                     "cor": "#e74c3c",
-                    "jogadores": ["Iniesta", "Xavi", "Puyol", "Villa"]
+                    "jogadores": ["Oliver Kahn", "Roberto Baggio", "Puskas", "Cruyff"]
                 },
                 {
-                    "categoria": "Jogaram no Porto",
+                    "categoria": "Jogadores que receberam nome de estádios",
                     "cor": "#3498db",
-                    "jogadores": ["Deco", "Falcao", "Hulk", "James"]
+                    "jogadores": ["Santiago Bernabéu", "Giuseppe Meazza", "Nilton Santos", "Maradona"]
                 },
                 {
-                    "categoria": "Pontas-direita da história",
+                    "categoria": "Jogaram no Barcelona e Real Madrid",
                     "cor": "#f1c40f",
-                    "jogadores": ["Garrincha", "Figo", "Robben", "Best"]
+                    "jogadores": ["Laudrup", "Figo", "Eto'o", "Ronaldo"]
                 }
             ]
         },
@@ -184,9 +184,9 @@
                     "jogadores": ["Thierry Henry", "Cesc Fàbregas", "Marc Overmars", "Thomas Vermaelen"]
                 },
                 {
-                    "categoria": "Jogadores Uruguaios",
+                    "categoria": "Jogadores revelados pelo Fluminense e que jogaram no Flamengo",
                     "cor": "#3498db",
-                    "jogadores": ["Luis Suárez", "Diego Forlán", "Álvaro Recoba", "Enzo Francescoli"]
+                    "jogadores": ["Diego Souza", "Ayrton Lucas", "Pedro", "Gerson"]
                 },
                 {
                     "categoria": "Ballon d'Or nos anos 2000",
@@ -219,9 +219,9 @@
                     "jogadores": ["Mesut Özil", "Sami Khedira", "Mario Götze", "Philipp Lahm"]
                 },
                 {
-                    "categoria": "Jogaram no Manchester City",
+                    "categoria": "Jogadores Belgas",
                     "cor": "#3498db",
-                    "jogadores": ["Vincent Kompany", "Kevin De Bruyne", "Yaya Touré", "David Silva"]
+                    "jogadores": ["Vincent Kompany", "Kevin De Bruyne", "Eden Hazard", "Fellaini"]
                 }
             ]
         },

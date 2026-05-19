@@ -1197,6 +1197,253 @@
                 {"clube": "Manchester City", "periodo": "2008-2019"},
                 {"clube": "Anderlecht", "periodo": "2019-2020"}
             ]
-        }  
+        },
+        {
+            "nome": "Gregor Kobel",
+            "clubes": [
+                {"clube": "Hoffenheim", "periodo": "2016-2020"},
+                {"clube": "Augsburg", "periodo": "2019 (emp.)"},
+                {"clube": "Stuttgart", "periodo": "2019-2020 (emp.)"},
+                {"clube": "Stuttgart", "periodo": "2020-2021"},
+                {"clube": "Borussia Dortmund", "periodo": "2021-"}
+            ]
+        },
+        {
+            "nome": "Yan Couto",
+            "clubes": [
+                {"clube": "Coritiba", "periodo": "2020"},
+                {"clube": "Manchester City", "periodo": "2020-2025"},
+                {"clube": "Girona", "periodo": "2020-2021 (emp.)"},
+                {"clube": "Braga", "periodo": "2021-2022 (emp.)"},
+                {"clube": "Girona", "periodo": "2022-2024 (emp.)"},
+                {"clube": "Borussia Dortmund", "periodo": "2024-2025 (emp.)"},
+                {"clube": "Borussia Dortmund", "periodo": "2025-"}
+            ]
+        },
+        {
+            "nome": "Nico Schlotterbeck",
+            "clubes": [
+                {"clube": "Freiburg", "periodo": "2018-2022"},
+                {"clube": "Union Berlin", "periodo": "2020-2021 (emp.)"},
+                {"clube": "Borussia Dortmund", "periodo": "2022-"}
+            ]
+        },
+        {
+            "nome": "Jobe Bellingham",
+            "clubes": [
+                {"clube": "Birmingham", "periodo": "2021–2023"},
+                {"clube": "Sunderland", "periodo": "2023–2025"},
+                {"clube": "Borussia Dortmund", "periodo": "2025-"}
+            ]
+        },
+        {
+            "nome": "Julian Brandt",
+            "clubes": [
+                {"clube": "Bayer Leverkusen", "periodo": "2013–2019"},
+                {"clube": "Borussia Dortmund", "periodo": "2019–2026"}
+            ]
+        },
+        {
+            "nome": "Marcel Sabitzer",
+            "clubes": [
+                {"clube": "Admira", "periodo": "2010-2012"},
+                {"clube": "Rapid Viena", "periodo": "2013-2014"},
+                {"clube": "RB Leipzig", "periodo": "2014-2021"},
+                {"clube": "Red Bull Salzburg", "periodo": "2014-2015(emp.)"},
+                {"clube": "Bayern de Munique", "periodo": "2021-2023 (emp.)"},
+                {"clube": "Manchester United", "periodo": "2023 (emp.)"},
+                {"clube": "Borussia Dortmund", "periodo": "2023-"}
+            ]
+        },
+        {
+            "nome": "Emre Can",
+            "clubes": [
+                {"clube": "Bayern de Munique", "periodo": "2011-2013"},
+                {"clube": "Bayer Leverkusen", "periodo": "2013–2014"},
+                {"clube": "Liverpool", "periodo": "2014–2018"},
+                {"clube": "Juventus", "periodo": "2018–2020"},
+                {"clube": "Borussia Dortmund", "periodo": "2020 (emp.)"},
+                {"clube": "Borussia Dortmund", "periodo": "2020-"}
+            ]
+        },
+        {
+            "nome": "Niklas Süle",
+            "clubes": [
+                {"clube": "Hoffenheim", "periodo": "2013–2017"},
+                {"clube": "Bayern de Munique", "periodo": "2017–2022"},
+                {"clube": "Borussia Dortmund", "periodo": "2022–2026"}
+            ]
+        },
+        {
+            "nome": "Karim Adeyemi",
+            "clubes": [
+                {"clube": "Red Bull Salzburg", "periodo": "2018–2022"},
+                {"clube": "Liefering", "periodo": "2018–2020"},
+                {"clube": "Borussia Dortmund", "periodo": "2022–"}
+            ]
+        },
+        {
+            "nome": "Marco Reus",
+            "clubes": [
+                {"clube": "Rot Weiss Ahlen", "periodo": "2007–2009"},
+                {"clube": "Borussia Mönchengladbach", "periodo": "2009–2012"},
+                {"clube": "Borussia Dortmund", "periodo": "2012–2024"},
+                {"clube": "Los Angeles Galaxy", "periodo": "2024–"}
+            ]
+        },
+        {
+            "nome": "Mats Hummels",
+            "clubes": [
+                {"clube": "Bayern de Munique", "periodo": "2007–2009"},
+                {"clube": "Borussia Dortmund", "periodo": "2008–2009 (emp.)"},
+                {"clube": "Borussia Dortmund", "periodo": "2009–2016"},
+                {"clube": "Bayern de Munique", "periodo": "2016–2019"},
+                {"clube": "Borussia Dortmund", "periodo": "2019–2024"},
+                {"clube": "Roma", "periodo": "2024–2025"}
+            ]
+        },
+        {
+            "nome": "Mario Götze",
+            "clubes": [
+                {"clube": "Borussia Dortmund", "periodo": "2009–2013"},
+                {"clube": "Bayern de Munique", "periodo": "2013–2016"},
+                {"clube": "Borussia Dortmund", "periodo": "2016–2020"},
+                {"clube": "PSV Eindhoven",     "periodo": "2020–2022"},
+                {"clube": "Eintracht Frankfurt", "periodo": "2022–"}
+            ]
+        },
+        {
+            "nome": "Ivan Perišić",
+            "clubes": [
+                {"clube": "Sochaux", "periodo": "2007–2009"},
+                {"clube": "Roeselare", "periodo": "2009 (emp.)"},
+                {"clube": "Brugge", "periodo": "2009–2011"},
+                {"clube": "Borussia Dortmund", "periodo": "2011–2012"},
+                {"clube": "Wolfsburg", "periodo": "2013–2015"},
+                {"clube": "Internazionale", "periodo": "2015–2022"},
+                {"clube": "Bayern de Munique", "periodo": "2019–2020 (emp.)"},
+                {"clube": "Tottenham", "periodo": "2022–2024"},
+                {"clube": "Hajduk Split", "periodo": "2024 (emp.)"},
+                {"clube": "Hajduk Split", "periodo": "2024"},
+                {"clube": "PSV Eindhoven", "periodo": "2024–"}
+            ]
+        },
+        {
+            "nome": "Shinji Kagawa",
+            "clubes": [
+                {"clube": "Cerezo Osaka", "periodo": "2006–2010"},
+                {"clube": "Borussia Dortmund", "periodo": "2010–2012"},
+                {"clube": "Manchester United", "periodo": "2012–2014"},
+                {"clube": "Borussia Dortmund", "periodo": "2014–2019"},
+                {"clube": "Beşiktaş", "periodo": "2019 (emp.)"},
+                {"clube": "Zaragoza", "periodo": "2019–2020"},
+                {"clube": "PAOK", "periodo": "2021"},
+                {"clube": "Sint-Truiden", "periodo": "2022–2023"},
+                {"clube": "Cerezo Osaka", "periodo": "2023–"}
+            ]
+        },
+        {
+            "nome": "Paulo Sousa",
+            "clubes": [
+                {"clube": "Benfica", "periodo": "1989–1993"},
+                {"clube": "Sporting", "periodo": "1993–1994"},
+                {"clube": "Juventus", "periodo": "1994–1996"},
+                {"clube": "Borussia Dortmund", "periodo": "1996–1998"},
+                {"clube": "Internazionale", "periodo": "1998–1999"},
+                {"clube": "Parma", "periodo": "2000"},
+                {"clube": "Panathinaikos", "periodo": "2000–2001"},
+                {"clube": "Espanyol", "periodo": "2002"}
+            ]
+        },
+        {
+            "nome": "Ciro Immobile",
+            "clubes": [
+                {"clube": "Juventus", "periodo": "2008–2010"},
+                {"clube": "Siena", "periodo": "2010 (emp.)"},
+                {"clube": "Grosseto", "periodo": "2011 (emp.)"},
+                {"clube": "Pescara", "periodo": "2011–2012 (emp.)"},
+                {"clube": "Genoa", "periodo": "2012–2013"},
+                {"clube": "Torino", "periodo": "2013–2014"},
+                {"clube": "Borussia Dortmund", "periodo": "2014–2016"},
+                {"clube": "Sevilla", "periodo": "2015–2016 (emp.)"},
+                {"clube": "Torino", "periodo": "2016 (emp.)"},
+                {"clube": "Lazio", "periodo": "2016–2024"},
+                {"clube": "Beşiktaş", "periodo": "2024–2025"},
+                {"clube": "Bologna", "periodo": "2025–2026"},
+                {"clube": "Paris FC", "periodo": "2026–"}
+            ]
+        },
+        {
+            "nome": "Tomáš Rosický",
+            "clubes": [
+                {"clube": "Sparta Praga", "periodo": "1998–2001"},
+                {"clube": "Borussia Dortmund", "periodo": "2001–2006"},
+                {"clube": "Arsenal", "periodo": "2006–2016"},
+                {"clube": "Sparta Praga", "periodo": "2016–2017"}
+            ]
+		},
+		{
+			"nome": "Matthijs de Ligt",
+			"clubes": [
+				{"clube": "Ajax", "periodo": "2016–2019"},
+				{"clube": "Juventus", "periodo": "2019–2022"},
+				{"clube": "Bayern de Munique", "periodo": "2022–2024"},
+				{"clube": "Manchester United", "periodo": "2024–"}
+			]
+		},
+		{
+			"nome": "Harry Maguire",
+			"clubes": [
+				{"clube": "Sheffield United", "periodo": "2011–2014"},
+				{"clube": "Hull City", "periodo": "2014–2017"},
+				{"clube": "Wigan", "periodo": "2015 (emp.)"},
+				{"clube": "Leicester", "periodo": "2017–2019"},
+				{"clube": "Manchester United", "periodo": "2019–"}
+			]
+		},
+		{
+			"nome": "Lisandro Martínez",
+			"clubes": [
+				{"clube": "Newell's Old Boys", "periodo": "2017–2018"},
+				{"clube": "Defensa y Justicia", "periodo": "2017–2018 (emp.)"},
+				{"clube": "Defensa y Justicia", "periodo": "2018–2019"},
+				{"clube": "Ajax", "periodo": "2019–2022"},
+				{"clube": "Manchester United", "periodo": "2022–"}
+			]
+		},
+		{
+			"nome": "Diogo Dalot",
+			"clubes": [
+				{"clube": "Porto B", "periodo": "2017–2018"},
+				{"clube": "Porto", "periodo": "2017–2018"},
+				{"clube": "Manchester United", "periodo": "2018–"},
+				{"clube": "Milan", "periodo": "2020–2021 (emp.)"}
+			]
+		},
+		{
+			"nome": "Noussair Mazraoui",
+			"clubes": [
+				{"clube": "Ajax", "periodo": "2018–2022"},
+				{"clube": "Bayern de Munique", "periodo": "2022–2024"},
+				{"clube": "Manchester United", "periodo": "2024–"}
+            ]
+		},
+		{
+			"nome": "Luke Shaw",
+			"clubes": [
+				{"clube": "Southampton", "periodo": "2012–2014"},
+				{"clube": "Manchester United", "periodo": "2014–"}
+			]
+		},
+		{
+			"nome": "Casemiro",
+			"clubes": [
+				{"clube": "São Paulo", "periodo": "2010–2013"},
+				{"clube": "Real Madrid", "periodo": "2013 (emp.)"},
+				{"clube": "Real Madrid", "periodo": "2013–2022"},
+				{"clube": "Porto", "periodo": "2014–2015 (emp.)"},
+				{"clube": "Manchester United", "periodo": "2022–2026"}
+			]
+		}
     ]
 }
