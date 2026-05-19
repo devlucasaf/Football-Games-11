@@ -1,24 +1,270 @@
 {
-    "Brasil": {
-        "1958": {
-            "tecnico": "Vicente Feola",
+    "Selecoes": [
+        {
+            "nome": "Brasil",
+            "tecnicos": ["Telê Santana", "Zagallo", "Parreira", "Felipão"],
             "jogadores": {
-                "goleiro":   ["Castilho", "Gilmar"],
+                "goleiro":   ["Castilho", "Gilmar", "Félix", "Dida", "Marcos", "Taffarel", "Rogério Ceni", "Emerson Leão", "Barbosa", "Manga"],
                 "zagueiro":  ["Bellini", "Zózimo", "Orlando", "Mauro"],
                 "lateral":   ["Djalma Santos", "Oreco", "Nilton Santos", "De Sordi"],
                 "meioCampo": ["Dino Sani", "Didi", "Zito", "Moacir"],
                 "atacante":  ["Zagallo", "Pelé", "Garrincha", "Joel", "Mazzola", "Vavá", "Dida", "Pepe"]
             }
         },
-        "1962": {
-            "tecnico": "Aymoré Moreira",
+        {
+            "nome": "Argentina",
+            "tecnicos": [],
             "jogadores": {
-                "goleiro":   ["Castilho", "Gylmar", "Valdir", "Laércio"],
-                "zagueiro":  ["Bellini", "Zózimo", "Orlando", "Mauro"],
-                "lateral":   ["Djalma Santos", "Oreco", "Nilton Santos", "De Sordi"],
-                "meioCampo": ["Dino Sani", "Didi", "Zito", "Moacir"],
-                "atacante":  ["Zagallo", "Pelé", "Garrincha", "Joel", "Mazzola", "Vavá", "Dida", "Pepe"]
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Colômbia",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Uruguai",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Holanda",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Alemanha",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Bélgica",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "França",
+            "tecnicos": ["Didier Deschamps"],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Portugal",
+            "tecnicos": ["José Mourinho"],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Espanha",
+            "tecnicos": ["Pep Guardiola", "Luis Enrique", "Vicente del Bosque"],
+            "jogadores": {
+                "goleiro":   ["Iker Casillas", "De Gea", "Victor Valdés"],
+                "zagueiro":  ["Sergio Ramos", "Piqué", "Carles Puyol", "Fernando Hierro"],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Itália",
+            "tecnicos": ["Carlo Ancelotti"],
+            "jogadores": {
+                "goleiro":   ["Buffon", "Dino Zoff"],
+                "zagueiro":  ["Paolo Maldini", "Franco Baresi", "Alessandro Nesta", "Fabio Cannavaro"],
+                "lateral":   ["Gianluca Zambrotta", "", "", ""],
+                "meioCampo": ["Andrea Pirlo", "Gennaro Gattuso", "Francesco Totti", "Daniele De Rossi"],
+                "atacante":  ["Alessandro Del Piero", "Filippo Inzaghi", "Roberto Baggio", "Christian Vieri"]
+            }
+        },
+        {
+            "nome": "Inglaterra",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
             }
         }
-    }
+    ],
+    "Clubes": [
+        {
+            "nome": "Flamengo",
+            "tecnicos": ["Filipe Luis", "Jorge Jesus", "Carpegiani", "Luxemburgo", "Dorival Jr"],
+            "jogadores": {
+                "goleiro":   ["Diego Alves", "Júlio Cesar", "Rossi"],
+                "zagueiro":  [],
+                "lateral":   ["Filipe Luis", "Léo Moura", "Junior"],
+                "meioCampo": ["Zico", "De Arrascaeta"],
+                "atacante":  ["Adriano", "Romário", "Gabigol", "Bruno Henrique", "Sávio", "Bebeto"]
+            }
+        },
+        {
+            "nome": "Fluminense",
+            "tecnicos": ["Renato Gaúcho", "Abel Braga", "Muricy Ramalho", "Fernando Diniz", "Parreira", "Telê Santana"],
+            "jogadores": {
+                "goleiro":   ["Diego Cavalieri", "Castilho", "Fábio", "Ricardo Berna", "Fernando Henrique", "Félix"],
+                "zagueiro":  ["Thiago Silva", "Nino", "Gum", "Leandro Euzébio"],
+                "lateral":   ["Marcelo"],
+                "meioCampo": ["Deco"],
+                "atacante":  ["Fred", "Washington", "Romário", "German Cano", "Edmundo"]
+            }
+        },
+        {
+            "nome": "Botafogo",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Vasco da Gama",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Palmeiras",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Corinthians",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "São Paulo",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Santos",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Cruzeiro",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Atlético Mineiro",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Grêmio",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        },
+        {
+            "nome": "Internacional",
+            "tecnicos": [],
+            "jogadores": {
+                "goleiro":   [],
+                "zagueiro":  [],
+                "lateral":   [],
+                "meioCampo": [],
+                "atacante":  []
+            }
+        }
+    ]
 }

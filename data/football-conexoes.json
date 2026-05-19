@@ -4,24 +4,24 @@
             "id": 1,
             "grupos": [
                 {
-                    "categoria": "Ganharam a Bola de Ouro",
+                    "categoria": "Jogadores que jogaram somente por um clube",
                     "cor": "#f1c40f",
-                    "jogadores": ["Luka Modric", "Karim Benzema", "Lionel Messi", "Ronaldinho"]
+                    "jogadores": ["Totti", "Ryan Giggs", "Paolo Maldini", "Nilton Santos"]
                 },
                 {
-                    "categoria": "Jogaram no Milan",
+                    "categoria": "Jogaram no Milan, Juventus e Inter de Milão",
                     "cor": "#e74c3c",
-                    "jogadores": ["Kaká", "Andrea Pirlo", "Andriy Shevchenko", "Zlatan Ibrahimovic"]
+                    "jogadores": ["Edgar Davids", "Pirlo", "Roberto Baggio", "Ibrahimovic"]
                 },
                 {
-                    "categoria": "Seleção da Holanda",
+                    "categoria": "Jogadores europeus que jogaram no brasileirão 2025",
                     "cor": "#e67e22",
-                    "jogadores": ["Johan Cruyff", "Marco van Basten", "Arjen Robben", "Wesley Sneijder"]
+                    "jogadores": ["Memphis Depay", "Saúl", "Nuno Moreira", "Braithwaite"]
                 },
                 {
-                    "categoria": "Campeões da Champions 2015",
+                    "categoria": "Campeões da Champions League e Libertadores",
                     "cor": "#2ecc71",
-                    "jogadores": ["Marcelo", "Toni Kroos", "James Rodríguez", "Casemiro"]
+                    "jogadores": ["Marcelo", "Ronaldinho", "Neymar", "Saúl"]
                 }
             ]
         },
@@ -36,12 +36,12 @@
                 {
                     "categoria": "Artilheiros de Copa do Mundo",
                     "cor": "#f1c40f",
-                    "jogadores": ["Ronaldo", "Miroslav Klose", "Just Fontaine", "Gerd Müller"]
+                    "jogadores": ["Ronaldo", "Klose", "Mbappé", "Gerd Müller"]
                 },
                 {
                     "categoria": "Ídolos do Liverpool",
                     "cor": "#e74c3c",
-                    "jogadores": ["Steven Gerrard", "Kenny Dalglish", "Mohamed Salah", "Fernando Torres"]
+                    "jogadores": ["Gerrard", "Kenny Dalglish", "Mohamed Salah", "Fernando Torres"]
                 },
                 {
                     "categoria": "Zagueiros campeões mundiais",
@@ -106,7 +106,7 @@
                 {
                     "categoria": "Campeões da Champions League como jogadores e técnicos",
                     "cor": "#f1c40f",
-                    "jogadores": ["Zinédine Zidane", "Carlo Ancelotti", "Pep Guardiola", "Johan Cruyff"]
+                    "jogadores": ["Zidane", "Ancelotti", "Pep Guardiola", "Cruyff"]
                 },
                 {
                     "categoria": "Campeões da Euro 2020",
@@ -134,9 +134,9 @@
                     "jogadores": ["Pelé", "Maradona", "Zidane", "Platini"]
                 },
                 {
-                    "categoria": "Colombianos históricos",
+                    "categoria": "Jogadores campeões da Libertadores por 2 clubes diferentes",
                     "cor": "#e67e22",
-                    "jogadores": ["Carlos Valderrama", "René Higuita", "Radamel Falcao Garcia", "James Rodríguez"]
+                    "jogadores": ["Felipe Melo", "Marcos Rocha", "Willian Arão", "Willian Bigode"]
                 },
                 {
                     "categoria": "Jogaram no Tottenham",
@@ -144,9 +144,9 @@
                     "jogadores": ["Gareth Bale", "Luka Modric", "Jürgen Klinsmann", "Gary Lineker"]
                 },
                 {
-                    "categoria": "Campeões da Libertadores com Flamengo",
+                    "categoria": "Jogadores que fizeram o último gol de uma edição de Libertadores",
                     "cor": "#e74c3c",
-                    "jogadores": ["Zico", "Gabigol", "Arrascaeta", "Bruno Henrique"]
+                    "jogadores": ["Junior Santos", "Gabigol", "John Kennedy", "Danilo"]
                 }
             ]
         },
@@ -359,9 +359,9 @@
                     "jogadores": ["Hazard", "Morata", "Essien", "Makelele"]
                 },
                 {
-                    "categoria": "Atacantes franceses",
+                    "categoria": "Artilheiros de Copa do Mundo que jogaram no brasileirão",
                     "cor": "#e74c3c",
-                    "jogadores": ["Henry", "Trezeguet", "Benzema", "Papin"]
+                    "jogadores": ["James Rodríguez", "Diego Forlán", "Ronaldo", "Garrincha"]
                 },
                 {
                     "categoria": "Jogadores nascidos na década de 80",
@@ -369,9 +369,9 @@
                     "jogadores": ["Lionel Messi", "Cristiano Ronaldo", "Neymar", "Luis Suárez"]
                 },
                 {
-                    "categoria": "Capitães de seleções em Copas",
+                    "categoria": "Capitães campeões de seleções em Copas do Mundo",
                     "cor": "#2ecc71",
-                    "jogadores": ["Cafu", "David Beckham", "Sergio Ramos", "Buffon"]
+                    "jogadores": ["Cannavaro", "Messi", "Philipp Lahm", "Iker Casillas"]
                 }
             ]
         },
