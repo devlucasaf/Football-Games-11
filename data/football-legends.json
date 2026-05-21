@@ -2,212 +2,245 @@
     "Selecoes": [
         {
             "nome": "Brasil",
-            "tecnicos": ["Telê Santana", "Zagallo", "Parreira", "Felipão"],
+            "tecnicos": ["Telê Santana", "Zagallo", "Parreira", "Felipão", "Tite"],
             "jogadores": {
-                "goleiro":   ["Castilho", "Gilmar", "Félix", "Dida", "Marcos", "Taffarel", "Rogério Ceni", "Emerson Leão", "Barbosa", "Manga"],
-                "zagueiro":  ["Bellini", "Zózimo", "Orlando", "Mauro"],
-                "lateral":   ["Djalma Santos", "Oreco", "Nilton Santos", "De Sordi"],
-                "meioCampo": ["Dino Sani", "Didi", "Zito", "Moacir"],
-                "atacante":  ["Zagallo", "Pelé", "Garrincha", "Joel", "Mazzola", "Vavá", "Dida", "Pepe"]
+                "goleiro":   ["Castilho", "Gilmar", "Félix", "Dida", "Marcos", "Taffarel", "Rogério Ceni", "E. Leão", "Barbosa", "Manga"],
+                "zagueiro":  ["Bellini", "Aldair", "D. da Guia", "Thiago Silva", "Lúcio", "Luisinho", "Mauro", "Oscar", "Ricardo Gomes", "Roque Júnior"],
+                "lateral":   ["Djalma Santos", "Cafu", "Nilton Santos", "Júnior", "Leandro", "Roberto Carlos", "Marcelo", "Dani Alves", "Carlos Alberto", "Branco", "Zé Maria", "Leornado"], 
+                "meioCampo": ["Gerson", "Didi", "Zico", "Falcão", "Casemiro", "Rivellino", "Kaká", "Rivaldo", "Vampeta", "Sócrates", "Zizinho", "Clodoaldo", "Edmílson", "PC Caju", "Dunga", "Piazza", "Zinho", "Raí", "Mauro Silva", "Denílson", "Gilberto Silva", "Ronaldinho"],
+                "atacante":  ["Bebeto", "Pelé", "Garrincha", "Careca", "Jairzinho", "Leônidas", "Neymar", "Romário", "Ronaldo", "Adriano", "Vavá", "Tostão", "Renato Gaúcho", "R. Dinamite", "Fred", "Dadá Maravilha", "Edu", "Viola", "Heleno de Freitas"]
             }
         },
         {
             "nome": "Argentina",
-            "tecnicos": [],
+            "tecnicos": ["César Menotti", "Lionel Scaloni", "Jorge Sampaoli", "Luis Zubeldía", "Carlos Bianchi", "Marcelo Gallardo"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Fillol", "Dibu Martínez", "S. Romero", "Goycochea", "Rossi", "Carrizo"],
+                "zagueiro":  ["Passarella", "Ruggeri", "C. Romero", "Otamendi", "Perfumo", "Ayala", "Demichelis", "Walter Samuel", "Freytes"],
+                "lateral":   ["Sorín", "J. Zanetti", "Cuciuffo", "Olguín", "Acuña", "Marzolini"],
+                "meioCampo": ["F. Redondo", "Mascherano", "E. Fernandez", "De Paul", "Mac Allister", "S. Verón", "Maradona", "D. Simeoni", "Riquelme", "Bochini", "Podernera", "Ardiles", "D'Alessandro", "L. Acosta", "Conca", "Sívori"],
+                "atacante":  ["L. Messi", "J. Álvarez", "Batistuta", "Higuaín", "Agüero", "Di Stéfano", "Di Maria", "Mario Kempes", "Caniggia", "Moreno", "C. Tévez", "L. Martinez", "G. Cano"]
             }
         },
         {
             "nome": "Colômbia",
-            "tecnicos": [],
+            "tecnicos": ["Francisco Maturana", "Reinaldo Rueda"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["D. Ospina", "R. Higuita", "Córdoba"],
+                "zagueiro":  ["Iván Córdoba", "Mario Yepes", "Yerry Mina", "D. Sanchez", "C. Zapata", "Andrés Escobar"],
+                "lateral":   ["Cuadrado", "S. Arias", "Gildardo Gómez", "P. Armero", "L. Herrera"],
+                "meioCampo": ["J. Rodriguez", "Jhon Arias", "Richard Rios", "Freddy Rincón", "Cuellar", "Fredy Guarín", "C. Valderrama"],
+                "atacante":  ["R. Falcao", "K. Serna", "S. Moreno", "F. Asprilla", "V. Aristizábal", "M. Borja", "Berrío", "A. de Ávila", "Luis Diaz", "Luis Muriel", "Luis Perea"]
             }
         },
         {
             "nome": "Uruguai",
-            "tecnicos": [],
+            "tecnicos": ["Óscar Tabárez", "Alberto Suppici", "Paulo Pezzolano", "Diego Aguirre", "Jorge Fossati"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Mazurkiewicz", "F. Muslera", "R. Rodríguez", "S. Rochet"],
+                "zagueiro":  ["D. Godin", "Lugano", "R. Araújo", "J. Gimenez", "Santamaría", "Nasazzi", "S. Coates"],
+                "lateral":   ["Piquerez", "Varela", "R. Andrade", "P. Forlán", "D. Pereyra", "R. Pavoni", "José Andrade", "Matías Viña"],
+                "meioCampo": ["De Arrascaeta", "De la Cruz", "O. Varela", "F. Bernal", "Pedro Rocha", "Francescoli", "J. Schiaffino", "A. Recoba", "Rubén Paz", "V. Espárrago", "F. Valverde", "M. Ugarte", "Bentancur", "Arévalo Ríos"],
+                "atacante":  ["E. Cavani", "Luis Suarez", "A. Canobbio", "Forlán", "Ghiggia", "H. Scaroni", "F. Morena", "D. Nunez", "F. Torres", "Lavega"]
             }
         },
         {
             "nome": "Holanda",
-            "tecnicos": [],
+            "tecnicos": ["Rinus Michels", "Louis van Gaal"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Van der Sar", "Van Breukelen", "J. Cillessen", "Joop Hiele", "Jan Jongbloed"],
+                "zagueiro":  ["F. De Boer", "Koeman", "Van Dijk", "Jaap Stam", "De Vrij", "Arie Hann"],
+                "lateral":   ["M. Reiziger", "Philli Cocu", "Krol", "Suurbier", "Blind", "Van Tiggelen","Van Aerle"],
+                "meioCampo": ["Cruyff", "Gullit", "Rijkaard", "Neeskens", "Sneijder", "Seedorf", "E. Davids", "Aron Winter", "N. de Jong", "G. Vanenburg", "Van Hanegem", "van de Kerkhof"],
+                "atacante":  ["Van Basten", "Johnny Rep", "A. Robben", "Bergkamp", "Van Persie", "Van Nistelrooy", "M. Depay", "Faas Wilkes", "Kluivert", "Wim Kieft", "Piet Keizer", "Rensenbrink"]
             }
         },
         {
             "nome": "Alemanha",
-            "tecnicos": [],
+            "tecnicos": ["Helmut Schön", "Joachim Löw", "J. Nagelsmann", "Hans-Dieter Flick", "Sepp Herberger", "Franz Beckenbauer", "Jürgen Klopp"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["M. Neuer", "O. Kahn", "Ter Stegen", "Sepp Maier", "Toni Turek", "Bodo Illgner"],
+                "zagueiro":  ["J. Boateng", "Hummels", "Beckenbauer", "Sammer", "Schwarzenbeck", "Schnellinger", "Stefan Reuter"],
+                "lateral":   ["Lahm", "Breitner", "Berti Vogts", "A. Brehme", "Breitner", "Kohlmeyer", "J. Posipal"],
+                "meioCampo": ["Matthäus", "Schweinsteiger", "Kroos", "Gündogan", "M. Ballack", "F. Walter", "Özil", "Andreas Möller", "Overath", "Bonhof", "Uli Hoeneß", "Horst Eckel", "Thomas Häßler", "Littbarski"],
+                "atacante":  ["T. Müller", "Gerd Müller", "Klose", "J. Klinsmann", "R. Völler", "Seeler", "Rummenigge", "L. Podolski", "Helmut Rahn", "Hölzenbein", "Ottmar Walter", "Helmut Rahn", "Riedle"]
             }
         },
         {
             "nome": "Bélgica",
-            "tecnicos": [],
+            "tecnicos": ["Vincent Kompany", "Georges Leekens", "Guy Thys"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
+                "goleiro":   ["T. Courtois", "S. Mignolet", "Michel Preud'homme"],
+                "zagueiro":  ["V. Kompany", "J. Vertonghen", "T. Alderweireld", "T. Vermaelen", "Walter Meeuws", "T. Meunier"],
                 "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "meioCampo": ["De Bruyne", "Y. Carrasco", "Axel Witsel", "M. Fellaini", "Tielemans", "M. Dembélé", "F. Vercauteren"],
+                "atacante":  ["R. Lukaku", "E. Hazard", "D. Mertens", "J. Doku", "Rob Rensenbrink", "B. Voorhoof", "P. Van Himst", "Jef Mermans", "M. Batshuayi", "Origi", "Jef Jurion"]
             }
         },
         {
             "nome": "França",
-            "tecnicos": ["Didier Deschamps"],
+            "tecnicos": ["Didier Deschamps", "Zinédine Zidane", "Albert Batteaux", "Aimé Jacquet", "Arsène Wenger"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Barthez", "Lloris", "Maignan", "Areola", "Mandanda"],
+                "zagueiro":  ["Varane", "Blanc", "Upamecano", "Desailly", "Kimpembe", "Umtiti", "Trésor", "Saliba", "Konaté"],
+                "lateral":   ["Lizarazu", "Sagna", "Evra", "F. Mendy", "Theo Hernandez", "Lilian Thuram", "M. Amoros", "E. Abidal", "Koundé"],
+                "meioCampo": ["Vieira", "Pogba", "Matuidi", "Kanté", "Camavinga", "Tchouameni", "Sissoko", "Deschamps", "Zidane", "Platini", "R. Kopa", "Tigana", "Ribéry", "Makélélé", "J. Tigana", "Rabiot"],
+                "atacante":  ["Giroud", "Benzema", "Fontaine", "Anelka", "Griezmann", "Mbappé", "Dembélé", "T. Henry", "Eric Cantona", "Jean-Pierre Papin", "Coman"]
             }
         },
         {
             "nome": "Portugal",
-            "tecnicos": ["José Mourinho"],
+            "tecnicos": ["José Mourinho", "Jorge Jesus", "Abel Ferreira", "Fernando Santos", "Artur Jorge", "Otto Glória", "Leonardo Jardim", "Ruben Amorim", "Bruno Lage", "Vitor Pereira", "Luís Castro"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Rui Patrício", "Diogo Costa", "Vitor Baía", "M. Bento"],
+                "zagueiro":  ["Pepe", "R. Carvalho", "Bruno Alves", "Ruben Dias", "Fernando Couto", "H. Coelho", "Germano"],
+                "lateral":   ["Hilário", "João Pinto", "Fábio Coentrão", "Nuno Mendes", "Paulo Ferreira", "R. Guerreiro", "Cédric"],
+                "meioCampo": ["Figo", "Rui Costa", "Deco", "Bernardo Silva", "B. Fernandes", "Vitinha", "Coluna", "W. Carvalho", "Paulo Sousa", "J. Moutinho", "Paulo Futre", "Renato Sanches", "João Mário", "D. Pereira"],
+                "atacante":  ["Cristiano Ronaldo", "Eusébio", "Peyroteo", "Pauleta", "Rafael Leão", "Nani", "João Félix", "F. Chalana", "João Vieira", "Quaresma"]
             }
         },
         {
             "nome": "Espanha",
-            "tecnicos": ["Pep Guardiola", "Luis Enrique", "Vicente del Bosque"],
+            "tecnicos": ["Pep Guardiola", "Luis Enrique", "Vicente del Bosque", "Unai Emery", "Julen Lopetegui", "Rafael Benítez", "Mikel Arteta"],
             "jogadores": {
-                "goleiro":   ["Iker Casillas", "De Gea", "Victor Valdés"],
-                "zagueiro":  ["Sergio Ramos", "Piqué", "Carles Puyol", "Fernando Hierro"],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Iker Casillas", "De Gea", "Victor Valdés", "R. Zamora", "Pepe Reina"],
+                "zagueiro":  ["Sergio Ramos", "Piqué", "Carles Puyol", "Fernando Hierro", "Pablo Marí", "Santamaría"],
+                "lateral":   ["Jordi Alba", "Carvajal", "J. Camacho", "Arbeloa", "Capdevila"],
+                "meioCampo": ["Xavi", "Iniesta", "Xabi Alonso", "S. Busquets", "Fábregas", "Isco", "Saúl", "Cazorla", "David Silva", "S. Canales", "Javi Martínez", "Koke", "Luis Suárez", "Gento", "Guti", "Mata"],
+                "atacante":  ["D. Villa", "Raúl", "Fernando Torres", "F. Llorente", "Morientes", "Morata", "Diego Costa", "Butragueño", "Pedro", "Yamal", "N. Williams", "Jesús Navas", "Di Stefano"]
             }
         },
         {
             "nome": "Itália",
-            "tecnicos": ["Carlo Ancelotti"],
+            "tecnicos": ["Carlo Ancelotti", "Arrigo Sacchi", "Antonio Conte", "Marcello Lippi"],
             "jogadores": {
-                "goleiro":   ["Buffon", "Dino Zoff"],
-                "zagueiro":  ["Paolo Maldini", "Franco Baresi", "Alessandro Nesta", "Fabio Cannavaro"],
-                "lateral":   ["Gianluca Zambrotta", "", "", ""],
-                "meioCampo": ["Andrea Pirlo", "Gennaro Gattuso", "Francesco Totti", "Daniele De Rossi"],
-                "atacante":  ["Alessandro Del Piero", "Filippo Inzaghi", "Roberto Baggio", "Christian Vieri"]
+                "goleiro":   ["Buffon", "Dino Zoff", "Donnarumma", "Walter Zenga"],
+                "zagueiro":  ["Maldini", "Baresi", "Nesta", "Cannavaro", "Bastoni", "Bonucci", "Scirea", "Chiellini", "M. Materazzi"],
+                "lateral":   ["Zambrotta", "Facchetti", "Bergomi", "Cabrini", "F. Grosso", "Di Lorenzo"],
+                "meioCampo": ["Pirlo", "Gattuso", "Totti", "De Rossi", "Tardelli", "C. Gentile", "V. Mazzola", "Camoranesi", "S. Perrotta"], 
+                "atacante":  ["Del Piero", "Inzaghi", "R. Baggio", "Christian Vieri", "P. Rossi", "G. Meazza", "Luigi Riva", "Silvio Piola", "Di Natale", "Balottelli", "Luca Toni", "Iaquinta"]
             }
         },
         {
             "nome": "Inglaterra",
-            "tecnicos": [],
+            "tecnicos": ["Alf Ramsey", "Bobby Robson", "Gareth Southgate"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["G. Banks", "Pickford", "Joe Hart", "D. Seaman"],
+                "zagueiro":  ["Rio Ferdinand", "R. Moore", "H. Maguire", "John Terry", "Jack Charlton", "Phil Neal", "J. Stones"],
+                "lateral":   ["A. Cole", "G. Neville", "Ray Wilson", "K. Walker", "Alenxander-Arnold"],
+                "meioCampo": ["Gerrard", "Lampard", "Scholes", "D. Beckham", "B. Charlton", "J. Bellingham", "P. Gascoigne", "D. Edwards", "Billy Wright", "Nobby Stiles", "Cole Palmer", "Declan Rice"],
+                "atacante":  ["Lineker", "Harry Kane", "W. Rooney", "S. Matthews", "J. Grealish", "B. Saka", "Alan Shearer", "Sterling", "P. Foden", "Peter Crouch"]
+            }
+        },
+        {
+            "nome": "Europa",
+            "tecnicos": ["Carlo Ancelotti", "Pep Guardiola", "Luis Enrique", "Vicente del Bosque", "José Mourinho", "Rinus Michels", "Helmut Schön", "Franz Beckenbauer"],
+            "jogadores": {
+                "goleiro":   ["G. Banks", "M. Neuer", "Dino Zoff", "Buffon", "Iker Casillas", "Barthez", "Sepp Maier", "T. Courtois", "O. Kahn", "Van der Sar"],
+                "zagueiro":  ["Beckenbauer", "Maldini", "Baresi", "Sergio Ramos", "Rio Ferdinand", "Cannavaro", "V. Kompany", "Blanc", "Sammer", "Koeman"],
+                "lateral":   ["Lahm", "M. Reiziger", "Zambrotta", "Facchetti", "Carvajal"],
+                "meioCampo": ["Gerrard", "Lampard", "Scholes", "Xavi", "B. Charlton", "Iniesta", "S. Busquets", "Figo", "Rui Costa", "Cruyff", "Gullit", "Zidane", "Matthäus", "Platini", "Pirlo", "De Bruyne", "Seedorf"],
+                "atacante":  ["Gerd Müller", "Cristiano Ronaldo", "Eusébio", "Raúl", "Van Basten", "Bergkamp", "T. Henry", "R. Baggio", "Z. Ibrahimoviç", "R. Lewandowski", "Fontaine"]
+            }
+        },
+        {
+            "nome": "América do Sul",
+            "tecnicos": ["Zagallo", "Telê Santana", "Lionel Scaloni", "César Menotti", "Francisco Maturana"],
+            "jogadores": {
+                "goleiro":   ["Marcos", "Fillol", "Dida", "R. Higuita", "Castilho", "Rogério Ceni", "Taffarel"],
+                "zagueiro":  ["D. da Guia", "Thiago Silva", "Passarella", "Bellini", "Figueroa", "Ruggeri"],
+                "lateral":   ["J. Zanetti", "Cafu", "Nilton Santos", "Roberto Carlos", "Carlos Alberto", "Cuadrado", "Acuña", "Marcelo"],
+                "meioCampo": ["Didi", "Gerson", "Riquelme", "J. Rodriguez", "Zico", "Maradona", "Mascherano", "C. Valderrama"],
+                "atacante":  ["L. Messi", "Pelé", "Ronaldo", "Mario Kempes", "Luis Suarez", "Romário", "Higuaín", "Garrincha"]
+            }
+        },
+        {
+            "nome": "África",
+            "tecnicos": ["Walid Regragui", "Hassan Shehata", "Charles Kumi Gyamfi", "Rabah Saâdane", "Mahmoud El-Gohary", "Stepen Keshi"],
+            "jogadores": {
+                "goleiro":   ["E. Mendy", "Thomas N'Kono", "M. Kidiaba", "B. Grobbelaar", "Carlos Kameni", "Bounou", "El Hadary"],
+                "zagueiro":  ["Koulibaly", "Matip", "K. Touré", "N. Aguerd", "Wael Gomaa", "Lucas Radebe", "Rigobert Song", "Sammy Kuffour"],
+                "lateral":   ["Hakimi", "K. Asamoah", "Lauren Mayer", "Geremi"],
+                "meioCampo": ["Yaya Touré", "Jay-Jay Okocha", "Abedi Pelé", "M. Essien", "E. Amuneke", "S. Muntari", "F. Kessié", "Marc-Vivien Foé", "Mustapha Hadji", "Theophile Abega", "Obi Mikel"],
+                "atacante":  ["M. Salah", "D. Drogba", "Eto'o", "G. Weah", "Roger Milla", "Nwankwo Kanu", "Aubameyang", "Nwankwo Kanu", "Rabah Madjer", "El Khatib", "Salif Keita","Sadio Mané", "Riyad Mahrez", "V. Osimhen", "Benni McCarthy", "E. Adebayor", "Gyan", "Tony Yeboah", "Gervinho", "Kalou", "Choupo-Moting", "Lookman", "R. Yekini"]
             }
         }
     ],
     "Clubes": [
         {
             "nome": "Flamengo",
-            "tecnicos": ["Filipe Luis", "Jorge Jesus", "Carpegiani", "Luxemburgo", "Dorival Jr"],
+            "tecnicos": ["Filipe Luis", "Jorge Jesus", "Carpegiani", "Luxemburgo", "Dorival Jr", "Carlinhos", "Zagallo"],
             "jogadores": {
                 "goleiro":   ["Diego Alves", "Júlio Cesar", "Rossi"],
-                "zagueiro":  [],
-                "lateral":   ["Filipe Luis", "Léo Moura", "Junior"],
-                "meioCampo": ["Zico", "De Arrascaeta"],
-                "atacante":  ["Adriano", "Romário", "Gabigol", "Bruno Henrique", "Sávio", "Bebeto"]
+                "zagueiro":  ["Domingos da Guia", "Léo Pereira", "Danilo", "Pablo Marí", "Rodrigo Caio", "Rondinelli", "Juan", "R. Angelim", "Mozer"],
+                "lateral":   ["Filipe Luis", "Léo Moura", "Júnior", "Leandro", "Rodinei"],
+                "meioCampo": ["Zico", "De Arrascaeta", "Zizinho", "Dida", "Adílio", "Petkovic", "Andrade", "Everton Ribeiro","Carlinhos", "Diego"],
+                "atacante":  ["Adriano", "Romário", "Gabigol", "Bruno Henrique", "Sávio", "Bebeto", "Leônidas da Silva", "Nunes", "Evaristo de Macedo", "Zagallo", "Doval", "Pirillo"]
             }
         },
         {
             "nome": "Fluminense",
             "tecnicos": ["Renato Gaúcho", "Abel Braga", "Muricy Ramalho", "Fernando Diniz", "Parreira", "Telê Santana"],
             "jogadores": {
-                "goleiro":   ["Diego Cavalieri", "Castilho", "Fábio", "Ricardo Berna", "Fernando Henrique", "Félix"],
-                "zagueiro":  ["Thiago Silva", "Nino", "Gum", "Leandro Euzébio"],
-                "lateral":   ["Marcelo"],
-                "meioCampo": ["Deco"],
-                "atacante":  ["Fred", "Washington", "Romário", "German Cano", "Edmundo"]
+                "goleiro":   ["Diego Cavalieri", "Castilho", "Fábio", "Ricardo Berna", "Fernando Henrique", "Félix", "Paulo Victor"],
+                "zagueiro":  ["Thiago Silva", "Nino", "Gum", "Leandro Euzébio", "Edinho", "Ricardo Gomes"],
+                "lateral":   ["Marcelo", "Carlinhos", "Bruno", "Samuel Xavier", "Branco", "Carlos Alberto"],
+                "meioCampo": ["Deco", "Thiago Neves", "Conca", "Rivellino", "Romerito", "Ganso", "Martinelli", "Gerson", "Didi", "Preguinho", "Marcão", "Samarone"],
+                "atacante":  ["Fred", "Washington", "Romário", "German Cano", "Edmundo", "Assis", "Waldo", "Ézio", "Renato Gaúcho", "Jhon Arias", "Pintinho", "Lula"]
             }
         },
         {
             "nome": "Botafogo",
-            "tecnicos": [],
+            "tecnicos": ["Artur Jorge", "João Saldanha"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Jefferson", "Manga", "Gatito", "John"],
+                "zagueiro":  ["A. Barboza", "Joel Carli", "M. Galvão", "Gottardo", "Brito", "Gonçalves", "S. Leônidas"],
+                "lateral":   ["Alex Telles", "Nilton Santos", "Carlos Alberto", "Josimar", "M. Chagas", "Josimar"],
+                "meioCampo": ["Savarino", "Didi", "Gerson", "Seedorf", "T. Almada", "Alemão", "PC Caju", "Alemão"],
+                "atacante":  ["Luiz Henrique", "Loco Abreu", "Garrincha", "Zagallo", "Jairzinho", "Igor Jesus", "Junior Santos", "Dodô", "G. Herrera", "Amarildo", "Quarentinha", "Heleno de Freitas", "Túlio Maravilha"]
             }
         },
         {
             "nome": "Vasco da Gama",
-            "tecnicos": [],
+            "tecnicos": ["Joel Santana"],
             "jogadores": {
-                "goleiro":   [],
+                "goleiro":   ["Carlos Germano", "Martin Silva"],
                 "zagueiro":  [],
                 "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "meioCampo": ["J. Pernambucano", "Pedrinho"],
+                "atacante":  ["Romário", "Edmundo", "R. Dinamite"]
             }
         },
         {
             "nome": "Palmeiras",
             "tecnicos": [],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
+                "goleiro":   ["Marcos", "Weverton", "Fernando Prass"],
+                "zagueiro":  ["Gustavo Gómez"],
                 "lateral":   [],
-                "meioCampo": [],
+                "meioCampo": ["Raphael Veiga"],
                 "atacante":  []
             }
         },
         {
             "nome": "Corinthians",
-            "tecnicos": [],
+            "tecnicos": ["Tite", "Mano Menezes", "Oswaldo Brandão", "Nelsinho Batista", "Oswaldo de Oliveira"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Cássio"],
+                "zagueiro":  ["Gamarra", "Chicão"],
+                "lateral":   ["Fagner", "Roberto Carlos"],
+                "meioCampo": ["Renato Augusto", "Ralf", "Paulinho", "Sócrates", "M. Carioca", "Neto", "Biro-Biro", "Rivellino", "Danilo", "Vampeta"],
+                "atacante":  ["Ronaldo", "Paolo Guerrero", "Jô", "Emerson Sheik", "C. Tevez"]
             }
         },
         {
             "nome": "São Paulo",
-            "tecnicos": [],
+            "tecnicos": ["Muricy Ramalho", "Paulo Autuori", "Telê Santana", "Dorival Jr"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
+                "goleiro":   ["Rogério Ceni", "Rafael"],
+                "zagueiro":  ["Lugano"],
                 "lateral":   [],
-                "meioCampo": [],
+                "meioCampo": ["Raí", "Kaká"],
                 "atacante":  []
             }
         },
@@ -219,51 +252,51 @@
                 "zagueiro":  [],
                 "lateral":   [],
                 "meioCampo": [],
-                "atacante":  []
+                "atacante":  ["Pelé", "Neymar"]
             }
         },
         {
             "nome": "Cruzeiro",
-            "tecnicos": [],
+            "tecnicos": ["Marcelo Oliveira", "Mano Menezes", "Vanderlei Luxemburgo", "Ílton Chaves"],
             "jogadores": {
-                "goleiro":   [],
+                "goleiro":   ["Fábio"],
                 "zagueiro":  [],
                 "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "meioCampo": ["Alex"],
+                "atacante":  ["Ronaldo", "Tostão"]
             }
         },
         {
             "nome": "Atlético Mineiro",
-            "tecnicos": [],
+            "tecnicos": ["Cuca"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
+                "goleiro":   ["Victor", "Everson"],
+                "zagueiro":  ["Leonardo Silva", "Réver"],
                 "lateral":   [],
                 "meioCampo": [],
-                "atacante":  []
+                "atacante":  ["Dadá Maravilha", "Hulk"]
             }
         },
         {
             "nome": "Grêmio",
-            "tecnicos": [],
+            "tecnicos": ["Renato Gaúcho"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Marcelo Grohe", "Danrlei"],
+                "zagueiro":  ["Geromel", "Hugo de León", "A. Batista"],
+                "lateral":   ["Everaldo", "Roger Machado"],
+                "meioCampo": ["Ronaldinho"],
+                "atacante":  ["Renato Gaúcho", "Paulo Nunes", "Jardel"]
             }
         },
         {
             "nome": "Internacional",
-            "tecnicos": [],
+            "tecnicos": ["Abel Braga", "Ênio Andrade", "Rubens Minelli", "Teté"],
             "jogadores": {
-                "goleiro":   [],
-                "zagueiro":  [],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  []
+                "goleiro":   ["Clemer", "Benitez", "Manga"],
+                "zagueiro":  ["Figueroa", "Índio"],
+                "lateral":   ["Gamarra"],
+                "meioCampo": ["D'Alessandro", "Falcão", "Gabiru", "Caçapava"],
+                "atacante":  ["Fernandão", "Fabiano", "Valdomiro", "Claudiomiro", "Escurinho", "R. Sóbis"]
             }
         }
     ]

@@ -1,162 +1,162 @@
 {
     "Athletico-PR": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["Santos", "Mycael", "M. Soares"],
+        "zagueiro":  ["C. Terán", "Léo Pelé", "Arthur Dias", "Aguirre"],
+        "lateral":   ["Gilberto", "G. Benavídez", "Claudinho", "L. Esquivel", "Léo Derik"],
+        "volante":   ["Luiz Gustavo", "Jadson"],
+        "meioCampo": ["J. Portilla", "A. García", "Felipinho", "B. Zapelli", "Riquelme", "João Cruz", "D. Kogitzki"],
+        "atacante":  ["S. Mendoza", "K. Viveros", "R. Peixoto", "Isaac", "Leozinho", "Bruninho", "F. Chiqueti", "Renan Viana", "Julimar"]
     },
     "Atletico-MG": {
-        "goleiro": ["Gabriel Delfim", "Everson", "Pedro Cobra"],
-        "zagueiro": ["Ivan Román", "Ruan Tressoldi", "Junior Alonso", "Lyanco", "Vitor Hugo", "Samuel Lima", "Vitão"],
-        "lateral": ["Natanael", "Renan Lodi", "Preciado", "Luís Gustavo", "Pascini"],
-        "volante": ["Alexander", "Maycon", "Patrick", "Alan Franco", "Igor Toledo", "Victor Hugo"],
-        "meioCampo": ["Gustavo Scarpa", "Bernard", "Igor Gomes", "Reinier", "Índio", "Mamady Cissé", "Iseppe"],
-        "atacante": ["Cassierra", "Alan Miranda", "Cauã Soares", "Rony", "Cuello", "Júnior Santos", "Murillo Cardoso", "Cadu", "Biel", "Dudu"]
+        "goleiro":   ["G. Delfim", "Everson", "Robert", "P. Cobra"],
+        "zagueiro":  ["Ivan Román", "R. Tressoldi", "J. Alonso", "Lyanco", "Vitor Hugo", "Vitão"],
+        "lateral":   ["Natanael", "Renan Lodi", "Preciado", "Pascini"],
+        "volante":   ["Alexander", "Maycon", "Patrick", "Alan Franco", "Igor Toledo", "Tomás Perez", "Victor Hugo"],
+        "meioCampo": ["G. Scarpa", "Bernard", "Igor Gomes", "Reinier", "Índio", "Mamady Cissé", "Iseppe"],
+        "atacante":  ["Cassierra", "Alan Minda", "Cauã Soares", "Cuello", "M. Cardoso", "Cadu", "Dudu"]
     },
     "Bahia": {
-        "goleiro": ["João Paulo", "Ronaldo"],
-        "zagueiro": ["David Duarte", "Marcos Victor", "Ramos Mingo", "Luiz Gustavo", "Gabriel Xavier", "Kanu"],
-        "lateral": ["Gilberto", "Iago Borduchi", "Zé Guilherme", "Roman Gomez", "Luciano Juba"],
-        "volante": ["Rezende", "Jean Lucas", "Erick", "Nicolás Acevedo", "Jota"],
-        "meioCampo": ["Cauly", "Éverton Ribeiro", "Rodrigo Nestor", "Michel Araújo", "CAio Alexandre"],
-        "atacante": ["Ademir", "Erick Pulga", "Willian José", "Kayky", "Sanabria", "Kike Oliveira"]
+        "goleiro":   ["J. Paulo", "Léo Vieira", "Ronaldo"],
+        "zagueiro":  ["D. Duarte", "Marcos Victor", "Ramos Mingo", "Luiz Gustavo", "Gabriel Xavier", "Kanu"],
+        "lateral":   ["Gilberto", "Iago Borduchi", "Zé Guilherme", "Roman Gomez", "Luciano Juba"],
+        "volante":   ["Rezende", "Jean Lucas", "Erick", "N. Acevedo", "Jota"],
+        "meioCampo": ["Éverton Ribeiro", "R. Nestor", "Michel Araújo", "CAio Alexandre"],
+        "atacante":  ["Ademir", "Erick Pulga", "Everaldo", "Willian José", "Sanabria", "K. Oliveira"]
     },
     "Botafogo": {
-        "goleiro": ["Raul", "Neto", "Léo Linck", "Christian Loor"],
-        "zagueiro": ["Bastos", "Alexander Barboza", "Gabriel"],
-        "lateral": ["Vitinho", "Mateo Ponte", "Alex Telles", "Marçal"],
-        "volante": ["Allan", "Newton", "Danilo"],
-        "meioCampo": ["Álvaro Montoro", "Santiago Rodríguez"],
-        "atacante": ["Artur", "Chris Ramos", "Matheus Martins", "Jordan Barrera", "Nathan Fernandes", "Joaquín Correa", "Arthur Cabral"]
+        "goleiro":   ["Raul", "Neto", "Léo Linck", "C. Loor"],
+        "zagueiro":  ["Bastos", "A. Barboza", "Gabriel", "Ythallo", "Ferraresi", "Anthony", "Kaio Pantaleão"],
+        "lateral":   ["Vitinho", "Mateo Ponte", "Alex Telles", "Marçal", "Caio Roque", "Kadu"],
+        "volante":   ["Allan", "Newton", "Danilo", "C. Medina", "Huguinho", "Wallace Davi", "Edenilson"],
+        "meioCampo": ["Montoro", "Santi Rodríguez"],
+        "atacante":  ["Chris Ramos", "M. Martins", "J. Barrera", "N. Fernandes", "Joaquín Correa", "Arthur Cabral", "Júnior Santos", "Kadir", "L. Villalba"]
     },
     "Bragantino": {
-        "goleiro": ["Cleiton", "Fernando Costa", "Fabrício", "Lucão"],
-        "zagueiro": ["Guzmán Rodriguez", "Eduardo Santos", "Alix Vinicius", "Pedro Henrique", "Gustavo Marques"],
-        "lateral": ["Vanderlan", "Juninho Capixaba", "Guilherme Lopes", "Agustín Sant'Anna", "Andrés Hurtado", "Nathan Mendes"],
-        "volante": ["Fabinho", "Gabriel", "Matheus Fernandes"],
+        "goleiro":   ["Cleiton", "F. Costa", "Fabrício", "Lucão"],
+        "zagueiro":  ["G. Rodriguez", "E. Santos", "Alix Vinicius", "Pedro Henrique", "Gustavo Marques"],
+        "lateral":   ["Vanderlan", "J. Capixaba", "Guilherme Lopes", "A. Sant'Anna", "A. Hurtado", "Nathan Mendes"],
+        "volante":   ["Fabinho", "Gabriel", "M. Fernandes"],
         "meioCampo": ["Ramires", "Jhon Jhon", "Gustavo Neves", "Praxedes", "João Neto"],
-        "atacante": ["Eduardo Sasha", "Pitta", "Fernando", "Vinicinho", "Thiago Borbas", "Lucas Barbosa", "Mosquera", "Nacho", "Marcelinho Braz", "Athyrson"]
+        "atacante":  ["E. Sasha", "Pitta", "Fernando", "Vinicinho", "Thiago Borbas", "Lucas Barbosa", "Mosquera", "Nacho", "M. Braz", "Athyrson"]
     },
     "Chapecoense": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["Rafael Santos", "Kainã", "Anderson"],
+        "zagueiro":  ["Bruno Leonardo", "Doma", "João Paulo", "Kauan", "Rafael Thyere", "Victor Caetano", "Vinicius"],
+        "lateral":   ["Marcos Vinicius", "Bruno Pacheco", "Everton", "Mancha", "Walter Clar"],
+        "volante":   ["João Vitor", "Bruno Matias", "V. Balieiro", "David", "Higor Meritão", "Camilo", "Carvalheira"],
+        "meioCampo": ["G. Augusto", "Jean Carlos", "Robert"],
+        "atacante":  ["Italo", "João Bom", "Marcinho", "M. Garcez", "Neto Pessoa", "Rubens", "Wermeson", "Bolasie", "Ênio"]
     },
     "Corinthians": {
-        "goleiro": ["Hugo Souza", "Matheus Donelli", "Felipe Longo"],
-        "zagueiro": ["Gabriel Paulista", "André Ramalho", "Cacá", "Gustavo Henrique"],
-        "lateral": ["Matheuzinho", "Pedro Milans", "Matheus Bidu", "Hugo", "João Vitor"],
-        "volante": ["Raniele", "Charles", "André", "Luiz Gustavo", "José Martinez"],
-        "meioCampo": ["Breno Bidon", "Rodrigo Garro", "André Carrillo", "Matheus Pereira", "Gui Amorim", "Dieguinho"],
-        "atacante": ["Yuri Alberto", "Memphis Depay", "Vitinho", "Pedro Raul", "Héctor Hernández", "Kayke", "Gui Negão"]
+        "goleiro":   ["Hugo", "Kauê", "Felipe Longo"],
+        "zagueiro":  ["G. Paulista","João Pedro", "A. Ramalho", "G. Henrique"],
+        "lateral":   ["Matheuzinho", "Pedro Milans", "Matheus Bidu", "Angilieri", "Hugo", "João Vitor"],
+        "volante":   ["Raniele", "Charles", "André", "Luiz Gustavo", "José Martinez", "Allan", "Alex Santana"],
+        "meioCampo": ["Breno Bidon", "Garro", "André Carrillo", "Matheus Pereira", "Gui Amorim", "Dieguinho"],
+        "atacante":  ["Yuri Alberto", "Depay", "Vitinho", "Pedro Raul", "Kaio César", "Kayke", "Gui Negão", "Lingard"]
     },
     "Coritiba": {
-        "goleiro": ["Pedro Morisco", "Pedro Rangel", "Benassi", "Gabriel Leite"],
-        "zagueiro": ["Maicon", "Rodrigo Moledo", "Guilherme Aquino", "Tiago Cóser"],
-        "lateral": ["Matías Fracchia", "João Almeida", "Alex Silva", "Felipe Guimarães", "Zeca"],
-        "volante": ["Geovane", "Filipe Machado", "Sebastián Gomez", "Thiago Santos"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["P. Morisco", "Pedro Rangel", "Benassi", "Gabriel Leite", "Keiller"],
+        "zagueiro":  ["Maicon", "Rodrigo Moledo", "Jacy", "Tiago Cóser", "Thiago Santos"],
+        "lateral":   ["Bruno Melo", "João Almeida", "JP Chermont", "Felipe Jonatan", "Tinga"],
+        "volante":   ["S. Gómez", "Willian Oliveira", "Wallisson", ""],
+        "meioCampo": ["Vini Paulista", "Gustavo", "Matheus Dias", "Fernando Sobral", "Josué", "Ararat"],
+        "atacante":  ["Lavega", "Lucas Ronier", "Enzo", "Fabinho", "Pedro Rocha", "Rodrigo Rodrigues", "Keno", "Breno Lopes", "Renato Marques"]
     },
     "Cruzeiro": {
-        "goleiro": ["Cássio", "Matheus Cunha", "Otávio"],
-        "zagueiro": ["Fabrício Bruno", "Lucas Villalba", "Jonathan Jesus", "João Marcelo"],
-        "lateral": ["Kauã Moraes", "Kaiki Bruno", "William", "Fagner", "Kauã Prates"],
-        "volante": ["Walace", "Matheus Henrique", "Lucas Silva", "Murilo Rhikman", "Lucas Romero"],
-        "meioCampo": ["Gerson", "Christian", "Ryan Guilherme", "Vitinho", "Japa", "Matheus Pereira"],
-        "atacante": ["Luis Sinisterra", "Wanderson", "Kaique Kenji", "Rodriguinho", "Keny Arroyo", "Marquinhos", "Kaio Jorge", "Néiser Villarreal", "Chico da Costa"]
+        "goleiro":   ["Cássio", "Matheus Cunha", "Otávio"],
+        "zagueiro":  ["Fabrício Bruno", "L. Villalba", "Jonathan Jesus", "João Marcelo"],
+        "lateral":   ["Kauã Moraes", "Kaiki Bruno", "William", "Fagner", "Kauã Prates"],
+        "volante":   ["Walace", "Matheus Henrique", "Gerson", "Lucas Silva", "Japa", "Lucas Romero", "Christian"],
+        "meioCampo": ["Matheus Pereira"],
+        "atacante":  ["L. Sinisterra",  "B. Rodrigues", "Wanderson", "Kaique Kenji", "Rodriguinho", "Keny Arroyo", "Marquinhos", "Kaio Jorge", "N. Villarreal", "Chico da Costa"]
     },
     "Flamengo": {
-        "goleiro": ["Rossi", "Andrew", "Dyogo Alves"],
-        "zagueiro": ["Léo Ortiz", "Léo Pereira", "Danilo", "Vitão", "João Victor"],
-        "lateral": ["Varela", "Ayrton Lucas", "Emerson Royal", "Alex Sandro"],
-        "volante": ["Erick Pulgar", "Jorginho", "Allan", "Evertton Araújo"],
-        "meioCampo": ["Saúl", "De Arrascaeta", "Jorge Carrascal", "De la Cruz"],
-        "atacante": ["Luiz Araújo", "Pedro", "Everton", "Samuel Lino", "Bruno Henrique", "Michael", "Gonzalo Plata"]
+        "goleiro":   ["Rossi", "Andrew", "D. Alves"],
+        "zagueiro":  ["Léo Ortiz", "Léo Pereira", "Danilo", "Vitão", "João Victor"],
+        "lateral":   ["Varela", "Ayrton Lucas", "Emerson Royal", "Alex Sandro"],
+        "volante":   ["E. Pulgar", "Jorginho", "E. Araújo"],
+        "meioCampo": ["Saúl", "De Arrascaeta", "J. Carrascal", "De la Cruz", "L. Paquetá"],
+        "atacante":  ["L. Araújo", "Pedro", "Everton", "Samuel Lino", "B. Henrique", "G. Plata", "Wallace Yan"]
     },
     "Fluminense": {
-        "goleiro": ["Fábio", "Vitor Eudes", "Marcelo Pitaluga"],
-        "zagueiro": ["Jemmes", "Ignácio", "Freytes", "Igor Rabello", "Millan" ],
-        "lateral": ["Samuel Xavier", "Renê", "Julio Fideles", "Guilherme Arana", "Guga"],
-        "volante": ["Facundo Bernal", "Martinelli", "Nonato", "Hércules", "Otávio"],
-        "meioCampo": ["Paulo Henrique Ganso", "Lucho Acosta", "Alisson", "Rubén Lezcano", "Jefferson Savarino"],
-        "atacante": ["Soteldo", "Castillo", "Germán Cano", "Canobbio", "Riquelme", "Hulk", "Kevin Serna", "Jhon Kennedy"]
+        "goleiro":   ["Fábio", "V. Eudes", "M. Pitaluga"],
+        "zagueiro":  ["Jemmes", "Ignácio", "Freytes", "I. Rabello", "Millan", "Davi Schuindt"],
+        "lateral":   ["S. Xavier", "Renê", "J. Fideles", "G. Arana", "Guga"],
+        "volante":   ["Facundo Bernal", "Martinelli", "Alisson", "Nonato", "Hércules", "Otávio"],
+        "meioCampo": ["PH Ganso", "L. Acosta", "Savarino"],
+        "atacante":  ["Soteldo", "Castillo", "G. Cano", "Canobbio", "Riquelme", "Hulk", "K. Serna", "Jhon Kennedy", "Matheus Reis"]
     },
     "Grêmio": {
-        "goleiro": ["Weverton", "Gabriel Grando", "Thiago Beltrame", "Gabriel Menegon"],
-        "zagueiro": ["Fabián Balbuena", "Wagner Leonardo", "Kannemann", "Rodrigo Ely", "Luis Eduardo", "Viery"],
-        "lateral": ["Marcos Rocha", "João Pedro", "Marlon", "Lucas Esteves", "Caio Paulista"],
-        "volante": ["Cuéllar", "Dodi", "Erick Noriega", "Villasanti", "Arthur", "Tiago"],
-        "meioCampo": ["Edenilson", "Franco Cristaldo", "Monsalve", "Jeferson Forneck", "Roget", "Riquelme", "Willian"],
-        "atacante": ["Pavon", "Amazu", "Aravena", "Tetê", "Braithwaite", "Gabriel Mec", "André Henrique", "Carlos Vinícius", "Enamorado"]
+        "goleiro":   ["Weverton", "Gabriel Grando", "Thiago Beltrame", "Gabriel Menegon"],
+        "zagueiro":  ["Balbuena", "W. Leonardo", "Kannemann", "Rodrigo Ely", "Luis Eduardo", "Viery", "Gustavo Martins"],
+        "lateral":   ["Marcos Rocha", "João Pedro", "Marlon", "PEdro Gabriel", "Caio Paulista"],
+        "volante":   ["J. Nardoni", "Dodi", "Erick Noriega", "Villasanti", "Arthur", "Tiago", "L. Pérez"],
+        "meioCampo": ["Monsalve", "J. Forneck", "Roget", "Riquelme", "Willian"],
+        "atacante":  ["Pavon", "Amazu", "Tetê", "Braithwaite", "Gabriel Mec", "André Henrique", "Carlos Vinícius", "Enamorado"]
     },
     "Internacional": {
-        "goleiro": ["Sergio Rochet", "Ivan Quaresma", "Kauan Jesus", "Anthoni"],
-        "zagueiro": ["Félix Torres", "Juninho", "Clayton Sampaio", "Gabriel Mercado", "Victor Gabriel"],
-        "lateral": ["Alan Benítez", "Bruno Gomes", "Bernabei", "Braian Aguirre"],
-        "volante": ["Rodrigo Villagra", "Bruno Henrique", "Ronaldo", "Thiago Maia", "Richard"],
-        "meioCampo": ["AAlan Patrick", "Alan Rodríguez", "Bruno Tabata", "Paulinho", "Gustavo Prado"],
-        "atacante": ["Johan Carbonero", "Rafael Borré", "Vitinho"]
+        "goleiro":   ["S. Rochet", "Diego Esser", "Kauan Jesus", "Anthoni"],
+        "zagueiro":  ["F. Torres", "Juninho", "C. Sampaio", "G. Mercado", "V. Gabriel"],
+        "lateral":   ["M. Bahia", "Bruno Gomes", "Bernabei", "B. Aguirre"],
+        "volante":   ["R. Villagra", "B. Henrique", "Ronaldo", "Thiago Maia", "Richard"],
+        "meioCampo": ["Alan Patrick", "Alan Rodríguez", "Bruno Tabata", "Paulinho"],
+        "atacante":  ["J. Carbonero", "R. Borré", "Vitinho", "Alerrandro", "Kayky"]
     },
     "Mirassol": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["Georgemy", "Walter", "Thomazella", "Alex Muralha"],
+        "zagueiro":  ["Marcelinho", "W. Machado", "Rodrigues", "L. Oliveira", "João Victor"],
+        "lateral":   ["Cauã Victor", "Victor Luis", "Igor Cariús", "Igor Formida", "Daniel Borges", "Reinaldo"],
+        "volante":   ["Gabriel Pires", "Neto Moura", "Yuri Lara", "Denilson"],
+        "meioCampo": ["Chico Kim", "Lucas Mugni", "Shaylon", "Eduardo", "Aldo Filho"],
+        "atacante":  ["V. Bacchi", "Tiquinho Soares", "C. Renato", "Negueba", "Nathan Fogaça", "Galeano", "Galdiano", "E. Carioca", "C. Eduardo", "André Luis", "Alesson"]
     },
     "Palmeiras": {
-        "goleiro": ["Carlos Miguel", "Marcelo Lomba", "Aranha"],
-        "zagueiro": ["Bendetti", "Bruno Fuchs", "Gustavo Gómez", "Murilo"],
-        "lateral": ["Khellven", "Jefté", "Joaquín Piquerez", "Agustín Giay"],
-        "volante": ["Marlon Freitas", "Lucas Evangelista", "Emiliano Martínez", "Allan"],
-        "meioCampo": ["Andreas Pereira", "Maurício", "Raphael Veiga", "Felipe Anderson", "Figueiredo"],
-        "atacante": ["Bruno Rodrigues", "Flaco López", "Luighi", "Paulinho", "Ramón Sosa", "Vitor Roque"]
+        "goleiro":   ["Carlos Miguel", "M. Lomba", "Aranha"],
+        "zagueiro":  ["Bendetti", "Bruno Fuchs", "Gustavo Gómez", "Murilo"],
+        "lateral":   ["Khellven", "Jefté", "Joaquín Piquerez", "Agustín Giay", "Arthur"],
+        "volante":   ["Marlon Freitas", "Lucas Evangelista", "Emiliano Martínez", "Larson"],
+        "meioCampo": ["Andreas Pereira", "Maurício", "F. Anderson", "Figueiredo"],
+        "atacante":  ["Flaco López", "Luighi", "Paulinho", "Ramón Sosa", "Vitor Roque", "Allan", "Jhon Arias"]
     },
     "Remo": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["Ivan", "João Vitor", "M. Rangel", "Alexandre","Ygor Vinhas"],
+        "zagueiro":  ["Tassano", "Kayke Almeida", "D. Tchamba", "Léo Andrade", "Marllon", "Thalisson"],
+        "lateral":   ["Cufré", "João Lucas", "Marcelinho", "M. Alexandre", "Mayk"],
+        "volante":   ["Freitas", "Pavani", "Jaderson", "Zé Ricardo", "Zé Welison", "Leonel Picco"],
+        "meioCampo": ["David Braga", "F. Catorazzi", "Panagiotis", "Patrick", "Vitor Bueno"],
+        "atacante":  ["Alef Manga", "Carlinhos", "D. Hernández", "Eduardo Melo", "Poveda", "Taliari", "Yago Pikachu", "Jajá", "João Pedro", "Rafael Monti"]
     },
     "Santos": {
-        "goleiro": ["Diógenes", "Gabriel Brazão", "João Pedro"],
-        "zagueiro": ["Zé Ivaldo", "Alexis Duarte", "João Basso", "Luan Peres", "Adonis Frías"],
-        "lateral": ["Vini Lira", "Mayke", "Igor Vínicius", "Escobar", "JP Chermont"],
-        "volante": ["João Schmidt", "Zé Rafael", "Tomás Rincón", "Willian Arão", "Pepê Fermino", "Gustavo Henrique"],
-        "meioCampo": ["Thaciano", "Gabriel Menino", "Miguelito", "Gabriel Bontempo"],
-        "atacante": ["Robinho Jr", "Gabigol", "Neymar", "Caballero", "Lautaro Díaz", "Brahimi", "Barreal", "Rollheiser", "Pedro Assis", "Mateus Xavier", "Tiquinho Soares"]
+        "goleiro":   ["Diógenes", "Gabriel Brazão", "João Pedro", "Rodrigo Falcão", "Diógenes"],
+        "zagueiro":  ["Zé Ivaldo", "Alexis Duarte", "João Ananias", "L. Veríssimo", "Luan Peres", "Adonis Frías"],
+        "lateral":   ["Vini Lira", "Mayke", "Igor Vínicius", "G. Escobar"],
+        "volante":   ["João Schmidt", "Zé Rafael", "Tomás Rincón", "Willian Arão", "Oliva"],
+        "meioCampo": ["G. Menino", "Miguelito", "G. Bontempo", "G. Henrique", "Rollheiser", "Neymar"],
+        "atacante":  ["Robinho Jr", "Gabigol", "Thaciano", "Lautaro Díaz", "Rony", "Barreal", "Mateus Xavier", "Moisés", "Nadson"]
     },
     "São Paulo": {
-        "goleiro": ["Rafael", "Carlos Coronel", "Young"],
-        "zagueiro": ["Rafael Tolói", "Doria", "Robert Arboleda", "Alan Franco", "Nahuel Ferraresi", "Sabino"],
-        "lateral": ["Enzo Díaz", "Wendell", "Cédric Soares", "Maik", "Nicolas"],
-        "volante": ["Marcos Antônio", "Damián Bobadilla", "Pablo Maia", "Negrucci", "Luan", "Hugo", "Danielzinho"],
-        "meioCampo": ["Pablo Ferreira"],
-        "atacante": ["Lucas Moura", "Jonathan Calleri", "Luciano", "Ferreira", "Gonzalo Tapia", "André Silva", "Lucca", "Ryan Francisco"]
+        "goleiro":   ["Rafael", "Carlos Coronel", "Young"],
+        "zagueiro":  ["Rafael Tolói", "Dória", "R. Arboleda", "Alan Franco", "Sabino"],
+        "lateral":   ["Enzo Díaz", "Wendell", "Cédric Soares", "Maik", "Nicolas", "Lucas Ramon"],
+        "volante":   ["Marcos Antônio", "D. Bobadilla", "Pablo Maia", "Negrucci", "Luan", "Hugo", "Danielzinho"],
+        "meioCampo": ["P. Ferreira", "Cauly"],
+        "atacante":  ["Lucas Moura", "Calleri", "Luciano", "Ferreirinha", "Tapia", "André Silva", "Artur", "Lucca", "Ryan Francisco"]
     },
     "Vasco": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["Léo Jardim", "D. Fuzato", "Pablo"],
+        "zagueiro":  ["W. Fernandes", "Saldivia", "C. Cuesta", "Robert Renan", "L. Freitas"],
+        "lateral":   ["P. Rodríguez", "P. Henrique", "Cuiabano", "Lucas Piton"],
+        "volante":   ["Cauan Barros", "Thiago Mendes", "Ramon Rique", "Tchê Tchê", "Jair", "Hugo Moura", "M. Carvalho"],
+        "meioCampo": ["Rojas", "JP"],
+        "atacante":  ["Spinelli", "Brenner", "Hinestroza", "Matheus França", "Andrés Gomez", "João Vitor", "Nuno Moreira", "David", "Adson"]
     },
     "Vitória": {
-        "goleiro": ["a"],
-        "zagueiro": ["b", "c"],
-        "lateral": ["d", "e"],
-        "volante": ["f", "g"],
-        "meioCampo": ["h", "i", "j"],
-        "atacante": ["k", "l", "m"]
+        "goleiro":   ["Lucas Arcanjo", "Gabriel", "Yuri Sena", "Fintelman"],
+        "zagueiro":  ["Camutanga", "Riccieli", "Edu", "Neris"],
+        "lateral":   ["Claudinho", "Ramon", "Luan Cândido", "Nathan Mendes", "Jamerson", "Matheusinho"],
+        "volante":   ["Ronald", "R. Ismael", "Dudu", "G. Baralhas", "C. Gonçalves"],
+        "meioCampo": ["Matheuzinho", "Cantalapiedra", "Lucas Silva", "C. Menezes", "E. Martínez", "Pablo"],
+        "atacante":  ["Marinho", "Osvaldo", "D. Tarzia", "Saverio", "Fabri", "Renzo López", "Erick", "R. Kayzer", "Anderson"]
     }
 }
