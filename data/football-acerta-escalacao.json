@@ -18,25 +18,12 @@
                 { "nome": "Gabigol",            "posicao": "ATA2"   }
             ],
             "extras": [
-                "César", 
-                "Rodinei", 
-                "Thuler", 
-                "Renê", 
-                "Piris da Motta", 
-                "Vinícius Souza",
-                "Hugo Moura",
-                "Lucas Silva",
-                "Gabriel Batista",
-                "João Lucas",
-                "Pepê",
-                "Rhodolfo",
-                "Dantas",
-                "Rafael Santos",
-                "Diego Ribas", 
-                "Vitinho", 
-                "Lincoln", 
-                "Reinier", 
-                "Berrío"
+                "César", "Rodinei", "Thuler", 
+                "Renê", "Piris da Motta", "Vinícius Souza",
+                "Hugo Moura", "Lucas Silva", "Gabriel Batista",
+                "João Lucas", "Pepê", "Rhodolfo",
+                "Dantas", "Rafael Santos", "Diego Ribas", 
+                "Vitinho", "Lincoln", "Reinier", "Berrío"
             ]
         },
         {
@@ -44,17 +31,17 @@
             "evento": "Final da Champions League 2015",
             "formacao": "4-3-3",
             "jogadores": [
-                { "nome": "Ter Stegen", "posicao": "GOL" },
-                { "nome": "Dani Alves", "posicao": "LD" },
-                { "nome": "Piqué", "posicao": "ZAG1" },
-                { "nome": "Mascherano", "posicao": "ZAG2" },
-                { "nome": "Jordi Alba", "posicao": "LE" },
-                { "nome": "Rakitić", "posicao": "VOL1" },
-                { "nome": "Busquets", "posicao": "VOL2" },
-                { "nome": "Iniesta", "posicao": "MEI" },
-                { "nome": "Messi", "posicao": "PD" },
-                { "nome": "Suárez", "posicao": "CA" },
-                { "nome": "Neymar", "posicao": "PE" }
+                { "nome": "Ter Stegen", "posicao": "GOL"    },
+                { "nome": "Dani Alves", "posicao": "LD"     },
+                { "nome": "Piqué",      "posicao": "ZAG1"   },
+                { "nome": "Mascherano", "posicao": "ZAG2"   },
+                { "nome": "Jordi Alba", "posicao": "LE"     },
+                { "nome": "Rakitić",    "posicao": "VOL1"   },
+                { "nome": "Busquets",   "posicao": "VOL2"   },
+                { "nome": "Iniesta",    "posicao": "MEI"    },
+                { "nome": "Messi",      "posicao": "PD"     },
+                { "nome": "Suárez",     "posicao": "CA"     },
+                { "nome": "Neymar",     "posicao": "PE"     }
             ],
             "extras": ["Bravo", "Mathieu", "Bartra", "Adriano", "Xavi", "Pedro", "Rafinha", "Vermaelen", "Sergi Roberto", "Munir"]
         },
@@ -361,19 +348,48 @@
             "evento": "Final da Libertadores 2024",
             "formacao": "4-3-3",
             "jogadores": [
-                { "nome": "John", "posicao": "GOL" },
-                { "nome": "Vitinho", "posicao": "LD" },
-                { "nome": "Bastos", "posicao": "ZAG1" },
-                { "nome": "Barboza", "posicao": "ZAG2" },
-                { "nome": "Alex Telles", "posicao": "LE" },
-                { "nome": "Marlon Freitas", "posicao": "VOL1" },
-                { "nome": "Gregore", "posicao": "VOL2" },
-                { "nome": "Thiago Almada", "posicao": "MEI" },
-                { "nome": "Luiz Henrique", "posicao": "PD" },
-                { "nome": "Savarino", "posicao": "PE" },
-                { "nome": "Igor Jesus", "posicao": "CA" }
+                { "nome": "John",           "posicao": "GOL"    },
+                { "nome": "Vitinho",        "posicao": "LD"     },
+                { "nome": "Adryelson",      "posicao": "ZAG1"   },
+                { "nome": "A. Barboza",     "posicao": "ZAG2"   },
+                { "nome": "Alex Telles",    "posicao": "LE"     },
+                { "nome": "Marlon Freitas", "posicao": "VOL1"   },
+                { "nome": "Gregore",        "posicao": "VOL2"   },
+                { "nome": "Savarino",       "posicao": "MEI"    },
+                { "nome": "Luiz Henrique",  "posicao": "PD"     },
+                { "nome": "Thiago Almada",  "posicao": "PE"     },
+                { "nome": "Igor Jesus",     "posicao": "CA"     }
             ],
-            "extras": ["Gatito", "Mateo Ponte", "Adryelson", "Lucas Halter", "Cuiabano", "Tchê Tchê", "Allan", "Eduardo", "Júnior Santos", "Tiquinho Soares"]
+            "extras": [
+                "Gatito", "Mateo Ponte", "Matheus Martins", 
+                "Lucas Halter", "Cuiabano", "Tchê Tchê", 
+                "Allan", "Eduardo", "Júnior Santos", 
+                "Tiquinho Soares", "D.Barbosa", "Hugo",
+                "Marçal", "Bastos", "Yarlen",
+                "Óscar Romero", "Fabiano", "Matheus Nascimento",
+                "Pablo", "Raul", "Jeffinho"
+            ]
+        },
+        {
+            "time": "Atlético Mineiro",
+            "evento": "Final da Copa do Brasil 2021 (Volta)",
+            "formacao": "4-3-3",
+            "jogadores": [
+                { "nome": "Everson",            "posicao": "GOL"    },
+                { "nome": "Mariano",            "posicao": "LD"     },
+                { "nome": "Igor Rabello",       "posicao": "ZAG1"   },
+                { "nome": "J. Alonso",          "posicao": "ZAG2"   },
+                { "nome": "Guilherme Arana",    "posicao": "LE"     },
+                { "nome": "Jair",               "posicao": "VOL1"   },
+                { "nome": "Allan",              "posicao": "VOL2"   },
+                { "nome": "Matías Zaracho",     "posicao": "MEI"    },
+                { "nome": "Eduardo Vargas",     "posicao": "PD"     },
+                { "nome": "Keno",               "posicao": "PE"     },
+                { "nome": "Hulk",               "posicao": "CA"     }
+            ],
+            "extras": [
+                "Rafael", "Guga", "Réver", 
+                "Dodô", "Cuiabano", "Tchê Tchê", "Allan", "Eduardo", "Júnior Santos", "Tiquinho Soares"]
         },
         {
             "time": "Milan",
