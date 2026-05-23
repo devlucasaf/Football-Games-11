@@ -1487,17 +1487,56 @@
                 { "posicao": 10, "nome": "Renato Sanches",    "detalhe": "2016"  }
             ],
             "opcoes": [
-                "Cruzeiro", "Grêmio", "Flamengo",
-                "Palmeiras", "Corinthians", "Fluminense",
-                "São Paulo", "Athletico-PR", "Sport",
-                "Santos", "Internacional", "Vasco",
-                "Atlético-MG", "Botafogo", "Bahia",
-                "Fortaleza", "Ceará", "Goiás",
-                "Ponte Preta", "Coritiba", "Guarani",
-                "Juventude", "Vitória", "América-MG",
-                "Bragantino", "Paysandu", "Santo André",
-                "Paulista de Jundiaí", "Aparecidense", "ABC de Natal",
-                "Atlético Acreano", "Botafogo-PB", "Mirassol"
+				"Désiré Doué", "Lamine Yamal", "Jude Bellingham",
+				"Gavi", "Pedri", "Erling Haaland", 
+				"João Félix", "Matthijs de Ligt", "Kylian Mbappé",
+				"Renato Sanches", "Estêvão", "Pau Cubarsí",
+				"Warren Zaïre-Emery", "Arda Güler", "Jobe Bellingham",
+				"Leny Yoro", "Franco Mastantuono", "Theo Hernández",
+				"Rayan", "Endrick", "Kauã Elias", 
+				"Vitor Reis", "Kingsley Coman", "Donnarumma",
+				"Marco Asensio", "Leroy Sané", "Marcus Rashford",
+				"Dele Alli", "Ryan Gravenberch", "Phil Foden",
+				"Ansu Fati", "Eduardo Camavinga", "Jonathan David",
+				"Vinícius Júnior", "Ferran Torres", "Jadon Sancho",
+				"Cole Palmer", "Rodrygo", "Bukayo Saka",
+				"Antônio Silva", "Jamal Musiala", "Xavi Simons",
+				"Rasmus Hojlund", "Benjamin Sesko", "Florian Wirtz",
+				"Alejandro Balde", "Dominik Szoboszlai", "Mason Greenwood",
+				"Sergiño Dest", "Fábio Silva"
+            ]
+        },
+        {
+            "tema": "Últimos Técnicos Campeões do Brasileirão",
+            "categoria": "jogadores",
+            "icone": "fa-shield-alt",
+            "itens": [
+                { "posicao": 1,  "nome": "Filipe Luis",       "detalhe": "2025"  },
+                { "posicao": 2,  "nome": "Artur Jorge",       "detalhe": "2024"  },
+                { "posicao": 3,  "nome": "Abel Ferreira",     "detalhe": "2023"  },
+                { "posicao": 4,  "nome": "Abel Ferreira",     "detalhe": "2022"  },
+                { "posicao": 5,  "nome": "Cuca",              "detalhe": "2021"  },
+                { "posicao": 6,  "nome": "Rogério Ceni",      "detalhe": "2020"  },
+                { "posicao": 7,  "nome": "Jorge Jesus",       "detalhe": "2019"  },
+                { "posicao": 8,  "nome": "Felipão",		      "detalhe": "2018"  },
+                { "posicao": 9,  "nome": "Fábio Carille",     "detalhe": "2017"  },
+                { "posicao": 10, "nome": "Cuca",		      "detalhe": "2016"  }
+            ],
+            "opcoes": [
+                "Filipe Luis", "Artur Jorge", "Abel Ferreira",
+				"Jorge Jesus", "Cuca", "Rogério Ceni", 
+				"Felipão", "Fábio Carille", "Renato Gaúcho",
+				"Fernando Diniz", "Roger Machado", "Tite", 
+				"Marcelo Oliveira", "Levir Culpi", "Vanderlei Luxemburgo",
+				"Abel Braga", "Dorival Junior", "Muricy Ramalho",
+				"Alberto Valentim", "Jair Ventura", "Leonardo Jardim",
+				"Luis Zubeldía", "Mano Menezes", "Odair Hellmann",
+				"Vagner Mancini", "Fernando Seabra", "Paulo Pezzolano",
+				"Fábio Matías", "Franclim Carvalho", "Thiago Carpini",
+				"Maurício Barbieri", "Luís Castro", "Tiago Nunes",
+				"Paulo Autuori", "Oswaldo de Oliveira", "Zé Ricardo",
+				"Bruno Lage", "Ramón Diaz", "Renato Paiva",
+				"Enderson Moreira", "Eduardo Barroca", "Davide Ancelotti"
             ]
         }
     ]
