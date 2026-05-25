@@ -1,0 +1,502 @@
+{
+    "temas": [
+        {
+            "id": "champions",
+            "nome": "Champions League",
+            "icone": "fa-star",
+            "cor": "#1a237e",
+            "perguntas": [
+                {
+                    "pergunta": "Qual clube tem mais títulos da Champions League?",
+                    "opcoes": ["Real Madrid", "AC Milan", "Liverpool", "Bayern de Munique", "Barcelona"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Quem é o maior artilheiro da história da Champions League?",
+                    "opcoes": ["Lionel Messi", "Cristiano Ronaldo", "Raúl", "Robert Lewandowski", "Karim Benzema"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual foi o primeiro clube a vencer a Champions League?",
+                    "opcoes": ["Benfica", "Real Madrid", "AC Milan", "Inter de Milão", "Ajax"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Em qual ano o Liverpool venceu a final em Istambul com a famosa virada?",
+                    "opcoes": ["2003", "2004", "2005", "2006", "2007"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual jogador marcou o gol decisivo na final da Champions 2023 entre Manchester City e Inter?",
+                    "opcoes": ["Erling Haaland", "Kevin De Bruyne", "Rodri", "Bernardo Silva", "Phil Foden"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual técnico venceu a Champions League com dois clubes diferentes?",
+                    "opcoes": ["Pep Guardiola", "Carlo Ancelotti", "José Mourinho", "Zinedine Zidane", "Jupp Heynckes"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quantas Champions League o AC Milan conquistou?",
+                    "opcoes": ["5", "6", "7", "8", "4"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual clube foi o primeiro a vencer três Champions League consecutivas na era moderna?",
+                    "opcoes": ["Barcelona", "Bayern de Munique", "Real Madrid", "Ajax", "AC Milan"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem marcou o gol de bicicleta na final da Champions 2018 pelo Real Madrid?",
+                    "opcoes": ["Cristiano Ronaldo", "Gareth Bale", "Karim Benzema", "Isco", "Marcelo"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual time fez a virada histórica de 0-3 para 4-3 contra o Barcelona em 2024/25?",
+                    "opcoes": ["PSG", "Inter de Milão", "Bayern de Munique", "Manchester City", "Borussia Dortmund"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Quantas finais de Champions o Juventus perdeu no século XXI?",
+                    "opcoes": ["2", "3", "4", "5", "1"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual goleiro defendeu três pênaltis na final da Champions 2005?",
+                    "opcoes": ["Pepe Reina", "Jerzy Dudek", "Iker Casillas", "Gianluigi Buffon", "Dida"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual o estádio da final da Champions League 2024?",
+                    "opcoes": ["Allianz Arena", "Wembley", "Santiago Bernabéu", "Stade de France", "Estádio Olímpico de Berlim"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual time inglês venceu a Champions pela primeira vez em 2012?",
+                    "opcoes": ["Manchester United", "Liverpool", "Chelsea", "Arsenal", "Tottenham"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem é o treinador com mais títulos da Champions League?",
+                    "opcoes": ["Sir Alex Ferguson", "Zinedine Zidane", "Carlo Ancelotti", "Pep Guardiola", "Bob Paisley"],
+                    "resposta": 2
+                }
+            ]
+        },
+        {
+            "id": "copa-do-mundo",
+            "nome": "Copa do Mundo",
+            "icone": "fa-globe",
+            "cor": "#1b5e20",
+            "perguntas": [
+                {
+                    "pergunta": "Qual seleção tem mais títulos de Copa do Mundo?",
+                    "opcoes": ["Alemanha", "Itália", "Brasil", "Argentina", "França"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Em qual país foi realizada a Copa do Mundo de 2022?",
+                    "opcoes": ["Arábia Saudita", "Emirados Árabes", "Catar", "Bahrein", "Kuwait"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem é o maior artilheiro da história das Copas do Mundo?",
+                    "opcoes": ["Pelé", "Ronaldo Fenômeno", "Miroslav Klose", "Gerd Müller", "Just Fontaine"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual seleção venceu a Copa de 1950 no Maracanã?",
+                    "opcoes": ["Brasil", "Uruguai", "Argentina", "Itália", "Alemanha"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quantos gols Pelé marcou em Copas do Mundo?",
+                    "opcoes": ["10", "12", "14", "8", "16"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quem marcou o gol na final da Copa 2014 (Alemanha x Argentina)?",
+                    "opcoes": ["Thomas Müller", "Miroslav Klose", "Mario Götze", "Mesut Özil", "André Schürrle"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual país sediou a primeira Copa do Mundo em 1930?",
+                    "opcoes": ["Brasil", "Itália", "França", "Uruguai", "Argentina"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Quem ganhou a Bola de Ouro na Copa 2022?",
+                    "opcoes": ["Kylian Mbappé", "Lionel Messi", "Enzo Fernández", "Julian Álvarez", "Luka Modrić"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual seleção foi eliminada na fase de grupos da Copa 2014 sendo a anfitriã do torneio anterior?",
+                    "opcoes": ["Alemanha", "Brasil", "Espanha", "África do Sul", "França"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Quantas vezes a Argentina venceu a Copa do Mundo?",
+                    "opcoes": ["2", "3", "4", "1", "5"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual jogador marcou hat-trick na final da Copa 2022?",
+                    "opcoes": ["Lionel Messi", "Kylian Mbappé", "Olivier Giroud", "Julian Álvarez", "Ángel Di María"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Em que ano o Brasil ganhou seu último título mundial?",
+                    "opcoes": ["1998", "2002", "2006", "1994", "2010"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual foi o placar do 'Mineiraço' (Brasil x Alemanha) na Copa 2014?",
+                    "opcoes": ["5x0", "6x1", "7x1", "7x0", "4x1"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem é o jogador mais jovem a marcar em uma final de Copa?",
+                    "opcoes": ["Pelé", "Kylian Mbappé", "Michael Owen", "Ronaldo Fenômeno", "Mario Götze"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Qual a sede da Copa do Mundo de 2026?",
+                    "opcoes": ["EUA, México e Canadá", "Arábia Saudita", "Austrália", "Inglaterra", "Marrocos"],
+                    "resposta": 0
+                }
+            ]
+        },
+        {
+            "id": "copa-mundo-clubes",
+            "nome": "Copa do Mundo de Clubes",
+            "icone": "fa-earth-americas",
+            "cor": "#4a148c",
+            "perguntas": [
+                {
+                    "pergunta": "Qual clube brasileiro tem mais títulos do Mundial de Clubes/Intercontinental?",
+                    "opcoes": ["Flamengo", "São Paulo", "Santos", "Corinthians", "Grêmio"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual foi o primeiro clube a vencer o Mundial de Clubes FIFA (formato novo, 2000)?",
+                    "opcoes": ["Real Madrid", "Manchester United", "Corinthians", "Bayern de Munique", "Boca Juniors"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quantos Mundiais o Real Madrid conquistou?",
+                    "opcoes": ["5", "6", "7", "8", "9"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Qual time sul-americano venceu o último Mundial de Clubes contra um europeu em 2012?",
+                    "opcoes": ["Santos", "Boca Juniors", "Corinthians", "Internacional", "São Paulo"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Em que ano o Grêmio venceu o Mundial Intercontinental?",
+                    "opcoes": ["1981", "1983", "1984", "1995", "1997"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual clube africano chegou à final do Mundial de Clubes FIFA?",
+                    "opcoes": ["Al Ahly", "TP Mazembe", "Raja Casablanca", "Esperance", "Zamalek"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quantos mundiais o São Paulo tem?",
+                    "opcoes": ["1", "2", "3", "4", "5"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual jogador marcou o gol do título do Corinthians no Mundial 2012?",
+                    "opcoes": ["Emerson Sheik", "Guerrero", "Paulinho", "Romarinho", "Jorge Henrique"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "O novo formato do Mundial de Clubes 2025 terá quantos clubes?",
+                    "opcoes": ["16", "24", "32", "36", "48"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual clube venceu a Copa Intercontinental em 1981 representando a América do Sul?",
+                    "opcoes": ["São Paulo", "Santos", "Flamengo", "Grêmio", "River Plate"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem foi o artilheiro do Mundial de Clubes 2019?",
+                    "opcoes": ["Roberto Firmino", "Sadio Mané", "Mohamed Salah", "Neymar", "Gabriel Jesus"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Qual time asiático chegou à final do Mundial de Clubes 2016?",
+                    "opcoes": ["Al Hilal", "Kashima Antlers", "Guangzhou", "Ulsan", "Jeonbuk"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Em qual país será o novo Mundial de Clubes 2025?",
+                    "opcoes": ["Catar", "Japão", "EUA", "China", "Arábia Saudita"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time brasileiro venceu o Mundial de 2006?",
+                    "opcoes": ["São Paulo", "Corinthians", "Internacional", "Flamengo", "Santos"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quantos gols o Santos de Pelé marcou na final Intercontinental de 1962?",
+                    "opcoes": ["3", "4", "5", "6", "2"],
+                    "resposta": 2
+                }
+            ]
+        },
+        {
+            "id": "brasileirao",
+            "nome": "Brasileirão",
+            "icone": "fa-shield-alt",
+            "cor": "#f57f17",
+            "perguntas": [
+                {
+                    "pergunta": "Qual clube tem mais títulos do Brasileirão (Série A)?",
+                    "opcoes": ["São Paulo", "Santos", "Palmeiras", "Flamengo", "Corinthians"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem é o maior artilheiro da história do Brasileirão?",
+                    "opcoes": ["Zico", "Romário", "Roberto Dinamite", "Edmundo", "Pelé"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time foi rebaixado em 2002 com o maior número de títulos até então?",
+                    "opcoes": ["Vasco", "Botafogo", "Palmeiras", "Grêmio", "Cruzeiro"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Em que ano o Brasileirão passou a ter o formato de pontos corridos?",
+                    "opcoes": ["2001", "2002", "2003", "2004", "2006"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual clube nunca foi rebaixado no Brasileirão?",
+                    "opcoes": ["Santos", "São Paulo", "Flamengo", "Atlético-MG", "Corinthians"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem marcou mais gols em uma única edição do Brasileirão (pontos corridos)?",
+                    "opcoes": ["Adriano", "Washington", "Gabigol", "Borja", "Pedro"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual time foi campeão brasileiro em 2024?",
+                    "opcoes": ["Flamengo", "Palmeiras", "Botafogo", "Fortaleza", "Internacional"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quantos títulos brasileiros o Flamengo tem?",
+                    "opcoes": ["6", "7", "8", "9", "10"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual treinador mais vezes foi campeão brasileiro?",
+                    "opcoes": ["Telê Santana", "Luiz Felipe Scolari", "Vanderlei Luxemburgo", "Abel Ferreira", "Jorge Jesus"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time nordestino terminou como vice-campeão do Brasileirão em 2024?",
+                    "opcoes": ["Sport", "Bahia", "Fortaleza", "Ceará", "Vitória"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem foi o artilheiro do Brasileirão 2023?",
+                    "opcoes": ["Pedro", "Paulinho", "Luciano", "Luis Suárez", "Vegetti"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Qual time tem a maior goleada da história do Brasileirão de pontos corridos?",
+                    "opcoes": ["Santos", "Flamengo", "Cruzeiro", "Palmeiras", "Internacional"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Em que ano o Corinthians foi campeão brasileiro de forma invicta?",
+                    "opcoes": ["2005", "2011", "2015", "2017", "Nunca foi"],
+                    "resposta": 4
+                },
+                {
+                    "pergunta": "Qual jogador tem mais partidas na história do Brasileirão?",
+                    "opcoes": ["Rogério Ceni", "Fábio", "Zé Roberto", "Dida", "Marcos"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual clube catarinense já foi campeão brasileiro?",
+                    "opcoes": ["Avaí", "Figueirense", "Criciúma", "Chapecoense", "Nenhum"],
+                    "resposta": 4
+                }
+            ]
+        },
+        {
+            "id": "copa-do-brasil",
+            "nome": "Copa do Brasil",
+            "icone": "fa-trophy",
+            "cor": "#bf360c",
+            "perguntas": [
+                {
+                    "pergunta": "Qual clube tem mais títulos da Copa do Brasil?",
+                    "opcoes": ["Flamengo", "Cruzeiro", "Grêmio", "Palmeiras", "Corinthians"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Em que ano foi a primeira edição da Copa do Brasil?",
+                    "opcoes": ["1985", "1987", "1989", "1990", "1991"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time foi o primeiro campeão da Copa do Brasil?",
+                    "opcoes": ["Cruzeiro", "Flamengo", "Grêmio", "Vasco", "Internacional"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quantos títulos da Copa do Brasil o Cruzeiro tem?",
+                    "opcoes": ["4", "5", "6", "7", "8"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual jogador é o maior artilheiro da história da Copa do Brasil?",
+                    "opcoes": ["Romário", "Fred", "Gabigol", "Rogério Ceni", "Alex"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual time do Nordeste venceu a Copa do Brasil?",
+                    "opcoes": ["Sport", "Bahia", "Vitória", "Ceará", "Fortaleza"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Em que ano o Flamengo venceu sua primeira Copa do Brasil?",
+                    "opcoes": ["2003", "2006", "2013", "2022", "1990"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual time venceu a Copa do Brasil 2023?",
+                    "opcoes": ["Flamengo", "São Paulo", "Athletico-PR", "Palmeiras", "Corinthians"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual goleiro artilheiro venceu a Copa do Brasil como jogador?",
+                    "opcoes": ["Marcos", "Dida", "Rogério Ceni", "Fábio", "Cássio"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time foi campeão da Copa do Brasil de forma invicta em 2017?",
+                    "opcoes": ["Grêmio", "Flamengo", "Cruzeiro", "Palmeiras", "Corinthians"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual o maior goleada em uma partida de Copa do Brasil?",
+                    "opcoes": ["8x0", "10x0", "10x1", "12x1", "14x0"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Qual time gaúcho além do Grêmio venceu a Copa do Brasil?",
+                    "opcoes": ["Internacional", "Juventude", "Caxias", "Novo Hamburgo", "Nenhum"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quantas vezes o Palmeiras venceu a Copa do Brasil?",
+                    "opcoes": ["2", "3", "4", "5", "6"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual clube mineiro além do Cruzeiro já venceu a Copa do Brasil?",
+                    "opcoes": ["Atlético-MG", "América-MG", "Tombense", "Caldense", "Nenhum"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Qual técnico mais vezes venceu a Copa do Brasil?",
+                    "opcoes": ["Mano Menezes", "Luiz Felipe Scolari", "Abel Ferreira", "Tite", "Renato Gaúcho"],
+                    "resposta": 1
+                }
+            ]
+        },
+        {
+            "id": "libertadores",
+            "nome": "Libertadores",
+            "icone": "fa-award",
+            "cor": "#e65100",
+            "perguntas": [
+                {
+                    "pergunta": "Qual clube tem mais títulos da Libertadores?",
+                    "opcoes": ["Boca Juniors", "River Plate", "Independiente", "Peñarol", "Nacional"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual clube brasileiro tem mais títulos da Libertadores?",
+                    "opcoes": ["Santos", "São Paulo", "Grêmio", "Flamengo", "Palmeiras"],
+                    "resposta": 4
+                },
+                {
+                    "pergunta": "Em que ano foi a primeira edição da Libertadores?",
+                    "opcoes": ["1955", "1958", "1960", "1962", "1965"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time brasileiro venceu a Libertadores 2022?",
+                    "opcoes": ["Palmeiras", "Flamengo", "Athletico-PR", "Fluminense", "Atlético-MG"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quem é o maior artilheiro da história da Libertadores?",
+                    "opcoes": ["Pelé", "Alberto Spencer", "Neymar", "Luiz Adriano", "Gabigol"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual foi o placar da final da Libertadores 2019 (Flamengo x River Plate)?",
+                    "opcoes": ["1x0", "2x1", "3x1", "2x0", "3x2"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quem marcou os dois gols do Flamengo na final da Libertadores 2019?",
+                    "opcoes": ["Bruno Henrique", "Gabigol", "Arrascaeta", "Everton Ribeiro", "Gerson"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Qual time argentino além de Independiente tem mais Libertadores?",
+                    "opcoes": ["River Plate", "Boca Juniors", "Racing", "San Lorenzo", "Estudiantes"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quantas Libertadores o Santos de Pelé conquistou?",
+                    "opcoes": ["1", "2", "3", "4", "5"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual time venceu a Libertadores 2023?",
+                    "opcoes": ["Boca Juniors", "Palmeiras", "Fluminense", "River Plate", "Athletico-PR"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual treinador brasileiro mais vezes venceu a Libertadores?",
+                    "opcoes": ["Telê Santana", "Abel Ferreira", "Luiz Felipe Scolari", "Vanderlei Luxemburgo", "Jorge Jesus"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual clube equatoriano já foi vice-campeão da Libertadores?",
+                    "opcoes": ["Barcelona de Guayaquil", "Liga de Quito", "Emelec", "Deportivo Quito", "Independiente del Valle"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quantas Libertadores o Palmeiras tem?",
+                    "opcoes": ["2", "3", "4", "5", "1"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Qual jogador marcou o gol do título do Palmeiras na Libertadores 2020?",
+                    "opcoes": ["Rony", "Raphael Veiga", "Dudu", "Breno Lopes", "Luiz Adriano"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Em qual estádio foi a final da Libertadores 2023?",
+                    "opcoes": ["Monumental de Núñez", "Maracanã", "La Bombonera", "Centenário", "Mané Garrincha"],
+                    "resposta": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Football Quiz | Football Games 11</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/football-quiz.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-quiz">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-question-circle"></i>
+                    <h2>Como jogar Football Quiz</h2>
+                    <p>Teste seus conhecimentos sobre o futebol mundial!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span> Escolha um tema de quiz (Champions, Copa do Mundo, etc.).</li>
+                    <li><span class="tutorial-step-number">2</span> Responda 10 perguntas sobre o tema escolhido.</li>
+                    <li><span class="tutorial-step-number">3</span> Cada pergunta tem 5 alternativas — escolha a correta.</li>
+                    <li><span class="tutorial-step-number">4</span> Se acertar, avança para a próxima. Se errar, veja a resposta correta.</li>
+                    <li><span class="tutorial-step-number">5</span> No final, confira sua pontuação!</li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2 class="game-title"><i class="fas fa-question-circle"></i> Football Quiz</h2>
+                    <p class="game-description">Escolha um tema e responda!</p>
+                </div>
+
+                <div class="tema-selection" id="temaSelection">
+                    <h3 class="tema-title">Escolha o tema do quiz:</h3>
+                    <div class="tema-grid" id="temaGrid"></div>
+                </div>
+
+                <div class="quiz-game hidden" id="quizGame">
+                    <div class="quiz-info" id="quizInfo">
+                        <div class="quiz-tema-badge" id="quizTemaBadge"></div>
+                        <div class="quiz-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-layer-group"></i>
+                                Pergunta: <strong id="perguntaAtual">1</strong>/<strong id="perguntaTotal">10</strong>
+                            </span>
+
+                            <span class="stat-item acertos-info">
+                                <i class="fas fa-check-circle"></i>
+                                Acertos: <strong id="acertosCount">0</strong>
+                            </span>
+                        </div>
+
+                        <div class="progress-wrapper">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <span class="progress-label" id="progressLabel">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="quiz-pergunta-card" id="perguntaCard">
+                        <p class="pergunta-texto" id="perguntaTexto"></p>
+                        <div class="opcoes-list" id="opcoesList"></div>
+                        <button class="btn-proxima hidden" id="btnProxima">
+                            <i class="fas fa-arrow-right"></i> Próxima
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-final hidden" id="quizFinal">
+                    <div class="result-icon" id="resultIcon"></div>
+                    <h3 id="resultTitle"></h3>
+                    <p class="result-text" id="resultText"></p>
+                    <div class="result-score" id="resultScore"></div>
+                    <div class="result-actions">
+                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button class="btn-outro-tema" id="btnOutroTema"><i class="fas fa-exchange-alt"></i> Outro Tema</button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                        <p>Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4>Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../scripts/script.js"></script>
+        <script type="module" src="../scripts/games/football-quiz/main.js"></script>
+    </body>
+</html>
