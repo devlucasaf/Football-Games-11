@@ -1,54 +1,11 @@
 {
     "partidas": [
         {
-            "mandante": "Brasil",
+            "mandante": "Inglaterra",
             "visitante": "Alemanha",
-            "competicao": "Copa do Mundo 2014 — Semifinal",
-            "placarMandante": 1,
-            "placarVisitante": 7
-        },
-        {
-            "mandante": "Alemanha",
-            "visitante": "Argentina",
-            "competicao": "Copa do Mundo 2014 — Final",
-            "placarMandante": 1,
-            "placarVisitante": 0
-        },
-        {
-            "mandante": "França",
-            "visitante": "Argentina",
-            "competicao": "Copa do Mundo 2018 — Oitavas de Final",
-            "placarMandante": 4,
-            "placarVisitante": 3
-        },
-        {
-            "mandante": "Portugal",
-            "visitante": "Suíça",
-            "competicao": "Copa do Mundo 2022 — Oitavas de Final",
-            "placarMandante": 6,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "França",
-            "visitante": "Croácia",
-            "competicao": "Copa do Mundo 2018 — Final",
+            "competicao": "Copa do Mundo 1966 — Final",
             "placarMandante": 4,
             "placarVisitante": 2
-        },
-        {
-            "mandante": "Argentina",
-            "visitante": "França",
-            "competicao": "Copa do Mundo 2022 — Final",
-            "placarMandante": 3,
-            "placarVisitante": 3,
-            "detalhe": "Argentina venceu nos pênaltis (4-2)"
-        },
-        {
-            "mandante": "Espanha",
-            "visitante": "Holanda",
-            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
-            "placarMandante": 1,
-            "placarVisitante": 5
         },
         {
             "mandante": "Brasil",
@@ -56,6 +13,42 @@
             "competicao": "Copa do Mundo 1970 — Final",
             "placarMandante": 4,
             "placarVisitante": 1
+        },
+        {
+            "mandante": "Holanda",
+            "visitante": "Brasil",
+            "competicao": "Copa do Mundo 1994 — Quartas de final",
+            "placarMandante": 2,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Suécia",
+            "visitante": "Brasil",
+            "competicao": "Copa do Mundo 1994 — Semifinal",
+            "placarMandante": 0,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Itália",
+            "competicao": "Copa do Mundo 1994 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 0,
+            "detalhe": "Brasil venceu nos pênaltis (3-2)"
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "França",
+            "competicao": "Copa do Mundo 1998 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2002 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 0
         },
         {
             "mandante": "Itália",
@@ -66,33 +59,550 @@
             "detalhe": "Itália venceu nos pênaltis (5-3)"
         },
         {
-            "mandante": "Inglaterra",
-            "visitante": "Alemanha",
-            "competicao": "Copa do Mundo 1966 — Final",
+            "mandante": "Portugal",
+            "visitante": "Coreia do Norte",
+            "competicao": "Copa do Mundo 2010 — Fase de Grupos",
+            "placarMandante": 7,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Inglaterra",
+            "competicao": "Copa do Mundo 2010 — Oitavas de final",
             "placarMandante": 4,
-            "placarVisitante": 2
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2010 — Quartas de final",
+            "placarMandante": 0,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Uruguai",
+            "visitante": "Gana",
+            "competicao": "Copa do Mundo 2010 — Oitavas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Uruguai venceu nos pênaltis (4-2)"
+        },
+        {
+            "mandante": "Holanda",
+            "visitante": "Espanha",
+            "competicao": "Copa do Mundo 2010 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 1
         },
         {
             "mandante": "Brasil",
-            "visitante": "Alemanha",
-            "competicao": "Copa do Mundo 2002 — Final",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "México",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 0,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Camarões",
+            "visitante": "Brasil",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Espanha",
+            "visitante": "Holanda",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Colômbia",
+            "visitante": "Grécia",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Japão",
+            "visitante": "Colômbia",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Uruguai",
+            "visitante": "Costa Rica",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Suiça",
+            "visitante": "França",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 2,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Nigéria",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 2,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Portugal",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 4,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Portugal",
+            "visitante": "Estados Unidos",
+            "competicao": "Copa do Mundo 2014 — Fase de Grupos",
+            "placarMandante": 2,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Colômbia",
+            "visitante": "Uruguai",
+            "competicao": "Copa do Mundo 2014 — Oitavas de final",
             "placarMandante": 2,
             "placarVisitante": 0
         },
         {
-            "mandante": "Liverpool",
-            "visitante": "Milan",
-            "competicao": "Champions League 2004-05 — Final",
-            "placarMandante": 3,
-            "placarVisitante": 3,
-            "detalhe": "Liverpool venceu nos pênaltis (3-2)"
+            "mandante": "Brasil",
+            "visitante": "Chile",
+            "competicao": "Copa do Mundo 2014 — Oitavas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Brasil venceu nos pênaltis (3-2)"
         },
         {
-            "mandante": "Barcelona",
-            "visitante": "Paris Saint-Germain",
-            "competicao": "Champions League 2016-17 — Oitavas (volta)",
+            "mandante": "Costa Rica",
+            "visitante": "Grécia",
+            "competicao": "Copa do Mundo 2014 — Oitavas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Costa Rica venceu nos pênaltis (5-3)"
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Colômbia",
+            "competicao": "Copa do Mundo 2014 — Quartas de final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Holanda",
+            "visitante": "Costa Rica",
+            "competicao": "Copa do Mundo 2014 — Quartas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Holanda venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "Holanda",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2014 — Semifinal",
+            "placarMandante": 0,
+            "placarVisitante": 0,
+            "detalhe": "Argentina venceu nos pênaltis (4-2)"
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2014 — Semifinal",
+            "placarMandante": 1,
+            "placarVisitante": 7
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Holanda",
+            "competicao": "Copa do Mundo 2014 — Disputa de terceiro lugar",
+            "placarMandante": 0,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2014 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Rússia",
+            "visitante": "Arábia Saudita",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 5,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Uruguai",
+            "visitante": "Rússia",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Portugal",
+            "visitante": "Espanha",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 3,
+            "placarVisitante": 3,
+            "detalhe":"Hat-trick de Cristiano Ronaldo"
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 0,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Nigéria",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Suiça",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 1,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Costa Rica",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Sérvia",
+            "visitante": "Brasil",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 0,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Suécia",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Coreia do Sul",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Bélgica",
+            "visitante": "Panamá",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Bélgica",
+            "visitante": "Tunísia",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 5,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Inglaterra",
+            "visitante": "Panamá",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
             "placarMandante": 6,
             "placarVisitante": 1
+        },
+        {
+            "mandante": "Inglaterra",
+            "visitante": "Bélgica",
+            "competicao": "Copa do Mundo 2018 — Fase de Grupos",
+            "placarMandante": 0,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "França",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2018 — Oitavas de final",
+            "placarMandante": 4,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "México",
+            "competicao": "Copa do Mundo 2018 — Oitavas de final",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Bélgica",
+            "visitante": "Japão",
+            "competicao": "Copa do Mundo 2018 — Oitavas de final",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Espanha",
+            "visitante": "Rússia",
+            "competicao": "Copa do Mundo 2018 — Oitavas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Rússia venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "Croácia",
+            "visitante": "Dinamarca",
+            "competicao": "Copa do Mundo 2018 — Oitavas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Croácia venceu nos pênaltis (3-2)"
+        },
+        {
+            "mandante": "Colômbia",
+            "visitante": "Inglaterra",
+            "competicao": "Copa do Mundo 2018 — Oitavas de final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Inglaterra venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Bélgica",
+            "competicao": "Copa do Mundo 2018 — Quartas de final",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Rússia",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2018 — Quartas de final",
+            "placarMandante": 2,
+            "placarVisitante": 2,
+            "detalhe": "Croácia venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "França",
+            "visitante": "Bélgica",
+            "competicao": "Copa do Mundo 2018 — Semifinal",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Bélgica",
+            "visitante": "Inglaterra",
+            "competicao": "Copa do Mundo 2018 — Disputa de terceiro lugar",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "França",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2018 — Final",
+            "placarMandante": 4,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Inglaterra",
+            "visitante": "Irã",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 6,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "Arábia Saudita",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "México",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Polônia",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 0,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "França",
+            "visitante": "Austrália",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 4,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Espanha",
+            "visitante": "Costa Rica",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 7,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Japão",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Japão",
+            "visitante": "Espanha",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Costa Rica",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 2,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Bélgica",
+            "visitante": "Marrocos",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 0,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Sérvia",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Suiça",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Camarões",
+            "visitante": "Sérvia",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 3,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Camarões",
+            "visitante": "Brasil",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Portugal",
+            "visitante": "Gana",
+            "competicao": "Copa do Mundo 2022 — Fase de grupos",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Portugal",
+            "visitante": "Suíça",
+            "competicao": "Copa do Mundo 2022 — Oitavas de Final",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "Austrália",
+            "competicao": "Copa do Mundo 2022 — Oitavas de Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Coreia do Sul",
+            "competicao": "Copa do Mundo 2022 — Oitavas de Final",
+            "placarMandante": 4,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Marrocos",
+            "visitante": "Espanha",
+            "competicao": "Copa do Mundo 2022 — Oitavas de Final",
+            "placarMandante": 0,
+            "placarVisitante": 0,
+            "detalhe": "Marrocos venceu nos pênaltis (3-0)"
+        },
+        {
+            "mandante": "Holanda",
+            "visitante": "Argentina",
+            "competicao": "Copa do Mundo 2022 — Quartas de Final",
+            "placarMandante": 2,
+            "placarVisitante": 2,
+            "detalhe": "Argentina venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "Croácia",
+            "visitante": "Brasil",
+            "competicao": "Copa do Mundo 2022 — Quartas de Final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Croácia venceu nos pênaltis (4-2)"
+        },
+        {
+            "mandante": "Inglaterra",
+            "visitante": "França",
+            "competicao": "Copa do Mundo 2022 — Quartas de Final",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Marrocos",
+            "visitante": "Portugal",
+            "competicao": "Copa do Mundo 2022 — Quartas de Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "França",
+            "visitante": "Marrocos",
+            "competicao": "Copa do Mundo 2022 — Quartas de Final",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "Croácia",
+            "competicao": "Copa do Mundo 2022 — Quartas de Final",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "França",
+            "competicao": "Copa do Mundo 2022 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 3,
+            "detalhe": "Argentina venceu nos pênaltis (4-2)"
         },
         {
             "mandante": "Real Madrid",
@@ -102,116 +612,420 @@
             "placarVisitante": 3
         },
         {
-            "mandante": "Paris Saint-Germain",
-            "visitante": "Inter de Milão",
-            "competicao": "Champions League 2024–25 — Final",
-            "placarMandante": 5,
-            "placarVisitante": 0
-        },
-        {
-            "mandante": "Inter de Milão",
-            "visitante": "Barcelona",
-            "competicao": "Champions League 2024–25 — Semifinal (volta)",
-            "placarMandante": 3,
-            "placarVisitante": 4
-        },
-        {
             "mandante": "Manchester United",
             "visitante": "Bayern de Munique",
-            "competicao": "Champions League 1998-99 — Final",
+            "competicao": "Champions League 1998/99 — Final",
             "placarMandante": 2,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "Bayern de Munique",
-            "visitante": "Paris Saint-Germain",
-            "competicao": "Champions League 2019-20 — Final",
-            "placarMandante": 1,
-            "placarVisitante": 0
-        },
-        {
-            "mandante": "Real Madrid",
-            "visitante": "Liverpool",
-            "competicao": "Champions League 2017-18 — Final",
-            "placarMandante": 3,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "Chelsea",
-            "visitante": "Bayern de Munique",
-            "competicao": "Champions League 2011-12 — Final",
-            "placarMandante": 1,
-            "placarVisitante": 1,
-            "detalhe": "Chelsea venceu nos pênaltis (4-3)"
-        },
-        {
-            "mandante": "Paris Saint-Germain",
-            "visitante": "Bayern de Munique",
-            "competicao": "Champions League 2025-26 — Semifinal (ida)",
-            "placarMandante": 5,
-            "placarVisitante": 4
-        },
-        {
-            "mandante": "Barcelona",
-            "visitante": "Bayern de Munique",
-            "competicao": "Champions League 2019-20 — Quartas de Final",
-            "placarMandante": 2,
-            "placarVisitante": 8
-        },
-        {
-            "mandante": "Tottenham",
-            "visitante": "Ajax",
-            "competicao": "Champions League 2018-19 — Semifinal (volta)",
-            "placarMandante": 3,
-            "placarVisitante": 2
-        },
-        {
-            "mandante": "Liverpool",
-            "visitante": "Barcelona",
-            "competicao": "Champions League 2018-19 — Semifinal (volta)",
-            "placarMandante": 4,
-            "placarVisitante": 0
-        },
-        {
-            "mandante": "Barcelona",
-            "visitante": "Liverpool",
-            "competicao": "Champions League 2018-19 — Semifinal (ida)",
-            "placarMandante": 3,
-            "placarVisitante": 0
-        },
-        {
-            "mandante": "Manchester City",
-            "visitante": "Real Madrid",
-            "competicao": "Champions League 2021-22 — Semifinal (ida)",
-            "placarMandante": 4,
-            "placarVisitante": 3
-        },
-        {
-            "mandante": "Real Madrid",
-            "visitante": "Chelsea",
-            "competicao": "Champions League 2021-22 — Quarta de Final (volta)",
-            "placarMandante": 2,
-            "placarVisitante": 3,
-            "detalhe": "Real Madrid avança com gol de Karim Benzema"
-        },
-        {
-            "mandante": "Real Madrid",
-            "visitante": "Paris Saint-Germain",
-            "competicao": "Champions League 2021-22 — Oitavas de Final (volta)",
-            "placarMandante": 3,
             "placarVisitante": 1
         },
         {
             "mandante": "Monaco",
             "visitante": "Porto",
-            "competicao": "Champions League 2003-04 — Final",
+            "competicao": "Champions League 2003/04 — Final",
             "placarMandante": 0,
             "placarVisitante": 3
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Milan",
+            "competicao": "Champions League 2004/05 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 3,
+            "detalhe": "Liverpool venceu nos pênaltis (3-2)"
+        },
+        {
+            "mandante": "Chelsea",
+            "visitante": "Bayern de Munique",
+            "competicao": "Champions League 2011/12 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Chelsea venceu nos pênaltis (4-3)"
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Shakhtar Donetsk",
+            "competicao": "Champions League 2014/15 — Oitavas de final (volta)",
+            "placarMandante": 7,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Porto",
+            "competicao": "Champions League 2014/15 — Quartas de final (volta)",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Bayern de Munique",
+            "competicao": "Champions League 2014/15 — Semifinal (ida)",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Barcelona",
+            "competicao": "Champions League 2014/15 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Malmö FF",
+            "competicao": "Champions League 2015/16 — Fase de grupos",
+            "placarMandante": 8,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Atlético de Madrid",
+            "competicao": "Champions League 2015/16 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Real Madrid venceu nos pênaltis (5-3)"
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Celtic",
+            "competicao": "Champions League 2016/17 — Fase de grupos",
+            "placarMandante": 7,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Paris Saint-Germain",
+            "competicao": "Champions League 2016/17 — Oitavas de final (volta)",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Barcelona",
+            "competicao": "Champions League 2016/17 — Quartas de final (ida)",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2016/17 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Liverpool",
+            "competicao": "Champions League 2017/18 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Schaulke 04",
+            "competicao": "Champions League 2018/19 — Oitavas de final (volta)",
+            "placarMandante": 7,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Lyon",
+            "competicao": "Champions League 2018/19 — Oitavas de final (volta)",
+            "placarMandante": 5,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Atlético de Madrid",
+            "competicao": "Champions League 2018/19 — Oitavas de final (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Tottenham",
+            "visitante": "Ajax",
+            "competicao": "Champions League 2018/19 — Semifinal (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Liverpool",
+            "competicao": "Champions League 2018/19 — Semifinal (ida)",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Barcelona",
+            "competicao": "Champions League 2018/19 — Semifinal (volta)",
+            "placarMandante": 4,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Tottenham",
+            "visitante": "Liverpool",
+            "competicao": "Champions League 2018/19 — Final",
+            "placarMandante": 4,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Lyon",
+            "competicao": "Champions League 2019/20 — Quartas de Final",
+            "placarMandante": 1,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Bayern de Munique",
+            "competicao": "Champions League 2019/20 — Quartas de Final",
+            "placarMandante": 2,
+            "placarVisitante": 8
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Paris Saint-Germain",
+            "competicao": "Champions League 2019/20 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Paris Saint-Germain",
+            "competicao": "Champions League 2020/21 — Quartas de final (ida)",
+            "placarMandante": 2,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Chelsea",
+            "competicao": "Champions League 2020/21 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Villarreal",
+            "competicao": "Champions League 2021/22 — Oitavas de Final (volta)",
+            "placarMandante": 0,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Sporting",
+            "visitante": "Manchester City",
+            "competicao": "Champions League 2021/22 — Oitavas de Final (ida)",
+            "placarMandante": 0,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Benfica",
+            "competicao": "Champions League 2021/22 — Oitavas de Final (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Paris Saint-Germain",
+            "competicao": "Champions League 2021/22 — Oitavas de Final (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Chelsea",
+            "competicao": "Champions League 2021/22 — Quarta de Final (volta)",
+            "placarMandante": 2,
+            "placarVisitante": 3,
+            "detalhe": "Real Madrid avança com gol de Karim Benzema"
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2021/22 — Semifinal (ida)",
+            "placarMandante": 4,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2021/22 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2022/23 — Oitavas de final (ida)",
+            "placarMandante": 2,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Inter de Milão",
+            "visitante": "Benfica",
+            "competicao": "Champions League 2022/23 — Quartas de final (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2022/23 — Semifinal (volta)",
+            "placarMandante": 4,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Inter de Milão",
+            "competicao": "Champions League 2022/23 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Real Madrid",
+            "visitante": "Manchester City",
+            "competicao": "Champions League 2023/24 — Quartas de final (ida)",
+            "placarMandante": 3,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Borussia Dortmund",
+            "visitante": "Atlético de Madrid",
+            "competicao": "Champions League 2023/24 — Quartas de final (volta)",
+            "placarMandante": 2,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Paris Saint-Germain",
+            "competicao": "Champions League 2023/24 — Quartas de final (volta)",
+            "placarMandante": 1,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Borussia Dortmund",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2023/24 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Dínamo Zagreb",
+            "competicao": "Champions League 2024/25 — Fase de liga - 1 rodada",
+            "placarMandante": 9,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Benfica",
+            "visitante": "Barcelona",
+            "competicao": "Champions League 2024/25 — Fase de liga - 7 rodada",
+            "placarMandante": 4,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Manchester City",
+            "competicao": "Champions League 2024/25 — Fase de liga - 7 rodada",
+            "placarMandante": 4,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Inter de Milão",
+            "competicao": "Champions League 2024/25 — Semifinal (ida)",
+            "placarMandante": 3,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Inter de Milão",
+            "visitante": "Barcelona",
+            "competicao": "Champions League 2024/25 — Semifinal (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Inter de Milão",
+            "competicao": "Champions League 2024/25 — Final",
+            "placarMandante": 5,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Borussia Dortmund",
+            "competicao": "Champions League 2025/26 — Fase de liga - 1 rodada",
+            "placarMandante": 4,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Atlético de Madrid",
+            "competicao": "Champions League 2025/26 — Fase de liga - 1 rodada",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Olympiacos",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2025/26 — Fase de liga - 5 rodada",
+            "placarMandante": 3,
+            "placarVisitante": 4,
+            "detalhe": "Pôquer-trick de Mbappé"
+        },
+        {
+            "mandante": "Benfica",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2025/26 — Fase de liga - 8 rodada",
+            "placarMandante": 4,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Chelsea",
+            "competicao": "Champions League 2025/26 — Oitavas de final (ida)",
+            "placarMandante": 5,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Barcelona",
+            "visitante": "Newcastle",
+            "competicao": "Champions League 2025/26 — Oitavas de final (volta)",
+            "placarMandante": 2,
+            "placarVisitante": 7
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Real Madrid",
+            "competicao": "Champions League 2025/26 — Quartas de final (volta)",
+            "placarMandante": 4,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Bayern de Munique",
+            "competicao": "Champions League 2025/26 — Semifinal (ida)",
+            "placarMandante": 5,
+            "placarVisitante": 4
         },
         {
             "mandante": "Fluminense",
             "visitante": "São Paulo",
             "competicao": "Libertadores 2008 — Quartas de Final (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Santos",
+            "visitante": "Peñarol",
+            "competicao": "Libertadores 2011 — Final (volta)",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "River Plate",
+            "visitante": "Boca Juniors",
+            "competicao": "Libertadores 2018 — Final (volta)",
             "placarMandante": 3,
             "placarVisitante": 1
         },
@@ -238,48 +1052,6 @@
             "detalhe": "Placar agregado: 1-0 para o Palmeiras"
         },
         {
-            "mandante": "Botafogo",
-            "visitante": "Peñarol",
-            "competicao": "Libertadores 2024 — Semifinal (Ida)",
-            "placarMandante": 5,
-            "placarVisitante": 0
-        },
-        {
-            "mandante": "Botafogo",
-            "visitante": "Atlético Mineiro",
-            "competicao": "Libertadores 2024 — Final",
-            "placarMandante": 3,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "Fluminense",
-            "visitante": "River Plate",
-            "competicao": "Libertadores 2023 — Fase de Grupos",
-            "placarMandante": 5,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "Fluminense",
-            "visitante": "Boca Juniors",
-            "competicao": "Libertadores 2023 — Final",
-            "placarMandante": 2,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "Santos",
-            "visitante": "Peñarol",
-            "competicao": "Libertadores 2011 — Final (volta)",
-            "placarMandante": 2,
-            "placarVisitante": 1
-        },
-        {
-            "mandante": "River Plate",
-            "visitante": "Boca Juniors",
-            "competicao": "Libertadores 2018 — Final (volta)",
-            "placarMandante": 3,
-            "placarVisitante": 1
-        },
-        {
             "mandante": "Palmeiras",
             "visitante": "Independiente Petrolero",
             "competicao": "Libertadores 2022 — Fase de Grupos",
@@ -291,6 +1063,55 @@
             "visitante": "Athletico Paranaense",
             "competicao": "Libertadores 2022 — Semifinal (volta)",
             "placarMandante": 2,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "River Plate",
+            "competicao": "Libertadores 2023 — Fase de Grupos",
+            "placarMandante": 5,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Olimpia",
+            "visitante": "Flamengo",
+            "competicao": "Libertadores 2023 — Oitavas de Final (volta)",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Internacional",
+            "competicao": "Libertadores 2023 — Semifinal (ida)",
+            "placarMandante": 2,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Internacional",
+            "visitante": "Fluminense",
+            "competicao": "Libertadores 2023 — Semifinal (volta)",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Boca Juniors",
+            "competicao": "Libertadores 2023 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Peñarol",
+            "competicao": "Libertadores 2024 — Semifinal (Ida)",
+            "placarMandante": 5,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Atlético Mineiro",
+            "competicao": "Libertadores 2024 — Final",
+            "placarMandante": 3,
             "placarVisitante": 1
         },
         {
@@ -308,6 +1129,139 @@
             "placarVisitante": 0
         },
         {
+            "mandante": "Real Madrid",
+            "visitante": "Grêmio",
+            "competicao": "Mundial de Clubes 2017 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Al-Hilal",
+            "competicao": "Mundial de Clubes 2019 — Semifinal",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Liverpool",
+            "visitante": "Flamengo",
+            "competicao": "Mundial de Clubes 2019 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Chelsea",
+            "visitante": "Palmeiras",
+            "competicao": "Mundial de Clubes 2021 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Al-Ahly",
+            "visitante": "Fluminense",
+            "competicao": "Mundial de Clubes 2023 — Semifinal",
+            "placarMandante": 0,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Manchester City",
+            "competicao": "Mundial de Clubes 2023 — Final",
+            "placarMandante": 0,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Pachuca",
+            "competicao": "Copa Intercontinental 2024 — Segunda Fase (Dérbi das Américas)",
+            "placarMandante": 0,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Bayern de Munique",
+            "visitante": "Auckland City",
+            "competicao": "Copa do Mundo de Clubes 2025 — Fase de grupos",
+            "placarMandante": 10,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Juventus",
+            "visitante": "Manchester City",
+            "competicao": "Copa do Mundo de Clubes 2025 — Fase de grupos",
+            "placarMandante": 2,
+            "placarVisitante": 5
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Chelsea",
+            "competicao": "Copa do Mundo de Clubes 2025 — Fase de grupos",
+            "placarMandante": 3,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Botafogo",
+            "competicao": "Copa do Mundo de Clubes 2025 — Fase de grupos",
+            "placarMandante": 0,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Manchester City",
+            "visitante": "Al-Hilal",
+            "competicao": "Copa do Mundo de Clubes 2025 — Oitavas de final",
+            "placarMandante": 3,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Bayern de Munique",
+            "competicao": "Copa do Mundo de Clubes 2025 — Oitavas de final",
+            "placarMandante": 2,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Inter de Milão",
+            "competicao": "Copa do Mundo de Clubes 2025 — Oitavas de final",
+            "placarMandante": 2,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Al-Hilal",
+            "competicao": "Copa do Mundo de Clubes 2025 — Quartas de final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Palmeiras",
+            "visitante": "Chelsea",
+            "competicao": "Copa do Mundo de Clubes 2025 — Quartas de final",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "Chelsea",
+            "competicao": "Copa do Mundo de Clubes 2025 — Semifinal",
+            "placarMandante": 0,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Paris Saint-Germain",
+            "visitante": "Real Madrid",
+            "competicao": "Copa do Mundo de Clubes 2025 — Semifinal",
+            "placarMandante": 4,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Chelsea",
+            "visitante": "Paris Saint-Germain",
+            "competicao": "Copa do Mundo de Clubes 2025 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
             "mandante": "Barcelona",
             "visitante": "Real Madrid",
             "competicao": "La Liga 2009 — El Clásico (Camp Nou)",
@@ -322,6 +1276,22 @@
             "placarVisitante": 1
         },
         {
+            "mandante": "Fluminense",
+            "visitante": "América de Natal",
+            "competicao": "Copa do Brasil 2014 - Terceira fase (volta)",
+            "placarMandante": 2,
+            "placarVisitante": 5,
+            "detalhe": "A maior virada da história da Copa do Brasil"
+        },
+        {
+            "mandante": "São Paulo",
+            "visitante": "4 de Julho",
+            "competicao": "Copa do Brasil 2021 - Terceira fase (volta)",
+            "placarMandante": 9,
+            "placarVisitante": 1,
+            "detalhe": "A maior virada da história da Copa do Brasil"
+        },
+        {
             "mandante": "Flamengo",
             "visitante": "Atlético Mineiro",
             "competicao": "Copa do Brasil 2024 - Final (ida)",
@@ -334,6 +1304,111 @@
             "competicao": "Campeonato Brasileiro 2011",
             "placarMandante": 4,
             "placarVisitante": 5
+        },
+        {
+            "mandante": "Palmeiras",
+            "visitante": "Fluminense",
+            "competicao": "Campeonato Brasileiro 2012",
+            "placarMandante": 2,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Corinthians",
+            "visitante": "São Paulo",
+            "competicao": "Campeonato Brasileiro 2015",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Vasco da Gama",
+            "competicao": "Campeonato Brasileiro 2019",
+            "placarMandante": 4,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Avaí",
+            "competicao": "Campeonato Brasileiro 2019",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Goiás",
+            "competicao": "Campeonato Brasileiro 2019",
+            "placarMandante": 6,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Palmeiras",
+            "competicao": "Campeonato Brasileiro 2023",
+            "placarMandante": 3,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Grêmio",
+            "competicao": "Campeonato Brasileiro 2023",
+            "placarMandante": 3,
+            "placarVisitante": 4
+        },
+        {
+            "mandante": "Vasco da Gama",
+            "visitante": "Flamnengo",
+            "competicao": "Campeonato Brasileiro 2024",
+            "placarMandante": 1,
+            "placarVisitante": 6
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "São Paulo",
+            "competicao": "Campeonato Brasileiro 2024",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Palmeiras",
+            "visitante": "Botafogo",
+            "competicao": "Campeonato Brasileiro 2024",
+            "placarMandante": 1,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Vasco da Gama",
+            "competicao": "Campeonato Brasileiro 2024",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Botafogo",
+            "visitante": "Atlético Mineiro",
+            "competicao": "Campeonato Brasileiro 2024",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Fluminense",
+            "visitante": "São Paulo",
+            "competicao": "Campeonato Brasileiro 2025",
+            "placarMandante": 6,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Flamengo",
+            "visitante": "Vitória",
+            "competicao": "Campeonato Brasileiro 2025",
+            "placarMandante": 8,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Santos",
+            "visitante": "Vasco",
+            "competicao": "Campeonato Brasileiro 2025",
+            "placarMandante": 0,
+            "placarVisitante": 6
         }
     ]
 }
