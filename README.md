@@ -42,6 +42,8 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 19 | **Football Linha do Tempo** | Coloque eventos do futebol em ordem cronológica |
 | 20 | **Football Placar** | Acerte o placar exato de jogos históricos |
 | 21 | **Football Quem Falta?** | Complete a lista com o nome que está faltando |
+| 22 | **Football Multiplica** | Multiplique estatísticas de jogadores para alcançar a meta |
+| 23 | **Football Quiz** | Quiz temático com perguntas sobre Champions, Copa, Libertadores e mais |
 
 ---
 
@@ -75,7 +77,9 @@ Football-Games-11/
 │       ├── football-top10/
 │       ├── football-transferencias/
 │       ├── football-vc-convoca/
-│       └── football-vc-escala/
+│       ├── football-vc-escala/
+│       ├── football-multiplica/
+│       └── football-quiz/
 ├── data/                       # Arquivos JSON com dados dos jogos
 ├── README.md
 └── LICENSE
