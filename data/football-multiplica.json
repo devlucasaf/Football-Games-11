@@ -1,0 +1,97 @@
+{
+    "desafios": [
+        {
+            "tema": "Alcance 100.000 gols",
+            "tipo": "gols",
+            "meta": 100000,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 500.000 gols",
+            "tipo": "gols",
+            "meta": 500000,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 50 títulos de Copa do Mundo",
+            "tipo": "copas",
+            "meta": 50,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 100 títulos de Champions League",
+            "tipo": "champions",
+            "meta": 100,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 200 títulos de Libertadores",
+            "tipo": "libertadores",
+            "meta": 200,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 50.000 assistências",
+            "tipo": "assistencias",
+            "meta": 50000,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 100 Bolas de Ouro",
+            "tipo": "bolasDeOuro",
+            "meta": 100,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 750.000 gols",
+            "tipo": "gols",
+            "meta": 750000,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 80 títulos de Brasileirão",
+            "tipo": "brasileirao",
+            "meta": 80,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 150 títulos de Premier League",
+            "tipo": "premierLeague",
+            "meta": 150,
+            "rodadas": 8
+        }
+    ],
+    "jogadores": [
+        { "nome": "Pelé", "gols": 767, "assistencias": 334, "copas": 3, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 6, "premierLeague": 0 },
+        { "nome": "Messi", "gols": 850, "assistencias": 380, "copas": 1, "champions": 4, "libertadores": 0, "bolasDeOuro": 8, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Cristiano Ronaldo", "gols": 920, "assistencias": 260, "copas": 0, "champions": 5, "libertadores": 0, "bolasDeOuro": 5, "brasileirao": 0, "premierLeague": 3 },
+        { "nome": "Neymar", "gols": 450, "assistencias": 280, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Mbappé", "gols": 350, "assistencias": 150, "copas": 1, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Haaland", "gols": 300, "assistencias": 55, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 2 },
+        { "nome": "Lewandowski", "gols": 680, "assistencias": 170, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Benzema", "gols": 470, "assistencias": 200, "copas": 0, "champions": 5, "libertadores": 0, "bolasDeOuro": 1, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Suárez", "gols": 540, "assistencias": 260, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Ronaldinho", "gols": 320, "assistencias": 190, "copas": 1, "champions": 1, "libertadores": 0, "bolasDeOuro": 2, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Ronaldo Fenômeno", "gols": 414, "assistencias": 130, "copas": 2, "champions": 0, "libertadores": 0, "bolasDeOuro": 2, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Zidane", "gols": 156, "assistencias": 140, "copas": 1, "champions": 1, "libertadores": 0, "bolasDeOuro": 1, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Romário", "gols": 772, "assistencias": 115, "copas": 1, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 1, "premierLeague": 0 },
+        { "nome": "Kaká", "gols": 222, "assistencias": 140, "copas": 1, "champions": 1, "libertadores": 0, "bolasDeOuro": 1, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Modric", "gols": 95, "assistencias": 140, "copas": 0, "champions": 6, "libertadores": 0, "bolasDeOuro": 1, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Salah", "gols": 370, "assistencias": 180, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 1 },
+        { "nome": "De Bruyne", "gols": 130, "assistencias": 270, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 6 },
+        { "nome": "Vinícius Jr", "gols": 150, "assistencias": 100, "copas": 0, "champions": 2, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Gabigol", "gols": 240, "assistencias": 70, "copas": 0, "champions": 0, "libertadores": 2, "bolasDeOuro": 0, "brasileirao": 2, "premierLeague": 0 },
+        { "nome": "Hulk", "gols": 310, "assistencias": 110, "copas": 0, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 1, "premierLeague": 0 },
+        { "nome": "Henry", "gols": 411, "assistencias": 190, "copas": 1, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 2 },
+        { "nome": "Eto'o", "gols": 395, "assistencias": 100, "copas": 0, "champions": 3, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Rooney", "gols": 313, "assistencias": 145, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 5 },
+        { "nome": "Van Persie", "gols": 280, "assistencias": 85, "copas": 0, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 1 },
+        { "nome": "Ibrahimovic", "gols": 570, "assistencias": 220, "copas": 0, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Agüero", "gols": 395, "assistencias": 115, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 5 },
+        { "nome": "Drogba", "gols": 305, "assistencias": 100, "copas": 0, "champions": 1, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 3 },
+        { "nome": "Raúl", "gols": 323, "assistencias": 135, "copas": 0, "champions": 3, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Rivaldo", "gols": 310, "assistencias": 110, "copas": 1, "champions": 1, "libertadores": 0, "bolasDeOuro": 1, "brasileirao": 0, "premierLeague": 0 },
+        { "nome": "Adriano", "gols": 200, "assistencias": 55, "copas": 0, "champions": 0, "libertadores": 0, "bolasDeOuro": 0, "brasileirao": 1, "premierLeague": 0 }
+    ],
+    "multiplicadores": [2, 5, 10, 20, 30, 50, 75, 100, 150, 200]
+}

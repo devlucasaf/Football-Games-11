@@ -1,0 +1,458 @@
+.multiplica-container {
+    max-width: 700px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+}
+
+/* --- CABEÇALHO --- */
+.multiplica-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.multiplica-header .game-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.multiplica-header .game-title i {
+    color: var(--primary-green);
+}
+
+.multiplica-header .game-description {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: var(--spacing-xs);
+}
+
+/* --- TEMA DO DESAFIO --- */
+.desafio-tema {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    padding: 12px 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-sm);
+    border-left: 4px solid var(--primary-green);
+}
+
+/* --- STATS DO DESAFIO --- */
+.desafio-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.desafio-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.desafio-stats .stat-item i {
+    color: var(--primary-green);
+}
+
+.acumulado-highlight strong {
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+/* --- BARRA DE PROGRESSO --- */
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--spacing-md);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 12px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-green), #2ecc71);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+}
+
+.progress-fill.meta-atingida {
+    background: linear-gradient(90deg, #f1c40f, #e67e22);
+}
+
+.progress-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    min-width: 40px;
+    text-align: right;
+}
+
+/* --- CARD DO JOGADOR --- */
+.jogador-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.jogador-info {
+    margin-bottom: var(--spacing-md);
+}
+
+.jogador-nome {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.jogador-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.stat-badge i {
+    font-size: 0.75rem;
+}
+
+.stat-badge.destaque {
+    background: var(--primary-green);
+    color: #fff;
+    font-weight: 700;
+}
+
+.jogador-valor-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--spacing-sm);
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-green), #27ae60);
+    border-radius: var(--radius-md);
+    color: #fff;
+}
+
+.valor-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.valor-numero {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* --- GRID DE MULTIPLICADORES --- */
+.multiplicadores-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: var(--spacing-md);
+}
+
+.btn-multiplicador {
+    padding: 14px 8px;
+    border: 2px solid var(--bg-secondary);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-multiplicador:hover {
+    border-color: var(--primary-green);
+    background: var(--primary-green);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-multiplicador.baixo { 
+    border-color: #2ecc71; 
+}
+
+.btn-multiplicador.medio { 
+    border-color: #f39c12; 
+}
+
+.btn-multiplicador.alto { 
+    border-color: #e74c3c; 
+}
+
+.btn-multiplicador.baixo:hover { 
+    background: #2ecc71; 
+}
+
+.btn-multiplicador.medio:hover { 
+    background: #f39c12; 
+}
+
+.btn-multiplicador.alto:hover { 
+    background: #e74c3c; 
+}
+
+
+.btn-multiplicador.selecionado {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-multiplicador.usado {
+    background: var(--bg-secondary);
+    border-color: var(--bg-secondary);
+    opacity: 0.7;
+    cursor: not-allowed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 4px;
+}
+
+.btn-multiplicador.usado:hover {
+    transform: none;
+    box-shadow: none;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.btn-multiplicador.usado .mult-valor {
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.btn-multiplicador.usado .mult-jogador {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* --- BOTÃO PULAR --- */
+.skip-section {
+    margin-top: var(--spacing-sm);
+    text-align: center;
+}
+
+.btn-pular {
+    padding: 10px 28px;
+    border: 2px solid #9b59b6;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: #9b59b6;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-pular:hover:not(.disabled) {
+    background: #9b59b6;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+}
+
+.btn-pular.disabled {
+    border-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pulos-info strong {
+    color: #9b59b6;
+}
+
+/* --- RESULTADO DA MULTIPLICAÇÃO --- */
+.multiplicacao-resultado {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.resultado-calculo {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+.resultado-calculo .resultado-valor {
+    color: var(--primary-green);
+    font-size: 1.5rem;
+}
+
+.btn-proximo {
+    padding: 10px 24px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--primary-green);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-proximo:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+}
+
+/* --- RESULTADO FINAL --- */
+.final-result {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.final-result .result-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.final-result h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.final-result .result-text {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.result-details {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.btn-retry, .btn-home {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-retry {
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.btn-retry:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+}
+
+.btn-home {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.btn-home:hover {
+    background: var(--bg-card);
+    transform: translateY(-1px);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 480px) {
+    .multiplicadores-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    .btn-multiplicador {
+        padding: 10px 4px;
+        font-size: 0.85rem;
+    }
+
+    .desafio-stats {
+        gap: var(--spacing-xs);
+    }
+
+    .jogador-nome {
+        font-size: 1.3rem;
+    }
+}
