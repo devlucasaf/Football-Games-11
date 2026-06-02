@@ -12,8 +12,23 @@
                     "resposta": 0
                 },
                 {
+                    "pergunta": "Qual é o clube com mais participações em Semi-Finais da Champions League?",
+                    "opcoes": ["Real Madrid", "AC Milan", "Liverpool", "Bayern de Munique", "Barcelona"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Qual é o país com mais títulos da Champions League?",
+                    "opcoes": ["Espanha", "Itália", "Inglaterra", "Alemanha", "Holanda"],
+                    "resposta": 0
+                },
+                {
                     "pergunta": "Quem é o maior artilheiro da história da Champions League?",
                     "opcoes": ["Lionel Messi", "Cristiano Ronaldo", "Raúl", "Robert Lewandowski", "Karim Benzema"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Quem é o jogador com mais partidas disputadas na Champions League?",
+                    "opcoes": ["Lionel Messi", "Cristiano Ronaldo", "Raúl", "Iker Casillas", "Manuel Neuer"],
                     "resposta": 1
                 },
                 {
@@ -27,7 +42,7 @@
                     "resposta": 2
                 },
                 {
-                    "pergunta": "Qual jogador marcou o gol decisivo na final da Champions 2023 entre Manchester City e Inter?",
+                    "pergunta": "Qual jogador marcou o gol decisivo na final da Champions 2023 entre Manchester City e Inter de Milão?",
                     "opcoes": ["Erling Haaland", "Kevin De Bruyne", "Rodri", "Bernardo Silva", "Phil Foden"],
                     "resposta": 2
                 },
@@ -95,9 +110,29 @@
                     "resposta": 2
                 },
                 {
+                    "pergunta": "Qual país nunca disputou a Copa do Mundo?",
+                    "opcoes": ["Brasil", "França", "Polônia", "Geórgia", "Haiti"],
+                    "resposta": 3
+                },
+                {
                     "pergunta": "Em qual país foi realizada a Copa do Mundo de 2022?",
-                    "opcoes": ["Arábia Saudita", "Emirados Árabes", "Catar", "Bahrein", "Kuwait"],
+                    "opcoes": ["Arábia Saudita", "Emirados Árabes", "Catar", "Irã", "Japão"],
                     "resposta": 2
+                },
+                {
+                    "pergunta": "Em qual país foi realizada a Copa do Mundo de 2018?",
+                    "opcoes": ["Portugal", "Rússia", "Escócia", "Inglaterra", "Polônia"],
+                    "resposta": 1
+                },
+                {
+                    "pergunta": "Em qual país foi realizada a Copa do Mundo de 2014?",
+                    "opcoes": ["Uruguai", "Colômbia", "Argentina", "Chile", "Brasil"],
+                    "resposta": 4
+                },
+                {
+                    "pergunta": "Em qual país foi realizada a Copa do Mundo de 2010?",
+                    "opcoes": ["África do Sul", "Nigéria", "Egito", "Marrocos", "Tunísia"],
+                    "resposta": 0
                 },
                 {
                     "pergunta": "Quem é o maior artilheiro da história das Copas do Mundo?",
@@ -105,9 +140,54 @@
                     "resposta": 2
                 },
                 {
-                    "pergunta": "Qual seleção venceu a Copa de 1950 no Maracanã?",
+                    "pergunta": "Quem é o jogador com mais títulos da história das Copas do Mundo?",
+                    "opcoes": ["Pelé", "Lionel Messi", "Lothar Matthäus", "Gerd Müller", "Just Fontaine"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Quem é o jogador mais velho a jogar uma Copa do Mundo?",
+                    "opcoes": ["Roger Milla", "Miroslav Klose", "Essam El-Hadary", "Dino Zoff", "Pepe"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem é o jogador que marcou o primeiro gol na história das Copas do Mundo?",
+                    "opcoes": ["José Nasazzi", "Stábile", "Scopelli", "Vujadinović", "Lucien Laurent"],
+                    "resposta": 4
+                },
+                {
+                    "pergunta": "Quem é o jogador com mais assistências em Copas do Mundo?",
+                    "opcoes": ["Just Fontaine", "Rivaldo", "Fritz Walter", "Pelé", "Raymond Kopa"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Quem é o jogador que marcou o maior número de gols em uma edição de Copa do Mundo?",
+                    "opcoes": ["Just Fontaine", "Miroslav Klose", "Kylian Mbappé", "Pelé", "Gerd Müller"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Quem é o jogador com o maior número de gols marcados em uma partida de Copa do Mundo?",
+                    "opcoes": ["Just Fontaine", "Ronaldo Fenômeno", "Kylian Mbappé", "Oleg Salenko", "Geoff Hurst"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Quem foi o melhor jogador da Copa de 2022?",
+                    "opcoes": ["Lionel Messi", "Kylian Mbappé", "Enzo Fernández", "Julian Álvarez", "Luka Modrić"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Quem foi o artilheiro da Copa do Mundo de 2014?",
+                    "opcoes": ["Miroslav Klose", "Robin Van Persie", "Neymar", "Lionel Messi", "James Rodríguez"],
+                    "resposta": 4
+                },
+                {
+                    "pergunta": "Qual seleção venceu a Copa de 1950?",
                     "opcoes": ["Brasil", "Uruguai", "Argentina", "Itália", "Alemanha"],
                     "resposta": 1
+                },
+                {
+                    "pergunta": "Qual seleção venceu a Copa de 1966?",
+                    "opcoes": ["Brasil", "Uruguai", "Argentina", "Inglaterra", "Alemanha"],
+                    "resposta": 3
                 },
                 {
                     "pergunta": "Quantos gols Pelé marcou em Copas do Mundo?",
@@ -115,23 +195,13 @@
                     "resposta": 1
                 },
                 {
-                    "pergunta": "Quem marcou o gol na final da Copa 2014 (Alemanha x Argentina)?",
+                    "pergunta": "Quem marcou o gol na final da Copa 2014?",
                     "opcoes": ["Thomas Müller", "Miroslav Klose", "Mario Götze", "Mesut Özil", "André Schürrle"],
                     "resposta": 2
                 },
                 {
-                    "pergunta": "Qual país sediou a primeira Copa do Mundo em 1930?",
+                    "pergunta": "Qual país sediou a primeira Copa do Mundo?",
                     "opcoes": ["Brasil", "Itália", "França", "Uruguai", "Argentina"],
-                    "resposta": 3
-                },
-                {
-                    "pergunta": "Quem ganhou a Bola de Ouro na Copa 2022?",
-                    "opcoes": ["Kylian Mbappé", "Lionel Messi", "Enzo Fernández", "Julian Álvarez", "Luka Modrić"],
-                    "resposta": 1
-                },
-                {
-                    "pergunta": "Qual seleção foi eliminada na fase de grupos da Copa 2014 sendo a anfitriã do torneio anterior?",
-                    "opcoes": ["Alemanha", "Brasil", "Espanha", "África do Sul", "França"],
                     "resposta": 3
                 },
                 {
@@ -140,29 +210,54 @@
                     "resposta": 1
                 },
                 {
-                    "pergunta": "Qual jogador marcou hat-trick na final da Copa 2022?",
-                    "opcoes": ["Lionel Messi", "Kylian Mbappé", "Olivier Giroud", "Julian Álvarez", "Ángel Di María"],
-                    "resposta": 1
-                },
-                {
-                    "pergunta": "Em que ano o Brasil ganhou seu último título mundial?",
-                    "opcoes": ["1998", "2002", "2006", "1994", "2010"],
-                    "resposta": 1
-                },
-                {
-                    "pergunta": "Qual foi o placar do 'Mineiraço' (Brasil x Alemanha) na Copa 2014?",
-                    "opcoes": ["5x0", "6x1", "7x1", "7x0", "4x1"],
-                    "resposta": 2
-                },
-                {
                     "pergunta": "Quem é o jogador mais jovem a marcar em uma final de Copa?",
                     "opcoes": ["Pelé", "Kylian Mbappé", "Michael Owen", "Ronaldo Fenômeno", "Mario Götze"],
                     "resposta": 0
                 },
                 {
+                    "pergunta": "Que seleção teve o melhor ataque na fase de grupos da Copa do Mundo de 2014?",
+                    "opcoes": ["Brasil", "Colômbia", "Holanda", "Alemanha", "Argentina"],
+                    "resposta": 2
+                },
+                {
                     "pergunta": "Qual a sede da Copa do Mundo de 2026?",
                     "opcoes": ["EUA, México e Canadá", "Arábia Saudita", "Austrália", "Inglaterra", "Marrocos"],
                     "resposta": 0
+                },
+                {
+                    "pergunta": "Qual seleção é famosa pela camisa quadriculada?",
+                    "opcoes": ["Bósnia e Herzegovina", "Noruega", "Bélgica", "Croácia", "Alemanha"],
+                    "resposta": 3
+                },
+                {
+                    "pergunta": "Qual seleção enfrentou o Brasil duas vezes em 2002?",
+                    "opcoes": ["Inglaterra", "Alemanha", "França", "Coreia do Sul", "Turquia"],
+                    "resposta": 4
+                },
+                {
+                    "pergunta": "Que dia será a final da Copa do Mundo de 2026?",
+                    "opcoes": ["18 de julho", "20 de julho", "19 de julho", "30 de julho", "26 de julho"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Que jogador do Brasil foi expulso por uma cotovelada na Copa do Mundo de 1994?",
+                    "opcoes": ["Leonardo", "Dunga", "Romário", "Raí", "Branco"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Quem era o capitão da Itália na Copa do Mundo de 2006?",
+                    "opcoes": ["Francesco Totti", "Gianluigi Buffon", "Fabio Cannavaro", "Andrea Pirlo", "Alessandro Del Piero"],
+                    "resposta": 2
+                },
+                {
+                    "pergunta": "Que jogador da Colômbia lesionou o Neymar na Copa do Mundo de 2014?",
+                    "opcoes": ["Juan Camilo Zúñiga", "James Rodríguez", "Radamel Falcao", "Carlos Sánchez", "Jackson Martínez"],
+                    "resposta": 0
+                },
+                {
+                    "pergunta": "Em qual cidade suíça o Brasil se preparou pra Copa do Mundo de 2006?",
+                    "opcoes": ["Basileia", "Zurique", "Genebra", "Weggis", "Lucerna"],
+                    "resposta": 3
                 }
             ]
         },
@@ -256,7 +351,7 @@
             "cor": "#f57f17",
             "perguntas": [
                 {
-                    "pergunta": "Qual clube tem mais títulos do Brasileirão (Série A)?",
+                    "pergunta": "Qual clube tem mais títulos do Brasileirão?",
                     "opcoes": ["São Paulo", "Santos", "Palmeiras", "Flamengo", "Corinthians"],
                     "resposta": 2
                 },
@@ -307,8 +402,8 @@
                 },
                 {
                     "pergunta": "Quem foi o artilheiro do Brasileirão 2023?",
-                    "opcoes": ["Pedro", "Paulinho", "Luciano", "Luis Suárez", "Vegetti"],
-                    "resposta": 0
+                    "opcoes": ["Germán Cano", "Paulinho", "Luciano", "Luis Suárez", "Vegetti"],
+                    "resposta": 1
                 },
                 {
                     "pergunta": "Qual time tem a maior goleada da história do Brasileirão de pontos corridos?",
