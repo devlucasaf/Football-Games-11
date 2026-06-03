@@ -3,7 +3,6 @@ import { inserirLetra, apagarLetra } from "./input.js";
 import { confirmarTentativa } from "./logic.js";
 
 export function configurarEventos(reiniciarJogo) {
-    // --- TECLADO FÍSICO ---
     document.addEventListener("keydown", (e) => {
         if (e.ctrlKey || e.altKey || e.metaKey) {
             return;
@@ -26,7 +25,6 @@ export function configurarEventos(reiniciarJogo) {
         }
     });
 
-    // --- TECLADO VIRTUAL ---
     document.getElementById("keyboard").addEventListener("click", (e) => {
         const tecla = e.target.closest(".key");
         if (!tecla) {

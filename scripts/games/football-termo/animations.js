@@ -1,5 +1,6 @@
 import { esperar } from "./utils.js";
 
+// --- ANIMA A REVELAÇÃO DE UMA LINHA COM EFEITO DE FLIP ---
 export async function revelarLinha(celulas, chute, cores) {
     for (let i = 0; i < celulas.length; i++) {
         const celula = celulas[i];
@@ -19,6 +20,7 @@ export async function revelarLinha(celulas, chute, cores) {
     }
 }
 
+// --- ANIMA EFEITO DE PULO (BOUNCE) NAS CÉLULAS DE VITÓRIA ---
 export async function animarVitoria(celulas) {
     for (let i = 0; i < celulas.length; i++) {
         celulas[i].classList.add("bounce");
@@ -26,6 +28,7 @@ export async function animarVitoria(celulas) {
     }
 }
 
+// --- ANIMA EFEITO DE SACUDIR EM UMA LINHA ---
 export function shakeRow(linha) {
     const row = document.querySelector(`.termo-row[data-row="${linha}"]`);
     if (row) {

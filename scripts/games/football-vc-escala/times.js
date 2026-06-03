@@ -1,5 +1,4 @@
 const EscalaTimes = {
-
     async iniciar() {
         try {
             await EscalaDados.carregarDados();
@@ -12,6 +11,7 @@ const EscalaTimes = {
         }
     },
 
+    // --- RENDERIZA UM GRID COM CARTÕES DE TODOS OS TIMES DISPONÍVEIS ---
     renderizarGridTimes() {
         const gridTimes = document.getElementById('teamsGrid');
         const elementoCarregando = document.getElementById('loadingTeams');
@@ -33,6 +33,7 @@ const EscalaTimes = {
         });
     },
 
+    // --- CRIA O CARTÃO HTML PARA UM TIME ---
     criarCartaoTime(time) {
         const cartao = document.createElement('div');
         cartao.className = 'team-card';
@@ -69,6 +70,7 @@ const EscalaTimes = {
         return cartao;
     },
 
+    // --- ATUALIZA AS ESTATÍSTICAS EXIBIDAS NO TOPO DA PÁGINA ---
     atualizarEstatisticas() {
         if (!EscalaDados.timesProcessados.length) {
             return;
@@ -87,6 +89,7 @@ const EscalaTimes = {
         }
     },
 
+    // --- EXIBE A MENSAGEM DE ESTADO DE ERRO QUANDO OS DADOS NÃO CARREGAM ---
     mostrarEstadoErro() {
         const elementoCarregando = document.getElementById('loadingTeams');
         const elementoErro = document.getElementById('errorState');
@@ -100,6 +103,7 @@ const EscalaTimes = {
         }
     },
 
+    // --- CONFIGURA TODOS OS EVENTOS DE INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
         const botaoTema = document.getElementById('themeToggle');
         if (botaoTema) {

@@ -4,6 +4,7 @@ function normalizar(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
+// --- RENDERIZA A LINHA DO TEMPO COM OS CLUBES DO JOGADOR ATUAL ---
 export function renderizarClubes() {
     const timeline = document.getElementById('clubsTimeline');
     timeline.innerHTML = '';
@@ -45,11 +46,13 @@ export function renderizarClubes() {
     }
 }
 
+// --- ATUALIZA AS INFORMAÇÕES EXIBIDAS NA TELA ---
 export function atualizarInfo() {
     document.getElementById('pontuacao').textContent = estado.pontuacao;
     document.getElementById('rodadaAtual').textContent = estado.rodada;
 }
 
+// --- MOSTRA O FEEDBACK DE ACERTO OU ERRO DO PALPITE ---
 export function mostrarFeedback(acertou, pontosGanhos) {
     const feedback  = document.getElementById('feedback');
     const icon      = document.getElementById('feedbackIcon');
@@ -81,6 +84,7 @@ export function mostrarFeedback(acertou, pontosGanhos) {
     }
 }
 
+// --- EXIBE A TELA DE RESULTADO FINAL DO JOGO ---
 export function mostrarResultadoFinal() {
     document.getElementById('clubsArea').classList.add('hidden');
     document.getElementById('guessArea').classList.add('hidden');
@@ -94,11 +98,18 @@ export function mostrarResultadoFinal() {
     const maxPontos = estado.totalRodadas * 10;
     const detailsDiv = document.getElementById('finalDetails');
     const porcentagem = Math.round((estado.pontuacao / maxPontos) * 100);
+    
     let msg = '';
-    if (porcentagem >= 80) msg = 'Excelente! Você é um expert em transferências!';
-    else if (porcentagem >= 50) msg = 'Bom trabalho! Conhece bem o mercado!';
-    else if (porcentagem >= 20) msg = 'Pode melhorar! Tente de novo!';
-    else msg = 'Difícil, né? Jogue novamente para aprender!';
+
+    if (porcentagem >= 80) {
+        msg = 'Excelente! Você é um expert em transferências!';
+    } else if (porcentagem >= 50) {
+        msg = 'Bom trabalho! Conhece bem o mercado!';
+    } else if (porcentagem >= 20) {
+        msg = 'Pode melhorar! Tente de novo!';
+    } else {
+        msg = 'Difícil, né? Jogue novamente para aprender!';
+    }
 
     detailsDiv.innerHTML = `
         <div class="detail-item">${msg}</div>
@@ -106,6 +117,7 @@ export function mostrarResultadoFinal() {
     `;
 }
 
+// --- RESETA A INTERFACE VISUAL PARA UMA NOVA RODADA ---
 export function resetarVisual() {
     document.getElementById('clubsArea').classList.remove('hidden');
     document.getElementById('guessArea').classList.remove('hidden');
@@ -116,6 +128,7 @@ export function resetarVisual() {
     document.getElementById('autocompleteList').classList.remove('active');
 }
 
+// --- CONFIGURA O SISTEMA DE AUTOCOMPLETAR PARA O CAMPO DE ENTRADA ---
 export function configurarAutocomplete(nomes, onSelect) {
     const input = document.getElementById('guessInput');
     const list = document.getElementById('autocompleteList');

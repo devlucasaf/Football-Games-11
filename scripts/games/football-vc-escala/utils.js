@@ -1,5 +1,4 @@
 const EscalaUtils = {
-
     alternarTema() {
         const temaAtual = document.documentElement.getAttribute('data-theme');
         const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
@@ -12,6 +11,7 @@ const EscalaUtils = {
         }
     },
 
+    // --- INICIALIZA O TEMA SALVO ANTERIORMENTE OU DEFINE O PADRÃO ---
     inicializarTema() {
         const temaSalvo = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', temaSalvo);
@@ -23,6 +23,7 @@ const EscalaUtils = {
     }
 };
 
+// --- AGUARDA O CARREGAMENTO COMPLETO DO DOM ANTES DE INICIALIZAR ---
 document.addEventListener('DOMContentLoaded', () => {
     EscalaUtils.inicializarTema();
 });

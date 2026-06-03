@@ -32,7 +32,10 @@ const EscalaDados = {
             for (const [posicaoChave, nomes] of Object.entries(posicoes)) {
                 const posAbreviada = mapaPosicao[posicaoChave] || posicaoChave;
                 nomes.forEach(nome => {
-                    jogadores.push({ name: nome, pos: posAbreviada });
+                    jogadores.push({ 
+                        name: nome, 
+                        pos: posAbreviada 
+                    });
                 });
             }
 

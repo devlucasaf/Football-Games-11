@@ -1,5 +1,4 @@
 const EscalaConstrutor = {
-
     posicaoSelecionada: null,
 
     async iniciar() {
@@ -32,6 +31,7 @@ const EscalaConstrutor = {
         }
     },
 
+    // --- ATUALIZA OS ELEMENTOS DA INTERFACE COM INFORMAÇÕES DO TIME ---
     atualizarInterfaceConstrutor() {
         const nomeTimeEl = document.getElementById('teamName');
         const nomeCompletoEl = document.getElementById('teamFullName');
@@ -55,6 +55,7 @@ const EscalaConstrutor = {
         }
     },
 
+    // --- RENDERIZA A LISTA DE JOGADORES DISPONÍVEIS PARA ESCALAÇÃO ---
     renderizarListaJogadores() {
         const listaJogadores = document.getElementById('playersList');
         const elementoCarregando = document.getElementById('loadingPlayers');
@@ -67,6 +68,7 @@ const EscalaConstrutor = {
             return;
         }
 
+        // --- LIMPA A LISTA ANTERIOR ---
         listaJogadores.innerHTML = '';
 
         EscalaDados.timeAtual.players.forEach((jogador, indice) => {
@@ -77,6 +79,7 @@ const EscalaConstrutor = {
         this.atualizarContagemCampo();
     },
 
+    // --- CRIA O ELEMENTO HTML PARA UM JOGADOR NA LISTA ---
     criarElementoJogador(jogador, indice) {
         const div = document.createElement('div');
 
@@ -110,6 +113,7 @@ const EscalaConstrutor = {
         return div;
     },
 
+    // --- RENDERIZA O CAMPO COM AS POSIÇÕES E JOGADORES SELECIONADOS ---
     renderizarFormacao() {
         const posicoesFormacao = document.getElementById('formationPositions');
         if (!posicoesFormacao) {
@@ -125,12 +129,14 @@ const EscalaConstrutor = {
             posicoesFormacao.appendChild(slot);
         });
 
+        // --- ATUALIZA O TEXTO DA FORMAÇÃO ATUAL ---
         const formacaoAtualEl = document.getElementById('currentFormation');
         if (formacaoAtualEl) {
             formacaoAtualEl.textContent = EscalaDados.formacaoAtual;
         }
     },
 
+    // --- CRIA UM SLOT DE POSIÇÃO NO CAMPO PARA COLOCAR UM JOGADOR ---
     criarSlotPosicao(posicao) {
         const slot = document.createElement('div');
 
@@ -139,6 +145,7 @@ const EscalaConstrutor = {
         slot.style.left = `${posicao.x}%`;
         slot.style.top = `${posicao.y}%`;
 
+        // --- BUSCA O JOGADOR JÁ ATRIBUÍDO A ESTA POSIÇÃO ---
         const jogador = EscalaDados.jogadoresSelecionados.get(posicao.id);
         if (jogador) {
             slot.classList.add('filled');
@@ -151,6 +158,7 @@ const EscalaConstrutor = {
             slot.classList.add('active');
         }
 
+        // --- ADICIONA EVENTO DE CLIQUE PARA SELECIONAR OU REMOVER JOGADOR ---
         slot.addEventListener('click', (e) => {
             e.stopPropagation();
             if (jogador) {
@@ -165,6 +173,7 @@ const EscalaConstrutor = {
         return slot;
     },
 
+    // --- SELECIONA UMA POSIÇÃO NO CAMPO E PREPARA PARA ADICIONAR JOGADOR ---
     selecionarPosicao(posicaoId) {
         this.posicaoSelecionada = posicaoId;
         this.renderizarFormacao();
@@ -173,39 +182,57 @@ const EscalaConstrutor = {
         const painel = document.querySelector('.players-panel');
         if (painel) {
             painel.classList.add('highlight');
-            painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            painel.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest' 
+            });
         }
     },
 
+    // --- FILTRA JOGADORES COMPATÍVEIS COM A POSIÇÃO SELECIONADA ---
     filtrarJogadoresPorPosicaoSlot(posicaoId) {
         const listaJogadores = document.getElementById('playersList');
-        if (!listaJogadores) return;
+        if (!listaJogadores) {
+            return;
+        }
 
         const itens = listaJogadores.querySelectorAll('.player-item');
         const posBase = posicaoId.replace(/[0-9]/g, '');
 
         let filtro;
-        if (posBase === 'GK') filtro = 'GK';
-        else if (posBase === 'ZAG') filtro = 'ZAG';
-        else if (posBase === 'LD' || posBase === 'LE' || posBase === 'LAT') filtro = 'LD/LE';
-        else if (['VOL', 'MEI', 'ME', 'MD', 'CAM', 'MOD', 'MOE'].includes(posBase)) filtro = 'VOL/MEI';
-        else if (['ATA', 'CA', 'PD', 'PE', 'SA'].includes(posBase)) filtro = 'ATA';
-        else filtro = 'all';
+        if (posBase === 'GK') {
+            filtro = 'GK';
+        } else if (posBase === 'ZAG') {
+            filtro = 'ZAG';
+        } else if (posBase === 'LD' || posBase === 'LE' || posBase === 'LAT') {
+            filtro = 'LD/LE';
+        } else if (['VOL', 'MEI', 'ME', 'MD', 'CAM', 'MOD', 'MOE'].includes(posBase)) {
+            filtro = 'VOL/MEI';
+        } else if (['ATA', 'CA', 'PD', 'PE', 'SA'].includes(posBase)) {
+            filtro = 'ATA';
+        } else {
+            filtro = 'all';
+        }
 
+        // --- ATUALIZA O VALOR DO DROPDOWN DE FILTRO ---
         const filtroPosicao = document.getElementById('positionFilter');
-        if (filtroPosicao) filtroPosicao.value = filtro;
+        if (filtroPosicao) {
+            filtroPosicao.value = filtro;
+        }
 
         this.filtrarJogadoresPorPosicao(filtro);
     },
 
 
 
+    // --- ATUALIZA TODA A INTERFACE COM AS MUDANÇAS REALIZADAS ---
     atualizarTudo() {
         this.renderizarFormacao();
         this.renderizarListaJogadores();
         this.atualizarJogadoresSelecionados();
         this.atualizarContagemCampo();
 
+        // --- GERENCIA O DESTAQUE DO PAINEL DE JOGADORES ---
         const painel = document.querySelector('.players-panel');
         if (painel) {
             if (this.posicaoSelecionada) {
@@ -215,6 +242,7 @@ const EscalaConstrutor = {
             }
         }
 
+        // --- RESETA O FILTRO SE NENHUMA POSIÇÃO ESTÁ SELECIONADA ---
         if (!this.posicaoSelecionada) {
             const filtroPosicao = document.getElementById('positionFilter');
             if (filtroPosicao) {
@@ -224,6 +252,7 @@ const EscalaConstrutor = {
         }
     },
 
+    // --- ATUALIZA A EXIBIÇÃO DOS JOGADORES JÁ SELECIONADOS ---
     atualizarJogadoresSelecionados() {
         const elementoSelecionados = document.getElementById('selectedPlayers');
         if (!elementoSelecionados) {
@@ -240,6 +269,7 @@ const EscalaConstrutor = {
             return;
         }
 
+        // --- CRIA UM GRID PARA EXIBIR OS JOGADORES SELECIONADOS ---
         const grid = document.createElement('div');
         grid.className = 'selected-players-grid';
 
@@ -257,6 +287,7 @@ const EscalaConstrutor = {
         elementoSelecionados.appendChild(grid);
     },
 
+    // --- ATUALIZA A CONTAGEM DE JOGADORES NO CAMPO ---
     atualizarContagemCampo() {
         const contagemEl = document.getElementById('fieldCount');
         if (contagemEl) {
@@ -264,6 +295,7 @@ const EscalaConstrutor = {
         }
     },
 
+    // --- MUDA A FORMAÇÃO DO TIME ---
     mudarFormacao(formacao) {
         if (EscalaConfig.formacoes[formacao]) {
             EscalaDados.formacaoAtual = formacao;
@@ -278,6 +310,7 @@ const EscalaConstrutor = {
         }
     },
 
+    // --- REALOCA JOGADORES PARA POSIÇÕES SIMILARES NA NOVA FORMAÇÃO ---
     atualizarPosicoesParaFormacao() {
         const novosJogadores = new Map();
 
@@ -292,6 +325,7 @@ const EscalaConstrutor = {
         this.atualizarTudo();
     },
 
+    // --- FILTRA A LISTA DE JOGADORES POR TIPO DE POSIÇÃO ---
     filtrarJogadoresPorPosicao(filtro) {
         const listaJogadores = document.getElementById('playersList');
         if (!listaJogadores) {
@@ -312,6 +346,7 @@ const EscalaConstrutor = {
         });
     },
 
+    // --- CONFIGURA TODOS OS EVENTOS DE CLIQUE E INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
         // --- TEMA ---
         const botaoTema = document.getElementById('themeToggle');
@@ -355,7 +390,7 @@ const EscalaConstrutor = {
             });
         }
 
-        // --- SALVAR TIME ---  
+        // --- SALVAR TIME ---
         const botaoSalvar = document.getElementById('saveTeam');
         if (botaoSalvar) {
             botaoSalvar.addEventListener('click', () => {
@@ -410,6 +445,7 @@ const EscalaConstrutor = {
         });
     },
 
+    // --- EXIBE O MODAL DE CONFIRMAÇÃO DE SALVAMENTO DA ESCALAÇÃO ---
     mostrarModalSalvar() {
         const modal = document.getElementById('saveModal');
         if (modal) {

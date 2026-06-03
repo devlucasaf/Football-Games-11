@@ -4,6 +4,7 @@ import { getCelulasLinha } from "./board.js";
 import { revelarLinha, animarVitoria, shakeRow } from "./animations.js";
 import { mostrarMensagem } from "./ui.js";
 
+// --- CALCULA AS CORES DE CADA LETRA NA TENTATIVA ---
 export function calcularCores(chute) {
     const tamanho       = estado.secretoNormalizado.length;
     const resultado     = new Array(tamanho).fill("absent");
@@ -29,16 +30,17 @@ export function calcularCores(chute) {
             continue;
         }
 
+        // --- OBTÉM A LETRA DO CHUTE ---
         const letra = chuteChars[i];
         if (contagem[letra] && contagem[letra] > 0) {
             resultado[i] = "present";
             contagem[letra]--;
         }
     }
-
     return resultado;
 }
 
+// --- ATUALIZA O ESTADO DAS TECLAS DO TECLADO COM BASE NO CHUTE ---
 export function atualizarTeclado(chute, cores) {
     const prioridade = { 
         absent:  0, 
@@ -46,6 +48,7 @@ export function atualizarTeclado(chute, cores) {
         correct: 2 
     };
 
+    // --- ITERA SOBRE CADA LETRA DO CHUTE ---
     for (let i = 0; i < chute.length; i++) {
         const letra = chute[i];
         const corAtual = estado.estadoTeclas.get(letra);
@@ -56,6 +59,7 @@ export function atualizarTeclado(chute, cores) {
         }
     }
 
+    // --- ATUALIZA VISUALMENTE TODAS AS TECLAS DO TECLADO ---
     document.querySelectorAll(".key[data-key]").forEach((tecla) => {
         const k = tecla.dataset.key;
         const estadoTecla = estado.estadoTeclas.get(k);
@@ -66,6 +70,7 @@ export function atualizarTeclado(chute, cores) {
     });
 }
 
+// --- CONFIRMA A TENTATIVA E VERIFICA VITÓRIA OU DERROTA ---
 export async function confirmarTentativa() {
     if (!estado.jogoAtivo) {
         return;

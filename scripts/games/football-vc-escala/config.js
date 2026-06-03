@@ -1,7 +1,7 @@
 const EscalaConfig = {
     CAMINHO_JSON: "../data/players-brasileirao-2026.json",
 
-    // --- ESCUDOS DOS TIMES (TheSportsDB) ---
+    // --- ESCUDOS DOS TIMES ---
     escudos: {
         'Athletico-PR':  { sigla: 'CAP', cor: '#D50032', url: 'https://r2.thesportsdb.com/images/media/team/badge/irzu1u1554237406.png' },
         'Atletico-MG':   { sigla: 'CAM', cor: '#2d2d2d', url: 'https://r2.thesportsdb.com/images/media/team/badge/x5lixs1743742872.png' },

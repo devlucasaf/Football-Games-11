@@ -1,6 +1,7 @@
 import estado from "./core.js";
 import { getCelulasLinha } from "./board.js";
 
+// --- INSERE UMA LETRA NA CÉLULA ATUAL ---
 export function inserirLetra(letra) {
     if (!estado.jogoAtivo) {
         return;
@@ -18,6 +19,7 @@ export function inserirLetra(letra) {
     estado.colunaAtual++;
 }
 
+// --- APAGA A ÚLTIMA LETRA DIGITADA ---
 export function apagarLetra() {
     if (!estado.jogoAtivo) {
         return;
