@@ -1,4 +1,6 @@
 export const estado = {
+    dados:              null,
+    modoAtual:          '',
     jogadores:          [],          
     jogadoresUsados:    [],    
     jogadorAtual:       null,     

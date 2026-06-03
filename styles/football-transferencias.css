@@ -3,6 +3,64 @@
     min-height: calc(100vh - 80px);
 }
 
+/* Mode Selection */
+.mode-selection {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.mode-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 2rem 2.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 220px;
+}
+
+.btn-mode:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-mode i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.mode-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.mode-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
 /* Game Info Bar */
 .game-info {
     display: flex;

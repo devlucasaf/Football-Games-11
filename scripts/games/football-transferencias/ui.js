@@ -89,7 +89,7 @@ export function mostrarResultadoFinal() {
     document.getElementById('clubsArea').classList.add('hidden');
     document.getElementById('guessArea').classList.add('hidden');
     document.getElementById('feedback').classList.add('hidden');
-    document.querySelector('.game-info').classList.add('hidden');
+    document.getElementById('gameInfo').classList.add('hidden');
 
     const final = document.getElementById('finalResult');
     final.classList.remove('hidden');
@@ -123,7 +123,7 @@ export function resetarVisual() {
     document.getElementById('guessArea').classList.remove('hidden');
     document.getElementById('feedback').classList.add('hidden');
     document.getElementById('finalResult').classList.add('hidden');
-    document.querySelector('.game-info').classList.remove('hidden');
+    document.getElementById('gameInfo').classList.remove('hidden');
     document.getElementById('guessInput').value = '';
     document.getElementById('autocompleteList').classList.remove('active');
 }

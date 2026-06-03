@@ -4,7 +4,13 @@ import { estado } from './core.js';
 export async function carregarDados() {
     const resp = await fetch('../data/football-transferencias.json');
     const data = await resp.json();
-    estado.jogadores = data.jogadores;
+    estado.dados = data;
+}
+
+// --- SELECIONA O MODO E CARREGA OS JOGADORES CORRESPONDENTES ---
+export function selecionarModo(modo) {
+    estado.modoAtual = modo;
+    estado.jogadores = estado.dados[modo];
 }
 
 // --- ESCOLHE UM JOGADOR ALEATÓRIO QUE AINDA NÃO FOI USADO ---

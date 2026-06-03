@@ -1,5 +1,5 @@
 import { estado, resetEstado } from './core.js';
-import { carregarDados, escolherJogador, obterNomesJogadores } from './data.js';
+import { carregarDados, selecionarModo, escolherJogador, obterNomesJogadores } from './data.js';
 import { renderizarClubes, atualizarInfo, mostrarFeedback, mostrarResultadoFinal, resetarVisual, configurarAutocomplete } from './ui.js';
 
 function normalizar(str) {
@@ -69,8 +69,30 @@ function iniciarRodada() {
 
 // --- INICIA UM NOVO JOGO DO ZERO ---
 function iniciarJogo() {
+    document.getElementById('modeSelection').classList.add('hidden');
+    document.getElementById('gameInfo').classList.remove('hidden');
+    document.getElementById('clubsArea').classList.remove('hidden');
+    document.getElementById('guessArea').classList.remove('hidden');
     resetEstado();
+    selecionarModo(estado.modoAtual);
+    setupAutocomplete();
     iniciarRodada();
+}
+
+// --- SELECIONAR MODO E INICIAR ---
+function selecionarModoEIniciar(modo) {
+    estado.modoAtual = modo;
+    iniciarJogo();
+}
+
+// --- VOLTAR À SELEÇÃO DE MODO ---
+function voltarModo() {
+    document.getElementById('modeSelection').classList.remove('hidden');
+    document.getElementById('gameInfo').classList.add('hidden');
+    document.getElementById('clubsArea').classList.add('hidden');
+    document.getElementById('guessArea').classList.add('hidden');
+    document.getElementById('feedback').classList.add('hidden');
+    document.getElementById('finalResult').classList.add('hidden');
 }
 
 // --- BOTÃO DE REVELAR PRÓXIMO CLUBE ---
@@ -90,6 +112,11 @@ document.getElementById('btnHome').addEventListener('click', () => {
     window.location.href = '../index.html';
 });
 
+// --- BOTÕES DE SELEÇÃO DE MODO ---
+document.getElementById('btnMundial').addEventListener('click', () => selecionarModoEIniciar('mundial'));
+document.getElementById('btnBrasileiro').addEventListener('click', () => selecionarModoEIniciar('brasileiro'));
+document.getElementById('btnTrocarModo').addEventListener('click', voltarModo);
+
 // --- CONFIGURA O AUTOCOMPLETAR COM OS NOMES DOS JOGADORES ---
 function setupAutocomplete() {
     const nomes = obterNomesJogadores();
@@ -103,8 +130,6 @@ function setupAutocomplete() {
 // --- FUNÇÃO PRINCIPAL DE INICIALIZAÇÃO DO JOGO ---
 async function init() {
     await carregarDados();
-    setupAutocomplete();
-    iniciarJogo();
 }
 
 init();

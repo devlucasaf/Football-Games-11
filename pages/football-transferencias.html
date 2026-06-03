@@ -58,7 +58,24 @@
 
         <main class="transferencias-container">
             <div class="container">
-                <div class="game-info">
+                <!-- Seleção de Modo -->
+                <section class="mode-selection" id="modeSelection">
+                    <h2 class="mode-title">Escolha o Modo</h2>
+                    <div class="mode-buttons">
+                        <button class="btn-mode" id="btnMundial">
+                            <i class="fas fa-globe"></i>
+                            <span class="mode-name">Futebol Mundial</span>
+                            <span class="mode-desc">Jogadores de todo o mundo</span>
+                        </button>
+                        <button class="btn-mode" id="btnBrasileiro">
+                            <i class="fas fa-flag"></i>
+                            <span class="mode-name">Futebol Brasileiro</span>
+                            <span class="mode-desc">Jogadores que passaram pelo Brasil</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="game-info hidden" id="gameInfo">
                     <div class="game-score">
                         <i class="fas fa-star"></i> <span id="pontuacao">0</span> pts
                     </div>
@@ -69,7 +86,7 @@
                 </div>
 
                 <!-- Área de clubes revelados -->
-                <section class="clubs-area" id="clubsArea">
+                <section class="clubs-area hidden" id="clubsArea">
                     <h2 class="clubs-title">Clubes da Carreira</h2>
                     <div class="clubs-timeline" id="clubsTimeline"></div>
                     <button class="btn-reveal" id="btnReveal">
@@ -78,7 +95,7 @@
                 </section>
 
                 <!-- Área de palpite -->
-                <section class="guess-area" id="guessArea">
+                <section class="guess-area hidden" id="guessArea">
                     <div class="input-wrapper">
                         <i class="fas fa-search"></i>
                         <input type="text" id="guessInput" placeholder="Quem é o jogador?" autocomplete="off">
@@ -109,6 +126,7 @@
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
                         <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button class="btn-retry" id="btnTrocarModo"><i class="fas fa-exchange-alt"></i> Trocar Modo</button>
                         <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
                     </div>
                 </section>
