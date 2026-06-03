@@ -3,19 +3,19 @@
         {
             "time": "Cruzeiro",
             "evento": "Final da Copa do Brasil 2017 (volta)",
-            "formacao": "4-3-3",
+            "formacao": "4-2-5-1",
             "jogadores": [
-                { "nome": "Everson",            "posicao": "GOL"    },
-                { "nome": "Mariano",            "posicao": "LD"     },
-                { "nome": "Igor Rabello",       "posicao": "ZAG1"   },
-                { "nome": "J. Alonso",          "posicao": "ZAG2"   },
-                { "nome": "Guilherme Arana",    "posicao": "LE"     },
-                { "nome": "Jair",               "posicao": "VOL1"   },
-                { "nome": "Allan",              "posicao": "VOL2"   },
-                { "nome": "Matías Zaracho",     "posicao": "MEI"    },
-                { "nome": "Eduardo Vargas",     "posicao": "PD"     },
-                { "nome": "Keno",               "posicao": "PE"     },
-                { "nome": "Hulk",               "posicao": "CA"     }
+                { "nome": "Fábio",              "posicao": "GOL"    },
+                { "nome": "Ezequiel",           "posicao": "LD"     },
+                { "nome": "Léo",                "posicao": "ZAG1"   },
+                { "nome": "Murilo",             "posicao": "ZAG2"   },
+                { "nome": "Diogo Barbosa",      "posicao": "LE"     },
+                { "nome": "Henrique",           "posicao": "VOL1"   },
+                { "nome": "Hudson",             "posicao": "VOL2"   },
+                { "nome": "Robinho",            "posicao": "MEI"    },
+                { "nome": "Alisson",            "posicao": "ME"     },
+                { "nome": "Thiago Neves",       "posicao": "MD"     },
+                { "nome": "Rafael Sóbis",       "posicao": "CA"     }
             ],
             "extras": [
 
@@ -50,22 +50,25 @@
         {
             "time": "Flamengo",
             "evento": "Final da Copa do Brasil 2022 (volta)",
-            "formacao": "4-3-3",
+            "formacao": "4-4-2",
             "jogadores": [
-                { "nome": "Everson",            "posicao": "GOL"    },
-                { "nome": "Mariano",            "posicao": "LD"     },
-                { "nome": "Igor Rabello",       "posicao": "ZAG1"   },
-                { "nome": "J. Alonso",          "posicao": "ZAG2"   },
-                { "nome": "Guilherme Arana",    "posicao": "LE"     },
-                { "nome": "Jair",               "posicao": "VOL1"   },
-                { "nome": "Allan",              "posicao": "VOL2"   },
-                { "nome": "Matías Zaracho",     "posicao": "MEI"    },
-                { "nome": "Eduardo Vargas",     "posicao": "PD"     },
-                { "nome": "Keno",               "posicao": "PE"     },
-                { "nome": "Hulk",               "posicao": "CA"     }
+                { "nome": "Santos",             "posicao": "GOL"    },
+                { "nome": "Rodinei",            "posicao": "LD"     },
+                { "nome": "David Luiz",         "posicao": "ZAG1"   },
+                { "nome": "Leo Pereira",        "posicao": "ZAG2"   },
+                { "nome": "Filipe Luís",        "posicao": "LE"     },
+                { "nome": "Thiago Maia",        "posicao": "VOL1"   },
+                { "nome": "Arturo Vidal",       "posicao": "VOL2"   },
+                { "nome": "Éverton Ribeiro",    "posicao": "ME"     },
+                { "nome": "De Arrascaeta",      "posicao": "MD"     },
+                { "nome": "Gabigol",            "posicao": "PE"     },
+                { "nome": "Pedro",              "posicao": "CA"     }
             ],
             "extras": [
-
+                "Diego Alves", "Hugo Souza", "Matheuzinho",
+                "Fabrício Bruno", "Pablo", "Ayrton Lucas",
+                "Diego", "Victor Hugo", "Matheus França",
+                "Everton Cebolinha", "Marinho", "Mateusão"
             ]
         },
         {
@@ -151,8 +154,8 @@
             "evento": "Final da Libertadores 2011",
             "formacao": "4-4-2",
             "jogadores": [
-                { "nome": "Rafael", 		"posicao": "GOL" 	},
-                { "nome": "Danilo", 		"posicao": "LD" 	},
+                { "nome": "Rafael", 		"posicao": "GOL"   	},
+                { "nome": "Danilo", 		"posicao": "LD"    	},
                 { "nome": "Durval", 		"posicao": "ZAG1" 	},
                 { "nome": "Edu Dracena", 	"posicao": "ZAG2" 	},
                 { "nome": "Léo", 			"posicao": "LE" 	},
