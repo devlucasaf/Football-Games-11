@@ -1,7 +1,7 @@
 import { estado } from './core.js';
 import { obterPosicao, obterLabelPosicao } from './data.js';
 
-const els = {
+const elementos = {
     timer:              document.getElementById('timer'),
     gameTimerArea:      document.getElementById('gameTimerArea'),
     gameInfo:           document.getElementById('gameInfo'),
@@ -20,14 +20,15 @@ const els = {
 };
 
 let currentOnSelect = null;
-let currentNomes = [];
+let currentNomes    = [];
 
+// --- RENDERIZAÇÃO DO CAMPO ---
 export function renderizarCampo(escalacao) {
-    els.playersLayer.innerHTML = '';
-    els.matchInfo.textContent = `${escalacao.time} — ${escalacao.evento} (${escalacao.formacao})`;
+    elementos.playersLayer.innerHTML = '';
+    elementos.matchInfo.textContent = `${escalacao.time} — ${escalacao.evento} (${escalacao.formacao})`;
 
     escalacao.jogadores.forEach((jogador, idx) => {
-        const pos = obterPosicao(jogador.posicao, escalacao.formacao);
+        const pos   = obterPosicao(jogador.posicao, escalacao.formacao);
         const label = obterLabelPosicao(jogador.posicao);
 
         const slot = document.createElement('div');
@@ -41,66 +42,78 @@ export function renderizarCampo(escalacao) {
             <span class="player-label">?</span>
         `;
 
-        els.playersLayer.appendChild(slot);
+        elementos.playersLayer.appendChild(slot);
     });
 }
 
+// --- REVELAR JOGADOR ACERTADO ---
 export function revelarJogador(idx, nome) {
     const slot = document.getElementById(`slot-${idx}`);
-    if (!slot) return;
+    if (!slot) {
+        return;
+    }
     slot.classList.add('revealed');
     slot.querySelector('.player-circle').innerHTML = '<i class="fas fa-check"></i>';
     slot.querySelector('.player-label').textContent = nome;
 }
 
+// --- REVELAR JOGADOR NÃO ACERTADO ---
 export function revelarNaoAcertado(idx, nome) {
     const slot = document.getElementById(`slot-${idx}`);
-    if (!slot) return;
+    if (!slot) {
+        return;
+    }
     slot.classList.add('missed');
     slot.querySelector('.player-circle').innerHTML = '<i class="fas fa-times"></i>';
     slot.querySelector('.player-label').textContent = nome;
 }
 
+// --- ATUALIZAÇÃO DO TIMER ---
 export function atualizarTimer() {
     const min = Math.floor(estado.tempoRestante / 60);
     const sec = estado.tempoRestante % 60;
-    els.timer.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+    elementos.timer.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
 
     if (estado.tempoRestante <= 30) {
-        els.gameTimerArea.classList.add('danger');
+        elementos.gameTimerArea.classList.add('danger');
     } else {
-        els.gameTimerArea.classList.remove('danger');
+        elementos.gameTimerArea.classList.remove('danger');
     }
 }
 
+// --- ATUALIZAÇÃO DOS ACERTOS ---
 export function atualizarAcertos() {
-    els.acertos.textContent = estado.acertos;
+    elementos.acertos.textContent = estado.acertos;
 }
 
+// --- ESCONDER TIMER ---
 export function esconderTimer() {
-    els.gameTimerArea.classList.add('hidden');
+    elementos.gameTimerArea.classList.add('hidden');
 }
 
+// --- MOSTRAR SELEÇÃO DE MODO ---
 export function mostrarModeSelect() {
-    els.modeSelect.classList.remove('hidden');
-    els.gameInfo.classList.add('hidden');
-    els.fieldWrapper.classList.add('hidden');
-    els.guessInputArea.classList.add('hidden');
-    els.giveUpArea.classList.add('hidden');
-    els.finalResult.classList.add('hidden');
+    elementos.modeSelect.classList.remove('hidden');
+    elementos.gameInfo.classList.add('hidden');
+    elementos.fieldWrapper.classList.add('hidden');
+    elementos.guessInputArea.classList.add('hidden');
+    elementos.giveUpArea.classList.add('hidden');
+    elementos.finalResult.classList.add('hidden');
 }
 
+// --- ESCONDER SELEÇÃO DE MODO ---
 export function esconderModeSelect() {
-    els.modeSelect.classList.add('hidden');
-    els.gameInfo.classList.remove('hidden');
-    els.fieldWrapper.classList.remove('hidden');
-    els.guessInputArea.classList.remove('hidden');
-    els.giveUpArea.classList.remove('hidden');
-    els.gameTimerArea.classList.remove('hidden');
+    elementos.modeSelect.classList.add('hidden');
+    elementos.gameInfo.classList.remove('hidden');
+    elementos.fieldWrapper.classList.remove('hidden');
+    elementos.guessInputArea.classList.remove('hidden');
+    elementos.giveUpArea.classList.remove('hidden');
+    elementos.gameTimerArea.classList.remove('hidden');
 }
 
+// --- ATUALIZAÇÃO DA LISTA DE AUTOCOMPLETE ---
 function atualizarLista(val) {
-    const list = els.autocompleteList;
+    const list = elementos.autocompleteList;
     list.innerHTML = '';
 
     if (val.length < 2) {
@@ -111,10 +124,13 @@ function atualizarLista(val) {
     const normalizar = str => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
     const extras = estado.escalacaoAtual?.extras || [];
     const filtrados = currentNomes.filter(n => {
-        if (!normalizar(n).includes(normalizar(val))) return false;
-        // Extras sempre aparecem (distratores)
-        if (extras.some(e => normalizar(e) === normalizar(n))) return true;
-        // Titulares só aparecem se ainda não foram acertados
+        if (!normalizar(n).includes(normalizar(val))) {
+            return false;
+        }
+
+        if (extras.some(e => normalizar(e) === normalizar(n))) {
+            return true;
+        }
         return estado.jogadoresRestantes.some(j => normalizar(j.nome) === normalizar(n));
     });
 
@@ -128,7 +144,7 @@ function atualizarLista(val) {
         li.textContent = nome;
         li.addEventListener('click', () => {
             currentOnSelect(nome);
-            els.guessInput.value = '';
+            elementos.guessInput.value = '';
             list.classList.add('hidden');
         });
         list.appendChild(li);
@@ -136,18 +152,17 @@ function atualizarLista(val) {
 
     list.classList.remove('hidden');
 }
-
+// --- CONFIGURAÇÃO DO AUTOCOMPLETE ---
 export function configurarAutocomplete(nomes, onSelect) {
-    currentNomes = nomes;
+    currentNomes    = nomes;
     currentOnSelect = onSelect;
 
-    const input = els.guessInput;
-    const list = els.autocompleteList;
+    const input = elementos.guessInput;
+    const list  = elementos.autocompleteList;
 
-    // Remove old listeners by cloning
     const newInput = input.cloneNode(true);
     input.parentNode.replaceChild(newInput, input);
-    els.guessInput = newInput;
+    elementos.guessInput = newInput;
 
     newInput.addEventListener('input', () => {
         atualizarLista(newInput.value.trim().toLowerCase());
@@ -165,7 +180,9 @@ export function configurarAutocomplete(nomes, onSelect) {
                 activeItem.classList.remove('active');
                 const next = activeItem.nextElementSibling || items[0];
                 next.classList.add('active');
-                next.scrollIntoView({ block: 'nearest' });
+                next.scrollIntoView({ 
+                    block: 'nearest' 
+                });
             }
         } else if (e.key === 'ArrowUp') {
             e.preventDefault();
@@ -173,7 +190,9 @@ export function configurarAutocomplete(nomes, onSelect) {
                 activeItem.classList.remove('active');
                 const prev = activeItem.previousElementSibling || items[items.length - 1];
                 prev.classList.add('active');
-                prev.scrollIntoView({ block: 'nearest' });
+                prev.scrollIntoView({ 
+                    block: 'nearest' 
+                });
             } else if (items.length > 0) {
                 items[items.length - 1].classList.add('active');
             }
@@ -207,31 +226,33 @@ export function configurarAutocomplete(nomes, onSelect) {
     });
 }
 
+// --- FOCAR NO INPUT ---
 export function focarInput() {
-    els.guessInput.focus();
+    elementos.guessInput.focus();
 }
 
+// --- EXIBIR RESULTADO FINAL ---
 export function mostrarResultadoFinal() {
-    els.fieldWrapper.classList.add('hidden');
-    els.guessInputArea.classList.add('hidden');
-    els.giveUpArea.classList.add('hidden');
-    els.finalResult.classList.remove('hidden');
+    elementos.fieldWrapper.classList.add('hidden');
+    elementos.guessInputArea.classList.add('hidden');
+    elementos.giveUpArea.classList.add('hidden');
+    elementos.finalResult.classList.remove('hidden');
 
-    els.finalPoints.textContent = estado.acertos;
+    elementos.finalPoints.textContent = estado.acertos;
 
-    const pct = Math.round((estado.acertos / 11) * 100);
-    let msg = '';
-    if (pct === 100) {
-        msg = 'Perfeito! Você lembrou de todos!';
-    } else if (pct >= 80) {
-        msg = 'Memória quase perfeita!';
-    } else if (pct >= 50) {
-        msg = 'Bom conhecimento!';
+    const porcentagem = Math.round((estado.acertos / 11) * 100);
+    let mensagem = '';
+    if (porcentagem === 100) {
+        mensagem = 'Perfeito! Você lembrou de todos!';
+    } else if (porcentagem >= 80) {
+        mensagem = 'Memória quase perfeita!';
+    } else if (porcentagem >= 50) {
+        mensagem = 'Bom conhecimento!';
     } else {
-        msg = 'Tente novamente!';
+        mensagem = 'Tente novamente!';
     }
 
-    let detalhes = `<p>${msg}</p>`;
+    let detalhes = `<p>${mensagem}</p>`;
     if (estado.modoComTempo) {
         const tempoUsado = 300 - estado.tempoRestante;
         const min = Math.floor(tempoUsado / 60);
@@ -241,15 +262,16 @@ export function mostrarResultadoFinal() {
         detalhes += `<p>Modo: Sem Tempo</p>`;
     }
     detalhes += `<p><strong>${estado.escalacaoAtual.time}</strong> — ${estado.escalacaoAtual.evento}</p>`;
-    els.finalDetails.innerHTML = detalhes;
+    elementos.finalDetails.innerHTML = detalhes;
 }
 
+// --- RESETAR INTERFACE ---
 export function resetarUI() {
-    els.finalResult.classList.add('hidden');
-    els.fieldWrapper.classList.remove('hidden');
-    els.guessInputArea.classList.remove('hidden');
-    els.giveUpArea.classList.remove('hidden');
-    els.guessInput.value = '';
-    els.autocompleteList.classList.add('hidden');
-    els.gameTimerArea.classList.remove('danger');
+    elementos.finalResult.classList.add('hidden');
+    elementos.fieldWrapper.classList.remove('hidden');
+    elementos.guessInputArea.classList.remove('hidden');
+    elementos.giveUpArea.classList.remove('hidden');
+    elementos.guessInput.value = '';
+    elementos.autocompleteList.classList.add('hidden');
+    elementos.gameTimerArea.classList.remove('danger');
 }

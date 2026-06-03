@@ -1,5 +1,6 @@
 const LegendsConstrutor = {
 
+    // --- INICIALIZAÇÃO ---
     async iniciar() {
         try {
             const parametrosUrl = new URLSearchParams(window.location.search);
@@ -31,6 +32,7 @@ const LegendsConstrutor = {
         }
     },
 
+    // --- ATUALIZAR INTERFACE DO CONSTRUTOR ---
     atualizarInterfaceConstrutor() {
         const nomeTimeEl = document.getElementById('teamName');
         const nomeCompletoEl = document.getElementById('teamFullName');
@@ -49,6 +51,7 @@ const LegendsConstrutor = {
         }
     },
 
+    // --- RENDERIZAR LISTA DE JOGADORES ---
     renderizarListaJogadores() {
         const listaJogadores = document.getElementById('playersList');
         const elementoCarregando = document.getElementById('loadingPlayers');
@@ -71,6 +74,7 @@ const LegendsConstrutor = {
         this.atualizarContagemCampo();
     },
 
+    // --- CRIAR ELEMENTO DE JOGADOR ---
     criarElementoJogador(jogador, indice) {
         const div = document.createElement('div');
 
@@ -94,6 +98,7 @@ const LegendsConstrutor = {
         return div;
     },
 
+    // --- RENDERIZAR FORMAÇÃO ---
     renderizarFormacao() {
         const posicoesFormacao = document.getElementById('formationPositions');
         if (!posicoesFormacao) {
@@ -115,6 +120,7 @@ const LegendsConstrutor = {
         }
     },
 
+    // --- CRIAR SLOT DE POSIÇÃO ---
     criarSlotPosicao(posicao) {
         const slot = document.createElement('div');
 
@@ -142,6 +148,7 @@ const LegendsConstrutor = {
         return slot;
     },
 
+    // --- CONFIGURAR ARRASTAR E SOLTAR ---
     configurarArrastarSoltar() {
         const itensJogador = document.querySelectorAll('.player-item');
         const slotsPosicao = document.querySelectorAll('.position-slot');
@@ -184,6 +191,7 @@ const LegendsConstrutor = {
         });
     },
 
+    // --- ATUALIZAR TUDO ---
     atualizarTudo() {
         this.renderizarFormacao();
         this.renderizarListaJogadores();
@@ -192,6 +200,7 @@ const LegendsConstrutor = {
         this.configurarArrastarSoltar();
     },
 
+    // --- ATUALIZAR JOGADORES SELECIONADOS ---
     atualizarJogadoresSelecionados() {
         const elementoSelecionados = document.getElementById('selectedPlayers');
         if (!elementoSelecionados) {
@@ -225,6 +234,7 @@ const LegendsConstrutor = {
         elementoSelecionados.appendChild(grid);
     },
 
+    // --- ATUALIZAR CONTAGEM DO CAMPO ---
     atualizarContagemCampo() {
         const contagemEl = document.getElementById('fieldCount');
         if (contagemEl) {
@@ -232,6 +242,7 @@ const LegendsConstrutor = {
         }
     },
 
+    // --- MUDAR FORMAÇÃO ---
     mudarFormacao(formacao) {
         if (LegendsConfig.formacoes[formacao]) {
             LegendsDados.formacaoAtual = formacao;
@@ -246,6 +257,7 @@ const LegendsConstrutor = {
         }
     },
 
+    // --- ATUALIZAR POSIÇÕES PARA FORMAÇÃO ---
     atualizarPosicoesParaFormacao() {
         const novosJogadores = new Map();
 
@@ -260,6 +272,7 @@ const LegendsConstrutor = {
         this.atualizarTudo();
     },
 
+    // --- FILTRAR JOGADORES POR POSIÇÃO ---
     filtrarJogadoresPorPosicao(filtro) {
         const listaJogadores = document.getElementById('playersList');
         if (!listaJogadores) {
@@ -280,6 +293,7 @@ const LegendsConstrutor = {
         });
     },
 
+    // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
         // --- TEMA ---
         const botaoTema = document.getElementById('themeToggle');
@@ -378,6 +392,7 @@ const LegendsConstrutor = {
         });
     },
 
+    // --- MOSTRAR MODAL DE SALVAR ---
     mostrarModalSalvar() {
         const modal = document.getElementById('saveModal');
         if (modal) {

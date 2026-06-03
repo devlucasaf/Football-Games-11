@@ -12,6 +12,7 @@ import {
     getInput
 } from './ui.js';
 
+// --- MOSTRAR RODADA ATUAL ---
 function mostrarRodada() {
     const conexao = estado.sorteadas[estado.rodadaAtual];
     atualizarRodada();
@@ -19,9 +20,12 @@ function mostrarRodada() {
     configurarRodada(conexao);
 }
 
+// --- VERIFICAR PALPITE ---
 function verificarPalpite() {
     const palpite = getInput();
-    if (!palpite) return;
+    if (!palpite) {
+        return;
+    }
 
     const conexao = estado.sorteadas[estado.rodadaAtual];
     const acertou = conexao.respostas.some(r => normalizar(r) === normalizar(palpite));
@@ -42,6 +46,7 @@ function verificarPalpite() {
     }
 }
 
+// --- PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -51,6 +56,7 @@ function proxima() {
     }
 }
 
+// --- INICIAR JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
@@ -59,6 +65,7 @@ function iniciarJogo() {
     mostrarRodada();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 
@@ -70,7 +77,9 @@ async function init() {
     });
 
     document.getElementById('guessInput').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') verificarPalpite();
+        if (e.key === 'Enter') {
+            verificarPalpite();
+        }
     });
 
     const tutorialOverlay = document.getElementById('tutorialOverlay');

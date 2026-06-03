@@ -17,6 +17,7 @@ const els = {
 
 let draggedItem = null;
 
+// --- RENDERIZAR LISTA DE EVENTOS ---
 export function renderizarLista() {
     els.timelineList.innerHTML = '';
     estado.ordemAtual.forEach((evento, idx) => {
@@ -97,23 +98,28 @@ export function renderizarLista() {
     });
 }
 
+// --- ATUALIZAR RODADA ---
 export function atualizarRodada() {
     els.rodadaAtual.textContent = estado.rodadaAtual + 1;
 }
 
+// --- ATUALIZAR TEMA ---
 export function atualizarTema(texto) {
     els.tema.textContent = texto;
 }
 
+// --- ATUALIZAR PONTOS ---
 export function atualizarPontos() {
     els.pontos.textContent = estado.pontos;
 }
 
+// --- MOSTRAR CARD DA TIMELINE ---
 export function mostrarTimelineCard() {
     els.timelineCard.classList.remove('hidden');
     els.roundResult.classList.add('hidden');
 }
 
+// --- MOSTRAR RESULTADO DA RODADA ---
 export function mostrarRoundResult(corretos, ordemCorreta) {
     els.timelineCard.classList.add('hidden');
     els.roundResult.classList.remove('hidden');
@@ -132,6 +138,7 @@ export function mostrarRoundResult(corretos, ordemCorreta) {
     }
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal() {
     els.timelineCard.classList.add('hidden');
     els.roundResult.classList.add('hidden');
@@ -155,6 +162,7 @@ export function mostrarFinal() {
     els.finalDetails.innerHTML = `<p>${msg}</p><p>${estado.pontos}/${maxPts} eventos na posição correta</p>`;
 }
 
+// --- RESETAR INTERFACE ---
 export function resetarUI() {
     els.finalResult.classList.add('hidden');
     els.gameInfo.classList.remove('hidden');

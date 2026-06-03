@@ -1,5 +1,6 @@
 import { estado } from './core.js';
 
+// --- REFERÊNCIAS AOS ELEMENTOS DO DOM ---
 const els = {
     rodadaAtual:        document.getElementById('rodadaAtual'),
     pontos:             document.getElementById('pontos'),
@@ -19,6 +20,7 @@ const els = {
     gameInfo:           document.getElementById('gameInfo')
 };
 
+// --- INICIAR EFEITO BLUR ---
 export function iniciarBlur() {
     estado.blurAtual = 30;
     estado.tempoPassado = 0;
@@ -39,22 +41,27 @@ export function iniciarBlur() {
     }, 500);
 }
 
+// --- PARAR EFEITO BLUR ---
 export function pararBlur() {
     clearInterval(estado.timerInterval);
 }
 
+// --- REVELAR FOTO ---
 export function revelarFoto() {
     els.playerPhoto.style.filter = 'blur(0px)';
 }
 
+// --- ATUALIZAR RODADA ---
 export function atualizarRodada() {
     els.rodadaAtual.textContent = estado.rodadaAtual + 1;
 }
 
+// --- ATUALIZAR PONTOS ---
 export function atualizarPontos() {
     els.pontos.textContent = estado.pontos;
 }
 
+// --- CONFIGURAR RODADA ---
 export function configurarRodada(jogador) {
     els.playerPhoto.src = jogador.foto;
     els.hintText.textContent = jogador.dica;
@@ -67,12 +74,14 @@ export function configurarRodada(jogador) {
     els.guessInput.focus();
 }
 
+// --- MOSTRAR FEEDBACK DE ERRO ---
 export function mostrarFeedbackErro() {
     els.guessFeedback.textContent = `Errado! Mais ${estado.tentativasRodada} tentativa(s).`;
     els.guessFeedback.classList.remove('hidden');
     els.guessInput.focus();
 }
 
+// --- MOSTRAR RESULTADO DA RODADA ---
 export function mostrarResultadoRodada(acertou, jogador, pts) {
     els.photoCard.classList.add('hidden');
     els.roundResult.classList.remove('hidden');
@@ -94,6 +103,7 @@ export function mostrarResultadoRodada(acertou, jogador, pts) {
     }
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal() {
     els.photoCard.classList.add('hidden');
     els.roundResult.classList.add('hidden');
@@ -117,16 +127,19 @@ export function mostrarFinal() {
     els.finalDetails.innerHTML = `<p>${msg}</p><p>${estado.pontos}/${maxPts} pontos possíveis</p>`;
 }
 
+// --- RESETAR INTERFACE ---
 export function resetarUI() {
     els.pontos.textContent = '0';
     els.finalResult.classList.add('hidden');
     els.gameInfo.classList.remove('hidden');
 }
 
+// --- OBTER VALOR DO INPUT ---
 export function getInput() {
     return els.guessInput.value.trim();
 }
 
+// --- LIMPAR INPUT ---
 export function limparInput() {
     els.guessInput.value = '';
 }

@@ -1,5 +1,4 @@
 const GridGerador = {
-
     escolhaPesoPonderado(objetoPesos) {
         const entradas = Object.entries(objetoPesos);
         const total = entradas.reduce((acc, [, peso]) => acc + peso, 0);
@@ -14,6 +13,7 @@ const GridGerador = {
         return entradas[entradas.length - 1][0];
     },
 
+    // --- SORTEAR ITENS ÚNICOS ---
     sortearUnicos(lista, quantidade, excluir = new Set()) {
         const filtrados = lista.filter((x) => !excluir.has(x));
         if (filtrados.length < quantidade) {
@@ -28,6 +28,7 @@ const GridGerador = {
         return arr.slice(0, quantidade);
     },
 
+    // --- VERIFICAR INTERSECÇÃO DE JOGADORES ---
     temIntersecaoJogadores(linhaChave, linhaTipo, colunaChave, colunaTipo) {
         const { indiceClubes, indicePaises } = GridDados;
 
@@ -46,6 +47,7 @@ const GridGerador = {
         return porPais.some((idx) => porClubeSet.has(idx));
     },
 
+    // --- VALIDAR GRID GERADO ---
     validarGrid(linhas, colunas, linhasTipo, colunasTipo) {
         const { TAMANHO_GRID } = GridConfig;
         let contagemValidos = 0;
@@ -65,12 +67,13 @@ const GridGerador = {
         return { contagemValidos, matriz };
     },
 
+    // --- SORTEAR LINHAS E COLUNAS ---
     sortearLinhasColunas(linhasTipo, colunasTipo) {
         const { listaClubes, listaPaises } = GridDados;
         const { TAMANHO_GRID } = GridConfig;
 
-        const listaLinhas = linhasTipo === "clube" ? listaClubes : listaPaises;
-        const listaCols = colunasTipo === "clube" ? listaClubes : listaPaises;
+        const listaLinhas = linhasTipo  === "clube" ? listaClubes : listaPaises;
+        const listaCols   = colunasTipo === "clube" ? listaClubes : listaPaises;
 
         const linhas = this.sortearUnicos(listaLinhas, TAMANHO_GRID);
         if (!linhas) {
@@ -87,17 +90,28 @@ const GridGerador = {
             return null;
         }
 
-        return { linhas, colunas };
+        return { 
+            linhas, 
+            colunas 
+        };
     },
 
+    // --- ESCOLHER MODO DO GRID ---
     escolherModo() {
         const escolha = this.escolhaPesoPonderado(GridConfig.PESOS_MODO);
         if (escolha === "linhasPais_colunasClubes") {
-            return { linhasTipo: "pais", colunasTipo: "clube" };
+            return { 
+                linhasTipo: "pais", 
+                colunasTipo: "clube" 
+            };
         }
-        return { linhasTipo: "clube", colunasTipo: "clube" };
+        return { 
+            linhasTipo: "clube", 
+            colunasTipo: "clube" 
+        };
     },
 
+    // --- CRIAR CONFIGURAÇÃO DO GRID ---
     criarConfigGrid() {
         const { MAX_TENTATIVAS, MIN_CELULAS_VALIDAS } = GridConfig;
 

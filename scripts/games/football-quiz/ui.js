@@ -24,6 +24,7 @@ const els = {
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E'];
 
+// --- RENDERIZAR TEMAS ---
 export function renderizarTemas(onSelect) {
     els.temaGrid.innerHTML = '';
     estado.temas.forEach(tema => {
@@ -39,6 +40,7 @@ export function renderizarTemas(onSelect) {
     });
 }
 
+// --- MOSTRAR QUIZ ---
 export function mostrarQuiz() {
     els.temaSelection.classList.add('hidden');
     els.quizGame.classList.remove('hidden');
@@ -49,6 +51,7 @@ export function mostrarQuiz() {
     els.perguntaTotal.textContent = estado.totalPerguntas;
 }
 
+// --- ATUALIZAR INFORMAÇÕES ---
 export function atualizarInfo() {
     els.perguntaAtual.textContent = estado.perguntaAtual + 1;
     els.acertosCount.textContent = estado.acertos;
@@ -58,6 +61,7 @@ export function atualizarInfo() {
     els.progressLabel.textContent = `${Math.round(pct)}%`;
 }
 
+// --- EXIBIR PERGUNTA ---
 export function exibirPergunta(pergunta, onResponder) {
     els.perguntaTexto.textContent = pergunta.pergunta;
     els.opcoesList.innerHTML = '';
@@ -72,6 +76,7 @@ export function exibirPergunta(pergunta, onResponder) {
     });
 }
 
+// --- MOSTRAR RESPOSTA ---
 export function mostrarResposta(indiceSelecionado, indiceCorreto) {
     const botoes = els.opcoesList.querySelectorAll('.btn-opcao');
 
@@ -80,6 +85,7 @@ export function mostrarResposta(indiceSelecionado, indiceCorreto) {
         if (idx === indiceCorreto) {
             btn.classList.add('correta');
         }
+        
         if (idx === indiceSelecionado && indiceSelecionado !== indiceCorreto) {
             btn.classList.add('errada');
         }
@@ -94,6 +100,7 @@ export function mostrarResposta(indiceSelecionado, indiceCorreto) {
     }
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal() {
     els.quizGame.classList.add('hidden');
     els.quizFinal.classList.remove('hidden');
@@ -119,12 +126,14 @@ export function mostrarFinal() {
     }
 }
 
+// --- MOSTRAR SELEÇÃO DE TEMA ---
 export function mostrarSelecaoTema() {
     els.temaSelection.classList.remove('hidden');
     els.quizGame.classList.add('hidden');
     els.quizFinal.classList.add('hidden');
 }
 
+// --- RESETAR UI ---
 export function resetarUI() {
     els.progressFill.style.width = '0%';
     els.progressLabel.textContent = '0%';

@@ -25,6 +25,7 @@ export function configurarEventos(reiniciarJogo) {
         }
     });
 
+    // --- TECLADO VIRTUAL ---
     document.getElementById("keyboard").addEventListener("click", (e) => {
         const tecla = e.target.closest(".key");
         if (!tecla) {

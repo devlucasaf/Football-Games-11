@@ -8,6 +8,7 @@ const GridDados = {
     indiceClubes:   new Map(),
     indicePaises:   new Map(),
 
+    // --- DEDUPLICAR POR CHAVE CANONIZADA ---
     deduplicarPorCanon(itens, pegarNome) {
         const vistos = new Set();
         const resultado = [];
@@ -20,11 +21,15 @@ const GridDados = {
             }
 
             vistos.add(chave);
-            resultado.push({ chave, item });
+            resultado.push({ 
+                chave, 
+                item 
+            });
         }
         return resultado;
     },
 
+    // --- CARREGAR DADOS DO JSON ---
     async carregarDados() {
         const resposta = await fetch(GridConfig.CAMINHO_JSON, {
             cache: "no-store"
@@ -36,6 +41,7 @@ const GridDados = {
         return resposta.json();
     },
 
+    // --- CONVERTER VALOR PARA ARRAY ---
     paraArray(valor) {
         if (Array.isArray(valor)) {
             return valor;
@@ -47,6 +53,7 @@ const GridDados = {
         return [];
     },
 
+    // --- CONSTRUIR ESTRUTURAS DE DADOS ---
     construirDados(dados) {
         this.dadosBrutos = dados;
 
@@ -101,6 +108,7 @@ const GridDados = {
         });
     },
 
+    // --- BUSCAR JOGADOR POR NOME ---
     buscarJogadorPorNome(texto) {
         const n = GridConfig.normalizar(texto);
         const exato = this.bancoJogadores.find((j) => j.nomeCanon === n);

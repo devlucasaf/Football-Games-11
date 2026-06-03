@@ -1,5 +1,4 @@
 const LegendsTimes = {
-
     async iniciar() {
         try {
             await LegendsDados.carregarDados();
@@ -12,6 +11,7 @@ const LegendsTimes = {
         }
     },
 
+    // --- RENDERIZAR GRID DE TIMES ---
     renderizarGridTimes() {
         const gridTimes = document.getElementById('teamsGrid');
         const elementoCarregando = document.getElementById('loadingTeams');
@@ -33,6 +33,7 @@ const LegendsTimes = {
         });
     },
 
+    // --- CRIAR CARTÃO DE TIME ---
     criarCartaoTime(time) {
         const cartao = document.createElement('div');
         cartao.className = 'team-card';
@@ -75,6 +76,7 @@ const LegendsTimes = {
         return cartao;
     },
 
+    // --- ATUALIZAR ESTATÍSTICAS ---
     atualizarEstatisticas() {
         if (!LegendsDados.timesProcessados.length) {
             return;
@@ -93,6 +95,7 @@ const LegendsTimes = {
         }
     },
 
+    // --- MOSTRAR ESTADO DE ERRO ---
     mostrarEstadoErro() {
         const elementoCarregando = document.getElementById('loadingTeams');
         const elementoErro = document.getElementById('errorState');
@@ -106,6 +109,7 @@ const LegendsTimes = {
         }
     },
 
+    // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
         const botaoTema = document.getElementById('themeToggle');
         if (botaoTema) {

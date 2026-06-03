@@ -12,6 +12,7 @@ import {
     getInput
 } from './ui.js';
 
+// --- MOSTRAR RODADA ---
 function mostrarRodada() {
     const desafio = estado.sorteados[estado.rodadaAtual];
     atualizarRodada();
@@ -20,9 +21,12 @@ function mostrarRodada() {
     configurarRodada(desafio);
 }
 
+// --- VERIFICAR PALPITE ---
 function verificar() {
     const palpite = getInput();
-    if (!palpite) return;
+    if (!palpite) {
+        return;
+    }
 
     const desafio = estado.sorteados[estado.rodadaAtual];
     const resposta = desafio.lista[desafio.escondido];
@@ -43,6 +47,7 @@ function verificar() {
     }
 }
 
+// --- PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -52,6 +57,7 @@ function proxima() {
     }
 }
 
+// --- INICIAR JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
@@ -60,6 +66,7 @@ function iniciarJogo() {
     mostrarRodada();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 

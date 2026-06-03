@@ -1,3 +1,4 @@
+// --- IMPORTAÇÕES ---
 import estado from "./core.js";
 import { carregarDados, escolherJogador, obterNomesJogadores } from "./data.js";
 import { normalizar } from "./utils.js";
@@ -65,6 +66,7 @@ function verificarPalpite(palpite) {
     }
 }
 
+// --- FINALIZAR COM ERRO ---
 function finalizarErro() {
     estado.jogoAtivo = false;
     estado.totalRodadas++;
@@ -84,6 +86,7 @@ function finalizarErro() {
     }, 600);
 }
 
+// --- PRÓXIMA RODADA ---
 function proximaRodada() {
     esconderResultado();
     esconderFeedbackErro();
@@ -97,6 +100,7 @@ function proximaRodada() {
     atualizarPlacar();
 }
 
+// --- FILTRAR SUGESTÕES DO AUTOCOMPLETE ---
 function filtrarSugestoes(texto) {
     if (!texto || texto.length < 2) {
         esconderSugestoes();
@@ -109,6 +113,7 @@ function filtrarSugestoes(texto) {
     mostrarSugestoes(filtrados);
 }
 
+// --- CLIQUE NO CARD DE PISTA ---
 function onCardClick(e) {
     if (!estado.jogoAtivo) {
         return;
@@ -131,12 +136,10 @@ function configurarEventos() {
     const sugestoesLista = document.getElementById("sugestoesLista");
     const pistasGrid = document.getElementById("pistasGrid");
 
-    // --- CONFIRMAR ---
     confirmarBtn.addEventListener("click", () => {
         verificarPalpite(input.value);
     });
 
-    // --- ENTER NO INPUT ---
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
@@ -144,15 +147,12 @@ function configurarEventos() {
         }
     });
 
-    // --- PRÓXIMA RODADA ---
     proximaBtn.addEventListener("click", () => proximaRodada());
 
-    // --- AUTOCOMPLETE ---
     input.addEventListener("input", () => {
         filtrarSugestoes(input.value);
     });
 
-    // --- CLICAR EM SUGESTÃO ---
     sugestoesLista.addEventListener("click", (e) => {
         const item = e.target.closest(".sugestao-item");
         if (item) {
@@ -162,10 +162,8 @@ function configurarEventos() {
         }
     });
 
-    // --- CLICAR CARD PARA REVELAR ---
     pistasGrid.addEventListener("click", onCardClick);
 
-    // --- FECHAR SUGESTÕES AO CLICAR FORA ---
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".input-wrapper")) {
             esconderSugestoes();

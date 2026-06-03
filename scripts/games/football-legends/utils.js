@@ -1,5 +1,4 @@
 const LegendsUtils = {
-
     alternarTema() {
         const temaAtual = document.documentElement.getAttribute('data-theme');
         const novoTema = temaAtual === 'dark' ? 'light' : 'dark';

@@ -1,5 +1,3 @@
-// --- PONTO DE ENTRADA DO FOOTBALL CARREIRAS ---
-
 import { carregarDados, escolherJogador } from "./data.js";
 import { criarGrid } from "./grid.js";
 import { esconderResultado, esconderSugestoes, mostrarSugestoes } from "./ui.js";
@@ -14,6 +12,7 @@ function novoJogo() {
     esconderSugestoes();
 }
 
+// --- CONFIGURAR EVENTOS ---
 function configurarEventos() {
     const input             = document.getElementById("playerInput");
     const guessBtn          = document.getElementById("guessBtn");
@@ -45,6 +44,7 @@ function configurarEventos() {
     resultCloseBtn?.addEventListener("click", () => novoJogo());
 }
 
+// --- INICIALIZAR ---
 async function iniciar() {
     try {
         await carregarDados();

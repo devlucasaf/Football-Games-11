@@ -4,6 +4,7 @@ const GridJogo = {
     celulaSelecionada:  null,
     gridAtual:          null,
 
+    // --- VERIFICAR SE JOGADOR ATENDE A CÉLULA ---
     jogadorAtendeCelula(jogador, linhaChave, linhaTipo, colunaChave, colunaTipo) {
         const clubesJogador = new Set(jogador.clubes);
         const selecoesJogador = new Set(jogador.selecoes);
@@ -22,6 +23,7 @@ const GridJogo = {
         return false;
     },
 
+    // --- TRATAR PALPITE DO JOGADOR ---
     tratarPalpite() {
         const { inputJogador } = GridInterface.elementos;
         const celulas = GridInterface.elementos.celulas;
@@ -67,6 +69,7 @@ const GridJogo = {
                 this.celulaSelecionada.dataset.coluna,
                 this.celulaSelecionada.dataset.colunaTipo
             );
+
             if (ok) {
                 celulaAlvo = this.celulaSelecionada;
             }
@@ -89,7 +92,7 @@ const GridJogo = {
             celulaAlvo.innerHTML = "";
 
             if (jogador.foto) {
-                const imagem = document.createElement("imagem");
+                const imagem = document.createElement("img");
 
                 imagem.src = jogador.foto;
                 imagem.alt = jogador.nome;
@@ -117,6 +120,7 @@ const GridJogo = {
         }
     },
 
+    // --- VERIFICAR VITÓRIA ---
     verificarVitoria() {
         const celulas = GridInterface.elementos.celulas;
         const todasPreenchidas = celulas.every((c) => c.classList.contains("correct"));
@@ -125,6 +129,7 @@ const GridJogo = {
         }
     },
 
+    // --- SELECIONAR CÉLULA ---
     selecionarCelula(celula) {
         if (this.jogoParado) {
             return;
@@ -141,12 +146,14 @@ const GridJogo = {
         GridInterface.elementos.inputJogador.focus();
     },
 
+    // --- REINICIAR JOGO ---
     reiniciarJogo() {
         this.jogadoresUsados.clear();
         this.celulaSelecionada = null;
         this.jogoParado = false;
     },
 
+    // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
         const { inputJogador, btnBuscar, btnNovoGrid, btnParar, celulas } = GridInterface.elementos;
 

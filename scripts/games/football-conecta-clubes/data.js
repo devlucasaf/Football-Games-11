@@ -6,6 +6,7 @@ export async function carregarDados() {
     estado.conexoes = data.conexoes;
 }
 
+// --- SORTEAR CONEXÕES PARA AS RODADAS ---
 export function sortear() {
     const copia = [...estado.conexoes];
     const sorteadas = [];
@@ -16,6 +17,7 @@ export function sortear() {
     estado.sorteadas = sorteadas;
 }
 
+// --- NORMALIZAÇÃO DE TEXTO ---
 export function normalizar(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 }

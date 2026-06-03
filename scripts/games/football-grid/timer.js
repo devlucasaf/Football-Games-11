@@ -1,7 +1,8 @@
 const GridTemporizador = {
     intervaloTimer: null,
-    tempoRestante: 0,
+    tempoRestante:  0,
 
+    // --- INICIAR TIMER ---
     iniciarTimer(minutos) {
         if (minutos === "unlimited") {
             this.atualizarDisplayTimer("∞");
@@ -25,12 +26,14 @@ const GridTemporizador = {
         }, 1000);
     },
 
+    // --- FORMATAR TEMPO ---
     formatarTempo(segundos) {
         const mins = Math.floor(segundos / 60);
         const segs = segundos % 60;
         return `${mins}:${segs.toString().padStart(2, "0")}`;
     },
 
+    // --- ATUALIZAR DISPLAY DO TIMER ---
     atualizarDisplayTimer(texto) {
         let timerEl = document.getElementById("timer-display");
         if (!timerEl) {
@@ -43,6 +46,7 @@ const GridTemporizador = {
         timerEl.textContent = `Tempo: ${texto}`;
     },
 
+    // --- PARAR JOGO ---
     pararJogo(mensagem) {
         GridJogo.jogoParado = true;
         clearInterval(this.intervaloTimer);

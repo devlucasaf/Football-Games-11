@@ -1,6 +1,7 @@
 import { estado } from './core.js';
 import { embaralhar } from './data.js';
 
+// --- RENDERIZAR GRID DE JOGADORES ---
 export function renderizarGrid() {
     const grid = document.getElementById('playersGrid');
     grid.innerHTML = '';
@@ -22,6 +23,7 @@ export function renderizarGrid() {
     atualizarBotoes();
 }
 
+// --- ALTERNAR SELEÇÃO DE JOGADOR ---
 function toggleSelecao(nome) {
     if (!estado.jogoAtivo) {
         return;
@@ -39,6 +41,7 @@ function toggleSelecao(nome) {
     renderizarGrid();
 }
 
+// --- ATUALIZAR ESTADO DOS BOTÕES ---
 export function atualizarBotoes() {
     const btnDeselect = document.getElementById('btnDeselect');
     const btnSubmit   = document.getElementById('btnSubmit');
@@ -47,6 +50,7 @@ export function atualizarBotoes() {
     btnSubmit.disabled = estado.selecionados.length !== 4;
 }
 
+// --- RENDERIZAR VIDAS ---
 export function renderizarVidas() {
     const dots = document.querySelectorAll('#livesDots .dot');
     dots.forEach((dot, i) => {
@@ -58,6 +62,7 @@ export function renderizarVidas() {
     });
 }
 
+// --- RENDERIZAR GRUPO ACERTADO ---
 export function renderizarGrupoAcertado(grupo) {
     const container = document.getElementById('solvedGroups');
     const div       = document.createElement('div');
@@ -71,6 +76,7 @@ export function renderizarGrupoAcertado(grupo) {
     container.appendChild(div);
 }
 
+// --- MOSTRAR FEEDBACK ---
 export function mostrarFeedback(tipo, texto) {
     const msg = document.getElementById('feedbackMsg');
 
@@ -83,6 +89,7 @@ export function mostrarFeedback(tipo, texto) {
     }, 2500);
 }
 
+// --- ANIMAR ERRO ---
 export function animarErro() {
     const tiles = document.querySelectorAll('.player-tile.selected');
     tiles.forEach(t => {
@@ -91,6 +98,7 @@ export function animarErro() {
     });
 }
 
+// --- ANIMAR QUASE LÁ ---
 export function animarQuaseLa() {
     const tiles = document.querySelectorAll('.player-tile.selected');
     tiles.forEach(t => {
@@ -99,16 +107,19 @@ export function animarQuaseLa() {
     });
 }
 
+// --- EMBARALHAR GRID ---
 export function embaralharGrid() {
     estado.jogadoresRestantes = embaralhar(estado.jogadoresRestantes);
     renderizarGrid();
 }
 
+// --- LIMPAR SELEÇÃO ---
 export function limparSelecao() {
     estado.selecionados = [];
     renderizarGrid();
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 export function mostrarResultadoFinal(venceu) {
     document.getElementById('playersGrid').classList.add('hidden');
     document.querySelector('.lives-area').classList.add('hidden');
@@ -145,6 +156,7 @@ export function mostrarResultadoFinal(venceu) {
     });
 }
 
+// --- RESETAR VISUAL ---
 export function resetarVisual() {
     document.getElementById('playersGrid').classList.remove('hidden');
     document.querySelector('.lives-area').classList.remove('hidden');

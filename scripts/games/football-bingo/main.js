@@ -22,8 +22,8 @@ function confirmarMarcacoes() {
     }
 
     const cells = document.querySelectorAll(".bingo-cell");
-    let acertosRodada = 0;
-    let errosRodada = 0;
+    let acertosRodada   = 0;
+    let errosRodada     = 0;
 
     cells.forEach((cell, idx) => {
         if (cell.classList.contains("locked")) {

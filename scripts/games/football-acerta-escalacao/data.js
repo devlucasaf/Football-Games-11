@@ -6,11 +6,13 @@ export async function carregarDados() {
     estado.escalacoes = data.escalacoes;
 }
 
+// --- ESCOLHA ALEATÓRIA DE ESCALAÇÃO ---
 export function escolherEscalacao() {
     const idx = Math.floor(Math.random() * estado.escalacoes.length);
     return estado.escalacoes[idx];
 }
 
+// --- MAPA DE POSIÇÕES PADRÃO NO CAMPO ---
 const posicoesMap = {
     'GOL':  { top: 90, left: 50 },
     'LD':   { top: 75, left: 80 },
@@ -96,6 +98,7 @@ const ajustesFormacao = {
     }
 };
 
+// --- OBTER POSIÇÃO NO CAMPO ---
 export function obterPosicao(posicaoCode, formacao) {
     const ajustes = ajustesFormacao[formacao] || {};
     if (ajustes[posicaoCode]) {
@@ -107,6 +110,7 @@ export function obterPosicao(posicaoCode, formacao) {
     };
 }
 
+// --- OBTER LABEL EXIBÍVEL DA POSIÇÃO ---
 export function obterLabelPosicao(posicaoCode) {
     const labels = {
         'GOL':  'GOL',

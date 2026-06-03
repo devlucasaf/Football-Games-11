@@ -3,6 +3,7 @@ import { normalizar } from "./utils.js";
 import { revelarProximo, revelarTodos } from "./grid.js";
 import { atualizarInfo, mostrarResultado, esconderSugestoes } from "./ui.js";
 
+// --- TRATAR PALPITE DO JOGADOR ---
 export function tratarPalpite() {
     if (!estado.jogoAtivo) {
         return;
@@ -43,6 +44,7 @@ export function tratarPalpite() {
     }
 }
 
+// --- PULAR RODADA ---
 export function pular() {
     if (!estado.jogoAtivo) {
         return;

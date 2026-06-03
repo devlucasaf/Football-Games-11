@@ -2,24 +2,25 @@ import { estado } from './core.js';
 import { carregarDados, sortearPartidas, obterPartidaAtual } from './data.js';
 
 const els = {
-    rodadaAtual: document.getElementById('rodadaAtual'),
-    pontos: document.getElementById('pontos'),
-    competicao: document.getElementById('competicao'),
-    mandante: document.getElementById('mandante'),
-    visitante: document.getElementById('visitante'),
-    inputMandante: document.getElementById('inputMandante'),
+    rodadaAtual:    document.getElementById('rodadaAtual'),
+    pontos:         document.getElementById('pontos'),
+    competicao:     document.getElementById('competicao'),
+    mandante:       document.getElementById('mandante'),
+    visitante:      document.getElementById('visitante'),
+    inputMandante:  document.getElementById('inputMandante'),
     inputVisitante: document.getElementById('inputVisitante'),
-    matchCard: document.getElementById('matchCard'),
+    matchCard:      document.getElementById('matchCard'),
     resultFeedback: document.getElementById('resultFeedback'),
-    feedbackIcon: document.getElementById('feedbackIcon'),
-    feedbackText: document.getElementById('feedbackText'),
-    feedbackScore: document.getElementById('feedbackScore'),
-    finalResult: document.getElementById('finalResult'),
-    finalPoints: document.getElementById('finalPoints'),
-    finalDetails: document.getElementById('finalDetails'),
-    gameInfo: document.getElementById('gameInfo')
+    feedbackIcon:   document.getElementById('feedbackIcon'),
+    feedbackText:   document.getElementById('feedbackText'),
+    feedbackScore:  document.getElementById('feedbackScore'),
+    finalResult:    document.getElementById('finalResult'),
+    finalPoints:    document.getElementById('finalPoints'),
+    finalDetails:   document.getElementById('finalDetails'),
+    gameInfo:       document.getElementById('gameInfo')
 };
 
+// --- MOSTRAR PARTIDA ---
 function mostrarPartida() {
     const partida = obterPartidaAtual();
     els.rodadaAtual.textContent = estado.rodadaAtual + 1;
@@ -33,6 +34,7 @@ function mostrarPartida() {
     els.inputMandante.focus();
 }
 
+// --- CALCULAR PONTOS ---
 function calcularPontos(palpiteMandante, palpiteVisitante, partida) {
     const exato = palpiteMandante === partida.placarMandante && palpiteVisitante === partida.placarVisitante;
     if (exato) {
@@ -48,6 +50,7 @@ function calcularPontos(palpiteMandante, palpiteVisitante, partida) {
     return 0;
 }
 
+// --- CONFIRMAR PALPITE ---
 function confirmar() {
     const partida = obterPartidaAtual();
     const pm = parseInt(els.inputMandante.value) || 0;
@@ -89,6 +92,7 @@ function confirmar() {
     }
 }
 
+// --- PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -98,6 +102,7 @@ function proxima() {
     }
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 function mostrarFinal() {
     els.matchCard.classList.add('hidden');
     els.resultFeedback.classList.add('hidden');
@@ -107,6 +112,7 @@ function mostrarFinal() {
 
     const pct = Math.round((estado.pontos / 30) * 100);
     let msg = '';
+
     if (pct >= 80) {
         msg = 'Memória enciclopédica!';
     } else if (pct >= 50) {
@@ -121,6 +127,7 @@ function mostrarFinal() {
     els.finalDetails.innerHTML = `<p>${msg}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
 }
 
+// --- INICIAR JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
@@ -132,6 +139,7 @@ function iniciarJogo() {
     mostrarPartida();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 

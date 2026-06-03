@@ -5,6 +5,7 @@ const LegendsDados = {
     jogadoresSelecionados: new Map(),
     formacaoAtual: '4-3-3',
 
+    // --- CARREGAR DADOS DO JSON ---
     async carregarDados() {
         const resposta = await fetch(LegendsConfig.CAMINHO_JSON);
         if (!resposta.ok) {
@@ -14,6 +15,7 @@ const LegendsDados = {
         this.processarDados();
     },
 
+    // --- PROCESSAR DADOS DOS TIMES ---
     processarDados() {
         this.timesProcessados = [];
 
@@ -32,7 +34,10 @@ const LegendsDados = {
                 for (const [posicaoChave, nomes] of Object.entries(dados.jogadores || {})) {
                     const posAbreviada = mapaPosicao[posicaoChave] || posicaoChave;
                     nomes.forEach(nome => {
-                        jogadores.push({ name: nome, pos: posAbreviada });
+                        jogadores.push({ 
+                            name: nome, 
+                            pos: posAbreviada 
+                        });
                     });
                 }
 
@@ -47,6 +52,7 @@ const LegendsDados = {
         }
     },
 
+    // --- OBTER CONTAGEM DE POSIÇÕES ---
     obterContagemPosicoes(jogadores) {
         const contagem = { 
             GK:   0, 
@@ -71,6 +77,7 @@ const LegendsDados = {
         return contagem;
     },
 
+    // --- OBTER GRUPO DA POSIÇÃO ---
     obterGrupoPosicao(posicao) {
         const pos = posicao.toUpperCase();
         for (const [chave, grupo] of Object.entries(LegendsConfig.gruposPosicao)) {
@@ -81,10 +88,12 @@ const LegendsDados = {
         return 'Outros';
     },
 
+    // --- VERIFICAR SE JOGADOR ESTÁ SELECIONADO ---
     jogadorEstaSelecionado(nomeJogador) {
         return Array.from(this.jogadoresSelecionados.values()).some(j => j.name === nomeJogador);
     },
 
+    // --- ADICIONAR JOGADOR NA POSIÇÃO ---
     adicionarJogadorNaPosicao(indiceJogador, posicao) {
         const jogador = this.timeAtual.players[indiceJogador];
         if (!jogador) {
@@ -98,10 +107,12 @@ const LegendsDados = {
         this.jogadoresSelecionados.set(posicao, jogador);
     },
 
+    // --- REMOVER JOGADOR DA POSIÇÃO ---
     removerJogadorDaPosicao(posicao) {
         this.jogadoresSelecionados.delete(posicao);
     },
 
+    // --- REMOVER JOGADOR DE TODAS AS POSIÇÕES ---
     removerJogadorDeTodasPosicoes(nomeJogador) {
         for (const [posicao, jogador] of this.jogadoresSelecionados.entries()) {
             if (jogador.name === nomeJogador) {
@@ -111,6 +122,7 @@ const LegendsDados = {
         }
     },
 
+    // --- ENCONTRAR POSIÇÃO SIMILAR ---
     encontrarPosicaoSimilar(posicaoAntiga) {
         for (const [categoria, posicoes] of Object.entries(LegendsConfig.posicoesSimilares)) {
             if (posicaoAntiga.includes(categoria)) {
@@ -124,6 +136,7 @@ const LegendsDados = {
         return null;
     },
 
+    // --- VERIFICAR SE POSIÇÃO CORRESPONDE AO FILTRO ---
     posicaoCorrespondeAoFiltro(posicao, filtro) {
         const pos = posicao.toUpperCase();
 
@@ -143,10 +156,12 @@ const LegendsDados = {
         }
     },
 
+    // --- REINICIAR ESCALAÇÃO ---
     reiniciarEscalacao() {
         this.jogadoresSelecionados.clear();
     },
 
+    // --- SALVAR TIME ---
     salvarTime() {
         if (this.jogadoresSelecionados.size < 11) {
             return false;
@@ -170,6 +185,7 @@ const LegendsDados = {
         return true;
     },
 
+    // --- GERAR TEXTO DE COMPARTILHAMENTO ---
     gerarTextoCompartilhamento() {
         let texto = `Melhor XI Histórico do ${this.timeAtual.name}\n`;
         texto += `Formação: ${this.formacaoAtual}\n\n`;

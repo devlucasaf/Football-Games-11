@@ -11,6 +11,7 @@ import {
     resetarUI
 } from './ui.js';
 
+// --- MOSTRAR RODADA ---
 function mostrarRodada() {
     const jogador = jogadorAtual();
     if (!jogador) {
@@ -23,6 +24,7 @@ function mostrarRodada() {
     renderizarMultiplicadores(selecionarMultiplicador);
 }
 
+// --- SELECIONAR MULTIPLICADOR ---
 function selecionarMultiplicador(mult) {
     const jogador = jogadorAtual();
     const valor = valorDoJogador(jogador);
@@ -34,6 +36,7 @@ function selecionarMultiplicador(mult) {
     mostrarResultadoMultiplicacao(valor, mult, resultado);
 }
 
+// --- PULAR JOGADOR ---
 function pularJogador() {
     if (estado.pulosRestantes <= 0) {
         return;
@@ -44,6 +47,7 @@ function pularJogador() {
     mostrarRodada();
 }
 
+// --- PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     estado.indiceSorteados++;
@@ -55,6 +59,7 @@ function proxima() {
     }
 }
 
+// --- INICIAR JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.indiceSorteados = 0;
@@ -68,6 +73,7 @@ function iniciarJogo() {
     mostrarRodada();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 

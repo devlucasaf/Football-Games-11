@@ -36,6 +36,7 @@ export function buscarEscudo(nomeClube) {
 
 export function escolherJogador() {
     const idx = Math.floor(Math.random() * estado.jogadores.length);
+    
     estado.jogadorAtual = estado.jogadores[idx];
     estado.clubesRevelados = 0;
     estado.erros = 0;

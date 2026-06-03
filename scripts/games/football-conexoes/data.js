@@ -6,6 +6,7 @@ export async function carregarDados() {
     estado.puzzles = data.puzzles;
 }
 
+// --- ESCOLHER PUZZLE ---
 export function escolherPuzzle() {
     if (estado.puzzles.length === 0) {
         return null;
@@ -16,6 +17,7 @@ export function escolherPuzzle() {
     return estado.puzzleAtual;
 }
 
+// --- EMBARALHAR ARRAY ---
 export function embaralhar(array) {
     const arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
@@ -25,6 +27,7 @@ export function embaralhar(array) {
     return arr;
 }
 
+// --- OBTER TODOS OS JOGADORES DO PUZZLE ---
 export function obterTodosJogadores(puzzle) {
     const todos = [];
     puzzle.grupos.forEach(g => {
@@ -33,6 +36,7 @@ export function obterTodosJogadores(puzzle) {
     return todos;
 }
 
+// --- VERIFICAR SE SELEÇÃO FORMA UM GRUPO ---
 export function verificarGrupo(selecionados, puzzle) {
     for (const grupo of puzzle.grupos) {
         const jogadoresGrupo = grupo.jogadores;

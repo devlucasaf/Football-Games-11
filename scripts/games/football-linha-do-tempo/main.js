@@ -11,6 +11,7 @@ import {
     resetarUI
 } from './ui.js';
 
+// --- MOSTRAR RODADA ATUAL ---
 function mostrarRodada() {
     const rodada = estado.sorteadas[estado.rodadaAtual];
     atualizarRodada();
@@ -20,6 +21,7 @@ function mostrarRodada() {
     renderizarLista();
 }
 
+// --- CONFIRMAR ORDEM ---
 function confirmar() {
     const rodada = estado.sorteadas[estado.rodadaAtual];
     const ordemCorreta = [...rodada.eventos].sort((a, b) => a.ano - b.ano);
@@ -36,6 +38,7 @@ function confirmar() {
     mostrarRoundResult(corretos, ordemCorreta);
 }
 
+// --- PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -45,6 +48,7 @@ function proxima() {
     }
 }
 
+// --- INICIAR JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
@@ -53,6 +57,7 @@ function iniciarJogo() {
     mostrarRodada();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 

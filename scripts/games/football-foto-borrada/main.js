@@ -15,11 +15,13 @@ import {
     limparInput
 } from './ui.js';
 
+// --- CALCULAR PONTOS ---
 function calcularPontos() {
     const ratio = 1 - (estado.tempoPassado / estado.tempoMax);
     return Math.max(1, Math.round(ratio * 10));
 }
 
+// --- MOSTRAR RODADA ATUAL ---
 function mostrarRodada() {
     const jogador = estado.sorteados[estado.rodadaAtual];
     atualizarRodada();
@@ -28,9 +30,12 @@ function mostrarRodada() {
     iniciarBlur();
 }
 
+// --- VERIFICAR PALPITE ---
 function verificar() {
     const palpite = getInput();
-    if (!palpite) return;
+    if (!palpite) {
+        return;
+    }
 
     const jogador = estado.sorteados[estado.rodadaAtual];
     const acertou = normalizar(palpite) === normalizar(jogador.nome) ||
@@ -58,6 +63,7 @@ function verificar() {
     }
 }
 
+// --- PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -67,6 +73,7 @@ function proxima() {
     }
 }
 
+// --- INICIAR JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
@@ -75,6 +82,7 @@ function iniciarJogo() {
     mostrarRodada();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 
@@ -90,7 +98,9 @@ async function init() {
     });
 
     document.getElementById('guessInput').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') verificar();
+        if (e.key === 'Enter') {
+            verificar();
+        }
     });
 
     const tutorialOverlay = document.getElementById('tutorialOverlay');

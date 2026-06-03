@@ -1,15 +1,18 @@
 import { estado } from './core.js';
 
+// --- CARREGAMENTO DE DADOS ---
 export async function carregarDados() {
     const resp = await fetch('../data/football-quiz.json');
     const data = await resp.json();
     estado.temas = data.temas;
 }
 
+// --- SELECIONAR TEMA ---
 export function selecionarTema(temaId) {
     estado.temaAtual = estado.temas.find(t => t.id === temaId);
 }
 
+// --- SORTEAR PERGUNTAS ---
 export function sortearPerguntas() {
     if (!estado.temaAtual) {
         return;
@@ -25,6 +28,7 @@ export function sortearPerguntas() {
     estado.perguntas = sorteadas;
 }
 
+// --- OBTER PERGUNTA ATUAL ---
 export function perguntaAtual() {
     return estado.perguntas[estado.perguntaAtual] || null;
 }

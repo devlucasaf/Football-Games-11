@@ -8,6 +8,7 @@ export function atualizarInfo() {
         `${estado.clubesRevelados}/${estado.jogadorAtual.clubes.length}`;
 }
 
+// --- MOSTRAR RESULTADO ---
 export function mostrarResultado(acertou) {
     const overlay   = document.getElementById("resultOverlay");
     const icon      = document.getElementById("resultIcon");
@@ -24,10 +25,12 @@ export function mostrarResultado(acertou) {
     overlay.classList.add("show");
 }
 
+// --- ESCONDER RESULTADO ---
 export function esconderResultado() {
     document.getElementById("resultOverlay").classList.remove("show");
 }
 
+// --- MOSTRAR SUGESTÕES DO AUTOCOMPLETE ---
 export function mostrarSugestoes(consulta, onSelect) {
     const dropdown = document.getElementById("suggestionsDropdown");
 
@@ -61,6 +64,7 @@ export function mostrarSugestoes(consulta, onSelect) {
     dropdown.style.display = "block";
 }
 
+// --- ESCONDER SUGESTÕES ---
 export function esconderSugestoes() {
     const dropdown = document.getElementById("suggestionsDropdown");
     if (dropdown) {

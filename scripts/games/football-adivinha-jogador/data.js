@@ -10,6 +10,7 @@ export async function carregarDados() {
     estado.jogadores = dados.jogadores;
 }
 
+// --- ESCOLHA ALEATÓRIA DE JOGADOR ---
 export function escolherJogador() {
     const disponiveis = estado.jogadores.filter((_, i) => !estado.jogadoresUsados.has(i));
 
@@ -31,6 +32,7 @@ export function escolherJogador() {
     estado.jogoAtivo = true;
 }
 
+// --- OBTER LISTA DE NOMES DOS JOGADORES ---
 export function obterNomesJogadores() {
     return estado.jogadores.map(j => j.nome);
 }

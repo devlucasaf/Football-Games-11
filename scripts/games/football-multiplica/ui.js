@@ -29,10 +29,12 @@ const els = {
     skipSection:            document.getElementById('skipSection')
 };
 
+// --- FORMATAR NÚMERO ---
 function formatarNumero(n) {
     return n.toLocaleString('pt-BR');
 }
 
+// --- EXIBIR DESAFIO ---
 export function exibirDesafio() {
     const d = estado.desafioAtual;
 
@@ -43,12 +45,14 @@ export function exibirDesafio() {
     atualizarProgresso();
 }
 
+// --- ATUALIZAR RODADA ---
 export function atualizarRodada() {
     els.rodadaAtual.textContent = estado.rodadaAtual + 1;
     els.totalAcumulado.textContent = formatarNumero(estado.totalAcumulado);
     atualizarProgresso();
 }
 
+// --- ATUALIZAR PROGRESSO ---
 function atualizarProgresso() {
     const meta = estado.desafioAtual.meta;
     const pct = Math.min((estado.totalAcumulado / meta) * 100, 100);
@@ -62,6 +66,7 @@ function atualizarProgresso() {
     }
 }
 
+// --- EXIBIR JOGADOR ---
 export function exibirJogador(jogador, valorTipo) {
     els.jogadorNome.textContent = jogador.nome;
 
@@ -98,6 +103,7 @@ export function exibirJogador(jogador, valorTipo) {
     els.multiplicadoresGrid.classList.remove('hidden');
 }
 
+// --- RENDERIZAR MULTIPLICADORES ---
 export function renderizarMultiplicadores(onSelect) {
     els.multiplicadoresGrid.innerHTML = '';
     estado.multiplicadores.forEach(mult => {
@@ -125,6 +131,7 @@ export function renderizarMultiplicadores(onSelect) {
     });
 }
 
+// --- MOSTRAR RESULTADO DA MULTIPLICAÇÃO ---
 export function mostrarResultadoMultiplicacao(valor, mult, resultado) {
     els.skipSection.classList.add('hidden');
     els.multiplicadoresGrid.classList.add('hidden');
@@ -140,6 +147,7 @@ export function mostrarResultadoMultiplicacao(valor, mult, resultado) {
     }
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal(venceu) {
     els.jogadorCard.classList.add('hidden');
     els.gameInfo.classList.add('hidden');
@@ -164,6 +172,7 @@ export function mostrarFinal(venceu) {
     `;
 }
 
+// --- ATUALIZAR PULOS ---
 export function atualizarPulos() {
     els.pulosRestantes.textContent = estado.pulosRestantes;
     els.pulosInfo.textContent = `${estado.pulosRestantes}/${estado.maxPulos}`;
@@ -177,6 +186,7 @@ export function atualizarPulos() {
     }
 }
 
+// --- RESETAR UI ---
 export function resetarUI() {
     els.finalResult.classList.add('hidden');
     els.gameInfo.classList.remove('hidden');

@@ -2,6 +2,7 @@ import estado from "./core.js";
 import { embaralhar } from "./utils.js";
 import { mostrarExplicacao, atualizarPlacar } from "./ui.js";
 
+// --- CRIAR CARDS DA RODADA ---
 export function criarCards() {
     const grid          = document.getElementById("impostorGrid");
     const temaEl        = document.getElementById("temaTexto");
@@ -48,6 +49,7 @@ export function criarCards() {
     estado.jogoAtivo = true;
 }
 
+// --- SELECIONAR JOGADOR ---
 function selecionarJogador(nome, card) {
     if (!estado.jogoAtivo) {
         return;
@@ -58,7 +60,6 @@ function selecionarJogador(nome, card) {
     const acertou = nome === estado.rodadaAtual.impostor;
 
     if (acertou) {
-        // --- ACERTOU O IMPOSTOR ---
         estado.acertos++;
         estado.sequencia++;
         if (estado.sequencia > estado.melhorSequencia) {
@@ -66,7 +67,6 @@ function selecionarJogador(nome, card) {
         }
         card.classList.add("impostor-found");
     } else {
-        // --- ERROU ---
         estado.sequencia = 0;
         card.classList.add("wrong-choice");
 

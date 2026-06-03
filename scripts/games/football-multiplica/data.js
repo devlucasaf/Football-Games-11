@@ -1,5 +1,6 @@
 import { estado } from './core.js';
 
+// --- CARREGAMENTO DE DADOS ---
 export async function carregarDados() {
     const resp = await fetch('../data/football-multiplica.json');
     const data = await resp.json();
@@ -9,11 +10,13 @@ export async function carregarDados() {
     estado.multiplicadores = data.multiplicadores;
 }
 
+// --- SORTEAR DESAFIO ---
 export function sortearDesafio() {
     const idx = Math.floor(Math.random() * estado.desafios.length);
     estado.desafioAtual = estado.desafios[idx];
 }
 
+// --- SORTEAR JOGADORES ---
 export function sortearJogadores() {
     const copia     = [...estado.jogadores];
     const sorteados = [];
@@ -26,10 +29,12 @@ export function sortearJogadores() {
     estado.jogadoresSorteados = sorteados;
 }
 
+// --- OBTER JOGADOR ATUAL ---
 export function jogadorAtual() {
     return estado.jogadoresSorteados[estado.indiceSorteados] || null;
 }
 
+// --- OBTER VALOR DO JOGADOR ---
 export function valorDoJogador(jogador) {
     if (!jogador || !estado.desafioAtual) {
         return 0;
@@ -37,6 +42,7 @@ export function valorDoJogador(jogador) {
     return jogador[estado.desafioAtual.tipo] || 0;
 }
 
+// --- MAPA DE NOMES DOS TIPOS ---
 const NOMES_TIPO = {
     gols: "Gols",
     assistencias: "Assistências",
@@ -48,6 +54,7 @@ const NOMES_TIPO = {
     premierLeague: "Premier League"
 };
 
+// --- OBTER NOME DO TIPO ---
 export function nomeTipo(tipo) {
     return NOMES_TIPO[tipo] || tipo;
 }

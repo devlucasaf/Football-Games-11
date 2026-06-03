@@ -15,6 +15,7 @@ import {
 let acertosA = 0;
 let acertosB = 0;
 
+// --- VERIFICAR ESCOLHA DO USUÁRIO ---
 function verificarEscolha(escolha) {
     if (estado.respondido) {
         return;
@@ -59,21 +60,24 @@ function verificarEscolha(escolha) {
     }, 1000);
 }
 
+// --- PRÓXIMO JOGADOR ---
 function proximoJogador() {
     estado.respondido = false;
     habilitarBotoes();
     mostrarJogador(estado.jogadores[estado.jogadorIdx]);
 }
 
+// --- FINALIZAR DUELO ---
 function finalizarDuelo() {
     estado.historico.push({
-        timeA: estado.dueloAtual.timeA.nome,
-        timeB: estado.dueloAtual.timeB.nome,
-        acertos: estado.acertosRodada
+        timeA:      estado.dueloAtual.timeA.nome,
+        timeB:      estado.dueloAtual.timeB.nome,
+        acertos:    estado.acertosRodada
     });
     mostrarResultadoDuelo(estado.acertosRodada, estado.jogadores.length);
 }
 
+// --- INICIAR DUELO ---
 function iniciarDuelo() {
     estado.rodada++;
     estado.jogadorIdx = 0;
@@ -91,6 +95,7 @@ function iniciarDuelo() {
     proximoJogador();
 }
 
+// --- PRÓXIMO DUELO ---
 function proximoDuelo() {
     if (estado.rodada >= estado.totalRodadas) {
         mostrarResultadoFinal();
@@ -99,10 +104,10 @@ function proximoDuelo() {
     }
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 
-    // Event listeners
     document.getElementById('btnChooseA').addEventListener('click', () => verificarEscolha('A'));
     document.getElementById('btnChooseB').addEventListener('click', () => verificarEscolha('B'));
     document.getElementById('btnNext').addEventListener('click', proximoDuelo);
@@ -118,7 +123,6 @@ async function init() {
         window.location.href = '../index.html';
     });
 
-    // Tutorial
     const tutorialOverlay = document.getElementById('tutorialOverlay');
     const gameKey = tutorialOverlay?.dataset.game;
     const skipKey = gameKey ? `tutorial_skip_${gameKey}` : null;

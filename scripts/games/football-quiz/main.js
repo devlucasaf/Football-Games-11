@@ -11,6 +11,7 @@ import {
     resetarUI
 } from './ui.js';
 
+// --- MOSTRAR PERGUNTA ---
 function mostrarPergunta() {
     const p = perguntaAtual();
     if (!p) {
@@ -22,6 +23,7 @@ function mostrarPergunta() {
     exibirPergunta(p, responder);
 }
 
+// --- RESPONDER PERGUNTA ---
 function responder(indice) {
     if (estado.respondida) {
         return;
@@ -37,6 +39,7 @@ function responder(indice) {
     mostrarResposta(indice, p.resposta);
 }
 
+// --- PRÓXIMA PERGUNTA ---
 function proxima() {
     estado.perguntaAtual++;
     if (estado.perguntaAtual >= estado.totalPerguntas) {
@@ -46,6 +49,7 @@ function proxima() {
     }
 }
 
+// --- INICIAR QUIZ ---
 function iniciarQuiz(temaId) {
     selecionarTema(temaId);
     estado.perguntaAtual = 0;
@@ -57,10 +61,12 @@ function iniciarQuiz(temaId) {
     mostrarPergunta();
 }
 
+// --- VOLTAR À SELEÇÃO DE TEMAS ---
 function voltarTemas() {
     mostrarSelecaoTema();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 

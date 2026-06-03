@@ -2,6 +2,7 @@ import { estado, resetPuzzle } from './core.js';
 import { carregarDados, escolherPuzzle, obterTodosJogadores, embaralhar, verificarGrupo } from './data.js';
 import { renderizarGrid, renderizarVidas, renderizarGrupoAcertado, mostrarFeedback, animarErro, animarQuaseLa, embaralharGrid, limparSelecao, mostrarResultadoFinal, resetarVisual } from './ui.js';
 
+// --- INICIAR PUZZLE ---
 function iniciarPuzzle() {
     resetPuzzle();
     resetarVisual();
@@ -18,6 +19,7 @@ function iniciarPuzzle() {
     renderizarVidas();
 }
 
+// --- CONFIRMAR SELEÇÃO DE GRUPO ---
 function confirmarSelecao() {
     if (estado.selecionados.length !== 4 || !estado.jogoAtivo) {
         return;
@@ -68,6 +70,7 @@ function confirmarSelecao() {
     }
 }
 
+// --- EVENTOS DOS BOTÕES ---
 document.getElementById('btnSubmit').addEventListener('click', confirmarSelecao);
 document.getElementById('btnDeselect').addEventListener('click', limparSelecao);
 document.getElementById('btnShuffle').addEventListener('click', embaralharGrid);
@@ -76,6 +79,7 @@ document.getElementById('btnHome').addEventListener('click', () => {
     window.location.href = '../index.html';
 });
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
     estado.puzzleIndex = Math.floor(Math.random() * estado.puzzles.length);

@@ -1,3 +1,4 @@
+// --- IMPORTAÇÕES ---
 import { estado } from './core.js';
 import { carregarDados, escolherClube, obterDica } from './data.js';
 import {
@@ -14,11 +15,13 @@ import {
     mostrarResultadoFinal
 } from './ui.js';
 
+// --- CALCULAR PONTOS ---
 function calcularPontos() {
     const pontos = Math.max(2, 12 - (estado.nivelAtual * 2));
     return pontos;
 }
 
+// --- VERIFICAR RESPOSTA ---
 function verificarResposta(nome, btn) {
     if (estado.respondido) {
         return;
@@ -54,12 +57,14 @@ function verificarResposta(nome, btn) {
     atualizarInfo();
 }
 
+// --- REVELAR PRÓXIMA DICA ---
 function revelarProximaDica() {
     if (estado.nivelAtual >= 5) {
         return;
     }
     estado.nivelAtual++;
     const dica = obterDica(estado.nivelAtual);
+
     if (dica) {
         renderizarDica(dica);
     }
@@ -69,6 +74,7 @@ function revelarProximaDica() {
     }
 }
 
+// --- INICIAR RODADA ---
 function iniciarRodada() {
     estado.rodada++;
     estado.nivelAtual = 1;
@@ -81,6 +87,7 @@ function iniciarRodada() {
 
     renderizarCores();
     const dica1 = obterDica(1);
+
     if (dica1) {
         renderizarDica(dica1);
     }
@@ -88,6 +95,7 @@ function iniciarRodada() {
     renderizarOpcoes(estado.clubeAtual.opcoes, verificarResposta);
 }
 
+// --- PRÓXIMA RODADA ---
 function proximaRodada() {
     if (estado.rodada >= estado.totalRodadas) {
         mostrarResultadoFinal();
@@ -96,6 +104,7 @@ function proximaRodada() {
     }
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 
@@ -113,7 +122,6 @@ async function init() {
         window.location.href = '../index.html';
     });
 
-    // Tutorial
     const tutorialOverlay = document.getElementById('tutorialOverlay');
     const gameKey = tutorialOverlay?.dataset.game;
     const skipKey = gameKey ? `tutorial_skip_${gameKey}` : null;

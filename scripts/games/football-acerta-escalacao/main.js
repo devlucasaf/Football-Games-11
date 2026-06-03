@@ -15,7 +15,7 @@ import {
     esconderTimer
 } from './ui.js';
 
-function normalizar(str) {
+function normalizarTexto(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 }
 
@@ -25,8 +25,8 @@ function verificarPalpite(nome) {
     }
 
     const idx = estado.escalacaoAtual.jogadores.findIndex((j, i) => {
-        const match = normalizar(j.nome) === normalizar(nome);
-        const jaRevelado = !estado.jogadoresRestantes.some(r => normalizar(r.nome) === normalizar(j.nome));
+        const match = normalizarTexto(j.nome) === normalizarTexto(nome);
+        const jaRevelado = !estado.jogadoresRestantes.some(r => normalizarTexto(r.nome) === normalizarTexto(j.nome));
         return match && !jaRevelado;
     });
 
@@ -36,7 +36,7 @@ function verificarPalpite(nome) {
 
     const jogador = estado.escalacaoAtual.jogadores[idx];
     estado.jogadoresRestantes = estado.jogadoresRestantes.filter(
-        j => normalizar(j.nome) !== normalizar(jogador.nome)
+        j => normalizarTexto(j.nome) !== normalizarTexto(jogador.nome)
     );
     estado.acertos++;
     atualizarAcertos();
@@ -108,6 +108,7 @@ function selecionarModo(comTempo) {
     iniciarJogo();
 }
 
+// --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
 

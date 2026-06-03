@@ -10,6 +10,7 @@ const GridInterface = {
         sugestoesEl:        null
     },
 
+    // --- INICIAR ELEMENTOS DO DOM ---
     iniciarElementos() {
         this.elementos.inputJogador         = document.getElementById("playerInput");
         this.elementos.btnBuscar            = document.getElementById("searchBtn");
@@ -30,15 +31,23 @@ const GridInterface = {
         }
     },
 
+    // --- OBTER NOME DE EXIBIÇÃO ---
     obterNomeExibicao(tipo, chave) {
         if (tipo === "clube") {
             const info = GridDados.clubeExibicao.get(chave);
-            return { nome: (info?.nome ?? chave).toUpperCase(), imagem: info?.escudo ?? null };
+            return { 
+                nome: (info?.nome ?? chave).toUpperCase(), 
+                imagem: info?.escudo ?? null 
+            };
         }
         const info = GridDados.paisExibicao.get(chave);
-        return { nome: (info?.nome ?? chave).toUpperCase(), imagem: info?.bandeira ?? null };
+        return { 
+            nome: (info?.nome ?? chave).toUpperCase(), 
+            imagem: info?.bandeira ?? null 
+        };
     },
 
+    // --- APLICAR CABEÇALHOS ---
     aplicarCabecalhos(elementosCabecalho, chaves, tipo) {
         const { TAMANHO_GRID } = GridConfig;
         if (elementosCabecalho.length !== TAMANHO_GRID) {
@@ -67,6 +76,7 @@ const GridInterface = {
         }
     },
 
+    // --- APLICAR GRID NO DOM ---
     aplicarGridNoDOM(config) {
         const { linhas, colunas, linhasTipo, colunasTipo } = config;
         const { TAMANHO_GRID } = GridConfig;
@@ -92,6 +102,7 @@ const GridInterface = {
         });
     },
 
+    // --- MOSTRAR SUGESTÕES ---
     mostrarSugestoes(consulta, jogadoresUsados, aoSelecionar) {
         const sugestoesEl = this.elementos.sugestoesEl;
         if (!sugestoesEl) {
@@ -129,6 +140,7 @@ const GridInterface = {
         sugestoesEl.style.display = "block";
     },
 
+    // --- ESCONDER SUGESTÕES ---
     esconderSugestoes() {
         const sugestoesEl = this.elementos.sugestoesEl;
         if (sugestoesEl) {

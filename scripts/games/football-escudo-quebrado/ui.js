@@ -1,5 +1,5 @@
-import { estado } from './core.js';
-import { obterCores } from './data.js';
+import { estado }       from './core.js';
+import { obterCores }   from './data.js';
 
 const els = {
     colorBlocks:    document.getElementById('colorBlocks'),
@@ -20,6 +20,7 @@ const els = {
     finalDetails:   document.getElementById('finalDetails')
 };
 
+// --- RENDERIZAR BLOCOS DE CORES ---
 export function renderizarCores() {
     const cores = obterCores();
     els.colorBlocks.innerHTML = '';
@@ -32,6 +33,7 @@ export function renderizarCores() {
     });
 }
 
+// --- RENDERIZAR DICA ---
 export function renderizarDica(dica) {
     const item = document.createElement('div');
     item.className = 'hint-item';
@@ -62,6 +64,7 @@ export function renderizarDica(dica) {
     els.hintsList.appendChild(item);
 }
 
+// --- RENDERIZAR OPÇÕES DE RESPOSTA ---
 export function renderizarOpcoes(opcoes, onSelect) {
     els.optionsGrid.innerHTML = '';
     const shuffled = [...opcoes].sort(() => Math.random() - 0.5);
@@ -75,6 +78,7 @@ export function renderizarOpcoes(opcoes, onSelect) {
     });
 }
 
+// --- MOSTRAR FEEDBACK CORRETO ---
 export function mostrarFeedbackCorreto(pontos) {
     els.hintsArea.classList.add('hidden');
     els.optionsArea.classList.add('hidden');
@@ -89,6 +93,7 @@ export function mostrarFeedbackCorreto(pontos) {
     `;
 }
 
+// --- MOSTRAR FEEDBACK ERRADO ---
 export function mostrarFeedbackErrado() {
     els.hintsArea.classList.add('hidden');
     els.optionsArea.classList.add('hidden');
@@ -103,11 +108,13 @@ export function mostrarFeedbackErrado() {
     `;
 }
 
+// --- ATUALIZAR INFORMAÇÕES ---
 export function atualizarInfo() {
     els.pontuacao.textContent = estado.pontuacao;
     els.rodadaAtual.textContent = estado.rodada;
 }
 
+// --- RESETAR RODADA ---
 export function resetarRodada() {
     els.colorBlocks.innerHTML = '';
     els.hintsList.innerHTML = '';
@@ -120,6 +127,7 @@ export function resetarRodada() {
     els.badgeQuestion.innerHTML = '<i class="fas fa-shield-halved"></i><span>?</span>';
 }
 
+// --- DESABILITAR OPÇÕES ---
 export function desabilitarOpcoes(respostaCerta) {
     const btns = els.optionsGrid.querySelectorAll('.option-btn');
     btns.forEach(btn => {
@@ -130,15 +138,18 @@ export function desabilitarOpcoes(respostaCerta) {
     });
 }
 
+// --- DESABILITAR BOTÃO DE DICA ---
 export function desabilitarHint() {
     els.btnHint.disabled = true;
 }
 
+// --- REVELAR ESCUDO ---
 export function revelarEscudo() {
     els.badgeQuestion.classList.add('revealed');
     els.badgeQuestion.innerHTML = `<i class="fas fa-shield-halved"></i><span>${estado.clubeAtual.nome}</span>`;
 }
 
+// --- MOSTRAR RESULTADO FINAL ---
 export function mostrarResultadoFinal() {
     els.hintsArea.classList.add('hidden');
     els.optionsArea.classList.add('hidden');
@@ -161,6 +172,7 @@ export function mostrarResultadoFinal() {
 
     let detalhes = `<p>${msg}</p><p>${estado.pontuacao}/${max} pontos (${pct}%)</p>`;
     detalhes += '<div style="margin-top:1rem; text-align:left; max-width:300px; margin-left:auto; margin-right:auto;">';
+    
     estado.historico.forEach(h => {
         const icon = h.acertou ? '<i class="fas fa-check" style="color: green;"></i>' : '<i class="fas fa-times" style="color: red;"></i>';
         detalhes += `<p>${icon} ${h.clube} — ${h.dicas} dica(s) usada(s)</p>`;

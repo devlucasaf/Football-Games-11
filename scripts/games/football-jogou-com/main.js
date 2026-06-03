@@ -18,12 +18,16 @@ function calcularPontos() {
 
 // --- VERIFICAR PALPITE ---
 function verificarPalpite(palpite) {
-    if (!estado.jogoAtivo) return;
+    if (!estado.jogoAtivo) {
+        return;
+    }
 
     const respostaNorm = normalizar(estado.rodadaAtual.resposta);
     const palpiteNorm = normalizar(palpite);
 
-    if (!palpiteNorm) return;
+    if (!palpiteNorm) {
+        return;
+    }
 
     estado.tentativas++;
 
