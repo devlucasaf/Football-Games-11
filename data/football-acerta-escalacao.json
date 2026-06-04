@@ -3,7 +3,7 @@
         {
             "time": "Cruzeiro",
             "evento": "Final da Copa do Brasil 2017 (volta)",
-            "formacao": "4-2-5-1",
+            "formacao": "4-2-3-1",
             "jogadores": [
                 { "nome": "Fábio",              "posicao": "GOL"    },
                 { "nome": "Ezequiel",           "posicao": "LD"     },
@@ -18,7 +18,22 @@
                 { "nome": "Rafael Sóbis",       "posicao": "CA"     }
             ],
             "extras": [
-
+                "Fábio", "Rafael", "Lucão",
+                "Lucas França", "Dedé", "Manoel",
+                "Léo", "Digão", "Luis Caicedo",
+                "Ronaldo Rodrigues", "Arthur", "Murilo",
+                "Egídio", "Fabrício", "Diogo Barbosa",
+                "Edimar", "Bryan Garcia", "Victor Luiz",
+                "Mayke", "Ezequiel", "John Lennon",
+                "Vitinho", "Lucas Soares", "Lucas Silva",
+                "Henrique", "Lucas Romero", "Hudson",
+                "Vander", "Eduardo", "Lucas Ventura",
+                "Alisson", "Ariel Cabral", "Rafael Galhardo",
+                "Alexis Messidoro", "De Arrascaeta", "Robinho",
+                "Thiago Neves", "Marcos Vinicius", "Alex Apolinário",
+                "Nickson", "Careca", "Élber",
+                "Rafael Sóbis", "Rafael Marques", "Ramón Ábila",
+                "Judivan", "Sassá", "Raniel", "Jonata"
             ]
         },
         {
@@ -68,33 +83,42 @@
                 "Diego Alves", "Hugo Souza", "Matheuzinho",
                 "Fabrício Bruno", "Pablo", "Ayrton Lucas",
                 "Diego", "Victor Hugo", "Matheus França",
-                "Everton Cebolinha", "Marinho", "Mateusão"
+                "Everton Cebolinha", "Marinho", "Mateusão",
+                "Varela", "Rodrigo Caio", "Matheus Cunha",
+                "Victor Hugo", "Cleiton", "João Gomes"
             ]
         },
         {
             "time": "São Paulo",
             "evento": "Final da Copa do Brasil 2023 (volta)",
-            "formacao": "4-3-3",
+            "formacao": "4-2-3-1",
             "jogadores": [
-                { "nome": "Everson",            "posicao": "GOL"    },
-                { "nome": "Mariano",            "posicao": "LD"     },
-                { "nome": "Igor Rabello",       "posicao": "ZAG1"   },
-                { "nome": "J. Alonso",          "posicao": "ZAG2"   },
-                { "nome": "Guilherme Arana",    "posicao": "LE"     },
-                { "nome": "Jair",               "posicao": "VOL1"   },
-                { "nome": "Allan",              "posicao": "VOL2"   },
-                { "nome": "Matías Zaracho",     "posicao": "MEI"    },
-                { "nome": "Eduardo Vargas",     "posicao": "PD"     },
-                { "nome": "Keno",               "posicao": "PE"     },
-                { "nome": "Hulk",               "posicao": "CA"     }
+                { "nome": "Rafael",             "posicao": "GOL"    },
+                { "nome": "Rafinha",            "posicao": "LD"     },
+                { "nome": "R. Arboleda",        "posicao": "ZAG1"   },
+                { "nome": "Lucas Beraldo",      "posicao": "ZAG2"   },
+                { "nome": "Caio Paulista",      "posicao": "LE"     },
+                { "nome": "Pablo Maia",         "posicao": "VOL1"   },
+                { "nome": "Alisson",            "posicao": "VOL2"   },
+                { "nome": "Lucas Moura",        "posicao": "MEI"    },
+                { "nome": "Wellington Rato",    "posicao": "MD"     },
+                { "nome": "Rodrigo Nestor",     "posicao": "ME"     },
+                { "nome": "Calleri",            "posicao": "CA"     }
             ],
             "extras": [
-                "Rafael", "Matheus Mendes", "Jean", 
-                "Réver", "Nathan Silva", "Micael", 
-                "Tchê Tchê", "Dodô", "Guga",
-                "Neto", "Hyoran", "Nathan",
-                "Dylan", "Calebe", "Nacho Fernández",
-                "Savinho", "Echaporã", "Diego Costa"
+                "Jandrei", "Felipe Alves", "Leandro Mathias",
+                "Young", "Alan Franco", "Diego Costa",
+                "N. Ferraresi", "Walce", "Ythallo",
+                "Matheus Belém", "Welington", "Patryck",
+                "Igor Vinícius", "Luis Orejuela", "Raí Ramos",
+                "João Moreira", "Nathan Mendes", "Luan",
+                "Jhegson Méndez", "Gabriel Neves", "Felipe Negrucci",
+                "Giuliano Galoppo", "Liziero", "Talles Costa",
+                "Pedro Vilhena", "Vinicius", "James Rodriguez",
+                "Rodriguinho", "Marcos Paulo", "David", 
+                "Pedrinho", "Caio Matheus", "Michel Araújo",
+                "William Gomes", "Luciano", "Alexandre Pato",
+                "Juan", "Erison", "Talles Wander"
             ]
         },
         {
@@ -102,17 +126,17 @@
             "evento": "Final da Copa do Brasil 2024 (ida)",
             "formacao": "4-3-3",
             "jogadores": [
-                { "nome": "Everson",            "posicao": "GOL"    },
-                { "nome": "Mariano",            "posicao": "LD"     },
-                { "nome": "Igor Rabello",       "posicao": "ZAG1"   },
-                { "nome": "J. Alonso",          "posicao": "ZAG2"   },
-                { "nome": "Guilherme Arana",    "posicao": "LE"     },
-                { "nome": "Jair",               "posicao": "VOL1"   },
-                { "nome": "Allan",              "posicao": "VOL2"   },
-                { "nome": "Matías Zaracho",     "posicao": "MEI"    },
-                { "nome": "Eduardo Vargas",     "posicao": "PD"     },
-                { "nome": "Keno",               "posicao": "PE"     },
-                { "nome": "Hulk",               "posicao": "CA"     }
+                { "nome": "Rossi",             "posicao": "GOL"  },
+                { "nome": "Wesley",            "posicao": "LD"   },
+                { "nome": "Léo Ortiz",         "posicao": "ZAG1" },
+                { "nome": "Leo Pereira",       "posicao": "ZAG2" },
+                { "nome": "Alex Sandro",       "posicao": "LE"   },
+                { "nome": "Gerson",            "posicao": "VOL1" },
+                { "nome": "Evertton Araújo",   "posicao": "VOL2" },
+                { "nome": "De Arrascaeta",     "posicao": "MEI"  },
+                { "nome": "Gonzalo Plata",     "posicao": "PD"   },
+                { "nome": "Michael",           "posicao": "PE"   },
+                { "nome": "Gabigol",           "posicao": "CA"   }
             ],
             "extras": [
                 "Rafael", "Matheus Mendes", "Jean", 
@@ -1087,17 +1111,17 @@
             "evento": "Final da Copa do Mundo 2014",
             "formacao": "4-3-3",
             "jogadores": [
-                { "nome": "Neuer", "posicao": "GOL" },
-                { "nome": "Lahm", "posicao": "LD" },
-                { "nome": "Boateng", "posicao": "ZAG1" },
-                { "nome": "Hummels", "posicao": "ZAG2" },
-                { "nome": "Höwedes", "posicao": "LE" },
+                { "nome": "Neuer",          "posicao": "GOL"  },
+                { "nome": "Lahm",           "posicao": "LD"   },
+                { "nome": "Boateng",        "posicao": "ZAG1" },
+                { "nome": "Hummels",        "posicao": "ZAG2" },
+                { "nome": "Höwedes",        "posicao": "LE"   },
                 { "nome": "Schweinsteiger", "posicao": "VOL1" },
-                { "nome": "Kroos", "posicao": "VOL2" },
-                { "nome": "Özil", "posicao": "MEI" },
-                { "nome": "Müller", "posicao": "PD" },
-                { "nome": "Klose", "posicao": "CA" },
-                { "nome": "Götze", "posicao": "PE" }
+                { "nome": "Kroos",          "posicao": "VOL2" },
+                { "nome": "Özil",           "posicao": "MEI"  },
+                { "nome": "Müller",         "posicao": "PD"   },
+                { "nome": "Klose",          "posicao": "CA"   },
+                { "nome": "Götze",          "posicao": "PE"   }
             ],
             "extras": ["Weidenfeller", "Zieler", "Mertesacker", "Durm", "Großkreutz", "Khedira", "Schürrle", "Draxler", "Podolski", "Ginter"]
         },
