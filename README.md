@@ -55,7 +55,9 @@ Football-Games-11/
 ├── pages/                      # Páginas HTML de cada minigame
 ├── styles/                     # CSS global + estilos de cada jogo
 ├── scripts/
+│   ├── formation.js            # Script para montar as formações do futebol
 │   ├── script.js               # Tema, tutorial e utilitários globais
+│   └── translation/            # Módulos JS de cada tradução (inglês, português, espanhol e alemão)
 │   └── games/                  # Módulos JS de cada minigame
 │       ├── football-acerta-escalacao/
 │       ├── football-adivinha-jogador/
@@ -129,6 +131,14 @@ Football-Games-11/
         src="https://skillicons.dev/icons?i=css"
     />
     <img
+        align="center" 
+        alt="JSON" 
+        title="JSON"
+        height="40" 
+        style="padding-right: 10px;" 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-plain.svg"
+    />
+    <img
         align="center"
         alt="VsCode"
         title="VsCode"
@@ -151,7 +161,7 @@ Football-Games-11/
         height="40" 
         style="padding-right: 10px;" 
         src="https://skillicons.dev/icons?i=github"
-    />
+    />          
 </div>
 
 ---
