@@ -1,116 +1,116 @@
 const ubersetzungen = {
     // General
-    "site_name": "Football Games 11",
-    "theme_toggle_title": "Thema ändern",
-    "play_button": "Spielen",
+    "site-tittle": "Football Games 11",
+    "theme-toggle-title": "Thema ändern",
+    "play-button": "Spielen",
 
     // Hero section
-    "hero_title": "Fußball-Minispiele Hub",
-    "hero_subtitle": "Teste dein Wissen, stelle Teams und legendäre Auswahlen zusammen!",
-    "stat_minigames_completed": "Abgeschlossene Minispiele",
-    "stat_combinations": "Kombinationen",
+    "hero-title": "Fußball-Minispiele Hub",
+    "hero-subtitle": "Teste dein Wissen, stelle Teams und legendäre Auswahlen zusammen!",
+    "stat-minigames_completed": "Abgeschlossene Minispiele",
+    "stat-combinations": "Kombinationen",
 
     // Scoreboard
-    "score_victories": "Siege",
-    "score_defeats": "Niederlagen",
+    "score-victories": "Siege",
+    "score-defeats": "Niederlagen",
 
     // Minigames section title
-    "minigames_section_title": "Minispiele",
+    "minigames-section-title": "Minispiele",
 
     // Game: Legends
-    "game_legends_name": "Legenden",
-    "game_legends_desc": "Stelle das beste Team deines Lieblingsvereins oder deiner Lieblingsnationalmannschaft zusammen.",
+    "football-legends-title": "Legenden",
+    "football-legends-desc": "Stelle das beste Team deines Lieblingsvereins oder deiner Lieblingsnationalmannschaft zusammen.",
 
     // Game: Bingo
-    "game_bingo_name": "Bingo",
-    "game_bingo_desc": "Spiele unser Bingo.",
+    "football-bingo-title": "Bingo",
+    "football-bingo-desc": "Spiele unser Bingo.",
 
     // Game: Grid
-    "game_grid_name": "Grid",
-    "game_grid_desc": "Fußball-Gitter 3x3",
+    "football-grid-title": "Grid",
+    "football-grid-desc": "Fußball-Gitter 3x3",
 
     // Game: Vc Escala! 
-    "game_vcescala_name": "Du stellst auf!",
-    "game_vcescala_desc": "Stelle dein Team zusammen und wähle die besten Spieler.",
+    "football-vc-escala-title": "Du stellst auf!",
+    "football-vc-escala-desc": "Stelle dein Team zusammen und wähle die besten Spieler.",
 
     // Game: Termo
-    "game_termo_name": "Termo",
-    "game_termo_desc": "Errate den Namen des Fußballspielers in 6 Versuchen!",
+    "football-termo-title": "Termo",
+    "football-termo-desc": "Errate den Namen des Fußballspielers in 6 Versuchen!",
 
     // Game: Carreiras 
-    "game_carreiras_name": "Karrieren",
-    "game_carreiras_desc": "Entdecke den Spieler anhand seiner Vereinskarriere!",
+    "football-carreiras-title": "Karrieren",
+    "football-carreiras-desc": "Entdecke den Spieler anhand seiner Vereinskarriere!",
 
     // Game: Impostor
-    "game_impostor_name": "Hochstapler",
-    "game_impostor_desc": "Finde den Spieler, der nicht zur Gruppe gehört!",
+    "football-impostor-title": "Hochstapler",
+    "football-impostor-desc": "Finde den Spieler, der nicht zur Gruppe gehört!",
 
     // Game: Jogou Com 
-    "game_jogoucom_name": "Zusammengespielt",
-    "game_jogoucom_desc": "Entdecke den mysteriösen Spieler durch seine Teamkollegen!",
+    "football-jogou-com-title": "Zusammengespielt",
+    "football-jogou-com-desc": "Entdecke den mysteriösen Spieler durch seine Teamkollegen!",
 
     // Game: Adivinha Jogador 
-    "game_adivinha_name": "Rate den Spieler",
-    "game_adivinha_desc": "Entdecke den Spieler anhand von Hinweisen: Land, Alter, Verein und Titel!",
+    "football-adivinha-jogador-title": "Rate den Spieler",
+    "football-adivinha-jogador-desc": "Entdecke den Spieler anhand von Hinweisen: Land, Alter, Verein und Titel!",
 
     // Game: Top 10
-    "game_top10_name": "Top 10",
-    "game_top10_desc": "Vervollständige die Liste der 10 größten Fußballer!",
+    "football-top10-title": "Top 10",
+    "football-top10-desc": "Vervollständige die Liste der 10 größten Fußballer!",
 
     // Game: Vc Convoca! 
-    "game_vcconvoca_name": "Du berufst ein!",
-    "game_vcconvoca_desc": "Berufe 26 Spieler, um deine Nationalmannschaft zu vertreten!",
+    "football-vc-convoca-title": "Du berufst ein!",
+    "football-vc-convoca-desc": "Berufe 26 Spieler, um deine Nationalmannschaft zu vertreten!",
 
     // Game: Transferências 
-    "game_transferencias_name": "Transfers",
-    "game_transferencias_desc": "Entdecke den Spieler anhand seiner Vereinsstationen!",
+    "football-transferencias-title": "Transfers",
+    "football-transferencias-desc": "Entdecke den Spieler anhand seiner Vereinsstationen!",
 
     // Game: Conexões 
-    "game_conexoes_name": "Verbindungen",
-    "game_conexoes_desc": "Gruppiere 16 Spieler in 4 geheime Kategorien!",
+    "football-conexoes-title": "Verbindungen",
+    "football-conexoes-desc": "Gruppiere 16 Spieler in 4 geheime Kategorien!",
 
     // Game: Escudo Quebrado 
-    "game_escudoquebrado_name": "Kaputtes Wappen",
-    "game_escudoquebrado_desc": "Entdecke den Verein anhand von Hinweisen zum Wappen!",
+    "football-escudo-quebrado-title": "Kaputtes Wappen",
+    "football-escudo-quebrado-desc": "Entdecke den Verein anhand von Hinweisen zum Wappen!",
 
     // Game: Duelo de Elencos 
-    "game_dueloelencos_name": "Kader-Duell",
-    "game_dueloelencos_desc": "Ordne jeden Spieler dem richtigen Kader in historischen Duellen zu!",
+    "football-duelo-elencos-title": "Kader-Duell",
+    "football-duelo-elencos-desc": "Ordne jeden Spieler dem richtigen Kader in historischen Duellen zu!",
 
     // Game: Acerta a Escalação 
-    "game_acertaescalacao_name": "Errate die Aufstellung",
-    "game_acertaescalacao_desc": "Errate die 11 Spieler, die das historische Spiel begonnen haben!",
+    "football-acerta-escalacao-title": "Errate die Aufstellung",
+    "football-acerta-escalacao-desc": "Errate die 11 Spieler, die das historische Spiel begonnen haben!",
 
     // Game: Placar 
-    "game_placar_name": "Ergebnis",
-    "game_placar_desc": "Errate das Ergebnis historischer Fußballspiele!",
+    "football-placar-title": "Ergebnis",
+    "football-placar-desc": "Errate das Ergebnis historischer Fußballspiele!",
 
     // Game: Conecta Clubes 
-    "game_conectaclubes_name": "Vereine verbinden",
-    "game_conectaclubes_desc": "Finde den Spieler, der für beide Vereine gespielt hat!",
+    "football-conecta-clubes-title": "Vereine verbinden",
+    "football-conecta-clubes-desc": "Finde den Spieler, der für beide Vereine gespielt hat!",
 
     // Game: Linha do Tempo 
-    "game_linhadotempo_name": "Zeitleiste",
-    "game_linhadotempo_desc": "Ordne Fußballereignisse in die richtige chronologische Reihenfolge!",
+    "football-linha-tempo-title": "Zeitleiste",
+    "football-linha-tempo-desc": "Ordne Fußballereignisse in die richtige chronologische Reihenfolge!",
 
     // Game: Quem Falta? 
-    "game_quemfalta_name": "Wer fehlt?",
-    "game_quemfalta_desc": "Vervollständige die Liste mit dem fehlenden Namen!",
+    "football-quem-falta-title": "Wer fehlt?",
+    "football-quem-falta-desc": "Vervollständige die Liste mit dem fehlenden Namen!",
 
     // Game: Foto Borrada 
-    "game_fotoborrada_name": "Unscharfes Foto",
-    "game_fotoborrada_desc": "Errate den Spieler anhand des unscharfen Fotos!",
+    "football-foto-borrada-title": "Unscharfes Foto",
+    "football-foto-borrada-desc": "Errate den Spieler anhand des unscharfen Fotos!",
 
     // Game: Multiplica 
-    "game_multiplica_name": "Multipliziere",
-    "game_multiplica_desc": "Multipliziere die Werte, um das Ziel zu erreichen!",
+    "football-multiplica-title": "Multipliziere",
+    "football-multiplica-desc": "Multipliziere die Werte, um das Ziel zu erreichen!",
 
     // Game: Quiz
-    "game_quiz_name": "Quiz",
-    "game_quiz_desc": "Teste dein Wissen über den weltweiten Fußball!",
+    "football-quiz-title": "Quiz",
+    "football-quiz-desc": "Teste dein Wissen über den weltweiten Fußball!",
 
     // Footer
-    "footer_made_with": "Mit ❤️ gemacht für Fußballfans",
-    "footer_connect": "Verbinde dich",
-    "footer_copyright": "Alle Rechte vorbehalten."
+    "footer-made-with": "Mit ❤️ gemacht für Fußballfans",
+    "footer-connect": "Verbinde dich",
+    "footer-copyright": "Alle Rechte vorbehalten."
 };
