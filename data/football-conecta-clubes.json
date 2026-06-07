@@ -6,14 +6,24 @@
             "respostas": ["Ronaldinho", "Ibrahimović", "Boateng", "Rivaldo", "Zambrotta", "Thiago Motta", "Edgar Davids"]
         },
         {
+            "clube1": "Barcelona",
+            "clube2": "PSG",
+            "respostas": ["Neymar", "Lionel Messi", "Ronaldinho", "Dani Alves", "Rafinha", "Ousmane Dembélé"]
+        },
+        {
+            "clube1": "Santos",
+            "clube2": "Barcelona",
+            "respostas": ["Neymar"]
+        },
+        {
+            "clube1": "Liverpool",
+            "clube2": "Barcelona",
+            "respostas": ["Luís Suárez", "Philippe Coutinho", "Javier Mascherano", "Thiago Alcântara"]
+        },
+        {
             "clube1": "Real Madrid",
             "clube2": "Juventus",
             "respostas": ["Cristiano Ronaldo", "Zidane", "Higuaín", "Cannavaro", "Emerson", "Khedira"]
-        },
-        {
-            "clube1": "Barcelona",
-            "clube2": "PSG",
-            "respostas": ["Neymar", "Messi", "Ronaldinho", "Dani Alves", "Rafinha", "Sarabia"]
         },
         {
             "clube1": "Manchester United",
@@ -34,16 +44,6 @@
             "clube1": "Chelsea",
             "clube2": "Manchester City",
             "respostas": ["Lampard", "Cole Palmer", "Sterling", "Kovačić", "Ké Ké"]
-        },
-        {
-            "clube1": "Santos",
-            "clube2": "Barcelona",
-            "respostas": ["Neymar", "Gabriel Barbosa"]
-        },
-        {
-            "clube1": "Liverpool",
-            "clube2": "Barcelona",
-            "respostas": ["Suárez", "Coutinho", "Mascherano", "Thiago"]
         },
         {
             "clube1": "Bayern de Munique",

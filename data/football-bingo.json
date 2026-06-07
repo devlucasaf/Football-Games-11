@@ -172,6 +172,16 @@
         },
         {
             "tipo": "titulo",
+            "texto": "Ganhou o Brasileirão",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Libertadores e Champions League",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
             "texto": "Artilheiro de Copa do Mundo",
             "icone": "fa-futbol"
         },
@@ -207,7 +217,7 @@
             "clubes": ["Santos", "New York Cosmos"],
             "selecao": "Brasil",
             "posicao": "Atacante",
-            "titulos": ["Ganhou a Copa do Mundo"]
+            "titulos": ["Ganhou a Copa do Mundo", "Ganhou a Libertadores", "Ganhou o Brasileirão"]
         },
         {
             "nome": "Maradona",
