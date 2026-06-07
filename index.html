@@ -15,11 +15,53 @@
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
-                        <h1><i class="fas fa-futbol"></i>Football Games 11</h1>
+                        <h1><i class="fas fa-futbol" data-key="site-tittle"></i>Football Games 11</h1>
                     </div>
 
                     <div class="header-actions">
-                        <button class="btn-theme" id="themeToggle" tittle="Alterar tema">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
                             <i class="fas fa-moon"></i>
                         </button>
                     </div>
@@ -30,17 +72,17 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">Hub de Minigames de Futebol</h2>
-                    <p class="hero-subtitle">Teste seu conhecimento, monte times e seleções lendárias!</p>
+                    <h2 class="hero-title" data-key="hero-title">Hub de Minigames de Futebol</h2>
+                    <p class="hero-subtitle" data-key="hero-subtitle">Teste seu conhecimento, monte times e seleções lendárias!</p>
                     
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">0</span>
-                            <span class="stat-label">Minigames finalizados</span>
+                            <span class="stat-label" data-key="stat-minigames_completed">Minigames finalizados</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">∞</span>
-                            <span class="stat-label">Combinações</span>
+                            <span class="stat-label" data-key="stat-combinations">Combinações</span>
                         </div>
                     </div>
                 </div>
@@ -51,13 +93,13 @@
                         <div class="scoreboard">
                             <div class="score-team">
                                 <i class="fas fa-futbol"></i>
-                                <span>Vitórias</span>
+                                <span data-key="score-victories">Vitórias</span>
                                 <span class="score">0</span>
                             </div>
                             <span class="score-separator"></span>
                             <div class="score-team">
                                 <span class="score">0</span>
-                                <span>Derrotas</span>
+                                <span data-key="score-defeats">Derrotas</span>
                                 <i class="fas fa-gamepad"></i>
                             </div>
                         </div>
@@ -94,7 +136,7 @@
         <main class="minigames-section">
             <div class="container">
                 <div class="section-header">
-                    <h2><i class="fas fa-gamepad"></i> Minigames</h2>
+                    <h2><i class="fas fa-gamepad" data-key="minigames-section-title"></i> Minigames</h2>
                 </div>
                 
                 <div class="minigames-grid" id="gamesGrid"></div>
@@ -105,207 +147,207 @@
                             <div class="coming-soon-icon">
                                 <i class="fas fa-crown"></i>
                             </div>
-                            <h4>Legends</h4>
-                            <p>Escale o melhor time do seu clube ou seleção de coração.</p>
-                            <a href="pages/football-legends.html" class="btn-play" onclick="openTimeSelection()">Jogar</a>
+                            <h4 data-key="football-legends-title">Legends</h4>
+                            <p data-key="football-legends-desc">Escale o melhor time do seu clube ou seleção de coração.</p>
+                            <a href="pages/football-legends.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-chess-board"></i>
                             </div>
-                            <h4>Bingo</h4>
-                            <p>Jogue o nosso bingo.</p>
-                            <a href="pages/football-bingo.html" class="btn-play" onclick="openTimeSelection()">Jogar</a>
+                            <h4 data-key="football-bingo-tittle">Bingo</h4>
+                            <p data-key="football-bingo-desc">Jogue o nosso bingo.</p>
+                            <a href="pages/football-bingo.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-th"></i>
                             </div>
-                            <h4>Grid</h4>
-                            <p>Football Grid 3x3</p>
-                            <a href="pages/football-grid.html" class="btn-play" onclick="openTimeSelection()">Jogar</a>
+                            <h4 data-key="football-grid-tittle">Grid</h4>
+                            <p data-key="football-grid-desc">Football Grid 3x3</p>
+                            <a href="pages/football-grid.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-question-circle"></i>
                             </div>
-                            <h4>Vc Escala!</h4>
-                            <p>Escale seu time e escolha os melhores jogadores.</p>
-                            <a href="pages/football-vc-escala.html" class="btn-play" onclick="openTimeSelection()">Jogar</a>
+                            <h4 data-key="football-vc-escala-title">Vc Escala!</h4>
+                            <p data-key="football-vc-escala-desc">Escale seu time e escolha os melhores jogadores.</p>
+                            <a href="pages/football-vc-escala.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-keyboard"></i>
                             </div>
-                            <h4>Termo</h4>
-                            <p>Adivinhe o nome do jogador de futebol em 6 tentativas!</p>
-                            <a href="pages/football-termo.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-termo-title">Termo</h4>
+                            <p data-key="football-termo-desc">Adivinhe o nome do jogador de futebol em 6 tentativas!</p>
+                            <a href="pages/football-termo.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-road"></i>
                             </div>
-                            <h4>Carreiras</h4>
-                            <p>Descubra o jogador pelos clubes da carreira!</p>
-                            <a href="pages/football-carreiras.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-carreiras-title">Carreiras</h4>
+                            <p data-key="football-carreiras-desc">Descubra o jogador pelos clubes da carreira!</p>
+                            <a href="pages/football-carreiras.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-user-secret"></i>
                             </div>
-                            <h4>Impostor</h4>
-                            <p>Encontre o jogador que não pertence ao grupo!</p>
-                            <a href="pages/football-impostor.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-impostor-title">Impostor</h4>
+                            <p data-key="football-impostor-desc">Encontre o jogador que não pertence ao grupo!</p>
+                            <a href="pages/football-impostor.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-link"></i>
                             </div>
-                            <h4>Jogou Com</h4>
-                            <p>Descubra o jogador misterioso pelos companheiros de equipe!</p>
-                            <a href="pages/football-jogou-com.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-jogou-com-title">Jogou Com</h4>
+                            <p data-key="football-jogou-com-desc">Descubra o jogador misterioso pelos companheiros de equipe!</p>
+                            <a href="pages/football-jogou-com.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-magnifying-glass"></i>
                             </div>
-                            <h4>Adivinha Jogador</h4>
-                            <p>Descubra o jogador pelas pistas: país, idade, clube e títulos!</p>
-                            <a href="pages/football-adivinha-jogador.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-adivinha-jogador-title">Adivinha o Jogador</h4>
+                            <p data-key="football-adivinha-jogador-desc">Descubra o jogador pelas pistas: país, idade, clube e títulos!</p>
+                            <a href="pages/football-adivinha-jogador.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-list-ol"></i>
                             </div>
-                            <h4>Top 10</h4>
-                            <p>Complete a lista dos 10 maiores do futebol!</p>
-                            <a href="pages/football-top10.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-top10-title">Top 10</h4>
+                            <p data-key="football-top10-desc">Complete a lista dos 10 maiores do futebol!</p>
+                            <a href="pages/football-top10.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-clipboard-list"></i>
                             </div>
-                            <h4>Vc Convoca!</h4>
-                            <p>Convoque 26 jogadores para representar a sua seleção!</p>
-                            <a href="pages/football-vc-convoca.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-vc-convoca-title">Vc Convoca!</h4>
+                            <p data-key="football-vc-convoca-desc">Convoque 26 jogadores para representar a sua seleção!</p>
+                            <a href="pages/football-vc-convoca.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-exchange-alt"></i>
                             </div>
-                            <h4>Transferências</h4>
-                            <p>Descubra o jogador pela sequência de clubes da carreira!</p>
-                            <a href="pages/football-transferencias.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-transferencias-title">Transferências</h4>
+                            <p data-key="football-transferencias-desc">Descubra o jogador pela sequência de clubes da carreira!</p>
+                            <a href="pages/football-transferencias.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-puzzle-piece"></i>
                             </div>
-                            <h4>Conexões</h4>
-                            <p>Agrupe 16 jogadores em 4 categorias secretas!</p>
-                            <a href="pages/football-conexoes.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-conexoes-title">Conexões</h4>
+                            <p data-key="football-conexoes-desc">Agrupe 16 jogadores em 4 categorias secretas!</p>
+                            <a href="pages/football-conexoes.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-shield-halved"></i>
                             </div>
-                            <h4>Escudo Quebrado</h4>
-                            <p>Descubra o clube pelas dicas sobre o escudo!</p>
-                            <a href="pages/football-escudo-quebrado.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-escudo-quebrado-title">Escudo Quebrado</h4>
+                            <p data-key="football-escudo-quebrado-desc">Descubra o clube pelas dicas sobre o escudo!</p>
+                            <a href="pages/football-escudo-quebrado.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h4>Duelo de Elencos</h4>
-                            <p>Associe cada jogador ao elenco correto em duelos históricos!</p>
-                            <a href="pages/football-duelo-elencos.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-duelo-elencos-title">Duelo de Elencos</h4>
+                            <p data-key="football-duelo-elencos-desc">Associe cada jogador ao elenco correto em duelos históricos!</p>
+                            <a href="pages/football-duelo-elencos.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-clipboard-list"></i>
                             </div>
-                            <h4>Acerta a Escalação</h4>
-                            <p>Adivinhe os 11 jogadores que começaram o jogo histórico!</p>
-                            <a href="pages/football-acerta-escalacao.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-acerta-escalacao-title">Acerta a Escalação</h4>
+                            <p data-key="football-acerta-escalacao-desc">Adivinhe os 11 jogadores que começaram o jogo histórico!</p>
+                            <a href="pages/football-acerta-escalacao.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-futbol"></i>
                             </div>
-                            <h4>Placar</h4>
-                            <p>Acerte o placar de jogos históricos do futebol!</p>
-                            <a href="pages/football-placar.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-placar-title">Placar</h4>
+                            <p data-key="football-placar-desc">Acerte o placar de jogos históricos do futebol!</p>
+                            <a href="pages/football-placar.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-link"></i>
                             </div>
-                            <h4>Conecta Clubes</h4>
-                            <p>Encontre o jogador que jogou nos dois clubes!</p>
-                            <a href="pages/football-conecta-clubes.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-concecta-clubes-title">Conecta Clubes</h4>
+                            <p data-key="football-conecta-clubes-desc">Encontre o jogador que jogou nos dois clubes!</p>
+                            <a href="pages/football-conecta-clubes.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-clock-rotate-left"></i>
                             </div>
-                            <h4>Linha do Tempo</h4>
-                            <p>Coloque os eventos do futebol em ordem cronológica!</p>
-                            <a href="pages/football-linha-do-tempo.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-linha-tempo-title">Linha do Tempo</h4>
+                            <p data-key="football-linha-tempo-desc">Coloque os eventos do futebol em ordem cronológica!</p>
+                            <a href="pages/football-linha-do-tempo.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-question"></i>
                             </div>
-                            <h4>Quem Falta?</h4>
-                            <p>Complete a lista com o nome que está faltando!</p>
-                            <a href="pages/football-quem-falta.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-quem-falta-title">Quem Falta?</h4>
+                            <p data-key="football-quem-falta-desc">Complete a lista com o nome que está faltando!</p>
+                            <a href="pages/football-quem-falta.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-eye"></i>
                             </div>
-                            <h4>Foto Borrada</h4>
-                            <p>Adivinhe o jogador pela foto desfocada!</p>
-                            <a href="pages/football-foto-borrada.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-foto-borrada-tittle">Foto Borrada</h4>
+                            <p data-key="football-foto-borrada-desc">Adivinhe o jogador pela foto desfocada!</p>
+                            <a href="pages/football-foto-borrada.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-x"></i>
                             </div>
-                            <h4>Multiplica</h4>
-                            <p>Multiplique os valores para alcançar a meta!</p>
-                            <a href="pages/football-multiplica.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-multiplica-title">Multiplica</h4>
+                            <p data-key="football-multiplica-desc">Multiplique os valores para alcançar a meta!</p>
+                            <a href="pages/football-multiplica.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
                             <div class="coming-soon-icon">
                                 <i class="fas fa-question-circle"></i>
                             </div>
-                            <h4>Quiz</h4>
-                            <p>Teste seus conhecimentos sobre o futebol mundial!</p>
-                            <a href="pages/football-quiz.html" class="btn-play">Jogar</a>
+                            <h4 data-key="football-quiz-title">Quiz</h4>
+                            <p data-key="football-quiz-desc">Teste seus conhecimentos sobre o futebol mundial!</p>
+                            <a href="pages/football-quiz.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
                     </div>
                 </div>
@@ -316,12 +358,12 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
-                        <p>Feito com ❤️ para fãs de futebol</p>
+                        <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
                     <div class="footer-social">
-                        <h4>Conecte-se</h4>
+                        <h4 data-key="footer-connect">Conecte-se</h4>
                         <div class="social-icons">
                             <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
                                 <i class="fab fa-instagram"></i>
@@ -336,13 +378,14 @@
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </div>
-                        <p class="copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
                     </div>
                 </div>
             </div>
         </footer>
 
         <script src="scripts/script.js"></script>
+        <script src="scripts/traducao.js"></script>
         <script src="scripts/translation/english.js"></script>
         <script src="scripts/translation/german.js"></script>
         <script src="scripts/translation/portuguese.js"></script>

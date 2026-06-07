@@ -171,6 +171,102 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* --- LANGUAGE SELECTOR --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.language-selector {
+    position: relative;
+}
+
+.btn-language {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background var(--transition-fast);
+    padding: 0;
+    overflow: hidden;
+}
+
+.btn-language:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-language img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.language-dropdown.active {
+    display: flex;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: background var(--transition-fast);
+    text-align: left;
+    width: 100%;
+}
+
+.language-option:hover {
+    background: rgba(52, 211, 153, 0.1);
+}
+
+.language-option.active {
+    background: rgba(52, 211, 153, 0.2);
+    color: var(--accent-light-green);
+    font-weight: 600;
+}
+
+.language-option img {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.language-option span {
+    flex: 1;
+}
+
 /* --- HERO --- */
 .hero {
     padding: var(--spacing-2xl) 0;
