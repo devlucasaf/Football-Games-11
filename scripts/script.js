@@ -43,9 +43,86 @@ function updateThemeIcon(theme, iconElement) {
     }
 }
 
+// --- LANGUAGE SELECTOR ---
+function initLanguageSelector() {
+    const languageToggle        = document.getElementById('languageToggle');
+    const languageDropdown      = document.getElementById('languageDropdown');
+    const languageOptions       = document.querySelectorAll('.language-option');
+    const currentLanguageFlag   = document.getElementById('currentLanguageFlag');
+    
+    if (!languageToggle || !languageDropdown) {
+        console.warn('Seletor de idioma não encontrado');
+        return;
+    }
+    
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'traducoes';
+    updateLanguageDisplay(savedLanguage);
+    
+    languageToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('active');
+    });
+    
+    languageOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const language = option.getAttribute('data-language');
+            selectLanguage(language);
+            languageDropdown.classList.remove('active');
+        });
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language-selector')) {
+            languageDropdown.classList.remove('active');
+        }
+    });
+}
+
+function selectLanguage(language) {
+    updateLanguageDisplay(language);
+    
+    if (window.applyTranslation) {
+        window.applyTranslation(language);
+    } else {
+        console.warn('Função de tradução não está disponível ainda');
+        setTimeout(() => {
+            if (window.applyTranslation) {
+                window.applyTranslation(language);
+            }
+        }, 100);
+    }
+    
+    localStorage.setItem('preferredLanguage', language);
+}
+
+function updateLanguageDisplay(language) {
+    const flagImages = {
+        'traducoes': 'assets/br-flag-icon.png',
+        'translations': 'assets/us-flag-icon.png',
+        'traducciones': 'assets/es-flag-icon.png',
+        'ubersetzungen': 'assets/de-flag-icon.png'
+    };
+    
+    const currentLanguageFlag = document.getElementById('currentLanguageFlag');
+    const languageOptions = document.querySelectorAll('.language-option');
+    
+    if (currentLanguageFlag && flagImages[language]) {
+        currentLanguageFlag.src = flagImages[language];
+    }
+    
+    languageOptions.forEach(option => {
+        if (option.getAttribute('data-language') === language) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
+        }
+    });
+}
+
 // --- INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
+    initLanguageSelector();
     
     const comingSoonCards = document.querySelectorAll('.coming-soon-card');
     comingSoonCards.forEach((card, index) => {
