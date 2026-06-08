@@ -1798,15 +1798,24 @@
                 { "posicao": 1,  "nome": "Wilton Pereira do Sampaio", "detalhe": "306 jogos"},
                 { "posicao": 2,  "nome": "Leandro Vuaden",            "detalhe": "284 jogos"},
                 { "posicao": 3,  "nome": "Anderson Daronco",          "detalhe": "276 jogos"},
-                { "posicao": 4,  "nome": "Marcelo de Lima Henrique",  "detalhe": ""},
-                { "posicao": 5,  "nome": "Raphael Claus",             "detalhe": ""},
-                { "posicao": 6,  "nome": "Héber Roberto Lopes",       "detalhe": ""},
-                { "posicao": 7,  "nome": "Ricardo Marques Ribeiro",   "detalhe": ""},
-                { "posicao": 8,  "nome": "Luiz Flávio de Oliveira",	  "detalhe": ""},
-                { "posicao": 9,  "nome": "Bráulio da Silva Machado",  "detalhe": ""},
-                { "posicao": 10, "nome": "Flavio Rodrigues de Souza", "detalhe": ""}
+                { "posicao": 4,  "nome": "Marcelo de Lima Henrique",  "detalhe": "269 jogos"},
+                { "posicao": 5,  "nome": "Raphael Claus",             "detalhe": "262 jogos"},
+                { "posicao": 6,  "nome": "Héber Roberto Lopes",       "detalhe": "259 jogos"},
+                { "posicao": 7,  "nome": "Ricardo Marques Ribeiro",   "detalhe": "217 jogos"},
+                { "posicao": 8,  "nome": "Luiz Flávio de Oliveira",	  "detalhe": "211 jogos"},
+                { "posicao": 9,  "nome": "Bráulio da Silva Machado",  "detalhe": "179 jogos"},
+                { "posicao": 10, "nome": "Flavio Rodrigues de Souza", "detalhe": "176 jogos"}
             ],
             "opcoes": [
+                "Wilton Pereira do Sampaio", "Leandro Vuaden", "Anderson Daronco",
+                "Marcelo de Lima Henrique", "Raphael Claus", "Héber Roberto Lopes",
+                "Ricardo Marques Ribeiro", "Luiz Flávio de Oliveira", "Bráulio da Silva Machado",
+                "Flavio Rodrigues de Souza", "Wagner do Nascimento Magalhães", "Bruno Arleu de Araújo",
+                "Paulo César de Oliveira", "Péricles Bassols Pegado Cortez", "André Luiz de Freitas Castro",
+                "Sandro Meira Ricci", "Carlos Eugênio Simon", "Ramon Abatti Abel", 
+                "Dewson Fernando Freitas da Silva", "Sávio Pereira Sampaio", "Wilson Luiz Seneme",
+                "Elmo Alves Resende Cunha", "Evandro Rogério Roman", "Jailson Macedo Freitas",
+                "Sálvio Spínola Fagundes Filho", "Paulo Cesar Zanovelli", "Wagner Reway"
             ]
         },
         {
