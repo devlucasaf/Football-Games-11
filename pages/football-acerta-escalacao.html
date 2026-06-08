@@ -15,18 +15,18 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-clipboard-list"></i>
-                    <h2>Como jogar Acerta a Escalação</h2>
-                    <p>Adivinhe os 11 jogadores que começaram o jogo!</p>
+                    <h2 data-key="acerta-tutorial-title">Como jogar Acerta a Escalação</h2>
+                    <p data-key="acerta-tutorial-subtitle">Adivinhe os 11 jogadores que começaram o jogo!</p>
                 </div>
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Um jogo histórico é mostrado com a formação tática.</li>
-                    <li><span class="tutorial-step-number">2</span> Digite o nome dos jogadores para preencher as posições.</li>
-                    <li><span class="tutorial-step-number">3</span> Você tem 5 minutos para acertar o máximo de jogadores.</li>
-                    <li><span class="tutorial-step-number">4</span> Cada acerto revela o jogador na posição correta!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="acerta-tutorial-step1"> Um jogo histórico é mostrado com a formação tática.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="acerta-tutorial-step2"> Digite o nome dos jogadores para preencher as posições.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="acerta-tutorial-step3"> Você tem 5 minutos para acertar o máximo de jogadores.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="acerta-tutorial-step4"> Cada acerto revela o jogador na posição correta!</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn" data-key="acerta-tutorial-play"><i class="fas fa-play"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="acerta-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -57,18 +57,18 @@
             <div class="container">
                 <!-- Seleção de modo -->
                 <section class="mode-select" id="modeSelect">
-                    <h2><i class="fas fa-clipboard-list"></i> Acerta a Escalação</h2>
-                    <p class="mode-subtitle">Escolha o modo de jogo:</p>
+                    <h2><i class="fas fa-clipboard-list"></i> <span data-key="acerta-mode-title">Acerta a Escalação</span></h2>
+                    <p class="mode-subtitle" data-key="acerta-mode-subtitle">Escolha o modo de jogo:</p>
                     <div class="mode-options">
                         <button class="mode-btn" id="btnModeSemTempo">
                             <i class="fas fa-infinity"></i>
-                            <span class="mode-title">Sem Tempo</span>
-                            <span class="mode-desc">Jogue no seu ritmo, sem cronômetro</span>
+                            <span class="mode-title" data-key="acerta-mode-no-time">Sem Tempo</span>
+                            <span class="mode-desc" data-key="acerta-mode-no-time-desc">Jogue no seu ritmo, sem cronômetro</span>
                         </button>
                         <button class="mode-btn" id="btnModeComTempo">
                             <i class="fas fa-stopwatch"></i>
-                            <span class="mode-title">Com Tempo</span>
-                            <span class="mode-desc">5 minutos para acertar os 11</span>
+                            <span class="mode-title" data-key="acerta-mode-with-time">Com Tempo</span>
+                            <span class="mode-desc" data-key="acerta-mode-with-time-desc">5 minutos para acertar os 11</span>
                         </button>
                     </div>
                 </section>
@@ -89,7 +89,7 @@
 
                 <div class="guess-input-area hidden">
                     <div class="autocomplete-wrapper">
-                        <input type="text" id="guessInput" placeholder="Digite o nome do jogador..." autocomplete="off">
+                        <input type="text" id="guessInput" data-key="acerta-input-placeholder" placeholder="Digite o nome do jogador..." autocomplete="off">
                         <ul class="autocomplete-list hidden" id="autocompleteList"></ul>
                     </div>
                 </div>
@@ -109,24 +109,24 @@
                 </section>
 
                 <div class="give-up-area hidden">
-                    <button class="btn-give-up" id="btnGiveUp">
+                    <button class="btn-give-up" id="btnGiveUp" data-key="acerta-give-up">
                         <i class="fas fa-flag"></i> Desistir
                     </button>
                 </div>
 
                 <section class="final-result hidden" id="finalResult">
-                    <h2><i class="fas fa-trophy"></i> Fim!</h2>
+                    <h2><i class="fas fa-trophy"></i> <span data-key="acerta-final-title">Fim!</span></h2>
                     <div class="final-score">
                         <span class="final-points" id="finalPoints">0</span>
-                        <span class="final-label">/11 acertos</span>
+                        <span class="final-label" data-key="acerta-final-label">/11 acertos</span>
                     </div>
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnRetry" data-key="acerta-retry">
                             <i class="fas fa-redo"></i> Novo Jogo
                         </button>
 
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnHome" data-key="acerta-home">
                             <i class="fas fa-home"></i> Menu Principal
                         </button>
                     </div>
@@ -134,6 +134,11 @@
             </div>
         </main>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-acerta-escalacao/main.js"></script>
     </body>
