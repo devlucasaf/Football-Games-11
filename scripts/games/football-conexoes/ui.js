@@ -47,7 +47,7 @@ export function atualizarBotoes() {
     const btnSubmit   = document.getElementById('btnSubmit');
 
     btnDeselect.disabled = estado.selecionados.length === 0;
-    btnSubmit.disabled = estado.selecionados.length !== 4;
+    btnSubmit.disabled   = estado.selecionados.length !== 4;
 }
 
 // --- RENDERIZAR VIDAS ---
@@ -136,10 +136,16 @@ export function mostrarResultadoFinal(venceu) {
         icon.textContent = '';
         title.textContent = 'Parabéns!';
         text.textContent = 'Você encontrou todos os grupos!';
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
     } else {
         icon.textContent = '';
         title.textContent = 'Fim de jogo!';
         text.textContent = 'Suas tentativas acabaram. Veja os grupos:';
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
     }
 
     const groupsDiv = document.getElementById('finalGroups');

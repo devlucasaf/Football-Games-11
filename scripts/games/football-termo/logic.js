@@ -95,6 +95,9 @@ export async function confirmarTentativa() {
         await esperar(300);
         await animarVitoria(celulas);
         mostrarMensagem(`GOLAÇO! Você acertou!\nO jogador era: ${estado.jogadorSecreto}`);
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
         return;
     }
 
@@ -104,6 +107,9 @@ export async function confirmarTentativa() {
     if (estado.tentativaAtual >= estado.MAX_TENTATIVAS) {
         await esperar(300);
         mostrarMensagem(`Fim de jogo!\nO jogador era: ${estado.jogadorSecreto}`);
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
         return;
     }
 

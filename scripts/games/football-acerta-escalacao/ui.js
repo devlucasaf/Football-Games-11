@@ -231,6 +231,15 @@ export function focarInput() {
     elementos.guessInput.focus();
 }
 
+// --- HELPER DE TRADUÇÃO ---
+function t(key, fallback) {
+    const lingua = localStorage.getItem('preferredLanguage') || 'traducoes';
+    if (window.translations && window.translations[lingua] && window.translations[lingua][key]) {
+        return window.translations[lingua][key];
+    }
+    return fallback;
+}
+
 // --- EXIBIR RESULTADO FINAL ---
 export function mostrarResultadoFinal() {
     elementos.fieldWrapper.classList.add('hidden');
@@ -241,15 +250,25 @@ export function mostrarResultadoFinal() {
     elementos.finalPoints.textContent = estado.acertos;
 
     const porcentagem = Math.round((estado.acertos / 11) * 100);
+    if (porcentagem === 100) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     let mensagem = '';
     if (porcentagem === 100) {
-        mensagem = 'Perfeito! Você lembrou de todos!';
+        mensagem = t('acerta-result-perfect', 'Perfeito! Você lembrou de todos!');
     } else if (porcentagem >= 80) {
-        mensagem = 'Memória quase perfeita!';
+        mensagem = t('acerta-result-great', 'Memória quase perfeita!');
     } else if (porcentagem >= 50) {
-        mensagem = 'Bom conhecimento!';
+        mensagem = t('acerta-result-good', 'Bom conhecimento!');
     } else {
-        mensagem = 'Tente novamente!';
+        mensagem = t('acerta-result-try-again', 'Tente novamente!');
     }
 
     let detalhes = `<p>${mensagem}</p>`;
@@ -257,9 +276,9 @@ export function mostrarResultadoFinal() {
         const tempoUsado = 300 - estado.tempoRestante;
         const min = Math.floor(tempoUsado / 60);
         const sec = tempoUsado % 60;
-        detalhes += `<p>Tempo: ${min}:${sec.toString().padStart(2, '0')}</p>`;
+        detalhes += `<p>${t('acerta-time-label', 'Tempo')}: ${min}:${sec.toString().padStart(2, '0')}</p>`;
     } else {
-        detalhes += `<p>Modo: Sem Tempo</p>`;
+        detalhes += `<p>${t('acerta-mode-no-time-result', 'Modo: Sem Tempo')}</p>`;
     }
     detalhes += `<p><strong>${estado.escalacaoAtual.time}</strong> — ${estado.escalacaoAtual.evento}</p>`;
     elementos.finalDetails.innerHTML = detalhes;
