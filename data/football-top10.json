@@ -283,6 +283,48 @@
             ]
         },
         {
+            "tema": "Últimos 10 técnicos campeões da Copa do Mundo",
+            "categoria": "jogadores",
+            "icone": "fa-trophy",
+            "itens": [
+                { "posicao": 1,  "nome": "Lionel Scaloni",      "detalhe": "2022 (Qatar)"           },
+                { "posicao": 2,  "nome": "Didier Deschamps",    "detalhe": "2018 (Rússia)"          },
+                { "posicao": 3,  "nome": "Joachim Löw",         "detalhe": "2014 (Brasil)"          },
+                { "posicao": 4,  "nome": "Vicente del Bosque",  "detalhe": "2010 (África do Sul)"   },
+                { "posicao": 5,  "nome": "Marcello Lippi",      "detalhe": "2006 (Alemanha)"        },
+                { "posicao": 6,  "nome": "Felipão",             "detalhe": "2002 (Coreia/Japão)"    },
+                { "posicao": 7,  "nome": "Aimé Jacquet",        "detalhe": "1998 (França)"          },
+                { "posicao": 8,  "nome": "Carlos Parreira",     "detalhe": "1994 (Estados Unidos)"  },
+                { "posicao": 9,  "nome": "Franz Beckenbauer",   "detalhe": "1990 (Itália)"          },
+                { "posicao": 10, "nome": "Carlos Bilardo",      "detalhe": "1986 (México)"          }
+            ],
+            "opcoes": [
+                "Gustavo Alfaro", "Louis van Gaal", "Félix Sánchez", "Aliou Cissé", "Gareth Southgate", 
+                "Carlos Queiroz", "Gregg Berhalter", "Rob Page", "Lionel Scaloni", "Gerardo Martino", 
+                "Czesław Michniewicz", "Hervé Renard", "Graham Arnold", "Kasper Hjulmand", "Didier Deschamps",
+                "Jalel Kadri", "Luis Fernando Suárez", "Hansi Flick", "Hajime Moriyasu", "Luis Enrique",
+                "Roberto Martínez", "John Herdman", "Zlatko Dalić", "Walid Regragui", "Tite",
+                "Rigobert Song", "Dragan Stojković", "Murat Yakın", "Otto Addo", "Fernando Santos",
+                "Paulo Bento", "Diego Alonso", "Juan Antonio Pizzi", "Héctor Cúper", "Stanislav Cherchesov",
+                "Óscar Tabárez", "Fernando Hierro", "Stephen Keshi", "Joachim Löw", "Vicente del Bosque",
+                "Marcello Lippi", "Felipão", "Aimé Jacquet", "Carlos Parreira", "Franz Beckenbauer",
+                "Carlos Bilardo", "Jorge Sampaoli", "Carlo Ancelotti", "Fabio Cannavaro", "Dunga", 
+                "Zagallo", "Hervé Renard", "Bert van Marwijk", "Åge Hareide", "Ricardo Gareca",
+                "Heimir Hallgrímsson", "Gernot Rohr", "Óscar Ramírez", "Mladen Krstajić", "Vladimir Petković",
+                "Shin Tae-yong", "Juan Carlos Osorio", "Janne Andersson", "Hernán Darío Gómez", "Nabil Maâloul",
+                "José Pékerman", "Akira Nishino", "Adam Nawałka", "Volker Finke", "Niko Kovač",
+                "Miguel Herrera", "Ange Postecoglou", "Sabri Lamouchi", "Jorge Luis Pinto", "Alberto Zaccheroni",
+                "Roy Hodgson", "Cesare Prandelli", "Reinaldo Rueda", "Rabah Saâdane", "Ottmar Hitzfeld",
+                "Alejandro Sabella", "Safet Sušić", "James Kwesi Appiah", "Jürgen Klinsmann", "Vahid Halilhodžić",
+                "Marc Wilmots", "Hong Myung-Bo", "Fabio Capello", "Raymond Domenech", "Javier Aguirre",
+                "Diego Maradona", "Otto Rehhagel", "Lars Lagerbäck", "Huh Jung-Moo", "Bob Bradley",
+                "Pim Verbeek", "Paul Le Guen", "Morten Olsen", "Vladimír Weiss", "Kim Jong-Hun",
+                "Ricardo La Volpe", "Marcos Paquetá", "Luis Aragonés", "Dick Advocaat", "Zico",
+                "Branko Ivanković", "Luís Oliveira Gonçalves", "Ilija Petković", "Henri Michel", "Marco van Basten",
+                "Leo Beenhakker", "Aníbal Ruiz", "Sven-Göran Eriksson", "Alexandre Guimarães"
+            ]
+        },
+        {
             "tema": "Jogadores com mais partidas na história da Champions League",
             "categoria": "jogadores",
             "icone": "fa-futbol",
