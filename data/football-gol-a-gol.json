@@ -1,0 +1,154 @@
+{
+    "gols": [
+        {
+            "descricao": "Final da Copa do Mundo de 2002. Gol decisivo no segundo tempo que selou o pentacampeonato brasileiro contra a Alemanha.",
+            "resposta": "Ronaldo",
+            "dicas": ["Ano: 2002", "Estádio: International Stadium Yokohama", "Adversário: Alemanha", "Placar final: 2x0"],
+            "alternativas": ["Ronaldo", "Ronaldo Fenômeno", "Ronaldo Nazário"]
+        },
+        {
+            "descricao": "Gol de bicicleta na Champions League 2017/18, quartas de final. Considerado um dos mais bonitos da história da competição.",
+            "resposta": "Cristiano Ronaldo",
+            "dicas": ["Ano: 2018", "Estádio: Allianz Stadium, Turim", "Adversário: Juventus", "Time: Real Madrid"],
+            "alternativas": ["Cristiano Ronaldo", "CR7"]
+        },
+        {
+            "descricao": "Gol icônico na final da Copa do Mundo de 1970. Jogada coletiva perfeita finalizada com categoria para selar o tricampeonato.",
+            "resposta": "Carlos Alberto Torres",
+            "dicas": ["Ano: 1970", "Estádio: Azteca, Cidade do México", "Adversário: Itália", "Placar final: 4x1"],
+            "alternativas": ["Carlos Alberto Torres", "Carlos Alberto"]
+        },
+        {
+            "descricao": "A 'Mão de Deus'. Gol controverso marcado com a mão nas quartas de final da Copa do Mundo.",
+            "resposta": "Diego Maradona",
+            "dicas": ["Ano: 1986", "Estádio: Azteca, Cidade do México", "Adversário: Inglaterra", "Time: Argentina"],
+            "alternativas": ["Maradona", "Diego Maradona"]
+        },
+        {
+            "descricao": "O 'Gol do Século'. Arrancada épica driblando metade do time adversário na Copa do Mundo, mesmo jogo da Mão de Deus.",
+            "resposta": "Diego Maradona",
+            "dicas": ["Ano: 1986", "Estádio: Azteca, Cidade do México", "Adversário: Inglaterra", "Driblou 6 jogadores"],
+            "alternativas": ["Maradona", "Diego Maradona"]
+        },
+        {
+            "descricao": "Gol de voleio na final da Champions League 2002 contra o Bayer Leverkusen. Bola veio da esquerda e ele acertou de primeira.",
+            "resposta": "Zidane",
+            "dicas": ["Ano: 2002", "Estádio: Hampden Park, Glasgow", "Adversário: Bayer Leverkusen", "Time: Real Madrid"],
+            "alternativas": ["Zidane", "Zinedine Zidane"]
+        },
+        {
+            "descricao": "Gol de falta no último minuto na final da Copa do Mundo de 2014. Deu o título à Alemanha na prorrogação.",
+            "resposta": "Götze",
+            "dicas": ["Ano: 2014", "Estádio: Maracanã, Rio de Janeiro", "Adversário: Argentina", "Foi gol de peito, não de falta"],
+            "alternativas": ["Götze", "Gotze", "Mario Götze", "Mario Gotze"]
+        },
+        {
+            "descricao": "Gol decisivo nos acréscimos da final da Champions League 1999. O Manchester United virou o jogo contra o Bayern de Munique.",
+            "resposta": "Solskjaer",
+            "dicas": ["Ano: 1999", "Estádio: Camp Nou, Barcelona", "Adversário: Bayern de Munique", "Minuto: 93"],
+            "alternativas": ["Solskjaer", "Ole Gunnar Solskjaer"]
+        },
+        {
+            "descricao": "Gol de cobertura antológico na Copa do Mundo de 1958. Um jovem de 17 anos marcou na final contra a Suécia.",
+            "resposta": "Pelé",
+            "dicas": ["Ano: 1958", "Estádio: Råsunda, Estocolmo", "Adversário: Suécia", "Tinha apenas 17 anos"],
+            "alternativas": ["Pelé", "Pele"]
+        },
+        {
+            "descricao": "Cabeceio fulminante na final da Copa do Mundo de 1998. Dois gols de cabeça que deram o título à França em casa.",
+            "resposta": "Zidane",
+            "dicas": ["Ano: 1998", "Estádio: Stade de France, Paris", "Adversário: Brasil", "Marcou 2 gols de cabeça"],
+            "alternativas": ["Zidane", "Zinedine Zidane"]
+        },
+        {
+            "descricao": "Gol na final da Champions League 2015 para fechar a goleada de 3x1 sobre a Juventus. Finalização de canhota no canto.",
+            "resposta": "Neymar",
+            "dicas": ["Ano: 2015", "Estádio: Olympiastadion, Berlim", "Adversário: Juventus", "Time: Barcelona"],
+            "alternativas": ["Neymar", "Neymar Jr"]
+        },
+        {
+            "descricao": "Gol de letra em clássico paulista na final do Campeonato Paulista de 2012. Lance considerado obra-prima do futebol brasileiro.",
+            "resposta": "Neymar",
+            "dicas": ["Ano: 2012", "Competição: Campeonato Paulista", "Adversário: Santos fez contra o Palmeiras... Não! Foi pelo Santos", "Time: Santos"],
+            "alternativas": ["Neymar", "Neymar Jr"]
+        },
+        {
+            "descricao": "Gol olímpico na final das Olimpíadas de 2016, cobrança de falta que garantiu o primeiro ouro olímpico do Brasil no futebol masculino.",
+            "resposta": "Neymar",
+            "dicas": ["Ano: 2016", "Estádio: Maracanã, Rio de Janeiro", "Adversário: Alemanha", "Foi nos pênaltis, mas ele fez gol na falta antes"],
+            "alternativas": ["Neymar", "Neymar Jr"]
+        },
+        {
+            "descricao": "Hat-trick épico na semifinal da Champions League, virando um 4x0 do primeiro jogo. O sexto gol foi de pênalti no último minuto.",
+            "resposta": "Lucas Moura",
+            "dicas": ["Ano: 2019", "Estádio: Johan Cruijff Arena, Amsterdã", "Adversário: Ajax", "Time: Tottenham"],
+            "alternativas": ["Lucas Moura", "Lucas"]
+        },
+        {
+            "descricao": "Gol antológico de fora da área na final da Eurocopa 1996. Chute de primeira de fora da área contra a República Tcheca.",
+            "resposta": "Oliver Bierhoff",
+            "dicas": ["Ano: 1996", "Estádio: Wembley, Londres", "Adversário: República Tcheca", "Golden Goal (gol de ouro)"],
+            "alternativas": ["Oliver Bierhoff", "Bierhoff"]
+        },
+        {
+            "descricao": "Gol salvador no último minuto da fase de grupos da Champions 2018/19 que classificou o time. O camisa 10 apareceu de cabeça.",
+            "resposta": "Messi",
+            "dicas": ["Ano: 2019", "Adversário: PSV Eindhoven... Não! Foi Tottenham", "Time: Barcelona", "Gol de cabeça não é tão comum para ele"],
+            "alternativas": ["Messi", "Lionel Messi"]
+        },
+        {
+            "descricao": "Gol de calcanhar de costas para o gol na Champions League. Lance genial na semifinal de 2019.",
+            "resposta": "Lucas Moura",
+            "dicas": ["Ano: 2019", "Adversário: Ajax", "Time: Tottenham", "Completou um hat-trick histórico"],
+            "alternativas": ["Lucas Moura", "Lucas"]
+        },
+        {
+            "descricao": "Gol de falta espetacular na Copa América 2019. Cobrou por baixo da barreira com perfeição.",
+            "resposta": "Messi",
+            "dicas": ["Ano: 2019", "Adversário: Colômbia... Não! Chile? Não! Era semifinal", "Competição: Copa América", "Seleção: Argentina"],
+            "alternativas": ["Messi", "Lionel Messi"]
+        },
+        {
+            "descricao": "Gol acrobático na final da Champions League 2017. Chute de primeira após cruzamento que abriu o placar da virada.",
+            "resposta": "Mandzukic",
+            "dicas": ["Ano: 2017", "Estádio: Millennium Stadium, Cardiff", "Adversário: Real Madrid", "Time: Juventus (gol contra!)"],
+            "alternativas": ["Mandzukic", "Mario Mandzukic"]
+        },
+        {
+            "descricao": "Gol de voleio após domínio de peito na final da Copa do Mundo de 2006. O cabeça-de-área marcou o gol que empatou para a Itália.",
+            "resposta": "Materazzi",
+            "dicas": ["Ano: 2006", "Estádio: Olympiastadion, Berlim", "Adversário: França", "Depois levou uma cabeçada de Zidane"],
+            "alternativas": ["Materazzi", "Marco Materazzi"]
+        },
+        {
+            "descricao": "O gol que deu o hexa à seleção argentina na final da Copa 2022. Golaço de canhota na prorrogação.",
+            "resposta": "Messi",
+            "dicas": ["Ano: 2022", "Estádio: Lusail, Qatar", "Adversário: França", "Seu primeiro título de Copa do Mundo"],
+            "alternativas": ["Messi", "Lionel Messi"]
+        },
+        {
+            "descricao": "Golaço de fora da área no último minuto que classificou o Real Madrid na Champions 2022. Virada épica nas semifinais.",
+            "resposta": "Rodrygo",
+            "dicas": ["Ano: 2022", "Adversário: Manchester City", "Estádio: Santiago Bernabéu", "Fez 2 gols nos acréscimos"],
+            "alternativas": ["Rodrygo", "Rodrygo Goes"]
+        },
+        {
+            "descricao": "Gol de cabeça na final da Champions 2009. Saltou acima do zagueiro para cabecear e selar a vitória.",
+            "resposta": "Messi",
+            "dicas": ["Ano: 2009", "Estádio: Olímpico de Roma", "Adversário: Manchester United", "Time: Barcelona"],
+            "alternativas": ["Messi", "Lionel Messi"]
+        },
+        {
+            "descricao": "Golaço de voleio na final da FA Cup 2006. Último jogo pelo clube antes de se aposentar ali.",
+            "resposta": "Gerrard",
+            "dicas": ["Ano: 2006", "Estádio: Millennium Stadium, Cardiff", "Adversário: West Ham", "Time: Liverpool"],
+            "alternativas": ["Gerrard", "Steven Gerrard"]
+        },
+        {
+            "descricao": "Gol de peito aos 48 do segundo tempo na final do Mundial de Clubes 2012. O gol do título do Corinthians.",
+            "resposta": "Guerrero",
+            "dicas": ["Ano: 2012", "Estádio: Toyota, Japão", "Adversário: Chelsea", "Time: Corinthians"],
+            "alternativas": ["Guerrero", "Paolo Guerrero"]
+        }
+    ]
+}
