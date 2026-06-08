@@ -44,6 +44,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 21 | **Football Quem Falta?** | Complete a lista com o nome que está faltando |
 | 22 | **Football Multiplica** | Multiplique estatísticas de jogadores para alcançar a meta |
 | 23 | **Football Quiz** | Quiz temático com perguntas sobre Champions, Copa, Libertadores e mais |
+| 24 | **Football Gol a Gol** | Acerte quem fez o gol
 
 ---
 
@@ -57,7 +58,7 @@ Football-Games-11/
 ├── scripts/
 │   ├── formation.js            # Script para montar as formações do futebol
 │   ├── script.js               # Tema, tutorial e utilitários globais
-│   └── translation/            # Módulos JS de cada tradução (inglês, português, espanhol e alemão)
+│   ├── translation/            # Módulos JS de cada tradução (inglês, português, espanhol e alemão)
 │   └── games/                  # Módulos JS de cada minigame
 │       ├── football-acerta-escalacao/
 │       ├── football-adivinha-jogador/
@@ -68,20 +69,21 @@ Football-Games-11/
 │       ├── football-duelo-elencos/
 │       ├── football-escudo-quebrado/
 │       ├── football-foto-borrada/
+│       ├── football-gol-a-gol/
 │       ├── football-grid/
 │       ├── football-impostor/
 │       ├── football-jogou-com/
 │       ├── football-legends/
 │       ├── football-linha-do-tempo/
+│       ├── football-multiplica/
 │       ├── football-placar/
 │       ├── football-quem-falta/
+│       ├── football-quiz/
 │       ├── football-termo/
 │       ├── football-top10/
 │       ├── football-transferencias/
 │       ├── football-vc-convoca/
-│       ├── football-vc-escala/
-│       ├── football-multiplica/
-│       └── football-quiz/
+│       └── football-vc-escala/
 ├── data/                       # Arquivos JSON com dados dos jogos
 ├── README.md
 └── LICENSE
@@ -93,7 +95,7 @@ Football-Games-11/
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/devlucasaf/football-games-11.git
+   git clone https://github.com/devlucasaf/Football-Games-11.git
    ```
 2. Abra a pasta no VS Code
 3. Use a extensão **Live Server** (clique direito no `index.html` → "Open with Live Server")
