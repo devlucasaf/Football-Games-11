@@ -57,6 +57,7 @@ function initLanguageSelector() {
     
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'traducoes';
     updateLanguageDisplay(savedLanguage);
+    selectLanguage(savedLanguage);
     
     languageToggle.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -123,6 +124,7 @@ function updateLanguageDisplay(language) {
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initLanguageSelector();
+    initScoreboard();
     
     const comingSoonCards = document.querySelectorAll('.coming-soon-card');
     comingSoonCards.forEach((card, index) => {
@@ -219,3 +221,45 @@ function initTutorial() {
 document.addEventListener('DOMContentLoaded', () => {
     initTutorial();
 });
+
+// --- SISTEMA DE PLACAR GLOBAL ---
+function initScoreboard() {
+    atualizarPlacar();
+}
+
+function getScoreboard() {
+    const vitorias = parseInt(localStorage.getItem('fg11_vitorias') || '0', 10);
+    const derrotas = parseInt(localStorage.getItem('fg11_derrotas') || '0', 10);
+    return { 
+        vitorias, 
+        derrotas 
+    };
+}
+
+function registrarVitoria() {
+    const score = getScoreboard();
+    score.vitorias++;
+    localStorage.setItem('fg11_vitorias', score.vitorias.toString());
+    atualizarPlacar();
+}
+
+function registrarDerrota() {
+    const score = getScoreboard();
+    score.derrotas++;
+    localStorage.setItem('fg11_derrotas', score.derrotas.toString());
+    atualizarPlacar();
+}
+
+function atualizarPlacar() {
+    const score = getScoreboard();
+    const scoreElements = document.querySelectorAll('.scoreboard .score');
+    if (scoreElements.length >= 2) {
+        scoreElements[0].textContent = score.vitorias;
+        scoreElements[1].textContent = score.derrotas;
+    }
+}
+
+window.registrarVitoria = registrarVitoria;
+window.registrarDerrota = registrarDerrota;
+window.atualizarPlacar  = atualizarPlacar;
+window.getScoreboard    = getScoreboard;

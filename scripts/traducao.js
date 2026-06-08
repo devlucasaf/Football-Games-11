@@ -1,13 +1,8 @@
-import { translations }     from "./translation/english";
-import { traducoes }        from "./translation/portuguese";
-import { ubersetzungen }    from "./translation/german";
-import { traducciones }     from "./translation/spanish";
-
 const listaFazerTraducoesLinguas = {
     translations,
     traducoes,
     ubersetzungen,
-    traducoes
+    traducciones
 }
 
 function aplicarTraducao(lingua) {
