@@ -25,12 +25,12 @@ function mostrarRodada() {
 }
 
 // --- SELECIONAR MULTIPLICADOR ---
-function selecionarMultiplicador(mult) {
+function selecionarMultiplicador(idx, mult) {
     const jogador = jogadorAtual();
     const valor = valorDoJogador(jogador);
     const resultado = valor * mult;
 
-    estado.multiplicadoresUsados[mult] = jogador.nome;
+    estado.multiplicadoresUsados[idx] = jogador.nome;
     estado.totalAcumulado += resultado;
     atualizarRodada();
     mostrarResultadoMultiplicacao(valor, mult, resultado);

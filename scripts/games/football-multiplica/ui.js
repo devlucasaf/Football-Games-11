@@ -106,11 +106,11 @@ export function exibirJogador(jogador, valorTipo) {
 // --- RENDERIZAR MULTIPLICADORES ---
 export function renderizarMultiplicadores(onSelect) {
     els.multiplicadoresGrid.innerHTML = '';
-    estado.multiplicadores.forEach(mult => {
+    estado.multiplicadores.forEach((mult, idx) => {
         const btn = document.createElement('button');
         btn.className = 'btn-multiplicador';
 
-        const usado = estado.multiplicadoresUsados[mult];
+        const usado = estado.multiplicadoresUsados[idx];
         if (usado) {
             btn.classList.add('usado');
             btn.disabled = true;
@@ -124,7 +124,7 @@ export function renderizarMultiplicadores(onSelect) {
                 btn.classList.add('alto');
             }
             btn.textContent = `x${mult}`;
-            btn.addEventListener('click', () => onSelect(mult));
+            btn.addEventListener('click', () => onSelect(idx, mult));
         }
 
         els.multiplicadoresGrid.appendChild(btn);
@@ -159,10 +159,16 @@ export function mostrarFinal(venceu) {
         els.resultIcon.innerHTML = '<i class="fas fa-trophy" style="color: #f1c40f;"></i>';
         els.resultTitle.textContent = 'Meta alcançada!';
         els.resultText.textContent = 'Parabéns, você atingiu o objetivo!';
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
     } else {
         els.resultIcon.innerHTML = '<i class="fas fa-times-circle" style="color: #e74c3c;"></i>';
         els.resultTitle.textContent = 'Não foi dessa vez!';
         els.resultText.textContent = 'Você não alcançou a meta.';
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }   
     }
 
     els.resultDetails.innerHTML = `
