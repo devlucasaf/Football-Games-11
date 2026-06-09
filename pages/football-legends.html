@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Football Legends | Football Games 11</title>
+        <title data-key="legends-page-title">Football Legends | Football Games 11</title>
         <link rel="stylesheet" href="../styles/style.css">
         <link rel="stylesheet" href="../styles/football-legends.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,21 +16,21 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-crown"></i>
-                    <h2>Como jogar Football Legends</h2>
-                    <p>Monte o melhor XI da história do seu time!</p>
+                    <h2 data-key="legends-tutorial-title">Como jogar Football Legends</h2>
+                    <p data-key="legends-tutorial-subtitle">Monte o melhor XI da história do seu time!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Escolha um time ou seleção da lista.</li>
-                    <li><span class="tutorial-step-number">2</span> Selecione uma formação tática.</li>
-                    <li><span class="tutorial-step-number">3</span> Clique em uma posição no campo para escolher um jogador.</li>
-                    <li><span class="tutorial-step-number">4</span> Monte a escalação com os maiores ídolos da história!</li>
-                    <li><span class="tutorial-step-number">5</span> Compartilhe sua escalação lendária!</li>
+                    <li><span class="tutorial-step-number" data-key="legends-tutorial-step1">1</span> Escolha um time ou seleção da lista.</li>
+                    <li><span class="tutorial-step-number" data-key="legends-tutorial-step2">2</span> Selecione uma formação tática.</li>
+                    <li><span class="tutorial-step-number" data-key="legends-tutorial-step3">3</span> Clique em uma posição no campo para escolher um jogador.</li>
+                    <li><span class="tutorial-step-number" data-key="legends-tutorial-step4">4</span> Monte a escalação com os maiores ídolos da história!</li>
+                    <li><span class="tutorial-step-number" data-key="legends-tutorial-step5">5</span> Compartilhe sua escalação lendária!</li>
                 </ul>
                 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play" data-key="play-button"></i> Jogar</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="legends-tutorial-skip-btn">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                     <div class="logo">
                         <h1>
                             <i class="fas fa-futbol"></i>
-                            <a href="../index.html" class="home-link">Football Games 11</a></h1>
+                            <a href="../index.html" class="home-link" data-key="site-tittle">Football Games 11</a></h1>
                     </div>
 
                     <div class="header-actions">
@@ -60,28 +60,28 @@
             <div class="container">
                 <section class="legends-hero">
                     <div class="hero-content">
-                        <h1><i class="fas fa-crown"></i> Monte o Melhor XI da História</h1>
-                        <p>Escolha um time e monte a escalação histórica com os maiores ídolos!</p>
+                        <h1><i class="fas fa-crown" data-key="legends-tutorial-title"></i> Monte o Melhor XI da História</h1>
+                        <p data-key="legends-tutorial-subtitle">Escolha um time e monte a escalação histórica com os maiores ídolos!</p>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number" id="totalTeams">0</span>
-                            <span class="stat-label">Times Disponíveis</span>
+                            <span class="stat-label" data-key="legends-stat-teams">Times Disponíveis</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" id="totalPlayers">0</span>
-                            <span class="stat-label">Jogadores</span>
+                            <span class="stat-label" data-key="legends-stat-players">Jogadores</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">∞</span>
-                            <span class="stat-label">Combinações</span>
+                            <span class="stat-label" data-key="stat-combinations">Combinações</span>
                         </div>
                     </div>
                 </section>
 
                 <section class="teams-section">
-                    <h2><i class="fas fa-trophy"></i> Escolha um Time</h2>
-                    <p class="section-subtitle">Clique em um time para montar o seu melhor XI histórico</p>
+                    <h2><i class="fas fa-trophy" data-key="legends-teams-title"></i> Escolha um Time</h2>
+                    <p class="section-subtitle" data-key="legends-teams-subtitle">Clique em um time para montar o seu melhor XI histórico</p>
                     
                     <div class="teams-grid" id="teamsGrid"></div>
 
@@ -89,12 +89,12 @@
                         <div class="loading-spinner">
                             <i class="fas fa-futbol fa-spin"></i>
                         </div>
-                        <p>Carregando times...</p>
+                        <p data-key="legends-loading">Carregando times...</p>
                     </div>
 
                     <div class="error-state" id="errorState" style="display: none;">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <p>Erro ao carregar os times. Tente recarregar a página.</p>
+                        <p data-key="legends-error">Erro ao carregar os times. Tente recarregar a página.</p>
                     </div>
                 </section>
             </div>
@@ -103,12 +103,12 @@
         <footer class="main-footer">
             <div class="container footer-content">
                 <div class="footer-logo">
-                    <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
-                    <p>© 2026 Football Legends. Todos os direitos reservados.</p>
+                    <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                    <p class="copyright" data-key="footer-made-with">Feito com ❤️ por fãs de futebol</p>
                 </div>
                 
                 <div class="footer-social">
-                    <h4>Conecte-se</h4>
+                    <h4 data-key="footer-connect">Conecte-se</h4>
                     <div class="social-icons">
                         <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
                             <i class="fab fa-instagram"></i>
@@ -123,11 +123,16 @@
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
-                    <p class="copyright">Desenvolvido com ❤️ por fãs de futebol</p>
+                    <p data-key="footer-copyright">© 2026 Football Legends. Todos os direitos reservados.</p>
                 </div>
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script src="../scripts/games/football-legends/config.js"></script>
         <script src="../scripts/games/football-legends/dados.js"></script>

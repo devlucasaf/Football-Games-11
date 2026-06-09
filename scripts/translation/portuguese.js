@@ -20,6 +20,23 @@ const traducoes = {
     // Game: Legends
     "football-legends-title": "Legends",
     "football-legends-desc": "Escale o melhor time do seu clube ou seleção de coração.",
+    "legends-tutorial-title": "Como jogar Football Legends",
+    "legends-tutorial-subtitle": "Monte o melhor XI da história do seu time!",
+    "legends-page-title": "Football Legends | Football Games 11",
+    "legends-hero-title": "Monte o Melhor XI da História",
+    "legends-hero-subtitle": "Escolha um time e monte a escalação histórica com os maiores ídolos!",
+    "legends-stat-teams": "Times Disponíveis",
+    "legends-stat-players": "Jogadores",
+    "legends-teams-title": "Escolha um Time",
+    "legends-teams-subtitle": "Clique em um time para montar o seu melhor XI histórico",
+    "legends-loading": "Carregando times...",
+    "legends-error": "Erro ao carregar os times. Tente recarregar a página.",
+    "legends-tutorial-step1": "Escolha um time ou seleção da lista.",
+    "legends-tutorial-step2": "Selecione uma formação tática.",
+    "legends-tutorial-step3": "Clique em uma posição no campo para escolher um jogador.",
+    "legends-tutorial-step4": "Monte a escalação com os maiores ídolos da história!",
+    "legends-tutorial-step5": "Compartilhe sua escalação lendária!",
+    "legends-tutorial-skip-btn": "Não mostrar novamente",
 
     // Game: Bingo
     "football-bingo-title": "Bingo",
@@ -182,5 +199,5 @@ const traducoes = {
     // Footer
     "footer-made-with": "Feito com ❤️ para fãs de futebol",
     "footer-connect": "Conecte-se",
-    "footer-copyright": "Todos os direitos reservados."
+    "footer-copyright": "© 2026 Football Legends. Todos os direitos reservados."
 };

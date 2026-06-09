@@ -4,7 +4,7 @@ const ubersetzungen = {
     "theme-toggle-title": "Thema ändern",
     "play-button": "Spielen",
 
-    // Hero section
+    // Hero section 
     "hero-title": "Fußball-Minispiele Hub",
     "hero-subtitle": "Teste dein Wissen, stelle Teams und legendäre Auswahlen zusammen!",
     "stat-minigames_completed": "Abgeschlossene Minispiele",
@@ -20,6 +20,23 @@ const ubersetzungen = {
     // Game: Legends
     "football-legends-title": "Legenden",
     "football-legends-desc": "Stelle das beste Team deines Lieblingsvereins oder deiner Lieblingsnationalmannschaft zusammen.",
+    "legends-page-title": "Football Legends | Football Games 11",
+    "legends-hero-title": "Stelle die beste Elf der Geschichte zusammen",
+    "legends-hero-subtitle": "Wähle ein Team und stelle die historische Aufstellung mit den größten Idolen zusammen!",
+    "legends-stat-teams": "Verfügbare Teams",
+    "legends-stat-players": "Spieler",
+    "legends-teams-title": "Wähle ein Team",
+    "legends-teams-subtitle": "Klicke auf ein Team, um deine beste historische Elf zusammenzustellen",
+    "legends-loading": "Teams werden geladen...",
+    "legends-error": "Fehler beim Laden der Teams. Bitte lade die Seite neu.",
+    "legends-tutorial-title": "Wie spielt man Football Legends?",
+    "legends-tutorial-subtitle": "Stelle die beste Elf in der Geschichte deines Teams zusammen!",
+    "legends-tutorial-step1": "Wähle ein Team oder eine Nationalmannschaft aus der Liste.",
+    "legends-tutorial-step2": "Wähle eine taktische Formation.",
+    "legends-tutorial-step3": "Klicke auf eine Position auf dem Feld, um einen Spieler auszuwählen.",
+    "legends-tutorial-step4": "Stelle die Aufstellung mit den größten Idolen der Geschichte zusammen!",
+    "legends-tutorial-step5": "Teile deine legendäre Aufstellung!",
+    "legends-tutorial-skip-btn": "Nicht mehr anzeigen",
 
     // Game: Bingo
     "football-bingo-title": "Bingo",
@@ -137,7 +154,7 @@ const ubersetzungen = {
     "football-quiz-title": "Quiz",
     "football-quiz-desc": "Teste dein Wissen über den weltweiten Fußball!",
 
-    // Game: Gol a Gol (Tor für Tor)
+    // Game: Gol a Gol 
     "football-gol-a-gol-title": "Tor für Tor",
     "football-gol-a-gol-desc": "Errate, wer das legendäre Tor geschossen hat!",
     "gol-tutorial-title": "So spielst du Tor für Tor",
@@ -182,5 +199,5 @@ const ubersetzungen = {
     // Footer
     "footer-made-with": "Mit ❤️ gemacht für Fußballfans",
     "footer-connect": "Verbinde dich",
-    "footer-copyright": "Alle Rechte vorbehalten."
+    "footer-copyright": "© 2026 Football Legends. Alle Rechte vorbehalten.",
 };
