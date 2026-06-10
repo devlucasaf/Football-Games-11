@@ -1,222 +1,174 @@
 .duelo-container {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     min-height: calc(100vh - 80px);
 }
 
-/* Game Info */
-.game-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* --- DUELO HEADER --- */
+.duelo-header {
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 12px;
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.game-score {
+.duelo-teams {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team-badge h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--text-primary);
+    margin: 0;
 }
 
-.game-score i {
+.team-badge span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.team-badge.team-a h3 {
+    color: #2980b9;
+}
+
+.team-badge.team-b h3 {
+    color: #c0392b;
+}
+
+.duelo-vs {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.duelo-score {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.duelo-score i {
     margin-right: 0.3rem;
 }
 
-.game-round {
-    font-weight: 600;
-    color: var(--text-secondary);
-    font-size: 1rem;
-}
-
-.game-progress {
-    font-weight: 600;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    background: var(--bg-secondary, rgba(0,0,0,0.05));
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-}
-
-/* Contexto */
-.duelo-contexto {
-    text-align: center;
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, var(--accent-color), #6c5ce7);
-    color: #fff;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.duelo-contexto i {
-    margin-right: 0.5rem;
-}
-
-/* Arena */
-.duelo-arena {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-/* Sides */
-.duelo-side {
+/* --- ESCOLHA AREA --- */
+.escolha-area {
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 16px;
     padding: 1.5rem;
+    margin-bottom: 1rem;
     text-align: center;
-    transition: all 0.3s ease;
 }
 
-.duelo-side:hover {
-    border-color: var(--accent-color);
-}
-
-.side-header h3 {
+.posicao-info {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-}
-
-.side-temporada {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-
-.side-score {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent-color);
-    margin: 0.8rem 0;
-}
-
-.btn-choose {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--accent-color);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-    width: 100%;
-    justify-content: center;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
 }
 
-.btn-choose:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-choose:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-.side-a .btn-choose {
-    background: #2980b9;
-}
-
-.side-b .btn-choose {
-    background: #c0392b;
-}
-
-/* Center */
-.duelo-center {
+.escolha-cards {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
 
-.player-card {
-    background: var(--card-bg);
-    border: 3px solid var(--accent-color);
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    text-align: center;
-    min-width: 160px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    animation: playerEnter 0.4s ease;
+.escolha-ou {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-@keyframes playerEnter {
-    from { 
-        opacity: 0; 
-        transform: scale(0.8) translateY(20px); 
-    }
-
-    to { 
-        opacity: 1; 
-        transform: scale(1) translateY(0); 
-    }
-}
-
-.player-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--accent-color);
-    color: #fff;
-    border-radius: 50%;
+.escolha-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 0.8rem;
-    font-size: 1.3rem;
+    gap: 0.4rem;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    min-width: 140px;
 }
 
-.player-name {
+.escolha-card:hover:not(:disabled) {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.escolha-card:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.escolha-card.correct {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.1);
+}
+
+.escolha-card.wrong {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.card-team {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-player {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-primary);
-    display: block;
 }
 
-.vs-badge {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-secondary);
-    opacity: 0.5;
+#cardA .card-team { 
+    color: #2980b9; 
 }
 
-/* Quick Feedback */
-.quick-feedback {
+#cardB .card-team { 
+    color: #c0392b; 
+}
+
+/* --- FEEDBACK --- */
+.feedback {
     text-align: center;
-    padding: 0.8rem;
+    padding: 0.7rem;
     border-radius: 10px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 1rem;
     animation: fadeIn 0.3s ease;
 }
 
-.quick-feedback.correct {
+.feedback.correct {
     background: rgba(39, 174, 96, 0.15);
     color: #27ae60;
     border: 2px solid #27ae60;
 }
 
-.quick-feedback.wrong {
+.feedback.wrong {
     background: rgba(231, 76, 60, 0.15);
     color: #e74c3c;
     border: 2px solid #e74c3c;
@@ -227,60 +179,160 @@
         opacity: 0; 
         transform: translateY(5px); 
     }
-
+    
     to { 
         opacity: 1; 
         transform: translateY(0); 
     }
 }
 
-
-/* Duelo Result */
-.duelo-result {
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
+/* --- FOOTBALL FIELD --- */
+.field-wrapper {
+    display: flex;
+    justify-content: center;
     margin-bottom: 1.5rem;
-    animation: fadeIn 0.4s ease;
 }
 
-.duelo-result h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
+.football-field {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 3/4;
+    background: #2d8a4e;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #1a5c32;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.duelo-result-details {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
+.field-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
-.btn-next {
-    display: inline-flex;
+.field-half-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.field-center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.field-penalty-top {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    height: 15%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top: none;
+}
+
+.field-penalty-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    height: 15%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-bottom: none;
+}
+
+.field-goal-top {
+    position: absolute;
+    top: 0;
+    left: 38%;
+    right: 38%;
+    height: 5%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top: none;
+}
+
+.field-goal-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 38%;
+    right: 38%;
+    height: 5%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-bottom: none;
+}
+
+.players-layer {
+    position: absolute;
+    inset: 0;
+}
+
+/* --- PLAYER SLOTS --- */
+.player-slot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    background: var(--accent-color);
+    gap: 2px;
+    transition: all 0.4s ease;
+}
+
+.player-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
     color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 0.7rem 1.5rem;
-    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.player-label {
+    font-size: 0.6rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.btn-next:hover {
-    transform: translateY(-2px);
+.player-slot.revealed .player-circle {
+    background: #27ae60;
+    border-color: #fff;
+    transform: scale(1.1);
 }
 
-/* Final Result */
+.player-slot.revealed .player-label {
+    color: #fff;
+    font-weight: 700;
+}
+
+.player-slot.revealed.correct .player-circle {
+    background: #27ae60;
+}
+
+.player-slot.revealed.wrong .player-circle {
+    background: #e74c3c;
+}
+
+/* --- FINAL RESULT --- */
 .final-result {
     background: var(--card-bg);
     border: 2px solid var(--border-color);
@@ -310,21 +362,37 @@
 
 .final-points {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--accent-color);
 }
 
 .final-label {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
 }
 
 .final-details {
     margin-bottom: 2rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.final-choices {
+    margin-top: 1rem;
+    text-align: left;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.choice-correct {
+    color: #27ae60;
+}
+
+.choice-wrong {
+    color: #e74c3c;
 }
 
 .final-actions {
@@ -377,40 +445,39 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .duelo-arena {
-        grid-template-columns: 1fr;
+    .duelo-header {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .escolha-cards {
+        flex-direction: column;
         gap: 0.8rem;
     }
 
-    .duelo-center {
-        order: -1;
-    }
-
-    .vs-badge {
-        display: none;
-    }
-
-    .player-card {
+    .escolha-card {
         min-width: auto;
+        width: 100%;
         padding: 1rem 1.5rem;
     }
 
-    .duelo-side {
-        padding: 1rem;
+    .escolha-ou {
+        display: none;
     }
 
-    .side-score {
-        font-size: 2rem;
-        margin: 0.5rem 0;
+    .football-field {
+        max-width: 100%;
     }
 
-    .game-info {
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+    .player-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 0.55rem;
     }
 
-    .btn-choose {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+    .player-label {
+        font-size: 0.5rem;
+        max-width: 55px;
     }
 }
