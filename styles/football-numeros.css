@@ -1,0 +1,342 @@
+.numeros-container {
+    padding: 1.5rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+/* --- GAME INFO --- */
+.game-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.game-round, .game-score {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.game-score i {
+    color: #27ae60;
+}
+
+/* --- PLAYER CARD --- */
+.player-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.player-card-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.player-card-icon i {
+    font-size: 4rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+}
+
+.shirt-question {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.player-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.player-club {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.2rem;
+}
+
+.player-period {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* --- GUESS AREA --- */
+.guess-area {
+    text-align: center;
+}
+
+.attempts-display {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.input-row {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 280px;
+    margin: 0 auto 0.8rem;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-row input:focus {
+    border-color: var(--accent-color);
+}
+
+/* Hide number input spinners */
+.input-row input[type="number"]::-webkit-inner-spin-button,
+.input-row input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input-row input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.btn-guess {
+    padding: 0.8rem 1.2rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-guess:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.guess-feedback {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.guess-feedback.hint {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+    border: 1px solid #f39c12;
+}
+
+.guess-feedback.wrong {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+/* --- ROUND RESULT --- */
+.round-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.round-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.round-icon.correct { 
+    color: #27ae60; 
+}
+
+.round-icon.wrong { 
+    color: #e74c3c; 
+}
+
+.round-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.round-answer {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.btn-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.btn-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- FINAL RESULT --- */
+.final-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.final-result h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.final-result h2 i {
+    color: var(--accent-color);
+}
+
+.final-score {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.final-points {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.final-label {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.final-details {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-retry,
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.btn-retry {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.btn-retry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-home {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-home:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Hidden */
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(5px); 
+    }
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .player-card {
+        padding: 1.5rem;
+    }
+
+    .input-row {
+        max-width: 100%;
+    }
+}
