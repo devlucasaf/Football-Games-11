@@ -1,0 +1,204 @@
+{
+    "treinadores": [
+        {
+            "nome": "Carlo Ancelotti",
+            "nacionalidade": "Itália",
+            "anoNascimento": 1959,
+            "clubes": ["Reggiana", "Parma", "Juventus", "Milan", "Chelsea", "PSG", "Real Madrid", "Bayern de Munique", "Everton", "Napoli"],
+            "titulos": ["Liga dos Campeões (4x)", "La Liga", "Serie A", "Premier League", "Ligue 1", "Bundesliga"],
+            "curiosidade": "Único técnico a vencer os cinco grandes campeonatos europeus."
+        },
+        {
+            "nome": "Pep Guardiola",
+            "nacionalidade": "Espanha",
+            "anoNascimento": 1971,
+            "clubes": ["Barcelona B", "Barcelona", "Bayern de Munique", "Manchester City"],
+            "titulos": ["Liga dos Campeões (2x)", "Premier League (6x)", "La Liga (3x)", "Bundesliga (3x)"],
+            "curiosidade": "Conquistou a tríplice coroa com Barcelona e Manchester City."
+        },
+        {
+            "nome": "José Mourinho",
+            "nacionalidade": "Portugal",
+            "anoNascimento": 1963,
+            "clubes": ["Leiria", "Porto", "Chelsea", "Inter de Milão", "Real Madrid", "Manchester United", "Tottenham", "Roma", "Fenerbahçe"],
+            "titulos": ["Liga dos Campeões (2x)", "Premier League (3x)", "Serie A (2x)", "La Liga", "Conference League"],
+            "curiosidade": "Se autodenominou 'The Special One' em sua primeira coletiva no Chelsea."
+        },
+        {
+            "nome": "Jürgen Klopp",
+            "nacionalidade": "Alemanha",
+            "anoNascimento": 1967,
+            "clubes": ["Mainz", "Borussia Dortmund", "Liverpool"],
+            "titulos": ["Liga dos Campeões", "Premier League", "Bundesliga (2x)", "Mundial de Clubes"],
+            "curiosidade": "Conhecido pelo 'Gegenpressing' e por suas comemorações intensas."
+        },
+        {
+            "nome": "Zinedine Zidane",
+            "nacionalidade": "França",
+            "anoNascimento": 1972,
+            "clubes": ["Real Madrid Castilla", "Real Madrid"],
+            "titulos": ["Liga dos Campeões (3x)", "La Liga (2x)", "Supercopa da Espanha (2x)"],
+            "curiosidade": "Ganhou 3 Champions League consecutivas como técnico do Real Madrid."
+        },
+        {
+            "nome": "Alex Ferguson",
+            "nacionalidade": "Escócia",
+            "anoNascimento": 1941,
+            "clubes": ["East Stirlingshire", "St Mirren", "Aberdeen", "Manchester United"],
+            "titulos": ["Liga dos Campeões (2x)", "Premier League (13x)", "FA Cup (5x)", "Copa da Liga (4x)"],
+            "curiosidade": "Treinou o Manchester United por 26 anos, de 1986 a 2013."
+        },
+        {
+            "nome": "Arrigo Sacchi",
+            "nacionalidade": "Itália",
+            "anoNascimento": 1946,
+            "clubes": ["Rimini", "Parma", "Milan", "Seleção Italiana", "Atlético de Madrid"],
+            "titulos": ["Liga dos Campeões (2x)", "Serie A", "Supercopa Europeia (2x)", "Copa Intercontinental (2x)"],
+            "curiosidade": "Revolucionou o futebol com a marcação por zona no Milan dos 'imortais'."
+        },
+        {
+            "nome": "Luiz Felipe Scolari",
+            "nacionalidade": "Brasil",
+            "anoNascimento": 1948,
+            "clubes": ["Grêmio", "Palmeiras", "Cruzeiro", "Seleção Brasileira", "Portugal", "Chelsea", "Guangzhou Evergrande"],
+            "titulos": ["Copa do Mundo (2002)", "Copa América", "Libertadores (2x)", "Liga dos Campeões da Ásia"],
+            "curiosidade": "Levou o Brasil ao pentacampeonato mundial em 2002."
+        },
+        {
+            "nome": "Diego Simeone",
+            "nacionalidade": "Argentina",
+            "anoNascimento": 1970,
+            "clubes": ["Racing", "Estudiantes", "River Plate", "San Lorenzo", "Catania", "Atlético de Madrid"],
+            "titulos": ["La Liga (2x)", "Europa League (2x)", "Supercopa da UEFA", "Copa del Rey"],
+            "curiosidade": "Transformou o Atlético de Madrid em potência, quebrando o duopólio Real-Barça."
+        },
+        {
+            "nome": "Marcelo Bielsa",
+            "nacionalidade": "Argentina",
+            "anoNascimento": 1955,
+            "clubes": ["Newell's Old Boys", "Atlas", "Vélez Sarsfield", "Seleção Argentina", "Chile", "Athletic Bilbao", "Marseille", "Lille", "Leeds United", "Uruguai"],
+            "titulos": ["Apertura Argentina", "Olimpíadas 2004 (Argentina)", "Copa América 2024 (Uruguai)"],
+            "curiosidade": "Conhecido como 'El Loco', é admirado por Guardiola como grande influência."
+        },
+        {
+            "nome": "Vicente del Bosque",
+            "nacionalidade": "Espanha",
+            "anoNascimento": 1950,
+            "clubes": ["Real Madrid Castilla", "Real Madrid", "Seleção Espanhola"],
+            "titulos": ["Copa do Mundo (2010)", "Eurocopa (2012)", "Liga dos Campeões (2x)", "La Liga (2x)"],
+            "curiosidade": "Único técnico a ganhar Copa do Mundo, Eurocopa e Champions League."
+        },
+        {
+            "nome": "Tite",
+            "nacionalidade": "Brasil",
+            "anoNascimento": 1961,
+            "clubes": ["Grêmio", "Internacional", "Corinthians", "Seleção Brasileira", "Flamengo"],
+            "titulos": ["Libertadores", "Brasileirão (3x)", "Copa do Brasil", "Mundial de Clubes"],
+            "curiosidade": "Maior sequência invicta da Seleção Brasileira no século XXI."
+        },
+        {
+            "nome": "Arsène Wenger",
+            "nacionalidade": "França",
+            "anoNascimento": 1949,
+            "clubes": ["Nancy", "Monaco", "Nagoya Grampus", "Arsenal"],
+            "titulos": ["Premier League (3x)", "FA Cup (7x)", "Community Shield (7x)"],
+            "curiosidade": "Treinou o Arsenal por 22 anos e liderou o time 'Invincible' de 2003-04."
+        },
+        {
+            "nome": "Johan Cruyff",
+            "nacionalidade": "Holanda",
+            "anoNascimento": 1947,
+            "clubes": ["Ajax", "Barcelona"],
+            "titulos": ["La Liga", "Copa del Rey", "Recopa Europeia", "Liga dos Campeões (1992)"],
+            "curiosidade": "Criou o 'Dream Team' do Barcelona e implantou a filosofia do futebol total."
+        },
+        {
+            "nome": "Antonio Conte",
+            "nacionalidade": "Itália",
+            "anoNascimento": 1969,
+            "clubes": ["Arezzo", "Bari", "Siena", "Juventus", "Seleção Italiana", "Chelsea", "Inter de Milão", "Tottenham", "Napoli"],
+            "titulos": ["Serie A (4x)", "Premier League", "FA Cup", "Supercopa Italiana"],
+            "curiosidade": "Popularizou o esquema 3-5-2 no futebol moderno."
+        },
+        {
+            "nome": "Fabio Capello",
+            "nacionalidade": "Itália",
+            "anoNascimento": 1946,
+            "clubes": ["Milan", "Real Madrid", "Roma", "Juventus", "Seleção Inglesa", "Seleção Russa"],
+            "titulos": ["Liga dos Campeões", "Serie A (5x)", "La Liga (2x)"],
+            "curiosidade": "Ganhou campeonatos em 4 clubes diferentes na Itália e Espanha."
+        },
+        {
+            "nome": "Jorge Jesus",
+            "nacionalidade": "Portugal",
+            "anoNascimento": 1954,
+            "clubes": ["Belenenses", "Braga", "Benfica", "Sporting", "Flamengo", "Al-Hilal"],
+            "titulos": ["Libertadores", "Brasileirão", "Liga Portuguesa (3x)", "Liga Saudita"],
+            "curiosidade": "Conquistou Libertadores e Brasileirão no mesmo ano pelo Flamengo (2019)."
+        },
+        {
+            "nome": "Thomas Tuchel",
+            "nacionalidade": "Alemanha",
+            "anoNascimento": 1973,
+            "clubes": ["Mainz", "Borussia Dortmund", "PSG", "Chelsea", "Bayern de Munique"],
+            "titulos": ["Liga dos Campeões", "Supercopa da UEFA", "Mundial de Clubes", "Ligue 1"],
+            "curiosidade": "Ganhou a Champions League em sua primeira temporada no Chelsea (2021)."
+        },
+        {
+            "nome": "Rafa Benítez",
+            "nacionalidade": "Espanha",
+            "anoNascimento": 1960,
+            "clubes": ["Valladolid", "Extremadura", "Tenerife", "Valencia", "Liverpool", "Inter de Milão", "Chelsea", "Napoli", "Real Madrid", "Newcastle", "Everton"],
+            "titulos": ["Liga dos Campeões", "La Liga (2x)", "Copa da UEFA", "Europa League", "FA Cup"],
+            "curiosidade": "Liderou a virada épica de Istambul em 2005 pelo Liverpool."
+        },
+        {
+            "nome": "Luis Enrique",
+            "nacionalidade": "Espanha",
+            "anoNascimento": 1970,
+            "clubes": ["Barcelona B", "Roma", "Celta de Vigo", "Barcelona", "Seleção Espanhola", "PSG"],
+            "titulos": ["Liga dos Campeões", "La Liga (2x)", "Copa del Rey (3x)", "Tríplice Coroa (2015)"],
+            "curiosidade": "Conquistou a tríplice coroa com o trio MSN (Messi, Suárez, Neymar)."
+        },
+        {
+            "nome": "Mano Menezes",
+            "nacionalidade": "Brasil",
+            "anoNascimento": 1962,
+            "clubes": ["Grêmio", "Corinthians", "Flamengo", "Cruzeiro", "Seleção Brasileira", "Internacional", "Fluminense"],
+            "titulos": ["Copa do Brasil (2x)", "Brasileirão", "Recopa Sul-Americana"],
+            "curiosidade": "Conhecido pelo trabalho meticuloso com vídeo e análise tática."
+        },
+        {
+            "nome": "Abel Ferreira",
+            "nacionalidade": "Portugal",
+            "anoNascimento": 1978,
+            "clubes": ["Braga", "PAOK", "Palmeiras"],
+            "titulos": ["Libertadores (2x)", "Copa do Brasil", "Brasileirão", "Recopa Sul-Americana", "Supercopa do Brasil"],
+            "curiosidade": "Ganhou duas Libertadores consecutivas pelo Palmeiras (2020 e 2021)."
+        },
+        {
+            "nome": "Dorival Júnior",
+            "nacionalidade": "Brasil",
+            "anoNascimento": 1962,
+            "clubes": ["Santos", "Flamengo", "Athletico-PR", "Ceará", "São Paulo", "Seleção Brasileira"],
+            "titulos": ["Libertadores", "Copa do Brasil (2x)"],
+            "curiosidade": "Levou o Flamengo à Libertadores 2022 vindo como interino."
+        },
+        {
+            "nome": "Unai Emery",
+            "nacionalidade": "Espanha",
+            "anoNascimento": 1971,
+            "clubes": ["Almería", "Valencia", "Spartak Moscou", "Sevilla", "PSG", "Arsenal", "Villarreal", "Aston Villa"],
+            "titulos": ["Europa League (4x)", "Ligue 1", "Copa da França"],
+            "curiosidade": "Recordista de títulos da Europa League com 4 conquistas."
+        },
+        {
+            "nome": "Claudio Ranieri",
+            "nacionalidade": "Itália",
+            "anoNascimento": 1951,
+            "clubes": ["Napoli", "Fiorentina", "Valencia", "Atlético de Madrid", "Chelsea", "Juventus", "Roma", "Inter de Milão", "Leicester", "Sampdoria"],
+            "titulos": ["Premier League (Leicester 2016)", "Copa da Espanha", "Supercopa Italiana"],
+            "curiosidade": "Liderou o Leicester City ao título improvável da Premier League em 2016."
+        }
+    ]
+}
