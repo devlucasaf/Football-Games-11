@@ -112,7 +112,7 @@
         },
         {
             "nome": "Itália",
-            "tecnicos": ["Carlo Ancelotti", "Arrigo Sacchi", "Antonio Conte", "Marcello Lippi"],
+            "tecnicos": ["Carlo Ancelotti", "Arrigo Sacchi", "Antonio Conte", "Marcello Lippi", "Enzo Maresca", "Simone Inzaghi"],
             "jogadores": {
                 "goleiro":   ["Buffon", "Dino Zoff", "Donnarumma", "Walter Zenga"],
                 "zagueiro":  ["Maldini", "Baresi", "Nesta", "Cannavaro", "Bastoni", "Bonucci", "Scirea", "Chiellini", "M. Materazzi"],

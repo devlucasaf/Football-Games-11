@@ -43,6 +43,18 @@
             "rodadas": 8
         },
         {
+            "tema": "Alcance 1.000 gols de Brasileirão",
+            "tipo": "brasileirao",
+            "meta": 1000,
+            "rodadas": 8
+        },
+        {
+            "tema": "Alcance 10.000 gols de Brasileirão",
+            "tipo": "brasileirao",
+            "meta": 80,
+            "rodadas": 8
+        },
+        {
             "tema": "Alcance 150 títulos de Premier League",
             "tipo": "premierLeague",
             "meta": 150,
@@ -53,8 +65,31 @@
         "premierLeague": [
         ],
         "brasileirao": [
+            { "nome": "Roberto Dinamite",    "gols": 190 },
+            { "nome": "Fred",                "gols": 158 },
+            { "nome": "Romário",             "gols": 154 },
+            { "nome": "Edmundo",             "gols": 153 },
+            { "nome": "Zico",                "gols": 135 },
+            { "nome": "Diego Souza",         "gols": 130 },
+            { "nome": "Túlio Maravilha",     "gols": 129 },
+            { "nome": "Serginho Chulapada",  "gols": 127 },
+            { "nome": "Dadá Maravilha",      "gols": 127 },
+            { "nome": "Washington",          "gols": 126 },
+            { "nome": "Gabigol",             "gols": 126 },
+            { "nome": "Luís Fabiano",        "gols": 116 },
+            { "nome": "Wellington Paulista", "gols": 109 },
+            { "nome": "Paulo Baier",         "gols": 107 },
+            { "nome": "Alecsandro",          "gols": 105 },
+            { "nome": "Kléber Pereira",      "gols": 102 },
+            { "nome": "Pelé",                "gols": 101 },
+            { "nome": "Evair",               "gols": 101 },
+            { "nome": "D'Alessandro",        "gols": 41  },
+            { "nome": "Rodrigo Castillo",    "gols": 3   }
         ],
         "copas": [
+            { "nome": "Pelé",                "quantidadeCopas": 3 },
+            { "nome": "Ronaldo",             "quantidadeCopas": 2 },
+            { "nome": "Garrincha",           "quantidadeCopas": 2 }
         ],
         "champions": [
         ],
