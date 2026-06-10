@@ -68,6 +68,29 @@
         },
         {
             "tipo": "clube",
+            "texto": "Jogou no Fluminense",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Boca Junior",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no River Plate",
+            "icone": "fa-shield-alt",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png"
+        },
+        {
+            "tipo": "clube",
+            "texto": "Jogou no Flamengo e Fluminense",
+            "icone": "fa-shield-alt"
+        },
+        {
+            "tipo": "clube",
             "texto": "Jogou no Inter de Milão",
             "icone": "fa-shield-alt",
             "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg"
@@ -182,6 +205,36 @@
         },
         {
             "tipo": "titulo",
+            "texto": "Ganhou a Libertadores e Copa do Mundo",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Copa do Mundo e Champions League",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Melhor jogador da Copa do Mundo",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a La Liga",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Premier League",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Serie A",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
             "texto": "Artilheiro de Copa do Mundo",
             "icone": "fa-futbol"
         },
@@ -217,10 +270,10 @@
             "clubes": ["Santos", "New York Cosmos"],
             "selecao": "Brasil",
             "posicao": "Atacante",
-            "titulos": ["Ganhou a Copa do Mundo", "Ganhou a Libertadores", "Ganhou o Brasileirão"]
+            "titulos": ["Ganhou a Copa do Mundo", "Ganhou a Libertadores", "Ganhou o Brasileirão", "Ganhou a Libertadores e Copa do Mundo"]
         },
         {
-            "nome": "Maradona",
+            "nome": "Diego Maradona",
             "clubes": ["Barcelona", "Napoli", "Boca Juniors"],
             "selecao": "Argentina",
             "posicao": "Meio-campista",

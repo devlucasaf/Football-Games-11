@@ -217,7 +217,7 @@
             "posicao": "Atacante",
             "principalClube": "Arsenal",
             "clubeAtual": "Aposentado",
-            "titulos": ["Copa do Mundo 1998", "Euro 2000", "2x Premier League"],
+            "titulos": ["Copa do Mundo 1998", "Eurocopa", "2x Premier League"],
             "curiosidade": "Maior artilheiro da história do Arsenal"
         },
         {
@@ -228,8 +228,8 @@
             "posicao": "Meio-campista",
             "principalClube": "Milan",
             "clubeAtual": "Aposentado",
-            "titulos": ["Copa do Mundo 2002", "Champions League", "Bola de Ouro 2007"],
-            "curiosidade": "Último brasileiro a ganhar a Bola de Ouro antes de Vinícius Jr."
+            "titulos": ["Copa do Mundo 2002", "Champions League", "Bola de Ouro"],
+            "curiosidade": "Último brasileiro a ganhar a Bola de Ouro"
         },
         {
             "nome": "Sergio Ramos",
@@ -239,7 +239,7 @@
             "posicao": "Zagueiro",
             "principalClube": "Real Madrid",
             "clubeAtual": "Aposentado",
-            "titulos": ["Copa do Mundo 2010", "4x Champions League", "Euro 2008/2012"],
+            "titulos": ["Copa do Mundo", "4x Champions League", "2x Eurocopa"],
             "curiosidade": "Gol decisivo na final da Champions 2014 (minuto 93)"
         },
         {
@@ -250,7 +250,7 @@
             "posicao": "Meio-campista",
             "principalClube": "Barcelona",
             "clubeAtual": "Aposentado",
-            "titulos": ["Copa do Mundo 2010", "4x Champions League", "9x La Liga"],
+            "titulos": ["Copa do Mundo 2010", "4x Champions League", "9x La Liga", "2x Eurocopa", "3x Mundial de Clubes"],
             "curiosidade": "Marcou o gol do título na final da Copa do Mundo 2010"
         },
         {
@@ -306,7 +306,7 @@
             "principalClube": "Real Madrid",
             "clubeAtual": "Aposentado",
             "titulos": ["5x Champions League", "6x La Liga", "Libertadores"],
-            "curiosidade": "Estrangeiro com mais títulos na história do Real Madrid"
+            "curiosidade": "Brasileiro com mais títulos na história do Real Madrid"
         },
         {
             "nome": "Antoine Griezmann",
@@ -327,8 +327,20 @@
             "posicao": "Meio-campista",
             "principalClube": "Real Madrid",
             "clubeAtual": "Aposentado",
-            "titulos": ["Copa do Mundo 2014", "5x Champions League", "4x La Liga"],
+            "titulos": ["Copa do Mundo", "5x Champions League", "4x La Liga"],
             "curiosidade": "Se aposentou após a Euro 2024 sendo titular absoluto"
+        },
+        {
+            "nome": "Miroslav Klose",
+            "pais": "Alemanha",
+            "bandeira": "🇩🇪",
+            "idade": 48,
+            "posicao": "Centroavante",
+            "primeiroClube": "Homburg",
+            "principalClube": "Bayern de Munique",
+            "clubeAtual": "Aposentado",
+            "titulos": ["Copa do Mundo", "2x Bundesliga", "Copa"],
+            "curiosidade": "Maior artilheiro da história da Copa do Mundo"
         },
         {
             "nome": "Paul Pogba",

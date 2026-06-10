@@ -1,6 +1,34 @@
 {
     "partidas": [
         {
+            "mandante": "Brasil",
+            "visitante": "Uruguai",
+            "competicao": "Copa do Mundo 1950 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "Alemanha",
+            "visitante": "Hungria",
+            "competicao": "Copa do Mundo 1954 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 2
+        },
+        {
+            "mandante": "França",
+            "visitante": "Alemanha",
+            "competicao": "Copa do Mundo 1958 — Disputa de terceiro lugar",
+            "placarMandante": 6,
+            "placarVisitante": 3
+        },
+        {
+            "mandante": "Brasil",
+            "visitante": "Suécia",
+            "competicao": "Copa do Mundo 1958 — Final",
+            "placarMandante": 5,
+            "placarVisitante": 2
+        },
+        {
             "mandante": "Inglaterra",
             "visitante": "Alemanha",
             "competicao": "Copa do Mundo 1966 — Final",
@@ -612,6 +640,35 @@
             "placarVisitante": 3
         },
         {
+            "mandante": "Portugal",
+            "visitante": "França",
+            "competicao": "Eurocopa 2016 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 0
+        },
+        {
+            "mandante": "Itália",
+            "visitante": "Inglaterra",
+            "competicao": "Eurocopa 2020 — Final",
+            "placarMandante": 1,
+            "placarVisitante": 1,
+            "detalhe": "Itália venceu nos pênaltis (3-2)"
+        },
+        {
+            "mandante": "Espanha",
+            "visitante": "Inglaterra",
+            "competicao": "Eurocopa 2024 — Final",
+            "placarMandante": 2,
+            "placarVisitante": 1
+        },
+        {
+            "mandante": "Argentina",
+            "visitante": "Itália",
+            "competicao": "Finalíssima 2022 — Final",
+            "placarMandante": 3,
+            "placarVisitante": 0
+        },
+        {
             "mandante": "Manchester United",
             "visitante": "Bayern de Munique",
             "competicao": "Champions League 1998/99 — Final",
@@ -631,7 +688,7 @@
             "competicao": "Champions League 2004/05 — Final",
             "placarMandante": 3,
             "placarVisitante": 3,
-            "detalhe": "Liverpool venceu nos pênaltis (3-2)"
+            "detalhe": "Liverpool venceu nos pênaltis (3-2) no famoso 'Milagre de Istambul'"
         },
         {
             "mandante": "Chelsea",

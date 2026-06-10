@@ -1107,6 +1107,30 @@
 			]
         },
         {
+            "time": "Brasil",
+            "evento": "Brasil x Alemanha - Semifinal Copa do Mundo 2014",
+            "formacao": "4-2-3-1",
+            "jogadores": [
+                { "nome": "Julio Cesar", 	"posicao": "GOL" 	},
+                { "nome": "Maicon",      	"posicao": "LD" 	},
+                { "nome": "Dante",       	"posicao": "ZAG1" 	},
+                { "nome": "David Luiz", 	"posicao": "ZAG2" 	},
+                { "nome": "Marcelo", 		"posicao": "LE" 	},
+                { "nome": "Luiz Gustavo", 	"posicao": "VOL1" 	},
+                { "nome": "Fernandinho",   	"posicao": "VOL2" 	},
+                { "nome": "Oscar", 			"posicao": "MEI" 	},
+                { "nome": "Hulk",	 		"posicao": "MD" 	},
+                { "nome": "Fred",		 	"posicao": "CA" 	},
+                { "nome": "Bernard", 		"posicao": "ME" 	}
+            ],
+            "extras": [
+				"Jefferson", "Victor", "Dante",
+				"Maxwell", "Henrique", "Ramires",
+				"Hernanes", "Willian", "Fernandinho",
+				"Bernard", "Jô", "Maicon"
+			]
+        },
+        {
             "time": "Alemanha",
             "evento": "Final da Copa do Mundo 2014",
             "formacao": "4-3-3",
@@ -1221,6 +1245,36 @@
 				"Thiago Almada", "Paulo Dybala", "Lautaro Martínez", 
 				"Ángel Correa", "Franco Armani", "Juan Foyth",
 				"Exequiel Palacios", "Papu Gómez", "Guido Rodríguez"
+			]
+        },
+        {
+            "time": "Espanha",
+            "evento": "Final da Eurocopa 2024",
+            "formacao": "4-2-3-1",
+            "jogadores": [
+                { "nome": "Unai Simón", 		"posicao": "GOL" 	},
+                { "nome": "Dani Carvajal", 		"posicao": "LD" 	},
+                { "nome": "Le Normand",     	"posicao": "ZAG1" 	},
+                { "nome": "A. Laporte", 		"posicao": "ZAG2" 	},
+                { "nome": "Cucurella",   		"posicao": "LE" 	},
+                { "nome": "Rodri",   			"posicao": "VOL1" 	},
+                { "nome": "Fabián Ruiz",     	"posicao": "VOL2" 	},
+                { "nome": "Dani Olmo",   		"posicao": "MEI" 	},
+                { "nome": "Nico Williams", 		"posicao": "MD" 	},
+                { "nome": "Álvaro Morata",  	"posicao": "CA" 	},
+                { "nome": "Lamine Yamal", 		"posicao": "ME" 	}
+            ],
+            "extras": [
+				"Unai Simón", "David Raya", "Álex Remiro", 
+				"Dani Carvajal", "Jesús Navas", "A. Laporte", 
+				"Le Normand", "Nacho", "Daniel Vivian", 
+				"Pau Cubarsi", "Alejandro Grimaldo", "Marc Cucurella",
+				"Rodri", "Martín Zubimendi", "Mikel Merino",
+                "Fabián Ruiz", "Pedri", "Marcos Llorente",
+                "Aleix García", "Alex Baena", "Fermín",
+                "Ferran Torres", "Dani Olmo", "Nico Williams",
+                "Álvaro Morata", "Joselu", "Mikel Oyarzabal", 
+                "Lamine Yamal", "Ayoze Pérez"
 			]
         }
 	]
