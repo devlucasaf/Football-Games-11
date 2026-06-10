@@ -16,20 +16,20 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-puzzle-piece"></i>
-                    <h2>Como jogar Conexões</h2>
-                    <p>Encontre os 4 grupos de 4 jogadores!</p>
+                    <h2 data-key="conexoes-tutorial-title">Como jogar Conexões</h2>
+                    <p data-key="conexoes-tutorial-subtitle">Encontre os 4 grupos de 4 jogadores!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Há 16 jogadores divididos em 4 grupos secretos.</li>
-                    <li><span class="tutorial-step-number">2</span> Selecione 4 jogadores que você acha que pertencem ao mesmo grupo.</li>
-                    <li><span class="tutorial-step-number">3</span> Confirme sua seleção. Se acertar, o grupo é revelado!</li>
-                    <li><span class="tutorial-step-number">4</span> Você tem 4 tentativas erradas. Boa sorte!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="conexoes-tutorial-step1"> Há 16 jogadores divididos em 4 grupos secretos.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="conexoes-tutorial-step2"> Selecione 4 jogadores que você acha que pertencem ao mesmo grupo.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="conexoes-tutorial-step3"> Confirme sua seleção. Se acertar, o grupo é revelado!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="conexoes-tutorial-step4"> Você tem 4 tentativas erradas. Boa sorte!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="conexoes-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="conexoes-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -59,15 +59,15 @@
 
         <main class="conexoes-container">
             <div class="container">
-                <h2 class="game-title"><i class="fas fa-puzzle-piece"></i> Football Conexões</h2>
-                <p class="game-subtitle">Encontre os 4 grupos de 4 jogadores relacionados</p>
+                <h2 class="game-title"><i class="fas fa-puzzle-piece"></i> <span data-key="conexoes-game-title">Football Conexões</span></h2>
+                <p class="game-subtitle" data-key="conexoes-game-subtitle">Encontre os 4 grupos de 4 jogadores relacionados</p>
 
                 <div class="solved-groups" id="solvedGroups"></div>
 
                 <div class="players-grid" id="playersGrid"></div>
 
                 <div class="lives-area">
-                    <span class="lives-label">Tentativas restantes:</span>
+                    <span class="lives-label" data-key="conexoes-lives-label">Tentativas restantes:</span>
                     <div class="lives-dots" id="livesDots">
                         <span class="dot"></span>
                         <span class="dot"></span>
@@ -78,13 +78,13 @@
 
                 <div class="game-actions">
                     <button class="btn-deselect" id="btnDeselect" disabled>
-                        <i class="fas fa-rotate-left"></i> Limpar
+                        <i class="fas fa-rotate-left"></i> <span data-key="conexoes-deselect">Limpar</span>
                     </button>
                     <button class="btn-shuffle" id="btnShuffle">
-                        <i class="fas fa-shuffle"></i> Embaralhar
+                        <i class="fas fa-shuffle"></i> <span data-key="conexoes-shuffle">Embaralhar</span>
                     </button>
                     <button class="btn-submit" id="btnSubmit" disabled>
-                        <i class="fas fa-check"></i> Confirmar
+                        <i class="fas fa-check"></i> <span data-key="conexoes-submit">Confirmar</span>
                     </button>
                 </div>
 
@@ -99,13 +99,18 @@
                     <div class="final-groups" id="finalGroups"></div>
                     
                     <div class="final-actions">
-                        <button class="btn-next-puzzle" id="btnNextPuzzle"><i class="fas fa-arrow-right"></i> Próximo Puzzle</button>
-                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                        <button class="btn-next-puzzle" id="btnNextPuzzle"><i class="fas fa-arrow-right"></i> <span data-key="conexoes-next-puzzle">Próximo Puzzle</span></button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> <span data-key="conexoes-home">Menu Principal</span></button>
                     </div>
                 </section>
             </div>
         </main>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-conexoes/main.js"></script>
     </body>

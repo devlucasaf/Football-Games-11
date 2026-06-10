@@ -21,9 +21,52 @@ const translations = {
     "football-legends-title": "Legends",
     "football-legends-desc": "Build the best team from your favorite club or national team.",
 
+    // Legends - Game page
+    "legends-tutorial-title": "How to play Football Legends",
+    "legends-tutorial-subtitle": "Build the best XI in your team's history!",
+    "legends-page-title": "Football Legends | Football Games 11",
+    "legends-hero-title": "Build the Best XI in History",
+    "legends-hero-subtitle": "Choose a team and build the historic lineup with the greatest icons!",
+    "legends-stat-teams": "Available Teams",
+    "legends-stat-players": "Players",
+    "legends-teams-title": "Choose a Team",
+    "legends-teams-subtitle": "Click on a team to build your best historic XI",
+    "legends-loading": "Loading teams...",
+    "legends-error": "Error loading teams. Try reloading the page.",
+    "legends-tutorial-step1": "Choose a team or national squad from the list.",
+    "legends-tutorial-step2": "Select a tactical formation.",
+    "legends-tutorial-step3": "Click on a position on the pitch to pick a player.",
+    "legends-tutorial-step4": "Build the lineup with the greatest legends!",
+    "legends-tutorial-step5": "Share your legendary lineup!",
+    "legends-tutorial-skip-btn": "Don't show again",
+
     // Game: Bingo
     "football-bingo-title": "Bingo",
     "football-bingo-desc": "Play our bingo.",
+
+    // Bingo - Game page
+    "bingo-tutorial-title": "How to play Football Bingo",
+    "bingo-tutorial-subtitle": "Find the player that matches the categories!",
+    "bingo-tutorial-step1": " Each cell in the 5x5 grid contains a category (club, national team, title or position).",
+    "bingo-tutorial-step2": " A player appears above the board — analyze their career.",
+    "bingo-tutorial-step3": " Click on cells that match the displayed player.",
+    "bingo-tutorial-step4": " Correct picks turn green, wrong ones turn red. One chance per cell per player.",
+    "bingo-tutorial-step5": " Complete rows, columns or diagonals to score BINGO!",
+    "bingo-mode-label": "Choose the mode:",
+    "bingo-mode-world": "World Football",
+    "bingo-mode-brazilian": "Brazilian Football",
+    "bingo-tutorial-skip": "Don't show again",
+    "bingo-game-title": "Football Bingo",
+    "bingo-game-desc": "Mark the categories that match the player!",
+    "bingo-stat-player": "Player",
+    "bingo-stat-hits": "Correct",
+    "bingo-stat-errors": "Errors",
+    "bingo-who-is": "Who is it?",
+    "bingo-loading": "Loading...",
+    "bingo-confirm": "Confirm",
+    "bingo-next": "Next",
+    "bingo-new-game": "New Game",
+    "bingo-play-again": "Play Again",
 
     // Game: Grid
     "football-grid-title": "Grid",
@@ -53,6 +96,34 @@ const translations = {
     "football-adivinha-title": "Guess Player",
     "football-adivinha-desc": "Discover the player through clues: country, age, club and titles!",
 
+    // Adivinha Jogador - Game page
+    "adivinha-tutorial-title": "How to play Guess Player",
+    "adivinha-tutorial-subtitle": "Use the clues to discover the mystery player!",
+    "adivinha-tutorial-step1": " A clue is revealed at the start (player's position).",
+    "adivinha-tutorial-step2": " Try to guess or ask for more clues by clicking the cards.",
+    "adivinha-tutorial-step3": " Each hidden card contains info: country, club, titles, etc.",
+    "adivinha-tutorial-step4": " The fewer clues you use, the more points you earn!",
+    "adivinha-tutorial-step5": " There are 6 clues in total. Use them wisely!",
+    "adivinha-tutorial-play": "Play",
+    "adivinha-tutorial-skip": "Don't show again",
+    "adivinha-game-title": "Guess Player",
+    "adivinha-game-desc": "Discover the mystery player through clues!",
+    "adivinha-stat-hits": "Correct",
+    "adivinha-stat-rounds": "Rounds",
+    "adivinha-stat-streak": "Streak",
+    "adivinha-stat-points": "Points",
+    "adivinha-clue-position": "Position",
+    "adivinha-clue-country": "Country",
+    "adivinha-clue-age": "Age",
+    "adivinha-clue-club": "Main Club",
+    "adivinha-clue-titles": "Titles",
+    "adivinha-clue-trivia": "Trivia",
+    "adivinha-clues-revealed": "Clues revealed",
+    "adivinha-input-placeholder": "Type the player's name...",
+    "adivinha-confirm": "Confirm",
+    "adivinha-feedback-wrong": "Wrong! Try again or reveal more clues.",
+    "adivinha-next-round": "Next Round",
+
     // Game: Top 10
     "football-top10-title": "Top 10",
     "football-top10-desc": "Complete the list of the top 10 football greats!",
@@ -69,15 +140,68 @@ const translations = {
     "football-conexoes-title": "Connections",
     "football-conexoes-desc": "Group 16 players into 4 secret categories!",
 
-    // Game: Escudo Quebrado (Broken Badge)
-    "football-escudo-quebrado-title": "Broken Badge",
-    "football-escudo-quebrado-desc": "Discover the club through clues about the badge!",
+    // Page: Conexões
+    "conexoes-tutorial-title": "How to play Connections",
+    "conexoes-tutorial-subtitle": "Find the 4 groups of 4 players!",
+    "conexoes-tutorial-step1": " There are 16 players divided into 4 secret groups.",
+    "conexoes-tutorial-step2": " Select 4 players you think belong to the same group.",
+    "conexoes-tutorial-step3": " Confirm your selection. If correct, the group is revealed!",
+    "conexoes-tutorial-step4": " You have 4 wrong attempts. Good luck!",
+    "conexoes-tutorial-play": "Play",
+    "conexoes-tutorial-skip": "Don't show again",
+    "conexoes-game-title": "Football Connections",
+    "conexoes-game-subtitle": "Find the 4 groups of 4 related players",
+    "conexoes-lives-label": "Attempts remaining:",
+    "conexoes-deselect": "Clear",
+    "conexoes-shuffle": "Shuffle",
+    "conexoes-submit": "Confirm",
+    "conexoes-next-puzzle": "Next Puzzle",
+    "conexoes-home": "Main Menu",
+
+    // Game: Acerta o Treinador (Guess the Manager)
+    "football-acerta-treinador-title": "Guess the Manager",
+    "football-acerta-treinador-desc": "Discover the manager through career clues!",
+
+    // Page: Acerta o Treinador
+    "treinador-tutorial-title": "How to play Guess the Manager",
+    "treinador-tutorial-subtitle": "Discover the manager through clues!",
+    "treinador-tutorial-step1": " An initial clue is revealed (manager's nationality).",
+    "treinador-tutorial-step2": " Try to guess or click cards to reveal more clues.",
+    "treinador-tutorial-step3": " The fewer clues you use, the more points you earn!",
+    "treinador-tutorial-step4": " There are 10 rounds. Score as many points as possible!",
+    "treinador-tutorial-play": "Play",
+    "treinador-tutorial-skip": "Don't show again",
+    "treinador-round": "Round",
+    "treinador-pts": "pts",
+    "treinador-clues-revealed": "Clues revealed",
+    "treinador-input-placeholder": "Manager name...",
+    "treinador-skip": "Skip",
+    "treinador-next": "Next",
+    "treinador-final-title": "Done!",
+    "treinador-final-label": " points",
+    "treinador-retry": "New Game",
+    "treinador-home": "Main Menu",
 
     // Game: Duelo de Elencos (Squad Duel)
     "football-duelo-elencos-title": "Squad Duel",
-    "football-duelo-elencos-desc": "Match each player to the correct squad in historical duels!",
+    "football-duelo-elencos-desc": "Pick the better player at each position between two squads!",
 
-    // Game: Acerta a Escalação (Guess the Lineup)
+    // Duelo de Elencos - Game page
+    "duelo-tutorial-title": "How to play Squad Duel",
+    "duelo-tutorial-subtitle": "Choose the best player at each position!",
+    "duelo-tutorial-step1": " Two historic squads face off.",
+    "duelo-tutorial-step2": " For each position, choose who was the better player.",
+    "duelo-tutorial-step3": " The correct player appears on the pitch.",
+    "duelo-tutorial-step4": " Get as many of the 11 positions right as you can!",
+    "duelo-tutorial-play": "Play",
+    "duelo-tutorial-skip": "Don't show again",
+    "duelo-ou": "or",
+    "duelo-final-title": "Game Over!",
+    "duelo-final-label": "correct",
+    "duelo-retry": "Play Again",
+    "duelo-home": "Main Menu",
+
+    // Game: Acerta a Escalação 
     "football-acerta-escalacao-title": "Guess the Lineup",
     "football-acerta-escalacao-desc": "Guess the 11 players who started the historic match!",
 
@@ -113,9 +237,46 @@ const translations = {
     "football-placar-title": "Score",
     "football-placar-desc": "Get the score right in historic football matches!",
 
+    // Placar - Game page
+    "placar-tutorial-title": "How to play Exact Score",
+    "placar-tutorial-subtitle": "Guess the score of historic matches!",
+    "placar-tutorial-step1": " A historic match is shown (teams + competition).",
+    "placar-tutorial-step2": " Enter the score you think is correct.",
+    "placar-tutorial-step3": " Scoring: 3 pts exact score, 1 pt correct winner.",
+    "placar-tutorial-step4": " 10 rounds — try to score as high as possible!",
+    "placar-tutorial-play": "Play",
+    "placar-tutorial-skip": "Don't show again",
+    "placar-round": "Round",
+    "placar-pts": "pts",
+    "placar-confirm": "Confirm",
+    "placar-next": "Next",
+    "placar-final-title": "Game Over!",
+    "placar-final-label": "/30 points",
+    "placar-retry": "New Game",
+    "placar-home": "Main Menu",
+
     // Game: Conecta Clubes (Connect Clubs)-
     "football-conecta-clubestitle": "Connect Clubs",
     "football-conecta-clubes-desc": "Find the player who played for both clubs!",
+
+    // Page: Conecta Clubes
+    "conecta-tutorial-title": "How to play Connect Clubs",
+    "conecta-tutorial-subtitle": "Find the player who connects two clubs!",
+    "conecta-tutorial-step1": " Two clubs are shown on screen.",
+    "conecta-tutorial-step2": " Type the name of a player who played for both.",
+    "conecta-tutorial-step3": " You have 3 attempts per round.",
+    "conecta-tutorial-step4": " There are 10 rounds — get as many right as possible!",
+    "conecta-tutorial-play": "Play",
+    "conecta-tutorial-skip": "Don't show again",
+    "conecta-round": "Round",
+    "conecta-who-played": "Who played for both?",
+    "conecta-attempts": "attempt(s) remaining",
+    "conecta-input-placeholder": "Player name...",
+    "conecta-next": "Next",
+    "conecta-final-title": "Done!",
+    "conecta-final-label": "/10 correct",
+    "conecta-retry": "New Game",
+    "conecta-home": "Main Menu",
 
     // Game: Linha do Tempo 7
     "football-linha-do-tempo-title": "Timeline",
@@ -125,9 +286,27 @@ const translations = {
     "football-quem-falta-title": "Who's Missing?",
     "football-quem-falta-desc": "Complete the list with the missing name!",
 
-    // Game: Foto Borrada (Blurred Photo)
-    "football-foto-borrada-title": "Blurred Photo",
-    "football-foto-borrada-desc": "Guess the player from the blurry photo!",
+    // Game: Números (Shirt Numbers)
+    "football-numeros-title": "Shirt Numbers",
+    "football-numeros-desc": "Guess the player's shirt number!",
+
+    // Page: Números
+    "numeros-tutorial-title": "How to play Shirt Numbers",
+    "numeros-tutorial-subtitle": "Guess the shirt number!",
+    "numeros-tutorial-step1": " A player and club are shown.",
+    "numeros-tutorial-step2": " Type the shirt number they wore.",
+    "numeros-tutorial-step3": " You have 3 attempts with hints: higher or lower.",
+    "numeros-tutorial-step4": " There are 10 rounds — get as many right as possible!",
+    "numeros-tutorial-play": "Play",
+    "numeros-tutorial-skip": "Don't show again",
+    "numeros-round": "Round",
+    "numeros-attempts": "attempt(s) remaining",
+    "numeros-input-placeholder": "Shirt number...",
+    "numeros-next": "Next",
+    "numeros-final-title": "Done!",
+    "numeros-final-label": "/10 correct",
+    "numeros-retry": "New Game",
+    "numeros-home": "Main Menu",
 
     // Game: Multiplica (Multiply)
     "football-multiplica-title": "Multiply",
@@ -184,56 +363,3 @@ const translations = {
     "footer-connect": "Connect",
     "footer-copyright": "All rights reserved."
 };
-
-function aplicarTraducao(lingua) {
-    if (translations[lingua] && translations[lingua]['titulo']) {
-        document.titulo = translations[lingua]['titulo'];
-    }
-
-        document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (translations[lingua] && translations[lingua][key]) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = translations[lingua][key];
-            } else {
-                element.textContent = translations[lingua][key];
-            }
-        }
-    });
-
-    atualizaSessaoTitulo(lingua);
-
-    atualizaElementosClass(lingua);
-
-    localStorage.setItem('preferredLanguage', lingua);
-}
-
-function atualizaSessaoTitulo(lingua) {
-    const sessaoMusicaTitulo = document.querySelector('#music-section .section-title');
-    if (sessaoMusicaTitulo && translations[lingua] && translations[lingua]['music-title']) {
-        const highlightSpan = sessaoMusicaTitulo.querySelector('.highlight');
-        if (highlightSpan) {
-            sessaoMusicaTitulo.innerHTML = translations[lingua]['music-title'].replace('Agora', '<span class="highlight">Agora</span>');
-        } else {
-            sessaoMusicaTitulo.textContent = translations[lingua]['music-title'];
-        }
-    }
-}
-
-function atualizaElementosClass(lingua) {
-    const navClasses = ["nav-home", "nav-sobre", "nav-musica", "nav-skills", "nav-certifications", "nav-projetos", "nav-contatos"];
-    
-    navClasses.forEach(className => {
-        const elementos = document.getElementsByClassName(className);
-        if (elementos.length > 0 && translations[lingua] && translations[lingua][className]) {
-            for (let element of elementos) {
-                element.textContent = translations[lingua][className];
-            }
-        }
-    });
-}
-
-window.translations             = translations;
-window.applyTranslation         = aplicarTraducao;
-window.updateSectionTitles      = atualizaSessaoTitulo;
-window.updateElementsByClass    = atualizaElementosClass;

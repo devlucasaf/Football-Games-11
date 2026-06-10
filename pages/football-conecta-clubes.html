@@ -15,18 +15,18 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-link"></i>
-                    <h2>Como jogar Conecta Clubes</h2>
-                    <p>Encontre o jogador que une dois clubes!</p>
+                    <h2 data-key="conecta-tutorial-title">Como jogar Conecta Clubes</h2>
+                    <p data-key="conecta-tutorial-subtitle">Encontre o jogador que une dois clubes!</p>
                 </div>
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Dois clubes são mostrados na tela.</li>
-                    <li><span class="tutorial-step-number">2</span> Digite o nome de um jogador que jogou em ambos.</li>
-                    <li><span class="tutorial-step-number">3</span> Você tem 3 tentativas por rodada.</li>
-                    <li><span class="tutorial-step-number">4</span> São 10 rodadas — acerte o máximo!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="conecta-tutorial-step1"> Dois clubes são mostrados na tela.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="conecta-tutorial-step2"> Digite o nome de um jogador que jogou em ambos.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="conecta-tutorial-step3"> Você tem 3 tentativas por rodada.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="conecta-tutorial-step4"> São 10 rodadas — acerte o máximo!</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="conecta-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="conecta-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="container">
                 <div class="game-info" id="gameInfo">
                     <div class="game-round">
-                        Rodada <span id="rodadaAtual">1</span>/10
+                        <span data-key="conecta-round">Rodada</span> <span id="rodadaAtual">1</span>/10
                     </div>
                     <div class="game-score">
                         <i class="fas fa-check-circle"></i> <span id="acertos">0</span>/10
@@ -70,7 +70,7 @@
                         </div>
                         <div class="clubs-connector">
                             <i class="fas fa-link"></i>
-                            <span>Quem jogou em ambos?</span>
+                            <span data-key="conecta-who-played">Quem jogou em ambos?</span>
                         </div>
                         <div class="club-badge">
                             <span class="club-name" id="clube2"></span>
@@ -79,10 +79,10 @@
 
                     <div class="guess-area">
                         <div class="attempts-display">
-                            <span id="tentativas">3</span> tentativa(s) restante(s)
+                            <span id="tentativas">3</span> <span data-key="conecta-attempts">tentativa(s) restante(s)</span>
                         </div>
                         <div class="input-row">
-                            <input type="text" id="guessInput" placeholder="Nome do jogador..." autocomplete="off">
+                            <input type="text" id="guessInput" data-key="conecta-input-placeholder" placeholder="Nome do jogador..." autocomplete="off">
                             <button class="btn-guess" id="btnGuess">
                                 <i class="fas fa-paper-plane"></i>
                             </button>
@@ -96,29 +96,34 @@
                     <div class="round-text" id="roundText"></div>
                     <div class="round-answers" id="roundAnswers"></div>
                     <button class="btn-next" id="btnNext">
-                        <i class="fas fa-arrow-right"></i> Próximo
+                        <i class="fas fa-arrow-right"></i> <span data-key="conecta-next">Próximo</span>
                     </button>
                 </section>
 
                 <section class="final-result hidden" id="finalResult">
-                    <h2><i class="fas fa-trophy"></i> Fim!</h2>
+                    <h2><i class="fas fa-trophy"></i> <span data-key="conecta-final-title">Fim!</span></h2>
                     <div class="final-score">
                         <span class="final-points" id="finalPoints">0</span>
-                        <span class="final-label">/10 acertos</span>
+                        <span class="final-label" data-key="conecta-final-label">/10 acertos</span>
                     </div>
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
                         <button class="btn-retry" id="btnRetry">
-                            <i class="fas fa-redo"></i> Novo Jogo
+                            <i class="fas fa-redo"></i> <span data-key="conecta-retry">Novo Jogo</span>
                         </button>
                         <button class="btn-home" id="btnHome">
-                            <i class="fas fa-home"></i> Menu Principal
+                            <i class="fas fa-home"></i> <span data-key="conecta-home">Menu Principal</span>
                         </button>
                     </div>
                 </section>
             </div>
         </main>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-conecta-clubes/main.js"></script>
     </body>

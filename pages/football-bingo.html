@@ -17,29 +17,29 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-chess-board"></i>
-                    <h2>Como jogar Football Bingo</h2>
-                    <p>Encontre o jogador que combina com as categorias!</p>
+                    <h2 data-key="bingo-tutorial-title">Como jogar Football Bingo</h2>
+                    <p data-key="bingo-tutorial-subtitle">Encontre o jogador que combina com as categorias!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Cada célula do grid 5x5 contém uma categoria (time, seleção, título ou posição).</li>
-                    <li><span class="tutorial-step-number">2</span> Um jogador aparece acima do tabuleiro — analise sua carreira.</li>
-                    <li><span class="tutorial-step-number">3</span> Clique nas células que correspondem ao jogador exibido.</li>
-                    <li><span class="tutorial-step-number">4</span> Acertos ficam verdes, erros ficam vermelhos. Cada jogador tem 1 chance por célula.</li>
-                    <li><span class="tutorial-step-number">5</span> Complete linhas, colunas ou diagonais para marcar BINGO!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="bingo-tutorial-step1"> Cada célula do grid 5x5 contém uma categoria (time, seleção, título ou posição).</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="bingo-tutorial-step2"> Um jogador aparece acima do tabuleiro — analise sua carreira.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="bingo-tutorial-step3"> Clique nas células que correspondem ao jogador exibido.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="bingo-tutorial-step4"> Acertos ficam verdes, erros ficam vermelhos. Cada jogador tem 1 chance por célula.</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="bingo-tutorial-step5"> Complete linhas, colunas ou diagonais para marcar BINGO!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
                     <div class="tutorial-mode-select">
-                        <p class="mode-label">Escolha o modo:</p>
+                        <p class="mode-label" data-key="bingo-mode-label">Escolha o modo:</p>
                         <button class="btn-mode" id="btnModoMundial" data-mode="mundial">
-                            <i class="fas fa-globe"></i> Futebol Mundial
+                            <i class="fas fa-globe"></i> <span data-key="bingo-mode-world">Futebol Mundial</span>
                         </button>
                         <button class="btn-mode" id="btnModoBrasileiro" data-mode="brasileiro">
-                            <i class="fas fa-flag"></i> Futebol Brasileiro
+                            <i class="fas fa-flag"></i> <span data-key="bingo-mode-brazilian">Futebol Brasileiro</span>
                         </button>
                     </div>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="bingo-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -70,25 +70,25 @@
             <div class="bingo-container">
                 <!-- --- CABEÇALHO --- -->
                 <div class="bingo-header">
-                    <h2 class="game-title"><i class="fas fa-chess-board"></i> Football Bingo</h2>
-                    <p class="game-description">Marque as categorias que correspondem ao jogador!</p>
+                    <h2 class="game-title"><i class="fas fa-chess-board"></i> <span data-key="bingo-game-title">Football Bingo</span></h2>
+                    <p class="game-description" data-key="bingo-game-desc">Marque as categorias que correspondem ao jogador!</p>
                 </div>
 
                 <!-- --- PLACAR --- -->
                 <div class="bingo-stats">
                     <div class="stat-item">
                         <i class="fas fa-user"></i>
-                        <span>Jogador: <strong id="jogadorNum">0</strong>/<strong id="jogadorTotal">0</strong></span>
+                        <span><span data-key="bingo-stat-player">Jogador</span>: <strong id="jogadorNum">0</strong>/<strong id="jogadorTotal">0</strong></span>
                     </div>
                     
                     <div class="stat-item">
                         <i class="fas fa-check"></i>
-                        <span>Acertos: <strong id="acertosCount">0</strong></span>
+                        <span><span data-key="bingo-stat-hits">Acertos</span>: <strong id="acertosCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-times"></i>
-                        <span>Erros: <strong id="errosCount">0</strong></span>
+                        <span><span data-key="bingo-stat-errors">Erros</span>: <strong id="errosCount">0</strong></span>
                     </div>
 
                     <div class="stat-item bingo-indicator" id="bingoIndicator">
@@ -100,17 +100,17 @@
                 <!-- --- JOGADOR ATUAL --- -->
                 <div class="jogador-display" id="jogadorDisplay">
                     <div class="jogador-info">
-                        <span class="jogador-label">Quem é?</span>
-                        <span class="jogador-nome" id="jogadorNome">Carregando...</span>
+                        <span class="jogador-label" data-key="bingo-who-is">Quem é?</span>
+                        <span class="jogador-nome" id="jogadorNome" data-key="bingo-loading">Carregando...</span>
                     </div>
 
                     <div class="jogador-actions">
                         <button id="confirmarBtn" class="btn-confirmar" title="Confirmar marcações">
-                            <i class="fas fa-check-circle"></i> Confirmar
+                            <i class="fas fa-check-circle"></i> <span data-key="bingo-confirm">Confirmar</span>
                         </button>
 
                         <button id="proximoBtn" class="btn-proximo" title="Próximo jogador" style="display:none;">
-                            <i class="fas fa-arrow-right"></i> Próximo
+                            <i class="fas fa-arrow-right"></i> <span data-key="bingo-next">Próximo</span>
                         </button>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                 <!-- --- BOTÕES --- -->
                 <div class="bingo-actions">
                     <button id="novoJogoBtn" class="btn-novo-jogo">
-                        <i class="fas fa-sync-alt"></i> Novo Jogo
+                        <i class="fas fa-sync-alt"></i> <span data-key="bingo-new-game">Novo Jogo</span>
                     </button>
                 </div>
 
@@ -133,7 +133,7 @@
                         <div class="result-icon" id="resultIcon"></div>
                         <h3 id="resultTitle"></h3>
                         <p class="result-text" id="resultText"></p>
-                        <button id="resultCloseBtn" class="btn-novo-jogo"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button id="resultCloseBtn" class="btn-novo-jogo"><i class="fas fa-redo"></i> <span data-key="bingo-play-again">Jogar Novamente</span></button>
                     </div>
                 </div>
             </div>
@@ -169,6 +169,11 @@
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-bingo/main.js"></script>
     </body>
