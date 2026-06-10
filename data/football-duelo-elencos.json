@@ -1,524 +1,93 @@
 {
     "duelos": [
         {
-            "timeA": { 
-                "nome": "Barcelona", 
-                "temporada": "2008/09" 
-            },
-            "timeB": { 
-                "nome": "Manchester United", 
-                "temporada": "2008/09" 
-            },
-            "contexto": "Final da Champions League 2008–09",
-            "jogadores": [
-                { "nome": "Lionel Messi",               "time": "A" },
-                { "nome": "Andrés Iniesta",            "time": "A" },
-                { "nome": "Eto'o",              "time": "A" },
-                { "nome": "Wayne Rooney",             "time": "B" },
-                { "nome": "Cristiano Ronaldo",  "time": "B" },
-                { "nome": "Ryan Giggs",              "time": "B" }
+            "timeA": { "nome": "Botafogo", "temporada": "2024" },
+            "timeB": { "nome": "Flamengo", "temporada": "2022" },
+            "formacao": "4-3-3",
+            "posicoes": [
+                { "posicao": "GOL", "jogadorA": "John", "jogadorB": "Santos", "melhor": "A" },
+                { "posicao": "LD", "jogadorA": "Vitinho", "jogadorB": "Rodinei", "melhor": "A" },
+                { "posicao": "ZAG1", "jogadorA": "Bastos", "jogadorB": "David Luiz", "melhor": "B" },
+                { "posicao": "ZAG2", "jogadorA": "Barboza", "jogadorB": "Leo Pereira", "melhor": "A" },
+                { "posicao": "LE", "jogadorA": "Alex Telles", "jogadorB": "Filipe Luis", "melhor": "B" },
+                { "posicao": "VOL", "jogadorA": "Marlon Freitas", "jogadorB": "Thiago Maia", "melhor": "A" },
+                { "posicao": "MC1", "jogadorA": "Thiago Almada", "jogadorB": "Everton Ribeiro", "melhor": "A" },
+                { "posicao": "MC2", "jogadorA": "Savarino", "jogadorB": "Arrascaeta", "melhor": "B" },
+                { "posicao": "PE", "jogadorA": "Luiz Henrique", "jogadorB": "Everton Cebolinha", "melhor": "A" },
+                { "posicao": "CA", "jogadorA": "Igor Jesus", "jogadorB": "Pedro", "melhor": "B" },
+                { "posicao": "PD", "jogadorA": "Junior Santos", "jogadorB": "Gabigol", "melhor": "A" }
             ]
         },
         {
-            "timeA": { 
-                "nome": "Real Madrid", 
-                "temporada": "2016/17" 
-            },
-            "timeB": { 
-                "nome": "Juventus", 
-                "temporada": "2016/17" 
-            },
-            "contexto": "Final da Champions League 2016–17",
-            "jogadores": [
-                { "nome": "Casemiro",           "time": "A" },
-                { "nome": "Marcelo",            "time": "A" },
-                { "nome": "Toni Kroos",         "time": "A" },
-                { "nome": "Gianluigi Buffon",   "time": "B" },
-                { "nome": "Paulo Dybala",       "time": "B" },
-                { "nome": "Gonzalo Higuain",    "time": "B" }
+            "timeA": { "nome": "Real Madrid", "temporada": "2016/17" },
+            "timeB": { "nome": "Barcelona", "temporada": "2014/15" },
+            "formacao": "4-3-3",
+            "posicoes": [
+                { "posicao": "GOL", "jogadorA": "Navas", "jogadorB": "Ter Stegen", "melhor": "B" },
+                { "posicao": "LD", "jogadorA": "Carvajal", "jogadorB": "Dani Alves", "melhor": "B" },
+                { "posicao": "ZAG1", "jogadorA": "Sergio Ramos", "jogadorB": "Pique", "melhor": "A" },
+                { "posicao": "ZAG2", "jogadorA": "Varane", "jogadorB": "Mascherano", "melhor": "A" },
+                { "posicao": "LE", "jogadorA": "Marcelo", "jogadorB": "Jordi Alba", "melhor": "A" },
+                { "posicao": "VOL", "jogadorA": "Casemiro", "jogadorB": "Busquets", "melhor": "B" },
+                { "posicao": "MC1", "jogadorA": "Kroos", "jogadorB": "Iniesta", "melhor": "B" },
+                { "posicao": "MC2", "jogadorA": "Modric", "jogadorB": "Rakitic", "melhor": "A" },
+                { "posicao": "PE", "jogadorA": "Cristiano Ronaldo", "jogadorB": "Neymar", "melhor": "A" },
+                { "posicao": "CA", "jogadorA": "Benzema", "jogadorB": "Suarez", "melhor": "B" },
+                { "posicao": "PD", "jogadorA": "Bale", "jogadorB": "Messi", "melhor": "B" }
             ]
         },
         {
-            "timeA": { 
-                "nome": "Botafogo", 
-                "temporada": "2024" 
-            },
-            "timeB": { 
-                "nome": "Atlético Mineiro", 
-                "temporada": "2024" 
-            },
-            "contexto": "Final da Libertadores 2024",
-            "jogadores": [
-                { "nome": "Luiz Henrique",       "time": "A" },
-                { "nome": "Thiago Almada",       "time": "A" },
-                { "nome": "Jefferson Savarino",            "time": "A" },
-                { "nome": "Marlon Freitas",      "time": "A" },
-                { "nome": "Alex Telles",         "time": "A" },
-                { "nome": "John",                "time": "A" },
-                { "nome": "Hulk",                "time": "B" },
-                { "nome": "Everson",             "time": "B" },
-                { "nome": "Eduardo Vargas",      "time": "B" },
-                { "nome": "Paulinho",            "time": "B" },
-                { "nome": "Lyanco",              "time": "B" },
-                { "nome": "Fausto Vera",         "time": "B" }
+            "timeA": { "nome": "Brasil", "temporada": "2002" },
+            "timeB": { "nome": "Argentina", "temporada": "2022" },
+            "formacao": "4-3-3",
+            "posicoes": [
+                { "posicao": "GOL", "jogadorA": "Marcos", "jogadorB": "E. Martinez", "melhor": "B" },
+                { "posicao": "LD", "jogadorA": "Cafu", "jogadorB": "Molina", "melhor": "A" },
+                { "posicao": "ZAG1", "jogadorA": "Lucio", "jogadorB": "Romero", "melhor": "A" },
+                { "posicao": "ZAG2", "jogadorA": "Edmilson", "jogadorB": "Otamendi", "melhor": "B" },
+                { "posicao": "LE", "jogadorA": "Roberto Carlos", "jogadorB": "Acuna", "melhor": "A" },
+                { "posicao": "VOL", "jogadorA": "Gilberto Silva", "jogadorB": "Enzo Fernandez", "melhor": "B" },
+                { "posicao": "MC1", "jogadorA": "Rivaldo", "jogadorB": "De Paul", "melhor": "A" },
+                { "posicao": "MC2", "jogadorA": "Ronaldinho", "jogadorB": "Mac Allister", "melhor": "A" },
+                { "posicao": "PE", "jogadorA": "Ronaldo", "jogadorB": "Di Maria", "melhor": "A" },
+                { "posicao": "CA", "jogadorA": "Adriano", "jogadorB": "Julian Alvarez", "melhor": "B" },
+                { "posicao": "PD", "jogadorA": "Denilson", "jogadorB": "Messi", "melhor": "B" }
             ]
         },
         {
-            "timeA": { 
-                "nome": "Flamengo", 
-                "temporada": "2019" 
-            },
-            "timeB": { 
-                "nome": "River Plate", 
-                "temporada": "2019" 
-            },
-            "contexto": "Final da Libertadores 2019",
-            "jogadores": [
-                { "nome": "Gabigol", "time": "A" },
-                { "nome": "Giorgian de Arrascaeta", "time": "A" },
-                { "nome": "Éverton Ribeiro", "time": "A" },
-                { "nome": "Rafael Borré", "time": "B" },
-                { "nome": "Enzo Pérez", "time": "B" },
-                { "nome": "Nacho Fernández", "time": "B" }
+            "timeA": { "nome": "Palmeiras", "temporada": "2021" },
+            "timeB": { "nome": "Flamengo", "temporada": "2019" },
+            "formacao": "4-3-3",
+            "posicoes": [
+                { "posicao": "GOL", "jogadorA": "Weverton", "jogadorB": "Diego Alves", "melhor": "A" },
+                { "posicao": "LD", "jogadorA": "Marcos Rocha", "jogadorB": "Rafinha", "melhor": "B" },
+                { "posicao": "ZAG1", "jogadorA": "Gustavo Gomez", "jogadorB": "Rodrigo Caio", "melhor": "A" },
+                { "posicao": "ZAG2", "jogadorA": "Luan", "jogadorB": "Pablo Mari", "melhor": "B" },
+                { "posicao": "LE", "jogadorA": "Piquerez", "jogadorB": "Filipe Luis", "melhor": "B" },
+                { "posicao": "VOL", "jogadorA": "Danilo", "jogadorB": "Gerson", "melhor": "B" },
+                { "posicao": "MC1", "jogadorA": "Ze Rafael", "jogadorB": "Everton Ribeiro", "melhor": "B" },
+                { "posicao": "MC2", "jogadorA": "Raphael Veiga", "jogadorB": "Arrascaeta", "melhor": "B" },
+                { "posicao": "PE", "jogadorA": "Dudu", "jogadorB": "Bruno Henrique", "melhor": "B" },
+                { "posicao": "CA", "jogadorA": "Rony", "jogadorB": "Gabigol", "melhor": "B" },
+                { "posicao": "PD", "jogadorA": "Wesley", "jogadorB": "Vitinho", "melhor": "A" }
             ]
         },
         {
-            "timeA": { 
-                "nome": "Flamengo", 
-                "temporada": "2025" 
-            },
-            "timeB": { 
-                "nome": "Palmeiras", 
-                "temporada": "2025" 
-            },
-            "contexto": "Final da Libertadores 2025",
-            "jogadores": [
-                { "nome": "Erick Pulgar", "time": "A" },
-                { "nome": "Giorgian de Arrascaeta", "time": "A" },
-                { "nome": "Agustín Rossi", "time": "A" },
-                { "nome": "Vitor Roque", "time": "B" },
-                { "nome": "Gustavo Gómez", "time": "B" },
-                { "nome": "Andreas Pereira", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Milan", 
-                "temporada": "2004/05" 
-            },
-            "timeB": { 
-                "nome": "Liverpool", 
-                "temporada": "2004/05" 
-            },
-            "contexto": "Final da Champions League 2004–05",
-            "jogadores": [
-                { "nome": "Kaká", "time": "A" },
-                { "nome": "Paolo Maldini", "time": "A" },
-                { "nome": "Andriy Shevchenko", "time": "A" },
-                { "nome": "Steven Gerrard", "time": "B" },
-                { "nome": "Xabi Alonso", "time": "B" },
-                { "nome": "John Arne Riise", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Brasil", 
-                "temporada": "2002" 
-            },
-            "timeB": { 
-                "nome": "Alemanha", 
-                "temporada": "2002" 
-            },
-            "contexto": "Final da Copa do Mundo 2002",
-            "jogadores": [
-                { "nome": "Ronaldo", "time": "A" },
-                { "nome": "Rivaldo", "time": "A" },
-                { "nome": "Cafu", "time": "A" },
-                { "nome": "Oliver Kahn", "time": "B" },
-                { "nome": "Oliver Bierhoff", "time": "B" },
-                { "nome": "Miroslav Klose", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Argentina", 
-                "temporada": "2022" 
-            },
-            "timeB": { 
-                "nome": "França", 
-                "temporada": "2022" 
-            },
-            "contexto": "Final da Copa do Mundo 2022",
-            "jogadores": [
-                { "nome": "Lionel Messi", "time": "A" },
-                { "nome": "Ángel Di María", "time": "A" },
-                { "nome": "Enzo Fernández", "time": "A" },
-                { "nome": "Kylian Mbappé", "time": "B" },
-                { "nome": "Antoine Griezmann", "time": "B" },
-                { "nome": "Aurélien Tchouaméni", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Barcelona", 
-                "temporada": "2010/11" 
-            },
-            "timeB": { 
-                "nome": "Real Madrid", 
-                "temporada": "2010/11" 
-            },
-            "contexto": "Semifinal da Champions League 2010–11",
-            "jogadores": [
-                { "nome": "Lionel Messi", "time": "A" },
-                { "nome": "Sergio Busquets", "time": "A" },
-                { "nome": "David Villa", "time": "A" },
-                { "nome": "Mesut Özil", "time": "B" },
-                { "nome": "Ángel Di María", "time": "B" },
-                { "nome": "Pepe", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Inter de Milão", 
-                "temporada": "2009/10" 
-            },
-            "timeB": { 
-                "nome": "Bayern de Munique", 
-                "temporada": "2009/10" 
-            },
-            "contexto": "Final da Champions League 2009–10",
-            "jogadores": [
-                { "nome": "Wesley Sneijder", "time": "A" },
-                { "nome": "Javier Zanetti", "time": "A" },
-                { "nome": "Samuel Eto'o", "time": "A" },
-                { "nome": "Arjen Robben", "time": "B" },
-                { "nome": "Ivica Olić", "time": "B" },
-                { "nome": "Bastian Schweinsteiger", "time":"B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Chelsea", 
-                "temporada": "2011/12" 
-            },
-            "timeB": { 
-                "nome": "Bayern de Munique", 
-                "temporada": "2011/12" 
-            },
-            "contexto": "Final da Champions League 2011–12",
-            "jogadores": [
-                { "nome": "Didier Drogba", "time": "A" },
-                { "nome": "Frank Lampard", "time": "A" },
-                { "nome": "Petr Čech", "time": "A" },
-                { "nome": "Thomas Müller", "time": "B" },
-                { "nome": "Philipp Lahm", "time": "B" },
-                { "nome": "Manuel Neuer", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Fluminense", 
-                "temporada": "2023" 
-            },
-            "timeB": { 
-                "nome": "Internacional", 
-                "temporada": "2023" 
-            },
-            "contexto": "Semifinal da Libertadores 2023",
-            "jogadores": [
-                { "nome": "German Cano", "time": "A" },
-                { "nome": "Jhon Arias", "time": "A" },
-                { "nome": "Nino", "time": "A" },
-                { "nome": "Enner Valencia", "time": "B" },
-                { "nome": "Alan Patrick", "time": "B" },
-                { "nome": "Gabriel Mercado", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Flamengo", 
-                "temporada": "2023" 
-            },
-            "timeB": { 
-                "nome": "São Paulo", 
-                "temporada": "2023" 
-            },
-            "contexto": "Final da Copa do Brasil 2023",
-            "jogadores": [
-                { "nome": "Jonathan Calleri", "time": "A" },
-                { "nome": "Rodrigo Nestor", "time": "A" },
-                { "nome": "Lucas Moura", "time": "A" },
-                { "nome": "Bruno Henrique", "time": "B" },
-                { "nome": "Erick Pulgar", "time": "B" },
-                { "nome": "Pedro", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Cruzeiro", 
-                "temporada": "2017" 
-            },
-            "timeB": { 
-                "nome": "Flamengo", 
-                "temporada": "2017" 
-            },
-            "contexto": "Final da Copa do Brasil 2017",
-            "jogadores": [
-                { "nome": "Thiago Neves", "time": "A" },
-                { "nome": "Diogo Barbosa", "time": "A" },
-                { "nome": "Giorgian de Arrascaeta", "time": "A" },
-                { "nome": "Diego Ribas", "time": "B" },
-                { "nome": "Paolo Guerreiro", "time": "B" },
-                { "nome": "Alex Muralha", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Corinthians", 
-                "temporada": "2025" 
-            },
-            "timeB": { 
-                "nome": "Vasco da Gama", 
-                "temporada": "2025" 
-            },
-            "contexto": "Final da Copa do Brasil 2025",
-            "jogadores": [
-                { "nome": "Yuri Alberto", "time": "A" },
-                { "nome": "Hugo Souza", "time": "A" },
-                { "nome": "Matheusinho", "time": "A" },
-                { "nome": "Rayan", "time": "B" },
-                { "nome": "Philippe Coutinho", "time": "B" },
-                { "nome": "Léo Jardim", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Paris Saint Germain", 
-                "temporada": "2022" 
-            },
-            "timeB": { 
-                "nome": "Real Madrid", 
-                "temporada": "2022" 
-            },
-            "contexto": "Oitavas de Final da Champions League 2021–22",
-            "jogadores": [
-                { "nome": "Kylian Mbappé", "time": "A" },
-                { "nome": "Ángel Di Maria", "time": "A" },
-                { "nome": "Neymar", "time": "A" },
-                { "nome": "Lionel Messi", "time": "A" },
-                { "nome": "Vinícius Junior", "time": "B" },
-                { "nome": "Thibaut Courtois", "time": "B" },
-                { "nome": "Casemiro", "time": "B" },
-                { "nome": "Karim Benzema", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Corinthians", 
-                "temporada": "2012" 
-            },
-            "timeB": { 
-                "nome": "Chelsea", 
-                "temporada": "2012" 
-            },
-            "contexto": "Final do Mundial de Clubes 2012",
-            "jogadores": [
-                { "nome": "Cássio", "time": "A" },
-                { "nome": "Paolo Guerrero", "time": "A" },
-                { "nome": "Emerson Sheik", "time": "A" },
-                { "nome": "Eden Hazard", "time": "B" },
-                { "nome": "Frank Lampard", "time": "B" },
-                { "nome": "Fernando Torres", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Paris Saint-Germain", 
-                "temporada": "2025" 
-            },
-            "timeB": { 
-                "nome": "Flamengo", 
-                "temporada": "2025" 
-            },
-            "contexto": "Final do Mundial de Clubes 2025",
-            "jogadores": [
-                { "nome": "Khvicha Kvaratskhelia", "time": "A" },
-                { "nome": "Désirpe Doué", "time": "A" },
-                { "nome": "Vitinha", "time": "A" },
-                { "nome": "Léo Ortiz", "time": "B" },
-                { "nome": "Alex Sandro", "time": "B" },
-                { "nome": "Jorginho", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Real Madrid", 
-                "temporada": "2017" 
-            },
-            "timeB": { 
-                "nome": "Grêmio", 
-                "temporada": "2017" 
-            },
-            "contexto": "Final do Mundial de Clubes 2017",
-            "jogadores": [
-                { "nome": "Keylor Navas", "time": "A" },
-                { "nome": "Cristiano Ronaldo", "time": "A" },
-                { "nome": "Isco", "time": "A" },
-                { "nome": "Luan", "time": "B" },
-                { "nome": "Pedro Geromel", "time": "B" },
-                { "nome": "Lucas Barrios", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Liverpool", 
-                "temporada": "2019" 
-            },
-            "timeB": { 
-                "nome": "Flamengo", 
-                "temporada": "2019" 
-            },
-            "contexto": "Final do Mundial de Clubes 2019",
-            "jogadores": [
-                { "nome": "Mohamed Salah", "time": "A" },
-                { "nome": "Roberto Firmino", "time": "A" },
-                { "nome": "Trent Alexander-Arnold", "time": "A" },
-                { "nome": "Gabigol", "time": "B" },
-                { "nome": "Pablo Marí", "time": "B" },
-                { "nome": "Éverton Ribeiro", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Chelsea", 
-                "temporada": "2021" 
-            },
-            "timeB": { 
-                "nome": "Palmeiras", 
-                "temporada": "2021" 
-            },
-            "contexto": "Final do Mundial de Clubes 2021",
-            "jogadores": [
-                { "nome": "Thiago Silva", "time": "A" },
-                { "nome": "N'Golo Kanté", "time": "A" },
-                { "nome": "Kai Havertz", "time": "A" },
-                { "nome": "Rony", "time": "B" },
-                { "nome": "Zé Rafael", "time": "B" },
-                { "nome": "Raphael Veiga", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Alemanha", 
-                "temporada": "2014" 
-            },
-            "timeB": { 
-                "nome": "Argentina", 
-                "temporada": "2014" 
-            },
-            "contexto": "Final da Copa do Mundo 2014",
-            "jogadores": [
-                { "nome": "Manuel Neuer", "time": "A" },
-                { "nome": "Mesut Özil", "time": "A" },
-                { "nome": "Thomas Müller", "time": "A" },
-                { "nome": "Lionel Messi", "time": "B" },
-                { "nome": "Gonzalo Higuain", "time": "B" },
-                { "nome": "Ezequiel Lavezzi", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Espanha", 
-                "temporada": "2010" 
-            },
-            "timeB": { 
-                "nome": "Holanda", 
-                "temporada": "2010" 
-            },
-            "contexto": "Final da Copa do Mundo 2010",
-            "jogadores": [
-                { "nome": "Xavi", "time": "A" },
-                { "nome": "Carles Puyol", "time": "A" },
-                { "nome": "Andrés Iniesta", "time": "A" },
-                { "nome": "Wesley Sneijder", "time": "B" },
-                { "nome": "Arjen Robben", "time": "B" },
-                { "nome": "Robin van Persie", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Liverpool", 
-                "temporada": "2018/19" 
-            },
-            "timeB": { 
-                "nome": "Tottenham", 
-                "temporada": "2018/19" 
-            },
-            "contexto": "Final da Champions League 2018–19",
-            "jogadores": [
-                { "nome": "Mohamed Salah", "time": "A" },
-                { "nome": "Virgil van Dijk", "time": "A" },
-                { "nome": "Sadio Mané", "time": "A" },
-                { "nome": "Harry Kane", "time": "B" },
-                { "nome": "Son Heung-min", "time": "B" },
-                { "nome": "Christian Eriksen", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "PSG", 
-                "temporada": "2019/20" 
-            },
-            "timeB": { 
-                "nome": "Bayern de Munique", 
-                "temporada": "2019/20" 
-            },
-            "contexto": "Final da Champions League 2019–20",
-            "jogadores": [
-                { "nome": "Neymar", "time": "A" },
-                { "nome": "Kylian Mbappé", "time": "A" },
-                { "nome": "Ángel Di Maria", "time": "A" },
-                { "nome": "Robert Lewandowski", "time": "B" },
-                { "nome": "Serge Gnabry", "time": "B" },
-                { "nome": "Joshua Kimmich", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Palmeiras", 
-                "temporada": "2021" 
-            },
-            "timeB": { 
-                "nome": "Flamengo", 
-                "temporada": "2021" 
-            },
-            "contexto": "Final da Libertadores 2021",
-            "jogadores": [
-                { "nome": "Weverton", "time": "A" },
-                { "nome": "Raphael Veiga", "time": "A" },
-                { "nome": "Deyverson", "time": "A" },
-                { "nome": "Gabigol", "time": "B" },
-                { "nome": "Bruno Henrique", "time": "B" },
-                { "nome": "Giorgian de Arrascaeta", "time": "B" }
-            ]
-        },
-        {
-            "timeA": { 
-                "nome": "Santos", 
-                "temporada": "2011" 
-            },
-            "timeB": { 
-                "nome": "Barcelona", 
-                "temporada": "2011" 
-            },
-            "contexto": "Final do Mundial de Clubes 2011",
-            "jogadores": [
-                { "nome": "Neymar", "time": "A" },
-                { "nome": "Paulo Henrique Ganso",  "time": "A" },
-                { "nome": "Danilo", "time": "A" },
-                { "nome": "Lionel Messi",  "time": "B" },
-                { "nome": "Xavi",   "time": "B" },
-                { "nome": "Gerard Piqué",  "time": "B" }
+            "timeA": { "nome": "Liverpool", "temporada": "2018/19" },
+            "timeB": { "nome": "Manchester City", "temporada": "2022/23" },
+            "formacao": "4-3-3",
+            "posicoes": [
+                { "posicao": "GOL", "jogadorA": "Alisson", "jogadorB": "Ederson", "melhor": "A" },
+                { "posicao": "LD", "jogadorA": "Alexander-Arnold", "jogadorB": "Walker", "melhor": "A" },
+                { "posicao": "ZAG1", "jogadorA": "Van Dijk", "jogadorB": "Ruben Dias", "melhor": "A" },
+                { "posicao": "ZAG2", "jogadorA": "Matip", "jogadorB": "Akanji", "melhor": "B" },
+                { "posicao": "LE", "jogadorA": "Robertson", "jogadorB": "Ake", "melhor": "A" },
+                { "posicao": "VOL", "jogadorA": "Fabinho", "jogadorB": "Rodri", "melhor": "B" },
+                { "posicao": "MC1", "jogadorA": "Henderson", "jogadorB": "De Bruyne", "melhor": "B" },
+                { "posicao": "MC2", "jogadorA": "Wijnaldum", "jogadorB": "Bernardo Silva", "melhor": "B" },
+                { "posicao": "PE", "jogadorA": "Mane", "jogadorB": "Grealish", "melhor": "A" },
+                { "posicao": "CA", "jogadorA": "Firmino", "jogadorB": "Haaland", "melhor": "B" },
+                { "posicao": "PD", "jogadorA": "Salah", "jogadorB": "Mahrez", "melhor": "A" }
             ]
         }
     ]

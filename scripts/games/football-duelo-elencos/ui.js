@@ -1,137 +1,160 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
+import { obterCoordenadasPosicao, obterLabelPosicao } from "./data.js";
 
 const els = {
-    pontuacao:          document.getElementById('pontuacao'),
-    rodadaAtual:        document.getElementById('rodadaAtual'),
-    jogadorIdx:         document.getElementById('jogadorIdx'),
-    contextoTexto:      document.getElementById('contextoTexto'),
-    timeANome:          document.getElementById('timeANome'),
-    timeATemp:          document.getElementById('timeATemp'),
-    timeBNome:          document.getElementById('timeBNome'),
-    timeBTemp:          document.getElementById('timeBTemp'),
-    scoreA:             document.getElementById('scoreA'),
-    scoreB:             document.getElementById('scoreB'),
-    playerName:         document.getElementById('playerName'),
-    playerCard:         document.getElementById('playerCard'),
-    btnChooseA:         document.getElementById('btnChooseA'),
-    btnChooseB:         document.getElementById('btnChooseB'),
-    quickFeedback:      document.getElementById('quickFeedback'),
-    quickFeedbackText:  document.getElementById('quickFeedbackText'),
-    dueloArena:         document.getElementById('dueloArena'),
-    dueloContexto:      document.getElementById('dueloContexto'),
-    dueloResult:        document.getElementById('dueloResult'),
-    dueloResultTitle:   document.getElementById('dueloResultTitle'),
-    dueloResultDetails: document.getElementById('dueloResultDetails'),
-    finalResult:        document.getElementById('finalResult'),
-    finalPoints:        document.getElementById('finalPoints'),
-    finalDetails:       document.getElementById('finalDetails')
+    pontuacao:      () => document.getElementById("pontuacao"),
+    posicaoAtual:   () => document.getElementById("posicaoAtual"),
+    timeANome:      () => document.getElementById("timeANome"),
+    timeATemp:      () => document.getElementById("timeATemp"),
+    timeBNome:      () => document.getElementById("timeBNome"),
+    timeBTemp:      () => document.getElementById("timeBTemp"),
+    escolhaArea:    () => document.getElementById("escolhaArea"),
+    cardA:          () => document.getElementById("cardA"),
+    cardB:          () => document.getElementById("cardB"),
+    nomeA:          () => document.getElementById("nomeA"),
+    nomeB:          () => document.getElementById("nomeB"),
+    posLabelA:      () => document.getElementById("posLabelA"),
+    posLabelB:      () => document.getElementById("posLabelB"),
+    playersLayer:   () => document.getElementById("playersLayer"),
+    fieldWrapper:   () => document.querySelector(".field-wrapper"),
+    dueloHeader:    () => document.getElementById("dueloHeader"),
+    feedback:       () => document.getElementById("feedback"),
+    feedbackText:   () => document.getElementById("feedbackText"),
+    finalResult:    () => document.getElementById("finalResult"),
+    finalPoints:    () => document.getElementById("finalPoints"),
+    finalDetails:   () => document.getElementById("finalDetails")
 };
 
+// --- CONFIGURAR DUELO ---
 export function configurarDuelo(duelo) {
-    els.contextoTexto.textContent = duelo.contexto;
-    els.timeANome.textContent = duelo.timeA.nome;
-    els.timeATemp.textContent = duelo.timeA.temporada;
-    els.timeBNome.textContent = duelo.timeB.nome;
-    els.timeBTemp.textContent = duelo.timeB.temporada;
-    els.scoreA.textContent = '0';
-    els.scoreB.textContent = '0';
-    els.dueloArena.classList.remove('hidden');
-    els.dueloContexto.classList.remove('hidden');
-    els.dueloResult.classList.add('hidden');
-    els.quickFeedback.classList.add('hidden');
-    habilitarBotoes();
+    els.timeANome().textContent = duelo.timeA.nome;
+    els.timeATemp().textContent = duelo.timeA.temporada;
+    els.timeBNome().textContent = duelo.timeB.nome;
+    els.timeBTemp().textContent = duelo.timeB.temporada;
+    els.dueloHeader().classList.remove("hidden");
+    els.fieldWrapper().classList.remove("hidden");
+    els.escolhaArea().classList.remove("hidden");
+    els.finalResult().classList.add("hidden");
+    els.pontuacao().textContent = "0";
+    renderizarCampoVazio();
 }
 
-export function mostrarJogador(jogador) {
-    els.playerName.textContent = jogador.nome;
-    els.playerCard.style.animation = 'none';
-    els.playerCard.offsetHeight; 
-    els.playerCard.style.animation = 'playerEnter 0.4s ease';
-    els.jogadorIdx.textContent = estado.jogadorIdx + 1;
-}
+// --- RENDERIZAR CAMPO VAZIO COM SLOTS ---
+function renderizarCampoVazio() {
+    const layer = els.playersLayer();
+    layer.innerHTML = "";
 
-export function mostrarQuickFeedback(correto, timeCorreto) {
-    els.quickFeedback.classList.remove('hidden', 'correct', 'wrong');
-    if (correto) {
-        els.quickFeedback.classList.add('correct');
-        els.quickFeedbackText.textContent = '✓ Correto!';
-    } else {
-        els.quickFeedback.classList.add('wrong');
-        els.quickFeedbackText.textContent = `✗ Era do ${timeCorreto}`;
-    }
-    setTimeout(() => els.quickFeedback.classList.add('hidden'), 1200);
-}
+    estado.dueloAtual.posicoes.forEach((pos, idx) => {
+        const coord = obterCoordenadasPosicao(pos.posicao);
+        const label = obterLabelPosicao(pos.posicao);
 
-export function atualizarScores(acertosA, acertosB) {
-    els.scoreA.textContent = acertosA;
-    els.scoreB.textContent = acertosB;
-}
+        const slot = document.createElement("div");
+        slot.className = "player-slot";
+        slot.id = `slot-${idx}`;
+        slot.style.top = `${coord.top}%`;
+        slot.style.left = `${coord.left}%`;
 
-export function atualizarInfo() {
-    els.pontuacao.textContent = estado.pontuacao;
-    els.rodadaAtual.textContent = estado.rodada;
-}
+        slot.innerHTML = `
+            <div class="player-circle">${label}</div>
+            <span class="player-label">?</span>
+        `;
 
-export function habilitarBotoes() {
-    els.btnChooseA.disabled = false;
-    els.btnChooseB.disabled = false;
-}
-
-export function desabilitarBotoes() {
-    els.btnChooseA.disabled = true;
-    els.btnChooseB.disabled = true;
-}
-
-export function mostrarResultadoDuelo(acertos, total) {
-    els.dueloArena.classList.add('hidden');
-    els.dueloContexto.classList.add('hidden');
-    els.dueloResult.classList.remove('hidden');
-
-    const pct = Math.round((acertos / total) * 100);
-    els.dueloResultTitle.textContent = `${acertos}/${total} acertos neste duelo!`;
-
-    let msg = '';
-    if (pct === 100) {
-        msg = 'Perfeito! Conhece bem esses elencos!';
-    } else if (pct >= 66) {
-        msg = 'Boa memória!';
-    } else {
-        msg = 'Difícil esse duelo!';
-    }
-
-    els.dueloResultDetails.innerHTML = `
-        <p>${msg}</p>
-        <p><strong>${estado.dueloAtual.timeA.nome}</strong> ${estado.dueloAtual.timeA.temporada} vs 
-        <strong>${estado.dueloAtual.timeB.nome}</strong> ${estado.dueloAtual.timeB.temporada}</p>
-    `;
-}
-
-export function mostrarResultadoFinal() {
-    els.dueloArena.classList.add('hidden');
-    els.dueloContexto.classList.add('hidden');
-    els.dueloResult.classList.add('hidden');
-    els.finalResult.classList.remove('hidden');
-    els.finalPoints.textContent = estado.pontuacao;
-
-    const max = estado.totalRodadas * 6;
-    const totalAcertos = estado.historico.reduce((s, h) => s + h.acertos, 0);
-    const pct = Math.round((totalAcertos / max) * 100);
-    let msg = '';
-    if (pct === 100) {
-        msg = 'Incrível! Memória de técnico!';
-    } else if (pct >= 70) {
-        msg = 'Ótimo conhecimento de elencos!';
-    } else if (pct >= 40) {
-        msg = 'Bom, mas pode melhorar!';
-    } else {
-        msg = 'Continue praticando!';
-    }
-
-    let detalhes = `<p>${msg}</p><p>${totalAcertos}/${max} acertos totais (${pct}%)</p>`;
-    detalhes += '<div style="margin-top:1rem;">';
-    estado.historico.forEach(h => {
-        detalhes += `<p>${h.acertos}/6 — ${h.timeA} vs ${h.timeB}</p>`;
+        layer.appendChild(slot);
     });
-    detalhes += '</div>';
-    els.finalDetails.innerHTML = detalhes;
+}
+
+// --- MOSTRAR POSIÇÃO PARA ESCOLHA ---
+export function mostrarEscolha(posicao) {
+    const label = obterLabelPosicao(posicao.posicao);
+    els.posicaoAtual().textContent = `${estado.posicaoIdx + 1}/11 — ${label}`;
+    els.nomeA().textContent = posicao.jogadorA;
+    els.nomeB().textContent = posicao.jogadorB;
+    els.posLabelA().textContent = estado.dueloAtual.timeA.nome;
+    els.posLabelB().textContent = estado.dueloAtual.timeB.nome;
+
+    const cardA = els.cardA();
+    const cardB = els.cardB();
+    cardA.classList.remove("correct", "wrong", "disabled");
+    cardB.classList.remove("correct", "wrong", "disabled");
+    cardA.disabled = false;
+    cardB.disabled = false;
+}
+
+// --- REVELAR RESULTADO DA ESCOLHA ---
+export function revelarResultado(escolha, correto, posicao) {
+    const cardA = els.cardA();
+    const cardB = els.cardB();
+    cardA.disabled = true;
+    cardB.disabled = true;
+
+    if (escolha === "A") {
+        cardA.classList.add(correto ? "correct" : "wrong");
+        if (!correto) {
+            cardB.classList.add("correct");
+        }
+    } else {
+        cardB.classList.add(correto ? "correct" : "wrong");
+        if (!correto) {
+            cardA.classList.add("correct");
+        }
+    }
+
+    const fb = els.feedback();
+    fb.classList.remove("hidden", "correct", "wrong");
+    fb.classList.add(correto ? "correct" : "wrong");
+    els.feedbackText().textContent = correto ? "✓ Correto!" : "✗ Errado!";
+    setTimeout(() => fb.classList.add("hidden"), 1200);
+}
+
+// --- COLOCAR JOGADOR NO CAMPO ---
+export function colocarJogadorNoCampo(idx, nome, correto) {
+    const slot = document.getElementById(`slot-${idx}`);
+    if (!slot) {
+        return;
+    }
+
+    slot.classList.add("revealed", correto ? "correct" : "wrong");
+    slot.querySelector(".player-circle").innerHTML = correto
+        ? "<i class=\"fas fa-check\"></i>"
+        : "<i class=\"fas fa-times\"></i>";
+    slot.querySelector(".player-label").textContent = nome;
+}
+
+// --- ATUALIZAR PONTUAÇÃO ---
+export function atualizarPontuacao() {
+    els.pontuacao().textContent = estado.acertos;
+}
+
+// --- MOSTRAR RESULTADO FINAL ---
+export function mostrarResultadoFinal() {
+    els.escolhaArea().classList.add("hidden");
+    els.dueloHeader().classList.add("hidden");
+    els.finalResult().classList.remove("hidden");
+
+    els.finalPoints().textContent = `${estado.acertos}/11`;
+
+    const pct = Math.round((estado.acertos / 11) * 100);
+    let msg = "";
+    if (pct === 100) {
+        msg = "Perfeito! Você é um técnico de elite!";
+    } else if (pct >= 72) {
+        msg = "Ótimo! Grande conhecimento tático!";
+    } else if (pct >= 45) {
+        msg = "Bom, mas pode melhorar!";
+    } else {
+        msg = "Continue praticando!";
+    }
+
+    let detalhes = `<p>${msg}</p><p>${estado.acertos}/11 acertos (${pct}%)</p>`;
+    detalhes += "<div class=\"final-choices\">";
+    estado.escolhas.forEach(e => {
+        const icon = e.correto ? "✓" : "✗";
+        const cls = e.correto ? "choice-correct" : "choice-wrong";
+        const melhor = e.correto
+            ? (e.escolha === "A" ? e.jogadorA : e.jogadorB)
+            : (e.escolha === "A" ? e.jogadorB : e.jogadorA);
+        detalhes += `<p class="${cls}">${icon} ${obterLabelPosicao(e.posicao)}: ${melhor}</p>`;
+    });
+    detalhes += "</div>";
+    els.finalDetails().innerHTML = detalhes;
 }

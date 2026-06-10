@@ -1,121 +1,97 @@
 import { estado } from './core.js';
-import { carregarDados, escolherDuelo, embaralharJogadores } from './data.js';
+import { carregarDados, escolherDuelo, obterPosicaoAtual } from './data.js';
 import {
     configurarDuelo,
-    mostrarJogador,
-    mostrarQuickFeedback,
-    atualizarScores,
-    atualizarInfo,
-    habilitarBotoes,
-    desabilitarBotoes,
-    mostrarResultadoDuelo,
+    mostrarEscolha,
+    revelarResultado,
+    colocarJogadorNoCampo,
+    atualizarPontuacao,
     mostrarResultadoFinal
 } from './ui.js';
 
-let acertosA = 0;
-let acertosB = 0;
-
-// --- VERIFICAR ESCOLHA DO USUÁRIO ---
+// --- VERIFICAR ESCOLHA ---
 function verificarEscolha(escolha) {
     if (estado.respondido) {
         return;
     }
     estado.respondido = true;
-    desabilitarBotoes();
 
-    const jogadorAtual = estado.jogadores[estado.jogadorIdx];
-    const correto = jogadorAtual.time === escolha;
+    const posicao = obterPosicaoAtual();
+    const correto = posicao.melhor === escolha;
 
     if (correto) {
-        estado.pontuacao += 1;
-        estado.acertosRodada++;
-        if (escolha === 'A') {
-            acertosA++;
-        } else {
-            acertosB++;
-        }
-    } else {
-        if (jogadorAtual.time === 'A') {
-            acertosA++;
-        } else {
-            acertosB++;
-        }
+        estado.acertos++;
+        atualizarPontuacao();
     }
 
-    const timeCorreto = jogadorAtual.time === 'A'
-        ? estado.dueloAtual.timeA.nome
-        : estado.dueloAtual.timeB.nome;
+    estado.escolhas.push({
+        posicao: posicao.posicao,
+        jogadorA: posicao.jogadorA,
+        jogadorB: posicao.jogadorB,
+        escolha,
+        correto
+    });
 
-    mostrarQuickFeedback(correto, timeCorreto);
-    atualizarScores(acertosA, acertosB);
-    atualizarInfo();
+    revelarResultado(escolha, correto, posicao);
+
+    const nomeCorreto = posicao.melhor === 'A' ? posicao.jogadorA : posicao.jogadorB;
+    colocarJogadorNoCampo(estado.posicaoIdx, nomeCorreto, correto);
 
     setTimeout(() => {
-        estado.jogadorIdx++;
-        if (estado.jogadorIdx >= estado.jogadores.length) {
-            finalizarDuelo();
+        estado.posicaoIdx++;
+        if (estado.posicaoIdx >= estado.totalPosicoes) {
+            finalizar();
         } else {
-            proximoJogador();
+            proximaPosicao();
         }
-    }, 1000);
+    }, 1200);
 }
 
-// --- PRÓXIMO JOGADOR ---
-function proximoJogador() {
+// --- PRÓXIMA POSIÇÃO ---
+function proximaPosicao() {
     estado.respondido = false;
-    habilitarBotoes();
-    mostrarJogador(estado.jogadores[estado.jogadorIdx]);
+    const posicao = obterPosicaoAtual();
+    mostrarEscolha(posicao);
 }
 
-// --- FINALIZAR DUELO ---
-function finalizarDuelo() {
-    estado.historico.push({
-        timeA:      estado.dueloAtual.timeA.nome,
-        timeB:      estado.dueloAtual.timeB.nome,
-        acertos:    estado.acertosRodada
-    });
-    mostrarResultadoDuelo(estado.acertosRodada, estado.jogadores.length);
+// --- FINALIZAR ---
+function finalizar() {
+    if (estado.acertos >= 8) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+    mostrarResultadoFinal();
 }
 
 // --- INICIAR DUELO ---
 function iniciarDuelo() {
-    estado.rodada++;
-    estado.jogadorIdx = 0;
-    estado.acertosRodada = 0;
+    estado.posicaoIdx = 0;
+    estado.acertos = 0;
     estado.respondido = false;
-    acertosA = 0;
-    acertosB = 0;
-
-    atualizarInfo();
+    estado.escolhas = [];
 
     estado.dueloAtual = escolherDuelo();
-    estado.jogadores = embaralharJogadores(estado.dueloAtual.jogadores);
+    if (!estado.dueloAtual) {
+        estado.duelosUsados = [];
+        estado.dueloAtual = escolherDuelo();
+    }
 
     configurarDuelo(estado.dueloAtual);
-    proximoJogador();
+    proximaPosicao();
 }
 
-// --- PRÓXIMO DUELO ---
-function proximoDuelo() {
-    if (estado.rodada >= estado.totalRodadas) {
-        mostrarResultadoFinal();
-    } else {
-        iniciarDuelo();
-    }
-}
-
-// --- INICIALIZAÇÃO DA APLICAÇÃO ---
+// --- INIT ---
 async function init() {
     await carregarDados();
 
-    document.getElementById('btnChooseA').addEventListener('click', () => verificarEscolha('A'));
-    document.getElementById('btnChooseB').addEventListener('click', () => verificarEscolha('B'));
-    document.getElementById('btnNext').addEventListener('click', proximoDuelo);
+    document.getElementById('cardA').addEventListener('click', () => verificarEscolha('A'));
+    document.getElementById('cardB').addEventListener('click', () => verificarEscolha('B'));
     document.getElementById('btnRetry').addEventListener('click', () => {
-        estado.duelosUsados = [];
-        estado.rodada = 0;
-        estado.pontuacao = 0;
-        estado.historico = [];
         document.getElementById('finalResult').classList.add('hidden');
         iniciarDuelo();
     });
@@ -136,7 +112,9 @@ async function init() {
             iniciarDuelo();
         });
         document.getElementById('tutorialSkipBtn').addEventListener('click', () => {
-            if (skipKey) localStorage.setItem(skipKey, 'true');
+            if (skipKey) {
+                localStorage.setItem(skipKey, 'true');
+            }
             tutorialOverlay.classList.add('hidden');
             iniciarDuelo();
         });
