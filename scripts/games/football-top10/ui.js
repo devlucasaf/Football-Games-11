@@ -157,7 +157,9 @@ export function inicializarSugestoes(onSelecionar) {
 
     $input.addEventListener('keydown', (e) => {
         const itens = $sugestoes.querySelectorAll('.sugestao-item');
-        if (!itens.length || !$sugestoes.classList.contains('ativa')) return;
+        if (!itens.length || !$sugestoes.classList.contains('ativa')) {
+            return;
+        }
 
         if (e.key === 'ArrowDown') {
             e.preventDefault();

@@ -28,6 +28,7 @@ function toggleSelecao(nome) {
     if (!estado.jogoAtivo) {
         return;
     }
+    
     const idx = estado.selecionados.indexOf(nome);
     if (idx >= 0) {
         estado.selecionados.splice(idx, 1);

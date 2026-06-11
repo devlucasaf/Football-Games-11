@@ -1,6 +1,6 @@
-import { normalizar } from "./utils.js";
-import { inserirLetra, apagarLetra } from "./input.js";
-import { confirmarTentativa } from "./logic.js";
+import { normalizar }                   from "./utils.js";
+import { inserirLetra, apagarLetra }    from "./input.js";
+import { confirmarTentativa }           from "./logic.js";
 
 export function configurarEventos(reiniciarJogo) {
     document.addEventListener("keydown", (e) => {

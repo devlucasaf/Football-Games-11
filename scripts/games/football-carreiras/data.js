@@ -3,10 +3,7 @@ import { normalizar } from "./utils.js";
 
 export async function carregarDados() {
     // --- CARREGAR JOGADORES ---
-    const respostaCarreiras = await fetch(
-        "../data/football-carreiras.json",
-        { cache: "no-store" }
-    );
+    const respostaCarreiras = await fetch("../data/football-carreiras.json", { cache: "no-store" });
     
     if (!respostaCarreiras.ok) {
         throw new Error(`Erro ao carregar carreiras (${respostaCarreiras.status})`);

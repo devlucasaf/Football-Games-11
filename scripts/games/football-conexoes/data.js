@@ -48,6 +48,7 @@ export function verificarGrupo(selecionados, puzzle) {
                 quaseLa: false 
             };
         }
+        
         if (acertos === 3) {
             return { 
                 acertou: false, 

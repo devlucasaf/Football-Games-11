@@ -6,7 +6,6 @@ import { renderizarGrid, exibirJogador, mostrarBotaoProximo, atualizarPlacar, mo
 function alternarCelula(cell) {
     const idx = parseInt(cell.dataset.indice);
 
-    // --- NÃO PERMITIR EM CÉLULAS JÁ TRAVADAS ---
     if (cell.classList.contains("locked")) {
         return;
     }

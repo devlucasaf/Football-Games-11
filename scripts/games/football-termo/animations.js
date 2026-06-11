@@ -20,7 +20,7 @@ export async function revelarLinha(celulas, chute, cores) {
     }
 }
 
-// --- ANIMA EFEITO DE PULO (BOUNCE) NAS CÉLULAS DE VITÓRIA ---
+// --- ANIMA EFEITO DE PULO NAS CÉLULAS DE VITÓRIA ---
 export async function animarVitoria(celulas) {
     for (let i = 0; i < celulas.length; i++) {
         celulas[i].classList.add("bounce");

@@ -2,27 +2,27 @@ import { estado } from "./core.js";
 import { obterCoordenadasPosicao, obterLabelPosicao } from "./data.js";
 
 const els = {
-    pontuacao:      () => document.getElementById("pontuacao"),
-    posicaoAtual:   () => document.getElementById("posicaoAtual"),
-    timeANome:      () => document.getElementById("timeANome"),
-    timeATemp:      () => document.getElementById("timeATemp"),
-    timeBNome:      () => document.getElementById("timeBNome"),
-    timeBTemp:      () => document.getElementById("timeBTemp"),
-    escolhaArea:    () => document.getElementById("escolhaArea"),
-    cardA:          () => document.getElementById("cardA"),
-    cardB:          () => document.getElementById("cardB"),
-    nomeA:          () => document.getElementById("nomeA"),
-    nomeB:          () => document.getElementById("nomeB"),
-    posLabelA:      () => document.getElementById("posLabelA"),
-    posLabelB:      () => document.getElementById("posLabelB"),
-    playersLayer:   () => document.getElementById("playersLayer"),
-    fieldWrapper:   () => document.querySelector(".field-wrapper"),
-    dueloHeader:    () => document.getElementById("dueloHeader"),
-    feedback:       () => document.getElementById("feedback"),
-    feedbackText:   () => document.getElementById("feedbackText"),
-    finalResult:    () => document.getElementById("finalResult"),
-    finalPoints:    () => document.getElementById("finalPoints"),
-    finalDetails:   () => document.getElementById("finalDetails")
+    pontuacao:    () => document.getElementById("pontuacao"),
+    posicaoAtual: () => document.getElementById("posicaoAtual"),
+    timeANome:    () => document.getElementById("timeANome"),
+    timeATemp:    () => document.getElementById("timeATemp"),
+    timeBNome:    () => document.getElementById("timeBNome"),
+    timeBTemp:    () => document.getElementById("timeBTemp"),
+    escolhaArea:  () => document.getElementById("escolhaArea"),
+    cardA:        () => document.getElementById("cardA"),
+    cardB:        () => document.getElementById("cardB"),
+    nomeA:        () => document.getElementById("nomeA"),
+    nomeB:        () => document.getElementById("nomeB"),
+    posLabelA:    () => document.getElementById("posLabelA"),
+    posLabelB:    () => document.getElementById("posLabelB"),
+    playersLayer: () => document.getElementById("playersLayer"),
+    fieldWrapper: () => document.querySelector(".field-wrapper"),
+    dueloHeader:  () => document.getElementById("dueloHeader"),
+    feedback:     () => document.getElementById("feedback"),
+    feedbackText: () => document.getElementById("feedbackText"),
+    finalResult:  () => document.getElementById("finalResult"),
+    finalPoints:  () => document.getElementById("finalPoints"),
+    finalDetails: () => document.getElementById("finalDetails")
 };
 
 // --- CONFIGURAR DUELO ---

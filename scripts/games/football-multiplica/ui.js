@@ -74,14 +74,14 @@ export function exibirJogador(jogador, valorTipo) {
     const tipoNome = nomeTipo(tipo);
 
     const statsMap = [
-        { chave: 'gols',            icone: 'fa-futbol',         label: 'Gols'       },
-        { chave: 'assistencias',    icone: 'fa-hands-helping',  label: 'Assist.'    },
-        { chave: 'copas',           icone: 'fa-trophy',         label: 'Copas'      },
-        { chave: 'champions',       icone: 'fa-star',           label: 'UCL'        },
-        { chave: 'libertadores',    icone: 'fa-award',          label: 'Liberta.'   },
-        { chave: 'bolasDeOuro',     icone: 'fa-medal',          label: 'B. Ouro'    },
-        { chave: 'brasileirao',     icone: 'fa-shield-alt',     label: 'BR'         },
-        { chave: 'premierLeague',   icone: 'fa-shield-alt',     label: 'PL'         }
+        { chave: 'gols',            icone: 'fa-futbol',         label: 'Gols'     },
+        { chave: 'assistencias',    icone: 'fa-hands-helping',  label: 'Assist.'  },
+        { chave: 'copas',           icone: 'fa-trophy',         label: 'Copas'    },
+        { chave: 'champions',       icone: 'fa-star',           label: 'UCL'      },
+        { chave: 'libertadores',    icone: 'fa-award',          label: 'Liberta.' },
+        { chave: 'bolasDeOuro',     icone: 'fa-medal',          label: 'B. Ouro'  },
+        { chave: 'brasileirao',     icone: 'fa-shield-alt',     label: 'BR'       },
+        { chave: 'premierLeague',   icone: 'fa-shield-alt',     label: 'PL'       }
     ];
 
     els.jogadorStats.innerHTML = '';

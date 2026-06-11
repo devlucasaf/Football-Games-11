@@ -57,14 +57,22 @@ const GridGerador = {
 
         for (let i = 0; i < TAMANHO_GRID; i++) {
             for (let j = 0; j < TAMANHO_GRID; j++) {
-                const ok = this.temIntersecaoJogadores(linhas[i], linhasTipo, colunas[j], colunasTipo);
+                const ok = this.temIntersecaoJogadores(
+                    linhas[i], 
+                    linhasTipo, 
+                    colunas[j], 
+                    colunasTipo
+                );
                 matriz[i][j] = ok;
                 if (ok) {
                     contagemValidos++;
                 }
             }
         }
-        return { contagemValidos, matriz };
+        return { 
+            contagemValidos, 
+            matriz 
+        };
     },
 
     // --- SORTEAR LINHAS E COLUNAS ---

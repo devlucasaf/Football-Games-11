@@ -1,6 +1,4 @@
 const LegendsConstrutor = {
-
-    // --- INICIALIZAÇÃO ---
     async iniciar() {
         try {
             const parametrosUrl = new URLSearchParams(window.location.search);

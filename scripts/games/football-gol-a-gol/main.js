@@ -18,7 +18,9 @@ function calcularPontos() {
 }
 
 function tentarResposta(palpite) {
-    if (!estado.jogoAtivo) return;
+    if (!estado.jogoAtivo) {
+        return;
+    }
 
     estado.jogoAtivo = false;
 

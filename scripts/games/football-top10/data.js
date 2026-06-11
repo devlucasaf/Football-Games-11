@@ -15,10 +15,10 @@ export function escolherLista() {
         estado.listasUsadas.clear();
     }
 
-    const disponiveis       = estado.listas.filter((_, i) => !estado.listasUsadas.has(i));
-    const idx               = Math.floor(Math.random() * disponiveis.length);
-    const listaEscolhida    = disponiveis[idx];
-    const idxReal           = estado.listas.indexOf(listaEscolhida);
+    const disponiveis    = estado.listas.filter((_, i) => !estado.listasUsadas.has(i));
+    const idx            = Math.floor(Math.random() * disponiveis.length);
+    const listaEscolhida = disponiveis[idx];
+    const idxReal        = estado.listas.indexOf(listaEscolhida);
 
     estado.listasUsadas.add(idxReal);
     estado.listaAtual = listaEscolhida;

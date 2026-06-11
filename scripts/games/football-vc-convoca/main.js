@@ -65,7 +65,9 @@ function iniciarConvocacao(key) {
 // --- SELETOR DE POSIÇÃO ---
 document.querySelectorAll('.pos-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        if (btn.classList.contains('full')) return;
+        if (btn.classList.contains('full')) {
+            return;
+        }
         estado.posicaoAtiva = btn.dataset.pos;
         document.querySelectorAll('.pos-btn').forEach(b => b.classList.toggle('active', b === btn));
     });
@@ -132,10 +134,8 @@ document.getElementById('btnHome').addEventListener('click', () => {
     window.location.href = '../index.html';
 });
 
-// --- CONFIGURAR AUTOCOMPLETE ---
 configurarAutocomplete(adicionarJogador);
 
-// --- INIT ---
 async function init() {
     await carregarDados();
 }

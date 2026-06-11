@@ -69,7 +69,10 @@ const GridDados = {
 
         // --- PAÍSES ---
         const paresPaises = this.deduplicarPorCanon(
-            (dados.selecoes ?? []).map((s) => ({ nome: s.pais || s, bandeira: s.bandeira ?? null })),
+            (dados.selecoes ?? []).map((s) => ({ 
+                nome: s.pais || s, 
+                bandeira: s.bandeira ?? null 
+            })),
             (x) => x.nome
         );
         this.listaPaises = paresPaises.map((p) => p.chave);

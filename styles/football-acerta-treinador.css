@@ -318,7 +318,7 @@
     color: var(--accent-color);
 }
 
-/* Hidden */
+/* --- HIDEN --- */
 .hidden {
     display: none !important;
 }

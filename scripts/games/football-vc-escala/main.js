@@ -129,7 +129,6 @@ const EscalaConstrutor = {
             posicoesFormacao.appendChild(slot);
         });
 
-        // --- ATUALIZA O TEXTO DA FORMAÇÃO ATUAL ---
         const formacaoAtualEl = document.getElementById('currentFormation');
         if (formacaoAtualEl) {
             formacaoAtualEl.textContent = EscalaDados.formacaoAtual;
@@ -222,8 +221,6 @@ const EscalaConstrutor = {
 
         this.filtrarJogadoresPorPosicao(filtro);
     },
-
-
 
     // --- ATUALIZA TODA A INTERFACE COM AS MUDANÇAS REALIZADAS ---
     atualizarTudo() {

@@ -5,14 +5,14 @@
             "nacionalidade": "Itália",
             "anoNascimento": 1959,
             "clubes": ["Reggiana", "Parma", "Juventus", "Milan", "Chelsea", "PSG", "Real Madrid", "Bayern de Munique", "Everton", "Napoli"],
-            "titulos": ["Liga dos Campeões (4x)", "La Liga", "Serie A", "Premier League", "Ligue 1", "Bundesliga"],
-            "curiosidade": "Único técnico a vencer os cinco grandes campeonatos europeus."
+            "titulos": ["5x Champions League", "La Liga", "Serie A", "Premier League", "Ligue 1", "Bundesliga"],
+            "curiosidade": "Único técnico a vencer 5 Champions League."
         },
         {
             "nome": "Pep Guardiola",
             "nacionalidade": "Espanha",
             "anoNascimento": 1971,
-            "clubes": ["Barcelona B", "Barcelona", "Bayern de Munique", "Manchester City"],
+            "clubes": ["Barcelona", "Bayern de Munique", "Manchester City"],
             "titulos": ["Liga dos Campeões (2x)", "Premier League (6x)", "La Liga (3x)", "Bundesliga (3x)"],
             "curiosidade": "Conquistou a tríplice coroa com Barcelona e Manchester City."
         },

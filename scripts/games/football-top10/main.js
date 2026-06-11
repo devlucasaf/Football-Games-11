@@ -110,9 +110,9 @@ function finalizarRodada() {
     estado.jogoAtivo = false;
     desabilitarInput();
 
-    const total    = estado.listaAtual.itens.length;
-    const acertos  = estado.acertosRodada;
-    const pontos   = acertos * 10 + (acertos === total ? 20 : 0);
+    const total   = estado.listaAtual.itens.length;
+    const acertos = estado.acertosRodada;
+    const pontos  = acertos * 10 + (acertos === total ? 20 : 0);
 
     mostrarResultado(acertos, total, pontos);
 }
