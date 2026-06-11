@@ -1,0 +1,483 @@
+.piramide-container {
+    padding: 1.5rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+/* --- MODE SELECT --- */
+.mode-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.mode-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.mode-card h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.mode-card h2 i {
+    color: var(--accent-color);
+}
+
+.mode-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    min-width: 140px;
+}
+
+.btn-mode i {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.btn-mode span {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.btn-mode small {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.btn-facil i {
+    color: #27ae60;
+}
+
+.btn-facil:hover {
+    border-color: #27ae60;
+    background: rgba(46, 204, 113, 0.05);
+}
+
+.btn-normal i {
+    color: #e67e22;
+}
+
+.btn-normal:hover {
+    border-color: #e67e22;
+    background: rgba(230, 126, 34, 0.05);
+}
+
+/* --- GAME INFO --- */
+.game-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.info-categoria {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-categoria i {
+    color: #f1c40f;
+}
+
+.info-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-progresso {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.btn-ajuda {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-ajuda:hover:not(:disabled) {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.btn-ajuda:disabled,
+.btn-ajuda.used {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* --- JOGADOR CARD --- */
+.jogador-card {
+    background: var(--card-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 16px rgba(46, 204, 113, 0.1);
+}
+
+.jogador-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jogador-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0.3rem 0;
+}
+
+.tier-hint {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 0.3rem;
+}
+
+.tier-1-hint {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+}
+
+.tier-2-hint {
+    background: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+}
+
+.tier-3-hint {
+    background: rgba(241, 196, 15, 0.15);
+    color: #f39c12;
+}
+
+.tier-4-hint {
+    background: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+}
+
+/* --- PIRAMIDE GRID --- */
+.piramide-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.piramide-row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.piramide-slot {
+    width: 110px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px dashed var(--border-color);
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.piramide-slot.empty:hover {
+    border-color: var(--accent-color);
+    background: rgba(46, 204, 113, 0.05);
+    transform: scale(1.03);
+}
+
+.piramide-slot.highlighted {
+    border-color: var(--accent-color);
+    background: rgba(46, 204, 113, 0.08);
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.2);
+}
+
+.piramide-slot.filled {
+    border-style: solid;
+    border-color: var(--border-color);
+    cursor: default;
+    background: var(--card-bg);
+}
+
+.piramide-slot.correct-reveal {
+    border-color: #27ae60 !important;
+    background: rgba(46, 204, 113, 0.1) !important;
+}
+
+.piramide-slot.wrong-reveal {
+    border-color: #e74c3c !important;
+    background: rgba(231, 76, 60, 0.1) !important;
+}
+
+.slot-number {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.slot-nome {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    padding: 0 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+/* --- FINAL RESULT --- */
+.final-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.final-result h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.final-result h2 i {
+    color: #f1c40f;
+}
+
+.final-score-area {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.final-score {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.final-label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.final-message {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Final Pyramid */
+.final-piramide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+}
+
+.final-row {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.final-slot {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.final-slot.acertou {
+    border-color: #27ae60;
+    background: rgba(46, 204, 113, 0.08);
+}
+
+.final-slot.errou {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+}
+
+.final-slot-rank {
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+}
+
+.final-slot-nome {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.final-slot-valor {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 0.7rem;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-retry,
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.btn-retry {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.btn-retry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-home {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.btn-home:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .piramide-slot {
+        width: 80px;
+        height: 44px;
+    }
+
+    .slot-nome {
+        font-size: 0.65rem;
+    }
+
+    .jogador-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .final-slot {
+        min-width: 75px;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.65rem;
+    }
+
+    .mode-card {
+        padding: 1.5rem;
+    }
+
+    .game-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}

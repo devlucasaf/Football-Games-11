@@ -1,0 +1,229 @@
+{
+    "categorias": [
+        {
+            "titulo": "Mais gols em Copas do Mundo",
+            "jogadores": [
+                { "nome": "Miroslav Klose", "valor": 16 },
+                { "nome": "Ronaldo Fenômeno", "valor": 15 },
+                { "nome": "Gerd Müller", "valor": 14 },
+                { "nome": "Just Fontaine", "valor": 13 },
+                { "nome": "Pelé", "valor": 12 },
+                { "nome": "Mbappé", "valor": 12 },
+                { "nome": "Jürgen Klinsmann", "valor": 11 },
+                { "nome": "Sándor Kocsis", "valor": 11 },
+                { "nome": "Gabriel Batistuta", "valor": 10 },
+                { "nome": "Thomas Müller", "valor": 10 }
+            ]
+        },
+        {
+            "titulo": "Mais gols na Champions League",
+            "jogadores": [
+                { "nome": "Cristiano Ronaldo", "valor": 140 },
+                { "nome": "Messi", "valor": 129 },
+                { "nome": "Lewandowski", "valor": 101 },
+                { "nome": "Benzema", "valor": 90 },
+                { "nome": "Raúl", "valor": 71 },
+                { "nome": "Ruud van Nistelrooy", "valor": 56 },
+                { "nome": "Thierry Henry", "valor": 50 },
+                { "nome": "Zlatan Ibrahimovic", "valor": 48 },
+                { "nome": "Thomas Müller", "valor": 54 },
+                { "nome": "Neymar", "valor": 44 }
+            ]
+        },
+        {
+            "titulo": "Mais Bolas de Ouro ganhas",
+            "jogadores": [
+                { "nome": "Messi", "valor": 8 },
+                { "nome": "Cristiano Ronaldo", "valor": 5 },
+                { "nome": "Johan Cruyff", "valor": 3 },
+                { "nome": "Michel Platini", "valor": 3 },
+                { "nome": "Marco van Basten", "valor": 3 },
+                { "nome": "Ronaldo Fenômeno", "valor": 2 },
+                { "nome": "Zinedine Zidane", "valor": 1 },
+                { "nome": "Kaká", "valor": 1 },
+                { "nome": "Modric", "valor": 1 },
+                { "nome": "Benzema", "valor": 1 }
+            ]
+        },
+        {
+            "titulo": "Mais títulos de Champions League (jogador)",
+            "jogadores": [
+                { "nome": "Paco Gento", "valor": 6 },
+                { "nome": "Cristiano Ronaldo", "valor": 5 },
+                { "nome": "Carvajal", "valor": 6 },
+                { "nome": "Modric", "valor": 6 },
+                { "nome": "Kroos", "valor": 6 },
+                { "nome": "Benzema", "valor": 5 },
+                { "nome": "Maldini", "valor": 5 },
+                { "nome": "Xavi", "valor": 4 },
+                { "nome": "Iniesta", "valor": 4 },
+                { "nome": "Seedorf", "valor": 4 }
+            ]
+        },
+        {
+            "titulo": "Mais assistências na história da Premier League",
+            "jogadores": [
+                { "nome": "Ryan Giggs", "valor": 162 },
+                { "nome": "Cesc Fàbregas", "valor": 111 },
+                { "nome": "Wayne Rooney", "valor": 103 },
+                { "nome": "Frank Lampard", "valor": 102 },
+                { "nome": "Dennis Bergkamp", "valor": 94 },
+                { "nome": "David Beckham", "valor": 80 },
+                { "nome": "David Silva", "valor": 93 },
+                { "nome": "Steven Gerrard", "valor": 92 },
+                { "nome": "De Bruyne", "valor": 110 },
+                { "nome": "James Milner", "valor": 95 }
+            ]
+        },
+        {
+            "titulo": "Mais gols por seleções nacionais",
+            "jogadores": [
+                { "nome": "Cristiano Ronaldo", "valor": 135 },
+                { "nome": "Ali Daei", "valor": 108 },
+                { "nome": "Messi", "valor": 112 },
+                { "nome": "Sunil Chhetri", "valor": 94 },
+                { "nome": "Mokhtar Dahari", "valor": 89 },
+                { "nome": "Neymar", "valor": 79 },
+                { "nome": "Lewandowski", "valor": 84 },
+                { "nome": "Pelé", "valor": 77 },
+                { "nome": "Romário", "valor": 55 },
+                { "nome": "Suárez", "valor": 69 }
+            ]
+        },
+        {
+            "titulo": "Mais gols em uma única temporada europeia",
+            "jogadores": [
+                { "nome": "Messi", "valor": 73 },
+                { "nome": "Cristiano Ronaldo", "valor": 69 },
+                { "nome": "Lewandowski", "valor": 64 },
+                { "nome": "Gerd Müller", "valor": 67 },
+                { "nome": "Haaland", "valor": 52 },
+                { "nome": "Mbappé", "valor": 44 },
+                { "nome": "Suárez", "valor": 59 },
+                { "nome": "Neymar", "valor": 43 },
+                { "nome": "Zlatan Ibrahimovic", "valor": 50 },
+                { "nome": "Benzema", "valor": 44 }
+            ]
+        },
+        {
+            "titulo": "Maiores artilheiros da história do Real Madrid",
+            "jogadores": [
+                { "nome": "Cristiano Ronaldo", "valor": 450 },
+                { "nome": "Raúl", "valor": 323 },
+                { "nome": "Benzema", "valor": 354 },
+                { "nome": "Di Stéfano", "valor": 308 },
+                { "nome": "Santillana", "valor": 290 },
+                { "nome": "Puskás", "valor": 242 },
+                { "nome": "Hugo Sánchez", "valor": 207 },
+                { "nome": "Butragueño", "valor": 171 },
+                { "nome": "Higuaín", "valor": 121 },
+                { "nome": "Sergio Ramos", "valor": 101 }
+            ]
+        },
+        {
+            "titulo": "Maiores artilheiros da história do Barcelona",
+            "jogadores": [
+                { "nome": "Messi", "valor": 672 },
+                { "nome": "César Rodríguez", "valor": 232 },
+                { "nome": "Suárez", "valor": 198 },
+                { "nome": "László Kubala", "valor": 194 },
+                { "nome": "Samuel Eto'o", "valor": 130 },
+                { "nome": "Rivaldo", "valor": 130 },
+                { "nome": "Ronaldinho", "valor": 94 },
+                { "nome": "Neymar", "valor": 105 },
+                { "nome": "Lewandowski", "valor": 78 },
+                { "nome": "Romário", "valor": 53 }
+            ]
+        },
+        {
+            "titulo": "Mais jogos pela seleção brasileira",
+            "jogadores": [
+                { "nome": "Cafu", "valor": 142 },
+                { "nome": "Roberto Carlos", "valor": 125 },
+                { "nome": "Neymar", "valor": 128 },
+                { "nome": "Dani Alves", "valor": 126 },
+                { "nome": "Lúcio", "valor": 105 },
+                { "nome": "Thiago Silva", "valor": 113 },
+                { "nome": "Ronaldo Fenômeno", "valor": 98 },
+                { "nome": "Rivaldo", "valor": 74 },
+                { "nome": "Ronaldinho", "valor": 97 },
+                { "nome": "Marcelo", "valor": 58 }
+            ]
+        },
+        {
+            "titulo": "Mais gols em La Liga (todos os tempos)",
+            "jogadores": [
+                { "nome": "Messi", "valor": 474 },
+                { "nome": "Cristiano Ronaldo", "valor": 311 },
+                { "nome": "Telmo Zarra", "valor": 251 },
+                { "nome": "Hugo Sánchez", "valor": 234 },
+                { "nome": "Raúl", "valor": 228 },
+                { "nome": "Di Stéfano", "valor": 227 },
+                { "nome": "Benzema", "valor": 192 },
+                { "nome": "Suárez", "valor": 147 },
+                { "nome": "Griezmann", "valor": 144 },
+                { "nome": "David Villa", "valor": 186 }
+            ]
+        },
+        {
+            "titulo": "Mais cartões vermelhos na carreira",
+            "jogadores": [
+                { "nome": "Sergio Ramos", "valor": 27 },
+                { "nome": "Pepe", "valor": 17 },
+                { "nome": "Zlatan Ibrahimovic", "valor": 17 },
+                { "nome": "Zinedine Zidane", "valor": 14 },
+                { "nome": "Roy Keane", "valor": 13 },
+                { "nome": "Patrick Vieira", "valor": 12 },
+                { "nome": "Gattuso", "valor": 12 },
+                { "nome": "Diego Costa", "valor": 11 },
+                { "nome": "Duncan Ferguson", "valor": 10 },
+                { "nome": "Materazzi", "valor": 10 }
+            ]
+        },
+        {
+            "titulo": "Jogadores mais caros da história (valor de transferência)",
+            "jogadores": [
+                { "nome": "Neymar", "valor": 222 },
+                { "nome": "Mbappé", "valor": 180 },
+                { "nome": "Coutinho", "valor": 145 },
+                { "nome": "Dembélé", "valor": 140 },
+                { "nome": "João Félix", "valor": 126 },
+                { "nome": "Griezmann", "valor": 120 },
+                { "nome": "Jack Grealish", "valor": 117 },
+                { "nome": "Lukaku", "valor": 113 },
+                { "nome": "Haaland", "valor": 75 },
+                { "nome": "Cristiano Ronaldo", "valor": 117 }
+            ]
+        },
+        {
+            "titulo": "Mais títulos de Copa América (jogador)",
+            "jogadores": [
+                { "nome": "Messi", "valor": 2 },
+                { "nome": "Zizinho", "valor": 3 },
+                { "nome": "Garrincha", "valor": 2 },
+                { "nome": "Pelé", "valor": 0 },
+                { "nome": "Gabriel Batistuta", "valor": 2 },
+                { "nome": "Di María", "valor": 2 },
+                { "nome": "Neymar", "valor": 1 },
+                { "nome": "Ronaldinho", "valor": 1 },
+                { "nome": "Roberto Carlos", "valor": 2 },
+                { "nome": "Cafu", "valor": 2 }
+            ]
+        },
+        {
+            "titulo": "Mais gols de falta na carreira",
+            "jogadores": [
+                { "nome": "Juninho Pernambucano", "valor": 77 },
+                { "nome": "Messi", "valor": 65 },
+                { "nome": "Cristiano Ronaldo", "valor": 62 },
+                { "nome": "David Beckham", "valor": 50 },
+                { "nome": "Ronaldinho", "valor": 48 },
+                { "nome": "Zico", "valor": 43 },
+                { "nome": "Mihajlovic", "valor": 42 },
+                { "nome": "Diego Maradona", "valor": 38 },
+                { "nome": "Roberto Carlos", "valor": 36 },
+                { "nome": "Pirlo", "valor": 32 }
+            ]
+        }
+    ]
+}
