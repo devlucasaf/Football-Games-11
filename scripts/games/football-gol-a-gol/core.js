@@ -1,12 +1,12 @@
 const estado = {
     gols:           [],
-    golAtual:       null,
-    dicasReveladas: 0,
-    pontos:         0,
-    rodada:         0,
+    sorteados:      [],
+    rodadaAtual:    0,
+    acertos:        0,
     totalRodadas:   10,
-    jogoAtivo:      false,
-    golsUsados:     []
+    dicasReveladas: 0,
+    maxDicas:       10,
+    historico:      []
 };
 
 export default estado;

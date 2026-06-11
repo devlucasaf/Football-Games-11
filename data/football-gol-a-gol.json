@@ -1,154 +1,388 @@
 {
     "gols": [
         {
-            "descricao": "Final da Copa do Mundo de 2002. Gol decisivo no segundo tempo que selou o pentacampeonato brasileiro contra a Alemanha.",
             "resposta": "Ronaldo",
-            "dicas": ["Ano: 2002", "Estádio: International Stadium Yokohama", "Adversário: Alemanha", "Placar final: 2x0"],
-            "alternativas": ["Ronaldo", "Ronaldo Fenômeno", "Ronaldo Nazário"]
+            "alternativas": ["Ronaldo", "Ronaldo Fenômeno", "Ronaldo Nazário"],
+            "dicas": [
+                "Gol marcado em uma final de Copa do Mundo.",
+                "O jogador atuava como centroavante.",
+                "O gol foi no segundo tempo.",
+                "A partida terminou 2x0.",
+                "O adversário era a Alemanha.",
+                "A Copa foi realizada na Ásia.",
+                "Ano: 2002.",
+                "O jogador é brasileiro.",
+                "Ele havia perdido a final de 1998.",
+                "Marcou dois gols nesta final — coroando sua redenção."
+            ]
         },
         {
-            "descricao": "Gol de bicicleta na Champions League 2017/18, quartas de final. Considerado um dos mais bonitos da história da competição.",
             "resposta": "Cristiano Ronaldo",
-            "dicas": ["Ano: 2018", "Estádio: Allianz Stadium, Turim", "Adversário: Juventus", "Time: Real Madrid"],
-            "alternativas": ["Cristiano Ronaldo", "CR7"]
+            "alternativas": ["Cristiano Ronaldo", "CR7", "Cristiano"],
+            "dicas": [
+                "Gol de bicicleta em uma partida da Champions League.",
+                "O gol foi nas quartas de final.",
+                "Até os torcedores adversários aplaudiram de pé.",
+                "A temporada era 2017/18.",
+                "O jogador vestia a camisa de um gigante espanhol.",
+                "O adversário era um grande clube italiano.",
+                "O estádio ficava em Turim.",
+                "O placar do jogo ficou em 3x0.",
+                "O jogador é português.",
+                "Considerado um dos mais bonitos gols da história da Champions."
+            ]
         },
         {
-            "descricao": "Gol icônico na final da Copa do Mundo de 1970. Jogada coletiva perfeita finalizada com categoria para selar o tricampeonato.",
-            "resposta": "Carlos Alberto Torres",
-            "dicas": ["Ano: 1970", "Estádio: Azteca, Cidade do México", "Adversário: Itália", "Placar final: 4x1"],
-            "alternativas": ["Carlos Alberto Torres", "Carlos Alberto"]
+            "resposta": "Maradona",
+            "alternativas": ["Maradona", "Diego Maradona", "Diego Armando Maradona"],
+            "dicas": [
+                "Gol que ficou conhecido como 'Gol do Século'.",
+                "O jogador driblou metade do time adversário.",
+                "A jogada começou no meio de campo.",
+                "Partida de quartas de final de Copa do Mundo.",
+                "O adversário era a Inglaterra.",
+                "Ano: 1986.",
+                "O mesmo jogador fez outro gol polêmico nesta partida.",
+                "A Copa foi no México.",
+                "O jogador era argentino e usava a camisa 10.",
+                "O Estádio Azteca foi palco desta obra de arte."
+            ]
         },
         {
-            "descricao": "A 'Mão de Deus'. Gol controverso marcado com a mão nas quartas de final da Copa do Mundo.",
-            "resposta": "Diego Maradona",
-            "dicas": ["Ano: 1986", "Estádio: Azteca, Cidade do México", "Adversário: Inglaterra", "Time: Argentina"],
-            "alternativas": ["Maradona", "Diego Maradona"]
-        },
-        {
-            "descricao": "O 'Gol do Século'. Arrancada épica driblando metade do time adversário na Copa do Mundo, mesmo jogo da Mão de Deus.",
-            "resposta": "Diego Maradona",
-            "dicas": ["Ano: 1986", "Estádio: Azteca, Cidade do México", "Adversário: Inglaterra", "Driblou 6 jogadores"],
-            "alternativas": ["Maradona", "Diego Maradona"]
-        },
-        {
-            "descricao": "Gol de voleio na final da Champions League 2002 contra o Bayer Leverkusen. Bola veio da esquerda e ele acertou de primeira.",
             "resposta": "Zidane",
-            "dicas": ["Ano: 2002", "Estádio: Hampden Park, Glasgow", "Adversário: Bayer Leverkusen", "Time: Real Madrid"],
-            "alternativas": ["Zidane", "Zinedine Zidane"]
+            "alternativas": ["Zidane", "Zinedine Zidane", "Zizou"],
+            "dicas": [
+                "Gol de voleio em uma final de Champions League.",
+                "A bola veio de um cruzamento da esquerda.",
+                "O chute entrou no ângulo com o pé esquerdo.",
+                "A partida era Real Madrid vs Bayer Leverkusen.",
+                "Ano: 2002.",
+                "O estádio era o Hampden Park, em Glasgow.",
+                "O jogador é francês.",
+                "Considerado um dos gols mais bonitos da história das finais.",
+                "Ele havia vencido a Copa do Mundo em 1998.",
+                "Usava a camisa 5 naquele time."
+            ]
         },
         {
-            "descricao": "Gol de falta no último minuto na final da Copa do Mundo de 2014. Deu o título à Alemanha na prorrogação.",
-            "resposta": "Götze",
-            "dicas": ["Ano: 2014", "Estádio: Maracanã, Rio de Janeiro", "Adversário: Argentina", "Foi gol de peito, não de falta"],
-            "alternativas": ["Götze", "Gotze", "Mario Götze", "Mario Gotze"]
-        },
-        {
-            "descricao": "Gol decisivo nos acréscimos da final da Champions League 1999. O Manchester United virou o jogo contra o Bayern de Munique.",
-            "resposta": "Solskjaer",
-            "dicas": ["Ano: 1999", "Estádio: Camp Nou, Barcelona", "Adversário: Bayern de Munique", "Minuto: 93"],
-            "alternativas": ["Solskjaer", "Ole Gunnar Solskjaer"]
-        },
-        {
-            "descricao": "Gol de cobertura antológico na Copa do Mundo de 1958. Um jovem de 17 anos marcou na final contra a Suécia.",
             "resposta": "Pelé",
-            "dicas": ["Ano: 1958", "Estádio: Råsunda, Estocolmo", "Adversário: Suécia", "Tinha apenas 17 anos"],
-            "alternativas": ["Pelé", "Pele"]
+            "alternativas": ["Pelé", "Pele", "Edson Arantes"],
+            "dicas": [
+                "Gol em uma final de Copa do Mundo com cabeceio.",
+                "O jogador deu um salto impressionante para cabecear.",
+                "O adversário era a Itália.",
+                "A final terminou 4x1.",
+                "Ano: 1970.",
+                "A Copa foi no México.",
+                "O jogador era brasileiro.",
+                "Foi o gol que abriu o placar da final.",
+                "É considerado o Rei do Futebol.",
+                "Conquistou seu terceiro título mundial nesta partida."
+            ]
         },
         {
-            "descricao": "Cabeceio fulminante na final da Copa do Mundo de 1998. Dois gols de cabeça que deram o título à França em casa.",
-            "resposta": "Zidane",
-            "dicas": ["Ano: 1998", "Estádio: Stade de France, Paris", "Adversário: Brasil", "Marcou 2 gols de cabeça"],
-            "alternativas": ["Zidane", "Zinedine Zidane"]
+            "resposta": "Iniesta",
+            "alternativas": ["Iniesta", "Andrés Iniesta", "Andres Iniesta"],
+            "dicas": [
+                "Gol que deu um título inédito para sua seleção.",
+                "O gol foi na prorrogação.",
+                "A final foi disputada no Soccer City.",
+                "O adversário era a Holanda.",
+                "Ano: 2010.",
+                "Final da Copa do Mundo.",
+                "O passe decisivo veio de Cesc Fàbregas.",
+                "O jogador é espanhol.",
+                "Ele tirou a camisa na comemoração, homenageando Dani Jarque.",
+                "O placar final foi 1x0."
+            ]
         },
         {
-            "descricao": "Gol na final da Champions League 2015 para fechar a goleada de 3x1 sobre a Juventus. Finalização de canhota no canto.",
-            "resposta": "Neymar",
-            "dicas": ["Ano: 2015", "Estádio: Olympiastadion, Berlim", "Adversário: Juventus", "Time: Barcelona"],
-            "alternativas": ["Neymar", "Neymar Jr"]
+            "resposta": "Götze",
+            "alternativas": ["Götze", "Gotze", "Mario Götze", "Mario Gotze"],
+            "dicas": [
+                "Gol que decidiu uma final de Copa do Mundo.",
+                "O gol foi na prorrogação, aos 113 minutos.",
+                "O jogador dominou no peito e finalizou de esquerda.",
+                "O adversário era a Argentina.",
+                "Ano: 2014.",
+                "A final foi no Estádio do Maracanã.",
+                "O jogador entrou como substituto.",
+                "O técnico disse: 'Mostre ao mundo que é melhor que Messi'.",
+                "O jogador é alemão.",
+                "A Alemanha conquistou seu 4º título mundial."
+            ]
         },
         {
-            "descricao": "Gol de letra em clássico paulista na final do Campeonato Paulista de 2012. Lance considerado obra-prima do futebol brasileiro.",
-            "resposta": "Neymar",
-            "dicas": ["Ano: 2012", "Competição: Campeonato Paulista", "Adversário: Santos fez contra o Palmeiras... Não! Foi pelo Santos", "Time: Santos"],
-            "alternativas": ["Neymar", "Neymar Jr"]
+            "resposta": "Roberto Carlos",
+            "alternativas": ["Roberto Carlos"],
+            "dicas": [
+                "Gol de falta com efeito absurdo.",
+                "A bola fez uma curva que parecia impossível.",
+                "O goleiro e a barreira ficaram estáticos.",
+                "Era um amistoso contra a França.",
+                "Ano: 1997.",
+                "O estádio era o Parc des Princes, em Paris.",
+                "O jogador chutou com a parte externa do pé esquerdo.",
+                "O jogador é brasileiro e era lateral-esquerdo.",
+                "Jogava no Real Madrid na época.",
+                "Até hoje físicos estudam a trajetória desta cobrança."
+            ]
         },
         {
-            "descricao": "Gol olímpico na final das Olimpíadas de 2016, cobrança de falta que garantiu o primeiro ouro olímpico do Brasil no futebol masculino.",
-            "resposta": "Neymar",
-            "dicas": ["Ano: 2016", "Estádio: Maracanã, Rio de Janeiro", "Adversário: Alemanha", "Foi nos pênaltis, mas ele fez gol na falta antes"],
-            "alternativas": ["Neymar", "Neymar Jr"]
-        },
-        {
-            "descricao": "Hat-trick épico na semifinal da Champions League, virando um 4x0 do primeiro jogo. O sexto gol foi de pênalti no último minuto.",
-            "resposta": "Lucas Moura",
-            "dicas": ["Ano: 2019", "Estádio: Johan Cruijff Arena, Amsterdã", "Adversário: Ajax", "Time: Tottenham"],
-            "alternativas": ["Lucas Moura", "Lucas"]
-        },
-        {
-            "descricao": "Gol antológico de fora da área na final da Eurocopa 1996. Chute de primeira de fora da área contra a República Tcheca.",
-            "resposta": "Oliver Bierhoff",
-            "dicas": ["Ano: 1996", "Estádio: Wembley, Londres", "Adversário: República Tcheca", "Golden Goal (gol de ouro)"],
-            "alternativas": ["Oliver Bierhoff", "Bierhoff"]
-        },
-        {
-            "descricao": "Gol salvador no último minuto da fase de grupos da Champions 2018/19 que classificou o time. O camisa 10 apareceu de cabeça.",
             "resposta": "Messi",
-            "dicas": ["Ano: 2019", "Adversário: PSV Eindhoven... Não! Foi Tottenham", "Time: Barcelona", "Gol de cabeça não é tão comum para ele"],
-            "alternativas": ["Messi", "Lionel Messi"]
+            "alternativas": ["Messi", "Lionel Messi", "Leo Messi"],
+            "dicas": [
+                "Gol em uma final de Copa do Mundo.",
+                "O jogador abriu o placar do jogo.",
+                "O gol foi de pênalti no primeiro tempo.",
+                "O adversário era a França.",
+                "Ano: 2022.",
+                "O jogo terminou empatado e foi para os pênaltis.",
+                "A partida é considerada uma das maiores finais da história.",
+                "O jogador é argentino.",
+                "Após o título, levantou a taça que faltava em sua carreira.",
+                "O placar nos 90 minutos ficou 2x2 antes da prorrogação."
+            ]
         },
         {
-            "descricao": "Gol de calcanhar de costas para o gol na Champions League. Lance genial na semifinal de 2019.",
-            "resposta": "Lucas Moura",
-            "dicas": ["Ano: 2019", "Adversário: Ajax", "Time: Tottenham", "Completou um hat-trick histórico"],
-            "alternativas": ["Lucas Moura", "Lucas"]
-        },
-        {
-            "descricao": "Gol de falta espetacular na Copa América 2019. Cobrou por baixo da barreira com perfeição.",
-            "resposta": "Messi",
-            "dicas": ["Ano: 2019", "Adversário: Colômbia... Não! Chile? Não! Era semifinal", "Competição: Copa América", "Seleção: Argentina"],
-            "alternativas": ["Messi", "Lionel Messi"]
-        },
-        {
-            "descricao": "Gol acrobático na final da Champions League 2017. Chute de primeira após cruzamento que abriu o placar da virada.",
-            "resposta": "Mandzukic",
-            "dicas": ["Ano: 2017", "Estádio: Millennium Stadium, Cardiff", "Adversário: Real Madrid", "Time: Juventus (gol contra!)"],
-            "alternativas": ["Mandzukic", "Mario Mandzukic"]
-        },
-        {
-            "descricao": "Gol de voleio após domínio de peito na final da Copa do Mundo de 2006. O cabeça-de-área marcou o gol que empatou para a Itália.",
-            "resposta": "Materazzi",
-            "dicas": ["Ano: 2006", "Estádio: Olympiastadion, Berlim", "Adversário: França", "Depois levou uma cabeçada de Zidane"],
-            "alternativas": ["Materazzi", "Marco Materazzi"]
-        },
-        {
-            "descricao": "O gol que deu o hexa à seleção argentina na final da Copa 2022. Golaço de canhota na prorrogação.",
-            "resposta": "Messi",
-            "dicas": ["Ano: 2022", "Estádio: Lusail, Qatar", "Adversário: França", "Seu primeiro título de Copa do Mundo"],
-            "alternativas": ["Messi", "Lionel Messi"]
-        },
-        {
-            "descricao": "Golaço de fora da área no último minuto que classificou o Real Madrid na Champions 2022. Virada épica nas semifinais.",
-            "resposta": "Rodrygo",
-            "dicas": ["Ano: 2022", "Adversário: Manchester City", "Estádio: Santiago Bernabéu", "Fez 2 gols nos acréscimos"],
-            "alternativas": ["Rodrygo", "Rodrygo Goes"]
-        },
-        {
-            "descricao": "Gol de cabeça na final da Champions 2009. Saltou acima do zagueiro para cabecear e selar a vitória.",
-            "resposta": "Messi",
-            "dicas": ["Ano: 2009", "Estádio: Olímpico de Roma", "Adversário: Manchester United", "Time: Barcelona"],
-            "alternativas": ["Messi", "Lionel Messi"]
-        },
-        {
-            "descricao": "Golaço de voleio na final da FA Cup 2006. Último jogo pelo clube antes de se aposentar ali.",
             "resposta": "Gerrard",
-            "dicas": ["Ano: 2006", "Estádio: Millennium Stadium, Cardiff", "Adversário: West Ham", "Time: Liverpool"],
-            "alternativas": ["Gerrard", "Steven Gerrard"]
+            "alternativas": ["Gerrard", "Steven Gerrard", "Steve Gerrard"],
+            "dicas": [
+                "Gol de cabeça em uma final de Champions League.",
+                "O time estava perdendo de 3x0 no intervalo.",
+                "Este gol iniciou uma das maiores viradas da história.",
+                "A final foi em Istambul.",
+                "Ano: 2005.",
+                "O adversário era o Milan.",
+                "O time empatou em 3x3 e venceu nos pênaltis.",
+                "O jogador era capitão e usava a camisa 8.",
+                "O jogador é inglês.",
+                "O time vencedor era o Liverpool."
+            ]
         },
         {
-            "descricao": "Gol de peito aos 48 do segundo tempo na final do Mundial de Clubes 2012. O gol do título do Corinthians.",
-            "resposta": "Guerrero",
-            "dicas": ["Ano: 2012", "Estádio: Toyota, Japão", "Adversário: Chelsea", "Time: Corinthians"],
-            "alternativas": ["Guerrero", "Paolo Guerrero"]
+            "resposta": "Bale",
+            "alternativas": ["Bale", "Gareth Bale"],
+            "dicas": [
+                "Gol de bicicleta em uma final de Champions League.",
+                "O jogador havia acabado de entrar como substituto.",
+                "O gol ampliou a vantagem para 3x1.",
+                "A final foi em Kiev, 2018.",
+                "O adversário era o Liverpool.",
+                "O jogador é galês.",
+                "Ele fez dois gols nesta final.",
+                "O goleiro adversário cometeu uma falha no segundo gol.",
+                "O time vencedor era o Real Madrid.",
+                "Conquistou sua 4ª Champions com este clube."
+            ]
+        },
+        {
+            "resposta": "Neymar",
+            "alternativas": ["Neymar", "Neymar Jr", "Neymar Junior"],
+            "dicas": [
+                "Gol de falta perfeita em uma remontada histórica.",
+                "O time precisava virar um 4x0 sofrido na ida.",
+                "O gol de falta foi aos 88 minutos.",
+                "A partida era Champions League, oitavas de final.",
+                "Ano: 2017.",
+                "O time virou para 6x1 no placar agregado.",
+                "O adversário era o PSG.",
+                "O estádio era o Camp Nou.",
+                "O jogador é brasileiro.",
+                "Ele também deu assistência para o gol nos acréscimos."
+            ]
+        },
+        {
+            "resposta": "Ibrahimovic",
+            "alternativas": ["Ibrahimovic", "Zlatan", "Zlatan Ibrahimovic"],
+            "dicas": [
+                "Gol de bicicleta de fora da área.",
+                "O gol foi em um amistoso contra a Inglaterra.",
+                "A distância do chute era de aproximadamente 30 metros.",
+                "Ano: 2012.",
+                "O jogador marcou 4 gols nesta partida.",
+                "O placar final foi 4x2.",
+                "O estádio era o Friends Arena, em Estocolmo.",
+                "O jogador é sueco.",
+                "Ele chutou de costas para o gol.",
+                "Considerado o gol Puskás daquele ano."
+            ]
+        },
+        {
+            "resposta": "Bergkamp",
+            "alternativas": ["Bergkamp", "Dennis Bergkamp"],
+            "dicas": [
+                "Gol com domínio e giro genial nas quartas de final de uma Copa.",
+                "O jogador dominou um lançamento longo com um toque mágico.",
+                "O gol foi marcado nos minutos finais da partida.",
+                "Copa do Mundo de 1998.",
+                "O adversário era a Argentina.",
+                "O lançamento veio de Frank de Boer.",
+                "O jogador girou sobre o marcador e finalizou.",
+                "O jogador é holandês.",
+                "Ele jogava no Arsenal na época.",
+                "Um dos gols mais elegantes da história das Copas."
+            ]
+        },
+        {
+            "resposta": "Carlos Alberto Torres",
+            "alternativas": ["Carlos Alberto", "Carlos Alberto Torres"],
+            "dicas": [
+                "Gol que fechou a goleada em uma final de Copa do Mundo.",
+                "Uma jogada coletiva envolveu quase todo o time.",
+                "O jogador finalizou de primeira com chute cruzado.",
+                "A final foi Brasil 4x1 Itália.",
+                "Ano: 1970.",
+                "A Copa foi no México.",
+                "O jogador era o capitão da seleção.",
+                "Ele era lateral-direito.",
+                "É chamado de 'o gol mais bonito de uma Copa'.",
+                "Pelé deu o passe decisivo para a finalização."
+            ]
+        },
+        {
+            "resposta": "Van Basten",
+            "alternativas": ["Van Basten", "Marco van Basten"],
+            "dicas": [
+                "Gol de voleio em uma final de Eurocopa.",
+                "O ângulo de finalização parecia impossível.",
+                "A bola veio de um cruzamento longo da esquerda.",
+                "A final foi contra a União Soviética.",
+                "Ano: 1988.",
+                "O estádio era o Olympiastadion, em Munique.",
+                "O jogador é holandês.",
+                "O placar da final foi 2x0.",
+                "Ele jogava no Milan.",
+                "Considerado um dos gols de voleio mais difíceis já marcados."
+            ]
+        },
+        {
+            "resposta": "Mbappé",
+            "alternativas": ["Mbappé", "Mbappe", "Kylian Mbappé", "Kylian Mbappe"],
+            "dicas": [
+                "Marcou um hat-trick em uma final de Copa do Mundo.",
+                "Dois dos gols foram em menos de 2 minutos.",
+                "O primeiro gol foi de pênalti aos 80 minutos.",
+                "O adversário era a Argentina.",
+                "Ano: 2022.",
+                "A França perdia de 2x0 quando ele apareceu.",
+                "Também converteu sua cobrança na disputa de pênaltis.",
+                "O jogador é francês.",
+                "A final terminou 3x3 e foi decidida nos pênaltis.",
+                "Apesar do hat-trick, seu time perdeu."
+            ]
+        },
+        {
+            "resposta": "Ramos",
+            "alternativas": ["Ramos", "Sergio Ramos", "Sérgio Ramos"],
+            "dicas": [
+                "Gol de cabeça nos acréscimos de uma final de Champions.",
+                "O gol empatou a partida e levou para a prorrogação.",
+                "O gol foi marcado aos 92 minutos.",
+                "A final foi em Lisboa.",
+                "Ano: 2014.",
+                "O adversário era o Atlético de Madrid.",
+                "O time venceu por 4x1 na prorrogação.",
+                "O jogador é espanhol e era zagueiro.",
+                "Ele era capitão do time.",
+                "O Real Madrid conquistou a 'Décima' (10ª Champions)."
+            ]
+        },
+        {
+            "resposta": "Agüero",
+            "alternativas": ["Aguero", "Agüero", "Sergio Aguero", "Sergio Agüero", "Kun Aguero", "Kun Agüero"],
+            "dicas": [
+                "Gol no último lance que deu um título dramático.",
+                "O gol foi aos 93:20 do segundo tempo.",
+                "O time precisava de um gol para ser campeão.",
+                "'AGUEROOOO!' — narração icônica de Martin Tyler.",
+                "Temporada 2011/12 da Premier League.",
+                "O adversário era o Queens Park Rangers.",
+                "O placar estava 2x2 e ele fez o 3x2.",
+                "O jogador é argentino.",
+                "O estádio era o Etihad Stadium.",
+                "Manchester City campeão inglês pela 1ª vez em 44 anos."
+            ]
+        },
+        {
+            "resposta": "Ronaldinho",
+            "alternativas": ["Ronaldinho", "Ronaldinho Gaúcho"],
+            "dicas": [
+                "Gol de falta que enganou o goleiro em uma Copa do Mundo.",
+                "Muitos debatem se foi cruzamento ou chute.",
+                "A bola passou por cima da barreira com efeito.",
+                "O goleiro estava posicionado no centro do gol.",
+                "Copa do Mundo de 2002, quartas de final.",
+                "O adversário era a Inglaterra.",
+                "O jogador foi expulso depois nesta partida.",
+                "O jogador é brasileiro.",
+                "Ele tinha apenas 22 anos na época.",
+                "O goleiro era David Seaman."
+            ]
+        },
+        {
+            "resposta": "Solskjaer",
+            "alternativas": ["Solskjaer", "Ole Gunnar Solskjaer", "Solskjær"],
+            "dicas": [
+                "Gol nos acréscimos que virou uma final de Champions League.",
+                "O gol foi marcado aos 93 minutos.",
+                "Seu time perdia de 1x0 até os 91 minutos.",
+                "A final foi em Barcelona, no Camp Nou.",
+                "Ano: 1999.",
+                "O adversário era o Bayern de Munique.",
+                "O jogador entrou como substituto.",
+                "O jogador é norueguês.",
+                "O time completou uma tríplice coroa nesta temporada.",
+                "Manchester United 2x1 Bayern — a virada impossível."
+            ]
+        },
+        {
+            "resposta": "Tardelli",
+            "alternativas": ["Tardelli", "Marco Tardelli"],
+            "dicas": [
+                "Gol em uma final de Copa do Mundo com comemoração icônica.",
+                "O jogador saiu correndo e gritando com os punhos cerrados.",
+                "O gol ampliou a vantagem para 2x0.",
+                "O adversário era a Alemanha Ocidental.",
+                "Ano: 1982.",
+                "A final foi no Santiago Bernabéu, em Madri.",
+                "O jogador é italiano.",
+                "A Itália venceu por 3x1.",
+                "Sua comemoração é chamada de 'O Grito de Tardelli'.",
+                "A Itália conquistou seu 3º título mundial."
+            ]
+        },
+        {
+            "resposta": "Zico",
+            "alternativas": ["Zico", "Arthur Antunes Coimbra"],
+            "dicas": [
+                "Gol de falta perfeita de um dos maiores cobradores da história.",
+                "O jogador era conhecido como 'Galinho de Quintino'.",
+                "Marcou mais de 500 gols na carreira.",
+                "Era especialista em cobranças de falta.",
+                "Ídolo máximo do Flamengo.",
+                "Década de 1980.",
+                "O jogador é brasileiro.",
+                "Considerado o maior camisa 10 brasileiro depois de Pelé.",
+                "Jogou a Copa de 1982 na seleção mais bonita que não venceu.",
+                "Ficou conhecido como o 'Rei das Faltas'."
+            ]
+        },
+        {
+            "resposta": "Rivaldo",
+            "alternativas": ["Rivaldo"],
+            "dicas": [
+                "Gol de bicicleta no último minuto para evitar a eliminação.",
+                "O gol empatou a partida em 2x2.",
+                "Foi na fase de grupos de uma Copa do Mundo.",
+                "O time precisava vencer ou empatar para avançar.",
+                "Copa do Mundo de 2002.",
+                "O adversário era a Bélgica.",
+                "O gol foi aos 87 minutos.",
+                "O jogador é brasileiro.",
+                "Ele era meia-atacante e usava a camisa 10.",
+                "Um dos gols de bicicleta mais importantes da história das Copas."
+            ]
         }
     ]
 }

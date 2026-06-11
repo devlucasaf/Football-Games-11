@@ -6,20 +6,14 @@ export async function carregarDados() {
     estado.gols = dados.gols;
 }
 
-export function escolherGol() {
-    const disponiveis = estado.gols.filter((_, i) => !estado.golsUsados.includes(i));
-
-    if (disponiveis.length === 0) {
-        estado.golsUsados = [];
-        return escolherGol();
+export function sortear() {
+    const copia = [...estado.gols];
+    const sorteados = [];
+    for (let i = 0; i < estado.totalRodadas && copia.length > 0; i++) {
+        const idx = Math.floor(Math.random() * copia.length);
+        sorteados.push(copia.splice(idx, 1)[0]);
     }
-
-    const idx = Math.floor(Math.random() * disponiveis.length);
-    const golEscolhido = disponiveis[idx];
-    const idxOriginal = estado.gols.indexOf(golEscolhido);
-    estado.golsUsados.push(idxOriginal);
-
-    return golEscolhido;
+    estado.sorteados = sorteados;
 }
 
 export function normalizar(str) {
@@ -27,6 +21,9 @@ export function normalizar(str) {
 }
 
 export function verificarResposta(palpite, gol) {
-    const palpiteNorm = normalizar(palpite);
-    return gol.alternativas.some(alt => normalizar(alt) === palpiteNorm);
+    return gol.alternativas.some(alt => normalizar(alt) === normalizar(palpite));
+}
+
+export function obterNomesUnicos() {
+    return [...new Set(estado.gols.map(g => g.resposta))];
 }
