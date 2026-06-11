@@ -34,17 +34,19 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 11 | **Football Vc Convoca!** | Convoque 26 jogadores para representar a sua seleção |
 | 12 | **Football Transferências** | Descubra o jogador pela sequência de clubes da carreira revelados um a um |
 | 13 | **Football Conexões** | Agrupe 16 jogadores em 4 categorias secretas |
-| 14 | **Football Escudo Quebrado** | Descubra o clube pelas dicas progressivas sobre o escudo |
+| 14 | **Football Acerta Treinador** | Descubra o treinador pelas dicas sobre sua carreira |
 | 15 | **Football Duelo de Elencos** | Associe cada jogador ao elenco correto em duelos históricos |
 | 16 | **Football Acerta Escalação** | Adivinhe os 11 jogadores que começaram um jogo histórico |
 | 17 | **Football Conecta Clubes** | Encontre o jogador que une dois clubes |
-| 18 | **Football Foto Borrada** | Adivinhe o jogador pela foto desfocada que fica nítida aos poucos |
+| 18 | **Football Números** | Adivinhe o número da camisa do jogador |
 | 19 | **Football Linha do Tempo** | Coloque eventos do futebol em ordem cronológica |
 | 20 | **Football Placar** | Acerte o placar exato de jogos históricos |
 | 21 | **Football Quem Falta?** | Complete a lista com o nome que está faltando |
 | 22 | **Football Multiplica** | Multiplique estatísticas de jogadores para alcançar a meta |
 | 23 | **Football Quiz** | Quiz temático com perguntas sobre Champions, Copa, Libertadores e mais |
-| 24 | **Football Gol a Gol** | Acerte quem fez o gol
+| 24 | **Football Gol a Gol** | Adivinhe quem marcou o gol icônico pelas dicas progressivas |
+| 25 | **Football Contexto** | Descubra o jogador secreto pela similaridade (estilo Contexto) |
+| 26 | **Football Pirâmide** | Ordene 10 jogadores na pirâmide pela categoria |
 
 ---
 
@@ -63,14 +65,14 @@ Football-Games-11/
 │   ├── translation/            # Módulos JS de cada tradução (inglês, português, espanhol e alemão)
 │   └── games/                  # Módulos JS de cada minigame
 │       ├── football-acerta-escalacao/
+│       ├── football-acerta-treinador/
 │       ├── football-adivinha-jogador/
 │       ├── football-bingo/
 │       ├── football-carreiras/
 │       ├── football-conecta-clubes/
 │       ├── football-conexoes/
+│       ├── football-contexto/
 │       ├── football-duelo-elencos/
-│       ├── football-escudo-quebrado/
-│       ├── football-foto-borrada/
 │       ├── football-gol-a-gol/
 │       ├── football-grid/
 │       ├── football-impostor/
@@ -78,6 +80,8 @@ Football-Games-11/
 │       ├── football-legends/
 │       ├── football-linha-do-tempo/
 │       ├── football-multiplica/
+│       ├── football-numeros/
+│       ├── football-piramide/
 │       ├── football-placar/
 │       ├── football-quem-falta/
 │       ├── football-quiz/
