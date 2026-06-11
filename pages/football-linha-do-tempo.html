@@ -15,18 +15,18 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-clock-rotate-left"></i>
-                    <h2>Como jogar Linha do Tempo</h2>
-                    <p>Coloque os eventos em ordem cronológica!</p>
+                    <h2 data-key="linha-tutorial-title">Como jogar Linha do Tempo</h2>
+                    <p data-key="linha-tutorial-subtitle">Coloque os eventos em ordem cronológica!</p>
                 </div>
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> 5 eventos do futebol aparecem embaralhados.</li>
-                    <li><span class="tutorial-step-number">2</span> Arraste ou use os botões para reordenar.</li>
-                    <li><span class="tutorial-step-number">3</span> Quando achar que está certo, confirme.</li>
-                    <li><span class="tutorial-step-number">4</span> Ganhe pontos por cada evento na posição correta!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="linha-tutorial-step1"> 5 eventos do futebol aparecem embaralhados.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="linha-tutorial-step2"> Arraste ou use os botões para reordenar.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="linha-tutorial-step3"> Quando achar que está certo, confirme.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="linha-tutorial-step4"> Ganhe pontos por cada evento na posição correta!</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="linha-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="linha-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="container">
                 <div class="game-info" id="gameInfo">
                     <div class="game-round">
-                        Rodada <span id="rodadaAtual">1</span>/5
+                        <span data-key="linha-round">Rodada</span> <span id="rodadaAtual">1</span>/5
                     </div>
                     <div class="game-score">
                         <i class="fas fa-star"></i> <span id="pontos">0</span> pts
@@ -65,12 +65,12 @@
 
                 <section class="timeline-card" id="timelineCard">
                     <h3 class="timeline-theme" id="tema"></h3>
-                    <p class="timeline-instruction">Arraste para ordenar do mais antigo ao mais recente:</p>
+                    <p class="timeline-instruction" data-key="linha-instruction">Arraste para ordenar do mais antigo ao mais recente:</p>
 
                     <div class="timeline-list" id="timelineList"></div>
 
                     <button class="btn-confirm" id="btnConfirmar">
-                        <i class="fas fa-check"></i> Confirmar Ordem
+                        <i class="fas fa-check"></i> <span data-key="linha-confirm">Confirmar Ordem</span>
                     </button>
                 </section>
 
@@ -78,29 +78,34 @@
                     <div class="round-score" id="roundScore"></div>
                     <div class="round-correct" id="roundCorrect"></div>
                     <button class="btn-next" id="btnNext">
-                        <i class="fas fa-arrow-right"></i> Próximo
+                        <i class="fas fa-arrow-right"></i> <span data-key="linha-next">Próximo</span>
                     </button>
                 </section>
 
                 <section class="final-result hidden" id="finalResult">
-                    <h2><i class="fas fa-trophy"></i> Fim!</h2>
+                    <h2><i class="fas fa-trophy"></i> <span data-key="linha-final-title">Fim!</span></h2>
                     <div class="final-score">
                         <span class="final-points" id="finalPoints">0</span>
-                        <span class="final-label">/25 pontos</span>
+                        <span class="final-label" data-key="linha-final-label">/25 pontos</span>
                     </div>
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
                         <button class="btn-retry" id="btnRetry">
-                            <i class="fas fa-redo"></i> Novo Jogo
+                            <i class="fas fa-redo"></i> <span data-key="linha-retry">Novo Jogo</span>
                         </button>
                         <button class="btn-home" id="btnHome">
-                            <i class="fas fa-home"></i> Menu Principal
+                            <i class="fas fa-home"></i> <span data-key="linha-home">Menu Principal</span>
                         </button>
                     </div>
                 </section>
             </div>
         </main>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-linha-do-tempo/main.js"></script>
     </body>

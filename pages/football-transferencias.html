@@ -16,20 +16,20 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-exchange-alt"></i>
-                    <h2>Como jogar Transferências</h2>
-                    <p>Descubra o jogador pela sequência de clubes!</p>
+                    <h2 data-key="transf-tutorial-title">Como jogar Transferências</h2>
+                    <p data-key="transf-tutorial-subtitle">Descubra o jogador pela sequência de clubes!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Os clubes da carreira serão revelados um por um.</li>
-                    <li><span class="tutorial-step-number">2</span> Tente adivinhar o jogador com o menor número de dicas.</li>
-                    <li><span class="tutorial-step-number">3</span> Quanto menos clubes precisar ver, mais pontos ganha!</li>
-                    <li><span class="tutorial-step-number">4</span> São 5 rodadas. Boa sorte!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="transf-tutorial-step1"> Os clubes da carreira serão revelados um por um.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="transf-tutorial-step2"> Tente adivinhar o jogador com o menor número de dicas.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="transf-tutorial-step3"> Quanto menos clubes precisar ver, mais pontos ganha!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="transf-tutorial-step4"> São 5 rodadas. Boa sorte!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="transf-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="transf-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -60,17 +60,17 @@
             <div class="container">
                 <!-- Seleção de Modo -->
                 <section class="mode-selection" id="modeSelection">
-                    <h2 class="mode-title">Escolha o Modo</h2>
+                    <h2 class="mode-title" data-key="transf-mode-title">Escolha o Modo</h2>
                     <div class="mode-buttons">
                         <button class="btn-mode" id="btnMundial">
                             <i class="fas fa-globe"></i>
-                            <span class="mode-name">Futebol Mundial</span>
-                            <span class="mode-desc">Jogadores de todo o mundo</span>
+                            <span class="mode-name" data-key="transf-mode-mundial">Futebol Mundial</span>
+                            <span class="mode-desc" data-key="transf-mode-mundial-desc">Jogadores de todo o mundo</span>
                         </button>
                         <button class="btn-mode" id="btnBrasileiro">
                             <i class="fas fa-flag"></i>
-                            <span class="mode-name">Futebol Brasileiro</span>
-                            <span class="mode-desc">Jogadores que passaram pelo Brasil</span>
+                            <span class="mode-name" data-key="transf-mode-brasileiro">Futebol Brasileiro</span>
+                            <span class="mode-desc" data-key="transf-mode-brasileiro-desc">Jogadores que passaram pelo Brasil</span>
                         </button>
                     </div>
                 </section>
@@ -81,16 +81,16 @@
                     </div>
 
                     <div class="game-round">
-                        Rodada <span id="rodadaAtual">1</span>/5
+                        <span data-key="transf-round">Rodada</span> <span id="rodadaAtual">1</span>/5
                     </div>
                 </div>
 
                 <!-- Área de clubes revelados -->
                 <section class="clubs-area hidden" id="clubsArea">
-                    <h2 class="clubs-title">Clubes da Carreira</h2>
+                    <h2 class="clubs-title" data-key="transf-clubs-title">Clubes da Carreira</h2>
                     <div class="clubs-timeline" id="clubsTimeline"></div>
                     <button class="btn-reveal" id="btnReveal">
-                        <i class="fas fa-eye"></i> Revelar próximo clube
+                        <i class="fas fa-eye"></i> <span data-key="transf-reveal">Revelar próximo clube</span>
                     </button>
                 </section>
 
@@ -98,12 +98,12 @@
                 <section class="guess-area hidden" id="guessArea">
                     <div class="input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="guessInput" placeholder="Quem é o jogador?" autocomplete="off">
+                        <input type="text" id="guessInput" data-key="transf-input-placeholder" placeholder="Quem é o jogador?" autocomplete="off">
                         <div class="autocomplete-list" id="autocompleteList"></div>
                     </div>
 
                     <button class="btn-guess" id="btnGuess">
-                        <i class="fas fa-check"></i> Confirmar
+                        <i class="fas fa-check"></i> <span data-key="transf-confirm">Confirmar</span>
                     </button>
                 </section>
 
@@ -112,27 +112,32 @@
                     <p class="feedback-text" id="feedbackText"></p>
                     <div class="feedback-answer hidden" id="feedbackAnswer"></div>
                     <button class="btn-next" id="btnNext">
-                        <i class="fas fa-arrow-right"></i> Próxima Rodada
+                        <i class="fas fa-arrow-right"></i> <span data-key="transf-next">Próxima Rodada</span>
                     </button>
                 </div>
 
                 <section class="final-result hidden" id="finalResult">
-                    <h2><i class="fas fa-trophy"></i> Fim de Jogo!</h2>
+                    <h2><i class="fas fa-trophy"></i> <span data-key="transf-final-title">Fim de Jogo!</span></h2>
                     <div class="final-score">
                         <span class="final-points" id="finalPoints">0</span>
-                        <span class="final-label">pontos</span>
+                        <span class="final-label" data-key="transf-final-label">pontos</span>
                     </div>
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
-                        <button class="btn-retry" id="btnTrocarModo"><i class="fas fa-exchange-alt"></i> Trocar Modo</button>
-                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> <span data-key="transf-retry">Jogar Novamente</span></button>
+                        <button class="btn-retry" id="btnTrocarModo"><i class="fas fa-exchange-alt"></i> <span data-key="transf-trocar-modo">Trocar Modo</span></button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> <span data-key="transf-home">Menu Principal</span></button>
                     </div>
                 </section>
             </div>
         </main>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-transferencias/main.js"></script>
     </body>
