@@ -34,7 +34,7 @@
             "tema": "Finais de Copa do Mundo",
             "eventos": [
                 { "texto": "Maior quantidade de gols em uma final", "ano": 1958 },
-                { "texto": "", "ano": 1966 },
+                { "texto": "Terceira Copa do Mundo de Pelé", "ano": 1970 },
                 { "texto": "", "ano": 2008 },
                 { "texto": "", "ano": 2011 },
                 { "texto": "Maior final de todos os tempos (hat-trick de Kylian Mbappé)", "ano": 2022 }
@@ -43,21 +43,21 @@
         {
             "tema": "Finais de Champions League",
             "eventos": [
-                { "texto": "Milan vira sobre o Liverpool em Istambul", "ano": 2005 },
-                { "texto": "Barcelona vence o Arsenal (Belletti gol)", "ano": 2006 },
-                { "texto": "Manchester United vence o Chelsea nos pênaltis", "ano": 2008 },
-                { "texto": "Barcelona vence o Manchester United (Messi brilha)", "ano": 2011 },
+                { "texto": "Liverpool vence o Milan no famoso 'Milagre de Istambul'", "ano": 2005 },
+                { "texto": "", "ano": 200 },
+                { "texto": "Chelsea campeão em cima do Bayern de Munique", "ano": 2012 },
+                { "texto": "Quinta Champions League de Cristiano Ronaldo", "ano": 2018 },
                 { "texto": "Maior goleada em uma final de Champions League", "ano": 2025 }
             ]
         },
         {
             "tema": "Transferências históricas",
             "eventos": [
-                { "texto": "Ronaldo vai do Barcelona para a Inter", "ano": 1997 },
-                { "texto": "Transferência de Luis Figo para o Real Madrid", "ano": 2000 },
-                { "texto": "Cristiano Ronaldo vai do Man United para o Real Madrid", "ano": 2009 },
-                { "texto": "Neymar vai do Santos para o Barcelona", "ano": 2013 },
-                { "texto": "Maior transferência da história do futebol (Neymar para o PSG)", "ano": 2017 }
+                { "texto": "", "ano": 1997 },
+                { "texto": "Luis Figo sai do Barcelona para o Real Madrid", "ano": 2000 },
+                { "texto": "Cristiano Ronaldo vai do Manchester United para o Real Madrid", "ano": 2009 },
+                { "texto": "", "ano": 2013 },
+                { "texto": "Neymar se torna a maior transferência da história", "ano": 2017 }
             ]
         },
         {
@@ -66,7 +66,7 @@
                 { "texto": "'La Mano de Dios' marcado por Diego Maradona", "ano": 1986 },
                 { "texto": "Roberto Baggio perde pênalti na final", "ano": 1994 },
                 { "texto": "Zidane faz 2 gols de cabeça na final contra o Brasil", "ano": 1998 },
-                { "texto": "Gol mais rápido", "ano": 2002 },
+                { "texto": "Gol mais rápido da história das Copas do Mundo", "ano": 2002 },
                 { "texto": "Peixinho de Van Persie pela Holanda", "ano": 2014 }
             ]
         },

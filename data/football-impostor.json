@@ -4,14 +4,14 @@
             "tema": "Jogaram no Manchester United",
             "jogadores": ["Cristiano Ronaldo", "Di María", "Rooney", "Beckham", "Van Persie", "Ibrahimovic"],
             "impostor": "Gerrard",
-            "explicacao": "Gerrard nunca jogou no Manchester United. Fez toda a carreira no Liverpool e no LA Galaxy.",
+            "explicacao": "Gerrard nunca jogou no Manchester United.",
             "dificuldade": "fácil"
         },
         {
             "tema": "Brasileiros campeões da Copa do Mundo de 2002",
             "jogadores": ["Ronaldo", "Rivaldo", "Ronaldinho", "Cafu", "Roberto Carlos", "Gilberto Silva"],
             "impostor": "Neymar",
-            "explicacao": "Neymar não participou da Copa de 2002. Ele tinha apenas 10 anos na época.",
+            "explicacao": "Neymar não participou da Copa de 2002.",
             "dificuldade": "médio"
         },
         {
@@ -23,9 +23,9 @@
         },
         {
             "tema": "Jogaram no Milan",
-            "jogadores": ["Kaká", "Maldini", "Ronaldinho", "Pirlo", "Shevchenko", "Inzaghi"],
+            "jogadores": ["Kaká", "Paolo Maldini", "Ronaldinho", "Andrea Pirlo", "Andriy Shevchenko", "Filippo Inzaghi"],
             "impostor": "Del Piero",
-            "explicacao": "Del Piero nunca jogou no Milan. Fez toda sua carreira europeia na Juventus, rival do Milan.",
+            "explicacao": "Del Piero nunca jogou no Milan.",
             "dificuldade": "médio"
         },
         {
@@ -39,7 +39,7 @@
             "tema": "Jogaram no Liverpool",
             "jogadores": ["Gerrard", "Salah", "Suárez", "Torres", "Alisson", "Firmino"],
             "impostor": "Lampard",
-            "explicacao": "Lampard nunca jogou no Liverpool. Fez carreira no West Ham, Chelsea e Manchester City.",
+            "explicacao": "Lampard nunca jogou no Liverpool.",
             "dificuldade": "fácil"
         },
         {
