@@ -19,7 +19,7 @@
             "titulo": "Mais gols na Champions League",
             "jogadores": [
                 { "nome": "Cristiano Ronaldo", "valor": 140 },
-                { "nome": "Messi", "valor": 129 },
+                { "nome": "Lionel Messi", "valor": 129 },
                 { "nome": "Lewandowski", "valor": 101 },
                 { "nome": "Benzema", "valor": 90 },
                 { "nome": "Raúl", "valor": 71 },
@@ -184,15 +184,16 @@
             "titulo": "Jogadores mais caros da história (valor de transferência)",
             "jogadores": [
                 { "nome": "Neymar", "valor": 222 },
-                { "nome": "Mbappé", "valor": 180 },
-                { "nome": "Coutinho", "valor": 145 },
-                { "nome": "Dembélé", "valor": 140 },
-                { "nome": "João Félix", "valor": 126 },
-                { "nome": "Griezmann", "valor": 120 },
+                { "nome": "Kylian Mbappé", "valor": 180 },
+                { "nome": "Ousmane Dembélé", "valor": 148 },
+                { "nome": "Alexander Isak", "valor": 145 },
+                { "nome": "Philippe Coutinho", "valor": 135 },
+                { "nome": "João Félix", "valor": 127 },
+                { "nome": "Florian Wirtz", "valor": 125 },
                 { "nome": "Jack Grealish", "valor": 117 },
-                { "nome": "Lukaku", "valor": 113 },
-                { "nome": "Haaland", "valor": 75 },
-                { "nome": "Cristiano Ronaldo", "valor": 117 }
+                { "nome": "Cristiano Ronaldo", "valor": 117 },
+                { "nome": "Moisés Caicedo", "valor": 116 },
+                { "nome": "Antony", "valor": 95 }
             ]
         },
         {

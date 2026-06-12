@@ -36,8 +36,8 @@
             "nome": "Zinedine Zidane",
             "nacionalidade": "França",
             "anoNascimento": 1972,
-            "clubes": ["Real Madrid Castilla", "Real Madrid"],
-            "titulos": ["Liga dos Campeões (3x)", "La Liga (2x)", "Supercopa da Espanha (2x)"],
+            "clubes": ["Real Madrid"],
+            "titulos": ["3x Champions League", "2x La Liga", "2x Supercopa da Espanha", "2x Mundial de Clubes", "2x Supercopa da UEFA"],
             "curiosidade": "Ganhou 3 Champions League consecutivas como técnico do Real Madrid."
         },
         {
@@ -84,16 +84,16 @@
             "nome": "Vicente del Bosque",
             "nacionalidade": "Espanha",
             "anoNascimento": 1950,
-            "clubes": ["Real Madrid Castilla", "Real Madrid", "Seleção Espanhola"],
-            "titulos": ["Copa do Mundo (2010)", "Eurocopa (2012)", "Liga dos Campeões (2x)", "La Liga (2x)"],
+            "clubes": ["Real Madrid", "Seleção Espanhola"],
+            "titulos": ["Copa do Mundo", "Eurocopa", "2x Champions League", "2x La Liga"],
             "curiosidade": "Único técnico a ganhar Copa do Mundo, Eurocopa e Champions League."
         },
         {
             "nome": "Tite",
             "nacionalidade": "Brasil",
             "anoNascimento": 1961,
-            "clubes": ["Grêmio", "Internacional", "Corinthians", "Seleção Brasileira", "Flamengo"],
-            "titulos": ["Libertadores", "Brasileirão (3x)", "Copa do Brasil", "Mundial de Clubes"],
+            "clubes": ["Grêmio", "Internacional", "Corinthians", "Brasil", "Flamengo"],
+            "titulos": ["Libertadores", "2x Brasileirão", "Copa do Brasil", "Mundial de Clubes"],
             "curiosidade": "Maior sequência invicta da Seleção Brasileira no século XXI."
         },
         {
@@ -102,7 +102,7 @@
             "anoNascimento": 1949,
             "clubes": ["Nancy", "Monaco", "Nagoya Grampus", "Arsenal"],
             "titulos": ["Premier League (3x)", "FA Cup (7x)", "Community Shield (7x)"],
-            "curiosidade": "Treinou o Arsenal por 22 anos e liderou o time 'Invincible' de 2003-04."
+            "curiosidade": "Treinou o Arsenal por 22 anos"
         },
         {
             "nome": "Johan Cruyff",

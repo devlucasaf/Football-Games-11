@@ -1835,6 +1835,19 @@
                 { "posicao": 10, "nome": "Barcelona",         "detalhe": "1899"}
             ],
             "opcoes": [
+                "Sheffield FC", "Notts County FC", "Rangers FC",
+                "Aston Villa", "Everton", "Manchester United",
+                "HFC Haarlem", "Juventus", "Club Nacional",
+                "Barcelona", "Flamengo", "Vasco da Gama", 
+                "Fluminense", "Real Madrid", "Milan",
+                "Inter de Milão", "Grêmio", "Internacional",
+                "Internacional da Venezuela", "Santos Laguna", "Santos",
+                "Universidad Católica", "Universidad de Chile", "Colo Colo",
+                "Audax Italiano", "Napoli", "Lazio",
+                "Roma", "Peñarol", "São Caetano",
+                "São Paulo", "Corinthians", "Athletico-PR", 
+                "Atlético Acreano", "Atlético Bucaramanga", "Atlético de Madrid",
+                "Atlético-MG", "Cruzeiro", "LDU"
             ]
         },
         {

@@ -33,18 +33,18 @@
         {
             "tema": "Finais de Copa do Mundo",
             "eventos": [
+                { "texto": "'Maracanaço' termo usado pois o Brasil precisava somente de um empate para ser campeão", "ano": 1950 },
                 { "texto": "Maior quantidade de gols em uma final", "ano": 1958 },
                 { "texto": "Terceira Copa do Mundo de Pelé", "ano": 1970 },
-                { "texto": "", "ano": 2008 },
-                { "texto": "", "ano": 2011 },
+                { "texto": "'O Homem que morreu em pé' penâlti perdido por Roberto Baggio", "ano": 1994 },
                 { "texto": "Maior final de todos os tempos (hat-trick de Kylian Mbappé)", "ano": 2022 }
             ]
         },
         {
             "tema": "Finais de Champions League",
             "eventos": [
+                { "texto": "Solskjær marca no último minuto do jogo e Manchester United campeão", "ano": 1999 },
                 { "texto": "Liverpool vence o Milan no famoso 'Milagre de Istambul'", "ano": 2005 },
-                { "texto": "", "ano": 200 },
                 { "texto": "Chelsea campeão em cima do Bayern de Munique", "ano": 2012 },
                 { "texto": "Quinta Champions League de Cristiano Ronaldo", "ano": 2018 },
                 { "texto": "Maior goleada em uma final de Champions League", "ano": 2025 }
@@ -112,7 +112,7 @@
             ]
         },
         {
-            "tema": "Ascensão do Manchester City",
+            "tema": "História do Manchester City",
             "eventos": [
                 { "texto": "City é comprado pelo grupo Abu Dhabi", "ano": 2008 },
                 { "texto": "Agüero marca gol do título no último minuto", "ano": 2012 },
@@ -129,16 +129,6 @@
                 { "texto": "Compra do Neymar, se tornando a maior transferência da história", "ano": 2017 },
                 { "texto": "Primeira final de Champions League disputada", "ano": 2020 },
                 { "texto": "Primeira vez que o PSG vence a Champions League", "ano": 2025 }
-            ]
-        },
-        {
-            "tema": "Despedidas lendárias",
-            "eventos": [
-                { "texto": "Pelé se aposenta no Cosmos", "ano": 1977 },
-                { "texto": "Maradona se despede do futebol", "ano": 1997 },
-                { "texto": "Zidane se aposenta após cabeçada na Copa", "ano": 2006 },
-                { "texto": "Ronaldinho Gaúcho se aposenta", "ano": 2018 },
-                { "texto": "Messi ganha a Copa do Mundo antes da despedida", "ano": 2022 }
             ]
         }
     ]
