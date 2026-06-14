@@ -13,11 +13,11 @@
         {
             "tema": "Champions League",
             "eventos": [
-                { "texto": "Milan vira sobre o Liverpool em Istambul", "ano": 2005 },
-                { "texto": "Barcelona vence o Arsenal (Belletti gol)", "ano": 2006 },
-                { "texto": "Manchester United vence o Chelsea nos pênaltis", "ano": 2008 },
-                { "texto": "Barcelona vence o Manchester United (Messi brilha)", "ano": 2011 },
-                { "texto": "Chelsea vence o Bayern nos pênaltis", "ano": 2012 }
+                { "texto": "Maior público da história da Champions League", "ano": 1960 },
+                { "texto": "A maior goleada da história da Champions League (Liverpool 8 x 0 Beşiktaş) ", "ano": 2007 },
+                { "texto": "Borussia Dortmund vira contra o Málaga no final do jogo", "ano": 2013 },
+                { "texto": "Maior quantidade de gols em uma temporada de Champions League (Cristiano Ronaldo - 17 gols)", "ano": 2014 },
+                { "texto": "'La Remontada' Barcelona vira sobre o Paris Saint-Germain", "ano": 2017 }
             ]
         },
         {
@@ -53,18 +53,18 @@
         {
             "tema": "Transferências históricas",
             "eventos": [
-                { "texto": "", "ano": 1997 },
+                { "texto": "Pelé é contratado pelo New York Cosmos", "ano": 1975 },
+                { "texto": "Diego Maradona é contratado pelo Napoli", "ano": 1984 },
                 { "texto": "Luis Figo sai do Barcelona para o Real Madrid", "ano": 2000 },
                 { "texto": "Cristiano Ronaldo vai do Manchester United para o Real Madrid", "ano": 2009 },
-                { "texto": "", "ano": 2013 },
                 { "texto": "Neymar se torna a maior transferência da história", "ano": 2017 }
             ]
         },
         {
             "tema": "Gols históricos em Copas do Mundo",
             "eventos": [
+                { "texto": "Lucien Laurent marca o primeiro gol da história das Copas do Mundo", "ano": 1930 },
                 { "texto": "'La Mano de Dios' marcado por Diego Maradona", "ano": 1986 },
-                { "texto": "Roberto Baggio perde pênalti na final", "ano": 1994 },
                 { "texto": "Zidane faz 2 gols de cabeça na final contra o Brasil", "ano": 1998 },
                 { "texto": "Gol mais rápido da história das Copas do Mundo", "ano": 2002 },
                 { "texto": "Peixinho de Van Persie pela Holanda", "ano": 2014 }
@@ -83,7 +83,7 @@
         {
             "tema": "Bolas de Ouro",
             "eventos": [
-                { "texto": "Primeira jogador a conquistar a Bola de Ouro",             "ano": 1956},
+                { "texto": "Primeiro jogador a conquistar a Bola de Ouro",             "ano": 1956},
                 { "texto": "Michel Platini conquista sua 3ª Bola de Ouro consecutiva", "ano": 1985},
                 { "texto": "Primeiro jogador africano a conquistar a Bola de Ouro",    "ano": 1995},
                 { "texto": "Última Bola de Ouro conquistada por um brasileiro",        "ano": 2007},
@@ -118,7 +118,7 @@
                 { "texto": "Agüero marca gol do título no último minuto", "ano": 2012 },
                 { "texto": "Guardiola assume o City", "ano": 2016 },
                 { "texto": "City faz 100 pontos na Premier League", "ano": 2018 },
-                { "texto": "City vence a Champions League (Tríplice Coroa)", "ano": 2023 }
+                { "texto": "Primeira conquista de Champions League", "ano": 2023 }
             ]
         },
         {
@@ -128,7 +128,27 @@
                 { "texto": "Psg é comprado pelo grupo Qatar Sports Investments", "ano": 2011 },
                 { "texto": "Compra do Neymar, se tornando a maior transferência da história", "ano": 2017 },
                 { "texto": "Primeira final de Champions League disputada", "ano": 2020 },
-                { "texto": "Primeira vez que o PSG vence a Champions League", "ano": 2025 }
+                { "texto": "Primeira conquista de Champions League", "ano": 2025 }
+            ]
+        },
+        {
+            "tema": "História do Real Madrid",
+            "eventos": [
+                { "texto": "Primeira conquista de Champions League", "ano": 1956 },
+                { "texto": "Auge dos 'Galácticos'", "ano": 2003 },
+                { "texto": "Contratação de Cristiano Ronaldo", "ano": 2009 },
+                { "texto": "Conquista da 'La Décima' Champions League", "ano": 2014 },
+                { "texto": "Início da era Zinedine Zidane", "ano": 2016 }
+            ]
+        },
+        {
+            "tema": "História do AC Milan",
+            "eventos": [
+                { "texto": "Primeira conquista de Champions League", "ano": 1963 },
+                { "texto": "Primeiro rebaixamento para a Serie B", "ano": 1980 },
+                { "texto": "Silvio Berlusconi compra o Milan", "ano": 1986 },
+                { "texto": "Última Champions League conquistada", "ano": 2007 },
+                { "texto": "Contratação mais cara da história do clube (Leonardo Bonucci)", "ano": 2017 }
             ]
         }
     ]
