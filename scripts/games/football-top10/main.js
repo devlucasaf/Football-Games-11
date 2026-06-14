@@ -1,6 +1,6 @@
-import estado from './core.js';
-import { normalizar } from './utils.js';
-import { carregarDados, escolherLista } from './data.js';
+import estado from "./core.js";
+import { normalizar } from "./utils.js";
+import { carregarDados, escolherLista } from "./data.js";
 import {
     renderizarTema,
     renderizarLista,
@@ -15,20 +15,20 @@ import {
     focarInput,
     desabilitarInput,
     habilitarInput
-} from './ui.js';
+} from "./ui.js";
 
 // --- ELEMENTOS ---
-const $confirmarBtn     = document.getElementById('confirmarBtn');
-const $desistirBtn      = document.getElementById('desistirBtn');
-const $proximaRodadaBtn = document.getElementById('proximaRodadaBtn');
-const $input            = document.getElementById('palpiteInput');
+const $confirmarBtn = document.getElementById("confirmarBtn");
+const $desistirBtn = document.getElementById("desistirBtn");
+const $proximaRodadaBtn = document.getElementById("proximaRodadaBtn");
+const $input = document.getElementById("palpiteInput");
 
 function iniciarRodada() {
     const lista = escolherLista();
 
-    estado.acertosRodada  = 0;
-    estado.vidas          = 3;
-    estado.jogoAtivo      = true;
+    estado.acertosRodada = 0;
+    estado.vidas = 3;
+    estado.jogoAtivo = true;
     estado.itensAcertados = new Set();
     estado.totalRodadas++;
 
@@ -76,7 +76,7 @@ function verificarPalpite() {
         estado.pontosTotal += pontosGanhos;
 
         atualizarPlacar();
-        mostrarFeedback('acerto', `Acertou! +${pontosGanhos} pts`);
+        mostrarFeedback("acerto", `Acertou! +${pontosGanhos} pts`);
         limparInput();
         focarInput();
 
@@ -89,7 +89,7 @@ function verificarPalpite() {
     } else {
         estado.vidas--;
         atualizarPlacar();
-        mostrarFeedback('erro', `Errou! Vidas restantes: ${estado.vidas}`);
+        mostrarFeedback("erro", `Errou! Vidas restantes: ${estado.vidas}`);
         limparInput();
         focarInput();
 
@@ -110,19 +110,19 @@ function finalizarRodada() {
     estado.jogoAtivo = false;
     desabilitarInput();
 
-    const total   = estado.listaAtual.itens.length;
+    const total = estado.listaAtual.itens.length;
     const acertos = estado.acertosRodada;
-    const pontos  = acertos * 10 + (acertos === total ? 20 : 0);
+    const pontos = acertos * 10 + (acertos === total ? 20 : 0);
 
     mostrarResultado(acertos, total, pontos);
 }
 
-$confirmarBtn.addEventListener('click', verificarPalpite);
+$confirmarBtn.addEventListener("click", verificarPalpite);
 
-const $sugestoes = document.getElementById('sugestoesLista');
-$input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const temSugestaoAtiva = $sugestoes.querySelector('.sugestao-item.ativa');
+const $sugestoes = document.getElementById("sugestoesLista");
+$input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        const temSugestaoAtiva = $sugestoes.querySelector(".sugestao-item.ativa");
         if (!temSugestaoAtiva) {
             e.preventDefault();
             verificarPalpite();
@@ -130,9 +130,9 @@ $input.addEventListener('keydown', (e) => {
     }
 });
 
-$desistirBtn.addEventListener('click', desistir);
+$desistirBtn.addEventListener("click", desistir);
 
-$proximaRodadaBtn.addEventListener('click', iniciarRodada);
+$proximaRodadaBtn.addEventListener("click", iniciarRodada);
 
 inicializarSugestoes(verificarPalpite);
 

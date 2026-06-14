@@ -1,7 +1,7 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-conecta-clubes.json');
+    const resp = await fetch("../data/football-conecta-clubes.json");
     const data = await resp.json();
     estado.conexoes = data.conexoes;
 }
@@ -19,5 +19,5 @@ export function sortear() {
 
 // --- NORMALIZAÇÃO DE TEXTO ---
 export function normalizar(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }

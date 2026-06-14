@@ -131,11 +131,11 @@ function filtrarSugestoes(texto) {
 
 // --- CONFIGURAR EVENTOS ---
 function configurarEventos() {
-    const input             = document.getElementById("palpiteInput");
-    const confirmarBtn      = document.getElementById("confirmarBtn");
-    const pularBtn          = document.getElementById("pularBtn");
-    const proximaBtn        = document.getElementById("proximaRodadaBtn");
-    const sugestoesLista    = document.getElementById("sugestoesLista");
+    const input = document.getElementById("palpiteInput");
+    const confirmarBtn = document.getElementById("confirmarBtn");
+    const pularBtn = document.getElementById("pularBtn");
+    const proximaBtn = document.getElementById("proximaRodadaBtn");
+    const sugestoesLista = document.getElementById("sugestoesLista");
 
     // --- CONFIRMAR ---
     confirmarBtn.addEventListener("click", () => {
@@ -150,10 +150,7 @@ function configurarEventos() {
         }
     });
 
-    // --- PULAR ---
     pularBtn.addEventListener("click", () => pular());
-
-    // --- PRÓXIMA RODADA ---
     proximaBtn.addEventListener("click", () => proximaRodada());
 
     // --- AUTOCOMPLETE TYPING ---

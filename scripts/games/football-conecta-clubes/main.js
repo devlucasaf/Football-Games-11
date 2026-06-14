@@ -1,5 +1,5 @@
-import { estado } from './core.js';
-import { carregarDados, sortear, normalizar } from './data.js';
+import { estado } from "./core.js";
+import { carregarDados, sortear, normalizar } from "./data.js";
 import {
     atualizarRodada,
     atualizarAcertos,
@@ -10,7 +10,7 @@ import {
     mostrarFinal,
     resetarUI,
     getInput
-} from './ui.js';
+} from "./ui.js";
 
 // --- MOSTRAR RODADA ATUAL ---
 function mostrarRodada() {
@@ -69,33 +69,33 @@ function iniciarJogo() {
 async function init() {
     await carregarDados();
 
-    document.getElementById('btnGuess').addEventListener('click', verificarPalpite);
-    document.getElementById('btnNext').addEventListener('click', proxima);
-    document.getElementById('btnRetry').addEventListener('click', iniciarJogo);
-    document.getElementById('btnHome').addEventListener('click', () => {
-        window.location.href = '../index.html';
+    document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
+    document.getElementById("btnNext").addEventListener("click", proxima);
+    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
+    document.getElementById("btnHome").addEventListener("click", () => {
+        window.location.href = "../index.html";
     });
 
-    document.getElementById('guessInput').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
+    document.getElementById("guessInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
             verificarPalpite();
         }
     });
 
-    const tutorialOverlay = document.getElementById('tutorialOverlay');
-    const skipKey = 'tutorial_skip_football-conecta-clubes';
+    const tutorialOverlay = document.getElementById("tutorialOverlay");
+    const skipKey = "tutorial_skip_football-conecta-clubes";
 
     if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add('hidden');
+        tutorialOverlay.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById('tutorialStartBtn').addEventListener('click', () => {
-            tutorialOverlay.classList.add('hidden');
+        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+            tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById('tutorialSkipBtn').addEventListener('click', () => {
-            localStorage.setItem(skipKey, 'true');
-            tutorialOverlay.classList.add('hidden');
+        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+            localStorage.setItem(skipKey, "true");
+            tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
     }

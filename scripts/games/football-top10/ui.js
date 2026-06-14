@@ -1,24 +1,24 @@
-import estado from './core.js';
-import { normalizar } from './utils.js';
-import { obterNomesItens, obterOpcoes } from './data.js';
+import estado from "./core.js";
+import { normalizar } from "./utils.js";
+import { obterNomesItens, obterOpcoes } from "./data.js";
 
-const $lista          = document.getElementById('top10Lista');
-const $temaIcone      = document.getElementById('temaIcone');
-const $temaTexto      = document.getElementById('temaTexto');
-const $temaCategoria  = document.getElementById('temaCategoria');
-const $acertosCount   = document.getElementById('acertosCount');
-const $vidasCount     = document.getElementById('vidasCount');
-const $pontosCount    = document.getElementById('pontosCount');
-const $rodadasCount   = document.getElementById('rodadasCount');
-const $input          = document.getElementById('palpiteInput');
-const $sugestoes      = document.getElementById('sugestoesLista');
-const $feedbackArea   = document.getElementById('feedbackArea');
-const $feedbackIcone  = document.getElementById('feedbackIcone');
-const $feedbackTexto  = document.getElementById('feedbackTexto');
-const $resultOverlay  = document.getElementById('resultOverlay');
-const $resultIcon     = document.getElementById('resultIcon');
-const $resultTitle    = document.getElementById('resultTitle');
-const $resultText     = document.getElementById('resultText');
+const $lista          = document.getElementById("top10Lista");
+const $temaIcone      = document.getElementById("temaIcone");
+const $temaTexto      = document.getElementById("temaTexto");
+const $temaCategoria  = document.getElementById("temaCategoria");
+const $acertosCount   = document.getElementById("acertosCount");
+const $vidasCount     = document.getElementById("vidasCount");
+const $pontosCount    = document.getElementById("pontosCount");
+const $rodadasCount   = document.getElementById("rodadasCount");
+const $input          = document.getElementById("palpiteInput");
+const $sugestoes      = document.getElementById("sugestoesLista");
+const $feedbackArea   = document.getElementById("feedbackArea");
+const $feedbackIcone  = document.getElementById("feedbackIcone");
+const $feedbackTexto  = document.getElementById("feedbackTexto");
+const $resultOverlay  = document.getElementById("resultOverlay");
+const $resultIcon     = document.getElementById("resultIcon");
+const $resultTitle    = document.getElementById("resultTitle");
+const $resultText     = document.getElementById("resultText");
 
 let feedbackTimer = null;
 let indiceSugestao = -1;
@@ -28,19 +28,19 @@ export function renderizarTema(lista) {
     $temaTexto.textContent = lista.tema;
 
     const cat = {
-        selecoes:  'Seleções',
-        clubes:    'Clubes',
-        jogadores: 'Jogadores'
+        selecoes:  "Seleções",
+        clubes:    "Clubes",
+        jogadores: "Jogadores"
     };
     $temaCategoria.textContent = cat[lista.categoria] || lista.categoria;
 }
 
 export function renderizarLista(lista) {
-    $lista.innerHTML = '';
+    $lista.innerHTML = "";
 
     lista.itens.forEach((item, idx) => {
-        const div = document.createElement('div');
-        div.classList.add('top10-item');
+        const div = document.createElement("div");
+        div.classList.add("top10-item");
         div.dataset.pos = item.posicao;
         div.dataset.idx = idx;
 
@@ -60,7 +60,7 @@ export function revelarItem(idx, modoDesistir = false) {
         return;
     }
 
-    el.classList.add(modoDesistir ? 'desistiu' : 'revelado');
+    el.classList.add(modoDesistir ? "desistiu" : "revelado");
 
     el.innerHTML = `
         <span class="item-posicao">${item.posicao}.</span>
@@ -89,20 +89,20 @@ export function atualizarPlacar() {
 export function mostrarFeedback(tipo, texto) {
     clearTimeout(feedbackTimer);
 
-    $feedbackArea.style.display = '';
-    $feedbackArea.className = 'top10-feedback ' + tipo;
-    $feedbackIcone.className = tipo === 'acerto'
-        ? 'fas fa-check-circle'
-        : 'fas fa-times-circle';
+    $feedbackArea.style.display = "";
+    $feedbackArea.className = "top10-feedback " + tipo;
+    $feedbackIcone.className = tipo === "acerto"
+        ? "fas fa-check-circle"
+        : "fas fa-times-circle";
     $feedbackTexto.textContent = texto;
 
     feedbackTimer = setTimeout(() => {
-        $feedbackArea.style.display = 'none';
+        $feedbackArea.style.display = "none";
     }, 2000);
 }
 
 export function inicializarSugestoes(onSelecionar) {
-    $input.addEventListener('input', () => {
+    $input.addEventListener("input", () => {
         indiceSugestao = -1;
         const valor = $input.value.trim();
         if (valor.length < 2) {
@@ -139,12 +139,12 @@ export function inicializarSugestoes(onSelecionar) {
             return;
         }
 
-        $sugestoes.innerHTML = '';
+        $sugestoes.innerHTML = "";
         unicos.slice(0, 6).forEach(nome => {
-            const div = document.createElement('div');
-            div.classList.add('sugestao-item');
+            const div = document.createElement("div");
+            div.classList.add("sugestao-item");
             div.textContent = nome;
-            div.addEventListener('click', () => {
+            div.addEventListener("click", () => {
                 $input.value = nome;
                 fecharSugestoes();
                 onSelecionar();
@@ -152,24 +152,24 @@ export function inicializarSugestoes(onSelecionar) {
             $sugestoes.appendChild(div);
         });
 
-        $sugestoes.classList.add('ativa');
+        $sugestoes.classList.add("ativa");
     });
 
-    $input.addEventListener('keydown', (e) => {
-        const itens = $sugestoes.querySelectorAll('.sugestao-item');
-        if (!itens.length || !$sugestoes.classList.contains('ativa')) {
+    $input.addEventListener("keydown", (e) => {
+        const itens = $sugestoes.querySelectorAll(".sugestao-item");
+        if (!itens.length || !$sugestoes.classList.contains("ativa")) {
             return;
         }
 
-        if (e.key === 'ArrowDown') {
+        if (e.key === "ArrowDown") {
             e.preventDefault();
             indiceSugestao = (indiceSugestao + 1) % itens.length;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === 'ArrowUp') {
+        } else if (e.key === "ArrowUp") {
             e.preventDefault();
             indiceSugestao = indiceSugestao <= 0 ? itens.length - 1 : indiceSugestao - 1;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === 'Enter' && indiceSugestao >= 0) {
+        } else if (e.key === "Enter" && indiceSugestao >= 0) {
             e.preventDefault();
             $input.value = itens[indiceSugestao].textContent;
             fecharSugestoes();
@@ -177,7 +177,7 @@ export function inicializarSugestoes(onSelecionar) {
         }
     });
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
         if (!$input.contains(e.target) && !$sugestoes.contains(e.target)) {
             fecharSugestoes();
         }
@@ -186,17 +186,17 @@ export function inicializarSugestoes(onSelecionar) {
 
 function atualizarSugestaoAtiva(itens) {
     itens.forEach((item, i) => {
-        item.classList.toggle('ativa', i === indiceSugestao);
+        item.classList.toggle("ativa", i === indiceSugestao);
     });
 }
 
 function fecharSugestoes() {
-    $sugestoes.innerHTML = '';
-    $sugestoes.classList.remove('ativa');
+    $sugestoes.innerHTML = "";
+    $sugestoes.classList.remove("ativa");
 }
 
 export function limparInput() {
-    $input.value = '';
+    $input.value = "";
     fecharSugestoes();
 }
 
@@ -206,35 +206,35 @@ export function focarInput() {
 
 export function desabilitarInput() {
     $input.disabled = true;
-    document.getElementById('confirmarBtn').disabled = true;
-    document.getElementById('desistirBtn').disabled  = true;
+    document.getElementById("confirmarBtn").disabled = true;
+    document.getElementById("desistirBtn").disabled  = true;
 }
 
 export function habilitarInput() {
     $input.disabled = false;
-    document.getElementById('confirmarBtn').disabled = false;
-    document.getElementById('desistirBtn').disabled  = false;
+    document.getElementById("confirmarBtn").disabled = false;
+    document.getElementById("desistirBtn").disabled  = false;
 }
 
 export function mostrarResultado(acertos, total, pontos) {
     const completo = acertos === total;
 
     $resultIcon.innerHTML = completo
-        ? '<i class="fas fa-trophy" style="color: #f1c40f;"></i>'
-        : '<i class="fas fa-list-check" style="color: var(--primary-green);"></i>';
+        ? "<i class='fas fa-trophy' style='color: #f1c40f;'></i>"
+        : "<i class='fas fa-list-check' style='color: var(--primary-green);'></i>";
 
     $resultTitle.textContent = completo
-        ? 'Lista completa!'
-        : 'Fim da rodada!';
+        ? "Lista completa!"
+        : "Fim da rodada!";
 
     $resultText.innerHTML = `
         Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> itens.<br>
         Pontos nesta rodada: <strong>+${pontos}</strong>
     `;
 
-    $resultOverlay.classList.add('active');
+    $resultOverlay.classList.add("active");
 }
 
 export function fecharResultado() {
-    $resultOverlay.classList.remove('active');
+    $resultOverlay.classList.remove("active");
 }

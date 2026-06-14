@@ -1,7 +1,7 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-conexoes.json');
+    const resp = await fetch("../data/football-conexoes.json");
     const data = await resp.json();
     estado.puzzles = data.puzzles;
 }

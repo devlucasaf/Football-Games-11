@@ -4,8 +4,8 @@ import { mostrarExplicacao, atualizarPlacar } from "./ui.js";
 
 // --- CRIAR CARDS DA RODADA ---
 export function criarCards() {
-    const grid          = document.getElementById("impostorGrid");
-    const temaEl        = document.getElementById("temaTexto");
+    const grid = document.getElementById("impostorGrid");
+    const temaEl = document.getElementById("temaTexto");
     const dificuldadeEl = document.getElementById("dificuldadeBadge");
 
     grid.innerHTML = "";
@@ -54,6 +54,7 @@ function selecionarJogador(nome, card) {
     if (!estado.jogoAtivo) {
         return;
     }
+    
     estado.jogoAtivo = false;
     estado.totalJogado++;
 

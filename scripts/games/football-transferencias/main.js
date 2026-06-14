@@ -1,9 +1,9 @@
-import { estado, resetEstado } from './core.js';
-import { carregarDados, selecionarModo, escolherJogador, obterNomesJogadores } from './data.js';
-import { renderizarClubes, atualizarInfo, mostrarFeedback, mostrarResultadoFinal, resetarVisual, configurarAutocomplete } from './ui.js';
+import { estado, resetEstado } from "./core.js";
+import { carregarDados, selecionarModo, escolherJogador, obterNomesJogadores } from "./data.js";
+import { renderizarClubes, atualizarInfo, mostrarFeedback, mostrarResultadoFinal, resetarVisual, configurarAutocomplete } from "./ui.js";
 
 function normalizar(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
 // --- CALCULA OS PONTOS COM BASE NA QUANTIDADE DE CLUBES REVELADOS ---
@@ -64,15 +64,15 @@ function iniciarRodada() {
     escolherJogador();
     renderizarClubes();
     atualizarInfo();
-    document.getElementById('guessInput').focus();
+    document.getElementById("guessInput").focus();
 }
 
 // --- INICIA UM NOVO JOGO DO ZERO ---
 function iniciarJogo() {
-    document.getElementById('modeSelection').classList.add('hidden');
-    document.getElementById('gameInfo').classList.remove('hidden');
-    document.getElementById('clubsArea').classList.remove('hidden');
-    document.getElementById('guessArea').classList.remove('hidden');
+    document.getElementById("modeSelection").classList.add("hidden");
+    document.getElementById("gameInfo").classList.remove("hidden");
+    document.getElementById("clubsArea").classList.remove("hidden");
+    document.getElementById("guessArea").classList.remove("hidden");
     resetEstado();
     selecionarModo(estado.modoAtual);
     setupAutocomplete();
@@ -87,42 +87,42 @@ function selecionarModoEIniciar(modo) {
 
 // --- VOLTAR À SELEÇÃO DE MODO ---
 function voltarModo() {
-    document.getElementById('modeSelection').classList.remove('hidden');
-    document.getElementById('gameInfo').classList.add('hidden');
-    document.getElementById('clubsArea').classList.add('hidden');
-    document.getElementById('guessArea').classList.add('hidden');
-    document.getElementById('feedback').classList.add('hidden');
-    document.getElementById('finalResult').classList.add('hidden');
+    document.getElementById("modeSelection").classList.remove("hidden");
+    document.getElementById("gameInfo").classList.add("hidden");
+    document.getElementById("clubsArea").classList.add("hidden");
+    document.getElementById("guessArea").classList.add("hidden");
+    document.getElementById("feedback").classList.add("hidden");
+    document.getElementById("finalResult").classList.add("hidden");
 }
 
 // --- BOTÃO DE REVELAR PRÓXIMO CLUBE ---
-document.getElementById('btnReveal').addEventListener('click', revelarProximoClube);
+document.getElementById("btnReveal").addEventListener("click", revelarProximoClube);
 
 // --- BOTÃO DE CONFIRMAR PALPITE ---
-document.getElementById('btnGuess').addEventListener('click', () => {
-    const input = document.getElementById('guessInput');
+document.getElementById("btnGuess").addEventListener("click", () => {
+    const input = document.getElementById("guessInput");
     if (input.value.trim()) {
         verificarPalpite(input.value.trim());
     }
 });
 
-document.getElementById('btnNext').addEventListener('click', proximaRodada);
-document.getElementById('btnRetry').addEventListener('click', iniciarJogo);
-document.getElementById('btnHome').addEventListener('click', () => {
-    window.location.href = '../index.html';
+document.getElementById("btnNext").addEventListener("click", proximaRodada);
+document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
+document.getElementById("btnHome").addEventListener("click", () => {
+    window.location.href = "../index.html";
 });
 
 // --- BOTÕES DE SELEÇÃO DE MODO ---
-document.getElementById('btnMundial').addEventListener('click', () => selecionarModoEIniciar('mundial'));
-document.getElementById('btnBrasileiro').addEventListener('click', () => selecionarModoEIniciar('brasileiro'));
-document.getElementById('btnTrocarModo').addEventListener('click', voltarModo);
+document.getElementById("btnMundial").addEventListener("click", () => selecionarModoEIniciar("mundial"));
+document.getElementById("btnBrasileiro").addEventListener("click", () => selecionarModoEIniciar("brasileiro"));
+document.getElementById("btnTrocarModo").addEventListener("click", voltarModo);
 
 // --- CONFIGURA O AUTOCOMPLETAR COM OS NOMES DOS JOGADORES ---
 function setupAutocomplete() {
     const nomes = obterNomesJogadores();
     configurarAutocomplete(nomes, (nome) => {
-        document.getElementById('guessInput').value = nome;
-        document.getElementById('autocompleteList').classList.remove('active');
+        document.getElementById("guessInput").value = nome;
+        document.getElementById("autocompleteList").classList.remove("active");
         verificarPalpite(nome);
     });
 }

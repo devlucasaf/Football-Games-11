@@ -16,7 +16,7 @@
 }
 
 .game-round, .game-score, .game-attempts {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--text-primary);
@@ -40,7 +40,7 @@
 }
 
 .dicas-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -202,7 +202,7 @@
 }
 
 .round-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -247,7 +247,7 @@
 }
 
 .final-result h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
@@ -265,7 +265,7 @@
 }
 
 .final-points {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: var(--accent-color);

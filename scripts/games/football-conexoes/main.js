@@ -1,6 +1,6 @@
-import { estado, resetPuzzle } from './core.js';
-import { carregarDados, escolherPuzzle, obterTodosJogadores, embaralhar, verificarGrupo } from './data.js';
-import { renderizarGrid, renderizarVidas, renderizarGrupoAcertado, mostrarFeedback, animarErro, animarQuaseLa, embaralharGrid, limparSelecao, mostrarResultadoFinal, resetarVisual } from './ui.js';
+import { estado, resetPuzzle } from "./core.js";
+import { carregarDados, escolherPuzzle, obterTodosJogadores, embaralhar, verificarGrupo } from "./data.js";
+import { renderizarGrid, renderizarVidas, renderizarGrupoAcertado, mostrarFeedback, animarErro, animarQuaseLa, embaralharGrid, limparSelecao, mostrarResultadoFinal, resetarVisual } from "./ui.js";
 
 // --- INICIAR PUZZLE ---
 function iniciarPuzzle() {
@@ -47,10 +47,10 @@ function confirmarSelecao() {
 
         if (resultado.quaseLa) {
             animarQuaseLa();
-            mostrarFeedback('almost', 'Quase lá! 3 de 4 estão corretos.');
+            mostrarFeedback("almost", "Quase lá! 3 de 4 estão corretos.");
         } else {
             animarErro();
-            mostrarFeedback('wrong', 'Não é um grupo válido.');
+            mostrarFeedback("wrong", "Não é um grupo válido.");
         }
 
         estado.selecionados = [];
@@ -71,12 +71,12 @@ function confirmarSelecao() {
 }
 
 // --- EVENTOS DOS BOTÕES ---
-document.getElementById('btnSubmit').addEventListener('click', confirmarSelecao);
-document.getElementById('btnDeselect').addEventListener('click', limparSelecao);
-document.getElementById('btnShuffle').addEventListener('click', embaralharGrid);
-document.getElementById('btnNextPuzzle').addEventListener('click', iniciarPuzzle);
-document.getElementById('btnHome').addEventListener('click', () => {
-    window.location.href = '../index.html';
+document.getElementById("btnSubmit").addEventListener("click", confirmarSelecao);
+document.getElementById("btnDeselect").addEventListener("click", limparSelecao);
+document.getElementById("btnShuffle").addEventListener("click", embaralharGrid);
+document.getElementById("btnNextPuzzle").addEventListener("click", iniciarPuzzle);
+document.getElementById("btnHome").addEventListener("click", () => {
+    window.location.href = "../index.html";
 });
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---

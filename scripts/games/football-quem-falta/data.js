@@ -1,7 +1,7 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-quem-falta.json');
+    const resp = await fetch("../data/football-quem-falta.json");
     const data = await resp.json();
     estado.desafios = data.desafios;
 }
@@ -17,5 +17,5 @@ export function sortear() {
 }
 
 export function normalizar(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }

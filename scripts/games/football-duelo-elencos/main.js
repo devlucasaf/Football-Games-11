@@ -1,5 +1,5 @@
-import { estado } from './core.js';
-import { carregarDados, escolherDuelo, obterPosicaoAtual } from './data.js';
+import { estado } from "./core.js";
+import { carregarDados, escolherDuelo, obterPosicaoAtual } from "./data.js";
 import {
     configurarDuelo,
     mostrarEscolha,
@@ -7,7 +7,7 @@ import {
     colocarJogadorNoCampo,
     atualizarPontuacao,
     mostrarResultadoFinal
-} from './ui.js';
+} from "./ui.js";
 
 // --- VERIFICAR ESCOLHA ---
 function verificarEscolha(escolha) {
@@ -34,7 +34,7 @@ function verificarEscolha(escolha) {
 
     revelarResultado(escolha, correto, posicao);
 
-    const nomeCorreto = posicao.melhor === 'A' ? posicao.jogadorA : posicao.jogadorB;
+    const nomeCorreto = posicao.melhor === "A" ? posicao.jogadorA : posicao.jogadorB;
     colocarJogadorNoCampo(estado.posicaoIdx, nomeCorreto, correto);
 
     setTimeout(() => {
@@ -89,33 +89,33 @@ function iniciarDuelo() {
 async function init() {
     await carregarDados();
 
-    document.getElementById('cardA').addEventListener('click', () => verificarEscolha('A'));
-    document.getElementById('cardB').addEventListener('click', () => verificarEscolha('B'));
-    document.getElementById('btnRetry').addEventListener('click', () => {
-        document.getElementById('finalResult').classList.add('hidden');
+    document.getElementById("cardA").addEventListener("click", () => verificarEscolha("A"));
+    document.getElementById("cardB").addEventListener("click", () => verificarEscolha("B"));
+    document.getElementById("btnRetry").addEventListener("click", () => {
+        document.getElementById("finalResult").classList.add("hidden");
         iniciarDuelo();
     });
-    document.getElementById('btnHome').addEventListener('click', () => {
-        window.location.href = '../index.html';
+    document.getElementById("btnHome").addEventListener("click", () => {
+        window.location.href = "../index.html";
     });
 
-    const tutorialOverlay = document.getElementById('tutorialOverlay');
+    const tutorialOverlay = document.getElementById("tutorialOverlay");
     const gameKey = tutorialOverlay?.dataset.game;
     const skipKey = gameKey ? `tutorial_skip_${gameKey}` : null;
 
     if (skipKey && localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add('hidden');
+        tutorialOverlay.classList.add("hidden");
         iniciarDuelo();
     } else if (tutorialOverlay) {
-        document.getElementById('tutorialStartBtn').addEventListener('click', () => {
-            tutorialOverlay.classList.add('hidden');
+        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+            tutorialOverlay.classList.add("hidden");
             iniciarDuelo();
         });
-        document.getElementById('tutorialSkipBtn').addEventListener('click', () => {
+        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
             if (skipKey) {
-                localStorage.setItem(skipKey, 'true');
+                localStorage.setItem(skipKey, "true");
             }
-            tutorialOverlay.classList.add('hidden');
+            tutorialOverlay.classList.add("hidden");
             iniciarDuelo();
         });
     } else {

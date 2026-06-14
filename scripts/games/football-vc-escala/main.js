@@ -4,10 +4,10 @@ const EscalaConstrutor = {
     async iniciar() {
         try {
             const parametrosUrl = new URLSearchParams(window.location.search);
-            const chaveTime = parametrosUrl.get('team');
+            const chaveTime = parametrosUrl.get("team");
 
             if (!chaveTime) {
-                window.location.href = 'football-vc-escala.html';
+                window.location.href = "football-vc-escala.html";
                 return;
             }
 
@@ -16,7 +16,7 @@ const EscalaConstrutor = {
             EscalaDados.timeAtual = EscalaDados.timesProcessados.find(t => t.key === chaveTime);
 
             if (!EscalaDados.timeAtual) {
-                window.location.href = 'football-vc-escala.html';
+                window.location.href = "football-vc-escala.html";
                 return;
             }
 
@@ -26,17 +26,17 @@ const EscalaConstrutor = {
             this.configurarEventos();
 
         } catch (erro) {
-            console.error('Erro ao inicializar construtor:', erro);
-            window.location.href = 'football-vc-escala.html';
+            console.error("Erro ao inicializar construtor:", erro);
+            window.location.href = "football-vc-escala.html";
         }
     },
 
     // --- ATUALIZA OS ELEMENTOS DA INTERFACE COM INFORMAÇÕES DO TIME ---
     atualizarInterfaceConstrutor() {
-        const nomeTimeEl = document.getElementById('teamName');
-        const nomeCompletoEl = document.getElementById('teamFullName');
-        const contagemJogadoresEl = document.getElementById('playerCount');
-        const badgeEl = document.getElementById('teamBadge');
+        const nomeTimeEl = document.getElementById("teamName");
+        const nomeCompletoEl = document.getElementById("teamFullName");
+        const contagemJogadoresEl = document.getElementById("playerCount");
+        const badgeEl = document.getElementById("teamBadge");
 
         if (nomeTimeEl) {
             nomeTimeEl.textContent = EscalaDados.timeAtual.name;
@@ -57,11 +57,11 @@ const EscalaConstrutor = {
 
     // --- RENDERIZA A LISTA DE JOGADORES DISPONÍVEIS PARA ESCALAÇÃO ---
     renderizarListaJogadores() {
-        const listaJogadores = document.getElementById('playersList');
-        const elementoCarregando = document.getElementById('loadingPlayers');
+        const listaJogadores = document.getElementById("playersList");
+        const elementoCarregando = document.getElementById("loadingPlayers");
 
         if (elementoCarregando) {
-            elementoCarregando.style.display = 'none';
+            elementoCarregando.style.display = "none";
         }
 
         if (!listaJogadores) {
@@ -69,7 +69,7 @@ const EscalaConstrutor = {
         }
 
         // --- LIMPA A LISTA ANTERIOR ---
-        listaJogadores.innerHTML = '';
+        listaJogadores.innerHTML = "";
 
         EscalaDados.timeAtual.players.forEach((jogador, indice) => {
             const elemento = this.criarElementoJogador(jogador, indice);
@@ -81,11 +81,11 @@ const EscalaConstrutor = {
 
     // --- CRIA O ELEMENTO HTML PARA UM JOGADOR NA LISTA ---
     criarElementoJogador(jogador, indice) {
-        const div = document.createElement('div');
+        const div = document.createElement("div");
 
-        div.className = 'player-item';
+        div.className = "player-item";
         if (EscalaDados.jogadorEstaSelecionado(jogador.name)) {
-            div.classList.add('selected');
+            div.classList.add("selected");
         }
         div.dataset.playerIndex = indice;
 
@@ -98,11 +98,11 @@ const EscalaConstrutor = {
             </div>
             <div class="player-info">
                 <span>${grupoPosicao}</span>
-                <i class="fas fa-${EscalaDados.jogadorEstaSelecionado(jogador.name) ? 'check-circle' : 'plus-circle'}"></i>
+                <i class="fas fa-${EscalaDados.jogadorEstaSelecionado(jogador.name) ? "check-circle" : "plus-circle"}"></i>
             </div>
         `;
 
-        div.addEventListener('click', () => {
+        div.addEventListener("click", () => {
             if (this.posicaoSelecionada) {
                 EscalaDados.adicionarJogadorNaPosicao(indice, this.posicaoSelecionada);
                 this.posicaoSelecionada = null;
@@ -115,12 +115,12 @@ const EscalaConstrutor = {
 
     // --- RENDERIZA O CAMPO COM AS POSIÇÕES E JOGADORES SELECIONADOS ---
     renderizarFormacao() {
-        const posicoesFormacao = document.getElementById('formationPositions');
+        const posicoesFormacao = document.getElementById("formationPositions");
         if (!posicoesFormacao) {
             return;
         }
 
-        posicoesFormacao.innerHTML = '';
+        posicoesFormacao.innerHTML = "";
 
         const posicoes = EscalaConfig.formacoes[EscalaDados.formacaoAtual].posicoes;
 
@@ -129,7 +129,7 @@ const EscalaConstrutor = {
             posicoesFormacao.appendChild(slot);
         });
 
-        const formacaoAtualEl = document.getElementById('currentFormation');
+        const formacaoAtualEl = document.getElementById("currentFormation");
         if (formacaoAtualEl) {
             formacaoAtualEl.textContent = EscalaDados.formacaoAtual;
         }
@@ -137,9 +137,9 @@ const EscalaConstrutor = {
 
     // --- CRIA UM SLOT DE POSIÇÃO NO CAMPO PARA COLOCAR UM JOGADOR ---
     criarSlotPosicao(posicao) {
-        const slot = document.createElement('div');
+        const slot = document.createElement("div");
 
-        slot.className = 'position-slot';
+        slot.className = "position-slot";
         slot.dataset.position = posicao.id;
         slot.style.left = `${posicao.x}%`;
         slot.style.top = `${posicao.y}%`;
@@ -147,18 +147,18 @@ const EscalaConstrutor = {
         // --- BUSCA O JOGADOR JÁ ATRIBUÍDO A ESTA POSIÇÃO ---
         const jogador = EscalaDados.jogadoresSelecionados.get(posicao.id);
         if (jogador) {
-            slot.classList.add('filled');
+            slot.classList.add("filled");
             slot.innerHTML = `<div class="position-label">${jogador.name}</div>`;
         } else {
             slot.innerHTML = `<div class="position-label">${posicao.id}</div>`;
         }
 
         if (this.posicaoSelecionada === posicao.id) {
-            slot.classList.add('active');
+            slot.classList.add("active");
         }
 
         // --- ADICIONA EVENTO DE CLIQUE PARA SELECIONAR OU REMOVER JOGADOR ---
-        slot.addEventListener('click', (e) => {
+        slot.addEventListener("click", (e) => {
             e.stopPropagation();
             if (jogador) {
                 EscalaDados.removerJogadorDaPosicao(posicao.id);
@@ -178,43 +178,43 @@ const EscalaConstrutor = {
         this.renderizarFormacao();
         this.filtrarJogadoresPorPosicaoSlot(posicaoId);
 
-        const painel = document.querySelector('.players-panel');
+        const painel = document.querySelector(".players-panel");
         if (painel) {
-            painel.classList.add('highlight');
+            painel.classList.add("highlight");
             painel.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'nearest' 
+                behavior: "smooth", 
+                block: "nearest" 
             });
         }
     },
 
     // --- FILTRA JOGADORES COMPATÍVEIS COM A POSIÇÃO SELECIONADA ---
     filtrarJogadoresPorPosicaoSlot(posicaoId) {
-        const listaJogadores = document.getElementById('playersList');
+        const listaJogadores = document.getElementById("playersList");
         if (!listaJogadores) {
             return;
         }
 
-        const itens = listaJogadores.querySelectorAll('.player-item');
-        const posBase = posicaoId.replace(/[0-9]/g, '');
+        const itens = listaJogadores.querySelectorAll(".player-item");
+        const posBase = posicaoId.replace(/[0-9]/g, "");
 
         let filtro;
-        if (posBase === 'GK') {
-            filtro = 'GK';
-        } else if (posBase === 'ZAG') {
-            filtro = 'ZAG';
-        } else if (posBase === 'LD' || posBase === 'LE' || posBase === 'LAT') {
-            filtro = 'LD/LE';
-        } else if (['VOL', 'MEI', 'ME', 'MD', 'CAM', 'MOD', 'MOE'].includes(posBase)) {
-            filtro = 'VOL/MEI';
-        } else if (['ATA', 'CA', 'PD', 'PE', 'SA'].includes(posBase)) {
-            filtro = 'ATA';
+        if (posBase === "GK") {
+            filtro = "GK";
+        } else if (posBase === "ZAG") {
+            filtro = "ZAG";
+        } else if (posBase === "LD" || posBase === "LE" || posBase === "LAT") {
+            filtro = "LD/LE";
+        } else if (["VOL", "MEI", "ME", "MD", "CAM", "MOD", "MOE"].includes(posBase)) {
+            filtro = "VOL/MEI";
+        } else if (["ATA", "CA", "PD", "PE", "SA"].includes(posBase)) {
+            filtro = "ATA";
         } else {
-            filtro = 'all';
+            filtro = "all";
         }
 
         // --- ATUALIZA O VALOR DO DROPDOWN DE FILTRO ---
-        const filtroPosicao = document.getElementById('positionFilter');
+        const filtroPosicao = document.getElementById("positionFilter");
         if (filtroPosicao) {
             filtroPosicao.value = filtro;
         }
@@ -230,28 +230,28 @@ const EscalaConstrutor = {
         this.atualizarContagemCampo();
 
         // --- GERENCIA O DESTAQUE DO PAINEL DE JOGADORES ---
-        const painel = document.querySelector('.players-panel');
+        const painel = document.querySelector(".players-panel");
         if (painel) {
             if (this.posicaoSelecionada) {
-                painel.classList.add('highlight');
+                painel.classList.add("highlight");
             } else {
-                painel.classList.remove('highlight');
+                painel.classList.remove("highlight");
             }
         }
 
         // --- RESETA O FILTRO SE NENHUMA POSIÇÃO ESTÁ SELECIONADA ---
         if (!this.posicaoSelecionada) {
-            const filtroPosicao = document.getElementById('positionFilter');
+            const filtroPosicao = document.getElementById("positionFilter");
             if (filtroPosicao) {
-                filtroPosicao.value = 'all';
+                filtroPosicao.value = "all";
             }
-            this.filtrarJogadoresPorPosicao('all');
+            this.filtrarJogadoresPorPosicao("all");
         }
     },
 
     // --- ATUALIZA A EXIBIÇÃO DOS JOGADORES JÁ SELECIONADOS ---
     atualizarJogadoresSelecionados() {
-        const elementoSelecionados = document.getElementById('selectedPlayers');
+        const elementoSelecionados = document.getElementById("selectedPlayers");
         if (!elementoSelecionados) {
             return;
         }
@@ -267,12 +267,12 @@ const EscalaConstrutor = {
         }
 
         // --- CRIA UM GRID PARA EXIBIR OS JOGADORES SELECIONADOS ---
-        const grid = document.createElement('div');
-        grid.className = 'selected-players-grid';
+        const grid = document.createElement("div");
+        grid.className = "selected-players-grid";
 
         EscalaDados.jogadoresSelecionados.forEach((jogador, posicao) => {
-            const elemento = document.createElement('div');
-            elemento.className = 'selected-player';
+            const elemento = document.createElement("div");
+            elemento.className = "selected-player";
             elemento.innerHTML = `
                 <div class="selected-player-name">${jogador.name}</div>
                 <div class="selected-player-position">${posicao}</div>
@@ -280,13 +280,13 @@ const EscalaConstrutor = {
             grid.appendChild(elemento);
         });
 
-        elementoSelecionados.innerHTML = '';
+        elementoSelecionados.innerHTML = "";
         elementoSelecionados.appendChild(grid);
     },
 
     // --- ATUALIZA A CONTAGEM DE JOGADORES NO CAMPO ---
     atualizarContagemCampo() {
-        const contagemEl = document.getElementById('fieldCount');
+        const contagemEl = document.getElementById("fieldCount");
         if (contagemEl) {
             contagemEl.textContent = `${EscalaDados.jogadoresSelecionados.size}/11`;
         }
@@ -298,9 +298,9 @@ const EscalaConstrutor = {
             EscalaDados.formacaoAtual = formacao;
             this.renderizarFormacao();
 
-            const menu = document.getElementById('formationsMenu');
+            const menu = document.getElementById("formationsMenu");
             if (menu) {
-                menu.classList.remove('active');
+                menu.classList.remove("active");
             }
 
             this.atualizarPosicoesParaFormacao();
@@ -324,21 +324,21 @@ const EscalaConstrutor = {
 
     // --- FILTRA A LISTA DE JOGADORES POR TIPO DE POSIÇÃO ---
     filtrarJogadoresPorPosicao(filtro) {
-        const listaJogadores = document.getElementById('playersList');
+        const listaJogadores = document.getElementById("playersList");
         if (!listaJogadores) {
             return;
         }
 
-        const itens = listaJogadores.querySelectorAll('.player-item');
+        const itens = listaJogadores.querySelectorAll(".player-item");
 
         itens.forEach(item => {
             const indice = parseInt(item.dataset.playerIndex);
             const jogador = EscalaDados.timeAtual.players[indice];
 
-            if (filtro === 'all' || EscalaDados.posicaoCorrespondeAoFiltro(jogador.pos, filtro)) {
-                item.style.display = 'block';
+            if (filtro === "all" || EscalaDados.posicaoCorrespondeAoFiltro(jogador.pos, filtro)) {
+                item.style.display = "block";
             } else {
-                item.style.display = 'none';
+                item.style.display = "none";
             }
         });
     },
@@ -346,41 +346,41 @@ const EscalaConstrutor = {
     // --- CONFIGURA TODOS OS EVENTOS DE CLIQUE E INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
         // --- TEMA ---
-        const botaoTema = document.getElementById('themeToggle');
+        const botaoTema = document.getElementById("themeToggle");
         if (botaoTema) {
-            botaoTema.addEventListener('click', EscalaUtils.alternarTema);
+            botaoTema.addEventListener("click", EscalaUtils.alternarTema);
         }
 
         // --- ALTERNAR FORMAÇÃO ---
-        const botaoFormacao = document.getElementById('formationToggle');
+        const botaoFormacao = document.getElementById("formationToggle");
         if (botaoFormacao) {
-            botaoFormacao.addEventListener('click', () => {
-                const menu = document.getElementById('formationsMenu');
-                menu.classList.toggle('active');
+            botaoFormacao.addEventListener("click", () => {
+                const menu = document.getElementById("formationsMenu");
+                menu.classList.toggle("active");
             });
         }
 
         // --- OPÇÕES DE FORMAÇÃO ---
-        const opcoesFormacao = document.querySelectorAll('.formation-option');
+        const opcoesFormacao = document.querySelectorAll(".formation-option");
         opcoesFormacao.forEach(opcao => {
-            opcao.addEventListener('click', () => {
+            opcao.addEventListener("click", () => {
                 this.mudarFormacao(opcao.dataset.formation);
             });
         });
 
         // --- FILTRO DE POSIÇÃO ---
-        const filtroPosicao = document.getElementById('positionFilter');
+        const filtroPosicao = document.getElementById("positionFilter");
         if (filtroPosicao) {
-            filtroPosicao.addEventListener('change', (e) => {
+            filtroPosicao.addEventListener("change", (e) => {
                 this.filtrarJogadoresPorPosicao(e.target.value);
             });
         }
 
         // --- REINICIAR TIME ---
-        const botaoReiniciar = document.getElementById('resetTeam');
+        const botaoReiniciar = document.getElementById("resetTeam");
         if (botaoReiniciar) {
-            botaoReiniciar.addEventListener('click', () => {
-                if (confirm('Tem certeza que deseja reiniciar toda a escalação?')) {
+            botaoReiniciar.addEventListener("click", () => {
+                if (confirm("Tem certeza que deseja reiniciar toda a escalação?")) {
                     EscalaDados.reiniciarEscalacao();
                     this.atualizarTudo();
                 }
@@ -388,65 +388,65 @@ const EscalaConstrutor = {
         }
 
         // --- SALVAR TIME ---
-        const botaoSalvar = document.getElementById('saveTeam');
+        const botaoSalvar = document.getElementById("saveTeam");
         if (botaoSalvar) {
-            botaoSalvar.addEventListener('click', () => {
+            botaoSalvar.addEventListener("click", () => {
                 if (EscalaDados.salvarTime()) {
                     this.mostrarModalSalvar();
                 } else {
-                    alert('Complete todas as 11 posições antes de salvar!');
+                    alert("Complete todas as 11 posições antes de salvar!");
                 }
             });
         }
 
         // --- FECHAR MODAL ---
-        const fecharModal = document.getElementById('closeModal');
+        const fecharModal = document.getElementById("closeModal");
         if (fecharModal) {
-            fecharModal.addEventListener('click', () => {
-                const modal = document.getElementById('saveModal');
+            fecharModal.addEventListener("click", () => {
+                const modal = document.getElementById("saveModal");
                 if (modal) {
-                    modal.style.display = 'none';
+                    modal.style.display = "none";
                 }
             });
         }
 
         // --- COMPARTILHAR TIME ---
-        const botaoCompartilhar = document.getElementById('shareTeam');
+        const botaoCompartilhar = document.getElementById("shareTeam");
         if (botaoCompartilhar) {
-            botaoCompartilhar.addEventListener('click', () => {
+            botaoCompartilhar.addEventListener("click", () => {
                 const texto = EscalaDados.gerarTextoCompartilhamento();
                 navigator.clipboard.writeText(texto).then(() => {
-                    alert('Escalação copiada para a área de transferência!');
+                    alert("Escalação copiada para a área de transferência!");
                 }).catch(() => {
-                    prompt('Copie o texto abaixo:', texto);
+                    prompt("Copie o texto abaixo:", texto);
                 });
             });
         }
 
         // --- NOVO TIME ---
-        const botaoNovoTime = document.getElementById('newTeam');
+        const botaoNovoTime = document.getElementById("newTeam");
         if (botaoNovoTime) {
-            botaoNovoTime.addEventListener('click', () => {
-                window.location.href = 'football-vc-escala.html';
+            botaoNovoTime.addEventListener("click", () => {
+                window.location.href = "football-vc-escala.html";
             });
         }
 
         // --- FECHAR MENU AO CLICAR FORA ---
-        document.addEventListener('click', (e) => {
-            const menu = document.getElementById('formationsMenu');
-            const toggle = document.getElementById('formationToggle');
+        document.addEventListener("click", (e) => {
+            const menu = document.getElementById("formationsMenu");
+            const toggle = document.getElementById("formationToggle");
 
             if (menu && toggle && !menu.contains(e.target) && !toggle.contains(e.target)) {
-                menu.classList.remove('active');
+                menu.classList.remove("active");
             }
         });
     },
 
     // --- EXIBE O MODAL DE CONFIRMAÇÃO DE SALVAMENTO DA ESCALAÇÃO ---
     mostrarModalSalvar() {
-        const modal = document.getElementById('saveModal');
+        const modal = document.getElementById("saveModal");
         if (modal) {
-            modal.style.display = 'flex';
+            modal.style.display = "flex";
         }
     }
 };

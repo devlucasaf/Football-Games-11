@@ -1,7 +1,7 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-linha-do-tempo.json');
+    const resp = await fetch("../data/football-linha-do-tempo.json");
     const data = await resp.json();
     estado.rodadas = data.rodadas;
 }

@@ -4,7 +4,7 @@
 }
 
 .game-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     text-align: center;
     color: var(--text-primary);
@@ -51,7 +51,7 @@
 }
 
 .solved-group .group-category {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -290,7 +290,7 @@
 }
 
 .final-result h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.6rem;
     color: var(--text-primary);
     margin-bottom: 0.5rem;

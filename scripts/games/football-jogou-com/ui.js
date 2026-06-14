@@ -34,15 +34,16 @@ export function revelarProximo() {
     if (estado.companheirosRevelados >= 5) {
         return false;
     }
+
     revelarCompanheiro(estado.companheirosRevelados);
     return true;
 }
 
 // --- MOSTRAR RESPOSTA ---
 export function mostrarResposta(acertou) {
-    const cardResposta  = document.getElementById("respostaCard");
-    const nomeEl        = document.getElementById("respostaNome");
-    const iconeEl       = document.getElementById("respostaIcone");
+    const cardResposta = document.getElementById("respostaCard");
+    const nomeEl = document.getElementById("respostaNome");
+    const iconeEl = document.getElementById("respostaIcone");
 
     nomeEl.textContent = estado.rodadaAtual.resposta;
     iconeEl.className = acertou ? "fas fa-trophy resposta-icone" : "fas fa-times-circle resposta-icone";
@@ -52,9 +53,9 @@ export function mostrarResposta(acertou) {
 
 // --- RESETAR CARD DE RESPOSTA ---
 export function resetarRespostaCard() {
-    const cardResposta  = document.getElementById("respostaCard");
-    const nomeEl        = document.getElementById("respostaNome");
-    const iconeEl       = document.getElementById("respostaIcone");
+    const cardResposta = document.getElementById("respostaCard");
+    const nomeEl = document.getElementById("respostaNome");
+    const iconeEl = document.getElementById("respostaIcone");
 
     nomeEl.textContent = "???";
     iconeEl.className = "fas fa-question resposta-icone";
@@ -64,7 +65,7 @@ export function resetarRespostaCard() {
 // --- MOSTRAR DICA ---
 export function mostrarDica() {
     const container = document.getElementById("dicaContainer");
-    const texto     = document.getElementById("dicaTexto");
+    const texto = document.getElementById("dicaTexto");
 
     if (estado.rodadaAtual.dica) {
         texto.textContent = estado.rodadaAtual.dica;

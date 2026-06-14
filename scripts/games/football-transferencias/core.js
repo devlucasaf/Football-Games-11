@@ -1,6 +1,6 @@
 export const estado = {
     dados:              null,
-    modoAtual:          '',
+    modoAtual:          "",
     jogadores:          [],          
     jogadoresUsados:    [],    
     jogadorAtual:       null,     
@@ -9,7 +9,7 @@ export const estado = {
     totalRodadas:       5,
     pontuacao:          0,
     jogoAtivo:          true,
-    palpite: ''
+    palpite: ""
 };
 
 export function resetEstado() {
@@ -19,5 +19,5 @@ export function resetEstado() {
     estado.rodada = 1;
     estado.pontuacao = 0;
     estado.jogoAtivo = true;
-    estado.palpite = '';
+    estado.palpite = "";
 }

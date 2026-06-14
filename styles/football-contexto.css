@@ -18,7 +18,7 @@
 }
 
 .game-title-bar h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
     font-weight: 800;
     color: var(--text-primary);
@@ -36,7 +36,7 @@
 }
 
 .stat-item {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
     color: var(--text-secondary);
     display: flex;
@@ -167,7 +167,7 @@
 }
 
 .palpite-rank {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
     color: var(--text-secondary);
@@ -175,7 +175,7 @@
 }
 
 .palpite-nome {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 0.85rem;
     color: var(--text-primary);
@@ -214,7 +214,7 @@
 }
 
 .palpite-score {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 800;
     font-size: 0.9rem;
     text-align: right;
@@ -259,7 +259,7 @@
 }
 
 .final-result h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
@@ -280,7 +280,7 @@
 }
 
 .final-player-reveal strong {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--accent-color);
@@ -294,7 +294,7 @@
 }
 
 .final-tentativas {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--text-primary);

@@ -1,6 +1,6 @@
-import estado from './core.js';
+import estado from "./core.js";
 
-const JSON_PATH = '../data/football-top10.json';
+const JSON_PATH = "../data/football-top10.json";
 
 // --- CARREGA OS DADOS DO ARQUIVO JSON ---
 export async function carregarDados() {

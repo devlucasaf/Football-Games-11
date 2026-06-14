@@ -10,9 +10,9 @@ export function atualizarInfo() {
 
 // --- MOSTRAR RESULTADO ---
 export function mostrarResultado(acertou) {
-    const overlay   = document.getElementById("resultOverlay");
-    const icon      = document.getElementById("resultIcon");
-    const text      = document.getElementById("resultText");
+    const overlay = document.getElementById("resultOverlay");
+    const icon = document.getElementById("resultIcon");
+    const text = document.getElementById("resultText");
 
     if (acertou) {
         icon.textContent = "";

@@ -1,7 +1,7 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-placar.json');
+    const resp = await fetch("../data/football-placar.json");
     const data = await resp.json();
     estado.partidas = data.partidas;
 }

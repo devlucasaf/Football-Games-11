@@ -6,15 +6,15 @@ const LegendsTimes = {
             this.atualizarEstatisticas();
             this.configurarEventos();
         } catch (erro) {
-            console.error('Erro ao inicializar página de times:', erro);
+            console.error("Erro ao inicializar página de times:", erro);
             this.mostrarEstadoErro();
         }
     },
 
     // --- RENDERIZAR GRID DE TIMES ---
     renderizarGridTimes() {
-        const gridTimes = document.getElementById('teamsGrid');
-        const elementoCarregando = document.getElementById('loadingTeams');
+        const gridTimes = document.getElementById("teamsGrid");
+        const elementoCarregando = document.getElementById("loadingTeams");
 
         if (!LegendsDados.timesProcessados || LegendsDados.timesProcessados.length === 0) {
             this.mostrarEstadoErro();
@@ -22,10 +22,10 @@ const LegendsTimes = {
         }
 
         if (elementoCarregando) {
-            elementoCarregando.style.display = 'none';
+            elementoCarregando.style.display = "none";
         }
 
-        gridTimes.innerHTML = '';
+        gridTimes.innerHTML = "";
 
         LegendsDados.timesProcessados.forEach(time => {
             const cartao = this.criarCartaoTime(time);
@@ -35,25 +35,25 @@ const LegendsTimes = {
 
     // --- CRIAR CARTÃO DE TIME ---
     criarCartaoTime(time) {
-        const cartao = document.createElement('div');
-        cartao.className = 'team-card';
+        const cartao = document.createElement("div");
+        cartao.className = "team-card";
         cartao.dataset.teamKey = time.key;
 
         const contagemPosicoes = LegendsDados.obterContagemPosicoes(time.players);
 
         cartao.innerHTML = `
             <div class="team-badge">
-                <i class="fas fa-${time.type === 'club' ? 'shield-alt' : 'flag'}"></i>
+                <i class="fas fa-${time.type === "club" ? "shield-alt" : "flag"}"></i>
             </div>
 
             <h3>${time.name}</h3>
 
             <div class="team-type">
-                ${time.type === 'club' ? 'Clube' : 'Seleção'}
+                ${time.type === "club" ? "Clube" : "Seleção"}
             </div>
 
             <div class="team-info">
-                ${time.tecnico ? `<div class="team-coach"><i class="fas fa-user-tie"></i> ${time.tecnico}</div>` : ''}
+                ${time.tecnico ? `<div class="team-coach"><i class="fas fa-user-tie"></i> ${time.tecnico}</div>` : ""}
             </div>
 
             <div class="team-count">
@@ -69,7 +69,7 @@ const LegendsTimes = {
             </div>
         `;
 
-        cartao.addEventListener('click', () => {
+        cartao.addEventListener("click", () => {
             window.location.href = `legendes-builder.html?team=${time.key}`;
         });
 
@@ -82,8 +82,8 @@ const LegendsTimes = {
             return;
         }
 
-        const totalTimesEl = document.getElementById('totalTeams');
-        const totalJogadoresEl = document.getElementById('totalPlayers');
+        const totalTimesEl = document.getElementById("totalTeams");
+        const totalJogadoresEl = document.getElementById("totalPlayers");
 
         if (totalTimesEl) {
             totalTimesEl.textContent = LegendsDados.timesProcessados.length;
@@ -97,23 +97,23 @@ const LegendsTimes = {
 
     // --- MOSTRAR ESTADO DE ERRO ---
     mostrarEstadoErro() {
-        const elementoCarregando = document.getElementById('loadingTeams');
-        const elementoErro = document.getElementById('errorState');
+        const elementoCarregando = document.getElementById("loadingTeams");
+        const elementoErro = document.getElementById("errorState");
 
         if (elementoCarregando) {
-            elementoCarregando.style.display = 'none';
+            elementoCarregando.style.display = "none";
         }
 
         if (elementoErro) {
-            elementoErro.style.display = 'block';
+            elementoErro.style.display = "block";
         }
     },
 
     // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
-        const botaoTema = document.getElementById('themeToggle');
+        const botaoTema = document.getElementById("themeToggle");
         if (botaoTema) {
-            botaoTema.addEventListener('click', LegendsUtils.alternarTema);
+            botaoTema.addEventListener("click", LegendsUtils.alternarTema);
         }
     }
 };

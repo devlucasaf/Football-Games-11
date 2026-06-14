@@ -3,12 +3,12 @@ const EscalaDados = {
     timesProcessados: [],
     timeAtual: null,
     jogadoresSelecionados: new Map(),
-    formacaoAtual: '4-3-3',
+    formacaoAtual: "4-3-3",
 
     async carregarDados() {
         const resposta = await fetch(EscalaConfig.CAMINHO_JSON);
         if (!resposta.ok) {
-            throw new Error('Falha ao carregar dados dos times');
+            throw new Error("Falha ao carregar dados dos times");
         }
         this.dadosTimes = await resposta.json();
         this.processarDados();
@@ -18,12 +18,12 @@ const EscalaDados = {
         this.timesProcessados = [];
 
         const mapaPosicao = {
-            goleiro:    'GK',
-            zagueiro:   'ZAG',
-            lateral:    'LAT',
-            volante:    'VOL',
-            meioCampo:  'MEI',
-            atacante:   'ATA'
+            goleiro:    "GK",
+            zagueiro:   "ZAG",
+            lateral:    "LAT",
+            volante:    "VOL",
+            meioCampo:  "MEI",
+            atacante:   "ATA"
         };
 
         for (const [nomeTime, posicoes] of Object.entries(this.dadosTimes)) {
@@ -40,9 +40,9 @@ const EscalaDados = {
             }
 
             this.timesProcessados.push({
-                key: nomeTime.toLowerCase().replace(/\s+/g, '-').replace(/[áàã]/g, 'a').replace(/[éê]/g, 'e').replace(/[í]/g, 'i').replace(/[óô]/g, 'o').replace(/[ú]/g, 'u'),
+                key: nomeTime.toLowerCase().replace(/\s+/g, "-").replace(/[áàã]/g, "a").replace(/[éê]/g, "e").replace(/[í]/g, "i").replace(/[óô]/g, "o").replace(/[ú]/g, "u"),
                 name: nomeTime,
-                type: 'club',
+                type: "club",
                 players: jogadores
             });
         }
@@ -58,13 +58,13 @@ const EscalaDados = {
 
         jogadores.forEach(jogador => {
             const pos = jogador.pos.toUpperCase();
-            if (pos.includes('GK')) {
+            if (pos.includes("GK")) {
                 contagem.GK++;
-            } else if (pos.includes('ZAG') || pos.includes('LAT') || pos.includes('LD') || pos.includes('LE')) {
+            } else if (pos.includes("ZAG") || pos.includes("LAT") || pos.includes("LD") || pos.includes("LE")) {
                 contagem.DEF++;
-            } else if (pos.includes('VOL') || pos.includes('MEI') || pos.includes('ME') || pos.includes('MD') || pos.includes('CAM')) {
+            } else if (pos.includes("VOL") || pos.includes("MEI") || pos.includes("ME") || pos.includes("MD") || pos.includes("CAM")) {
                 contagem.MID++;
-            } else if (pos.includes('ATA') || pos.includes('CA') || pos.includes('PD') || pos.includes('PE') || pos.includes('SA')) {
+            } else if (pos.includes("ATA") || pos.includes("CA") || pos.includes("PD") || pos.includes("PE") || pos.includes("SA")) {
                 contagem.ATT++;
             }
         });
@@ -79,7 +79,7 @@ const EscalaDados = {
                 return grupo;
             }
         }
-        return 'Outros';
+        return "Outros";
     },
 
     jogadorEstaSelecionado(nomeJogador) {
@@ -126,16 +126,16 @@ const EscalaDados = {
         const pos = posicao.toUpperCase();
 
         switch (filtro) {
-            case 'GK':
-                return pos.includes('GK');
-            case 'ZAG':
-                return pos.includes('ZAG');
-            case 'LD/LE':
-                return pos.includes('LD') || pos.includes('LE') || pos.includes('LAT');
-            case 'VOL/MEI':
-                return pos.includes('VOL') || pos.includes('MEI') || pos.includes('ME') || pos.includes('MD') || pos.includes('CAM');
-            case 'ATA':
-                return pos.includes('ATA') || pos.includes('CA') || pos.includes('PD') || pos.includes('PE') || pos.includes('SA');
+            case "GK":
+                return pos.includes("GK");
+            case "ZAG":
+                return pos.includes("ZAG");
+            case "LD/LE":
+                return pos.includes("LD") || pos.includes("LE") || pos.includes("LAT");
+            case "VOL/MEI":
+                return pos.includes("VOL") || pos.includes("MEI") || pos.includes("ME") || pos.includes("MD") || pos.includes("CAM");
+            case "ATA":
+                return pos.includes("ATA") || pos.includes("CA") || pos.includes("PD") || pos.includes("PE") || pos.includes("SA");
             default:
                 return true;
         }
@@ -161,9 +161,9 @@ const EscalaDados = {
             }))
         };
 
-        const timesSalvos = JSON.parse(localStorage.getItem('vcEscalaTeams') || '[]');
+        const timesSalvos = JSON.parse(localStorage.getItem("vcEscalaTeams") || "[]");
         timesSalvos.push(dadosTime);
-        localStorage.setItem('vcEscalaTeams', JSON.stringify(timesSalvos));
+        localStorage.setItem("vcEscalaTeams", JSON.stringify(timesSalvos));
 
         return true;
     },

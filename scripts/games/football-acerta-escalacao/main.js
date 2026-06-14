@@ -1,5 +1,5 @@
-import { estado } from './core.js';
-import { carregarDados, escolherEscalacao } from './data.js';
+import { estado } from "./core.js";
+import { carregarDados, escolherEscalacao } from "./data.js";
 import {
     renderizarCampo,
     revelarJogador,
@@ -13,10 +13,10 @@ import {
     mostrarModeSelect,
     esconderModeSelect,
     esconderTimer
-} from './ui.js';
+} from "./ui.js";
 
 function normalizarTexto(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
 
 function verificarPalpite(nome) {
@@ -55,7 +55,7 @@ function finalizarJogo() {
 
     estado.escalacaoAtual.jogadores.forEach((j, idx) => {
         const slot = document.getElementById(`slot-${idx}`);
-        if (slot && !slot.classList.contains('revealed')) {
+        if (slot && !slot.classList.contains("revealed")) {
             revelarNaoAcertado(idx, j.nome);
         }
     });
@@ -112,32 +112,32 @@ function selecionarModo(comTempo) {
 async function init() {
     await carregarDados();
 
-    document.getElementById('btnModeSemTempo').addEventListener('click', () => selecionarModo(false));
-    document.getElementById('btnModeComTempo').addEventListener('click', () => selecionarModo(true));
+    document.getElementById("btnModeSemTempo").addEventListener("click", () => selecionarModo(false));
+    document.getElementById("btnModeComTempo").addEventListener("click", () => selecionarModo(true));
 
-    document.getElementById('btnGiveUp').addEventListener('click', finalizarJogo);
-    document.getElementById('btnRetry').addEventListener('click', () => mostrarModeSelect());
-    document.getElementById('btnHome').addEventListener('click', () => {
-        window.location.href = '../index.html';
+    document.getElementById("btnGiveUp").addEventListener("click", finalizarJogo);
+    document.getElementById("btnRetry").addEventListener("click", () => mostrarModeSelect());
+    document.getElementById("btnHome").addEventListener("click", () => {
+        window.location.href = "../index.html";
     });
 
-    const tutorialOverlay = document.getElementById('tutorialOverlay');
+    const tutorialOverlay = document.getElementById("tutorialOverlay");
     const gameKey = tutorialOverlay?.dataset.game;
     const skipKey = gameKey ? `tutorial_skip_${gameKey}` : null;
 
     if (skipKey && localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add('hidden');
+        tutorialOverlay.classList.add("hidden");
         mostrarModeSelect();
     } else if (tutorialOverlay) {
-        document.getElementById('tutorialStartBtn').addEventListener('click', () => {
-            tutorialOverlay.classList.add('hidden');
+        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+            tutorialOverlay.classList.add("hidden");
             mostrarModeSelect();
         });
-        document.getElementById('tutorialSkipBtn').addEventListener('click', () => {
+        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
             if (skipKey) {
-                localStorage.setItem(skipKey, 'true');
+                localStorage.setItem(skipKey, "true");
             }
-            tutorialOverlay.classList.add('hidden');
+            tutorialOverlay.classList.add("hidden");
             mostrarModeSelect();
         });
     } else {

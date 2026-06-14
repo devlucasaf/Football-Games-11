@@ -1,5 +1,5 @@
-import { estado } from './core.js';
-import { carregarDados, sortearDesafio, sortearJogadores, jogadorAtual, valorDoJogador } from './data.js';
+import { estado } from "./core.js";
+import { carregarDados, sortearDesafio, sortearJogadores, jogadorAtual, valorDoJogador } from "./data.js";
 import {
     exibirDesafio,
     atualizarRodada,
@@ -9,7 +9,7 @@ import {
     mostrarResultadoMultiplicacao,
     mostrarFinal,
     resetarUI
-} from './ui.js';
+} from "./ui.js";
 
 // --- MOSTRAR RODADA ---
 function mostrarRodada() {
@@ -77,27 +77,27 @@ function iniciarJogo() {
 async function init() {
     await carregarDados();
 
-    document.getElementById('btnProximo').addEventListener('click', proxima);
-    document.getElementById('btnPular').addEventListener('click', pularJogador);
-    document.getElementById('btnRetry').addEventListener('click', iniciarJogo);
-    document.getElementById('btnHome').addEventListener('click', () => {
-        window.location.href = '../index.html';
+    document.getElementById("btnProximo").addEventListener("click", proxima);
+    document.getElementById("btnPular").addEventListener("click", pularJogador);
+    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
+    document.getElementById("btnHome").addEventListener("click", () => {
+        window.location.href = "../index.html";
     });
 
-    const tutorialOverlay = document.getElementById('tutorialOverlay');
-    const skipKey = 'tutorial_skip_football-multiplica';
+    const tutorialOverlay = document.getElementById("tutorialOverlay");
+    const skipKey = "tutorial_skip_football-multiplica";
 
     if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add('hidden');
+        tutorialOverlay.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById('tutorialStartBtn').addEventListener('click', () => {
-            tutorialOverlay.classList.add('hidden');
+        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+            tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById('tutorialSkipBtn').addEventListener('click', () => {
-            localStorage.setItem(skipKey, 'true');
-            tutorialOverlay.classList.add('hidden');
+        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+            localStorage.setItem(skipKey, "true");
+            tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
     }

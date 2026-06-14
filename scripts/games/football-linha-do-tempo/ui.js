@@ -1,28 +1,28 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 const els = {
-    rodadaAtual:    document.getElementById('rodadaAtual'),
-    pontos:         document.getElementById('pontos'),
-    tema:           document.getElementById('tema'),
-    timelineList:   document.getElementById('timelineList'),
-    timelineCard:   document.getElementById('timelineCard'),
-    roundResult:    document.getElementById('roundResult'),
-    roundScore:     document.getElementById('roundScore'),
-    roundCorrect:   document.getElementById('roundCorrect'),
-    finalResult:    document.getElementById('finalResult'),
-    finalPoints:    document.getElementById('finalPoints'),
-    finalDetails:   document.getElementById('finalDetails'),
-    gameInfo:       document.getElementById('gameInfo')
+    rodadaAtual:    document.getElementById("rodadaAtual"),
+    pontos:         document.getElementById("pontos"),
+    tema:           document.getElementById("tema"),
+    timelineList:   document.getElementById("timelineList"),
+    timelineCard:   document.getElementById("timelineCard"),
+    roundResult:    document.getElementById("roundResult"),
+    roundScore:     document.getElementById("roundScore"),
+    roundCorrect:   document.getElementById("roundCorrect"),
+    finalResult:    document.getElementById("finalResult"),
+    finalPoints:    document.getElementById("finalPoints"),
+    finalDetails:   document.getElementById("finalDetails"),
+    gameInfo:       document.getElementById("gameInfo")
 };
 
 let draggedItem = null;
 
 // --- RENDERIZAR LISTA DE EVENTOS ---
 export function renderizarLista() {
-    els.timelineList.innerHTML = '';
+    els.timelineList.innerHTML = "";
     estado.ordemAtual.forEach((evento, idx) => {
-        const item = document.createElement('div');
-        item.className = 'timeline-item';
+        const item = document.createElement("div");
+        item.className = "timeline-item";
         item.draggable = true;
         item.dataset.idx = idx;
 
@@ -35,32 +35,32 @@ export function renderizarLista() {
             </div>
         `;
 
-        item.addEventListener('dragstart', (e) => {
+        item.addEventListener("dragstart", (e) => {
             draggedItem = item;
-            item.classList.add('dragging');
-            e.dataTransfer.effectAllowed = 'move';
+            item.classList.add("dragging");
+            e.dataTransfer.effectAllowed = "move";
         });
 
-        item.addEventListener('dragend', () => {
-            item.classList.remove('dragging');
+        item.addEventListener("dragend", () => {
+            item.classList.remove("dragging");
             draggedItem = null;
-            document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('drag-over'));
+            document.querySelectorAll(".timeline-item").forEach(i => i.classList.remove("drag-over"));
         });
 
-        item.addEventListener('dragover', (e) => {
+        item.addEventListener("dragover", (e) => {
             e.preventDefault();
             if (draggedItem && draggedItem !== item) {
-                item.classList.add('drag-over');
+                item.classList.add("drag-over");
             }
         });
 
-        item.addEventListener('dragleave', () => {
-            item.classList.remove('drag-over');
+        item.addEventListener("dragleave", () => {
+            item.classList.remove("drag-over");
         });
 
-        item.addEventListener('drop', (e) => {
+        item.addEventListener("drop", (e) => {
             e.preventDefault();
-            item.classList.remove('drag-over');
+            item.classList.remove("drag-over");
             if (!draggedItem || draggedItem === item) {
                 return;
             }
@@ -75,8 +75,8 @@ export function renderizarLista() {
         els.timelineList.appendChild(item);
     });
 
-    els.timelineList.querySelectorAll('.btn-up').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    els.timelineList.querySelectorAll(".btn-up").forEach(btn => {
+        btn.addEventListener("click", (e) => {
             e.stopPropagation();
             const idx = parseInt(btn.dataset.idx);
             if (idx > 0) {
@@ -86,8 +86,8 @@ export function renderizarLista() {
         });
     });
 
-    els.timelineList.querySelectorAll('.btn-down').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    els.timelineList.querySelectorAll(".btn-down").forEach(btn => {
+        btn.addEventListener("click", (e) => {
             e.stopPropagation();
             const idx = parseInt(btn.dataset.idx);
             if (idx < estado.ordemAtual.length - 1) {
@@ -115,48 +115,49 @@ export function atualizarPontos() {
 
 // --- MOSTRAR CARD DA TIMELINE ---
 export function mostrarTimelineCard() {
-    els.timelineCard.classList.remove('hidden');
-    els.roundResult.classList.add('hidden');
+    els.timelineCard.classList.remove("hidden");
+    els.roundResult.classList.add("hidden");
 }
 
 // --- MOSTRAR RESULTADO DA RODADA ---
 export function mostrarRoundResult(corretos, ordemCorreta) {
-    els.timelineCard.classList.add('hidden');
-    els.roundResult.classList.remove('hidden');
+    els.timelineCard.classList.add("hidden");
+    els.roundResult.classList.remove("hidden");
 
     els.roundScore.textContent = `${corretos}/5 na posição correta (+${corretos} pts)`;
 
-    let html = '<div style="text-align: left; max-width: 500px; margin: 0 auto;">';
+    let html = "<div style='text-align: left; max-width: 500px; margin: 0 auto;'>";
     ordemCorreta.forEach((ev) => {
         html += `<div class="correct-order-item"><span class="year-badge">${ev.ano}</span> ${ev.texto}</div>`;
     });
-    html += '</div>';
+    html += "</div>";
     els.roundCorrect.innerHTML = html;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
-        document.getElementById('btnNext').innerHTML = '<i class="fas fa-flag-checkered"></i> Ver Resultado';
+        document.getElementById("btnNext").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
     }
 }
 
 // --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal() {
-    els.timelineCard.classList.add('hidden');
-    els.roundResult.classList.add('hidden');
-    els.gameInfo.classList.add('hidden');
-    els.finalResult.classList.remove('hidden');
+    els.timelineCard.classList.add("hidden");
+    els.roundResult.classList.add("hidden");
+    els.gameInfo.classList.add("hidden");
+    els.finalResult.classList.remove("hidden");
     els.finalPoints.textContent = estado.pontos;
 
     const maxPts = estado.totalRodadas * 5;
     const pct = Math.round((estado.pontos / maxPts) * 100);
-    let msg = '';
+    let msg = "";
+    
     if (pct >= 90) {
-        msg = 'Historiador do futebol!';
+        msg = "Historiador do futebol!";
     } else if (pct >= 60) {
-        msg = 'Boa memória cronológica!';
+        msg = "Boa memória cronológica!";
     } else if (pct >= 40) {
-        msg = 'Precisa estudar as datas!';
+        msg = "Precisa estudar as datas!";
     } else {
-        msg = 'Tente novamente!';
+        msg = "Tente novamente!";
     }
 
     els.finalDetails.innerHTML = `<p>${msg}</p><p>${estado.pontos}/${maxPts} eventos na posição correta</p>`;
@@ -164,7 +165,7 @@ export function mostrarFinal() {
 
 // --- RESETAR INTERFACE ---
 export function resetarUI() {
-    els.finalResult.classList.add('hidden');
-    els.gameInfo.classList.remove('hidden');
-    els.pontos.textContent = '0';
+    els.finalResult.classList.add("hidden");
+    els.gameInfo.classList.remove("hidden");
+    els.pontos.textContent = "0";
 }

@@ -1,8 +1,8 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 // --- CARREGA OS DADOS DO ARQUIVO JSON DE CONVOCAÇÕES ---
 export async function carregarDados() {
-    const resp = await fetch('../data/football-vc-convoca.json');
+    const resp = await fetch("../data/football-vc-convoca.json");
     estado.dados = await resp.json();
 }
 
@@ -38,7 +38,7 @@ export function obterConvocadosOficiais() {
 // --- RETORNA A BANDEIRA DO PAÍS DA SELEÇÃO ---
 export function obterBandeira() {
     if (!estado.dados || !estado.modo || !estado.selecao) {
-        return '';
+        return "";
     }
-    return estado.dados[estado.modo][estado.selecao].bandeira || '';
+    return estado.dados[estado.modo][estado.selecao].bandeira || "";
 }

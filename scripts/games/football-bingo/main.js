@@ -63,7 +63,7 @@ function avancarJogador() {
         mostrarResultado(
             estado.bingos > 0 ? "BINGO!" : "Fim de Jogo!",
             `${estado.acertos} acertos, ${estado.erros} erros (${pct}%). Bingos: ${estado.bingos}.`,
-            estado.bingos > 0 ? '<i class="fas fa-trophy" style="color:#f1c40f"></i>' : '<i class="fas fa-flag-checkered" style="color:var(--text-secondary)"></i>'
+            estado.bingos > 0 ? "<i class='fas fa-trophy' style='color:#f1c40f'></i>" : "<i class='fas fa-flag-checkered' style='color:var(--text-secondary)'></i>"
         );
         return;
     }

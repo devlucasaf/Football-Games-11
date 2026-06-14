@@ -22,7 +22,7 @@
 }
 
 .team-badge h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -43,7 +43,7 @@
 }
 
 .duelo-vs {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 800;
     color: var(--text-secondary);
@@ -51,7 +51,7 @@
 }
 
 .duelo-score {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     color: #27ae60;
@@ -72,7 +72,7 @@
 }
 
 .posicao-info {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -137,7 +137,7 @@
 }
 
 .card-player {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -343,7 +343,7 @@
 }
 
 .final-result h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
@@ -361,7 +361,7 @@
 }
 
 .final-points {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: var(--accent-color);

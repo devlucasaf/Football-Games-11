@@ -22,7 +22,7 @@
 }
 
 .mode-card h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--text-primary);
@@ -109,7 +109,7 @@
 }
 
 .info-categoria {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--text-primary);
@@ -129,7 +129,7 @@
 }
 
 .info-progresso {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--accent-color);
@@ -181,7 +181,7 @@
 }
 
 .jogador-card h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
     font-weight: 800;
     color: var(--text-primary);
@@ -242,7 +242,7 @@
     background: var(--card-bg);
     cursor: pointer;
     transition: all 0.2s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .piramide-slot.empty:hover {
@@ -304,7 +304,7 @@
 }
 
 .final-result h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -322,7 +322,7 @@
 }
 
 .final-score {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: var(--accent-color);

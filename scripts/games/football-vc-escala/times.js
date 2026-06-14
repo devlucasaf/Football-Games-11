@@ -6,15 +6,15 @@ const EscalaTimes = {
             this.atualizarEstatisticas();
             this.configurarEventos();
         } catch (erro) {
-            console.error('Erro ao inicializar página de times:', erro);
+            console.error("Erro ao inicializar página de times:", erro);
             this.mostrarEstadoErro();
         }
     },
 
     // --- RENDERIZA UM GRID COM CARTÕES DE TODOS OS TIMES DISPONÍVEIS ---
     renderizarGridTimes() {
-        const gridTimes = document.getElementById('teamsGrid');
-        const elementoCarregando = document.getElementById('loadingTeams');
+        const gridTimes = document.getElementById("teamsGrid");
+        const elementoCarregando = document.getElementById("loadingTeams");
 
         if (!EscalaDados.timesProcessados || EscalaDados.timesProcessados.length === 0) {
             this.mostrarEstadoErro();
@@ -22,10 +22,10 @@ const EscalaTimes = {
         }
 
         if (elementoCarregando) {
-            elementoCarregando.style.display = 'none';
+            elementoCarregando.style.display = "none";
         }
 
-        gridTimes.innerHTML = '';
+        gridTimes.innerHTML = "";
 
         EscalaDados.timesProcessados.forEach(time => {
             const cartao = this.criarCartaoTime(time);
@@ -35,8 +35,8 @@ const EscalaTimes = {
 
     // --- CRIA O CARTÃO HTML PARA UM TIME ---
     criarCartaoTime(time) {
-        const cartao = document.createElement('div');
-        cartao.className = 'team-card';
+        const cartao = document.createElement("div");
+        cartao.className = "team-card";
         cartao.dataset.teamKey = time.key;
 
         const contagemPosicoes = EscalaDados.obterContagemPosicoes(time.players);
@@ -63,7 +63,7 @@ const EscalaTimes = {
             </div>
         `;
 
-        cartao.addEventListener('click', () => {
+        cartao.addEventListener("click", () => {
             window.location.href = `escala-builder.html?team=${encodeURIComponent(time.key)}`;
         });
 
@@ -76,8 +76,8 @@ const EscalaTimes = {
             return;
         }
 
-        const totalTimesEl = document.getElementById('totalTeams');
-        const totalJogadoresEl = document.getElementById('totalPlayers');
+        const totalTimesEl = document.getElementById("totalTeams");
+        const totalJogadoresEl = document.getElementById("totalPlayers");
 
         if (totalTimesEl) {
             totalTimesEl.textContent = EscalaDados.timesProcessados.length;
@@ -91,23 +91,23 @@ const EscalaTimes = {
 
     // --- EXIBE A MENSAGEM DE ESTADO DE ERRO QUANDO OS DADOS NÃO CARREGAM ---
     mostrarEstadoErro() {
-        const elementoCarregando = document.getElementById('loadingTeams');
-        const elementoErro = document.getElementById('errorState');
+        const elementoCarregando = document.getElementById("loadingTeams");
+        const elementoErro = document.getElementById("errorState");
 
         if (elementoCarregando) {
-            elementoCarregando.style.display = 'none';
+            elementoCarregando.style.display = "none";
         }
 
         if (elementoErro) {
-            elementoErro.style.display = 'block';
+            elementoErro.style.display = "block";
         }
     },
 
     // --- CONFIGURA TODOS OS EVENTOS DE INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
-        const botaoTema = document.getElementById('themeToggle');
+        const botaoTema = document.getElementById("themeToggle");
         if (botaoTema) {
-            botaoTema.addEventListener('click', EscalaUtils.alternarTema);
+            botaoTema.addEventListener("click", EscalaUtils.alternarTema);
         }
     }
 };

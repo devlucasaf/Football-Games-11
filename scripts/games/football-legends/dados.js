@@ -3,13 +3,13 @@ const LegendsDados = {
     timesProcessados: [],
     timeAtual: null,
     jogadoresSelecionados: new Map(),
-    formacaoAtual: '4-3-3',
+    formacaoAtual: "4-3-3",
 
     // --- CARREGAR DADOS DO JSON ---
     async carregarDados() {
         const resposta = await fetch(LegendsConfig.CAMINHO_JSON);
         if (!resposta.ok) {
-            throw new Error('Falha ao carregar dados dos times');
+            throw new Error("Falha ao carregar dados dos times");
         }
         this.dadosTimes = await resposta.json();
         this.processarDados();
@@ -20,11 +20,11 @@ const LegendsDados = {
         this.timesProcessados = [];
 
         const mapaPosicao = {
-            goleiro:    'GK',
-            zagueiro:   'ZAG',
-            lateral:    'LAT',
-            meioCampo:  'MEI',
-            atacante:   'ATA'
+            goleiro:    "GK",
+            zagueiro:   "ZAG",
+            lateral:    "LAT",
+            meioCampo:  "MEI",
+            atacante:   "ATA"
         };
 
         for (const [pais, edicoes] of Object.entries(this.dadosTimes)) {
@@ -44,8 +44,8 @@ const LegendsDados = {
                 this.timesProcessados.push({
                     key: `${pais.toLowerCase()}-${ano}`,
                     name: `${pais} ${ano}`,
-                    type: 'selecao',
-                    tecnico: dados.tecnico || '',
+                    type: "selecao",
+                    tecnico: dados.tecnico || "",
                     players: jogadores
                 });
             }
@@ -63,13 +63,14 @@ const LegendsDados = {
 
         jogadores.forEach(jogador => {
             const pos = jogador.pos.toUpperCase();
-            if (pos.includes('GK')) {
+            
+            if (pos.includes("GK")) {
                 contagem.GK++;
-            } else if (pos.includes('ZAG') || pos.includes('LAT') || pos.includes('LD') || pos.includes('LE')) {
+            } else if (pos.includes("ZAG") || pos.includes("LAT") || pos.includes("LD") || pos.includes("LE")) {
                 contagem.DEF++;
-            } else if (pos.includes('VOL') || pos.includes('MEI') || pos.includes('ME') || pos.includes('MD') || pos.includes('CAM')) {
+            } else if (pos.includes("VOL") || pos.includes("MEI") || pos.includes("ME") || pos.includes("MD") || pos.includes("CAM")) {
                 contagem.MID++;
-            } else if (pos.includes('ATA') || pos.includes('CA') || pos.includes('PD') || pos.includes('PE') || pos.includes('SA')) {
+            } else if (pos.includes("ATA") || pos.includes("CA") || pos.includes("PD") || pos.includes("PE") || pos.includes("SA")) {
                 contagem.ATT++;
             }
         });
@@ -85,7 +86,7 @@ const LegendsDados = {
                 return grupo;
             }
         }
-        return 'Outros';
+        return "Outros";
     },
 
     // --- VERIFICAR SE JOGADOR ESTÁ SELECIONADO ---
@@ -141,16 +142,16 @@ const LegendsDados = {
         const pos = posicao.toUpperCase();
 
         switch (filtro) {
-            case 'GK':
-                return pos.includes('GK');
-            case 'ZAG':
-                return pos.includes('ZAG');
-            case 'LD/LE':
-                return pos.includes('LD') || pos.includes('LE') || pos.includes('LAT');
-            case 'VOL/MEI':
-                return pos.includes('VOL') || pos.includes('MEI') || pos.includes('ME') || pos.includes('MD') || pos.includes('CAM');
-            case 'ATA':
-                return pos.includes('ATA') || pos.includes('CA') || pos.includes('PD') || pos.includes('PE') || pos.includes('SA');
+            case "GK":
+                return pos.includes("GK");
+            case "ZAG":
+                return pos.includes("ZAG");
+            case "LD/LE":
+                return pos.includes("LD") || pos.includes("LE") || pos.includes("LAT");
+            case "VOL/MEI":
+                return pos.includes("VOL") || pos.includes("MEI") || pos.includes("ME") || pos.includes("MD") || pos.includes("CAM");
+            case "ATA":
+                return pos.includes("ATA") || pos.includes("CA") || pos.includes("PD") || pos.includes("PE") || pos.includes("SA");
             default:
                 return true;
         }
@@ -178,9 +179,9 @@ const LegendsDados = {
             }))
         };
 
-        const timesSalvos = JSON.parse(localStorage.getItem('footballLegendsTeams') || '[]');
+        const timesSalvos = JSON.parse(localStorage.getItem("footballLegendsTeams") || "[]");
         timesSalvos.push(dadosTime);
-        localStorage.setItem('footballLegendsTeams', JSON.stringify(timesSalvos));
+        localStorage.setItem("footballLegendsTeams", JSON.stringify(timesSalvos));
 
         return true;
     },

@@ -8,7 +8,7 @@ export const estado = {
         MEI: [],
         ATA: []
     },
-    posicaoAtiva: 'GOL',  
+    posicaoAtiva: "GOL",  
     limites: { 
         GOL: 3, 
         DEF: 8, 

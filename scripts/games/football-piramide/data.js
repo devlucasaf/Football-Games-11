@@ -1,7 +1,7 @@
-import estado from './core.js';
+import estado from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-piramide.json');
+    const resp = await fetch("../data/football-piramide.json");
     const dados = await resp.json();
     estado.categorias = dados.categorias;
 }

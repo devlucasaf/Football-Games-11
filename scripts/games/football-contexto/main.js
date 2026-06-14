@@ -38,12 +38,18 @@ function renderizarPalpites() {
         }
 
         div.innerHTML = `
-            <div class="palpite-rank">#${posicao}</div>
-            <div class="palpite-nome">${p.nome}</div>
+            <div class="palpite-rank">
+                #${posicao}
+            </div>
+            <div class="palpite-nome">
+                ${p.nome}
+            </div>
             <div class="palpite-bar-wrapper">
                 <div class="palpite-bar ${barClass}" style="width: ${barWidth}%"></div>
             </div>
-            <div class="palpite-score">${p.score}</div>
+            <div class="palpite-score">
+                ${p.score}
+            </div>
         `;
         els.palpitesList.appendChild(div);
     });

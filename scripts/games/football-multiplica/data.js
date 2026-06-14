@@ -1,8 +1,8 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 // --- CARREGAMENTO DE DADOS ---
 export async function carregarDados() {
-    const resp = await fetch('../data/football-multiplica.json');
+    const resp = await fetch("../data/football-multiplica.json");
     const data = await resp.json();
     
     estado.desafios = data.desafios;

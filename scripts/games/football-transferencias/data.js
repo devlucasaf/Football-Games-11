@@ -1,8 +1,8 @@
-import { estado } from './core.js';
+import { estado } from "./core.js";
 
 // --- CARREGA OS DADOS DO ARQUIVO JSON DE TRANSFERÊNCIAS ---
 export async function carregarDados() {
-    const resp = await fetch('../data/football-transferencias.json');
+    const resp = await fetch("../data/football-transferencias.json");
     const data = await resp.json();
     estado.dados = data;
 }
@@ -23,7 +23,6 @@ export function escolherJogador() {
         return null;
     }
 
-    // --- SELECIONA UM ÍNDICE ALEATÓRIO DA LISTA DE DISPONÍVEIS ---
     const idx = disponiveis[Math.floor(Math.random() * disponiveis.length)];
     estado.jogadoresUsados.push(idx);
     estado.jogadorAtual = estado.jogadores[idx];

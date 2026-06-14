@@ -12,13 +12,13 @@ const GridInterface = {
 
     // --- INICIAR ELEMENTOS DO DOM ---
     iniciarElementos() {
-        this.elementos.inputJogador         = document.getElementById("playerInput");
-        this.elementos.btnBuscar            = document.getElementById("searchBtn");
-        this.elementos.btnNovoGrid          = document.getElementById("newGridBtn");
-        this.elementos.btnParar             = document.getElementById("stopBtn");
-        this.elementos.celulas              = Array.from(document.querySelectorAll(".play-cell"));
-        this.elementos.cabecalhosColunas    = Array.from(document.querySelectorAll(".club-header"));
-        this.elementos.cabecalhosLinhas     = Array.from(document.querySelectorAll(".club-side"));
+        this.elementos.inputJogador = document.getElementById("playerInput");
+        this.elementos.btnBuscar = document.getElementById("searchBtn");
+        this.elementos.btnNovoGrid = document.getElementById("newGridBtn");
+        this.elementos.btnParar = document.getElementById("stopBtn");
+        this.elementos.celulas = Array.from(document.querySelectorAll(".play-cell"));
+        this.elementos.cabecalhosColunas = Array.from(document.querySelectorAll(".club-header"));
+        this.elementos.cabecalhosLinhas = Array.from(document.querySelectorAll(".club-side"));
 
         // --- CRIA ELEMENTOS DE SUGESTÕES ---
         const containerInput = document.querySelector(".input-container");

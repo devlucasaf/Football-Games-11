@@ -52,7 +52,7 @@ function verificarPalpite(palpite) {
             mostrarResultado(
                 "Acertou!",
                 `O jogador era ${estado.jogadorAtual.nome}! +${pts} pontos (${estado.pistasReveladas} pista${estado.pistasReveladas > 1 ? "s" : ""}).`,
-                '<i class="fas fa-check-circle" style="color:#2ecc71"></i>'
+                "<i class='fas fa-check-circle' style='color:#2ecc71'></i>"
             );
         }, 600);
     } else {
@@ -81,7 +81,7 @@ function finalizarErro() {
         mostrarResultado(
             "Não foi dessa vez!",
             `O jogador era ${estado.jogadorAtual.nome}.`,
-            '<i class="fas fa-times-circle" style="color:#e74c3c"></i>'
+            "<i class='fas fa-times-circle' style='color:#e74c3c'></i>"
         );
     }, 600);
 }

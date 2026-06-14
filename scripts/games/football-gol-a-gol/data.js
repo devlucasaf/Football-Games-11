@@ -1,7 +1,7 @@
-import estado from './core.js';
+import estado from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch('../data/football-gol-a-gol.json');
+    const resp = await fetch("../data/football-gol-a-gol.json");
     const dados = await resp.json();
     estado.gols = dados.gols;
 }
@@ -17,7 +17,7 @@ export function sortear() {
 }
 
 export function normalizar(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
 
 export function verificarResposta(palpite, gol) {
