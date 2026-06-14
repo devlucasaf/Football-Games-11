@@ -44,8 +44,8 @@
     --shadow-xl: 0 8px 24px var(--shadow-color);
 
     /* --- TIPOGRAFIA --- */
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Open Sans", sans-serif;
 
     /* --- ESPAÇAMENTO --- */
     --spacing-xs: 0.5rem;
@@ -350,7 +350,7 @@ body {
 }
 
 .field-grass::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background:
@@ -707,7 +707,7 @@ body {
 }
 
 .game-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -909,7 +909,7 @@ body {
 }
 
 .coming-soon-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -975,7 +975,7 @@ body {
 }
 
 .main-footer::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background:

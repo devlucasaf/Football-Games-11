@@ -10,7 +10,7 @@
 }
 
 .mode-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -50,7 +50,7 @@
 }
 
 .mode-name {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-color);
@@ -74,7 +74,7 @@
 }
 
 .game-score {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -101,7 +101,7 @@
 }
 
 .clubs-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.3rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
@@ -132,7 +132,7 @@
 }
 
 .club-item:not(:last-child)::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -0.5rem;
     left: 50%;
@@ -372,7 +372,7 @@
 }
 
 .feedback .points-earned {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.3rem;
     color: var(--accent-color);
     font-weight: 700;
@@ -410,7 +410,7 @@
 }
 
 .final-result h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
@@ -428,7 +428,7 @@
 }
 
 .final-points {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--accent-color);
