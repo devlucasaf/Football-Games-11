@@ -17,21 +17,24 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-road"></i>
-                    <h2>Como jogar Football Carreiras</h2>
-                    <p>Adivinhe o jogador pela carreira nos clubes!</p>
+                    <h2 data-key="carreiras-tutorial-title">Como jogar Football Carreiras</h2>
+                    <p data-key="carreiras-tutorial-subtitle">Adivinhe o jogador pela carreira nos clubes!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Os escudos dos clubes aparecem escondidos no grid.</li>
-                    <li><span class="tutorial-step-number">2</span> A cada erro, um novo clube da carreira é revelado.</li>
-                    <li><span class="tutorial-step-number">3</span> Digite o nome do jogador no campo de texto e pressione ENTER.</li>
-                    <li><span class="tutorial-step-number">4</span> Se acertar, todos os clubes são revelados!</li>
-                    <li><span class="tutorial-step-number">5</span> Quanto menos tentativas, melhor!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="carreiras-tutorial-step1"> Os escudos dos clubes aparecem escondidos no grid.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="carreiras-tutorial-step2"> A cada erro, um novo clube da carreira é revelado.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="carreiras-tutorial-step3"> Digite o nome do jogador no campo de texto e pressione ENTER.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="carreiras-tutorial-step4"> Se acertar, todos os clubes são revelados!</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="carreiras-tutorial-step5"> Quanto menos tentativas, melhor!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="carreiras-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="carreiras-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -48,6 +51,46 @@
                     </div>
 
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -63,25 +106,25 @@
         <main class="container">
             <div class="game-container">
                 <div class="game-header">
-                    <h2 class="game-title"><i class="fas fa-road"></i> Football Carreiras</h2>
-                    <p class="game-description">Descubra o jogador pelos clubes da carreira!</p>
+                    <h2 class="game-title"><i class="fas fa-road"></i> <span data-key="carreiras-game-title">Football Carreiras</span></h2>
+                    <p class="game-description" data-key="carreiras-game-desc">Descubra o jogador pelos clubes da carreira!</p>
                 </div>
 
                 <!-- --- INFO DE TENTATIVAS --- -->
                 <div class="carreiras-info">
                     <div class="info-item">
                         <i class="fas fa-shield-alt"></i>
-                        <span>Clubes: <strong id="clubesCount">0</strong></span>
+                        <span><span data-key="carreiras-clubs">Clubes</span>: <strong id="clubesCount">0</strong></span>
                     </div>
 
                     <div class="info-item">
                         <i class="fas fa-times-circle"></i>
-                        <span>Erros: <strong id="errosCount">0</strong></span>
+                        <span><span data-key="carreiras-errors">Erros</span>: <strong id="errosCount">0</strong></span>
                     </div>
 
                     <div class="info-item">
                         <i class="fas fa-eye"></i>
-                        <span>Revelados: <strong id="reveladosCount">0</strong></span>
+                        <span><span data-key="carreiras-revealed">Revelados</span>: <strong id="reveladosCount">0</strong></span>
                     </div>
                 </div>
 
@@ -89,7 +132,7 @@
 
                 <!-- --- INPUT --- -->
                 <div class="input-container">
-                    <input type="text" id="playerInput" placeholder="Digite o nome do jogador..." autocomplete="off">
+                    <input type="text" id="playerInput" data-key="carreiras-input-placeholder" placeholder="Digite o nome do jogador..." autocomplete="off">
                     <button id="guessBtn"><i class="fas fa-search"></i></button>
                 </div>
 
@@ -100,8 +143,8 @@
 
                 <!-- --- BOTÕES --- -->
                 <div class="actions-container">
-                    <button id="skipBtn" class="btn-action btn-skip"><i class="fas fa-forward"></i> Pular</button>
-                    <button id="newGameBtn" class="btn-action"><i class="fas fa-redo"></i> Novo Jogo</button>
+                    <button id="skipBtn" class="btn-action btn-skip"><i class="fas fa-forward"></i> <span data-key="carreiras-skip">Pular</span></button>
+                    <button id="newGameBtn" class="btn-action"><i class="fas fa-redo"></i> <span data-key="carreiras-new-game">Novo Jogo</span></button>
                 </div>
 
                 <!-- --- RESULTADO --- -->
@@ -109,7 +152,7 @@
                     <div class="result-box" id="resultBox">
                         <div class="result-icon" id="resultIcon"></div>
                         <p id="resultText"></p>
-                        <button id="resultCloseBtn" class="btn-action"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button id="resultCloseBtn" class="btn-action"><i class="fas fa-redo"></i> <span data-key="carreiras-play-again">Jogar Novamente</span></button>
                     </div>
                 </div>
             </div>
@@ -146,6 +189,11 @@
         </footer>
 
         <!-- --- SCRIPTS --- -->
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-carreiras/main.js"></script>
     </body>

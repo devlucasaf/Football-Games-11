@@ -17,42 +17,42 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-keyboard"></i>
-                    <h2>Como jogar Football Termo</h2>
-                    <p>Adivinhe o nome do jogador de futebol!</p>
+                    <h2 data-key="termo-tutorial-title">Como jogar Football Termo</h2>
+                    <p data-key="termo-tutorial-subtitle">Adivinhe o nome do jogador de futebol!</p>
                 </div>
                 <ul class="tutorial-steps">
                     <li>
                         <span class="tutorial-step-number">1</span> 
-                        Você tem 6 tentativas para adivinhar o nome do jogador.
+                        <span data-key="termo-tutorial-step1">Você tem 6 tentativas para adivinhar o nome do jogador.</span>
                     </li>
 
                     <li>
                         <span class="tutorial-step-number">2</span> 
-                        Digite um nome e pressione ENTER para confirmar.
+                        <span data-key="termo-tutorial-step2">Digite um nome e pressione ENTER para confirmar.</span>
                     </li>
 
                     <li>
                         <span class="tutorial-step-number">3</span> 
-                        <strong style="color:#538d4e">Verde</strong> = letra certa no lugar certo.
+                        <strong style="color:#538d4e" data-key="termo-tutorial-green">Verde</strong> <span data-key="termo-tutorial-step3">= letra certa no lugar certo.</span>
                     </li>
 
                     <li>
                         <span class="tutorial-step-number">4</span> 
-                        <strong style="color:#b59f3b">Amarelo</strong> = letra certa no lugar errado.
+                        <strong style="color:#b59f3b" data-key="termo-tutorial-yellow">Amarelo</strong> <span data-key="termo-tutorial-step4">= letra certa no lugar errado.</span>
                     </li>
 
                     <li>
                         <span class="tutorial-step-number">5</span> 
-                        <strong style="color:#3a3a3c">Cinza</strong> = letra não existe no nome.
+                        <strong style="color:#3a3a3c" data-key="termo-tutorial-gray">Cinza</strong> <span data-key="termo-tutorial-step5">= letra não existe no nome.</span>
                     </li>
 
                     <li>
-                        <span class="tutorial-step-number">6</span> Alguns nomes possuem espaço (ex: DE BRUYNE).
+                        <span class="tutorial-step-number">6</span> <span data-key="termo-tutorial-step6">Alguns nomes possuem espaço (ex: DE BRUYNE).</span>
                     </li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="termo-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="termo-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -67,6 +67,46 @@
                         </h1>
                     </div>
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -81,8 +121,8 @@
         <main class="container">
             <div class="game-container">
                 <div class="game-header">
-                    <h2 class="game-title"><i class="fas fa-keyboard"></i> Football Termo</h2>
-                    <p class="game-description">Adivinhe o nome do jogador de futebol!</p>
+                    <h2 class="game-title"><i class="fas fa-keyboard"></i> <span data-key="termo-game-title">Football Termo</span></h2>
+                    <p class="game-description" data-key="termo-game-desc">Adivinhe o nome do jogador de futebol!</p>
                     <p class="game-hint" id="hintText"></p>
                 </div>
 
@@ -132,14 +172,14 @@
 
                 <!-- --- BOTÕES --- -->
                 <div class="actions-container">
-                    <button id="newGameBtn" class="btn-action"><i class="fas fa-redo"></i> Novo Jogo</button>
+                    <button id="newGameBtn" class="btn-action"><i class="fas fa-redo"></i> <span data-key="termo-new-game">Novo Jogo</span></button>
                 </div>
 
                 <!-- --- MENSAGEM --- -->
                 <div class="message-overlay" id="messageOverlay">
                     <div class="message-box" id="messageBox">
                         <p id="messageText"></p>
-                        <button id="messageCloseBtn" class="btn-action"><i class="fas fa-redo"></i> Jogar Novamente</button>
+                        <button id="messageCloseBtn" class="btn-action"><i class="fas fa-redo"></i> <span data-key="termo-play-again">Jogar Novamente</span></button>
                     </div>
                 </div>
             </div>
@@ -175,6 +215,11 @@
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-termo/main.js"></script>
     </body>

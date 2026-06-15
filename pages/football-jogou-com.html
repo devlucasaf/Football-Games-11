@@ -17,21 +17,21 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-link"></i>
-                    <h2>Como jogar Football Jogou Com</h2>
-                    <p>Descubra o jogador misterioso pelos companheiros!</p>
+                    <h2 data-key="jogou-tutorial-title">Como jogar Football Jogou Com</h2>
+                    <p data-key="jogou-tutorial-subtitle">Descubra o jogador misterioso pelos companheiros!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Um companheiro de equipe é revelado no primeiro card.</li>
-                    <li><span class="tutorial-step-number">2</span> Digite o nome do jogador que jogou com todos os companheiros mostrados.</li>
-                    <li><span class="tutorial-step-number">3</span> Se não souber, pule para revelar o próximo companheiro.</li>
-                    <li><span class="tutorial-step-number">4</span> Após os 5 companheiros revelados, você tem uma última chance!</li>
-                    <li><span class="tutorial-step-number">5</span> Quanto menos pistas usar, mais pontos você ganha!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="jogou-tutorial-step1"> Um companheiro de equipe é revelado no primeiro card.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="jogou-tutorial-step2"> Digite o nome do jogador que jogou com todos os companheiros mostrados.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="jogou-tutorial-step3"> Se não souber, pule para revelar o próximo companheiro.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="jogou-tutorial-step4"> Após os 5 companheiros revelados, você tem uma última chance!</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="jogou-tutorial-step5"> Quanto menos pistas usar, mais pontos você ganha!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="jogou-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="jogou-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,34 @@
                     </div>
 
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img src="../assets/br-flag-icon.png" alt="Português"/>
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img src="../assets/us-flag-icon.png" alt="English"/>
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img src="../assets/es-flag-icon.png" alt="Español"/>
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img src="../assets/de-flag-icon.png" alt="Deutsch"/>
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -62,30 +90,30 @@
             <div class="jogou-container">
                 <!-- --- CABEÇALHO --- -->
                 <div class="jogou-header">
-                    <h2 class="game-title"><i class="fas fa-link"></i> Football Jogou Com</h2>
-                    <p class="game-description">Descubra quem jogou com todos os companheiros!</p>
+                    <h2 class="game-title"><i class="fas fa-link"></i> <span data-key="jogou-game-title">Football Jogou Com</span></h2>
+                    <p class="game-description" data-key="jogou-game-desc">Descubra quem jogou com todos os companheiros!</p>
                 </div>
 
                 <!-- --- PLACAR --- -->
                 <div class="jogou-stats">
                     <div class="stat-item">
                         <i class="fas fa-check"></i>
-                        <span>Acertos: <strong id="acertosCount">0</strong></span>
+                        <span><span data-key="jogou-stat-hits">Acertos</span>: <strong id="acertosCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-gamepad"></i>
-                        <span>Rodadas: <strong id="rodadasCount">0</strong></span>
+                        <span><span data-key="jogou-stat-rounds">Rodadas</span>: <strong id="rodadasCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-fire"></i>
-                        <span>Sequência: <strong id="sequenciaCount">0</strong></span>
+                        <span><span data-key="jogou-stat-streak">Sequência</span>: <strong id="sequenciaCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-star"></i>
-                        <span>Pontos: <strong id="pontosCount">0</strong></span>
+                        <span><span data-key="jogou-stat-points">Pontos</span>: <strong id="pontosCount">0</strong></span>
                     </div>
                 </div>
 
@@ -128,17 +156,17 @@
                 <!-- --- ÁREA DE PALPITE --- -->
                 <div class="jogou-input-area" id="inputArea">
                     <div class="input-wrapper">
-                        <input type="text" id="palpiteInput" class="palpite-input" placeholder="Digite o nome do jogador..." autocomplete="off">
+                        <input type="text" id="palpiteInput" class="palpite-input" data-key="jogou-input-placeholder" placeholder="Digite o nome do jogador..." autocomplete="off">
                         <div class="sugestoes-lista" id="sugestoesLista"></div>
                     </div>
 
                     <div class="input-actions">
                         <button id="confirmarBtn" class="btn-confirmar" title="Confirmar palpite">
-                            <i class="fas fa-check"></i> Confirmar
+                            <i class="fas fa-check"></i> <span data-key="jogou-confirm">Confirmar</span>
                         </button>
                         
                         <button id="pularBtn" class="btn-pular" title="Pular e revelar próximo">
-                            <i class="fas fa-forward"></i> Pular
+                            <i class="fas fa-forward"></i> <span data-key="jogou-skip">Pular</span>
                         </button>
                     </div>
                 </div>
@@ -155,7 +183,7 @@
                         <div class="result-icon" id="resultIcon"></div>
                         <h3 id="resultTitle"></h3>
                         <p class="result-text" id="resultText"></p>
-                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Rodada</button>
+                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> <span data-key="jogou-next-round">Próxima Rodada</span></button>
                     </div>
                 </div>
             </div>
@@ -191,6 +219,11 @@
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-jogou-com/main.js"></script>
     </body>

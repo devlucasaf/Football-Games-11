@@ -17,21 +17,21 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-user-secret"></i>
-                    <h2>Como jogar Football Impostor</h2>
-                    <p>Encontre o jogador que não pertence ao grupo!</p>
+                    <h2 data-key="impostor-tutorial-title">Como jogar Football Impostor</h2>
+                    <p data-key="impostor-tutorial-subtitle">Encontre o jogador que não pertence ao grupo!</p>
                 </div>
                 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Um tema é exibido no topo (ex: "Jogaram no Barcelona").</li>
-                    <li><span class="tutorial-step-number">2</span> 7 jogadores aparecem embaralhados — 6 seguem o tema.</li>
-                    <li><span class="tutorial-step-number">3</span> Clique no jogador que você acha que é o <strong>impostor</strong>.</li>
-                    <li><span class="tutorial-step-number">4</span> Você tem apenas <strong>1 tentativa</strong> por rodada!</li>
-                    <li><span class="tutorial-step-number">5</span> Tente manter a maior sequência de acertos!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="impostor-tutorial-step1"> Um tema é exibido no topo (ex: "Jogaram no Barcelona").</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="impostor-tutorial-step2"> 7 jogadores aparecem embaralhados — 6 seguem o tema.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="impostor-tutorial-step3"> Clique no jogador que você acha que é o impostor.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="impostor-tutorial-step4"> Você tem apenas 1 tentativa por rodada!</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="impostor-tutorial-step5"> Tente manter a maior sequência de acertos!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="impostor-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="impostor-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,46 @@
                         </h1>
                     </div>
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img    
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -63,30 +103,30 @@
             <div class="game-container">
                 <!-- --- CABEÇALHO DO JOGO --- -->
                 <div class="game-header">
-                    <h2 class="game-title"><i class="fas fa-user-secret"></i> Football Impostor</h2>
-                    <p class="game-description">Encontre o jogador que não pertence ao grupo!</p>
+                    <h2 class="game-title"><i class="fas fa-user-secret"></i> <span data-key="impostor-game-title">Football Impostor</span></h2>
+                    <p class="game-description" data-key="impostor-game-desc">Encontre o jogador que não pertence ao grupo!</p>
                 </div>
 
                 <!-- --- PLACAR --- -->
                 <div class="impostor-stats">
                     <div class="stat-item">
                         <i class="fas fa-check"></i>
-                        <span>Acertos: <strong id="acertosCount">0</strong></span>
+                        <span><span data-key="impostor-stat-hits">Acertos</span>: <strong id="acertosCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-gamepad"></i>
-                        <span>Total: <strong id="totalCount">0</strong></span>
+                        <span><span data-key="impostor-stat-total">Total</span>: <strong id="totalCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-fire"></i>
-                        <span>Sequência: <strong id="sequenciaCount">0</strong></span>
+                        <span><span data-key="impostor-stat-streak">Sequência</span>: <strong id="sequenciaCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-trophy"></i>
-                        <span>Melhor: <strong id="melhorCount">0</strong></span>
+                        <span><span data-key="impostor-stat-best">Melhor</span>: <strong id="melhorCount">0</strong></span>
                     </div>
                 </div>
 
@@ -94,7 +134,7 @@
                 <div class="tema-container">
                     <div class="tema-header">
                         <i class="fas fa-lightbulb"></i>
-                        <span class="tema-label">Tema:</span>
+                        <span class="tema-label" data-key="impostor-theme-label">Tema:</span>
                     </div>
                     <div class="tema-texto" id="temaTexto"></div>
                     <span class="dificuldade-badge" id="dificuldadeBadge"></span>
@@ -111,7 +151,7 @@
                         <h3 id="resultTitle"></h3>
                         <p class="impostor-name" id="impostorName"></p>
                         <p class="result-text" id="resultText"></p>
-                        <button id="nextRoundBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Rodada</button>
+                        <button id="nextRoundBtn" class="btn-action"><i class="fas fa-arrow-right"></i> <span data-key="impostor-next-round">Próxima Rodada</span></button>
                     </div>
                 </div>
             </div>
@@ -148,6 +188,11 @@
         </footer>
 
         <!-- --- SCRIPTS --- -->
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-impostor/main.js"></script>
     </body>

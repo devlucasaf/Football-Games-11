@@ -17,21 +17,21 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-list-ol"></i>
-                    <h2>Como jogar Football Top 10</h2>
-                    <p>Acerte todos os 10 itens da lista!</p>
+                    <h2 data-key="top10-tutorial-title">Como jogar Football Top 10</h2>
+                    <p data-key="top10-tutorial-subtitle">Acerte todos os 10 itens da lista!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Um tema é apresentado (ex: "Maiores artilheiros da Champions").</li>
-                    <li><span class="tutorial-step-number">2</span> Digite os nomes para completar a lista de 10.</li>
-                    <li><span class="tutorial-step-number">3</span> Se acertar, o item é revelado na posição correta.</li>
-                    <li><span class="tutorial-step-number">4</span> Você tem 3 erros antes do jogo acabar.</li>
-                    <li><span class="tutorial-step-number">5</span> Tente completar a lista toda para pontuar o máximo!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="top10-tutorial-step1"> Um tema é apresentado (ex: "Maiores artilheiros da Champions").</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="top10-tutorial-step2"> Digite os nomes para completar a lista de 10.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="top10-tutorial-step3"> Se acertar, o item é revelado na posição correta.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="top10-tutorial-step4"> Você tem 3 erros antes do jogo acabar.</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="top10-tutorial-step5"> Tente completar a lista toda para pontuar o máximo!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="top10-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="top10-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,34 @@
                     </div>
 
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img src="../assets/br-flag-icon.png" alt="Português"/>
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img src="../assets/us-flag-icon.png" alt="English"/>
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img src="../assets/es-flag-icon.png" alt="Español"/>
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img src="../assets/de-flag-icon.png" alt="Deutsch"/>
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -62,30 +90,30 @@
             <div class="top10-container">
                 <!-- --- CABEÇALHO --- -->
                 <div class="top10-header">
-                    <h2 class="game-title"><i class="fas fa-list-ol"></i> Football Top 10</h2>
-                    <p class="game-description">Complete a lista dos 10!</p>
+                    <h2 class="game-title"><i class="fas fa-list-ol"></i> <span data-key="top10-game-title">Football Top 10</span></h2>
+                    <p class="game-description" data-key="top10-game-desc">Complete a lista dos 10!</p>
                 </div>
 
                 <!-- --- PLACAR --- -->
                 <div class="top10-stats">
                     <div class="stat-item">
                         <i class="fas fa-check"></i>
-                        <span>Acertos: <strong id="acertosCount">0</strong>/10</span>
+                        <span><span data-key="top10-stat-hits">Acertos</span>: <strong id="acertosCount">0</strong>/10</span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-heart"></i>
-                        <span>Vidas: <strong id="vidasCount">3</strong></span>
+                        <span><span data-key="top10-stat-lives">Vidas</span>: <strong id="vidasCount">3</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-star"></i>
-                        <span>Pontos: <strong id="pontosCount">0</strong></span>
+                        <span><span data-key="top10-stat-points">Pontos</span>: <strong id="pontosCount">0</strong></span>
                     </div>
 
                     <div class="stat-item">
                         <i class="fas fa-gamepad"></i>
-                        <span>Rodadas: <strong id="rodadasCount">0</strong></span>
+                        <span><span data-key="top10-stat-rounds">Rodadas</span>: <strong id="rodadasCount">0</strong></span>
                     </div>
                 </div>
 
@@ -104,16 +132,16 @@
                 <!-- --- ÁREA DE INPUT --- -->
                 <div class="top10-input-area" id="inputArea">
                     <div class="input-wrapper">
-                        <input type="text" id="palpiteInput" class="palpite-input" placeholder="Digite um nome da lista..." autocomplete="off">
+                        <input type="text" id="palpiteInput" class="palpite-input" data-key="top10-input-placeholder" placeholder="Digite um nome da lista..." autocomplete="off">
                         <div class="sugestoes-lista" id="sugestoesLista"></div>
                     </div>
 
                     <div class="input-actions">
                         <button id="confirmarBtn" class="btn-confirmar" title="Confirmar">
-                            <i class="fas fa-check"></i> Confirmar
+                            <i class="fas fa-check"></i> <span data-key="top10-confirm">Confirmar</span>
                         </button>
                         <button id="desistirBtn" class="btn-desistir" title="Desistir e revelar">
-                            <i class="fas fa-flag"></i> Desistir
+                            <i class="fas fa-flag"></i> <span data-key="top10-give-up">Desistir</span>
                         </button>
                     </div>
                 </div>
@@ -130,7 +158,7 @@
                         <div class="result-icon" id="resultIcon"></div>
                         <h3 id="resultTitle"></h3>
                         <p class="result-text" id="resultText"></p>
-                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> Próxima Lista</button>
+                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> <span data-key="top10-next-list">Próxima Lista</span></button>
                     </div>
                 </div>
             </div>
@@ -166,6 +194,11 @@
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-top10/main.js"></script>
     </body>

@@ -30,6 +30,46 @@
                         <span id="currentFormation">4-3-3</span>
                     </button>
 
+                    <div class="language-selector">
+                        <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                            <img 
+                                src="../assets/br-flag-icon.png" 
+                                alt="Português" 
+                                id="currentLanguageFlag"
+                            />
+                        </button>
+                        <div class="language-dropdown" id="languageDropdown">
+                            <button class="language-option" data-language="traducoes">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português"
+                                />
+                                <span>Português</span>
+                            </button>
+                            <button class="language-option" data-language="translations">
+                                <img 
+                                    src="../assets/us-flag-icon.png" 
+                                    alt="English"
+                                />
+                                <span>English</span>
+                            </button>
+                            <button class="language-option" data-language="traducciones">
+                                <img 
+                                    src="../assets/es-flag-icon.png" 
+                                    alt="Español"
+                                />
+                                <span>Español</span>
+                            </button>
+                            <button class="language-option" data-language="ubersetzungen">
+                                <img 
+                                    src="../assets/de-flag-icon.png" 
+                                    alt="Deutsch"
+                                />
+                                <span>Deutsch</span>
+                            </button>
+                        </div>
+                    </div>
+
                     <button class="btn-theme" id="themeToggle">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -49,45 +89,45 @@
                         <div>
                             <h2 id="teamFullName">Carregando time...</h2>
                             <p class="team-stats">
-                                <span id="playerCount">0</span> jogadores disponíveis
+                                <span id="playerCount">0</span> <span data-key="escala-builder-players-available">jogadores disponíveis</span>
                             </p>
                         </div>
                     </div>
                     <div class="builder-actions">
                         <button class="btn-action" id="resetTeam">
                             <i class="fas fa-redo"></i>
-                            Reiniciar
+                            <span data-key="escala-builder-reset">Reiniciar</span>
                         </button>
 
                         <button class="btn-action" id="saveTeam">
                             <i class="fas fa-save"></i>
-                            Salvar
+                            <span data-key="escala-builder-save">Salvar</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- --- MENU DE FORMAÇÕES --- -->
                 <div class="formations-menu" id="formationsMenu">
-                    <h3><i class="fas fa-sitemap"></i> Escolha uma Formação</h3>
+                    <h3><i class="fas fa-sitemap"></i> <span data-key="escala-builder-formation">Escolha uma Formação</span></h3>
                     <div class="formations-grid">
                         <button class="formation-option" data-formation="4-3-3">
                             <span class="formation-label">4-3-3</span>
-                            <span class="formation-desc">Ofensiva</span>
+                            <span class="formation-desc" data-key="escala-builder-offensive">Ofensiva</span>
                         </button>
 
                         <button class="formation-option" data-formation="4-4-2">
                             <span class="formation-label">4-4-2</span>
-                            <span class="formation-desc">Clássica</span>
+                            <span class="formation-desc" data-key="escala-builder-classic">Clássica</span>
                         </button>
 
                         <button class="formation-option" data-formation="3-5-2">
                             <span class="formation-label">3-5-2</span>
-                            <span class="formation-desc">Controle</span>
+                            <span class="formation-desc" data-key="escala-builder-control">Controle</span>
                         </button>
 
                         <button class="formation-option" data-formation="4-2-3-1">
                             <span class="formation-label">4-2-3-1</span>
-                            <span class="formation-desc">Moderno</span>
+                            <span class="formation-desc" data-key="escala-builder-modern">Moderno</span>
                         </button>
                     </div>
                 </div>
@@ -96,15 +136,15 @@
                 <div class="builder-content">
                     <div class="players-panel">
                         <div class="panel-header">
-                            <h3><i class="fas fa-users"></i> Jogadores Disponíveis</h3>
+                            <h3><i class="fas fa-users"></i> <span data-key="escala-builder-available">Jogadores Disponíveis</span></h3>
                             <div class="position-filter">
                                 <select id="positionFilter">
-                                    <option value="all">Todas as Posições</option>
-                                    <option value="GK">Goleiros</option>
-                                    <option value="ZAG">Zagueiros</option>
-                                    <option value="LD/LE">Laterais</option>
-                                    <option value="VOL/MEI">Meio-Campo</option>
-                                    <option value="ATA">Atacantes</option>
+                                    <option value="all" data-key="escala-builder-all-pos">Todas as Posições</option>
+                                    <option value="GK" data-key="escala-builder-gk">Goleiros</option>
+                                    <option value="ZAG" data-key="escala-builder-cb">Zagueiros</option>
+                                    <option value="LD/LE" data-key="escala-builder-fb">Laterais</option>
+                                    <option value="VOL/MEI" data-key="escala-builder-mid">Meio-Campo</option>
+                                    <option value="ATA" data-key="escala-builder-att">Atacantes</option>
                                 </select>
                             </div>
                         </div>
@@ -115,16 +155,16 @@
                             <div class="loading-spinner">
                                 <i class="fas fa-futbol fa-spin"></i>
                             </div>
-                            <p>Carregando jogadores...</p>
+                            <p data-key="escala-builder-loading">Carregando jogadores...</p>
                         </div>
                     </div>
 
                     <!-- --- CONTAINER DO CAMPO --- -->
                     <div class="field-container">
                         <div class="field-header">
-                            <h3><i class="fas fa-futbol"></i> Campo</h3>
+                            <h3><i class="fas fa-futbol"></i> <span data-key="escala-builder-field">Campo</span></h3>
                             <div class="field-stats">
-                                <span id="fieldCount">0/11</span> jogadores escalados
+                                <span id="fieldCount">0/11</span> <span data-key="escala-builder-field-count">jogadores escalados</span>
                             </div>
                         </div>
                         
@@ -140,7 +180,7 @@
                         <div class="selected-players" id="selectedPlayers">
                             <div class="empty-state">
                                 <i class="fas fa-hand-pointer"></i>
-                                <p>Arraste jogadores para o campo ou clique nas posições vazias</p>
+                                <p data-key="legends-builder-empty">Arraste jogadores para o campo ou clique nas posições vazias</p>
                             </div>
                         </div>
                     </div>
@@ -152,22 +192,22 @@
         <div class="modal-overlay" id="saveModal" style="display: none;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3><i class="fas fa-check-circle"></i> Escalação Salva!</h3>
+                    <h3><i class="fas fa-check-circle"></i> <span data-key="legends-builder-saved">Escalação Salva!</span></h3>
                     <button class="btn-close-modal" id="closeModal">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Sua escalação histórica foi salva com sucesso!</p>
+                    <p data-key="legends-builder-saved-msg">Sua escalação histórica foi salva com sucesso!</p>
                     <div class="modal-actions">
                         <button class="btn-action" id="shareTeam">
                             <i class="fas fa-share"></i>
-                            Compartilhar
+                            <span data-key="escala-builder-share">Compartilhar</span>
                         </button>
                         
                         <button class="btn-action" id="newTeam">
                             <i class="fas fa-plus"></i>
-                            Novo Time
+                            <span data-key="escala-builder-new">Novo Time</span>
                         </button>
                     </div>
                 </div>
@@ -175,6 +215,11 @@
         </div>
 
         <!-- --- SCRIPTS --- -->
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script src="../scripts/games/football-legends/config.js"></script>
         <script src="../scripts/games/football-legends/dados.js"></script>

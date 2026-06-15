@@ -17,21 +17,21 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-chess-board"></i>
-                    <h2>Como jogar Football Grid</h2>
-                    <p>Encontre jogadores que conectam clubes e seleções!</p>
+                    <h2 data-key="grid-tutorial-title">Como jogar Football Grid</h2>
+                    <p data-key="grid-tutorial-subtitle">Encontre jogadores que conectam clubes e seleções!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> O grid mostra clubes e/ou seleções nos cabeçalhos das linhas e colunas.</li>
-                    <li><span class="tutorial-step-number">2</span> Clique em uma célula vazia para selecioná-la.</li>
-                    <li><span class="tutorial-step-number">3</span> Digite o nome de um jogador que tenha jogado em ambos os times da linha e da coluna.</li>
-                    <li><span class="tutorial-step-number">4</span> Cada jogador só pode ser usado uma vez.</li>
-                    <li><span class="tutorial-step-number">5</span> Preencha todas as 9 células para vencer!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="grid-tutorial-step1"> O grid mostra clubes e/ou seleções nos cabeçalhos das linhas e colunas.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="grid-tutorial-step2"> Clique em uma célula vazia para selecioná-la.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="grid-tutorial-step3"> Digite o nome de um jogador que tenha jogado em ambos os times da linha e da coluna.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="grid-tutorial-step4"> Cada jogador só pode ser usado uma vez.</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="grid-tutorial-step5"> Preencha todas as 9 células para vencer!</span></li>
                 </ul>
                 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="grid-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="grid-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,46 @@
                     </div>
 
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -61,8 +101,8 @@
         <main class="container">
             <div class="game-container">
                 <div class="game-header">
-                    <h2 class="game-title">Football Grid</h2>
-                    <p class="game-description">Encontre jogadores que jogaram por ambos os clubes ou país + clube!</p>
+                    <h2 class="game-title" data-key="grid-game-title">Football Grid</h2>
+                    <p class="game-description" data-key="grid-game-desc">Encontre jogadores que jogaram por ambos os clubes ou país + clube!</p>
                 </div>
 
                 <div class="grid-wrapper">
@@ -96,7 +136,7 @@
                 </div>
 
                 <div class="input-container">
-                    <input type="text" id="playerInput" placeholder="Digite o nome do jogador" autocomplete="off">
+                    <input type="text" id="playerInput" data-key="grid-input-placeholder" placeholder="Digite o nome do jogador" autocomplete="off">
                     <button id="searchBtn">
                         <i class="fas fa-search"></i>
                     </button>
@@ -142,6 +182,11 @@
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script src="../scripts/games/football-grid/config.js"></script>
         <script src="../scripts/games/football-grid/dados.js"></script>
