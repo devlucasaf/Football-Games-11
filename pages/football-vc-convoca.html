@@ -16,20 +16,20 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-clipboard-list"></i>
-                    <h2>Como jogar Vc Convoca!</h2>
-                    <p>Monte a convocação ideal da sua seleção!</p>
+                    <h2 data-key="convoca-tutorial-title">Como jogar Vc Convoca!</h2>
+                    <p data-key="convoca-tutorial-subtitle">Monte a convocação ideal da sua seleção!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span> Escolha o modo: Copa 2026 ou Melhor de Todos os Tempos.</li>
-                    <li><span class="tutorial-step-number">2</span> Selecione uma seleção.</li>
-                    <li><span class="tutorial-step-number">3</span> Convoque 26 jogadores (3 GOL, 8 DEF, 8 MEI, 7 ATA).</li>
-                    <li><span class="tutorial-step-number">4</span> Veja quantos acertos você fez comparando com a convocação oficial!</li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="convoca-tutorial-step1"> Escolha o modo: Copa 2026 ou Melhor de Todos os Tempos.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="convoca-tutorial-step2"> Selecione uma seleção.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="convoca-tutorial-step3"> Preencha os 26 convocados posição por posição.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="convoca-tutorial-step4"> Veja quantos acertos você fez comparando com a convocação oficial!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> Jogar</button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="convoca-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="convoca-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -46,6 +46,49 @@
                     </div>
 
                     <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
@@ -61,28 +104,28 @@
         <main class="convoca-container">
             <div class="container">
                 <section class="mode-selection" id="modeSelection">
-                    <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Vc Convoca!</h2>
-                    <p class="section-subtitle">Escolha o modo de jogo</p>
+                    <h2 class="section-title"><i class="fas fa-clipboard-list"></i> <span data-key="football-vc-convoca-title">Vc Convoca!</span></h2>
+                    <p class="section-subtitle" data-key="convoca-mode-subtitle">Escolha o modo de jogo</p>
                     <div class="mode-cards">
                         <button class="mode-card" data-mode="copa2026">
                             <i class="fas fa-trophy"></i>
-                            <h3>Copa do Mundo 2026</h3>
-                            <p>Convoque a seleção para a Copa do Mundo 2026</p>
+                            <h3 data-key="convoca-mode-copa">Copa do Mundo 2026</h3>
+                            <p data-key="convoca-mode-copa-desc">Convoque a seleção para a Copa do Mundo 2026</p>
                         </button>
                         <button class="mode-card" data-mode="alltime">
                             <i class="fas fa-star"></i>
-                            <h3>Melhor de Todos os Tempos</h3>
-                            <p>Monte a melhor seleção da história</p>
+                            <h3 data-key="convoca-mode-alltime">Melhor de Todos os Tempos</h3>
+                            <p data-key="convoca-mode-alltime-desc">Monte a melhor seleção da história</p>
                         </button>
                     </div>
                 </section>
 
                 <!-- Tela de seleção de time -->
                 <section class="team-selection hidden" id="teamSelection">
-                    <h2 class="section-title"><i class="fas fa-flag"></i> Escolha a Seleção</h2>
+                    <h2 class="section-title"><i class="fas fa-flag"></i> <span data-key="convoca-choose-team">Escolha a Seleção</span></h2>
                     <p class="section-subtitle" id="modeLabel"></p>
                     <div class="teams-grid" id="teamsGrid"></div>
-                    <button class="btn-back" id="btnBackMode"><i class="fas fa-arrow-left"></i> Voltar</button>
+                    <button class="btn-back" id="btnBackMode"><i class="fas fa-arrow-left"></i> <span data-key="convoca-back">Voltar</span></button>
                 </section>
 
                 <!-- Tela de convocação -->
@@ -93,80 +136,55 @@
                             <h2 id="selectedTeamName"></h2>
                         </div>
                         <div class="squad-counter">
-                            <span id="squadCount">0</span>/26 convocados
+                            <span id="squadCount">0</span>/26 <span data-key="convoca-convocados">convocados</span>
                         </div>
                     </div>
 
-                    <!-- Autocomplete input -->
-                    <div class="player-input-area">
-                        <div class="input-wrapper">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="playerInput" placeholder="Digite o nome do jogador..." autocomplete="off">
-                            <div class="autocomplete-list" id="autocompleteList"></div>
-                        </div>
-
-                        <div class="position-selector">
-                            <button class="pos-btn active" data-pos="GOL">GOL <span id="countGOL">0</span>/3</button>
-                            <button class="pos-btn" data-pos="DEF">DEF <span id="countDEF">0</span>/8</button>
-                            <button class="pos-btn" data-pos="MEI">MEI <span id="countMEI">0</span>/8</button>
-                            <button class="pos-btn" data-pos="ATA">ATA <span id="countATA">0</span>/7</button>
-                        </div>
-                    </div>
-
-                    <!-- Lista de convocados -->
-                    <div class="squad-lists">
-                        <div class="squad-position-group" id="groupGOL">
-                            <h3><i class="fas fa-hands"></i> Goleiros (0/3)</h3>
-                            <ul class="player-list" id="listGOL"></ul>
-                        </div>
-
-                        <div class="squad-position-group" id="groupDEF">
-                            <h3><i class="fas fa-shield-halved"></i> Defensores (0/8)</h3>
-                            <ul class="player-list" id="listDEF"></ul>
-                        </div>
-
-                        <div class="squad-position-group" id="groupMEI">
-                            <h3><i class="fas fa-arrows-turn-to-dots"></i> Meio-campistas (0/8)</h3>
-                            <ul class="player-list" id="listMEI"></ul>
-                        </div>
-
-                        <div class="squad-position-group" id="groupATA">
-                            <h3><i class="fas fa-crosshairs"></i> Atacantes (0/7)</h3>
-                            <ul class="player-list" id="listATA"></ul>
-                        </div>
-                    </div>
+                    <!-- Grupos de posição com slots -->
+                    <div class="position-groups" id="positionGroups"></div>
 
                     <div class="squad-actions">
-                        <button class="btn-back" id="btnBackTeam"><i class="fas fa-arrow-left"></i> Voltar</button>
-                        <button class="btn-confirm" id="btnConfirm" disabled><i class="fas fa-check"></i> Confirmar Convocação</button>
+                        <button class="btn-back" id="btnBackTeam"><i class="fas fa-arrow-left"></i> <span data-key="convoca-back">Voltar</span></button>
+                        <button class="btn-confirm" id="btnConfirm" disabled><i class="fas fa-check"></i> <span data-key="convoca-confirm">Confirmar Convocação</span></button>
                     </div>
                 </section>
+
+                <!-- Modal de seleção de jogador -->
+                <div class="player-modal" id="playerModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 id="modalTitle">Escolher Jogador</h3>
+                            <button class="modal-close" id="modalClose"><i class="fas fa-xmark"></i></button>
+                        </div>
+                        <div class="modal-player-list" id="modalPlayerList"></div>
+                    </div>
+                </div>
 
                 <!-- Tela de resultados -->
                 <section class="results hidden" id="results">
                     <div class="results-header">
-                        <h2><i class="fas fa-chart-bar"></i> Resultado da Convocação</h2>
+                        <h2><i class="fas fa-chart-bar"></i> <span data-key="convoca-result-title">Resultado da Convocação</span></h2>
                         <div class="score-display">
                             <span class="score-number" id="scoreNumber">0</span>
-                            <span class="score-label">/26 acertos</span>
+                            <span class="score-label" data-key="convoca-result-score">/26 acertos</span>
                         </div>
                     </div>
 
                     <div class="results-comparison">
                         <div class="result-column">
-                            <h3>Sua Convocação</h3>
+                            <h3 data-key="convoca-your-squad">Sua Convocação</h3>
                             <div id="yourSquadResult"></div>
                         </div>
                         
                         <div class="result-column">
-                            <h3>Convocação Oficial</h3>
+                            <h3 data-key="convoca-official-squad">Convocação Oficial</h3>
                             <div id="officialSquadResult"></div>
                         </div>
                     </div>
 
                     <div class="results-actions">
-                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> Jogar Novamente</button>
-                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> Menu Principal</button>
+                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> <span data-key="convoca-retry">Jogar Novamente</span></button>
+                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> <span data-key="convoca-home">Menu Principal</span></button>
                     </div>
                 </section>
             </div>
@@ -202,6 +220,11 @@
             </div>
         </footer>
 
+        <script src="../scripts/translation/english.js"></script>
+        <script src="../scripts/translation/german.js"></script>
+        <script src="../scripts/translation/portuguese.js"></script>
+        <script src="../scripts/translation/spanish.js"></script>
+        <script src="../scripts/traducao.js"></script>
         <script src="../scripts/script.js"></script>
         <script type="module" src="../scripts/games/football-vc-convoca/main.js"></script>
     </body>

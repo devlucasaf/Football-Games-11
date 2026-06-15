@@ -1,133 +1,94 @@
-import { estado, totalConvocados } from "./core.js";
-import { obterOpcoes } from "./data.js";
+import { estado, totalConvocados, POSICOES, LIMITES, LABELS } from "./core.js";
+import { obterOpcoesPorPosicao } from "./data.js";
 
-// --- NORMALIZAR PARA BUSCA ---
-function normalizar(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+// --- RENDERIZA TODOS OS GRUPOS DE POSIÇÃO COM SLOTS ---
+export function renderizarGrupos(onSlotClick) {
+    const container = document.getElementById("positionGroups");
+    container.innerHTML = "";
+
+    POSICOES.forEach(pos => {
+        const limite = LIMITES[pos];
+        const group = document.createElement("div");
+        group.className = "position-group";
+        group.id = `group-${pos}`;
+
+        const preenchidos = estado.convocados[pos].length;
+
+        group.innerHTML = `
+            <div class="group-header">
+                <h3>${LABELS[pos]}</h3>
+                <span class="group-counter">${preenchidos}/${limite}</span>
+            </div>
+            <div class="slots-container" id="slots-${pos}"></div>
+        `;
+
+        const slotsDiv = group.querySelector(".slots-container");
+
+        for (let i = 0; i < limite; i++) {
+            const jogador = estado.convocados[pos][i];
+            const slot = document.createElement("button");
+            slot.className = "player-slot" + (jogador ? " filled" : "");
+            slot.dataset.pos = pos;
+            slot.dataset.index = i;
+
+            if (jogador) {
+                slot.innerHTML = `<span class="slot-name">${jogador}</span><span class="slot-remove" data-pos="${pos}" data-index="${i}"><i class="fas fa-xmark"></i></span>`;
+            } else {
+                slot.innerHTML = `<i class="fas fa-plus"></i><span class="slot-label">Escolher</span>`;
+                slot.addEventListener("click", () => onSlotClick(pos));
+            }
+
+            slotsDiv.appendChild(slot);
+        }
+
+        container.appendChild(group);
+    });
 }
 
-// --- ATUALIZA CONTADORES VISUAIS ---
-export function atualizarUI() {
+// --- ATUALIZA CONTADOR GERAL ---
+export function atualizarContador() {
     document.getElementById("squadCount").textContent = totalConvocados();
-    ["GOL", "DEF", "MEI", "ATA"].forEach(pos => {
-        const count = estado.convocados[pos].length;
-        const limite = estado.limites[pos];
-        document.getElementById(`count${pos}`).textContent = count;
-
-        // --- ATUALIZA HEADER DO GRUPO ---
-        const group  = document.getElementById(`group${pos}`);
-        const h3     = group.querySelector("h3");
-        const labels = { 
-            GOL: "Goleiros", 
-            DEF: "Defensores", 
-            MEI: "Meio-campistas", 
-            ATA: "Atacantes" 
-        };
-        const icons = { 
-            GOL: "fa-hands", 
-            DEF: "fa-shield-halved", 
-            MEI: "fa-arrows-turn-to-dots", 
-            ATA: "fa-crosshairs" 
-        };
-        h3.innerHTML = `<i class="fas ${icons[pos]}"></i> ${labels[pos]} (${count}/${limite})`;
-
-        const btn = document.querySelector(`.pos-btn[data-pos="${pos}"]`);
-        if (count >= limite) {
-            btn.classList.add("full");
-        } else {
-            btn.classList.remove("full");
-        }
-    });
-
-    // --- BOTÃO CONFIRMAR ---
     const btnConfirm = document.getElementById("btnConfirm");
     btnConfirm.disabled = totalConvocados() < 26;
 }
 
-// --- RENDERIZA LISTA DE JOGADORES POR POSIÇÃO ---
-export function renderizarListas() {
-    ["GOL", "DEF", "MEI", "ATA"].forEach(pos => {
-        const ul = document.getElementById(`list${pos}`);
-        ul.innerHTML = "";
-        estado.convocados[pos].forEach(nome => {
-            const li = document.createElement("li");
-            li.innerHTML = `${nome} <button class="btn-remove" data-pos="${pos}" data-nome="${nome}"><i class="fas fa-xmark"></i></button>`;
-            ul.appendChild(li);
-        });
+// --- ABRE MODAL DE OPÇÕES PARA UMA POSIÇÃO ---
+export function abrirModal(pos, onSelect) {
+    const modal = document.getElementById("playerModal");
+    const title = document.getElementById("modalTitle");
+    const list = document.getElementById("modalPlayerList");
+
+    title.textContent = `${LABELS[pos]} (${estado.convocados[pos].length}/${LIMITES[pos]})`;
+    list.innerHTML = "";
+
+    const opcoes = obterOpcoesPorPosicao(pos);
+    const jaEscolhidos = Object.values(estado.convocados).flat();
+
+    opcoes.forEach(nome => {
+        const item = document.createElement("button");
+        item.className = "modal-player-item";
+
+        if (jaEscolhidos.includes(nome)) {
+            item.classList.add("disabled");
+            item.disabled = true;
+            item.innerHTML = `<span>${nome}</span><i class="fas fa-check"></i>`;
+        } else {
+            item.innerHTML = `<span>${nome}</span>`;
+            item.addEventListener("click", () => {
+                onSelect(pos, nome);
+                fecharModal();
+            });
+        }
+
+        list.appendChild(item);
     });
+
+    modal.classList.add("active");
 }
 
-// --- AUTOCOMPLETE ---
-export function configurarAutocomplete(onSelect) {
-    const input = document.getElementById("playerInput");
-    const list = document.getElementById("autocompleteList");
-    let highlightIndex = -1;
-
-    input.addEventListener("input", () => {
-        const val = normalizar(input.value.trim());
-        list.innerHTML = "";
-        highlightIndex = -1;
-
-        if (val.length < 2) {
-            list.classList.remove("active");
-            return;
-        }
-
-        const opcoes = obterOpcoes();
-        const todosConvocados = Object.values(estado.convocados).flat();
-        const filtrados = opcoes.filter(nome =>
-            normalizar(nome).includes(val) && !todosConvocados.includes(nome)
-        ).slice(0, 8);
-
-        if (filtrados.length === 0) {
-            list.classList.remove("active");
-            return;
-        }
-
-        filtrados.forEach(nome => {
-            const div = document.createElement("div");
-            div.className = "autocomplete-item";
-            div.textContent = nome;
-            div.addEventListener("click", () => {
-                onSelect(nome);
-                input.value = "";
-                list.classList.remove("active");
-            });
-            list.appendChild(div);
-        });
-        list.classList.add("active");
-    });
-
-    input.addEventListener("keydown", (e) => {
-        const items = list.querySelectorAll(".autocomplete-item");
-        if (!items.length) {
-            return;
-        }
-
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
-            highlightIndex = Math.min(highlightIndex + 1, items.length - 1);
-            items.forEach((it, i) => it.classList.toggle("highlighted", i === highlightIndex));
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            highlightIndex = Math.max(highlightIndex - 1, 0);
-            items.forEach((it, i) => it.classList.toggle("highlighted", i === highlightIndex));
-        } else if (e.key === "Enter") {
-            e.preventDefault();
-            if (highlightIndex >= 0 && items[highlightIndex]) {
-                items[highlightIndex].click();
-            }
-        } else if (e.key === "Escape") {
-            list.classList.remove("active");
-        }
-    });
-
-    // --- FECHA AO CLICAR FORA ---
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-wrapper")) {
-            list.classList.remove("active");
-        }
-    });
+// --- FECHA MODAL ---
+export function fecharModal() {
+    document.getElementById("playerModal").classList.remove("active");
 }
 
 // --- RENDERIZA TELA DE RESULTADOS ---
@@ -147,21 +108,16 @@ export function renderizarResultados(convocadosUsuario, convocadosOficiais) {
     // --- SUA CONVOCAÇÃO ---
     const yourDiv = document.getElementById("yourSquadResult");
     yourDiv.innerHTML = "";
-    ["GOL", "DEF", "MEI", "ATA"].forEach(pos => {
-        const labels = { 
-            GOL: "Goleiros", 
-            DEF: "Defensores", 
-            MEI: "Meio-campistas", 
-            ATA: "Atacantes" 
-        };
+    POSICOES.forEach(pos => {
+        if (convocadosUsuario[pos].length === 0) {
+            return;
+        }
 
         const group = document.createElement("div");
-
         group.className = "result-group";
-        group.innerHTML = `<h4>${labels[pos]}</h4><ul></ul>`;
-
+        group.innerHTML = `<h4>${LABELS[pos]}</h4><ul></ul>`;
+        
         const ul = group.querySelector("ul");
-
         convocadosUsuario[pos].forEach(nome => {
             const li = document.createElement("li");
             li.textContent = nome;
@@ -174,19 +130,15 @@ export function renderizarResultados(convocadosUsuario, convocadosOficiais) {
     // --- CONVOCAÇÃO OFICIAL ---
     const officialDiv = document.getElementById("officialSquadResult");
     officialDiv.innerHTML = "";
-    ["GOL", "DEF", "MEI", "ATA"].forEach(pos => {
-        const labels = { 
-            GOL: "Goleiros", 
-            DEF: "Defensores", 
-            MEI: "Meio-campistas", 
-            ATA: "Atacantes" 
-        };
-
+    POSICOES.forEach(pos => {
         const jogadores = convocadosOficiais.filter(j => j.posicao === pos);
-        const group = document.createElement("div");
+        if (jogadores.length === 0) {
+            return;
+        }
 
+        const group = document.createElement("div");
         group.className = "result-group";
-        group.innerHTML = `<h4>${labels[pos]}</h4><ul></ul>`;
+        group.innerHTML = `<h4>${LABELS[pos]}</h4><ul></ul>`;
 
         const ul = group.querySelector("ul");
         jogadores.forEach(j => {
@@ -197,6 +149,4 @@ export function renderizarResultados(convocadosUsuario, convocadosOficiais) {
         });
         officialDiv.appendChild(group);
     });
-
-    return acertos;
 }

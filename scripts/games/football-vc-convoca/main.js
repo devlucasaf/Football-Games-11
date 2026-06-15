@@ -1,8 +1,7 @@
-import { estado, resetConvocados, totalConvocados } from "./core.js";
+import { estado, resetConvocados, totalConvocados, LIMITES } from "./core.js";
 import { carregarDados, obterSelecoes, obterConvocadosOficiais, obterBandeira } from "./data.js";
-import { atualizarUI, renderizarListas, configurarAutocomplete, renderizarResultados } from "./ui.js";
+import { renderizarGrupos, atualizarContador, abrirModal, fecharModal, renderizarResultados } from "./ui.js";
 
-// --- REFS DE SEÇÕES ---
 const modeSection = document.getElementById("modeSelection");
 const teamSection = document.getElementById("teamSelection");
 const builderSection = document.getElementById("squadBuilder");
@@ -31,11 +30,9 @@ function renderizarTimes() {
     const selecoes = obterSelecoes();
     selecoes.forEach(s => {
         const btn = document.createElement("button");
-
         btn.className = "team-card";
         btn.innerHTML = `<span class="flag">${s.bandeira}</span><span class="team-name">${s.nome}</span>`;
         btn.addEventListener("click", () => iniciarConvocacao(s.key));
-        
         grid.appendChild(btn);
     });
 }
@@ -49,69 +46,53 @@ function iniciarConvocacao(key) {
     document.getElementById("selectedTeamName").textContent =
         key.charAt(0).toUpperCase() + key.slice(1);
 
-    estado.posicaoAtiva = "GOL";
-    document.querySelectorAll(".pos-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.pos === "GOL");
-        btn.classList.remove("full");
-    });
-
-    renderizarListas();
-    atualizarUI();
+    renderizarGrupos(abrirSelecao);
+    atualizarContador();
     mostrarSecao(builderSection);
-    document.getElementById("playerInput").value = "";
-    document.getElementById("playerInput").focus();
 }
 
-// --- SELETOR DE POSIÇÃO ---
-document.querySelectorAll(".pos-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        if (btn.classList.contains("full")) {
-            return;
-        }
-
-        estado.posicaoAtiva = btn.dataset.pos;
-        document.querySelectorAll(".pos-btn").forEach(b => b.classList.toggle("active", b === btn));
-    });
-});
-
-// --- ADICIONAR JOGADOR ---
-function adicionarJogador(nome) {
-    const pos = estado.posicaoAtiva;
-    if (estado.convocados[pos].length >= estado.limites[pos]) {
+// --- ABRIR SELEÇÃO DE JOGADOR PARA UMA POSIÇÃO ---
+function abrirSelecao(pos) {
+    if (estado.convocados[pos].length >= LIMITES[pos]) {
         return;
     }
-    
+    abrirModal(pos, adicionarJogador);
+}
+
+// --- ADICIONAR JOGADOR ---
+function adicionarJogador(pos, nome) {
+    if (estado.convocados[pos].length >= LIMITES[pos]) {
+        return;
+    }
+
     if (Object.values(estado.convocados).flat().includes(nome)) {
         return;
     }
 
     estado.convocados[pos].push(nome);
-    renderizarListas();
-    atualizarUI();
-
-    if (estado.convocados[pos].length >= estado.limites[pos]) {
-        const posicoes = ["GOL", "DEF", "MEI", "ATA"];
-        const proxima = posicoes.find(p => estado.convocados[p].length < estado.limites[p]);
-        if (proxima) {
-            estado.posicaoAtiva = proxima;
-            document.querySelectorAll(".pos-btn").forEach(b =>
-                b.classList.toggle("active", b.dataset.pos === proxima)
-            );
-        }
-    }
+    renderizarGrupos(abrirSelecao);
+    atualizarContador();
 }
 
-// --- REMOVER JOGADOR ---
-document.querySelector(".squad-lists").addEventListener("click", (e) => {
-    const btn = e.target.closest(".btn-remove");
-    if (!btn) {
+// --- REMOVER JOGADOR (delegação de evento) ---
+document.getElementById("positionGroups").addEventListener("click", (e) => {
+    const removeBtn = e.target.closest(".slot-remove");
+    if (!removeBtn) {
         return;
     }
 
-    const { pos, nome } = btn.dataset;
-    estado.convocados[pos] = estado.convocados[pos].filter(n => n !== nome);
-    renderizarListas();
-    atualizarUI();
+    const { pos, index } = removeBtn.dataset;
+    estado.convocados[pos].splice(Number(index), 1);
+    renderizarGrupos(abrirSelecao);
+    atualizarContador();
+});
+
+// --- FECHAR MODAL ---
+document.getElementById("modalClose").addEventListener("click", fecharModal);
+document.getElementById("playerModal").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+        fecharModal();
+    }
 });
 
 // --- CONFIRMAR CONVOCAÇÃO ---
@@ -119,7 +100,6 @@ document.getElementById("btnConfirm").addEventListener("click", () => {
     if (totalConvocados() < 26) {
         return;
     }
-    
     const oficiais = obterConvocadosOficiais();
     renderizarResultados(estado.convocados, oficiais);
     mostrarSecao(resultsSection);
@@ -132,12 +112,9 @@ document.getElementById("btnRetry").addEventListener("click", () => {
     resetConvocados();
     mostrarSecao(teamSection);
 });
-
 document.getElementById("btnHome").addEventListener("click", () => {
     window.location.href = "../index.html";
 });
-
-configurarAutocomplete(adicionarJogador);
 
 async function init() {
     await carregarDados();

@@ -19,12 +19,13 @@ export function obterSelecoes() {
     }));
 }
 
-// --- RETORNA A LISTA DE OPÇÕES DA SELEÇÃO ---
-export function obterOpcoes() {
+// --- RETORNA AS OPÇÕES DE UMA POSIÇÃO ESPECÍFICA ---
+export function obterOpcoesPorPosicao(posicao) {
     if (!estado.dados || !estado.modo || !estado.selecao) {
         return [];
     }
-    return estado.dados[estado.modo][estado.selecao].opcoes || [];
+    const opcoes = estado.dados[estado.modo][estado.selecao].opcoes;
+    return opcoes[posicao] || [];
 }
 
 // --- RETORNA A LISTA OFICIAL DE CONVOCADOS DA SELEÇÃO ---
