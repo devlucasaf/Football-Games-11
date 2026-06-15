@@ -1,7 +1,7 @@
 {
     "copa2026": {
         "inglaterra": {
-            "bandeira": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_England.svg",
             "convocados": [
                 {"nome": "Pickford", "posicao": "GOL"},
                 {"nome": "Ramsdale", "posicao": "GOL"},
@@ -43,7 +43,7 @@
             }
         },
         "franca": {
-            "bandeira": "🇫🇷",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
             "convocados": [
                 {"nome": "Mike Maignan", "posicao": "GOL"},
                 {"nome": "Brice Samba", "posicao": "GOL"},
@@ -85,7 +85,7 @@
             }
         },
         "espanha": {
-            "bandeira": "🇪🇸",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/330px-Flag_of_Spain.svg.png",
             "convocados": [
                 {"nome": "Unai Simón", "posicao": "GOL"},
                 {"nome": "David Raya", "posicao": "GOL"},
@@ -127,7 +127,7 @@
             }
         },
         "portugal": {
-            "bandeira": "🇵🇹",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/3840px-Flag_of_Portugal.svg.png?utm_source=br.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
             "convocados": [
                 {"nome": "Diogo Costa", "posicao": "GOL"},
                 {"nome": "Rui Patrício", "posicao": "GOL"},
@@ -169,7 +169,7 @@
             }
         },
         "brasil": {
-            "bandeira": "🇧🇷",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/330px-Flag_of_Brazil.svg.png",
             "convocados": [
                 {"nome": "Alisson", "posicao": "GOL"},
                 {"nome": "Ederson", "posicao": "GOL"},
@@ -199,19 +199,19 @@
                 {"nome": "Douglaz Luiz", "posicao": "CA"}
             ],
             "opcoes": {
-                "GOL": ["Alisson", "Ederson", "Bento", "Weverton", "Santos"],
-                "LE": ["Wendell", "Abner", "Guilherme Arana", "Alex Telles"],
-                "LD": ["Danilo", "Vanderson", "Emerson Royal"],
-                "ZAG": ["Militão", "Marquinhos", "Gabriel Magalhães", "Beraldo", "Bremer", "Thiago Silva"],
-                "VOL": ["Casemiro", "André", "João Gomes", "Fabinho", "Fred"],
-                "MEI": ["Lucas Paquetá", "Bruno Guimarães", "Gerson", "Andreas Pereira", "Douglaz Luiz", "Everton Ribeiro", "Renato Augusto"],
-                "PE": ["Vinícius Jr.", "Savinho", "Martinelli", "Neymar"],
-                "PD": ["Raphinha", "Estêvão", "Antony", "Luiz Henrique"],
-                "CA": ["Endrick", "Rodrygo", "Luiz Henrique", "Andreas Pereira", "Douglaz Luiz", "Richarlison", "Gabriel Jesus", "Pedro", "Firmino", "Gabriel Barbosa"]
+                "GOL":  ["Alisson", "Ederson", "Bento", "Weverton", "Santos", "Fábio"],
+                "LE":   ["Wendell", "Abner", "Guilherme Arana", "Alex Telles", "Alex Sandro"],
+                "LD":   ["Danilo", "Vanderson", "Emerson Royal", "Wesley"],
+                "ZAG":  ["Militão", "Marquinhos", "Gabriel Magalhães", "Lucas Beraldo", "Bremer", "Thiago Silva"],
+                "VOL":  ["Casemiro", "André", "João Gomes", "Fabinho", "Fred"],
+                "MEI":  ["Lucas Paquetá", "Bruno Guimarães", "Gerson", "Andreas Pereira", "Douglaz Luiz", "Everton Ribeiro", "Renato Augusto"],
+                "PE":   ["Vinícius Jr.", "Savinho", "Martinelli", "Neymar"],
+                "PD":   ["Raphinha", "Estêvão", "Antony", "Luiz Henrique"],
+                "CA":   ["Endrick", "Rodrygo", "Luiz Henrique", "Andreas Pereira", "Douglaz Luiz", "Richarlison", "Gabriel Jesus", "Pedro", "Firmino", "Gabriel Barbosa"]
             }
         },
         "alemanha": {
-            "bandeira": "🇩🇪",
+            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/330px-Flag_of_Germany.svg.png",
             "convocados": [
                 {"nome": "Manuel Neuer", "posicao": "GOL"},
                 {"nome": "Marc-André ter Stegen", "posicao": "GOL"},
