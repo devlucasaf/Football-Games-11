@@ -50,10 +50,23 @@
             "bandeira": "🇳🇴",
             "idade": 25,
             "posicao": "Atacante",
+            "primeiroClube": "Bryne",
             "principalClube": "Manchester City",
             "clubeAtual": "Manchester City",
-            "titulos": ["Champions League", "2x Premier League"],
-            "curiosidade": "Bateu o recorde de gols em uma temporada da Premier League"
+            "titulos": ["Champions League", "2x Premier League", "2x Bundesliga Austríaca"],
+            "curiosidade": "Marcou 9 gols em uma única partida"
+        },
+        {
+            "nome": "Martin Ødegaard",
+            "pais": "Noruega",
+            "bandeira": "🇳🇴",
+            "idade": 27,
+            "posicao": "Meio-campista",
+            "primeiroClube": "Strømsgodset",
+            "principalClube": "Arsenal",
+            "clubeAtual": "Arsenal",
+            "titulos": ["Premier League"],
+            "curiosidade": "Marcou 9 gols em uma única partida"
         },
         {
             "nome": "Vinícius Jr",
