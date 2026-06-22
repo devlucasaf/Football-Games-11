@@ -3,17 +3,17 @@
         {
             "tipo": "clube",
             "texto": "Jogou no Flamengo",
-            "icone": "fa-shield-alt"
+            "icone": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png"
         },
         {
             "tipo": "clube",
             "texto": "Jogou no Palmeiras",
-            "icone": "fa-shield-alt"
+            "icone": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/500px-Palmeiras_logo.svg.png"
         },
         {
             "tipo": "clube",
             "texto": "Jogou no Corinthians",
-            "icone": "fa-shield-alt"
+            "icone": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Corinthians_simbolo.png/250px-Corinthians_simbolo.png"
         },
         {
             "tipo": "clube",
@@ -77,6 +77,11 @@
         },
         {
             "tipo": "titulo",
+            "texto": "Ganhou a Copa do Nordeste",
+            "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
             "texto": "Ganhou o Brasileirão",
             "icone": "fa-trophy"
         },
@@ -84,6 +89,16 @@
             "tipo": "titulo",
             "texto": "Ganhou a Libertadores",
             "icone": "fa-trophy"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Copa do Mundo",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Ganhou a Libertadores e a Champions League",
+            "icone": "fa-futbol"
         },
         {
             "tipo": "titulo",
@@ -98,6 +113,81 @@
         {
             "tipo": "titulo",
             "texto": "Artilheiro do Brasileirão",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Artilheiro da Libertadores",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "titulo",
+            "texto": "Rei da América",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "treinado",
+            "texto": "Treinado por Vanderlei Luxemburgo",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "treinado",
+            "texto": "Treinado por Fernando Diniz",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "treinado",
+            "texto": "Treinado por Tite",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "treinado",
+            "texto": "Treinado por Dorival Junior",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "treinado",
+            "texto": "Treinado por Felipão",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "treinado",
+            "texto": "Treinado por ",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Argentina",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Colômbia",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Uruguai",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Chile",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Equador",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Espanha",
+            "icone": "fa-futbol"
+        },
+        {
+            "tipo": "pais",
+            "texto": "Portugal",
             "icone": "fa-futbol"
         },
         {
@@ -134,20 +224,20 @@
             "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção", "Artilheiro do Brasileirão"]
         },
         {
-            "nome": "Arrascaeta",
+            "nome": "Giorgian De Arrascaeta",
             "clubes": ["Cruzeiro", "Flamengo"],
             "posicao": "Meio-campista",
-            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil"]
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Meio-campista", "Uruguai"]
         },
         {
             "nome": "Pedro",
             "clubes": ["Fluminense", "Flamengo"],
             "posicao": "Atacante",
-            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção", "Artilheiro do Brasileirão"]
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção", "Atacante"]
         },
         {
             "nome": "Dudu",
-            "clubes": ["Palmeiras", "Cruzeiro"],
+            "clubes": ["Palmeiras", "Cruzeiro", "Atlético Mineiro", "Grêmio"],
             "posicao": "Atacante",
             "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil"]
         },
@@ -159,9 +249,9 @@
         },
         {
             "nome": "Weverton",
-            "clubes": ["Athletico-PR", "Palmeiras"],
+            "clubes": ["Athletico-PR", "Palmeiras", "Grêmio", "Corinthians"],
             "posicao": "Goleiro",
-            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção"]
+            "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Convocado para Seleção", "Goleiro", "Ganhou a Copa do Brasil"]
         },
         {
             "nome": "Éverton Ribeiro",
@@ -191,13 +281,13 @@
             "nome": "Luiz Henrique",
             "clubes": ["Fluminense", "Botafogo"],
             "posicao": "Atacante",
-            "titulos": ["Ganhou a Libertadores", "Ganhou o Brasileirão", "Convocado para Seleção"]
+            "titulos": ["Ganhou a Libertadores", "Ganhou o Brasileirão", "Convocado para Seleção", "Rei da América"]
         },
         {
             "nome": "Germán Cano",
             "clubes": ["Vasco", "Fluminense"],
             "posicao": "Atacante",
-            "titulos": ["Ganhou a Libertadores", "Artilheiro do Brasileirão"]
+            "titulos": ["Ganhou a Libertadores", "Artilheiro do Brasileirão", "Rei da América"]
         },
         {
             "nome": "Yuri Alberto",
@@ -224,10 +314,10 @@
             "titulos": ["Ganhou a Libertadores", "Ganhou o Brasileirão", "Convocado para Seleção"]
         },
         {
-            "nome": "Suárez",
-            "clubes": ["Grêmio", "Internacional"],
+            "nome": "Luis Suárez",
+            "clubes": ["Grêmio"],
             "posicao": "Atacante",
-            "titulos": ["Ganhou a Libertadores", "Convocado para Seleção"]
+            "titulos": ["Uruguaio"]
         },
         {
             "nome": "Galhardo",
@@ -242,7 +332,7 @@
             "titulos": ["Ganhou o Brasileirão", "Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
         },
         {
-            "nome": "Alex de Souza",
+            "nome": "Alex",
             "clubes": ["Palmeiras", "Cruzeiro", "Atlético Mineiro", "São Paulo", "Internacional"],
             "posicao": "Meio-campista",
             "titulos": ["Ganhou o Brasileirão", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
@@ -267,7 +357,7 @@
         },
         {
             "nome": "Fagner",
-            "clubes": ["Corinthians"],
+            "clubes": ["Corinthians", "Cruzeiro"],
             "posicao": "Lateral",
             "titulos": ["Ganhou o Brasileirão", "Convocado para Seleção"]
         },
@@ -293,19 +383,19 @@
             "nome": "Thiago Silva",
             "clubes": ["Fluminense"],
             "posicao": "Zagueiro",
-            "titulos": ["Ganhou a Libertadores", "Convocado para Seleção"]
+            "titulos": ["Ganhou a Copa do Brasil", "Convocado para Seleção", "Zagueiro"]
         },
         {
-            "nome": "Arana",
-            "clubes": ["Corinthians", "Atlético Mineiro"],
+            "nome": "Guilherme Arana",
+            "clubes": ["Corinthians", "Atlético Mineiro", "Fluminense"],
             "posicao": "Lateral",
             "titulos": ["Ganhou o Brasileirão", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
         },
         {
             "nome": "Marinho",
-            "clubes": ["Santos", "Flamengo", "Fortaleza", "Grêmio"],
+            "clubes": ["Santos", "Flamengo", "Fortaleza", "Grêmio", "Fluminense"],
             "posicao": "Atacante",
-            "titulos": ["Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção"]
+            "titulos": ["Ganhou a Libertadores", "Ganhou a Copa do Brasil", "Convocado para Seleção", "Ganhou a Copa do Nordeste"]
         }
     ],
     "mapeamentoSelecao": {}
