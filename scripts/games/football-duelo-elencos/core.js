@@ -3,7 +3,6 @@ export const estado = {
     duelosUsados:   [],
     dueloAtual:     null,
     posicaoIdx:     0,
-    acertos:        0,
     totalPosicoes:  11,
     respondido:     false,
     escolhas:       []  

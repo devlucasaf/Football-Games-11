@@ -2,7 +2,7 @@
     "rodadas": [
         {
             "tema": "Jogaram no Manchester United",
-            "jogadores": ["Cristiano Ronaldo", "Di María", "Rooney", "Beckham", "Van Persie", "Ibrahimovic"],
+            "jogadores": ["Cristiano Ronaldo", "Ángel Di María", "Wayne Rooney", "David Beckham", "Robin van Persie", "Zlatan Ibrahimovic"],
             "impostor": "Gerrard",
             "explicacao": "Gerrard nunca jogou no Manchester United.",
             "dificuldade": "fácil"
@@ -10,27 +10,27 @@
         {
             "tema": "Brasileiros campeões da Copa do Mundo de 2002",
             "jogadores": ["Ronaldo", "Rivaldo", "Ronaldinho", "Cafu", "Roberto Carlos", "Gilberto Silva"],
-            "impostor": "Neymar",
-            "explicacao": "Neymar não participou da Copa de 2002.",
+            "impostor": "Adriano",
+            "explicacao": "Adriano não participou da Copa de 2002.",
             "dificuldade": "médio"
         },
         {
-            "tema": "Jogaram no PSG",
-            "jogadores": ["Neymar", "Messi", "Mbappé", "Beckham", "Ibrahimovic", "Di María"],
-            "impostor": "Cristiano Ronaldo",
-            "explicacao": "Cristiano Ronaldo nunca jogou no PSG. Passou por Sporting, Manchester United, Real Madrid, Juventus e Al-Nassr.",
+            "tema": "Jogaram no Paris Saint-Germain",
+            "jogadores": ["Ousmane Dembélé", "Lionel Messi", "Kylian Mbappé", "David Beckham", "Zlatan Ibrahimovic", "Ángel Di María"],
+            "impostor": "Michael Olise",
+            "explicacao": "Olise nunca jogou no PSG",
             "dificuldade": "fácil"
         },
         {
             "tema": "Jogaram no Milan",
-            "jogadores": ["Kaká", "Paolo Maldini", "Ronaldinho", "Andrea Pirlo", "Andriy Shevchenko", "Filippo Inzaghi"],
+            "jogadores": ["Kaká", "Paolo Maldini", "Christian Pulisic", "Luka Modrić", "Andriy Shevchenko", "Filippo Inzaghi"],
             "impostor": "Del Piero",
             "explicacao": "Del Piero nunca jogou no Milan.",
             "dificuldade": "médio"
         },
         {
             "tema": "Argentinos campeões da Copa do Mundo de 2022",
-            "jogadores": ["Messi", "Di María", "Enzo Fernández", "Mac Allister", "Julián Álvarez", "Otamendi"],
+            "jogadores": ["Lionel Messi", "Ángel Di María", "Enzo Fernández", "Mac Allister", "Julián Álvarez", "Otamendi"],
             "impostor": "Agüero",
             "explicacao": "Agüero se aposentou em 2021 por problemas cardíacos e não participou da Copa de 2022.",
             "dificuldade": "médio"
@@ -44,7 +44,7 @@
         },
         {
             "tema": "Jogaram no Bayern de Munique",
-            "jogadores": ["Lewandowski", "Müller", "Neuer", "Robben", "Ribéry", "Schweinsteiger"],
+            "jogadores": ["Lewandowski", "Michael Olise", "Manuel Neuer", "Arjen Robben", "Frank Ribéry", "Bastian Schweinsteiger"],
             "impostor": "Haaland",
             "explicacao": "Haaland nunca jogou no Bayern. Passou por Molde, RB Salzburg, Borussia Dortmund e Manchester City.",
             "dificuldade": "médio"
@@ -88,14 +88,14 @@
             "tema": "Italianos que jogaram na Juventus",
             "jogadores": ["Buffon", "Del Piero", "Pirlo", "Chiellini", "Marchisio", "Bonucci"],
             "impostor": "Totti",
-            "explicacao": "Totti nunca jogou na Juventus. Fez toda sua carreira na Roma.",
+            "explicacao": "Totti nunca jogou na Juventus.",
             "dificuldade": "médio"
         },
         {
             "tema": "Jogaram no Manchester City",
-            "jogadores": ["Agüero", "De Bruyne", "Kompany", "David Silva", "Yaya Touré", "Sterling"],
+            "jogadores": ["Cole Palmer", "Ferran Torres", "Kompany", "David Silva", "Yaya Touré", "Sterling"],
             "impostor": "Pogba",
-            "explicacao": "Pogba nunca jogou no Manchester City. Jogou no Manchester United e na Juventus.",
+            "explicacao": "Pogba nunca jogou no Manchester City.",
             "dificuldade": "fácil"
         },
         {
@@ -109,14 +109,14 @@
             "tema": "Jogaram no Inter de Milão",
             "jogadores": ["Ronaldo", "Adriano", "Zanetti", "Sneijder", "Eto'o", "Ibrahimovic"],
             "impostor": "Kaká",
-            "explicacao": "Kaká nunca jogou no Inter de Milão. Jogou no rival Milan, além de São Paulo e Real Madrid.",
+            "explicacao": "Kaká nunca jogou no Inter de Milão. ",
             "dificuldade": "médio"
         },
         {
             "tema": "Jogaram no Borussia Dortmund",
             "jogadores": ["Lewandowski", "Götze", "Reus", "Haaland", "Aubameyang", "Sancho"],
             "impostor": "Müller",
-            "explicacao": "Müller nunca jogou no Borussia Dortmund. Fez toda sua carreira no Bayern de Munique.",
+            "explicacao": "Müller nunca jogou no Borussia Dortmund. ",
             "dificuldade": "fácil"
         },
         {
@@ -134,17 +134,10 @@
             "dificuldade": "fácil"
         },
         {
-            "tema": "Brasileiros que jogaram no Palmeiras",
-            "jogadores": ["Rivaldo", "Roberto Carlos", "Marcos", "Edmundo", "Dudu", "Endrick"],
-            "impostor": "Zico",
-            "explicacao": "Zico nunca jogou no Palmeiras. Fez carreira no Flamengo, Udinese e Kashima Antlers.",
-            "dificuldade": "médio"
-        },
-        {
-            "tema": "Jogaram na Copa do Mundo pela Alemanha",
-            "jogadores": ["Klose", "Müller", "Neuer", "Schweinsteiger", "Lahm", "Özil"],
-            "impostor": "Lewandowski",
-            "explicacao": "Lewandowski é polonês, não alemão. Joga pela seleção da Polônia.",
+            "tema": "Artilheiros de uma edição de Champions League",
+            "jogadores": ["Andriy Shevchenko", "Alessandro Del Piero", "Raúl", "Cristiano Ronaldo", "Kaká", "Fernando Morientes"],
+            "impostor": "Luis Suarez",
+            "explicacao": "Luis Suarez nunca foi artilheiro da Champions League",
             "dificuldade": "fácil"
         },
         {
@@ -164,29 +157,29 @@
         {
             "tema": "Espanhóis que jogaram no Barcelona",
             "jogadores": ["Xavi", "Iniesta", "Piqué", "Busquets", "Pedro", "Puyol"],
-            "impostor": "Raúl",
+            "impostor": "Nico Williams",
             "explicacao": "Raúl nunca jogou no Barcelona. Fez carreira no Real Madrid e no Schalke 04.",
             "dificuldade": "fácil"
         },
         {
             "tema": "Jogaram no Atlético de Madrid",
-            "jogadores": ["Torres", "Griezmann", "Agüero", "Falcao", "Diego Costa", "Forlán"],
+            "jogadores": ["Fernando Torres", "Antonie Griezmann", "Agüero", "Falcao", "Diego Costa", "Forlán"],
             "impostor": "Benzema",
-            "explicacao": "Benzema nunca jogou no Atlético de Madrid. Jogou no Lyon, Real Madrid e Al-Ittihad.",
+            "explicacao": "Benzema nunca jogou no Atlético de Madrid.",
             "dificuldade": "médio"
         },
         {
             "tema": "Brasileiros que jogaram na Premier League",
-            "jogadores": ["Firmino", "Richarlison", "Gabriel Jesus", "Casemiro", "Fernandinho", "Willian"],
-            "impostor": "Dani Alves",
+            "jogadores": ["Roberto Firmino", "Richarlison", "Savinho", "Casemiro", "Fernandinho", "Willian"],
+            "impostor": "Daniel Alves",
             "explicacao": "Dani Alves nunca jogou na Premier League. Passou por Bahia, Sevilla, Barcelona, Juventus, PSG, São Paulo e Pumas.",
             "dificuldade": "difícil"
         },
         {
             "tema": "Jogaram no Porto",
             "jogadores": ["Deco", "Falcao", "Hulk", "James Rodríguez", "Pepe", "Quaresma"],
-            "impostor": "Figo",
-            "explicacao": "Figo nunca jogou no Porto. Começou no Sporting e depois foi para Barcelona, Real Madrid e Inter.",
+            "impostor": "Luis Figo",
+            "explicacao": "Luis Figo nunca jogou no Porto. Começou no Sporting e depois foi para Barcelona, Real Madrid e Inter.",
             "dificuldade": "difícil"
         },
         {
@@ -207,7 +200,7 @@
             "tema": "Jogaram na Juventus e no Real Madrid",
             "jogadores": ["Zidane", "Cristiano Ronaldo", "Higuaín", "Cannavaro", "Morata", "Khedira"],
             "impostor": "Buffon",
-            "explicacao": "Buffon jogou na Juventus, mas nunca no Real Madrid. Sua breve saída da Juve foi para o PSG.",
+            "explicacao": "Buffon jogou na Juventus, mas nunca no Real Madrid.",
             "dificuldade": "difícil"
         }
     ]

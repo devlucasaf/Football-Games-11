@@ -5,17 +5,17 @@
             "timeB": { "nome": "Flamengo", "temporada": "2022" },
             "formacao": "4-3-3",
             "posicoes": [
-                { "posicao": "GOL", "jogadorA": "John", "jogadorB": "Santos", "melhor": "A" },
-                { "posicao": "LD", "jogadorA": "Vitinho", "jogadorB": "Rodinei", "melhor": "A" },
-                { "posicao": "ZAG1", "jogadorA": "Bastos", "jogadorB": "David Luiz", "melhor": "B" },
-                { "posicao": "ZAG2", "jogadorA": "Barboza", "jogadorB": "Leo Pereira", "melhor": "A" },
-                { "posicao": "LE", "jogadorA": "Alex Telles", "jogadorB": "Filipe Luis", "melhor": "B" },
-                { "posicao": "VOL", "jogadorA": "Marlon Freitas", "jogadorB": "Thiago Maia", "melhor": "A" },
-                { "posicao": "MC1", "jogadorA": "Thiago Almada", "jogadorB": "Everton Ribeiro", "melhor": "A" },
-                { "posicao": "MC2", "jogadorA": "Savarino", "jogadorB": "Arrascaeta", "melhor": "B" },
-                { "posicao": "PE", "jogadorA": "Luiz Henrique", "jogadorB": "Everton Cebolinha", "melhor": "A" },
-                { "posicao": "CA", "jogadorA": "Igor Jesus", "jogadorB": "Pedro", "melhor": "B" },
-                { "posicao": "PD", "jogadorA": "Junior Santos", "jogadorB": "Gabigol", "melhor": "A" }
+                { "posicao": "GOL",     "jogadorA": "John",             "jogadorB": "Santos" },
+                { "posicao": "LD",      "jogadorA": "Vitinho",          "jogadorB": "Rodinei" },
+                { "posicao": "ZAG1",    "jogadorA": "Bastos",           "jogadorB": "David Luiz" },
+                { "posicao": "ZAG2",    "jogadorA": "Barboza",          "jogadorB": "Leo Pereira" },
+                { "posicao": "LE",      "jogadorA": "Alex Telles",      "jogadorB": "Filipe Luis" },
+                { "posicao": "VOL",     "jogadorA": "Marlon Freitas",   "jogadorB": "Thiago Maia" },
+                { "posicao": "MC1",     "jogadorA": "Gregore",          "jogadorB": "Everton Ribeiro" },
+                { "posicao": "MC2",     "jogadorA": "Savarino",         "jogadorB": "Arrascaeta" },
+                { "posicao": "PE",      "jogadorA": "Luiz Henrique",    "jogadorB": "Everton Cebolinha" },
+                { "posicao": "CA",      "jogadorA": "Igor Jesus",       "jogadorB": "Pedro" },
+                { "posicao": "PD",      "jogadorA": "Thiago Almada",    "jogadorB": "Gabigol" }
             ]
         },
         {
@@ -23,17 +23,17 @@
             "timeB": { "nome": "Barcelona", "temporada": "2014/15" },
             "formacao": "4-3-3",
             "posicoes": [
-                { "posicao": "GOL", "jogadorA": "Navas", "jogadorB": "Ter Stegen", "melhor": "B" },
-                { "posicao": "LD", "jogadorA": "Carvajal", "jogadorB": "Dani Alves", "melhor": "B" },
-                { "posicao": "ZAG1", "jogadorA": "Sergio Ramos", "jogadorB": "Pique", "melhor": "A" },
-                { "posicao": "ZAG2", "jogadorA": "Varane", "jogadorB": "Mascherano", "melhor": "A" },
-                { "posicao": "LE", "jogadorA": "Marcelo", "jogadorB": "Jordi Alba", "melhor": "A" },
-                { "posicao": "VOL", "jogadorA": "Casemiro", "jogadorB": "Busquets", "melhor": "B" },
-                { "posicao": "MC1", "jogadorA": "Kroos", "jogadorB": "Iniesta", "melhor": "B" },
-                { "posicao": "MC2", "jogadorA": "Modric", "jogadorB": "Rakitic", "melhor": "A" },
-                { "posicao": "PE", "jogadorA": "Cristiano Ronaldo", "jogadorB": "Neymar", "melhor": "A" },
-                { "posicao": "CA", "jogadorA": "Benzema", "jogadorB": "Suarez", "melhor": "B" },
-                { "posicao": "PD", "jogadorA": "Bale", "jogadorB": "Messi", "melhor": "B" }
+                { "posicao": "GOL",     "jogadorA": "Keylor Navas",         "jogadorB": "Ter Stegen" },
+                { "posicao": "LD",      "jogadorA": "Dani Carvajal",        "jogadorB": "Dani Alves" },
+                { "posicao": "ZAG1",    "jogadorA": "Sergio Ramos",         "jogadorB": "Pique" },
+                { "posicao": "ZAG2",    "jogadorA": "Varane",               "jogadorB": "Mascherano" },
+                { "posicao": "LE",      "jogadorA": "Marcelo",              "jogadorB": "Jordi Alba" },
+                { "posicao": "VOL",     "jogadorA": "Casemiro",             "jogadorB": "Busquets" },
+                { "posicao": "MC1",     "jogadorA": "Toni Kroos",           "jogadorB": "Iniesta" },
+                { "posicao": "MC2",     "jogadorA": "Modric",               "jogadorB": "Rakitic" },
+                { "posicao": "PE",      "jogadorA": "Cristiano Ronaldo",    "jogadorB": "Neymar" },
+                { "posicao": "CA",      "jogadorA": "Benzema",              "jogadorB": "Luis Suarez" },
+                { "posicao": "PD",      "jogadorA": "Bale",                 "jogadorB": "Lionel Messi" }
             ]
         },
         {
@@ -41,17 +41,17 @@
             "timeB": { "nome": "Argentina", "temporada": "2022" },
             "formacao": "4-3-3",
             "posicoes": [
-                { "posicao": "GOL", "jogadorA": "Marcos", "jogadorB": "E. Martinez", "melhor": "B" },
-                { "posicao": "LD", "jogadorA": "Cafu", "jogadorB": "Molina", "melhor": "A" },
-                { "posicao": "ZAG1", "jogadorA": "Lucio", "jogadorB": "Romero", "melhor": "A" },
-                { "posicao": "ZAG2", "jogadorA": "Edmilson", "jogadorB": "Otamendi", "melhor": "B" },
-                { "posicao": "LE", "jogadorA": "Roberto Carlos", "jogadorB": "Acuna", "melhor": "A" },
-                { "posicao": "VOL", "jogadorA": "Gilberto Silva", "jogadorB": "Enzo Fernandez", "melhor": "B" },
-                { "posicao": "MC1", "jogadorA": "Rivaldo", "jogadorB": "De Paul", "melhor": "A" },
-                { "posicao": "MC2", "jogadorA": "Ronaldinho", "jogadorB": "Mac Allister", "melhor": "A" },
-                { "posicao": "PE", "jogadorA": "Ronaldo", "jogadorB": "Di Maria", "melhor": "A" },
-                { "posicao": "CA", "jogadorA": "Adriano", "jogadorB": "Julian Alvarez", "melhor": "B" },
-                { "posicao": "PD", "jogadorA": "Denilson", "jogadorB": "Messi", "melhor": "B" }
+                { "posicao": "GOL", "jogadorA": "Marcos", "jogadorB": "E. Martinez" },
+                { "posicao": "LD", "jogadorA": "Cafu", "jogadorB": "Molina" },
+                { "posicao": "ZAG1", "jogadorA": "Lucio", "jogadorB": "Romero" },
+                { "posicao": "ZAG2", "jogadorA": "Edmilson", "jogadorB": "Otamendi" },
+                { "posicao": "LE", "jogadorA": "Roberto Carlos", "jogadorB": "Acuna" },
+                { "posicao": "VOL", "jogadorA": "Gilberto Silva", "jogadorB": "Enzo Fernandez" },
+                { "posicao": "MC1", "jogadorA": "Rivaldo", "jogadorB": "De Paul" },
+                { "posicao": "MC2", "jogadorA": "Ronaldinho", "jogadorB": "Mac Allister" },
+                { "posicao": "PE", "jogadorA": "Ronaldo", "jogadorB": "Di Maria" },
+                { "posicao": "CA", "jogadorA": "Adriano", "jogadorB": "Julian Alvarez" },
+                { "posicao": "PD", "jogadorA": "Denilson", "jogadorB": "Messi" }
             ]
         },
         {
@@ -59,17 +59,17 @@
             "timeB": { "nome": "Flamengo", "temporada": "2019" },
             "formacao": "4-3-3",
             "posicoes": [
-                { "posicao": "GOL", "jogadorA": "Weverton", "jogadorB": "Diego Alves", "melhor": "A" },
-                { "posicao": "LD", "jogadorA": "Marcos Rocha", "jogadorB": "Rafinha", "melhor": "B" },
-                { "posicao": "ZAG1", "jogadorA": "Gustavo Gomez", "jogadorB": "Rodrigo Caio", "melhor": "A" },
-                { "posicao": "ZAG2", "jogadorA": "Luan", "jogadorB": "Pablo Mari", "melhor": "B" },
-                { "posicao": "LE", "jogadorA": "Piquerez", "jogadorB": "Filipe Luis", "melhor": "B" },
-                { "posicao": "VOL", "jogadorA": "Danilo", "jogadorB": "Gerson", "melhor": "B" },
-                { "posicao": "MC1", "jogadorA": "Ze Rafael", "jogadorB": "Everton Ribeiro", "melhor": "B" },
-                { "posicao": "MC2", "jogadorA": "Raphael Veiga", "jogadorB": "Arrascaeta", "melhor": "B" },
-                { "posicao": "PE", "jogadorA": "Dudu", "jogadorB": "Bruno Henrique", "melhor": "B" },
-                { "posicao": "CA", "jogadorA": "Rony", "jogadorB": "Gabigol", "melhor": "B" },
-                { "posicao": "PD", "jogadorA": "Wesley", "jogadorB": "Vitinho", "melhor": "A" }
+                { "posicao": "GOL", "jogadorA": "Weverton", "jogadorB": "Diego Alves" },
+                { "posicao": "LD", "jogadorA": "Marcos Rocha", "jogadorB": "Rafinha" },
+                { "posicao": "ZAG1", "jogadorA": "Gustavo Gomez", "jogadorB": "Rodrigo Caio" },
+                { "posicao": "ZAG2", "jogadorA": "Luan", "jogadorB": "Pablo Mari" },
+                { "posicao": "LE", "jogadorA": "Piquerez", "jogadorB": "Filipe Luis" },
+                { "posicao": "VOL", "jogadorA": "Danilo", "jogadorB": "Gerson" },
+                { "posicao": "MC1", "jogadorA": "Ze Rafael", "jogadorB": "Everton Ribeiro" },
+                { "posicao": "MC2", "jogadorA": "Raphael Veiga", "jogadorB": "Arrascaeta" },
+                { "posicao": "PE", "jogadorA": "Dudu", "jogadorB": "Bruno Henrique" },
+                { "posicao": "CA", "jogadorA": "Rony", "jogadorB": "Gabigol" },
+                { "posicao": "PD", "jogadorA": "Wesley", "jogadorB": "Vitinho" }
             ]
         },
         {
@@ -77,17 +77,17 @@
             "timeB": { "nome": "Manchester City", "temporada": "2022/23" },
             "formacao": "4-3-3",
             "posicoes": [
-                { "posicao": "GOL", "jogadorA": "Alisson", "jogadorB": "Ederson", "melhor": "A" },
-                { "posicao": "LD", "jogadorA": "Alexander-Arnold", "jogadorB": "Walker", "melhor": "A" },
-                { "posicao": "ZAG1", "jogadorA": "Van Dijk", "jogadorB": "Ruben Dias", "melhor": "A" },
-                { "posicao": "ZAG2", "jogadorA": "Matip", "jogadorB": "Akanji", "melhor": "B" },
-                { "posicao": "LE", "jogadorA": "Robertson", "jogadorB": "Ake", "melhor": "A" },
-                { "posicao": "VOL", "jogadorA": "Fabinho", "jogadorB": "Rodri", "melhor": "B" },
-                { "posicao": "MC1", "jogadorA": "Henderson", "jogadorB": "De Bruyne", "melhor": "B" },
-                { "posicao": "MC2", "jogadorA": "Wijnaldum", "jogadorB": "Bernardo Silva", "melhor": "B" },
-                { "posicao": "PE", "jogadorA": "Mane", "jogadorB": "Grealish", "melhor": "A" },
-                { "posicao": "CA", "jogadorA": "Firmino", "jogadorB": "Haaland", "melhor": "B" },
-                { "posicao": "PD", "jogadorA": "Salah", "jogadorB": "Mahrez", "melhor": "A" }
+                { "posicao": "GOL", "jogadorA": "Alisson", "jogadorB": "Ederson" },
+                { "posicao": "LD", "jogadorA": "Alexander-Arnold", "jogadorB": "Walker" },
+                { "posicao": "ZAG1", "jogadorA": "Van Dijk", "jogadorB": "Ruben Dias" },
+                { "posicao": "ZAG2", "jogadorA": "Matip", "jogadorB": "Akanji" },
+                { "posicao": "LE", "jogadorA": "Robertson", "jogadorB": "Ake" },
+                { "posicao": "VOL", "jogadorA": "Fabinho", "jogadorB": "Rodri" },
+                { "posicao": "MC1", "jogadorA": "Henderson", "jogadorB": "De Bruyne" },
+                { "posicao": "MC2", "jogadorA": "Wijnaldum", "jogadorB": "Bernardo Silva" },
+                { "posicao": "PE", "jogadorA": "Mane", "jogadorB": "Grealish" },
+                { "posicao": "CA", "jogadorA": "Firmino", "jogadorB": "Haaland" },
+                { "posicao": "PD", "jogadorA": "Salah", "jogadorB": "Mahrez" }
             ]
         }
     ]

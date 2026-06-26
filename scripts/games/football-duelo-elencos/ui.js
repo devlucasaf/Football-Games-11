@@ -102,7 +102,6 @@ export function revelarResultado(escolha, correto, posicao) {
     const fb = els.feedback();
     fb.classList.remove("hidden", "correct", "wrong");
     fb.classList.add(correto ? "correct" : "wrong");
-    els.feedbackText().textContent = correto ? "✓ Correto!" : "✗ Errado!";
     setTimeout(() => fb.classList.add("hidden"), 1200);
 }
 

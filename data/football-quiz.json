@@ -3,7 +3,7 @@
         {
             "id": "champions",
             "nome": "Champions League",
-            "icone": "fa-star",
+            "icone": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UEFA_Champions_League_logo_no_text.svg/960px-UEFA_Champions_League_logo_no_text.svg.png",
             "cor": "#1a237e",
             "perguntas": [
                 {
@@ -101,7 +101,7 @@
         {
             "id": "copa-do-mundo",
             "nome": "Copa do Mundo",
-            "icone": "fa-globe",
+            "icone": "https://png.pngtree.com/png-vector/20250601/ourmid/pngtree-realistic-golden-world-cup-trophy-icon-with-transparent-background-png-image_16441164.png",
             "cor": "#1b5e20",
             "perguntas": [
                 {
@@ -264,7 +264,7 @@
         {
             "id": "copa-mundo-clubes",
             "nome": "Copa do Mundo de Clubes",
-            "icone": "fa-earth-americas",
+            "icone": "https://image-service.onefootball.com/transform?w=256&dpr=2&image=https://images.onefootball.com/icons/leagueColoredCompetition/128/2955.png",
             "cor": "#4a148c",
             "perguntas": [
                 {
@@ -347,7 +347,7 @@
         {
             "id": "brasileirao",
             "nome": "Brasileirão",
-            "icone": "fa-shield-alt",
+            "icone": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Campeonato_Brasileiro_S%C3%A9rie_A_logo_%282024%29.svg/1920px-Campeonato_Brasileiro_S%C3%A9rie_A_logo_%282024%29.svg.png",
             "cor": "#f57f17",
             "perguntas": [
                 {
@@ -430,7 +430,7 @@
         {
             "id": "copa-do-brasil",
             "nome": "Copa do Brasil",
-            "icone": "fa-trophy",
+            "icone": "https://logodownload.org/wp-content/uploads/2018/10/copa-do-brasil-logo-1.png",
             "cor": "#bf360c",
             "perguntas": [
                 {
@@ -513,7 +513,7 @@
         {
             "id": "libertadores",
             "nome": "Libertadores",
-            "icone": "fa-award",
+            "icone": "https://upload.wikimedia.org/wikipedia/pt/thumb/9/95/Conmebol_Libertadores_logo.svg/1280px-Conmebol_Libertadores_logo.svg.png",
             "cor": "#e65100",
             "perguntas": [
                 {

@@ -17,25 +17,17 @@ function verificarEscolha(escolha) {
     estado.respondido = true;
 
     const posicao = obterPosicaoAtual();
-    const correto = posicao.melhor === escolha;
-
-    if (correto) {
-        estado.acertos++;
-        atualizarPontuacao();
-    }
 
     estado.escolhas.push({
         posicao: posicao.posicao,
         jogadorA: posicao.jogadorA,
         jogadorB: posicao.jogadorB,
-        escolha,
-        correto
+        escolha
     });
 
-    revelarResultado(escolha, correto, posicao);
+    revelarResultado(escolha, posicao);
 
-    const nomeCorreto = posicao.melhor === "A" ? posicao.jogadorA : posicao.jogadorB;
-    colocarJogadorNoCampo(estado.posicaoIdx, nomeCorreto, correto);
+    colocarJogadorNoCampo(estado.posicaoIdx);
 
     setTimeout(() => {
         estado.posicaoIdx++;
