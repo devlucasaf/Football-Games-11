@@ -1,284 +1,503 @@
 .treinador-container {
-    padding: 1.5rem 0;
+    padding: var(--spacing-md) 0;
     min-height: calc(100vh - 80px);
+    animation: fadeInUp 0.6s ease;
 }
 
-/* --- GAME INFO --- */
+/* --- INFO DO JOGO --- */
 .game-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    padding: 0.8rem 1.5rem;
-    margin-bottom: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
-.game-round, .game-score {
-    font-family: "Montserrat", sans-serif;
+.game-round,
+.game-score {
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.2vw, 0.95rem);
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.game-round i {
+    color: var(--primary-green);
 }
 
 .game-score i {
     color: #f39c12;
+    font-size: 1rem;
+}
+
+.game-score span {
+    color: var(--text-primary);
 }
 
 /* --- DICAS --- */
 .dicas-header {
     text-align: center;
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 1vw, 0.85rem);
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
     font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.dicas-header span:first-child {
+    color: var(--text-muted);
+}
+
+.dicas-header #dicasCount {
+    color: var(--primary-green);
+    font-weight: 700;
 }
 
 .dicas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
 }
 
 .dica-card {
-    background: var(--card-bg);
+    background: var(--bg-card);
     border: 2px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1rem;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    transition: all 0.3s ease;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.dica-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.dica-card.revealed::before {
+    opacity: 1;
 }
 
 .dica-card.revealed {
-    border-color: var(--accent-color);
-    background: rgba(46, 204, 113, 0.05);
+    border-color: var(--primary-medium-sea-green);
+    background: rgba(46, 204, 113, 0.04);
+    box-shadow: var(--shadow-sm);
 }
 
 .dica-card.hidden-dica {
     cursor: pointer;
     opacity: 0.7;
     border-style: dashed;
+    background: var(--bg-secondary);
 }
 
 .dica-card.hidden-dica:hover {
     opacity: 1;
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
+    border-color: var(--primary-medium-sea-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-style: solid;
+}
+
+.dica-card.hidden-dica:active {
+    transform: scale(0.97);
+}
+
+.dica-card .dica-reveal-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.dica-card.hidden-dica:hover .dica-reveal-icon {
+    opacity: 0.6;
+    color: var(--primary-green);
 }
 
 .dica-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--accent-color);
+    letter-spacing: 0.8px;
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.dica-label i {
+    font-size: 0.65rem;
 }
 
 .dica-valor {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 1.2vw, 0.95rem);
     font-weight: 600;
     color: var(--text-primary);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .dica-card.hidden-dica .dica-valor {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
 }
 
-/* --- GUESS AREA --- */
+.dica-card.hidden-dica .dica-valor i {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+.dica-card.revealed .dica-valor {
+    animation: revealFade 0.4s ease;
+}
+
+@keyframes revealFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- ÁREA DE PALPITE --- */
 .guess-area {
     text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .input-row {
     display: flex;
-    gap: 0.5rem;
-    max-width: 400px;
-    margin: 0 auto 0.8rem;
+    gap: var(--spacing-sm);
+    max-width: 450px;
+    margin: 0 auto var(--spacing-sm);
 }
 
 .input-row input {
     flex: 1;
     padding: 0.8rem 1.2rem;
     border: 2px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
-    font-family: inherit;
-    background: var(--card-bg);
+    font-family: var(--font-body);
+    background: var(--bg-card);
     color: var(--text-primary);
     outline: none;
-    transition: border-color 0.2s;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
 }
 
 .input-row input:focus {
-    border-color: var(--accent-color);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(26, 86, 50, 0.08), var(--shadow-sm);
+}
+
+.input-row input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-row input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn-guess {
-    padding: 0.8rem 1.2rem;
-    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.4rem;
+    background: var(--gradient-primary);
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: 1rem;
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
+    min-width: 52px;
 }
 
-.btn-guess:hover {
+.btn-guess:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 16px rgba(26, 86, 50, 0.3);
+}
+
+.btn-guess:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.btn-guess:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .guess-feedback {
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--radius-sm);
     font-weight: 600;
     font-size: 0.85rem;
-    margin-bottom: 0.8rem;
-    max-width: 400px;
+    margin-bottom: var(--spacing-sm);
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeInUp 0.3s ease;
 }
 
 .guess-feedback.wrong {
-    background: rgba(231, 76, 60, 0.1);
-    color: #e74c3c;
-    border: 1px solid #e74c3c;
+    background: rgba(192, 57, 43, 0.08);
+    color: var(--accent-red);
+    border: 1px solid rgba(192, 57, 43, 0.2);
+}
+
+.guess-feedback.correct {
+    background: rgba(46, 204, 113, 0.08);
+    color: var(--primary-medium-sea-green);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.guess-feedback.hint {
+    background: rgba(243, 156, 18, 0.08);
+    color: #f39c12;
+    border: 1px solid rgba(243, 156, 18, 0.2);
 }
 
 .btn-skip {
     background: none;
     border: 2px solid var(--border-color);
     color: var(--text-secondary);
-    padding: 0.5rem 1.2rem;
-    border-radius: 8px;
+    padding: 0.5rem 1.4rem;
+    border-radius: var(--radius-sm);
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
+    font-family: var(--font-body);
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
 }
 
 .btn-skip:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
-/* --- ROUND RESULT --- */
+.btn-skip:active {
+    transform: scale(0.96);
+}
+
+/* --- RESULTADO DA RODADA --- */
 .round-result {
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
     text-align: center;
-    animation: fadeIn 0.3s ease;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeInUp 0.4s ease;
+    box-shadow: var(--shadow-lg);
 }
 
 .round-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    animation: iconBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.round-icon.correct { 
-    color: #27ae60; 
+.round-icon.correct {
+    color: #27ae60;
 }
 
-.round-icon.wrong { 
-    color: #e74c3c; 
+.round-icon.wrong {
+    color: var(--accent-red);
+}
+
+@keyframes iconBounce {
+    0% {
+        transform: scale(0.3) rotate(-10deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
 }
 
 .round-text {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 .round-answer {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.round-answer strong {
+    color: var(--primary-green);
+    font-weight: 700;
 }
 
 .btn-next {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.8rem;
-    background: var(--accent-color);
+    gap: var(--spacing-xs);
+    padding: 0.8rem 2rem;
+    background: var(--gradient-primary);
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s ease;
+    font-family: var(--font-body);
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 16px rgba(26, 86, 50, 0.2);
 }
 
 .btn-next:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 24px rgba(26, 86, 50, 0.35);
 }
 
-/* --- FINAL RESULT --- */
+.btn-next:active {
+    transform: scale(0.96);
+}
+
+/* --- RESULTADO FINAL --- */
 .final-result {
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
     text-align: center;
-    animation: fadeIn 0.4s ease;
+    max-width: 550px;
+    margin: 0 auto;
+    animation: fadeInUp 0.5s ease;
+    box-shadow: var(--shadow-lg);
 }
 
 .final-result h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
 }
 
 .final-result h2 i {
-    color: var(--accent-color);
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .final-score {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
 }
 
 .final-points {
-    font-family: "Montserrat", sans-serif;
-    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 5vw, 4rem);
     font-weight: 800;
-    color: var(--accent-color);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="dark"] .final-points {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .final-label {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: var(--text-secondary);
 }
 
 .final-details {
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-lg);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.8;
+}
+
+.final-details .stat-item {
+    display: inline-block;
+    margin: 0 var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.final-details .stat-item .stat-number {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.final-details .stat-item .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .final-actions {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--spacing-md);
     flex-wrap: wrap;
 }
 
@@ -286,62 +505,234 @@
 .btn-home {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.8rem;
-    border-radius: 10px;
+    gap: var(--spacing-xs);
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-    border: 2px solid var(--border-color);
+    transition: all var(--transition-fast);
+    font-family: var(--font-body);
+    border: none;
 }
 
 .btn-retry {
-    background: var(--accent-color);
+    background: var(--gradient-primary);
     color: #fff;
-    border-color: var(--accent-color);
+    box-shadow: 0 4px 16px rgba(26, 86, 50, 0.25);
 }
 
 .btn-retry:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(26, 86, 50, 0.35);
+}
+
+.btn-retry:active {
+    transform: scale(0.96);
 }
 
 .btn-home {
-    background: var(--card-bg);
+    background: var(--bg-secondary);
     color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .btn-home:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-/* --- HIDEN --- */
+/* --- UTILITÁRIOS --- */
 .hidden {
     display: none !important;
 }
 
-@keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(5px); 
-    }
-
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
-
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
+    .treinador-container {
+        padding: var(--spacing-sm) 0;
+    }
+
     .dicas-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: var(--spacing-xs);
+    }
+
+    .dica-card {
+        padding: var(--spacing-sm);
+    }
+
+    .dica-card .dica-valor {
+        font-size: 0.85rem;
+    }
+
+    .dica-card.hidden-dica .dica-valor {
+        font-size: 1rem;
+        min-height: 30px;
     }
 
     .input-row {
         max-width: 100%;
+        padding: 0 var(--spacing-sm);
     }
+
+    .input-row input {
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+
+    .game-info {
+        padding: var(--spacing-sm);
+        justify-content: center;
+        text-align: center;
+    }
+
+    .game-round,
+    .game-score {
+        font-size: 0.85rem;
+    }
+
+    .round-result,
+    .final-result {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-sm);
+    }
+
+    .final-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-retry,
+    .btn-home {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dicas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dica-card {
+        padding: var(--spacing-sm);
+    }
+
+    .dica-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
+    }
+
+    .dica-card .dica-valor {
+        font-size: 0.8rem;
+    }
+
+    .dica-card.hidden-dica .dica-valor {
+        font-size: 0.9rem;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .final-points {
+        font-size: 2.5rem;
+    }
+
+    .btn-next {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- TEMA ESCURO --- */
+[data-theme="dark"] .dica-card.revealed {
+    background: rgba(46, 204, 113, 0.06);
+}
+
+[data-theme="dark"] .dica-card.hidden-dica {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .dica-card.hidden-dica:hover {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .guess-feedback.wrong {
+    background: rgba(192, 57, 43, 0.12);
+}
+
+[data-theme="dark"] .guess-feedback.correct {
+    background: rgba(46, 204, 113, 0.12);
+}
+
+[data-theme="dark"] .guess-feedback.hint {
+    background: rgba(243, 156, 18, 0.12);
+}
+
+[data-theme="dark"] .final-details .stat-item {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .btn-home {
+    background: var(--bg-secondary);
+}
+
+/* --- EFEITO DE GLOW PARA DICAS REVELADAS --- */
+.dica-card.revealed .dica-valor {
+    position: relative;
+}
+
+.dica-card.revealed .dica-valor::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+    opacity: 0.3;
+    border-radius: 1px;
+}
+
+/* --- BADGE DE PONTUAÇÃO NA RODADA --- */
+.round-points-badge {
+    display: inline-block;
+    padding: 0.15rem 0.8rem;
+    background: var(--gradient-primary);
+    color: #fff;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: var(--spacing-xs);
 }
