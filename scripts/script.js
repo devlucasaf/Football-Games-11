@@ -193,31 +193,40 @@ function initTutorial() {
         return;
     }
 
-    const chave = `tutorial_visto_${gameId}`;
-
-    if (localStorage.getItem(chave)) {
-        tutorial.classList.add("hidden");
-        return;
-    }
-
-    tutorial.classList.remove("hidden");
+    const chave = `tutorial_oculto_${gameId}`;
 
     const btnStart = document.getElementById("tutorialStartBtn");
     const btnSkip = document.getElementById("tutorialSkipBtn");
+    const btnHelp = document.getElementById("tutorialHelpBtn");
+
+    function abrirTutorial() {
+        tutorial.classList.remove("hidden");
+    }
 
     function fecharTutorial() {
+        tutorial.classList.add("hidden");
+    }
+
+    function naoMostrarNovamente() {
         localStorage.setItem(chave, "true");
         tutorial.classList.add("hidden");
     }
 
     btnStart?.addEventListener("click", fecharTutorial);
-    btnSkip?.addEventListener("click", fecharTutorial);
+    btnSkip?.addEventListener("click", naoMostrarNovamente);
+    btnHelp?.addEventListener("click", abrirTutorial);
 
     tutorial.addEventListener("click", (e) => {
         if (e.target === tutorial) {
             fecharTutorial();
         }
     });
+
+    if (localStorage.getItem(chave)) {
+        tutorial.classList.add("hidden");
+    } else {
+        tutorial.classList.remove("hidden");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

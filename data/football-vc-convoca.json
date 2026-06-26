@@ -1,7 +1,7 @@
 {
     "copa2026": {
         "inglaterra": {
-            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_England.svg",
+            "bandeira": "https://flagcdn.com/w160/gb-eng.png",
             "convocados": [
                 {"nome": "Pickford", "posicao": "GOL"},
                 {"nome": "Ramsdale", "posicao": "GOL"},
@@ -43,7 +43,7 @@
             }
         },
         "franca": {
-            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
+            "bandeira": "https://flagcdn.com/w160/fr.png",
             "convocados": [
                 {"nome": "Mike Maignan", "posicao": "GOL"},
                 {"nome": "Brice Samba", "posicao": "GOL"},
@@ -85,7 +85,7 @@
             }
         },
         "espanha": {
-            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/330px-Flag_of_Spain.svg.png",
+            "bandeira": "https://flagcdn.com/w160/es.png",
             "convocados": [
                 {"nome": "Unai Simón", "posicao": "GOL"},
                 {"nome": "David Raya", "posicao": "GOL"},
@@ -127,7 +127,7 @@
             }
         },
         "portugal": {
-            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/3840px-Flag_of_Portugal.svg.png?utm_source=br.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+            "bandeira": "https://flagcdn.com/w160/pt.png",
             "convocados": [
                 {"nome": "Diogo Costa", "posicao": "GOL"},
                 {"nome": "Rui Patrício", "posicao": "GOL"},
@@ -169,7 +169,7 @@
             }
         },
         "brasil": {
-            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/330px-Flag_of_Brazil.svg.png",
+            "bandeira": "https://flagcdn.com/w160/br.png",
             "convocados": [
                 {"nome": "Alisson", "posicao": "GOL"},
                 {"nome": "Ederson", "posicao": "GOL"},
@@ -211,7 +211,7 @@
             }
         },
         "alemanha": {
-            "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/330px-Flag_of_Germany.svg.png",
+            "bandeira": "https://flagcdn.com/w160/de.png",
             "convocados": [
                 {"nome": "Manuel Neuer", "posicao": "GOL"},
                 {"nome": "Marc-André ter Stegen", "posicao": "GOL"},
@@ -253,7 +253,7 @@
             }
         },
         "holanda": {
-            "bandeira": "🇳🇱",
+            "bandeira": "https://flagcdn.com/w160/nl.png",
             "convocados": [
                 {"nome": "Bart Verbruggen", "posicao": "GOL"},
                 {"nome": "Mark Flekken", "posicao": "GOL"},
@@ -295,7 +295,7 @@
             }
         },
         "argentina": {
-            "bandeira": "🇦🇷",
+            "bandeira": "https://flagcdn.com/w160/ar.png",
             "convocados": [
                 {"nome": "Emiliano Martínez", "posicao": "GOL"},
                 {"nome": "Franco Armani", "posicao": "GOL"},
@@ -337,7 +337,7 @@
             }
         },
         "belgica": {
-            "bandeira": "🇧🇪",
+            "bandeira": "https://flagcdn.com/w160/be.png",
             "convocados": [
                 {"nome": "Thibaut Courtois", "posicao": "GOL"},
                 {"nome": "Koen Casteels", "posicao": "GOL"},
@@ -379,7 +379,7 @@
             }
         },
         "colombia": {
-            "bandeira": "🇨🇴",
+            "bandeira": "https://flagcdn.com/w160/co.png",
             "convocados": [
                 {"nome": "Camilo Vargas", "posicao": "GOL"},
                 {"nome": "David Ospina", "posicao": "GOL"},
@@ -421,7 +421,7 @@
             }
         },
         "uruguai": {
-            "bandeira": "🇺🇾",
+            "bandeira": "https://flagcdn.com/w160/uy.png",
             "convocados": [
                 {"nome": "Sergio Rochet", "posicao": "GOL"},
                 {"nome": "Fernando Muslera", "posicao": "GOL"},
@@ -465,7 +465,7 @@
     },
     "alltime": {
         "inglaterra": {
-            "bandeira": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+            "bandeira": "https://flagcdn.com/w160/gb-eng.png",
             "convocados": [
                 {"nome": "Gordon Banks", "posicao": "GOL"},
                 {"nome": "Peter Shilton", "posicao": "GOL"},
@@ -507,7 +507,7 @@
             }
         },
         "franca": {
-            "bandeira": "🇫🇷",
+            "bandeira": "https://flagcdn.com/w160/fr.png",
             "convocados": [
                 {"nome": "Fabien Barthez", "posicao": "GOL"},
                 {"nome": "Hugo Lloris", "posicao": "GOL"},
@@ -549,7 +549,7 @@
             }
         },
         "espanha": {
-            "bandeira": "🇪🇸",
+            "bandeira": "https://flagcdn.com/w160/es.png",
             "convocados": [
                 {"nome": "Iker Casillas", "posicao": "GOL"},
                 {"nome": "Andoni Zubizarreta", "posicao": "GOL"},
@@ -591,7 +591,7 @@
             }
         },
         "portugal": {
-            "bandeira": "🇵🇹",
+            "bandeira": "https://flagcdn.com/w160/pt.png",
             "convocados": [
                 {"nome": "Vítor Baía", "posicao": "GOL"},
                 {"nome": "Rui Patrício", "posicao": "GOL"},
@@ -633,7 +633,7 @@
             }
         },
         "brasil": {
-            "bandeira": "🇧🇷",
+            "bandeira": "https://flagcdn.com/w160/br.png",
             "convocados": [
                 {"nome": "Taffarel", "posicao": "GOL"},
                 {"nome": "Dida", "posicao": "GOL"},
@@ -675,7 +675,7 @@
             }
         },
         "alemanha": {
-            "bandeira": "🇩🇪",
+            "bandeira": "https://flagcdn.com/w160/de.png",
             "convocados": [
                 {"nome": "Oliver Kahn", "posicao": "GOL"},
                 {"nome": "Manuel Neuer", "posicao": "GOL"},
@@ -717,7 +717,7 @@
             }
         },
         "holanda": {
-            "bandeira": "🇳🇱",
+            "bandeira": "https://flagcdn.com/w160/nl.png",
             "convocados": [
                 {"nome": "Edwin van der Sar", "posicao": "GOL"},
                 {"nome": "Hans van Breukelen", "posicao": "GOL"},
@@ -759,7 +759,7 @@
             }
         },
         "argentina": {
-            "bandeira": "🇦🇷",
+            "bandeira": "https://flagcdn.com/w160/ar.png",
             "convocados": [
                 {"nome": "Ubaldo Fillol", "posicao": "GOL"},
                 {"nome": "Nery Pumpido", "posicao": "GOL"},
@@ -801,7 +801,7 @@
             }
         },
         "belgica": {
-            "bandeira": "🇧🇪",
+            "bandeira": "https://flagcdn.com/w160/be.png",
             "convocados": [
                 {"nome": "Jean-Marie Pfaff", "posicao": "GOL"},
                 {"nome": "Michel Preud'homme", "posicao": "GOL"},
@@ -843,7 +843,7 @@
             }
         },
         "colombia": {
-            "bandeira": "🇨🇴",
+            "bandeira": "https://flagcdn.com/w160/co.png",
             "convocados": [
                 {"nome": "René Higuita", "posicao": "GOL"},
                 {"nome": "Óscar Córdoba", "posicao": "GOL"},
@@ -885,7 +885,7 @@
             }
         },
         "uruguai": {
-            "bandeira": "🇺🇾",
+            "bandeira": "https://flagcdn.com/w160/uy.png",
             "convocados": [
                 {"nome": "Ladislao Mazurkiewicz", "posicao": "GOL"},
                 {"nome": "Fernando Muslera", "posicao": "GOL"},
@@ -927,7 +927,7 @@
             }
         },
         "italia": {
-            "bandeira": "🇮🇹",
+            "bandeira": "https://flagcdn.com/w160/it.png",
             "convocados": [
                 {"nome": "Gianluigi Buffon", "posicao": "GOL"},
                 {"nome": "Dino Zoff", "posicao": "GOL"},
@@ -969,7 +969,7 @@
             }
         },
         "croacia": {
-            "bandeira": "🇭🇷",
+            "bandeira": "https://flagcdn.com/w160/hr.png",
             "convocados": [
                 {"nome": "Dražen Ladić", "posicao": "GOL"},
                 {"nome": "Stipe Pletikosa", "posicao": "GOL"},
@@ -1011,7 +1011,7 @@
             }
         },
         "dinamarca": {
-            "bandeira": "🇩🇰",
+            "bandeira": "https://flagcdn.com/w160/dk.png",
             "convocados": [
                 {"nome": "Peter Schmeichel", "posicao": "GOL"},
                 {"nome": "Kasper Schmeichel", "posicao": "GOL"},

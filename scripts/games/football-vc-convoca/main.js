@@ -31,7 +31,7 @@ function renderizarTimes() {
     selecoes.forEach(s => {
         const btn = document.createElement("button");
         btn.className = "team-card";
-        btn.innerHTML = `<span class="flag">${s.bandeira}</span><span class="team-name">${s.nome}</span>`;
+        btn.innerHTML = `<img class="flag" src="${s.bandeira}" alt="${s.nome}" loading="lazy"><span class="team-name">${s.nome}</span>`;
         btn.addEventListener("click", () => iniciarConvocacao(s.key));
         grid.appendChild(btn);
     });
@@ -42,7 +42,7 @@ function iniciarConvocacao(key) {
     estado.selecao = key;
     resetConvocados();
 
-    document.getElementById("selectedFlag").textContent = obterBandeira();
+    document.getElementById("selectedFlag").innerHTML = `<img src="${obterBandeira()}" alt="">`;
     document.getElementById("selectedTeamName").textContent =
         key.charAt(0).toUpperCase() + key.slice(1);
 

@@ -114,9 +114,12 @@
 }
 
 .team-card .flag {
-    font-size: 2.5rem;
     display: block;
-    margin-bottom: 0.5rem;
+    width: 60px;
+    height: auto;
+    margin: 0 auto 0.6rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .team-card .team-name {
@@ -163,7 +166,16 @@
 }
 
 .squad-info .team-flag {
-    font-size: 2rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.squad-info .team-flag img {
+    display: block;
+    width: 44px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .squad-info h2 {
