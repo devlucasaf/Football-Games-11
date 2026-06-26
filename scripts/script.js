@@ -272,5 +272,5 @@ function atualizarPlacar() {
 
 window.registrarVitoria = registrarVitoria;
 window.registrarDerrota = registrarDerrota;
-window.atualizarPlacar  = atualizarPlacar;
-window.getScoreboard    = getScoreboard;
+window.atualizarPlacar = atualizarPlacar;
+window.getScoreboard = getScoreboard;

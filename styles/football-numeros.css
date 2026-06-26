@@ -1,39 +1,67 @@
 .numeros-container {
-    padding: 1.5rem 0;
+    padding: var(--spacing-lg) 0;
     min-height: calc(100vh - 80px);
+    animation: fadeInUp 0.6s ease;
 }
 
-/* --- GAME INFO --- */
+/* --- INFO DO JOGO --- */
 .game-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    padding: 0.8rem 1.5rem;
-    margin-bottom: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
-.game-round, .game-score {
-    font-family: "Montserrat", sans-serif;
+.game-round,
+.game-score {
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.1vw, 0.95rem);
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    background: var(--bg-secondary);
+}
+
+.game-round i {
+    color: var(--accent-purple);
 }
 
 .game-score i {
     color: #27ae60;
 }
 
-/* --- PLAYER CARD --- */
+/* --- CARD DO JOGADOR --- */
 .player-card {
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.player-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-accent);
 }
 
 .player-card-icon {
@@ -43,79 +71,167 @@
     justify-content: center;
     width: 80px;
     height: 80px;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    transition: all var(--transition-normal);
 }
 
 .player-card-icon i {
-    font-size: 4rem;
-    color: var(--accent-color);
-    opacity: 0.3;
+    font-size: 3.5rem;
+    color: var(--primary-green);
+    opacity: 0.15;
+    transition: all var(--transition-normal);
 }
 
-.shirt-question {
+.player-card-icon .shirt-question {
     position: absolute;
-    font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
     font-weight: 800;
-    color: var(--accent-color);
+    color: var(--primary-green);
+    transition: all var(--transition-normal);
+}
+
+.player-card:hover .player-card-icon {
+    transform: scale(1.04);
+    background: rgba(26, 86, 50, 0.04);
+}
+
+.player-card:hover .player-card-icon i {
+    opacity: 0.25;
 }
 
 .player-name {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
     font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 0.3rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 .player-club {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    margin-bottom: 0.2rem;
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 2px;
 }
 
 .player-period {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 1vw, 0.85rem);
     color: var(--text-secondary);
 }
 
-/* --- GUESS AREA --- */
+/* --- ÁREA DE PALPITE --- */
 .guess-area {
     text-align: center;
 }
 
 .attempts-display {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 1vw, 0.85rem);
     color: var(--text-secondary);
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--spacing-sm);
     font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    display: inline-block;
+}
+
+.attempts-display .attempts-number {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+.attempts-display.danger .attempts-number {
+    color: var(--accent-red);
+    animation: attemptPulse 0.8s ease-in-out infinite;
+}
+
+@keyframes attemptPulse {
+    0%, 
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
 }
 
 .input-row {
     display: flex;
-    gap: 0.5rem;
-    max-width: 280px;
-    margin: 0 auto 0.8rem;
+    gap: var(--spacing-sm);
+    max-width: 300px;
+    margin: 0 auto var(--spacing-sm);
 }
 
 .input-row input {
     flex: 1;
-    padding: 0.8rem 1.2rem;
+    padding: var(--spacing-sm) var(--spacing-md);
     border: 2px solid var(--border-color);
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-family: "Montserrat", sans-serif;
+    border-radius: var(--radius-md);
+    font-size: clamp(1.1rem, 1.3vw, 1.2rem);
+    font-family: var(--font-heading);
     font-weight: 700;
     text-align: center;
-    background: var(--card-bg);
+    background: var(--bg-card);
     color: var(--text-primary);
     outline: none;
-    transition: border-color 0.2s;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
 }
 
 .input-row input:focus {
-    border-color: var(--accent-color);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(26, 86, 50, 0.08), var(--shadow-sm);
+}
+
+.input-row input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.input-row input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.input-row input.shake {
+    animation: shakeInput 0.4s ease;
+    border-color: var(--accent-red) !important;
+    box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.08);
+}
+
+@keyframes shakeInput {
+    0%, 
+    100% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-8px);
+    }
+
+    30% {
+        transform: translateX(8px);
+    }
+
+    45% {
+        transform: translateX(-6px);
+    }
+
+    60% {
+        transform: translateX(6px);
+    }
+
+    80% {
+        transform: translateX(-3px);
+    }
 }
 
 /* Hide number input spinners */
@@ -129,151 +245,254 @@
 }
 
 .btn-guess {
-    padding: 0.8rem 1.2rem;
-    background: var(--accent-color);
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--gradient-primary);
+    color: #ffffff;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     cursor: pointer;
     font-size: 1rem;
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
+    min-width: 52px;
+    box-shadow: 0 2px 8px rgba(26, 86, 50, 0.12);
 }
 
-.btn-guess:hover {
+.btn-guess:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 16px rgba(26, 86, 50, 0.2);
+}
+
+.btn-guess:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.btn-guess:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .guess-feedback {
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
     font-weight: 700;
-    font-size: 1.1rem;
-    max-width: 280px;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    max-width: 300px;
     margin: 0 auto;
+    animation: feedbackIn 0.3s ease;
+}
+
+@keyframes feedbackIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .guess-feedback.hint {
-    background: rgba(243, 156, 18, 0.1);
+    background: rgba(243, 156, 18, 0.06);
     color: #f39c12;
-    border: 1px solid #f39c12;
+    border: 1px solid rgba(243, 156, 18, 0.15);
 }
 
 .guess-feedback.wrong {
-    background: rgba(231, 76, 60, 0.1);
-    color: #e74c3c;
-    border: 1px solid #e74c3c;
+    background: rgba(192, 57, 43, 0.06);
+    color: var(--accent-red);
+    border: 1px solid rgba(192, 57, 43, 0.15);
 }
 
-/* --- ROUND RESULT --- */
+.guess-feedback.correct {
+    background: rgba(46, 204, 113, 0.06);
+    color: #27ae60;
+    border: 1px solid rgba(46, 204, 113, 0.15);
+}
+
+/* --- RESULTADO DA RODADA --- */
 .round-result {
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
     text-align: center;
-    animation: fadeIn 0.3s ease;
+    animation: fadeInUp 0.4s ease;
+    box-shadow: var(--shadow-lg);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .round-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 3.5vw, 3rem);
+    margin-bottom: var(--spacing-sm);
+    display: block;
 }
 
-.round-icon.correct { 
-    color: #27ae60; 
+.round-icon.correct {
+    color: #27ae60;
+    animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.round-icon.wrong { 
-    color: #e74c3c; 
+.round-icon.wrong {
+    color: var(--accent-red);
+    animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes iconBounce {
+    0% {
+        transform: scale(0.3) rotate(-10deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(3deg);
+    }
+
+    70% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
 }
 
 .round-text {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 .round-answer {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1vw, 0.9rem);
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.round-answer strong {
+    color: var(--primary-green);
+    font-weight: 700;
 }
 
 .btn-next {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.8rem;
-    background: var(--accent-color);
-    color: #fff;
+    gap: var(--spacing-xs);
+    padding: 0.8rem 2rem;
+    background: var(--gradient-primary);
+    color: #ffffff;
     border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: var(--radius-full);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    font-weight: 700;
     cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s ease;
+    font-family: var(--font-body);
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 16px rgba(26, 86, 50, 0.2);
 }
 
 .btn-next:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 24px rgba(26, 86, 50, 0.3);
 }
 
-/* --- FINAL RESULT --- */
+.btn-next:active {
+    transform: scale(0.96);
+}
+
+/* --- RESULTADO FINAL --- */
 .final-result {
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
     text-align: center;
-    animation: fadeIn 0.4s ease;
+    animation: fadeInUp 0.5s ease;
+    box-shadow: var(--shadow-lg);
+    max-width: 540px;
+    margin: 0 auto;
 }
 
 .final-result h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
 }
 
 .final-result h2 i {
-    color: var(--accent-color);
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .final-score {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
 }
 
 .final-points {
-    font-family: "Montserrat", sans-serif;
-    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 4vw, 3.2rem);
     font-weight: 800;
-    color: var(--accent-color);
+    color: var(--primary-green);
+}
+
+[data-theme="dark"] .final-points {
+    color: var(--accent-light-green);
 }
 
 .final-label {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
     color: var(--text-secondary);
 }
 
 .final-details {
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-lg);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1vw, 0.9rem);
     line-height: 1.8;
+}
+
+.final-details .stat-item {
+    display: inline-block;
+    margin: 0 var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.final-details .stat-item .stat-number {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.final-details .stat-item .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .final-actions {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--spacing-md);
     flex-wrap: wrap;
 }
 
@@ -281,62 +500,303 @@
 .btn-home {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.8rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
+    gap: var(--spacing-xs);
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-full);
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-    border: 2px solid var(--border-color);
+    transition: all var(--transition-fast);
+    font-family: var(--font-body);
+    border: none;
 }
 
 .btn-retry {
-    background: var(--accent-color);
-    color: #fff;
-    border-color: var(--accent-color);
+    background: var(--gradient-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(26, 86, 50, 0.2);
 }
 
 .btn-retry:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 24px rgba(26, 86, 50, 0.3);
 }
 
 .btn-home {
-    background: var(--card-bg);
+    background: var(--bg-secondary);
     color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .btn-home:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-/* --- HIDDEN --- */
+.btn-retry:active,
+.btn-home:active {
+    transform: scale(0.96);
+}
+
+/* --- UTILITÁRIOS --- */
 .hidden {
     display: none !important;
 }
 
-@keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(5px); 
-    }
-
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
-
 /* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+    .numeros-container {
+        padding: var(--spacing-md) 0;
+    }
+
+    .game-info {
+        padding: var(--spacing-sm) var(--spacing-md);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-xs);
+    }
+
+    .game-round,
+    .game-score {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
     .player-card {
-        padding: 1.5rem;
+        padding: var(--spacing-lg);
+    }
+
+    .player-card-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .player-card-icon i {
+        font-size: 2.8rem;
+    }
+
+    .player-card-icon .shirt-question {
+        font-size: 1.6rem;
     }
 
     .input-row {
         max-width: 100%;
+        padding: 0 var(--spacing-sm);
     }
+
+    .input-row input {
+        font-size: 1rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .btn-guess {
+        padding: var(--spacing-sm);
+        min-width: 48px;
+        font-size: 0.9rem;
+    }
+
+    .guess-feedback {
+        font-size: 0.95rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+        margin: 0 var(--spacing-sm);
+    }
+
+    .round-result {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-sm);
+    }
+
+    .final-result {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-sm);
+    }
+
+    .final-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-retry,
+    .btn-home {
+        width: 100%;
+        justify-content: center;
+        padding: 0.7rem;
+    }
+
+    .attempts-display {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .attempts-display .attempts-number {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .player-card {
+        padding: var(--spacing-md);
+    }
+
+    .player-card-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .player-card-icon i {
+        font-size: 2.2rem;
+    }
+
+    .player-card-icon .shirt-question {
+        font-size: 1.4rem;
+    }
+
+    .player-name {
+        font-size: 1.1rem;
+    }
+
+    .player-club {
+        font-size: 0.9rem;
+    }
+
+    .input-row input {
+        font-size: 0.9rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .btn-guess {
+        min-width: 42px;
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .round-text {
+        font-size: 0.95rem;
+    }
+
+    .final-points {
+        font-size: 2.5rem;
+    }
+
+    .guess-feedback {
+        font-size: 0.85rem;
+    }
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- TEMA ESCURO --- */
+[data-theme="dark"] .player-card {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .player-card-icon {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .round-result {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .final-result {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .final-details .stat-item {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .btn-home {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .game-info {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .guess-feedback.hint {
+    background: rgba(243, 156, 18, 0.08);
+}
+
+[data-theme="dark"] .guess-feedback.wrong {
+    background: rgba(192, 57, 43, 0.08);
+}
+
+[data-theme="dark"] .guess-feedback.correct {
+    background: rgba(46, 204, 113, 0.08);
+}
+
+[data-theme="dark"] .attempts-display {
+    background: var(--bg-secondary);
+}
+
+/* --- BADGE DE DICA --- */
+.hint-badge {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    background: rgba(243, 156, 18, 0.12);
+    color: #f39c12;
+    border-radius: var(--radius-full);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-left: var(--spacing-xs);
+}
+
+/* --- SCROLLBAR DO RESULTADO --- */
+.round-result,
+.final-result {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.round-result::-webkit-scrollbar,
+.final-result::-webkit-scrollbar {
+    width: 4px;
+}
+
+.round-result::-webkit-scrollbar-thumb,
+.final-result::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: var(--radius-full);
+}
+
+/* --- EFEITO DE GLOW NO NÚMERO CORRETO --- */
+.player-card-icon.revealed .shirt-question {
+    color: #27ae60;
+    animation: numberReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes numberReveal {
+    0% {
+        transform: scale(0.5) rotate(-10deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.3) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.player-card-icon.revealed i {
+    opacity: 0.3;
+    color: #27ae60;
 }
