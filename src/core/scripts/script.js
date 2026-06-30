@@ -161,7 +161,7 @@ if (!document.querySelector("#fadeInUpAnimation")) {
 }
 
 document.getElementById("btn-football-grid")?.addEventListener("click", function() {
-    window.location.href = "src/games/football-grid/footballGrid.html";
+    window.location.href = "src/games/football-grid/football-grid.html";
 }); 
 
 // --- ABRE O MODAL DE SELEÇÃO DE TIME ---
@@ -176,7 +176,7 @@ function closeModal() {
 
 // --- INICIA O GRID NO MODO ESCOLHIDO ---
 function startGame(mode) {
-    window.location.href = `src/games/football-grid/footballGrid.html?time=${mode}`;
+    window.location.href = `src/games/football-grid/football-grid.html?time=${mode}`;
 }
 
 // --- FECHA O MODAL AO CLICAR FORA ---
