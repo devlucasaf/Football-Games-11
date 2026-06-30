@@ -25,7 +25,10 @@
                     <li><span class="tutorial-step-number">4</span><span data-key="escala-tutorial-step4"> Monte o time dos seus sonhos com o elenco atual!</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="escala-tutorial-play">Jogar</span></button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="escala-tutorial-play">Jogar</span>
+                    </button>
                     <button class="tutorial-skip" id="tutorialSkipBtn" data-key="escala-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
@@ -88,6 +91,7 @@
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
+
                         <button class="btn-theme" id="themeToggle" title="Alterar tema">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -100,7 +104,10 @@
             <div class="container">
                 <section class="escala-hero">
                     <div class="hero-content">
-                        <h1><i class="fas fa-shirt"></i> <span data-key="football-vc-escala-title">Vc Escala!</span></h1>
+                        <h1>
+                            <i class="fas fa-shirt"></i> 
+                            <span data-key="football-vc-escala-title">Vc Escala!</span>
+                        </h1>
                         <p data-key="escala-hero-subtitle">Escolha um time do Brasileirão 2026 e monte a escalação ideal!</p>
                     </div>
 
@@ -148,9 +155,12 @@
         <footer class="main-footer">
             <div class="container footer-content">
                 <div class="footer-logo">
-                    <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                    <h3>
+                        <i class="fas fa-futbol"></i> Football Games 11
+                    </h3>
                     <p data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
                 </div>
+
                 <div class="footer-social">
                     <h4 data-key="footer-connect">Conecte-se</h4>
                     <div class="social-icons">
@@ -172,7 +182,6 @@
             </div>
         </footer>
 
-        <!-- Scripts -->
         <script src="../../scripts/translation/english.js"></script>
         <script src="../../scripts/translation/german.js"></script>
         <script src="../../scripts/translation/portuguese.js"></script>
@@ -184,7 +193,7 @@
         <script src="../../scripts/games/football-vc-escala/utils.js"></script>
         <script src="../../scripts/games/football-vc-escala/times.js"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener("DOMContentLoaded", () => {
                 EscalaTimes.iniciar();
             });
         </script>

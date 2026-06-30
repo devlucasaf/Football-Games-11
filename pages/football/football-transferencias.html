@@ -4,14 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Transferências | Football Games 11</title>
-        <link rel="stylesheet" href="../styles/global.css">
-        <link rel="stylesheet" href="../styles/football-transferencias.css">
+        <link rel="stylesheet" href="../../styles/global.css">
+        <link rel="stylesheet" href="../../styles/football-transferencias.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <!-- TUTORIAL -->
         <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-transferencias">
             <div class="tutorial-box">
                 <div class="tutorial-header">
@@ -28,7 +27,10 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="transf-tutorial-play">Jogar</span></button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="transf-tutorial-play">Jogar</span>
+                    </button>
                     <button class="tutorial-skip" id="tutorialSkipBtn" data-key="transf-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
@@ -40,7 +42,7 @@
                     <div class="logo">
                         <h1>
                             <i class="fas fa-futbol"></i>
-                            <a href="../index.html" class="home-link">Football Games 11</a>
+                            <a href="../../index.html" class="home-link">Football Games 11</a>
                         </h1>
                     </div>
 
@@ -48,7 +50,7 @@
                         <div class="language-selector">
                             <button class="btn-language" id="languageToggle" title="Selecionar idioma">
                                 <img 
-                                    src="../assets/br-flag-icon.png" 
+                                    src="../../assets/br-flag-icon.png" 
                                     alt="Português" 
                                     id="currentLanguageFlag"
                                 />
@@ -56,28 +58,28 @@
                             <div class="language-dropdown" id="languageDropdown">
                                 <button class="language-option" data-language="traducoes">
                                     <img 
-                                        src="../assets/br-flag-icon.png" 
+                                        src="../../assets/br-flag-icon.png" 
                                         alt="Português"
                                     />
                                     <span>Português</span>
                                 </button>
                                 <button class="language-option" data-language="translations">
                                     <img 
-                                        src="../assets/us-flag-icon.png" 
+                                        src="../../assets/us-flag-icon.png" 
                                         alt="English"
                                     />
                                     <span>English</span>
                                 </button>
                                 <button class="language-option" data-language="traducciones">
                                     <img 
-                                        src="../assets/es-flag-icon.png" 
+                                        src="../../assets/es-flag-icon.png" 
                                         alt="Español"
                                     />
                                     <span>Español</span>
                                 </button>
                                 <button class="language-option" data-language="ubersetzungen">
                                     <img 
-                                        src="../assets/de-flag-icon.png" 
+                                        src="../../assets/de-flag-icon.png" 
                                         alt="Deutsch"
                                     />
                                     <span>Deutsch</span>
@@ -98,7 +100,6 @@
 
         <main class="transferencias-container">
             <div class="container">
-                <!-- Seleção de Modo -->
                 <section class="mode-selection" id="modeSelection">
                     <h2 class="mode-title" data-key="transf-mode-title">Escolha o Modo</h2>
                     <div class="mode-buttons">
@@ -107,6 +108,7 @@
                             <span class="mode-name" data-key="transf-mode-mundial">Futebol Mundial</span>
                             <span class="mode-desc" data-key="transf-mode-mundial-desc">Jogadores de todo o mundo</span>
                         </button>
+
                         <button class="btn-mode" id="btnBrasileiro">
                             <i class="fas fa-flag"></i>
                             <span class="mode-name" data-key="transf-mode-brasileiro">Futebol Brasileiro</span>
@@ -125,25 +127,31 @@
                     </div>
                 </div>
 
-                <!-- Área de clubes revelados -->
                 <section class="clubs-area hidden" id="clubsArea">
                     <h2 class="clubs-title" data-key="transf-clubs-title">Clubes da Carreira</h2>
                     <div class="clubs-timeline" id="clubsTimeline"></div>
                     <button class="btn-reveal" id="btnReveal">
-                        <i class="fas fa-eye"></i> <span data-key="transf-reveal">Revelar próximo clube</span>
+                        <i class="fas fa-eye"></i> 
+                        <span data-key="transf-reveal">Revelar próximo clube</span>
                     </button>
                 </section>
 
-                <!-- Área de palpite -->
                 <section class="guess-area hidden" id="guessArea">
                     <div class="input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="guessInput" data-key="transf-input-placeholder" placeholder="Quem é o jogador?" autocomplete="off">
+                        <input 
+                            type="text" 
+                            id="guessInput" 
+                            data-key="transf-input-placeholder" 
+                            placeholder="Quem é o jogador?" 
+                            autocomplete="off"
+                        >
                         <div class="autocomplete-list" id="autocompleteList"></div>
                     </div>
 
                     <button class="btn-guess" id="btnGuess">
-                        <i class="fas fa-check"></i> <span data-key="transf-confirm">Confirmar</span>
+                        <i class="fas fa-check"></i> 
+                        <span data-key="transf-confirm">Confirmar</span>
                     </button>
                 </section>
 
@@ -152,7 +160,8 @@
                     <p class="feedback-text" id="feedbackText"></p>
                     <div class="feedback-answer hidden" id="feedbackAnswer"></div>
                     <button class="btn-next" id="btnNext">
-                        <i class="fas fa-arrow-right"></i> <span data-key="transf-next">Próxima Rodada</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-key="transf-next">Próxima Rodada</span>
                     </button>
                 </div>
 
@@ -165,9 +174,20 @@
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry"><i class="fas fa-redo"></i> <span data-key="transf-retry">Jogar Novamente</span></button>
-                        <button class="btn-retry" id="btnTrocarModo"><i class="fas fa-exchange-alt"></i> <span data-key="transf-trocar-modo">Trocar Modo</span></button>
-                        <button class="btn-home" id="btnHome"><i class="fas fa-home"></i> <span data-key="transf-home">Menu Principal</span></button>
+                        <button class="btn-retry" id="btnRetry">
+                            <i class="fas fa-redo"></i> 
+                            <span data-key="transf-retry">Jogar Novamente</span>
+                        </button>
+
+                        <button class="btn-retry" id="btnTrocarModo">
+                            <i class="fas fa-exchange-alt"></i> 
+                            <span data-key="transf-trocar-modo">Trocar Modo</span>
+                        </button>
+
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> 
+                            <span data-key="transf-home">Menu Principal</span>
+                        </button>
                     </div>
                 </section>
             </div>
@@ -177,7 +197,9 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
@@ -203,12 +225,12 @@
             </div>
         </footer>
 
-        <script src="../scripts/translation/english.js"></script>
-        <script src="../scripts/translation/german.js"></script>
-        <script src="../scripts/translation/portuguese.js"></script>
-        <script src="../scripts/translation/spanish.js"></script>
-        <script src="../scripts/traducao.js"></script>
-        <script src="../scripts/script.js"></script>
-        <script type="module" src="../scripts/games/football-transferencias/main.js"></script>
+        <script src="../../scripts/translation/english.js"></script>
+        <script src="../../scripts/translation/german.js"></script>
+        <script src="../../scripts/translation/portuguese.js"></script>
+        <script src="../../scripts/translation/spanish.js"></script>
+        <script src="../../scripts/traducao.js"></script>
+        <script src="../../scripts/script.js"></script>
+        <script type="module" src="../../scripts/games/football-transferencias/main.js"></script>
     </body>
 </html>
