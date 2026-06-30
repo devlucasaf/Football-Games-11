@@ -54,16 +54,19 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 
 ```
 Football-Games-11/
-├── index.html                  # Hub principal com todos os minigames
-├── assets/                     # Icons das bandeiras 
-├── data/                       # Arquivos JSON com dados dos jogos
-├── pages/                      # Páginas HTML de cada minigame
-├── styles/                     # CSS global + estilos de cada jogo
-├── scripts/
-│   ├── formation.js            # Script para montar as formações do futebol
-│   ├── script.js               # Tema, tutorial e utilitários globais
-│   ├── translation/            # Módulos JS de cada tradução (inglês, português, espanhol e alemão)
-│   └── games/                  # Módulos JS de cada minigame
+├── index.html                      # Hub principal com todos os minigames
+├── src/
+│   ├── assets/                     # Icons das bandeiras
+│   ├── core/                       # Recursos compartilhados entre os jogos
+│   │   ├── scripts/
+│   │   │   ├── formation.js        # Script para montar as formações do futebol
+│   │   │   ├── script.js           # Tema, tutorial e utilitários globais
+│   │   │   └── traducao.js         # Lógica de tradução
+│   │   ├── styles/
+│   │   │   ├── global.css          # Estilos globais do site
+│   │   │   └── field.css           # Estilos do campo de futebol
+│   │   └── translation/            # Módulos JS de cada idioma (inglês, português, espanhol e alemão)
+│   └── games/                      # Cada minigame é autônomo (HTML + data/ + scripts/ + styles/)
 │       ├── football-acerta-escalacao/
 │       ├── football-acerta-treinador/
 │       ├── football-adivinha-jogador/
@@ -92,6 +95,16 @@ Football-Games-11/
 │       └── football-vc-escala/
 ├── README.md
 └── LICENSE
+```
+
+Cada minigame em `src/games/` é autônomo e segue o mesmo padrão interno:
+
+```
+football-numeros/
+├── football-numeros.html       # Página do jogo
+├── data/                       # Arquivos JSON com os dados do jogo
+├── scripts/                    # Módulos JS do jogo (core, data, ui, main...)
+└── styles/                     # CSS específico do jogo
 ```
 
 ---
