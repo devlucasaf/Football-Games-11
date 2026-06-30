@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Football Games 11</title>
 
-        <link rel="stylesheet" href="styles/global.css"/>
+        <link rel="stylesheet" href="src/core/styles/global.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
@@ -15,14 +15,16 @@
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
-                        <h1><i class="fas fa-futbol"></i>Football Games 11</h1>
+                        <h1>
+                            <i class="fas fa-futbol"></i>Football Games 11
+                        </h1>
                     </div>
 
                     <div class="header-actions">
                         <div class="language-selector">
                             <button class="btn-language" id="languageToggle" title="Selecionar idioma">
                                 <img 
-                                    src="assets/br-flag-icon.png" 
+                                    src="src/assets/br-flag-icon.png" 
                                     alt="Português" 
                                     id="currentLanguageFlag"
                                 />
@@ -30,7 +32,7 @@
                             <div class="language-dropdown" id="languageDropdown">
                                 <button class="language-option" data-language="traducoes">
                                     <img 
-                                        src="assets/br-flag-icon.png" 
+                                        src="src/assets/br-flag-icon.png" 
                                         alt="Português"
                                     />
                                     <span>Português</span>
@@ -38,7 +40,7 @@
 
                                 <button class="language-option" data-language="translations">
                                     <img 
-                                        src="assets/us-flag-icon.png" 
+                                        src="src/assets/us-flag-icon.png" 
                                         alt="English"
                                     />
                                     <span>English</span>
@@ -46,7 +48,7 @@
 
                                 <button class="language-option" data-language="traducciones">
                                     <img 
-                                        src="assets/es-flag-icon.png" 
+                                        src="src/assets/es-flag-icon.png" 
                                         alt="Español"
                                     />
                                     <span>Español</span>
@@ -54,7 +56,7 @@
 
                                 <button class="language-option" data-language="ubersetzungen">
                                     <img 
-                                        src="assets/de-flag-icon.png" 
+                                        src="src/assets/de-flag-icon.png" 
                                         alt="Deutsch"
                                     />
                                     <span>Deutsch</span>
@@ -149,7 +151,7 @@
                             </div>
                             <h4 data-key="football-legends-title">Legends</h4>
                             <p data-key="football-legends-desc">Escale o melhor time do seu clube ou seleção de coração.</p>
-                            <a href="pages/football/football-legends.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
+                            <a href="src/games/football-legends/football-legends.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -158,7 +160,7 @@
                             </div>
                             <h4 data-key="football-bingo-tittle">Bingo</h4>
                             <p data-key="football-bingo-desc">Jogue o nosso bingo.</p>
-                            <a href="pages/football/football-bingo.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
+                            <a href="src/games/football-bingo/footballBingo.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -167,7 +169,7 @@
                             </div>
                             <h4 data-key="football-grid-tittle">Grid</h4>
                             <p data-key="football-grid-desc">Football Grid 3x3</p>
-                            <a href="pages/football/football-grid.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
+                            <a href="src/games/football-grid/footballGrid.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -176,7 +178,7 @@
                             </div>
                             <h4 data-key="football-vc-escala-title">Vc Escala!</h4>
                             <p data-key="football-vc-escala-desc">Escale seu time e escolha os melhores jogadores.</p>
-                            <a href="pages/football/football-vc-escala.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
+                            <a href="src/games/football-vc-escala/football-vc-escala.html" class="btn-play" data-key="play-button" onclick="openTimeSelection()">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -185,7 +187,7 @@
                             </div>
                             <h4 data-key="football-termo-title">Termo</h4>
                             <p data-key="football-termo-desc">Adivinhe o nome do jogador de futebol em 6 tentativas!</p>
-                            <a href="pages/football/football-termo.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-termo/football-termo.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -194,7 +196,7 @@
                             </div>
                             <h4 data-key="football-carreiras-title">Carreiras</h4>
                             <p data-key="football-carreiras-desc">Descubra o jogador pelos clubes da carreira!</p>
-                            <a href="pages/football/football-carreiras.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-carreiras/footballCarreiras.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -203,7 +205,7 @@
                             </div>
                             <h4 data-key="football-impostor-title">Impostor</h4>
                             <p data-key="football-impostor-desc">Encontre o jogador que não pertence ao grupo!</p>
-                            <a href="pages/football/football-impostor.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-impostor/footballImpostor.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -212,7 +214,7 @@
                             </div>
                             <h4 data-key="football-jogou-com-title">Jogou Com</h4>
                             <p data-key="football-jogou-com-desc">Descubra o jogador misterioso pelos companheiros de equipe!</p>
-                            <a href="pages/football/football-jogou-com.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-jogou-com/footballJogouCom.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -221,7 +223,7 @@
                             </div>
                             <h4 data-key="football-adivinha-jogador-title">Adivinha o Jogador</h4>
                             <p data-key="football-adivinha-jogador-desc">Descubra o jogador pelas pistas: país, idade, clube e títulos!</p>
-                            <a href="pages/football/football-adivinha-jogador.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-adivinha-jogador/footballAdivinhaJogador.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -230,7 +232,7 @@
                             </div>
                             <h4 data-key="football-top10-title">Top 10</h4>
                             <p data-key="football-top10-desc">Complete a lista dos 10 maiores do futebol!</p>
-                            <a href="pages/football/football-top10.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-top10/football-top10.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -239,7 +241,7 @@
                             </div>
                             <h4 data-key="football-vc-convoca-title">Vc Convoca!</h4>
                             <p data-key="football-vc-convoca-desc">Convoque 26 jogadores para representar a sua seleção!</p>
-                            <a href="pages/football/football-vc-convoca.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-vc-convoca/football-vc-convoca.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -248,7 +250,7 @@
                             </div>
                             <h4 data-key="football-transferencias-title">Transferências</h4>
                             <p data-key="football-transferencias-desc">Descubra o jogador pela sequência de clubes da carreira!</p>
-                            <a href="pages/football/football-transferencias.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-transferencias/football-transferencias.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -257,7 +259,7 @@
                             </div>
                             <h4 data-key="football-conexoes-title">Conexões</h4>
                             <p data-key="football-conexoes-desc">Agrupe 16 jogadores em 4 categorias secretas!</p>
-                            <a href="pages/football/football-conexoes.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-conexoes/footballConexoes.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -266,7 +268,7 @@
                             </div>
                             <h4 data-key="football-acerta-treinador-title">Acerta o Treinador</h4>
                             <p data-key="football-acerta-treinador-desc">Descubra o treinador pelas dicas sobre sua carreira!</p>
-                            <a href="pages/football/football-acerta-treinador.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-acerta-treinador/football-acerta-treinador.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -275,7 +277,7 @@
                             </div>
                             <h4 data-key="football-duelo-elencos-title">Duelo de Elencos</h4>
                             <p data-key="football-duelo-elencos-desc">Associe cada jogador ao elenco correto em duelos históricos!</p>
-                            <a href="pages/football/football-duelo-elencos.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-duelo-elencos/footballDueloElencos.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -284,7 +286,7 @@
                             </div>
                             <h4 data-key="football-acerta-escalacao-title">Acerta a Escalação</h4>
                             <p data-key="football-acerta-escalacao-desc">Adivinhe os 11 jogadores que começaram o jogo histórico!</p>
-                            <a href="pages/football/football-acerta-escalacao.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-acerta-escalacao/football-acerta-escalacao.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -293,7 +295,7 @@
                             </div>
                             <h4 data-key="football-placar-title">Placar</h4>
                             <p data-key="football-placar-desc">Acerte o placar de jogos históricos do futebol!</p>
-                            <a href="pages/football/football-placar.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-placar/football-placar.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -302,7 +304,7 @@
                             </div>
                             <h4 data-key="football-concecta-clubes-title">Conecta Clubes</h4>
                             <p data-key="football-conecta-clubes-desc">Encontre o jogador que jogou nos dois clubes!</p>
-                            <a href="pages/football/football-conecta-clubes.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-conecta-clubes/footballConectaClubes.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -311,7 +313,7 @@
                             </div>
                             <h4 data-key="football-linha-tempo-title">Linha do Tempo</h4>
                             <p data-key="football-linha-tempo-desc">Coloque os eventos do futebol em ordem cronológica!</p>
-                            <a href="pages/football/football-linha-do-tempo.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-linha-do-tempo/football-linha-do-tempo.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -320,7 +322,7 @@
                             </div>
                             <h4 data-key="football-quem-falta-title">Quem Falta?</h4>
                             <p data-key="football-quem-falta-desc">Complete a lista com o nome que está faltando!</p>
-                            <a href="pages/football/football-quem-falta.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-quem-falta/football-quem-falta.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -329,7 +331,7 @@
                             </div>
                             <h4 data-key="football-numeros-title">Números</h4>
                             <p data-key="football-numeros-desc">Adivinhe o número da camisa do jogador!</p>
-                            <a href="pages/football/football-numeros.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-numeros/football-numeros.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -338,7 +340,7 @@
                             </div>
                             <h4 data-key="football-multiplica-title">Multiplica</h4>
                             <p data-key="football-multiplica-desc">Multiplique os valores para alcançar a meta!</p>
-                            <a href="pages/football/football-multiplica.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-multiplica/football-multiplica.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -347,7 +349,7 @@
                             </div>
                             <h4 data-key="football-quiz-title">Quiz</h4>
                             <p data-key="football-quiz-desc">Teste seus conhecimentos sobre o futebol mundial!</p>
-                            <a href="pages/football/football-quiz.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-quiz/football-quiz.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -356,7 +358,7 @@
                             </div>
                             <h4 data-key="football-gol-a-gol-title">Gol a Gol</h4>
                             <p data-key="football-gol-a-gol-desc">Adivinhe quem marcou o gol pelas dicas!</p>
-                            <a href="pages/football/football-gol-a-gol.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-gol-a-gol/footballGolAGol.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -365,7 +367,7 @@
                             </div>
                             <h4 data-key="football-contexto-title">Contexto</h4>
                             <p data-key="football-contexto-desc">Descubra o jogador secreto pela similaridade!</p>
-                            <a href="pages/football/football-contexto.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-contexto/footballContexto.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
 
                         <div class="coming-soon-card">
@@ -374,7 +376,7 @@
                             </div>
                             <h4 data-key="football-piramide-title">Pirâmide</h4>
                             <p data-key="football-piramide-desc">Ordene 10 jogadores na pirâmide pela categoria!</p>
-                            <a href="pages/football/football-piramide.html" class="btn-play" data-key="play-button">Jogar</a>
+                            <a href="src/games/football-piramide/football-piramide.html" class="btn-play" data-key="play-button">Jogar</a>
                         </div>
                     </div>
                 </div>
@@ -413,11 +415,11 @@
             </div>
         </footer>
 
-        <script src="scripts/translation/english.js"></script>
-        <script src="scripts/translation/german.js"></script>
-        <script src="scripts/translation/portuguese.js"></script>
-        <script src="scripts/translation/spanish.js"></script>
-        <script src="scripts/traducao.js"></script>
-        <script src="scripts/script.js"></script>
+        <script src="src/core/translation/english.js"></script>
+        <script src="src/core/translation/german.js"></script>
+        <script src="src/core/translation/portuguese.js"></script>
+        <script src="src/core/translation/spanish.js"></script>
+        <script src="src/core/scripts/traducao.js"></script>
+        <script src="src/core/scripts/script.js"></script>
     </body>
 </html>

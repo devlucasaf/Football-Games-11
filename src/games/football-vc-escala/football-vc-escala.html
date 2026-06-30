@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vc Escala! | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-vc-escala.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-vc-escala">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-shirt"></i>
+                    <h2 data-key="escala-tutorial-title">Como jogar Vc Escala!</h2>
+                    <p data-key="escala-tutorial-subtitle">Monte a escalação ideal do seu time do Brasileirão 2026!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="escala-tutorial-step1"> Escolha um time do Brasileirão 2026.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="escala-tutorial-step2"> Selecione uma formação tática.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="escala-tutorial-step3"> Clique em uma posição no campo para escalar um jogador.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="escala-tutorial-step4"> Monte o time dos seus sonhos com o elenco atual!</span></li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="escala-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="escala-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="escala-container">
+            <div class="container">
+                <section class="escala-hero">
+                    <div class="hero-content">
+                        <h1>
+                            <i class="fas fa-shirt"></i> 
+                            <span data-key="football-vc-escala-title">Vc Escala!</span>
+                        </h1>
+                        <p data-key="escala-hero-subtitle">Escolha um time do Brasileirão 2026 e monte a escalação ideal!</p>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="totalTeams">0</span>
+                            <span class="stat-label" data-key="escala-stat-teams">Times Disponíveis</span>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-number" id="totalPlayers">0</span>
+                            <span class="stat-label" data-key="escala-stat-players">Jogadores</span>
+                        </div>
+                        
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label" data-key="escala-stat-combinations">Combinações</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="teams-section">
+                    <h2>
+                        <i class="fas fa-trophy"></i> <span data-key="escala-section-title">Escolha um Time</span>
+                    </h2>
+                    <p class="section-subtitle" data-key="escala-section-subtitle">Clique em um time do Brasileirão 2026 para montar a sua escalação</p>
+                    
+                    <div class="teams-grid" id="teamsGrid"></div>
+
+                    <div class="loading-teams" id="loadingTeams">
+                        <div class="loading-spinner">
+                            <i class="fas fa-futbol fa-spin"></i>
+                        </div>
+                        <p data-key="escala-loading">Carregando times...</p>
+                    </div>
+
+                    <div class="error-state" id="errorState" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p data-key="escala-error">Erro ao carregar os times. Tente recarregar a página.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container footer-content">
+                <div class="footer-logo">
+                    <h3>
+                        <i class="fas fa-futbol"></i> Football Games 11
+                    </h3>
+                    <p data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4 data-key="footer-connect">Conecte-se</h4>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-made-with">Desenvolvido com ❤️ por fãs de futebol</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="scripts/dados.js"></script>
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/times.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                EscalaTimes.iniciar();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conexões | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-conexoes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-conexoes">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h2 data-key="conexoes-tutorial-title">Como jogar Conexões</h2>
+                    <p data-key="conexoes-tutorial-subtitle">Encontre os 4 grupos de 4 jogadores!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="conexoes-tutorial-step1"> Há 16 jogadores divididos em 4 grupos secretos.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="conexoes-tutorial-step2"> Selecione 4 jogadores que você acha que pertencem ao mesmo grupo.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="conexoes-tutorial-step3"> Confirme sua seleção. Se acertar, o grupo é revelado!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="conexoes-tutorial-step4"> Você tem 4 tentativas erradas. Boa sorte!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="conexoes-tutorial-play">Jogar</span>
+                    </button>
+
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="conexoes-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="conexoes-container">
+            <div class="container">
+                <h2 class="game-title">
+                    <i class="fas fa-puzzle-piece"></i> 
+                    <span data-key="conexoes-game-title">Football Conexões</span>
+                </h2>
+                <p class="game-subtitle" data-key="conexoes-game-subtitle">Encontre os 4 grupos de 4 jogadores relacionados</p>
+
+                <div class="solved-groups" id="solvedGroups"></div>
+
+                <div class="players-grid" id="playersGrid"></div>
+
+                <div class="lives-area">
+                    <span class="lives-label" data-key="conexoes-lives-label">Tentativas restantes:</span>
+                    <div class="lives-dots" id="livesDots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="game-actions">
+                    <button class="btn-deselect" id="btnDeselect" disabled>
+                        <i class="fas fa-rotate-left"></i> 
+                        <span data-key="conexoes-deselect">Limpar</span>
+                    </button>
+
+                    <button class="btn-shuffle" id="btnShuffle">
+                        <i class="fas fa-shuffle"></i> 
+                        <span data-key="conexoes-shuffle">Embaralhar</span>
+                    </button>
+
+                    <button class="btn-submit" id="btnSubmit" disabled>
+                        <i class="fas fa-check"></i> 
+                        <span data-key="conexoes-submit">Confirmar</span>
+                    </button>
+                </div>
+
+                <div class="feedback-msg hidden" id="feedbackMsg"></div>
+
+                <section class="final-result hidden" id="finalResult">
+                    <div class="final-icon" id="finalIcon"></div>
+                    <h2 id="finalTitle"></h2>
+                    <p id="finalText"></p>
+                    <div class="final-groups" id="finalGroups"></div>
+                    
+                    <div class="final-actions">
+                        <button class="btn-next-puzzle" id="btnNextPuzzle">
+                            <i class="fas fa-arrow-right"></i> 
+                            <span data-key="conexoes-next-puzzle">Próximo Puzzle</span>
+                        </button>
+
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> 
+                            <span data-key="conexoes-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

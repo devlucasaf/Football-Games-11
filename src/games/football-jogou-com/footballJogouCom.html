@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Football Jogou Com | Football Games 11</title>
+
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-jogou-com.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-jogou-com">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-link"></i>
+                    <h2 data-key="jogou-tutorial-title">Como jogar Football Jogou Com</h2>
+                    <p data-key="jogou-tutorial-subtitle">Descubra o jogador misterioso pelos companheiros!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="jogou-tutorial-step1"> Um companheiro de equipe é revelado no primeiro card.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="jogou-tutorial-step2"> Digite o nome do jogador que jogou com todos os companheiros mostrados.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="jogou-tutorial-step3"> Se não souber, pule para revelar o próximo companheiro.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="jogou-tutorial-step4"> Após os 5 companheiros revelados, você tem uma última chance!</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="jogou-tutorial-step5"> Quanto menos pistas usar, mais pontos você ganha!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="jogou-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="jogou-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="jogou-container">
+                <div class="jogou-header">
+                    <h2 class="game-title">
+                        <i class="fas fa-link"></i> 
+                        <span data-key="jogou-game-title">Football Jogou Com</span>
+                    </h2>
+                    <p class="game-description" data-key="jogou-game-desc">Descubra quem jogou com todos os companheiros!</p>
+                </div>
+
+                <div class="jogou-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>
+                            span data-key="jogou-stat-hits">Acertos</span>: 
+                            <strong id="acertosCount">0</strong>
+                        </span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>
+                            <span data-key="jogou-stat-rounds">Rodadas</span>: 
+                            <strong id="rodadasCount">0</strong>
+                        </span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-fire"></i>
+                        <span>
+                            <span data-key="jogou-stat-streak">Sequência</span>: 
+                            <strong id="sequenciaCount">0</strong>
+                        </span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>
+                            <span data-key="jogou-stat-points">Pontos</span>: 
+                            <strong id="pontosCount">0</strong>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="jogou-resposta-card" id="respostaCard">
+                    <div class="resposta-conteudo">
+                        <i class="fas fa-question resposta-icone" id="respostaIcone"></i>
+                        <span class="resposta-nome" id="respostaNome">???</span>
+                    </div>
+                </div>
+
+                <div class="jogou-grid" id="jogouGrid">
+                    <div class="companheiro-card oculto" data-idx="0">
+                        <div class="card-frente">
+                            <i class="fas fa-user"></i>
+                            <span class="card-numero">1</span>
+                        </div>
+
+                        <div class="card-verso">
+                            <span class="card-nome"></span>
+                        </div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="1">
+                        <div class="card-frente">
+                            <i class="fas fa-user"></i>
+                            <span class="card-numero">2</span>
+                        </div>
+
+                        <div class="card-verso">
+                            <span class="card-nome"></span>
+                        </div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="2">
+                        <div class="card-frente">
+                            <i class="fas fa-user"></i>
+                            <span class="card-numero">3</span>
+                        </div>
+
+                        <div class="card-verso">
+                            <span class="card-nome"></span>
+                        </div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="3">
+                        <div class="card-frente">
+                            <i class="fas fa-user"></i>
+                            <span class="card-numero">4</span>
+                        </div>
+
+                        <div class="card-verso">
+                            <span class="card-nome"></span>
+                        </div>
+                    </div>
+
+                    <div class="companheiro-card oculto" data-idx="4">
+                        <div class="card-frente">
+                            <i class="fas fa-user"></i>
+                            <span class="card-numero">5</span>
+                        </div>
+
+                        <div class="card-verso">
+                            <span class="card-nome"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jogou-input-area" id="inputArea">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="palpiteInput" 
+                            class="palpite-input" 
+                            data-key="jogou-input-placeholder" 
+                            placeholder="Digite o nome do jogador..." 
+                            autocomplete="off"
+                        >
+                        <div class="sugestoes-lista" id="sugestoesLista"></div>
+                    </div>
+
+                    <div class="input-actions">
+                        <button id="confirmarBtn" class="btn-confirmar" title="Confirmar palpite">
+                            <i class="fas fa-check"></i> 
+                            <span data-key="jogou-confirm">Confirmar</span>
+                        </button>
+                        
+                        <button id="pularBtn" class="btn-pular" title="Pular e revelar próximo">
+                            <i class="fas fa-forward"></i> 
+                            <span data-key="jogou-skip">Pular</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="jogou-dica" id="dicaContainer" style="display:none;">
+                    <i class="fas fa-lightbulb"></i>
+                    <span id="dicaTexto"></span>
+                </div>
+
+                <div class="result-overlay" id="resultOverlay">
+                    <div class="result-box">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="proximaRodadaBtn" class="btn-action">
+                            <i class="fas fa-arrow-right"></i> 
+                            <span data-key="jogou-next-round">Próxima Rodada</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

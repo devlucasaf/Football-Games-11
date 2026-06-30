@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Acerta a Escalação | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-acerta-escalacao.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-acerta-escalacao">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h2 data-key="acerta-tutorial-title">Como jogar Acerta a Escalação</h2>
+                    <p data-key="acerta-tutorial-subtitle">Adivinhe os 11 jogadores que começaram o jogo!</p>
+                </div>
+                <ul class="tutorial-steps">
+                    <li>
+                        <span class="tutorial-step-number">1</span>
+                        <span data-key="acerta-tutorial-step1"> Um jogo histórico é mostrado com a formação tática.</span>
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">2</span>
+                        <span data-key="acerta-tutorial-step2"> Digite o nome dos jogadores para preencher as posições.</span>
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">3</span>
+                        <span data-key="acerta-tutorial-step3"> Você tem 5 minutos para acertar o máximo de jogadores.</span>
+                    </li>
+
+                    <li>
+                        <span class="tutorial-step-number">4</span>
+                        <span data-key="acerta-tutorial-step4"> Cada acerto revela o jogador na posição correta!</span>
+                    </li>
+                </ul>
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn" data-key="acerta-tutorial-play">
+                        <i class="fas fa-play"></i> Jogar
+                    </button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="acerta-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../../assets/us-flag-icon.png"
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="escalacao-container">
+            <div class="container">
+                <section class="mode-select" id="modeSelect">
+                    <h2>
+                        <i class="fas fa-clipboard-list"></i> 
+                        <span data-key="acerta-mode-title">Acerta a Escalação</span>
+                    </h2>
+                    <p class="mode-subtitle" data-key="acerta-mode-subtitle">Escolha o modo de jogo:</p>
+                    <div class="mode-options">
+                        <button class="mode-btn" id="btnModeSemTempo">
+                            <i class="fas fa-infinity"></i>
+                            <span class="mode-title" data-key="acerta-mode-no-time">Sem Tempo</span>
+                            <span class="mode-desc" data-key="acerta-mode-no-time-desc">Jogue no seu ritmo, sem cronômetro</span>
+                        </button>
+
+                        <button class="mode-btn" id="btnModeComTempo">
+                            <i class="fas fa-stopwatch"></i>
+                            <span class="mode-title" data-key="acerta-mode-with-time">Com Tempo</span>
+                            <span class="mode-desc" data-key="acerta-mode-with-time-desc">5 minutos para acertar os 11</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="game-info hidden" id="gameInfo">
+                    <div class="game-timer" id="gameTimerArea">
+                        <i class="fas fa-clock"></i> 
+                        <span id="timer">5:00</span>
+                    </div>
+
+                    <div class="game-match" id="gameMatch">
+                        <span id="matchInfo"></span>
+                    </div>
+
+                    <div class="game-score">
+                        <i class="fas fa-check-circle"></i> 
+                        <span id="acertos">0</span>/11
+                    </div>
+                </div>
+
+                <div class="guess-input-area hidden">
+                    <div class="autocomplete-wrapper">
+                        <input 
+                            type="text" 
+                            id="guessInput" 
+                            data-key="acerta-input-placeholder" 
+                            placeholder="Digite o nome do jogador..." 
+                            autocomplete="off"
+                        >
+                        <ul class="autocomplete-list hidden" id="autocompleteList"></ul>
+                    </div>
+                </div>
+
+                <section class="field-wrapper hidden">
+                    <div class="football-field" id="footballField">
+                        <div class="field-bg">
+                            <div class="field-half-line"></div>
+                            <div class="field-center-circle"></div>
+                            <div class="field-penalty-top"></div>
+                            <div class="field-penalty-bottom"></div>
+                            <div class="field-goal-top"></div>
+                            <div class="field-goal-bottom"></div>
+                        </div>
+                        <div class="players-layer" id="playersLayer"></div>
+                    </div>
+                </section>
+
+                <div class="give-up-area hidden">
+                    <button class="btn-give-up" id="btnGiveUp" data-key="acerta-give-up">
+                        <i class="fas fa-flag"></i> Desistir
+                    </button>
+                </div>
+
+                <section class="final-result hidden" id="finalResult">
+                    <h2>
+                        <i class="fas fa-trophy"></i> 
+                        <span data-key="acerta-final-title">Fim!</span>
+                    </h2>
+                    <div class="final-score">
+                        <span class="final-points" id="finalPoints">0</span>
+                        <span class="final-label" data-key="acerta-final-label">/11 acertos</span>
+                    </div>
+
+                    <div class="final-details" id="finalDetails"></div>
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry" data-key="acerta-retry">
+                            <i class="fas fa-redo"></i> Novo Jogo
+                        </button>
+
+                        <button class="btn-home" id="btnHome" data-key="acerta-home">
+                            <i class="fas fa-home"></i> Menu Principal
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

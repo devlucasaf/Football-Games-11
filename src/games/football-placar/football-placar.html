@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Placar Exato | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-placar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-placar">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-futbol"></i>
+                    <h2 data-key="placar-tutorial-title">Como jogar Placar Exato</h2>
+                    <p data-key="placar-tutorial-subtitle">Acerte o placar de jogos históricos!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="placar-tutorial-step1"> Um jogo histórico é mostrado (times + competição).</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="placar-tutorial-step2"> Digite o placar que você acha correto.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="placar-tutorial-step3"> Pontuação: 3 pts placar exato, 1 pt vencedor correto.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="placar-tutorial-step4"> São 10 rodadas — tente somar o máximo!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="placar-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="placar-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="placar-container">
+            <div class="container">
+                <div class="game-info" id="gameInfo">
+                    <div class="game-round">
+                        <span data-key="placar-round">Rodada</span> 
+                        <span id="rodadaAtual">1</span>/10
+                    </div>
+
+                    <div class="game-score">
+                        <i class="fas fa-star"></i> 
+                        <span id="pontos">0</span> 
+                        <span data-key="placar-pts">pts</span>
+                    </div>
+                </div>
+
+                <section class="match-card" id="matchCard">
+                    <div class="match-competition" id="competicao"></div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <span class="team-name" id="mandante"></span>
+                            <input 
+                                type="number" 
+                                class="score-input" 
+                                id="inputMandante" 
+                                min="0" 
+                                max="20" 
+                                value="0"
+                            >
+                        </div>
+                        
+                        <div class="match-vs">×</div>
+                        <div class="team away">
+                            <input 
+                                type="number" 
+                                class="score-input" 
+                                id="inputVisitante" 
+                                min="0" 
+                                max="20" 
+                                value="0"
+                            >
+                            <span class="team-name" id="visitante"></span>
+                        </div>
+                    </div>
+                    <button class="btn-confirm" id="btnConfirmar">
+                        <i class="fas fa-check"></i> 
+                        <span data-key="placar-confirm">Confirmar</span>
+                    </button>
+                </section>
+
+                <section class="result-feedback hidden" id="resultFeedback">
+                    <div class="feedback-icon" id="feedbackIcon"></div>
+                    <div class="feedback-text" id="feedbackText"></div>
+                    <div class="feedback-score" id="feedbackScore"></div>
+                    <button class="btn-next" id="btnNext">
+                        <i class="fas fa-arrow-right"></i> 
+                        <span data-key="placar-next">Próximo</span>
+                    </button>
+                </section>
+
+                <section class="final-result hidden" id="finalResult">
+                    <h2>
+                        <i class="fas fa-trophy"></i> 
+                        <span data-key="placar-final-title">Fim de Jogo!</span>
+                    </h2>
+
+                    <div class="final-score">
+                        <span class="final-points" id="finalPoints">0</span>
+                        <span class="final-label" data-key="placar-final-label">/30 pontos</span>
+                    </div>
+
+                    <div class="final-details" id="finalDetails"></div>
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry">
+                            <i class="fas fa-redo"></i> 
+                            <span data-key="placar-retry">Novo Jogo</span>
+                        </button>
+                        
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> 
+                            <span data-key="placar-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

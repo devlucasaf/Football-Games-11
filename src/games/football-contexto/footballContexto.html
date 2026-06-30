@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contexto | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-contexto.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-contexto">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-bullseye"></i>
+                    <h2 data-key="contexto-tutorial-title">Como jogar Contexto</h2>
+                    <p data-key="contexto-tutorial-subtitle">Descubra o jogador secreto!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="contexto-tutorial-step1"> Digite o nome de um jogador de futebol.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="contexto-tutorial-step2"> Receba uma pontuação de 0 a 100 baseada na similaridade.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="contexto-tutorial-step3"> Quanto mais próximo de 100, mais parecido com o jogador secreto.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="contexto-tutorial-step4"> Use clube, liga, posição e nacionalidade como referência!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="contexto-tutorial-play">Jogar</span>
+                    </button>
+
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="contexto-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="contexto-container">
+            <div class="container">
+                <div class="game-info" id="gameInfo">
+                    <div class="game-title-bar">
+                        <h2>
+                            <i class="fas fa-bullseye"></i> 
+                            <span data-key="football-contexto-title">Contexto</span>
+                        </h2>
+                    </div>
+
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-search"></i>
+                            <span data-key="contexto-guesses">Palpites:</span>
+                            <strong id="numPalpites">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="game-area" id="gameArea">
+                    <div class="guess-area">
+                        <div class="autocomplete-wrapper">
+                            <input 
+                                type="text" 
+                                id="palpiteInput" 
+                                data-key="contexto-input-placeholder" 
+                                placeholder="Digite o nome de um jogador..." 
+                                autocomplete="off"
+                            >
+                            <ul class="autocomplete-list hidden" id="autocompleteList"></ul>
+                        </div>
+
+                        <div class="guess-feedback hidden" id="guessFeedback"></div>
+                    </div>
+
+                    <div class="palpites-container">
+                        <div class="palpites-list" id="palpitesList"></div>
+                    </div>
+
+                    <div class="desistir-area">
+                        <button class="btn-desistir" id="btnDesistir">
+                            <i class="fas fa-flag"></i> 
+                            <span data-key="contexto-give-up">Desistir</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="final-result hidden" id="finalResult">
+                    <h2>
+                        <i class="fas fa-trophy"></i> 
+                        <span data-key="contexto-final-title">Fim!</span>
+                    </h2>
+
+                    <div class="final-player-reveal">
+                        <span data-key="contexto-secret-was">O jogador secreto era:</span>
+                        <strong id="finalPlayer"></strong>
+                    </div>
+
+                    <div class="final-score">
+                        <span class="final-tentativas" id="finalTentativas">0</span>
+                        <span class="final-label" data-key="contexto-final-label">palpites</span>
+                    </div>
+
+                    <p class="final-message" id="finalMessage"></p>
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry">
+                            <i class="fas fa-redo"></i> 
+                            <span data-key="contexto-retry">Novo Jogo</span>
+                        </button>
+
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> 
+                            <span data-key="contexto-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

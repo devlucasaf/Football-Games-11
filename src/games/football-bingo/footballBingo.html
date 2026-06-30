@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Football Bingo | Football Games 11</title>
+
+            <link rel="stylesheet" href="../../core/styles/global.css">
+            <link rel="stylesheet" href="styles/football-bingo.css">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        </head>
+
+    <body>
+        <!-- TUTORIAL -->
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-bingo">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-chess-board"></i>
+                    <h2 data-key="bingo-tutorial-title">Como jogar Football Bingo</h2>
+                    <p data-key="bingo-tutorial-subtitle">Encontre o jogador que combina com as categorias!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="bingo-tutorial-step1"> Cada célula do grid 5x5 contém uma categoria (time, seleção, título ou posição).</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="bingo-tutorial-step2"> Um jogador aparece acima do tabuleiro — analise sua carreira.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="bingo-tutorial-step3"> Clique nas células que correspondem ao jogador exibido.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="bingo-tutorial-step4"> Acertos ficam verdes, erros ficam vermelhos. Cada jogador tem 1 chance por célula.</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="bingo-tutorial-step5"> Complete linhas, colunas ou diagonais para marcar BINGO!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <div class="tutorial-mode-select">
+                        <p class="mode-label" data-key="bingo-mode-label">Escolha o modo:</p>
+                        <button class="btn-mode" id="btnModoMundial" data-mode="mundial">
+                            <i class="fas fa-globe"></i> 
+                            <span data-key="bingo-mode-world">Futebol Mundial</span>
+                        </button>
+                        <button class="btn-mode" id="btnModoBrasileiro" data-mode="brasileiro">
+                            <i class="fas fa-flag"></i> 
+                            <span data-key="bingo-mode-brazilian">Futebol Brasileiro</span>
+                        </button>
+                    </div>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="bingo-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>
+                            <i class="fas fa-futbol"></i>
+                            <a href="../../../index.html" class="home-link">Football Games 11</a>
+                        </h1>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
+                                <img 
+                                    src="../assets/br-flag-icon.png" 
+                                    alt="Português" 
+                                    id="currentLanguageFlag"
+                                />
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-language="traducoes">
+                                    <img 
+                                        src="../assets/br-flag-icon.png" 
+                                        alt="Português"
+                                    />
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-language="translations">
+                                    <img 
+                                        src="../assets/us-flag-icon.png" 
+                                        alt="English"
+                                    />
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-language="traducciones">
+                                    <img 
+                                        src="../assets/es-flag-icon.png" 
+                                        alt="Español"
+                                    />
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-language="ubersetzungen">
+                                    <img 
+                                        src="../assets/de-flag-icon.png" 
+                                        alt="Deutsch"
+                                    />
+                                    <span>Deutsch</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="bingo-container">
+                <div class="bingo-header">
+                    <h2 class="game-title">
+                        <i class="fas fa-chess-board"></i> 
+                        <span data-key="bingo-game-title">Football Bingo</span>
+                    </h2>
+                    <p class="game-description" data-key="bingo-game-desc">Marque as categorias que correspondem ao jogador!</p>
+                </div>
+
+                <!-- --- PLACAR --- -->
+                <div class="bingo-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-user"></i>
+                        <span>
+                            <span data-key="bingo-stat-player">Jogador</span>: 
+                            <strong id="jogadorNum">0</strong>/
+                            <strong id="jogadorTotal">0</strong>
+                        </span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>
+                            <span data-key="bingo-stat-hits">Acertos</span>: 
+                            <strong id="acertosCount">0</strong>
+                        </span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-times"></i>
+                        <span>
+                            <span data-key="bingo-stat-errors">Erros</span>: 
+                            <strong id="errosCount">0</strong>
+                        </span>
+                    </div>
+
+                    <div class="stat-item bingo-indicator" id="bingoIndicator">
+                        <i class="fas fa-star"></i>
+                        <span>Bingos: 
+                            <strong id="bingosCount">0</strong>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- --- JOGADOR ATUAL --- -->
+                <div class="jogador-display" id="jogadorDisplay">
+                    <div class="jogador-info">
+                        <span class="jogador-label" data-key="bingo-who-is">Quem é?</span>
+                        <span class="jogador-nome" id="jogadorNome" data-key="bingo-loading">Carregando...</span>
+                    </div>
+
+                    <div class="jogador-actions">
+                        <button id="confirmarBtn" class="btn-confirmar" title="Confirmar marcações">
+                            <i class="fas fa-check-circle"></i> <span data-key="bingo-confirm">Confirmar</span>
+                        </button>
+
+                        <button id="proximoBtn" class="btn-proximo" title="Próximo jogador" style="display:none;">
+                            <i class="fas fa-arrow-right"></i> <span data-key="bingo-next">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- --- GRID 5x5 --- -->
+                <div class="bingo-grid" id="bingoGrid">
+                    <!-- --- CÉLULAS GERADAS VIA JS --- -->
+                </div>
+
+                <!-- --- BOTÕES --- -->
+                <div class="bingo-actions">
+                    <button id="novoJogoBtn" class="btn-novo-jogo">
+                        <i class="fas fa-sync-alt"></i> <span data-key="bingo-new-game">Novo Jogo</span>
+                    </button>
+                </div>
+
+                <!-- --- RESULTADO FINAL --- -->
+                <div class="result-overlay" id="resultOverlay">
+                    <div class="result-box">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="resultCloseBtn" class="btn-novo-jogo">
+                            <i class="fas fa-redo"></i> 
+                            <span data-key="bingo-play-again">Jogar Novamente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/translation/english.js"></script>
+        <script src="../../core/translation/german.js"></script>
+        <script src="../../core/translation/portuguese.js"></script>
+        <script src="../../core/translation/spanish.js"></script>
+        <script src="../../core/scripts/traducao.js"></script>
+        <script src="../../core/scripts/script.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
