@@ -3,31 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gol a Gol | Football Games 11</title>
-        <link rel="stylesheet" href="../styles/global.css">
-        <link rel="stylesheet" href="../styles/football-gol-a-gol.css">
+        <title>Conexões | Football Games 11</title>
+        <link rel="stylesheet" href="../../styles/global.css">
+        <link rel="stylesheet" href="../../styles/football-conexoes.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <!-- TUTORIAL -->
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-gol-a-gol">
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-conexoes">
             <div class="tutorial-box">
                 <div class="tutorial-header">
-                    <i class="fas fa-futbol"></i>
-                    <h2 data-key="gol-tutorial-title">Como jogar Gol a Gol</h2>
-                    <p data-key="gol-tutorial-subtitle">Adivinhe quem marcou o gol icônico!</p>
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h2 data-key="conexoes-tutorial-title">Como jogar Conexões</h2>
+                    <p data-key="conexoes-tutorial-subtitle">Encontre os 4 grupos de 4 jogadores!</p>
                 </div>
+
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span><span data-key="gol-tutorial-step1"> Uma dica sobre um gol histórico é mostrada.</span></li>
-                    <li><span class="tutorial-step-number">2</span><span data-key="gol-tutorial-step2"> Digite o nome do jogador que marcou.</span></li>
-                    <li><span class="tutorial-step-number">3</span><span data-key="gol-tutorial-step3"> Se errar, uma nova dica é revelada automaticamente.</span></li>
-                    <li><span class="tutorial-step-number">4</span><span data-key="gol-tutorial-step4"> Você tem 10 tentativas por rodada. São 10 rodadas!</span></li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="conexoes-tutorial-step1"> Há 16 jogadores divididos em 4 grupos secretos.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="conexoes-tutorial-step2"> Selecione 4 jogadores que você acha que pertencem ao mesmo grupo.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="conexoes-tutorial-step3"> Confirme sua seleção. Se acertar, o grupo é revelado!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="conexoes-tutorial-step4"> Você tem 4 tentativas erradas. Boa sorte!</span></li>
                 </ul>
+
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="gol-tutorial-play">Jogar</span></button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="gol-tutorial-skip">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="conexoes-tutorial-play">Jogar</span>
+                    </button>
+
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="conexoes-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -41,6 +46,7 @@
                             <a href="../index.html" class="home-link">Football Games 11</a>
                         </h1>
                     </div>
+
                     <div class="header-actions">
                         <div class="language-selector">
                             <button class="btn-language" id="languageToggle" title="Selecionar idioma">
@@ -58,6 +64,7 @@
                                     />
                                     <span>Português</span>
                                 </button>
+
                                 <button class="language-option" data-language="translations">
                                     <img 
                                         src="../assets/us-flag-icon.png" 
@@ -65,6 +72,7 @@
                                     />
                                     <span>English</span>
                                 </button>
+
                                 <button class="language-option" data-language="traducciones">
                                     <img 
                                         src="../assets/es-flag-icon.png" 
@@ -72,6 +80,7 @@
                                     />
                                     <span>Español</span>
                                 </button>
+
                                 <button class="language-option" data-language="ubersetzungen">
                                     <img 
                                         src="../assets/de-flag-icon.png" 
@@ -85,6 +94,7 @@
                         <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial">
                             <i class="fas fa-question-circle"></i>
                         </button>
+
                         <button class="btn-theme" id="themeToggle" title="Alterar tema">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -93,61 +103,62 @@
             </div>
         </header>
 
-        <main class="gol-container">
+        <main class="conexoes-container">
             <div class="container">
-                <!-- Info do jogo -->
-                <div class="game-info" id="gameInfo">
-                    <div class="game-round">
-                        <span data-key="gol-round">Rodada</span> <span id="rodadaAtual">1</span>/10
-                    </div>
-                    <div class="game-score">
-                        <i class="fas fa-check-circle"></i> <span id="acertos">0</span>/10
-                    </div>
-                    <div class="game-attempts">
-                        <i class="fas fa-heart"></i> <span id="tentativas">10</span> <span data-key="gol-attempts">tentativas</span>
+                <h2 class="game-title">
+                    <i class="fas fa-puzzle-piece"></i> 
+                    <span data-key="conexoes-game-title">Football Conexões</span>
+                </h2>
+                <p class="game-subtitle" data-key="conexoes-game-subtitle">Encontre os 4 grupos de 4 jogadores relacionados</p>
+
+                <div class="solved-groups" id="solvedGroups"></div>
+
+                <div class="players-grid" id="playersGrid"></div>
+
+                <div class="lives-area">
+                    <span class="lives-label" data-key="conexoes-lives-label">Tentativas restantes:</span>
+                    <div class="lives-dots" id="livesDots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
                 </div>
 
-                <!-- Área do jogo -->
-                <section class="game-area" id="gameArea">
-                    <div class="dicas-card">
-                        <h3 class="dicas-title"><i class="fas fa-lightbulb"></i> <span data-key="gol-clues-title">Dicas</span></h3>
-                        <ol class="dicas-list" id="dicasList"></ol>
-                    </div>
-
-                    <div class="guess-area">
-                        <div class="autocomplete-wrapper">
-                            <input type="text" id="palpiteInput" data-key="gol-input-placeholder" placeholder="Quem marcou esse gol?" autocomplete="off">
-                            <ul class="autocomplete-list hidden" id="autocompleteList"></ul>
-                        </div>
-                        <div class="guess-feedback hidden" id="guessFeedback"></div>
-                    </div>
-                </section>
-
-                <!-- Resultado da rodada -->
-                <section class="round-result hidden" id="roundResult">
-                    <div class="round-icon" id="roundIcon"></div>
-                    <p class="round-text" id="roundText"></p>
-                    <p class="round-answer" id="roundAnswer"></p>
-                    <button class="btn-next" id="btnNext">
-                        <i class="fas fa-arrow-right"></i> <span data-key="gol-next">Próximo</span>
+                <div class="game-actions">
+                    <button class="btn-deselect" id="btnDeselect" disabled>
+                        <i class="fas fa-rotate-left"></i> 
+                        <span data-key="conexoes-deselect">Limpar</span>
                     </button>
-                </section>
 
-                <!-- Resultado final -->
+                    <button class="btn-shuffle" id="btnShuffle">
+                        <i class="fas fa-shuffle"></i> 
+                        <span data-key="conexoes-shuffle">Embaralhar</span>
+                    </button>
+
+                    <button class="btn-submit" id="btnSubmit" disabled>
+                        <i class="fas fa-check"></i> 
+                        <span data-key="conexoes-submit">Confirmar</span>
+                    </button>
+                </div>
+
+                <div class="feedback-msg hidden" id="feedbackMsg"></div>
+
                 <section class="final-result hidden" id="finalResult">
-                    <h2><i class="fas fa-trophy"></i> <span data-key="gol-final-title">Fim!</span></h2>
-                    <div class="final-score">
-                        <span class="final-points" id="finalPoints">0</span>
-                        <span class="final-label" data-key="gol-final-label">/10 acertos</span>
-                    </div>
-                    <div class="final-details" id="finalDetails"></div>
+                    <div class="final-icon" id="finalIcon"></div>
+                    <h2 id="finalTitle"></h2>
+                    <p id="finalText"></p>
+                    <div class="final-groups" id="finalGroups"></div>
+                    
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry">
-                            <i class="fas fa-redo"></i> <span data-key="gol-retry">Novo Jogo</span>
+                        <button class="btn-next-puzzle" id="btnNextPuzzle">
+                            <i class="fas fa-arrow-right"></i> 
+                            <span data-key="conexoes-next-puzzle">Próximo Puzzle</span>
                         </button>
+
                         <button class="btn-home" id="btnHome">
-                            <i class="fas fa-home"></i> <span data-key="gol-home">Menu Principal</span>
+                            <i class="fas fa-home"></i> 
+                            <span data-key="conexoes-home">Menu Principal</span>
                         </button>
                     </div>
                 </section>
@@ -158,7 +169,9 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
@@ -184,12 +197,12 @@
             </div>
         </footer>
 
-        <script src="../scripts/translation/english.js"></script>
-        <script src="../scripts/translation/german.js"></script>
-        <script src="../scripts/translation/portuguese.js"></script>
-        <script src="../scripts/translation/spanish.js"></script>
-        <script src="../scripts/traducao.js"></script>
-        <script src="../scripts/script.js"></script>
-        <script type="module" src="../scripts/games/football-gol-a-gol/main.js"></script>
+        <script src="../../scripts/translation/english.js"></script>
+        <script src="../../scripts/translation/german.js"></script>
+        <script src="../../scripts/translation/portuguese.js"></script>
+        <script src="../../scripts/translation/spanish.js"></script>
+        <script src="../../scripts/traducao.js"></script>
+        <script src="../../scripts/script.js"></script>
+        <script type="module" src="../../scripts/games/football-conexoes/main.js"></script>
     </body>
 </html>

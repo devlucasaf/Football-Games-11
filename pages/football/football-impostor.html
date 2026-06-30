@@ -3,58 +3,55 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Football Carreiras | Football Games 11</title>
+        <title>Football Impostor | Football Games 11</title>
 
-        <link rel="stylesheet" href="../styles/global.css">
-        <link rel="stylesheet" href="../styles/football-carreiras.css">
+        <link rel="stylesheet" href="../../styles/global.css">
+        <link rel="stylesheet" href="../../styles/football-impostor.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
     <body>
-        <!-- --- TUTORIAL --- -->
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-carreiras">
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-impostor">
             <div class="tutorial-box">
                 <div class="tutorial-header">
-                    <i class="fas fa-road"></i>
-                    <h2 data-key="carreiras-tutorial-title">Como jogar Football Carreiras</h2>
-                    <p data-key="carreiras-tutorial-subtitle">Adivinhe o jogador pela carreira nos clubes!</p>
+                    <i class="fas fa-user-secret"></i>
+                    <h2 data-key="impostor-tutorial-title">Como jogar Football Impostor</h2>
+                    <p data-key="impostor-tutorial-subtitle">Encontre o jogador que não pertence ao grupo!</p>
                 </div>
-
+                
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span><span data-key="carreiras-tutorial-step1"> Os escudos dos clubes aparecem escondidos no grid.</span></li>
-                    <li><span class="tutorial-step-number">2</span><span data-key="carreiras-tutorial-step2"> A cada erro, um novo clube da carreira é revelado.</span></li>
-                    <li><span class="tutorial-step-number">3</span><span data-key="carreiras-tutorial-step3"> Digite o nome do jogador no campo de texto e pressione ENTER.</span></li>
-                    <li><span class="tutorial-step-number">4</span><span data-key="carreiras-tutorial-step4"> Se acertar, todos os clubes são revelados!</span></li>
-                    <li><span class="tutorial-step-number">5</span><span data-key="carreiras-tutorial-step5"> Quanto menos tentativas, melhor!</span></li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="impostor-tutorial-step1"> Um tema é exibido no topo (ex: "Jogaram no Barcelona").</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="impostor-tutorial-step2"> 7 jogadores aparecem embaralhados — 6 seguem o tema.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="impostor-tutorial-step3"> Clique no jogador que você acha que é o impostor.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="impostor-tutorial-step4"> Você tem apenas 1 tentativa por rodada!</span></li>
+                    <li><span class="tutorial-step-number">5</span><span data-key="impostor-tutorial-step5"> Tente manter a maior sequência de acertos!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
                     <button class="btn-tutorial-start" id="tutorialStartBtn">
                         <i class="fas fa-play"></i> 
-                        <span data-key="carreiras-tutorial-play">Jogar</span>
+                        <span data-key="impostor-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="carreiras-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="impostor-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
 
-        <!-- --- CABEÇALHO --- -->
         <header class="main-header">
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
                         <h1>
                             <i class="fas fa-futbol"></i>
-                            <a href="../index.html" class="home-link">Football Games 11</a>
+                            <a href="../../index.html" class="home-link">Football Games 11</a>
                         </h1>
                     </div>
-
                     <div class="header-actions">
                         <div class="language-selector">
                             <button class="btn-language" id="languageToggle" title="Selecionar idioma">
                                 <img 
-                                    src="../assets/br-flag-icon.png" 
+                                    src="../../assets/br-flag-icon.png" 
                                     alt="Português" 
                                     id="currentLanguageFlag"
                                 />
@@ -62,14 +59,14 @@
                             <div class="language-dropdown" id="languageDropdown">
                                 <button class="language-option" data-language="traducoes">
                                     <img 
-                                        src="../assets/br-flag-icon.png" 
+                                        src="../../assets/br-flag-icon.png" 
                                         alt="Português"
                                     />
                                     <span>Português</span>
                                 </button>
                                 <button class="language-option" data-language="translations">
                                     <img 
-                                        src="../assets/us-flag-icon.png" 
+                                        src="../../assets/us-flag-icon.png" 
                                         alt="English"
                                     />
                                     <span>English</span>
@@ -82,8 +79,8 @@
                                     <span>Español</span>
                                 </button>
                                 <button class="language-option" data-language="ubersetzungen">
-                                    <img 
-                                        src="../assets/de-flag-icon.png" 
+                                    <img    
+                                        src="../../assets/de-flag-icon.png" 
                                         alt="Deutsch"
                                     />
                                     <span>Deutsch</span>
@@ -102,57 +99,72 @@
             </div>
         </header>
 
-        <!-- --- CONTEÚDO PRINCIPAL --- -->
         <main class="container">
             <div class="game-container">
                 <div class="game-header">
-                    <h2 class="game-title"><i class="fas fa-road"></i> <span data-key="carreiras-game-title">Football Carreiras</span></h2>
-                    <p class="game-description" data-key="carreiras-game-desc">Descubra o jogador pelos clubes da carreira!</p>
+                    <h2 class="game-title">
+                        <i class="fas fa-user-secret"></i> 
+                        <span data-key="impostor-game-title">Football Impostor</span>
+                    </h2>
+                    <p class="game-description" data-key="impostor-game-desc">Encontre o jogador que não pertence ao grupo!</p>
                 </div>
 
-                <!-- --- INFO DE TENTATIVAS --- -->
-                <div class="carreiras-info">
-                    <div class="info-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span><span data-key="carreiras-clubs">Clubes</span>: <strong id="clubesCount">0</strong></span>
+                <div class="impostor-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>
+                            <span data-key="impostor-stat-hits">Acertos</span>: 
+                            <strong id="acertosCount">0</strong>
+                        </span>
                     </div>
 
-                    <div class="info-item">
-                        <i class="fas fa-times-circle"></i>
-                        <span><span data-key="carreiras-errors">Erros</span>: <strong id="errosCount">0</strong></span>
+                    <div class="stat-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>
+                            <span data-key="impostor-stat-total">Total</span>: 
+                            <strong id="totalCount">0</strong>
+                        </span>
                     </div>
 
-                    <div class="info-item">
-                        <i class="fas fa-eye"></i>
-                        <span><span data-key="carreiras-revealed">Revelados</span>: <strong id="reveladosCount">0</strong></span>
+                    <div class="stat-item">
+                        <i class="fas fa-fire"></i>
+                        <span><span data-key="impostor-stat-streak">Sequência</span>:
+                        <strong id="sequenciaCount">0</strong>
+                    </span>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>
+                            <span data-key="impostor-stat-best">Melhor</span>: 
+                            <strong id="melhorCount">0</strong>
+                        </span>
                     </div>
                 </div>
 
-                <div class="carreiras-grid" id="carreirasGrid"></div>
+                <div class="tema-container">
+                    <div class="tema-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="tema-label" data-key="impostor-theme-label">Tema:</span>
+                    </div>
 
-                <!-- --- INPUT --- -->
-                <div class="input-container">
-                    <input type="text" id="playerInput" data-key="carreiras-input-placeholder" placeholder="Digite o nome do jogador..." autocomplete="off">
-                    <button id="guessBtn"><i class="fas fa-search"></i></button>
+                    <div class="tema-texto" id="temaTexto"></div>
+                    <span class="dificuldade-badge" id="dificuldadeBadge"></span>
                 </div>
 
-                <!-- --- SUGESTÕES --- -->
-                <div class="suggestions-container">
-                    <div class="suggestions-dropdown" id="suggestionsDropdown" style="display: none;"></div>
+                <div class="impostor-grid" id="impostorGrid">
                 </div>
 
-                <!-- --- BOTÕES --- -->
-                <div class="actions-container">
-                    <button id="skipBtn" class="btn-action btn-skip"><i class="fas fa-forward"></i> <span data-key="carreiras-skip">Pular</span></button>
-                    <button id="newGameBtn" class="btn-action"><i class="fas fa-redo"></i> <span data-key="carreiras-new-game">Novo Jogo</span></button>
-                </div>
-
-                <!-- --- RESULTADO --- -->
                 <div class="result-overlay" id="resultOverlay">
-                    <div class="result-box" id="resultBox">
+                    <div class="result-box">
                         <div class="result-icon" id="resultIcon"></div>
-                        <p id="resultText"></p>
-                        <button id="resultCloseBtn" class="btn-action"><i class="fas fa-redo"></i> <span data-key="carreiras-play-again">Jogar Novamente</span></button>
+                        <h3 id="resultTitle"></h3>
+                        <p class="impostor-name" id="impostorName"></p>
+                        <p class="result-text" id="resultText"></p>
+                        <button id="nextRoundBtn" class="btn-action">
+                            <i class="fas fa-arrow-right"></i> 
+                            <span data-key="impostor-next-round">Próxima Rodada</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -162,7 +174,9 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
@@ -188,13 +202,12 @@
             </div>
         </footer>
 
-        <!-- --- SCRIPTS --- -->
-        <script src="../scripts/translation/english.js"></script>
-        <script src="../scripts/translation/german.js"></script>
-        <script src="../scripts/translation/portuguese.js"></script>
-        <script src="../scripts/translation/spanish.js"></script>
-        <script src="../scripts/traducao.js"></script>
-        <script src="../scripts/script.js"></script>
-        <script type="module" src="../scripts/games/football-carreiras/main.js"></script>
+        <script src="../../scripts/translation/english.js"></script>
+        <script src="../../scripts/translation/german.js"></script>
+        <script src="../../scripts/translation/portuguese.js"></script>
+        <script src="../../scripts/translation/spanish.js"></script>
+        <script src="../../scripts/traducao.js"></script>
+        <script src="../../scripts/script.js"></script>
+        <script type="module" src="../../scripts/games/football-impostor/main.js"></script>
     </body>
 </html>

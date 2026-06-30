@@ -3,32 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Placar Exato | Football Games 11</title>
-        <link rel="stylesheet" href="../styles/global.css">
-        <link rel="stylesheet" href="../styles/football-placar.css">
+        <title>Números | Football Games 11</title>
+        <link rel="stylesheet" href="../../styles/global.css">
+        <link rel="stylesheet" href="../../styles/football-numeros.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-placar">
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-numeros">
             <div class="tutorial-box">
                 <div class="tutorial-header">
-                    <i class="fas fa-futbol"></i>
-                    <h2 data-key="placar-tutorial-title">Como jogar Placar Exato</h2>
-                    <p data-key="placar-tutorial-subtitle">Acerte o placar de jogos históricos!</p>
+                    <i class="fas fa-hashtag"></i>
+                    <h2 data-key="numeros-tutorial-title">Como jogar Números</h2>
+                    <p data-key="numeros-tutorial-subtitle">Adivinhe o número da camisa!</p>
                 </div>
 
                 <ul class="tutorial-steps">
-                    <li><span class="tutorial-step-number">1</span><span data-key="placar-tutorial-step1"> Um jogo histórico é mostrado (times + competição).</span></li>
-                    <li><span class="tutorial-step-number">2</span><span data-key="placar-tutorial-step2"> Digite o placar que você acha correto.</span></li>
-                    <li><span class="tutorial-step-number">3</span><span data-key="placar-tutorial-step3"> Pontuação: 3 pts placar exato, 1 pt vencedor correto.</span></li>
-                    <li><span class="tutorial-step-number">4</span><span data-key="placar-tutorial-step4"> São 10 rodadas — tente somar o máximo!</span></li>
+                    <li><span class="tutorial-step-number">1</span><span data-key="numeros-tutorial-step1"> Um jogador e o clube são exibidos.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="numeros-tutorial-step2"> Digite o número da camisa que ele usava.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="numeros-tutorial-step3"> Você tem 3 tentativas com dicas: maior ou menor.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="numeros-tutorial-step4"> São 10 rodadas — acerte o máximo!</span></li>
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="placar-tutorial-play">Jogar</span></button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="placar-tutorial-skip">Não mostrar novamente</button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="numeros-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="numeros-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                     <div class="logo">
                         <h1>
                             <i class="fas fa-futbol"></i>
-                            <a href="../index.html" class="home-link">Football Games 11</a>
+                            <a href="../../index.html" class="home-link">Football Games 11</a>
                         </h1>
                     </div>
 
@@ -47,7 +47,7 @@
                         <div class="language-selector">
                             <button class="btn-language" id="languageToggle" title="Selecionar idioma">
                                 <img 
-                                    src="../assets/br-flag-icon.png" 
+                                    src="../../assets/br-flag-icon.png" 
                                     alt="Português" 
                                     id="currentLanguageFlag"
                                 />
@@ -55,28 +55,28 @@
                             <div class="language-dropdown" id="languageDropdown">
                                 <button class="language-option" data-language="traducoes">
                                     <img 
-                                        src="../assets/br-flag-icon.png" 
+                                        src="../../assets/br-flag-icon.png" 
                                         alt="Português"
                                     />
                                     <span>Português</span>
                                 </button>
                                 <button class="language-option" data-language="translations">
                                     <img 
-                                        src="../assets/us-flag-icon.png" 
+                                        src="../../assets/us-flag-icon.png" 
                                         alt="English"
                                     />
                                     <span>English</span>
                                 </button>
                                 <button class="language-option" data-language="traducciones">
                                     <img 
-                                        src="../assets/es-flag-icon.png" 
+                                        src="../../assets/es-flag-icon.png" 
                                         alt="Español"
                                     />
                                     <span>Español</span>
                                 </button>
                                 <button class="language-option" data-language="ubersetzungen">
                                     <img 
-                                        src="../assets/de-flag-icon.png" 
+                                        src="../../assets/de-flag-icon.png" 
                                         alt="Deutsch"
                                     />
                                     <span>Deutsch</span>
@@ -96,75 +96,70 @@
             </div>
         </header>
 
-        <main class="placar-container">
+        <main class="numeros-container">
             <div class="container">
                 <div class="game-info" id="gameInfo">
                     <div class="game-round">
-                        <span data-key="placar-round">Rodada</span> <span id="rodadaAtual">1</span>/10
+                        <span data-key="numeros-round">Rodada</span> 
+                        <span id="rodadaAtual">1</span>/10
                     </div>
-
                     <div class="game-score">
-                        <i class="fas fa-star"></i> <span id="pontos">0</span> <span data-key="placar-pts">pts</span>
+                        <i class="fas fa-check-circle"></i> 
+                        <span id="acertos">0</span>/10
                     </div>
                 </div>
 
-                <section class="match-card" id="matchCard">
-                    <div class="match-competition" id="competicao"></div>
-                    <div class="match-teams">
-                        <div class="team home">
-                            <span class="team-name" id="mandante"></span>
-                            <input 
-                                type="number" 
-                                class="score-input" 
-                                id="inputMandante" 
-                                min="0" 
-                                max="20" 
-                                value="0"
-                            >
+                <section class="game-area" id="gameArea">
+                    <div class="player-card">
+                        <div class="player-card-icon">
+                            <i class="fas fa-tshirt"></i>
+                            <span class="shirt-question">?</span>
                         </div>
-                        
-                        <div class="match-vs">×</div>
-                        <div class="team away">
-                            <input 
-                                type="number" 
-                                class="score-input" 
-                                id="inputVisitante" 
-                                min="0" 
-                                max="20" 
-                                value="0"
-                            >
-                            <span class="team-name" id="visitante"></span>
-                        </div>
+                        <h3 class="player-name" id="jogadorNome"></h3>
+                        <p class="player-club" id="jogadorClube"></p>
+                        <p class="player-period" id="jogadorPeriodo"></p>
                     </div>
-                    <button class="btn-confirm" id="btnConfirmar">
-                        <i class="fas fa-check"></i> <span data-key="placar-confirm">Confirmar</span>
-                    </button>
+
+                    <div class="guess-area">
+                        <div class="attempts-display">
+                            <span id="tentativas">3</span> 
+                            <span data-key="numeros-attempts">tentativa(s) restante(s)</span>
+                        </div>
+                        <div class="input-row">
+                            <input type="number" id="inputNumero" data-key="numeros-input-placeholder" placeholder="Nº da camisa..." min="1" max="99" autocomplete="off">
+                            <button class="btn-guess" id="btnGuess">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="guess-feedback hidden" id="guessFeedback"></div>
+                    </div>
                 </section>
 
-                <section class="result-feedback hidden" id="resultFeedback">
-                    <div class="feedback-icon" id="feedbackIcon"></div>
-                    <div class="feedback-text" id="feedbackText"></div>
-                    <div class="feedback-score" id="feedbackScore"></div>
+                <section class="round-result hidden" id="roundResult">
+                    <div class="round-icon" id="roundIcon"></div>
+                    <p class="round-text" id="roundText"></p>
+                    <p class="round-answer" id="roundAnswer"></p>
                     <button class="btn-next" id="btnNext">
-                        <i class="fas fa-arrow-right"></i> <span data-key="placar-next">Próximo</span>
+                        <i class="fas fa-arrow-right"></i> 
+                        <span data-key="numeros-next">Próximo</span>
                     </button>
                 </section>
 
                 <section class="final-result hidden" id="finalResult">
-                    <h2><i class="fas fa-trophy"></i> <span data-key="placar-final-title">Fim de Jogo!</span></h2>
+                    <h2><i class="fas fa-trophy"></i> <span data-key="numeros-final-title">Fim!</span></h2>
                     <div class="final-score">
                         <span class="final-points" id="finalPoints">0</span>
-                        <span class="final-label" data-key="placar-final-label">/30 pontos</span>
+                        <span class="final-label" data-key="numeros-final-label">/10 acertos</span>
                     </div>
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
                         <button class="btn-retry" id="btnRetry">
-                            <i class="fas fa-redo"></i> <span data-key="placar-retry">Novo Jogo</span>
+                            <i class="fas fa-redo"></i> <span data-key="numeros-retry">Novo Jogo</span>
                         </button>
-                        
+
                         <button class="btn-home" id="btnHome">
-                            <i class="fas fa-home"></i> <span data-key="placar-home">Menu Principal</span>
+                            <i class="fas fa-home"></i> <span data-key="numeros-home">Menu Principal</span>
                         </button>
                     </div>
                 </section>
@@ -175,7 +170,9 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                        <h3>
+                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                        </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
@@ -201,12 +198,12 @@
             </div>
         </footer>
 
-        <script src="../scripts/translation/english.js"></script>
-        <script src="../scripts/translation/german.js"></script>
-        <script src="../scripts/translation/portuguese.js"></script>
-        <script src="../scripts/translation/spanish.js"></script>
-        <script src="../scripts/traducao.js"></script>
-        <script src="../scripts/script.js"></script>
-        <script type="module" src="../scripts/games/football-placar/main.js"></script>
+        <script src="../../scripts/translation/english.js"></script>
+        <script src="../../scripts/translation/german.js"></script>
+        <script src="../../scripts/translation/portuguese.js"></script>
+        <script src="../../scripts/translation/spanish.js"></script>
+        <script src="../../scripts/traducao.js"></script>
+        <script src="../../scripts/script.js"></script>
+        <script type="module" src="../../scripts/games/football-numeros/main.js"></script>
     </body>
 </html>
