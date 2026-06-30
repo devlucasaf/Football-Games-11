@@ -171,7 +171,7 @@
             "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/330px-Flag_of_Brazil.svg.png"
         },
         {
-            "pais": ["Argentina"],
+            "pais": "Argentina",
             "bandeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1280px-Flag_of_Argentina.svg.png"
         },
         {

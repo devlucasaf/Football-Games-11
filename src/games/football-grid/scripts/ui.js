@@ -36,13 +36,13 @@ const GridInterface = {
         if (tipo === "clube") {
             const info = GridDados.clubeExibicao.get(chave);
             return { 
-                nome: (info?.nome ?? chave).toUpperCase(), 
+                nome: String(info?.nome ?? chave).toUpperCase(), 
                 imagem: info?.escudo ?? null 
             };
         }
         const info = GridDados.paisExibicao.get(chave);
         return { 
-            nome: (info?.nome ?? chave).toUpperCase(), 
+            nome: String(info?.nome ?? chave).toUpperCase(), 
             imagem: info?.bandeira ?? null 
         };
     },
