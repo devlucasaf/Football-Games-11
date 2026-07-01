@@ -23,59 +23,6 @@
                         </h1>
                     </a>
                 </div>
-                <div class="builder-controls">
-                    <button class="btn-formation" id="formationToggle">
-                        <i class="fas fa-sitemap"></i>
-                        <span id="currentFormation">4-3-3</span>
-                    </button>
-
-                    <div class="language-selector">
-                        <button class="btn-language" id="languageToggle" title="Selecionar idioma">
-                            <img 
-                                src="....//assets/br-flag-icon.png" 
-                                alt="Português" 
-                                id="currentLanguageFlag"
-                            />
-                        </button>
-                        <div class="language-dropdown" id="languageDropdown">
-                            <button class="language-option" data-language="traducoes">
-                                <img 
-                                    src="../../assets/br-flag-icon.png" 
-                                    alt="Português"
-                                />
-                                <span>Português</span>
-                            </button>
-
-                            <button class="language-option" data-language="translations">
-                                <img 
-                                    src="../../assets/us-flag-icon.png" 
-                                    alt="English"
-                                />
-                                <span>English</span>
-                            </button>
-
-                            <button class="language-option" data-language="traducciones">
-                                <img 
-                                    src="../../assets/es-flag-icon.png" 
-                                    alt="Español"
-                                />
-                                <span>Español</span>
-                            </button>
-
-                            <button class="language-option" data-language="ubersetzungen">
-                                <img 
-                                    src="../../assets/de-flag-icon.png" 
-                                    alt="Deutsch"
-                                />
-                                <span>Deutsch</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <button class="btn-theme" id="themeToggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
             </div>
         </header>
 
@@ -96,6 +43,11 @@
                     </div>
 
                     <div class="builder-actions">
+                        <button class="btn-formation" id="formationToggle">
+                            <i class="fas fa-sitemap"></i>
+                            <span id="currentFormation">4-3-3</span>
+                        </button>
+
                         <button class="btn-action" id="resetTeam">
                             <i class="fas fa-redo"></i>
                             <span data-key="escala-builder-reset">Reiniciar</span>
@@ -143,15 +95,19 @@
                                 <i class="fas fa-users"></i> 
                                 <span data-key="escala-builder-available">Jogadores Disponíveis</span>
                             </h3>
-                            <div class="position-filter">
-                                <select id="positionFilter">
-                                    <option value="all" data-key="escala-builder-all-pos">Todas as Posições</option>
-                                    <option value="GK" data-key="escala-builder-gk">Goleiros</option>
-                                    <option value="ZAG" data-key="escala-builder-cb">Zagueiros</option>
-                                    <option value="LD/LE" data-key="escala-builder-fb">Laterais</option>
-                                    <option value="VOL/MEI" data-key="escala-builder-mid">Meio-Campo</option>
-                                    <option value="ATA" data-key="escala-builder-att">Atacantes</option>
-                                </select>
+                            <div class="position-filter" id="positionFilter" data-value="all">
+                                <button type="button" class="position-filter-toggle" id="positionFilterToggle" aria-haspopup="listbox" aria-expanded="false">
+                                    <span class="position-filter-label" id="positionFilterLabel" data-key="escala-builder-all-pos">Todas as Posições</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <ul class="position-filter-menu" id="positionFilterMenu" role="listbox">
+                                    <li class="position-filter-option selected" role="option" data-value="all" data-key="escala-builder-all-pos">Todas as Posições</li>
+                                    <li class="position-filter-option" role="option" data-value="GK" data-key="escala-builder-gk">Goleiros</li>
+                                    <li class="position-filter-option" role="option" data-value="ZAG" data-key="escala-builder-cb">Zagueiros</li>
+                                    <li class="position-filter-option" role="option" data-value="LD/LE" data-key="escala-builder-fb">Laterais</li>
+                                    <li class="position-filter-option" role="option" data-value="VOL/MEI" data-key="escala-builder-mid">Meio-Campo</li>
+                                    <li class="position-filter-option" role="option" data-value="ATA" data-key="escala-builder-att">Atacantes</li>
+                                </ul>
                             </div>
                         </div>
                         
@@ -192,6 +148,38 @@
                 </div>
             </div>
         </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i> <span data-key="site-tittle">Football Games 11</span>
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <div class="modal-overlay" id="saveModal" style="display: none;">
             <div class="modal-content">

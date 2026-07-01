@@ -448,9 +448,9 @@
 
 .btn-formation {
     padding: 0.55rem 1.2rem;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
+    background: rgba(92, 185, 122, 0.12);
+    border: 1px solid var(--accent-light-green);
+    color: var(--accent-light-green);
     border-radius: var(--radius-sm);
     font-weight: 700;
     font-size: clamp(0.8rem, 1vw, 0.85rem);
@@ -461,17 +461,22 @@
     transition: all var(--transition-fast);
 }
 
+.btn-formation i {
+    color: var(--accent-light-green);
+}
+
 .btn-formation:hover {
-    border-color: var(--esc-purple-mid);
-    color: var(--esc-purple);
+    background: rgba(92, 185, 122, 0.2);
+    border-color: var(--accent-light-green);
+    color: var(--accent-light-green);
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
 }
 
 .btn-formation.active {
-    border-color: var(--esc-purple);
-    background: var(--esc-purple-pale);
-    color: var(--esc-purple);
+    background: rgba(92, 185, 122, 0.18);
+    border-color: var(--accent-light-green);
+    color: var(--accent-light-green);
 }
 
 /* --- FORMATIONS MENU --- */
@@ -584,21 +589,122 @@
     font-weight: 700;
 }
 
-.position-filter select {
-    width: 100%;
-    padding: 0.5rem 0.7rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-size: clamp(0.8rem, 1vw, 0.85rem);
-    font-family: var(--font-body);
-    outline: none;
-    transition: border-color var(--transition-fast);
+.position-filter {
+    position: relative;
 }
 
-.position-filter select:focus {
+.position-filter-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.position-filter-toggle:hover {
+    border-color: var(--primary-medium-sea-green);
+}
+
+.position-filter-toggle i {
+    font-size: 0.75rem;
+    color: var(--primary-green);
+    transition: transform var(--transition-fast);
+}
+
+.position-filter.open .position-filter-toggle {
     border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(26, 86, 50, 0.08);
+    background: var(--bg-card);
+}
+
+.position-filter.open .position-filter-toggle i {
+    transform: rotate(180deg);
+}
+
+.position-filter-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    max-height: 260px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    display: none;
+    animation: dropdownSlide 0.15s ease;
+}
+
+.position-filter.open .position-filter-menu {
+    display: block;
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.position-filter-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.position-filter-menu::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: var(--radius-full);
+}
+
+.position-filter-option {
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: clamp(0.82rem, 1vw, 0.9rem);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.position-filter-option:last-child {
+    border-bottom: none;
+}
+
+.position-filter-option:hover {
+    background: rgba(26, 86, 50, 0.06);
+    color: var(--primary-green);
+    padding-left: var(--spacing-lg);
+}
+
+.position-filter-option.selected {
+    background: rgba(26, 86, 50, 0.1);
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .position-filter-option:hover,
+[data-theme="dark"] .position-filter-option.selected {
+    background: rgba(92, 185, 122, 0.12);
 }
 
 .players-list {
@@ -729,41 +835,50 @@
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     border: 1px solid var(--border-color);
-    min-height: 480px;
     box-shadow: var(--shadow-sm);
 }
 
 .football-field {
     height: 400px;
-    background: linear-gradient(145deg, #2d8a4e, #1e6a3a);
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #2e8a50 0,
+            #2e8a50 9.09%,
+            #278046 9.09%,
+            #278046 18.18%
+        );
     border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.06);
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.04);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        inset 0 0 60px rgba(0, 0, 0, 0.25),
+        inset 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
 .football-field::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(90deg,
-            transparent 49.85%,
-            rgba(255, 255, 255, 0.04) 50%,
-            transparent 50.15%),
-        linear-gradient(
-            transparent 49.85%,
-            rgba(255, 255, 255, 0.04) 50%,
-            transparent 50.15%);
-    background-size: 50px 50px;
-    opacity: 0.3;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201050%20680'%20preserveAspectRatio='none'%3E%3Cg%20fill='none'%20stroke='%23ffffff'%20stroke-width='4'%20opacity='0.75'%3E%3Crect%20x='10'%20y='10'%20width='1030'%20height='660'%20rx='4'/%3E%3Cline%20x1='525'%20y1='10'%20x2='525'%20y2='670'/%3E%3Ccircle%20cx='525'%20cy='340'%20r='85'/%3E%3Crect%20x='10'%20y='170'%20width='150'%20height='340'/%3E%3Crect%20x='10'%20y='245'%20width='60'%20height='190'/%3E%3Crect%20x='890'%20y='170'%20width='150'%20height='340'/%3E%3Crect%20x='980'%20y='245'%20width='60'%20height='190'/%3E%3Cpath%20d='M160%20268%20A%2085%2085%200%200%201%20160%20412'/%3E%3Cpath%20d='M890%20268%20A%2085%2085%200%200%200%20890%20412'/%3E%3Cpath%20d='M10%2038%20A%2028%2028%200%200%201%2038%2010'/%3E%3Cpath%20d='M1012%2010%20A%2028%2028%200%200%201%201040%2038'/%3E%3Cpath%20d='M10%20642%20A%2028%2028%200%200%200%2038%20670'/%3E%3Cpath%20d='M1040%20642%20A%2028%2028%200%200%200%201012%20670'/%3E%3C/g%3E%3Cg%20fill='%23ffffff'%20opacity='0.75'%3E%3Ccircle%20cx='525'%20cy='340'%20r='5'/%3E%3Ccircle%20cx='110'%20cy='340'%20r='5'/%3E%3Ccircle%20cx='940'%20cy='340'%20r='5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.football-field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.28) 100%);
 }
 
 /* --- FORMATION POSITIONS --- */
 .formation-positions {
     position: absolute;
-    inset: 0;
+    inset: var(--spacing-md);
     pointer-events: none;
 }
 
@@ -771,24 +886,25 @@
     position: absolute;
     width: 56px;
     height: 56px;
-    border: 2px dashed rgba(255, 255, 255, 0.35);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.05);
     pointer-events: auto;
     cursor: pointer;
+    transform: translate(-50%, -50%);
     transition: all var(--transition-fast);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
 
 .position-slot:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: scale(1.06);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%) scale(1.08);
 }
 
 .position-slot.filled {

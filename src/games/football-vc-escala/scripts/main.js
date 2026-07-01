@@ -214,12 +214,7 @@ const EscalaConstrutor = {
         }
 
         // --- ATUALIZA O VALOR DO DROPDOWN DE FILTRO ---
-        const filtroPosicao = document.getElementById("positionFilter");
-        if (filtroPosicao) {
-            filtroPosicao.value = filtro;
-        }
-
-        this.filtrarJogadoresPorPosicao(filtro);
+        this.definirFiltroPosicao(filtro);
     },
 
     // --- ATUALIZA TODA A INTERFACE COM AS MUDANÇAS REALIZADAS ---
@@ -241,11 +236,7 @@ const EscalaConstrutor = {
 
         // --- RESETA O FILTRO SE NENHUMA POSIÇÃO ESTÁ SELECIONADA ---
         if (!this.posicaoSelecionada) {
-            const filtroPosicao = document.getElementById("positionFilter");
-            if (filtroPosicao) {
-                filtroPosicao.value = "all";
-            }
-            this.filtrarJogadoresPorPosicao("all");
+            this.definirFiltroPosicao("all");
         }
     },
 
@@ -343,14 +334,70 @@ const EscalaConstrutor = {
         });
     },
 
-    // --- CONFIGURA TODOS OS EVENTOS DE CLIQUE E INTERAÇÃO DA PÁGINA ---
-    configurarEventos() {
-        // --- TEMA ---
-        const botaoTema = document.getElementById("themeToggle");
-        if (botaoTema) {
-            botaoTema.addEventListener("click", EscalaUtils.alternarTema);
+    // --- DEFINE O VALOR DO FILTRO DE POSIÇÃO (DROPDOWN CUSTOMIZADO) ---
+    definirFiltroPosicao(valor) {
+        const filtro = document.getElementById("positionFilter");
+        const menu = document.getElementById("positionFilterMenu");
+        const rotulo = document.getElementById("positionFilterLabel");
+
+        if (filtro && menu && rotulo) {
+            filtro.dataset.value = valor;
+            menu.querySelectorAll(".position-filter-option").forEach(opcao => {
+                const ativo = opcao.dataset.value === valor;
+                opcao.classList.toggle("selected", ativo);
+                if (ativo) {
+                    rotulo.textContent = opcao.textContent;
+                    rotulo.setAttribute("data-key", opcao.getAttribute("data-key") || "");
+                }
+            });
         }
 
+        this.filtrarJogadoresPorPosicao(valor);
+    },
+
+    // --- CONFIGURA O DROPDOWN CUSTOMIZADO DO FILTRO DE POSIÇÃO ---
+    configurarFiltroPosicao() {
+        const filtro = document.getElementById("positionFilter");
+        const botao = document.getElementById("positionFilterToggle");
+        const menu = document.getElementById("positionFilterMenu");
+
+        if (!filtro || !botao || !menu) {
+            return;
+        }
+
+        const fecharMenu = () => {
+            filtro.classList.remove("open");
+            botao.setAttribute("aria-expanded", "false");
+        };
+
+        botao.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const estaAberto = filtro.classList.toggle("open");
+            botao.setAttribute("aria-expanded", estaAberto ? "true" : "false");
+        });
+
+        menu.querySelectorAll(".position-filter-option").forEach(opcao => {
+            opcao.addEventListener("click", () => {
+                this.definirFiltroPosicao(opcao.dataset.value);
+                fecharMenu();
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!filtro.contains(e.target)) {
+                fecharMenu();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                fecharMenu();
+            }
+        });
+    },
+
+    // --- CONFIGURA TODOS OS EVENTOS DE CLIQUE E INTERAÇÃO DA PÁGINA ---
+    configurarEventos() {
         // --- ALTERNAR FORMAÇÃO ---
         const botaoFormacao = document.getElementById("formationToggle");
         if (botaoFormacao) {
@@ -368,13 +415,8 @@ const EscalaConstrutor = {
             });
         });
 
-        // --- FILTRO DE POSIÇÃO ---
-        const filtroPosicao = document.getElementById("positionFilter");
-        if (filtroPosicao) {
-            filtroPosicao.addEventListener("change", (e) => {
-                this.filtrarJogadoresPorPosicao(e.target.value);
-            });
-        }
+        // --- FILTRO DE POSIÇÃO (DROPDOWN CUSTOMIZADO) ---
+        this.configurarFiltroPosicao();
 
         // --- REINICIAR TIME ---
         const botaoReiniciar = document.getElementById("resetTeam");
