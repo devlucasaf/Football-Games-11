@@ -21,7 +21,7 @@ const GridInterface = {
         this.elementos.cabecalhosLinhas = Array.from(document.querySelectorAll(".club-side"));
 
         // --- CRIA ELEMENTOS DE SUGESTÕES ---
-        const containerInput = document.querySelector(".input-container");
+        const containerInput = document.querySelector(".input-field") || document.querySelector(".input-container");
         if (containerInput) {
             this.elementos.sugestoesEl = document.createElement("div");
             this.elementos.sugestoesEl.className = "suggestions-dropdown";
@@ -118,7 +118,7 @@ const GridInterface = {
         const correspondencias = GridDados.bancoJogadores
             .filter((j) => !jogadoresUsados.has(GridConfig.normalizar(j.nome)))
             .filter((j) => j.nomeCanon.includes(consultaNormalizada))
-            .slice(0, 8);
+            .slice(0, 30);
 
         if (correspondencias.length === 0) {
             this.esconderSugestoes();
