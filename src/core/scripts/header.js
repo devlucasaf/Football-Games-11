@@ -7,7 +7,6 @@ const caminhoBaseHeader = (function () {
 // --- MONTA E INJETA O CABEÇALHO ---
 function renderHeader() {
     const base = caminhoBaseHeader;
-    const assets = new URL(`${base}/../assets/`).href;
     const inicio = new URL(`${base}/../../index.html`).href;
 
     const enderecoAtual = window.location.href.split(/[?#]/)[0];
@@ -24,6 +23,23 @@ function renderHeader() {
                         </button>`
         : "";
 
+    // --- BUSCA DE JOGOS ---
+    const buscaJogos = ehInicio
+        ? `<div class="header-search" id="headerSearch">
+                <input 
+                    type="text" 
+                    id="searchGamesInput" 
+                    class="search-input" 
+                    placeholder="Buscar jogos..." 
+                    data-key="search-placeholder" 
+                    aria-label="Buscar jogos" 
+                />
+                <button class="btn-search" id="btnSearchGames" title="Buscar jogos" aria-label="Buscar jogos">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>`
+        : "";
+
     // --- HTML DO CABEÇALHO ---
     const html = `
             <div class="container">
@@ -33,60 +49,8 @@ function renderHeader() {
                     </div>
 
                     <div class="header-actions">
-                        <div class="language-selector">
-                            <button class="btn-language" id="languageToggle" title="Selecionar idioma">
-                                <img 
-                                    src="${assets}br-flag-icon.png" 
-                                    alt="Português" 
-                                    id="currentLanguageFlag" 
-                                />
-                            </button>
-
-                            <div class="language-dropdown" id="languageDropdown">
-                                <button class="language-option" data-language="traducoes">
-                                    <img 
-                                        src="${assets}br-flag-icon.png" 
-                                        alt="Português" 
-                                    />
-                                    <span>Português</span>
-                                </button>
-
-                                <button class="language-option" data-language="translations">
-                                    <img 
-                                        src="${assets}us-flag-icon.png" 
-                                        alt="English" 
-                                    />
-                                    <span>English</span>
-                                </button>
-
-                                <button class="language-option" data-language="traducciones">
-                                    <img 
-                                        src="${assets}es-flag-icon.png" 
-                                        alt="Español" 
-                                    />
-                                    <span>Español</span>
-                                </button>
-
-                                <button class="language-option" data-language="ubersetzungen">
-                                    <img 
-                                        src="${assets}de-flag-icon.png" 
-                                        alt="Deutsch" 
-                                    />
-                                    <span>Deutsch</span>
-                                </button>
-                            </div>
-                        </div>
-
+                        ${buscaJogos}
                         ${botaoAjuda}
-                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
-                            <i class="fas fa-moon"></i>
-                        </button>
-
-                        <button class="btn-procurar" id="searchToggle" title="Procurar"></button>
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
                     </div>
                 </div>
             </div>`;
@@ -94,7 +58,7 @@ function renderHeader() {
     // --- INSERE NO CABEÇALHO EXISTENTE OU CRIA UM NOVO ---
     let header = document.querySelector("header.main-header");
 
-    // --- NÃO SOBRESCREVE CABEÇALHOS PERSONALIZADOS (EX.: BUILDERS) ---
+    // --- NÃO SOBRESCREVE CABEÇALHOS PERSONALIZADOS ---
     if (header && header.children.length > 0) {
         return;
     }
