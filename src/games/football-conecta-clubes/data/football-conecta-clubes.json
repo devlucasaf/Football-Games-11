@@ -23,12 +23,19 @@
         {
             "clube1": "Real Madrid",
             "clube2": "Juventus",
-            "respostas": ["Cristiano Ronaldo", "Zinedine Zidane", "Gonzalo Higuaín", "Fabio Cannavaro", "Emerson", "Sami Khedira"]
+            "respostas": [
+                "Cristiano Ronaldo", "Zinedine Zidane", "Gonzalo Higuaín", "Fabio Cannavaro", "Emerson", "Sami Khedira",
+                "Dean Huijsen", "Ángel Di María", "Álvaro Morata", "Danilo", "Nicolas Anelka", "Michael Laudrup",
+                "Juan Esnáider", "Robert Jarni"
+            ]
         },
         {
             "clube1": "Manchester United",
             "clube2": "Real Madrid",
-            "respostas": ["Cristiano Ronaldo", "David Beckham", "Van Nistelrooy", "Di María", "Casemiro", "Varane"]
+            "respostas": [
+                "Cristiano Ronaldo", "David Beckham", "Ruud Van Nistelrooy", "Ángel Di María", "Casemiro", "Raphaël Varane", "Laurie Cunningham",
+                "Michael Owen", "Chicharito Hernández", "Juan Mata", "Guilhermo Varela", "Gabriel Heinze", "Álvaro Carreras", "Sergio Reguilón"
+            ]
         },
         {
             "clube1": "Flamengo",
@@ -38,7 +45,14 @@
         {
             "clube1": "Inter de Milão",
             "clube2": "Milan",
-            "respostas": ["Andrea Pirlo", "Ronaldo", "Zlatan Ibrahimović", "Clarence Seedorf", "Hakan Çalhanoğlu", "Vieri"]
+            "respostas": [
+                "Andrea Pirlo", "Ronaldo", "Zlatan Ibrahimović", "Clarence Seedorf", "Hakan Çalhanoğlu", "Christian Vieri", "Mario Balotelli",
+                "Hernan Crespo", "Roberto Baggio", "Edgar Davids", "Leonardo Bonucci", "Matteo Darmian", "Attila Filkor", "Giorgio Ghezzi",
+                "Mario Barluzzi", "Angelo Bollano", "Franco Ponzinibio", "Drazen Brncic", "Cesare Cevenini", "Mancini", "Mario Cevenini",
+                "Andrea Poli", "Sulley Muntari", "Marco Sala", "Giuseppe Meazza", "Elpidio Coppa", "Marco Fossati", "Pierluigi Orlandini",
+                "Fabrizio Ferron", "Antonio Angelillo", "Francesco Soldera", "Giancarlo Pasinato", "Matías Silvestre", "Filippo Maniero",
+                ""
+            ]
         },
         {
             "clube1": "Chelsea",
@@ -63,12 +77,15 @@
         {
             "clube1": "Manchester United",
             "clube2": "Juventus",
-            "respostas": ["Pogba", "Tevez", "Cristiano Ronaldo", "Evra"]
+            "respostas": ["Pogba", "Tevez", "Cristiano Ronaldo", "Evra", "Zlatan Ibrahimović"]
         },
         {
             "clube1": "Real Madrid",
             "clube2": "Paris Saint-Germain",
-            "respostas": ["Mbappé", "Sergio Ramos", "Di María", "Navas", "Beckham", "Ronaldinho"]
+            "respostas": [
+                "Kylian Mbappé", "Sergio Ramos", "Ángel Di María", "Keylor Navas", "David Beckham", "Achraf Hakimi", "Agostinho",
+                "Lassana Diarra", "Gabriel Heinze", "Nicolas Anelka"
+            ]
         },
         {
             "clube1": "Barcelona",
@@ -76,9 +93,59 @@
             "respostas": ["Griezmann", "Suárez", "David Villa", "Arda Turan"]
         },
         {
+            "clube1": "Real Madrid",
+            "clube2": "Atlético de Madrid",
+            "respostas": [
+                "Álvaro Morata", "Hugo Sanchez", "Marcos Llorente", "Pablo Barrios", "Mario de Luis", "Rafa Llorente",
+                "Theo Hernández", "Sergi González", "José Jurado", "Filipe Luís", "Saúl Ñínguez", "Raúl", "Thibaut Courtois",
+                "Rodrigo Fabri", "Santiago Solari", "Juan Esnáider", "Luis Olaso", "Triana", "Lazcano", "Pruden Sáez", "Antonio de Miguel",
+                "Féliz Pérez", "Cabo", "Valderrama", "Luis Aragonés", "Bernd Schuster", "Juanfran", "Sergio Reguilón", "Samaniego"
+            ]
+        },
+        {
             "clube1": "Chelsea",
             "clube2": "Real Madrid",
-            "respostas": ["Hazard", "Courtois", "Casillas", "Essien"]
+            "respostas": [
+                "Eden Hazard", "Thibaut Courtois", "Michael Essien", "Saúl Ñínguez", "Filipe Luís", "Samuel Eto'o", "Álvaro Morata", "Arjen Robben",
+                "Gonzalo Higuaín", "Nicolas Anelka", "Juan Mata", "Kepa Arrizabalaga", "Antonio Rüdiger", "Marc Cucurella", "Claude Makélélé",
+                "Mateo Kovacic", "Ricardo Carvalho", "Lassana Diarra", "Marcos Alonso", "Christian Panucci", "Geremi Njitap"
+            ]
+        },
+        {
+            "clube1": "Liverpool",
+            "clube2": "Real Madrid",
+            "respostas": [ "Nicolas Anelka", "Rafa Páez" ]
+        },
+        {
+            "clube1": "Manchester City",
+            "clube2": "Real Madrid",
+            "respostas": [ 
+                "Nicolas Anelka", "Bernardo Silva", "Robinho", "Danilo", "Brahim Díaz", "Javi García", "Emmanuel Adebayor", 
+                "Mateo Kovacic", "Hayley Raso", "Álvaro Negredo", "Iker Pozo", "Steve McManaman", "José Ángel Pozo"
+            ]
+        },
+        {
+            "clube1": "Arsenal",
+            "clube2": "Real Madrid",
+            "respostas": [ 
+                "Martin Ødegaard", "Kepa Arrizabalaga", "Dani Ceballos", "Mesut Ozil", "Nicolas Anelka", "Jose Antonio Reyes",
+                "Emmanuel Adebayor", "Julio Baptista", "Lassana Diarra", "Davor Suker"
+            ]
+        },
+        {
+            "clube1": "Totthenham",
+            "clube2": "Real Madrid",
+            "respostas": [ 
+                "Nicolas Anelka", "Bernardo Silva", "Robinho", "Danilo", "Brahim Díaz", "Javi García", "Emmanuel Adebayor", 
+                "Mateo Kovacic", "Hayley Raso", "Álvaro Negredo", "Iker Pozo", "Steve McManaman", "José Ángel Pozo"
+            ]
+        },
+        {
+            "clube1": "Chelsea",
+            "clube2": "Barcelona",
+            "respostas": [
+                "Samuel Eto'o"
+            ]
         },
         {
             "clube1": "Flamengo",
@@ -93,7 +160,7 @@
         {
             "clube1": "Juventus",
             "clube2": "Milan",
-            "respostas": ["Pirlo", "Bonucci", "Higuaín", "Ibrahimović", "Inzaghi"]
+            "respostas": ["Andrea Pirlo", "Bonucci", "Gonzalo Higuaín", "Zlatan Ibrahimović", "Filippo Inzaghi"]
         },
         {
             "clube1": "Bayern de Munique",
@@ -113,7 +180,7 @@
         {
             "clube1": "Manchester City",
             "clube2": "Barcelona",
-            "respostas": ["Sergio Agüero", "Claudio Bravo", "Eric García", "Yaya Touré"]
+            "respostas": ["Sergio Agüero", "Claudio Bravo", "Eric García", "Yaya Touré", "Ferran Torres"]
         }
     ]
 }
