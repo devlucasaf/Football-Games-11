@@ -20,12 +20,15 @@
                 </div>
                 <ul class="tutorial-steps">
                     <li><span class="tutorial-step-number">1</span><span data-key="duelo-tutorial-step1"> Dois elencos históricos se enfrentam.</span></li>
-                    <li><span class="tutorial-step-number">2</span><span data-key="duelo-tutorial-step2"> Para cada posição, escolha quem foi o melhor jogador.</span></li>
-                    <li><span class="tutorial-step-number">3</span><span data-key="duelo-tutorial-step3"> O jogador correto aparece no campo.</span></li>
-                    <li><span class="tutorial-step-number">4</span><span data-key="duelo-tutorial-step4"> Acerte o máximo de 11 posições!</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="duelo-tutorial-step2"> Para cada posição, escolha quem você acha melhor.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="duelo-tutorial-step3"> Não há resposta certa — a decisão é sua!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="duelo-tutorial-step4"> No final, veja a escalação que você montou.</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="duelo-tutorial-play">Jogar</span></button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="duelo-tutorial-play">Jogar</span>
+                    </button>
                     <button class="tutorial-skip" id="tutorialSkipBtn" data-key="duelo-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
@@ -33,45 +36,43 @@
 
         <header class="main-header"></header>
 
-        <!-- Main Content -->
         <main class="duelo-container">
             <div class="container">
                 <div class="duelo-header" id="dueloHeader">
                     <div class="duelo-teams">
                         <div class="team-badge team-a">
+                            <img class="team-escudo" id="timeAEscudo" src="" alt="" />
                             <h3 id="timeANome">Time A</h3>
                             <span id="timeATemp"></span>
                         </div>
                         <div class="duelo-vs">VS</div>
                         <div class="team-badge team-b">
+                            <img class="team-escudo" id="timeBEscudo" src="" alt="" />
                             <h3 id="timeBNome">Time B</h3>
                             <span id="timeBTemp"></span>
                         </div>
                     </div>
-                    <div class="duelo-score">
-                        <i class="fas fa-check-circle"></i> <span id="pontuacao">0</span>/11
-                    </div>
                 </div>
 
                 <div class="escolha-area" id="escolhaArea">
+                    <p class="escolha-titulo" data-key="duelo-question">Quem foi melhor?</p>
                     <div class="posicao-info">
                         <span id="posicaoAtual">1/11 — GOL</span>
                     </div>
                     <div class="escolha-cards">
                         <button class="escolha-card" id="cardA">
+                            <img class="card-escudo" id="escudoA" src="" alt="" />
                             <span class="card-team" id="posLabelA">Time A</span>
                             <span class="card-player" id="nomeA">Jogador A</span>
                         </button>
+
                         <span class="escolha-ou" data-key="duelo-ou">ou</span>
                         <button class="escolha-card" id="cardB">
+                            <img class="card-escudo" id="escudoB" src="" alt="" />
                             <span class="card-team" id="posLabelB">Time B</span>
                             <span class="card-player" id="nomeB">Jogador B</span>
                         </button>
                     </div>
-                </div>
-
-                <div class="feedback hidden" id="feedback">
-                    <span id="feedbackText"></span>
                 </div>
 
                 <section class="field-wrapper hidden">
@@ -90,14 +91,10 @@
 
                 <section class="final-result hidden" id="finalResult">
                     <h2>
-                        <i class="fas fa-trophy"></i> 
-                        <span data-key="duelo-final-title">Fim de Jogo!</span>
+                        <i class="fas fa-clipboard-list"></i> 
+                        <span data-key="duelo-final-title">Sua Escalação</span>
                     </h2>
-
-                    <div class="final-score">
-                        <span class="final-points" id="finalPoints">0/11</span>
-                        <span class="final-label" data-key="duelo-final-label">acertos</span>
-                    </div>
+                    <p class="final-subtitle" data-key="duelo-final-subtitle">Os craques que você escolheu</p>
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
@@ -120,7 +117,7 @@
                 <div class="footer-content">
                     <div class="footer-logo">
                         <h3>
-                            <i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11
+                            <i class="fas fa-futbol"></i> Football Games 11
                         </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>

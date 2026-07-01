@@ -1,8 +1,8 @@
 {
     "duelos": [
         {
-            "timeA": { "nome": "Botafogo", "temporada": "2024" },
-            "timeB": { "nome": "Flamengo", "temporada": "2022" },
+            "timeA": { "nome": "Botafogo", "temporada": "2024", "escudo": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Escudo_Botafogo.png" },
+            "timeB": { "nome": "Flamengo", "temporada": "2022", "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png" },
             "formacao": "4-3-3",
             "posicoes": [
                 { "posicao": "GOL",     "jogadorA": "John",             "jogadorB": "Santos" },
@@ -19,8 +19,8 @@
             ]
         },
         {
-            "timeA": { "nome": "Real Madrid", "temporada": "2016/17" },
-            "timeB": { "nome": "Barcelona", "temporada": "2014/15" },
+            "timeA": { "nome": "Real Madrid", "temporada": "2016/17", "escudo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" },
+            "timeB": { "nome": "Barcelona", "temporada": "2014/15", "escudo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" },
             "formacao": "4-3-3",
             "posicoes": [
                 { "posicao": "GOL",     "jogadorA": "Keylor Navas",         "jogadorB": "Ter Stegen" },
@@ -37,8 +37,8 @@
             ]
         },
         {
-            "timeA": { "nome": "Brasil", "temporada": "2002" },
-            "timeB": { "nome": "Argentina", "temporada": "2022" },
+            "timeA": { "nome": "Brasil", "temporada": "2002", "escudo": "https://www.futbox.com/img/v1/fc8/26f/ef3/589/ce4738baa94fe1d4218f_zoom.png" },
+            "timeB": { "nome": "Argentina", "temporada": "2022", "escudo": "https://upload.wikimedia.org/wikipedia/pt/f/fc/230px-Afa_logo.svg.png" },
             "formacao": "4-3-3",
             "posicoes": [
                 { "posicao": "GOL", "jogadorA": "Marcos", "jogadorB": "E. Martinez" },
@@ -55,8 +55,8 @@
             ]
         },
         {
-            "timeA": { "nome": "Palmeiras", "temporada": "2021" },
-            "timeB": { "nome": "Flamengo", "temporada": "2019" },
+            "timeA": { "nome": "Palmeiras", "temporada": "2021", "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/500px-Palmeiras_logo.svg.png" },
+            "timeB": { "nome": "Flamengo", "temporada": "2019", "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Clube_de_Regatas_do_Flamengo_logo.svg/500px-Clube_de_Regatas_do_Flamengo_logo.svg.png" },
             "formacao": "4-3-3",
             "posicoes": [
                 { "posicao": "GOL", "jogadorA": "Weverton", "jogadorB": "Diego Alves" },
@@ -73,8 +73,8 @@
             ]
         },
         {
-            "timeA": { "nome": "Liverpool", "temporada": "2018/19" },
-            "timeB": { "nome": "Manchester City", "temporada": "2022/23" },
+            "timeA": { "nome": "Liverpool", "temporada": "2018/19", "escudo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" },
+            "timeB": { "nome": "Manchester City", "temporada": "2022/23", "escudo": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" },
             "formacao": "4-3-3",
             "posicoes": [
                 { "posicao": "GOL", "jogadorA": "Alisson", "jogadorB": "Ederson" },

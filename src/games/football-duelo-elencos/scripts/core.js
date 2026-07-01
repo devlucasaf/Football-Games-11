@@ -5,5 +5,5 @@ export const estado = {
     posicaoIdx:     0,
     totalPosicoes:  11,
     respondido:     false,
-    escolhas:       []  
+    escolhas:       []
 };

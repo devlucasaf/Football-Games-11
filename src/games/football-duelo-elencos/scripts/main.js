@@ -3,13 +3,12 @@ import { carregarDados, escolherDuelo, obterPosicaoAtual } from "./data.js";
 import {
     configurarDuelo,
     mostrarEscolha,
-    revelarResultado,
+    registrarEscolha,
     colocarJogadorNoCampo,
-    atualizarPontuacao,
     mostrarResultadoFinal
 } from "./ui.js";
 
-// --- VERIFICAR ESCOLHA ---
+// --- REGISTRAR ESCOLHA DO JOGADOR ---
 function verificarEscolha(escolha) {
     if (estado.respondido) {
         return;
@@ -17,17 +16,22 @@ function verificarEscolha(escolha) {
     estado.respondido = true;
 
     const posicao = obterPosicaoAtual();
+    const time = escolha === "A" ? estado.dueloAtual.timeA : estado.dueloAtual.timeB;
+    const jogador = escolha === "A" ? posicao.jogadorA : posicao.jogadorB;
 
     estado.escolhas.push({
         posicao: posicao.posicao,
         jogadorA: posicao.jogadorA,
         jogadorB: posicao.jogadorB,
-        escolha
+        escolha,
+        jogador,
+        time: time.nome,
+        temporada:  time.temporada,
+        escudo:     time.escudo
     });
 
-    revelarResultado(escolha, posicao);
-
-    colocarJogadorNoCampo(estado.posicaoIdx);
+    registrarEscolha(escolha);
+    colocarJogadorNoCampo(estado.posicaoIdx, jogador, escolha);
 
     setTimeout(() => {
         estado.posicaoIdx++;
@@ -36,7 +40,7 @@ function verificarEscolha(escolha) {
         } else {
             proximaPosicao();
         }
-    }, 1200);
+    }, 700);
 }
 
 // --- PRÓXIMA POSIÇÃO ---
@@ -48,22 +52,12 @@ function proximaPosicao() {
 
 // --- FINALIZAR ---
 function finalizar() {
-    if (estado.acertos >= 8) {
-        if (window.registrarVitoria) {
-            window.registrarVitoria();
-        }
-    } else {
-        if (window.registrarDerrota) {
-            window.registrarDerrota();
-        }
-    }
     mostrarResultadoFinal();
 }
 
 // --- INICIAR DUELO ---
 function iniciarDuelo() {
     estado.posicaoIdx = 0;
-    estado.acertos = 0;
     estado.respondido = false;
     estado.escolhas = [];
 
