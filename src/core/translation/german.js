@@ -111,7 +111,7 @@ const ubersetzungen = {
     "escala-builder-new": "Neues Team",
 
     // Page: Legends Builder
-    "legends-builder-empty": "Ziehe Spieler auf das Spielfeld oder klicke auf leere Positionen",
+    "legends-builder-empty": "Klicke auf einen Spieler aus der Liste, um ihn aufzustellen",
     "legends-builder-saved": "Aufstellung gespeichert!",
     "legends-builder-saved-msg": "Deine historische Aufstellung wurde erfolgreich gespeichert!",
 
@@ -382,15 +382,17 @@ const ubersetzungen = {
 
     // Duelo de Elencos - Spielseite
     "duelo-tutorial-title": "So spielst du Kader-Duell",
-    "duelo-tutorial-subtitle": "Wähle den besten Spieler auf jeder Position!",
+    "duelo-tutorial-subtitle": "Wähle, wen du auf jeder Position für besser hältst!",
     "duelo-tutorial-step1": " Zwei historische Kader treten gegeneinander an.",
-    "duelo-tutorial-step2": " Wähle für jede Position, wer der bessere Spieler war.",
-    "duelo-tutorial-step3": " Der richtige Spieler erscheint auf dem Feld.",
-    "duelo-tutorial-step4": " Triff so viele der 11 Positionen wie möglich!",
+    "duelo-tutorial-step2": " Wähle für jede Position, wen du für besser hältst.",
+    "duelo-tutorial-step3": " Es gibt keine richtige Antwort — du entscheidest!",
+    "duelo-tutorial-step4": " Sieh am Ende die Aufstellung, die du gebaut hast.",
     "duelo-tutorial-play": "Spielen",
     "duelo-tutorial-skip": "Nicht mehr anzeigen",
+    "duelo-question": "Wer war besser?",
     "duelo-ou": "oder",
-    "duelo-final-title": "Spiel beendet!",
+    "duelo-final-title": "Deine Aufstellung",
+    "duelo-final-subtitle": "Die Stars, die du gewählt hast",
     "duelo-final-label": "richtig",
     "duelo-retry": "Nochmal spielen",
     "duelo-home": "Hauptmenü",
@@ -643,5 +645,36 @@ const ubersetzungen = {
     // Footer
     "footer-made-with": "Mit ❤️ gemacht für Fußballfans",
     "footer-connect": "Verbinde dich",
+    "footer-settings": "Einstellungen",
+    "search-placeholder": "Spiele suchen...",
+    "search-no-results": "Keine Spiele gefunden.",
     "footer-copyright": "© 2026 Football Legends. Alle Rechte vorbehalten.",
+
+    // Einstellungen
+    "config-title": "Einstellungen",
+    "config-subtitle": "Passe dein Erlebnis an",
+    "config-language-title": "Sprache",
+    "config-language-desc": "Wähle die Sprache der Oberfläche",
+    "config-theme-title": "Design",
+    "config-theme-desc": "Zwischen Hell und Dunkel wechseln",
+    "config-theme-label": "Dunkelmodus",
+    "config-accessibility-title": "Barrierefreiheit",
+    "config-accessibility-desc": "Passe die Oberfläche an deine Vorlieben an",
+    "config-reduce-motion": "Animationen reduzieren",
+    "config-reduce-motion-desc": "Deaktiviert Übergänge und Bewegungseffekte",
+    "config-font-size": "Schriftgröße",
+    "config-font-small": "Klein",
+    "config-font-medium": "Mittel",
+    "config-font-large": "Groß",
+    "config-data-title": "Daten und Fortschritt",
+    "config-data-desc": "Verwalte, was im Browser gespeichert wird",
+    "config-reset-tutorials": "Tutorials reaktivieren",
+    "config-reset-tutorials-desc": "Lässt die Spiel-Tutorials wieder erscheinen",
+    "config-reset-tutorials-btn": "Reaktivieren",
+    "config-clear-data": "Alle Daten löschen",
+    "config-clear-data-desc": "Löscht gespeicherte Punkte, Einstellungen und Fortschritt",
+    "config-clear-data-btn": "Löschen",
+    "config-about-title": "Über",
+    "config-about-desc": "Football Games 11 — Hub für Fußball-Minispiele",
+    "config-version": "Version"
 };

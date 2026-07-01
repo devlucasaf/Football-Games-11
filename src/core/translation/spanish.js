@@ -113,7 +113,7 @@ const traducciones = {
     "escala-builder-new": "Nuevo Equipo",
 
     // Page: Legends Builder
-    "legends-builder-empty": "Arrastra jugadores al campo o haz clic en las posiciones vacías",
+    "legends-builder-empty": "Haz clic en un jugador de la lista para alinearlo en el campo",
     "legends-builder-saved": "¡Alineación Guardada!",
     "legends-builder-saved-msg": "¡Tu alineación histórica se guardó con éxito!",
 
@@ -384,15 +384,17 @@ const traducciones = {
 
     // Duelo de Elencos - Página del juego
     "duelo-tutorial-title": "Cómo jugar Duelo de Plantillas",
-    "duelo-tutorial-subtitle": "¡Elige al mejor jugador en cada posición!",
+    "duelo-tutorial-subtitle": "¡Elige quién crees que es mejor en cada posición!",
     "duelo-tutorial-step1": " Dos plantillas históricas se enfrentan.",
-    "duelo-tutorial-step2": " Para cada posición, elige quién fue el mejor jugador.",
-    "duelo-tutorial-step3": " El jugador correcto aparece en el campo.",
-    "duelo-tutorial-step4": " ¡Acierta el máximo de 11 posiciones!",
+    "duelo-tutorial-step2": " Para cada posición, elige quién crees que es mejor.",
+    "duelo-tutorial-step3": " No hay respuesta correcta — ¡tú decides!",
+    "duelo-tutorial-step4": " Al final, mira la alineación que armaste.",
     "duelo-tutorial-play": "Jugar",
     "duelo-tutorial-skip": "No mostrar de nuevo",
+    "duelo-question": "¿Quién fue mejor?",
     "duelo-ou": "o",
-    "duelo-final-title": "¡Fin del Juego!",
+    "duelo-final-title": "Tu Alineación",
+    "duelo-final-subtitle": "Los cracks que elegiste",
     "duelo-final-label": "aciertos",
     "duelo-retry": "Jugar de Nuevo",
     "duelo-home": "Menú Principal",
@@ -649,5 +651,36 @@ const traducciones = {
     // Footer
     "footer-made-with": "Hecho con ❤️ para fans del fútbol",
     "footer-connect": "Conéctate",
-    "footer-copyright": "Todos los derechos reservados."
+    "footer-settings": "Configuración",
+    "search-placeholder": "Buscar juegos...",
+    "search-no-results": "No se encontraron juegos.",
+    "footer-copyright": "Todos los derechos reservados.",
+
+    // Configuración
+    "config-title": "Configuración",
+    "config-subtitle": "Personaliza tu experiencia",
+    "config-language-title": "Idioma",
+    "config-language-desc": "Elige el idioma de la interfaz",
+    "config-theme-title": "Tema",
+    "config-theme-desc": "Alterna entre claro y oscuro",
+    "config-theme-label": "Modo oscuro",
+    "config-accessibility-title": "Accesibilidad",
+    "config-accessibility-desc": "Ajusta la interfaz a tus preferencias",
+    "config-reduce-motion": "Reducir animaciones",
+    "config-reduce-motion-desc": "Desactiva transiciones y efectos de movimiento",
+    "config-font-size": "Tamaño de fuente",
+    "config-font-small": "Pequeño",
+    "config-font-medium": "Medio",
+    "config-font-large": "Grande",
+    "config-data-title": "Datos y progreso",
+    "config-data-desc": "Gestiona lo que se guarda en el navegador",
+    "config-reset-tutorials": "Reactivar tutoriales",
+    "config-reset-tutorials-desc": "Hace que los tutoriales de los juegos aparezcan de nuevo",
+    "config-reset-tutorials-btn": "Reactivar",
+    "config-clear-data": "Borrar todos los datos",
+    "config-clear-data-desc": "Elimina la puntuación, preferencias y progreso guardados",
+    "config-clear-data-btn": "Borrar",
+    "config-about-title": "Acerca de",
+    "config-about-desc": "Football Games 11 — hub de minijuegos de fútbol",
+    "config-version": "Versión"
 };

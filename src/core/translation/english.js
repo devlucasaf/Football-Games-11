@@ -113,7 +113,7 @@ const translations = {
     "escala-builder-new": "New Team",
 
     // Page: Legends Builder
-    "legends-builder-empty": "Drag players to the pitch or click empty positions",
+    "legends-builder-empty": "Click a player from the list to add them to the pitch",
     "legends-builder-saved": "Lineup Saved!",
     "legends-builder-saved-msg": "Your historic lineup was saved successfully!",
 
@@ -384,15 +384,17 @@ const translations = {
 
     // Duelo de Elencos - Game page
     "duelo-tutorial-title": "How to play Squad Duel",
-    "duelo-tutorial-subtitle": "Choose the best player at each position!",
+    "duelo-tutorial-subtitle": "Choose who you think is better at each position!",
     "duelo-tutorial-step1": " Two historic squads face off.",
-    "duelo-tutorial-step2": " For each position, choose who was the better player.",
-    "duelo-tutorial-step3": " The correct player appears on the pitch.",
-    "duelo-tutorial-step4": " Get as many of the 11 positions right as you can!",
+    "duelo-tutorial-step2": " For each position, choose who you think is better.",
+    "duelo-tutorial-step3": " There is no right answer — the choice is yours!",
+    "duelo-tutorial-step4": " At the end, see the lineup you built.",
     "duelo-tutorial-play": "Play",
     "duelo-tutorial-skip": "Don't show again",
+    "duelo-question": "Who was better?",
     "duelo-ou": "or",
-    "duelo-final-title": "Game Over!",
+    "duelo-final-title": "Your Lineup",
+    "duelo-final-subtitle": "The stars you picked",
     "duelo-final-label": "correct",
     "duelo-retry": "Play Again",
     "duelo-home": "Main Menu",
@@ -649,5 +651,36 @@ const translations = {
     // Footer
     "footer-made-with": "Made with ❤️ for football fans",
     "footer-connect": "Connect",
-    "footer-copyright": "All rights reserved."
+    "footer-settings": "Settings",
+    "search-placeholder": "Search games...",
+    "search-no-results": "No games found.",
+    "footer-copyright": "All rights reserved.",
+
+    // Settings
+    "config-title": "Settings",
+    "config-subtitle": "Customize your experience",
+    "config-language-title": "Language",
+    "config-language-desc": "Choose the interface language",
+    "config-theme-title": "Theme",
+    "config-theme-desc": "Switch between light and dark",
+    "config-theme-label": "Dark mode",
+    "config-accessibility-title": "Accessibility",
+    "config-accessibility-desc": "Adjust the interface to your preferences",
+    "config-reduce-motion": "Reduce motion",
+    "config-reduce-motion-desc": "Disables transitions and motion effects",
+    "config-font-size": "Font size",
+    "config-font-small": "Small",
+    "config-font-medium": "Medium",
+    "config-font-large": "Large",
+    "config-data-title": "Data and progress",
+    "config-data-desc": "Manage what is stored in your browser",
+    "config-reset-tutorials": "Reactivate tutorials",
+    "config-reset-tutorials-desc": "Makes game tutorials appear again",
+    "config-reset-tutorials-btn": "Reactivate",
+    "config-clear-data": "Clear all data",
+    "config-clear-data-desc": "Erases saved score, preferences and progress",
+    "config-clear-data-btn": "Clear",
+    "config-about-title": "About",
+    "config-about-desc": "Football Games 11 — football minigames hub",
+    "config-version": "Version"
 };

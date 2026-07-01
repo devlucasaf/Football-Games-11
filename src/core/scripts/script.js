@@ -1,19 +1,24 @@
+// --- APLICA O TEMA SALVO ---
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+
+    const themeToggle = document.getElementById("themeToggle");
+    if (themeToggle) {
+        updateThemeIcon(savedTheme, themeToggle.querySelector("i"));
+    }
+}
+
 // --- ALTERNADOR DE TEMA ---
 function initThemeToggle() {
     const themeToggle = document.getElementById("themeToggle");
-    
+
     if (!themeToggle) {
-        console.warn("Botão de tema não encontrado");
         return;
     }
-    
+
     const themeIcon = themeToggle.querySelector("i");
-    
-    // --- APLICA O TEMA SALVO ---
-    const savedTheme = localStorage.getItem("theme") || "light";
-    document.documentElement.setAttribute("data-theme", savedTheme);
-    updateThemeIcon(savedTheme, themeIcon);
-    
+
     // --- ALTERNA O TEMA AO CLICAR ---
     themeToggle.addEventListener("click", () => {
         const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -47,23 +52,33 @@ function updateThemeIcon(theme, iconElement) {
     }
 }
 
+// --- APLICA O IDIOMA SALVO ---
+function applySavedLanguage() {
+    const savedLanguage = localStorage.getItem("preferredLanguage") || "traducoes";
+
+    if (window.applyTranslation) {
+        window.applyTranslation(savedLanguage);
+    } else {
+        setTimeout(() => {
+            if (window.applyTranslation) {
+                window.applyTranslation(savedLanguage);
+            }
+        }, 100);
+    }
+
+    updateLanguageDisplay(savedLanguage);
+}
+
 // --- SELETOR DE IDIOMA ---
 function initLanguageSelector() {
     const languageToggle        = document.getElementById("languageToggle");
     const languageDropdown      = document.getElementById("languageDropdown");
     const languageOptions       = document.querySelectorAll(".language-option");
-    const currentLanguageFlag   = document.getElementById("currentLanguageFlag");
-    
+
     if (!languageToggle || !languageDropdown) {
-        console.warn("Seletor de idioma não encontrado");
         return;
     }
-    
-    // --- APLICA O IDIOMA SALVO ---
-    const savedLanguage = localStorage.getItem("preferredLanguage") || "traducoes";
-    updateLanguageDisplay(savedLanguage);
-    selectLanguage(savedLanguage);
-    
+
     // --- ABRE/FECHA O DROPDOWN ---
     languageToggle.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -123,11 +138,104 @@ function updateLanguageDisplay(language) {
     });
 }
 
+// --- APLICA AS PREFERÊNCIAS DE ACESSIBILIDADE ---
+function applySavedAccessibility() {
+    const reduzirAnimacoes = localStorage.getItem("fg11_reduzir_animacoes") === "true";
+    document.documentElement.setAttribute("data-reduce-motion", reduzirAnimacoes ? "true" : "false");
+
+    const tamanhoFonte = localStorage.getItem("fg11_tamanho_fonte") || "medio";
+    document.documentElement.setAttribute("data-font-size", tamanhoFonte);
+}
+
+// --- BUSCA DE JOGOS ---
+function initGameSearch() {
+    const container = document.getElementById("headerSearch");
+    const botao = document.getElementById("btnSearchGames");
+    const input = document.getElementById("searchGamesInput");
+
+    if (!container || !botao || !input) {
+        return;
+    }
+
+    // --- FILTRA OS CARDS PELO TÍTULO E DESCRIÇÃO ---
+    function filtrar(termo) {
+        const busca = termo.trim().toLowerCase();
+        const cards = document.querySelectorAll(".coming-soon-card");
+        let visiveis = 0;
+
+        cards.forEach(card => {
+            const titulo = card.querySelector("h4")?.textContent.toLowerCase() || "";
+            const descricao = card.querySelector("p")?.textContent.toLowerCase() || "";
+            const combina = busca === "" || titulo.includes(busca) || descricao.includes(busca);
+
+            card.style.display = combina ? "" : "none";
+            if (combina) {
+                visiveis++;
+            }
+        });
+
+        atualizarMensagemVazia(visiveis === 0 && busca !== "");
+    }
+
+    // --- MOSTRA/OCULTA MENSAGEM ---
+    function atualizarMensagemVazia(mostrar) {
+        const grid = document.querySelector(".coming-soon-grid");
+        if (!grid) {
+            return;
+        }
+
+        let aviso = document.getElementById("searchNoResults");
+
+        if (mostrar) {
+            if (!aviso) {
+                aviso = document.createElement("p");
+                aviso.id = "searchNoResults";
+                aviso.className = "search-no-results";
+                aviso.setAttribute("data-key", "search-no-results");
+                aviso.textContent = "Nenhum jogo encontrado.";
+                grid.after(aviso);
+            }
+            aviso.style.display = "";
+        } else if (aviso) {
+            aviso.style.display = "none";
+        }
+    }
+
+    // --- ABRE/FECHA A BARRA DE BUSCA ---
+    botao.addEventListener("click", () => {
+        const aberto = container.classList.toggle("open");
+
+        if (aberto) {
+            input.focus();
+        } else {
+            input.value = "";
+            filtrar("");
+        }
+    });
+
+    // --- FILTRA ENQUANTO DIGITA ---
+    input.addEventListener("input", () => filtrar(input.value));
+
+    // --- FECHA COM A TECLA ESC ---
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            input.value = "";
+            filtrar("");
+            container.classList.remove("open");
+        }
+    });
+}
+
 // --- INICIALIZAÇÃO ---
 document.addEventListener("DOMContentLoaded", () => {
+    applySavedTheme();
+    applySavedLanguage();
+    applySavedAccessibility();
+
     initThemeToggle();
     initLanguageSelector();
     initScoreboard();
+    initGameSearch();
     
     const comingSoonCards = document.querySelectorAll(".coming-soon-card");
     comingSoonCards.forEach((card, index) => {
@@ -288,3 +396,5 @@ window.registrarVitoria = registrarVitoria;
 window.registrarDerrota = registrarDerrota;
 window.atualizarPlacar = atualizarPlacar;
 window.getScoreboard = getScoreboard;
+window.applySavedAccessibility = applySavedAccessibility;
+window.selectLanguage = selectLanguage;

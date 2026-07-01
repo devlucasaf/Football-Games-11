@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Configurações | Football Games 11</title>
+
+        <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/settings.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+
+    <body>
+        <header class="main-header"></header>
+
+        <main class="container settings-page">
+            <div class="settings-heading">
+                <h2 data-key="config-title">Configurações</h2>
+            </div>
+
+            <!-- --- IDIOMA --- -->
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <i class="fas fa-language"></i>
+                    <div>
+                        <h3 data-key="config-language-title">Idioma</h3>
+                        <p data-key="config-language-desc">Escolha o idioma da interface</p>
+                    </div>
+                </div>
+
+                <div class="settings-card-body">
+                    <div class="language-grid">
+                        <button class="language-option" data-language="traducoes">
+                            <img src="../../assets/br-flag-icon.png" alt="Português">
+                            <span>Português</span>
+                        </button>
+
+                        <button class="language-option" data-language="translations">
+                            <img src="../../assets/us-flag-icon.png" alt="English">
+                            <span>English</span>
+                        </button>
+
+                        <button class="language-option" data-language="traducciones">
+                            <img src="../../assets/es-flag-icon.png" alt="Español">
+                            <span>Español</span>
+                        </button>
+
+                        <button class="language-option" data-language="ubersetzungen">
+                            <img src="../../assets/de-flag-icon.png" alt="Deutsch">
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TEMA --- -->
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <i class="fas fa-palette"></i>
+                    <div>
+                        <h3 data-key="config-theme-title">Tema</h3>
+                        <p data-key="config-theme-desc">Alterne entre claro e escuro</p>
+                    </div>
+                </div>
+
+                <div class="settings-card-body">
+                    <div class="settings-row">
+                        <span class="settings-row-label" data-key="config-theme-label">Modo escuro</span>
+                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- ACESSIBILIDADE --- -->
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <i class="fas fa-universal-access"></i>
+                    <div>
+                        <h3 data-key="config-accessibility-title">Acessibilidade</h3>
+                        <p data-key="config-accessibility-desc">Ajuste a interface às suas preferências</p>
+                    </div>
+                </div>
+
+                <div class="settings-card-body">
+                    <div class="settings-row">
+                        <div>
+                            <span class="settings-row-label" data-key="config-reduce-motion">Reduzir animações</span>
+                            <small class="settings-row-hint" data-key="config-reduce-motion-desc">Desativa transições e efeitos de movimento</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="reduceMotionToggle">
+                            <span class="switch-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings-row">
+                        <span class="settings-row-label" data-key="config-font-size">Tamanho da fonte</span>
+                        <div class="option-group" id="fontSizeGroup">
+                            <button class="option-btn" data-size="pequeno" data-key="config-font-small">Pequeno</button>
+                            <button class="option-btn" data-size="medio" data-key="config-font-medium">Médio</button>
+                            <button class="option-btn" data-size="grande" data-key="config-font-large">Grande</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- DADOS E PROGRESSO --- -->
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <i class="fas fa-database"></i>
+                    <div>
+                        <h3 data-key="config-data-title">Dados e progresso</h3>
+                        <p data-key="config-data-desc">Gerencie o que fica salvo no navegador</p>
+                    </div>
+                </div>
+
+                <div class="settings-card-body">
+                    <div class="settings-row">
+                        <div>
+                            <span class="settings-row-label" data-key="config-reset-tutorials">Reativar tutoriais</span>
+                            <small class="settings-row-hint" data-key="config-reset-tutorials-desc">Faz os tutoriais dos jogos aparecerem novamente</small>
+                        </div>
+                        <button class="btn-settings" id="resetTutorialsBtn">
+                            <i class="fas fa-rotate-right"></i>
+                            <span data-key="config-reset-tutorials-btn">Reativar</span>
+                        </button>
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <span class="settings-row-label" data-key="config-clear-data">Limpar todos os dados</span>
+                            <small class="settings-row-hint" data-key="config-clear-data-desc">Apaga placar, preferências e progresso salvos</small>
+                        </div>
+                        <button class="btn-settings btn-danger" id="clearDataBtn">
+                            <i class="fas fa-trash"></i>
+                            <span data-key="config-clear-data-btn">Limpar</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- SOBRE --- -->
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <i class="fas fa-circle-info"></i>
+                    <div>
+                        <h3 data-key="config-about-title">Sobre</h3>
+                        <p data-key="config-about-desc">Football Games 11 — hub de minigames de futebol</p>
+                    </div>
+                </div>
+
+                <div class="settings-card-body">
+                    <div class="settings-row">
+                        <span class="settings-row-label" data-key="config-version">Versão</span>
+                        <span class="settings-badge">1.0.0</span>
+                    </div>
+
+                    <div class="about-links">
+                        <a href="https://github.com/devlucasaf/Football-Games-11" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" title="GitLab"><i class="fab fa-gitlab"></i></a>
+                        <a href="https://instagram.com/__.fr3it4s.__" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="../scripts/traducao.js"></script>
+        <script src="../scripts/configuracoes.js"></script>
+    </body>
+</html>

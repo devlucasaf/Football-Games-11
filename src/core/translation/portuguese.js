@@ -28,7 +28,7 @@ const traducoes = {
     "legends-stat-teams": "Times Disponíveis",
     "legends-stat-players": "Jogadores",
     "legends-teams-title": "Escolha um Time",
-    "legends-teams-subtitle": "Clique em um time para montar o seu melhor XI histórico",
+    "legends-teams-subtitle": "Clique em um time para montar a sua melhor escalação",
     "legends-loading": "Carregando times...",
     "legends-error": "Erro ao carregar os times. Tente recarregar a página.",
     "legends-tutorial-step1": "Escolha um time ou seleção da lista.",
@@ -111,7 +111,7 @@ const traducoes = {
     "escala-builder-new": "Novo Time",
 
     // Page: Legends Builder
-    "legends-builder-empty": "Arraste jogadores para o campo ou clique nas posições vazias",
+    "legends-builder-empty": "Clique em um jogador da lista para escalá-lo no campo",
     "legends-builder-saved": "Escalação Salva!",
     "legends-builder-saved-msg": "Sua escalação histórica foi salva com sucesso!",
 
@@ -382,15 +382,17 @@ const traducoes = {
 
     // Duelo de Elencos - Página do jogo
     "duelo-tutorial-title": "Como jogar Duelo de Elencos",
-    "duelo-tutorial-subtitle": "Escolha o melhor jogador em cada posição!",
+    "duelo-tutorial-subtitle": "Escolha quem você acha melhor em cada posição!",
     "duelo-tutorial-step1": " Dois elencos históricos se enfrentam.",
-    "duelo-tutorial-step2": " Para cada posição, escolha quem foi o melhor jogador.",
-    "duelo-tutorial-step3": " O jogador correto aparece no campo.",
-    "duelo-tutorial-step4": " Acerte o máximo de 11 posições!",
+    "duelo-tutorial-step2": " Para cada posição, escolha quem você acha melhor.",
+    "duelo-tutorial-step3": " Não há resposta certa — a decisão é sua!",
+    "duelo-tutorial-step4": " No final, veja a escalação que você montou.",
     "duelo-tutorial-play": "Jogar",
     "duelo-tutorial-skip": "Não mostrar novamente",
+    "duelo-question": "Quem foi melhor?",
     "duelo-ou": "ou",
-    "duelo-final-title": "Fim de Jogo!",
+    "duelo-final-title": "Sua Escalação",
+    "duelo-final-subtitle": "Os craques que você escolheu",
     "duelo-final-label": "acertos",
     "duelo-retry": "Jogar Novamente",
     "duelo-home": "Menu Principal",
@@ -647,5 +649,36 @@ const traducoes = {
     // Footer
     "footer-made-with": "Feito com ❤️ para fãs de futebol",
     "footer-connect": "Conecte-se",
-    "footer-copyright": "© 2026 Football Legends. Todos os direitos reservados."
+    "footer-settings": "Configurações",
+    "search-placeholder": "Buscar jogos...",
+    "search-no-results": "Nenhum jogo encontrado.",
+    "footer-copyright": "© 2026 Football Legends. Todos os direitos reservados.",
+
+    // Configurações
+    "config-title": "Configurações",
+    "config-subtitle": "Personalize sua experiência",
+    "config-language-title": "Idioma",
+    "config-language-desc": "Escolha o idioma da interface",
+    "config-theme-title": "Tema",
+    "config-theme-desc": "Alterne entre claro e escuro",
+    "config-theme-label": "Modo escuro",
+    "config-accessibility-title": "Acessibilidade",
+    "config-accessibility-desc": "Ajuste a interface às suas preferências",
+    "config-reduce-motion": "Reduzir animações",
+    "config-reduce-motion-desc": "Desativa transições e efeitos de movimento",
+    "config-font-size": "Tamanho da fonte",
+    "config-font-small": "Pequeno",
+    "config-font-medium": "Médio",
+    "config-font-large": "Grande",
+    "config-data-title": "Dados e progresso",
+    "config-data-desc": "Gerencie o que fica salvo no navegador",
+    "config-reset-tutorials": "Reativar tutoriais",
+    "config-reset-tutorials-desc": "Faz os tutoriais dos jogos aparecerem novamente",
+    "config-reset-tutorials-btn": "Reativar",
+    "config-clear-data": "Limpar todos os dados",
+    "config-clear-data-desc": "Apaga placar, preferências e progresso salvos",
+    "config-clear-data-btn": "Limpar",
+    "config-about-title": "Sobre",
+    "config-about-desc": "Football Games 11 — hub de minigames de futebol",
+    "config-version": "Versão"
 };
