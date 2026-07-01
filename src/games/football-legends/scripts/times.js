@@ -38,22 +38,30 @@ const LegendsTimes = {
         const cartao = document.createElement("div");
         cartao.className = "team-card";
         cartao.dataset.teamKey = time.key;
+        cartao.dataset.teamType = time.type;
 
         const contagemPosicoes = LegendsDados.obterContagemPosicoes(time.players);
 
+        const iconeFallback = time.type === "club" ? "shield-halved" : "flag";
+        const conteudoBadge = time.escudo
+            ? `<img 
+                    class="team-escudo" 
+                    src="${time.escudo}" 
+                    alt="${time.name}" 
+                    loading="lazy" 
+                    onerror="this.style.display='none';this.insertAdjacentHTML('afterend', '<i class=\\'fas fa-${iconeFallback}\\'></i>');"
+                >`
+            : `<i class="fas fa-${iconeFallback}"></i>`;
+
         cartao.innerHTML = `
             <div class="team-badge">
-                <i class="fas fa-${time.type === "club" ? "shield-alt" : "flag"}"></i>
+                ${conteudoBadge}
             </div>
 
             <h3>${time.name}</h3>
 
-            <div class="team-type">
+            <div class="team-type ${time.type === "club" ? "type-club" : "type-selecao"}">
                 ${time.type === "club" ? "Clube" : "Seleção"}
-            </div>
-
-            <div class="team-info">
-                ${time.tecnico ? `<div class="team-coach"><i class="fas fa-user-tie"></i> ${time.tecnico}</div>` : ""}
             </div>
 
             <div class="team-count">

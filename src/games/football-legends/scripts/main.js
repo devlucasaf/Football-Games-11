@@ -22,7 +22,6 @@ const LegendsConstrutor = {
             this.renderizarListaJogadores();
             this.renderizarFormacao();
             this.configurarEventos();
-            this.configurarArrastarSoltar();
 
         } catch (erro) {
             console.error("Erro ao inicializar construtor:", erro);
@@ -76,9 +75,10 @@ const LegendsConstrutor = {
     criarElementoJogador(jogador, indice) {
         const div = document.createElement("div");
 
-        div.className = "player-item";
+        const estaSelecionado = LegendsDados.jogadorEstaSelecionado(jogador.name);
+
+        div.className = `player-item${estaSelecionado ? " selected" : ""}`;
         div.dataset.playerIndex = indice;
-        div.draggable = true;
 
         const grupoPosicao = LegendsDados.obterGrupoPosicao(jogador.pos);
 
@@ -89,9 +89,16 @@ const LegendsConstrutor = {
             </div>
             <div class="player-info">
                 <span>${grupoPosicao}</span>
-                <i class="fas fa-${LegendsDados.jogadorEstaSelecionado(jogador.name) ? "check-circle" : "plus-circle"}"></i>
+                <i class="fas fa-${estaSelecionado ? "check-circle" : "plus-circle"}"></i>
             </div>
         `;
+
+        div.addEventListener("click", () => {
+            const sucesso = LegendsDados.adicionarJogadorAutomaticamente(indice);
+            if (sucesso) {
+                this.atualizarTudo();
+            }
+        });
 
         return div;
     },
@@ -147,47 +154,7 @@ const LegendsConstrutor = {
         return slot;
     },
 
-    // --- CONFIGURAR ARRASTAR E SOLTAR ---
     configurarArrastarSoltar() {
-        const itensJogador = document.querySelectorAll(".player-item");
-        const slotsPosicao = document.querySelectorAll(".position-slot");
-
-        itensJogador.forEach(item => {
-            item.addEventListener("dragstart", (e) => {
-                e.dataTransfer.setData("text/plain", item.dataset.playerIndex);
-                item.classList.add("dragging");
-            });
-
-            item.addEventListener("dragend", () => {
-                item.classList.remove("dragging");
-            });
-        });
-
-        slotsPosicao.forEach(slot => {
-            slot.addEventListener("dragover", (e) => {
-                e.preventDefault();
-                if (!slot.classList.contains("filled")) {
-                    slot.style.borderColor = "var(--accent-purple)";
-                }
-            });
-
-            slot.addEventListener("dragleave", () => {
-                slot.style.borderColor = "";
-            });
-
-            slot.addEventListener("drop", (e) => {
-                e.preventDefault();
-                const indiceJogador = e.dataTransfer.getData("text/plain");
-                const posicao = slot.dataset.position;
-
-                if (indiceJogador && posicao) {
-                    LegendsDados.adicionarJogadorNaPosicao(parseInt(indiceJogador), posicao);
-                    this.atualizarTudo();
-                }
-
-                slot.style.borderColor = "";
-            });
-        });
     },
 
     // --- ATUALIZAR TUDO ---
@@ -196,7 +163,11 @@ const LegendsConstrutor = {
         this.renderizarListaJogadores();
         this.atualizarJogadoresSelecionados();
         this.atualizarContagemCampo();
-        this.configurarArrastarSoltar();
+
+        const filtroPosicao = document.getElementById("positionFilter");
+        if (filtroPosicao) {
+            this.filtrarJogadoresPorPosicao(filtroPosicao.dataset.value || "all");
+        }
     },
 
     // --- ATUALIZAR JOGADORES SELECIONADOS ---
@@ -210,9 +181,12 @@ const LegendsConstrutor = {
             elementoSelecionados.innerHTML = `
                 <div class="empty-state">
                     <i class="fas fa-hand-pointer"></i>
-                    <p>Arraste jogadores para o campo ou clique nas posições vazias</p>
+                    <p data-key="legends-builder-empty">Clique em um jogador da lista para escalá-lo no campo</p>
                 </div>
             `;
+            if (typeof aplicarTraducao === "function") {
+                aplicarTraducao();
+            }
             return;
         }
 
@@ -292,15 +266,59 @@ const LegendsConstrutor = {
         });
     },
 
-    // --- CONFIGURAR EVENTOS ---
-    configurarEventos() {
-        // --- TEMA ---
-        const botaoTema = document.getElementById("themeToggle");
-        if (botaoTema) {
-            botaoTema.addEventListener("click", LegendsUtils.alternarTema);
+    // --- CONFIGURAR FILTRO DE POSIÇÃO ---
+    configurarFiltroPosicao() {
+        const filtro = document.getElementById("positionFilter");
+        const botao = document.getElementById("positionFilterToggle");
+        const menu = document.getElementById("positionFilterMenu");
+        const rotulo = document.getElementById("positionFilterLabel");
+
+        if (!filtro || !botao || !menu || !rotulo) {
+            return;
         }
 
-        // --- ALTERNAR FORMAÇÃO ---
+        const fecharMenu = () => {
+            filtro.classList.remove("open");
+            botao.setAttribute("aria-expanded", "false");
+        };
+
+        botao.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const estaAberto = filtro.classList.toggle("open");
+            botao.setAttribute("aria-expanded", estaAberto ? "true" : "false");
+        });
+
+        menu.querySelectorAll(".position-filter-option").forEach(opcao => {
+            opcao.addEventListener("click", () => {
+                const valor = opcao.dataset.value;
+
+                menu.querySelectorAll(".position-filter-option").forEach(o => o.classList.remove("selected"));
+                opcao.classList.add("selected");
+
+                filtro.dataset.value = valor;
+                rotulo.textContent = opcao.textContent;
+                rotulo.setAttribute("data-key", opcao.getAttribute("data-key") || "");
+
+                this.filtrarJogadoresPorPosicao(valor);
+                fecharMenu();
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!filtro.contains(e.target)) {
+                fecharMenu();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                fecharMenu();
+            }
+        });
+    },
+
+    // --- CONFIGURAR EVENTOS ---
+    configurarEventos() {
         const botaoFormacao = document.getElementById("formationToggle");
         if (botaoFormacao) {
             botaoFormacao.addEventListener("click", () => {
@@ -318,12 +336,7 @@ const LegendsConstrutor = {
         });
 
         // --- FILTRO DE POSIÇÃO ---
-        const filtroPosicao = document.getElementById("positionFilter");
-        if (filtroPosicao) {
-            filtroPosicao.addEventListener("change", (e) => {
-                this.filtrarJogadoresPorPosicao(e.target.value);
-            });
-        }
+        this.configurarFiltroPosicao();
 
         // --- REINICIAR TIME ---
         const botaoReiniciar = document.getElementById("resetTeam");

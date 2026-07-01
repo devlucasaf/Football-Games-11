@@ -27,28 +27,47 @@ const LegendsDados = {
             atacante:   "ATA"
         };
 
-        for (const [pais, edicoes] of Object.entries(this.dadosTimes)) {
-            for (const [ano, dados] of Object.entries(edicoes)) {
+        const criarSlug = (texto) => texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
+
+        for (const [categoria, times] of Object.entries(this.dadosTimes)) {
+            if (!Array.isArray(times)) {
+                continue;
+            }
+
+            const tipo = /clube/i.test(categoria) ? "club" : "selecao";
+
+            times.forEach(dados => {
+                const nome = dados.nome || "Sem nome";
                 const jogadores = [];
 
                 for (const [posicaoChave, nomes] of Object.entries(dados.jogadores || {})) {
                     const posAbreviada = mapaPosicao[posicaoChave] || posicaoChave;
-                    nomes.forEach(nome => {
-                        jogadores.push({ 
-                            name: nome, 
-                            pos: posAbreviada 
+                    (nomes || []).forEach(nomeJogador => {
+                        jogadores.push({
+                            name: nomeJogador,
+                            pos: posAbreviada
                         });
                     });
                 }
 
+                const tecnico = Array.isArray(dados.tecnicos)
+                    ? dados.tecnicos[0] || ""
+                    : (dados.tecnico || "");
+
                 this.timesProcessados.push({
-                    key: `${pais.toLowerCase()}-${ano}`,
-                    name: `${pais} ${ano}`,
-                    type: "selecao",
-                    tecnico: dados.tecnico || "",
+                    key: `${criarSlug(categoria)}-${criarSlug(nome)}`,
+                    name: nome,
+                    type: tipo,
+                    escudo: dados.escudo || dados.logo || dados.bandeira || "",
+                    tecnico,
                     players: jogadores
                 });
-            }
+            });
         }
     },
 
@@ -106,6 +125,71 @@ const LegendsDados = {
 
         // --- ADICIONA NA POSIÇÃO ---
         this.jogadoresSelecionados.set(posicao, jogador);
+    },
+
+    // --- ADICIONAR JOGADOR AUTOMATICAMENTE ---
+    adicionarJogadorAutomaticamente(indiceJogador) {
+        const jogador = this.timeAtual.players[indiceJogador];
+        if (!jogador) {
+            return false;
+        }
+
+        // --- SE JÁ ESTÁ ESCALADO, REMOVE ---
+        if (this.jogadorEstaSelecionado(jogador.name)) {
+            this.removerJogadorDeTodasPosicoes(jogador.name);
+            return true;
+        }
+
+        const slotLivre = this.encontrarSlotLivrePorJogador(jogador);
+        if (!slotLivre) {
+            return false;
+        }
+
+        this.jogadoresSelecionados.set(slotLivre, jogador);
+        return true;
+    },
+
+    // --- ENCONTRAR SLOT LIVRE COMPATÍVEL COM O JOGADOR ---
+    encontrarSlotLivrePorJogador(jogador) {
+        const posicoesFormacao = LegendsConfig.formacoes[this.formacaoAtual].posicoes;
+        const idsFormacao = posicoesFormacao.map(p => p.id);
+
+        const compatibilidade = {
+            GK:  ["GK"],
+            ZAG: ["ZAG1", "ZAG2", "ZAG3"],
+            LAT: ["LD", "LE", "LAT"],
+            MEI: ["VOL", "VOL1", "VOL2", "MEI", "MEI1", "MEI2", "CAM", "MD", "ME", "MOD", "MOE"],
+            ATA: ["CA", "ATA1", "ATA2", "PD", "PE", "MOD", "MOE"]
+        };
+
+        const pos = (jogador.pos || "").toUpperCase();
+        let chave = "MEI";
+        if (pos.includes("GK")) {
+            chave = "GK";
+        } else if (pos.includes("ZAG")) {
+            chave = "ZAG";
+        } else if (pos.includes("LAT") || pos.includes("LD") || pos.includes("LE")) {
+            chave = "LAT";
+        } else if (pos.includes("ATA") || pos.includes("CA") || pos.includes("PD") || pos.includes("PE")) {
+            chave = "ATA";
+        } else {
+            chave = "MEI";
+        }
+
+        const preferidos = compatibilidade[chave] || [];
+        for (const id of preferidos) {
+            if (idsFormacao.includes(id) && !this.jogadoresSelecionados.has(id)) {
+                return id;
+            }
+        }
+
+        for (const id of idsFormacao) {
+            if (!this.jogadoresSelecionados.has(id)) {
+                return id;
+            }
+        }
+
+        return null;
     },
 
     // --- REMOVER JOGADOR DA POSIÇÃO ---
@@ -188,7 +272,7 @@ const LegendsDados = {
 
     // --- GERAR TEXTO DE COMPARTILHAMENTO ---
     gerarTextoCompartilhamento() {
-        let texto = `Melhor XI Histórico do ${this.timeAtual.name}\n`;
+        let texto = `${this.timeAtual.name}\n`;
         texto += `Formação: ${this.formacaoAtual}\n\n`;
 
         this.jogadoresSelecionados.forEach((jogador, posicao) => {
