@@ -81,6 +81,12 @@ function renderHeader() {
                         <button class="btn-theme" id="themeToggle" title="Alterar tema">
                             <i class="fas fa-moon"></i>
                         </button>
+
+                        <button class="btn-procurar" id="searchToggle" title="Procurar"></button>
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
                     </div>
                 </div>
             </div>`;

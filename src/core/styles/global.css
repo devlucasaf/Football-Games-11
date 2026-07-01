@@ -167,7 +167,8 @@ body {
 
 .btn-theme,
 .btn-help,
-.btn-language {
+.btn-language,
+.btn-procurar {
     position: relative;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--border-light);
@@ -185,7 +186,8 @@ body {
 
 .btn-theme:hover,
 .btn-help:hover,
-.btn-language:hover {
+.btn-language:hover,
+.btn-procurar:hover {
     background: rgba(255, 255, 255, 0.18);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -193,7 +195,8 @@ body {
 
 .btn-theme:active,
 .btn-help:active,
-.btn-language:active {
+.btn-language:active,
+.btn-procurar:active {
     transform: scale(0.95);
 }
 
