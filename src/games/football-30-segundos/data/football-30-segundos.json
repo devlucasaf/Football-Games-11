@@ -1,0 +1,198 @@
+{
+    "categorias": [
+        {
+            "pergunta": "Quantos jogadores brasileiros campeões da Copa do Mundo você lembra?",
+            "respostas": [
+                { "nome": "Pelé", "aliases": ["pele", "edson arantes"] },
+                { "nome": "Garrincha", "aliases": ["garrincha", "mane garrincha"] },
+                { "nome": "Cafu", "aliases": ["cafu"] },
+                { "nome": "Roberto Carlos", "aliases": ["roberto carlos"] },
+                { "nome": "Ronaldo", "aliases": ["ronaldo", "ronaldo fenomeno", "r9"] },
+                { "nome": "Ronaldinho", "aliases": ["ronaldinho", "ronaldinho gaucho", "r10"] },
+                { "nome": "Rivaldo", "aliases": ["rivaldo"] },
+                { "nome": "Romário", "aliases": ["romario"] },
+                { "nome": "Bebeto", "aliases": ["bebeto"] },
+                { "nome": "Dunga", "aliases": ["dunga"] },
+                { "nome": "Taffarel", "aliases": ["taffarel", "tafarel"] },
+                { "nome": "Kaká", "aliases": ["kaka"] },
+                { "nome": "Carlos Alberto Torres", "aliases": ["carlos alberto", "carlos alberto torres"] },
+                { "nome": "Jairzinho", "aliases": ["jairzinho"] },
+                { "nome": "Tostão", "aliases": ["tostao"] },
+                { "nome": "Gérson", "aliases": ["gerson"] },
+                { "nome": "Rivelino", "aliases": ["rivelino"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores italianos você lembra?",
+            "respostas": [
+                { "nome": "Paolo Maldini", "aliases": ["maldini", "paolo maldini"] },
+                { "nome": "Franco Baresi", "aliases": ["baresi", "franco baresi"] },
+                { "nome": "Roberto Baggio", "aliases": ["baggio", "roberto baggio"] },
+                { "nome": "Alessandro Del Piero", "aliases": ["del piero", "delpiero"] },
+                { "nome": "Francesco Totti", "aliases": ["totti", "francesco totti"] },
+                { "nome": "Andrea Pirlo", "aliases": ["pirlo", "andrea pirlo"] },
+                { "nome": "Gianluigi Buffon", "aliases": ["buffon", "gianluigi buffon", "gigi buffon"] },
+                { "nome": "Fabio Cannavaro", "aliases": ["cannavaro", "fabio cannavaro"] },
+                { "nome": "Filippo Inzaghi", "aliases": ["inzaghi", "filippo inzaghi", "pippo inzaghi"] },
+                { "nome": "Alessandro Nesta", "aliases": ["nesta", "alessandro nesta"] },
+                { "nome": "Gennaro Gattuso", "aliases": ["gattuso", "gennaro gattuso"] },
+                { "nome": "Christian Vieri", "aliases": ["vieri", "christian vieri"] },
+                { "nome": "Marco Verratti", "aliases": ["verratti", "marco verratti"] },
+                { "nome": "Gianluca Vialli", "aliases": ["vialli", "gianluca vialli"] },
+                { "nome": "Federico Chiesa", "aliases": ["chiesa", "federico chiesa"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores argentinos você lembra?",
+            "respostas": [
+                { "nome": "Diego Maradona", "aliases": ["maradona", "diego maradona"] },
+                { "nome": "Lionel Messi", "aliases": ["messi", "lionel messi", "leo messi"] },
+                { "nome": "Gabriel Batistuta", "aliases": ["batistuta", "gabriel batistuta", "batigol"] },
+                { "nome": "Juan Román Riquelme", "aliases": ["riquelme", "roman riquelme"] },
+                { "nome": "Sergio Agüero", "aliases": ["aguero", "sergio aguero", "kun aguero"] },
+                { "nome": "Ángel Di María", "aliases": ["di maria", "angel di maria", "fideo"] },
+                { "nome": "Javier Zanetti", "aliases": ["zanetti", "javier zanetti"] },
+                { "nome": "Hernán Crespo", "aliases": ["crespo", "hernan crespo"] },
+                { "nome": "Carlos Tévez", "aliases": ["tevez", "carlos tevez"] },
+                { "nome": "Gonzalo Higuaín", "aliases": ["higuain", "gonzalo higuain"] },
+                { "nome": "Javier Mascherano", "aliases": ["mascherano", "javier mascherano"] },
+                { "nome": "Emiliano Martínez", "aliases": ["dibu", "emiliano martinez", "dibu martinez"] },
+                { "nome": "Julián Álvarez", "aliases": ["julian alvarez", "alvarez"] },
+                { "nome": "Pablo Aimar", "aliases": ["aimar", "pablo aimar"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores que atuaram no Real Madrid você lembra?",
+            "respostas": [
+                { "nome": "Cristiano Ronaldo", "aliases": ["cristiano ronaldo", "cristiano", "cr7"] },
+                { "nome": "Sergio Ramos", "aliases": ["ramos", "sergio ramos"] },
+                { "nome": "Karim Benzema", "aliases": ["benzema", "karim benzema"] },
+                { "nome": "Luka Modrić", "aliases": ["modric", "luka modric"] },
+                { "nome": "Toni Kroos", "aliases": ["kroos", "toni kroos"] },
+                { "nome": "Iker Casillas", "aliases": ["casillas", "iker casillas"] },
+                { "nome": "Raúl", "aliases": ["raul"] },
+                { "nome": "Zinedine Zidane", "aliases": ["zidane", "zinedine zidane"] },
+                { "nome": "Ronaldo", "aliases": ["ronaldo", "ronaldo fenomeno"] },
+                { "nome": "Roberto Carlos", "aliases": ["roberto carlos"] },
+                { "nome": "Luís Figo", "aliases": ["figo", "luis figo"] },
+                { "nome": "Gareth Bale", "aliases": ["bale", "gareth bale"] },
+                { "nome": "Marcelo", "aliases": ["marcelo"] },
+                { "nome": "Vinícius Júnior", "aliases": ["vinicius", "vinicius junior", "vini jr"] },
+                { "nome": "Jude Bellingham", "aliases": ["bellingham", "jude bellingham"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores que atuaram no Barcelona você lembra?",
+            "respostas": [
+                { "nome": "Lionel Messi", "aliases": ["messi", "lionel messi", "leo messi"] },
+                { "nome": "Xavi", "aliases": ["xavi", "xavi hernandez"] },
+                { "nome": "Andrés Iniesta", "aliases": ["iniesta", "andres iniesta"] },
+                { "nome": "Ronaldinho", "aliases": ["ronaldinho", "ronaldinho gaucho"] },
+                { "nome": "Carles Puyol", "aliases": ["puyol", "carles puyol"] },
+                { "nome": "Gerard Piqué", "aliases": ["pique", "gerard pique"] },
+                { "nome": "Sergio Busquets", "aliases": ["busquets", "sergio busquets"] },
+                { "nome": "Neymar", "aliases": ["neymar", "neymar jr"] },
+                { "nome": "Luis Suárez", "aliases": ["suarez", "luis suarez"] },
+                { "nome": "Samuel Eto'o", "aliases": ["etoo", "samuel etoo", "eto o"] },
+                { "nome": "Ronaldo", "aliases": ["ronaldo", "ronaldo fenomeno"] },
+                { "nome": "Rivaldo", "aliases": ["rivaldo"] },
+                { "nome": "Deco", "aliases": ["deco"] },
+                { "nome": "Dani Alves", "aliases": ["dani alves", "daniel alves"] },
+                { "nome": "Pedri", "aliases": ["pedri"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores vencedores da Bola de Ouro você lembra?",
+            "respostas": [
+                { "nome": "Lionel Messi", "aliases": ["messi", "lionel messi"] },
+                { "nome": "Cristiano Ronaldo", "aliases": ["cristiano ronaldo", "cr7", "cristiano"] },
+                { "nome": "Ronaldinho", "aliases": ["ronaldinho", "ronaldinho gaucho"] },
+                { "nome": "Ronaldo", "aliases": ["ronaldo", "ronaldo fenomeno"] },
+                { "nome": "Kaká", "aliases": ["kaka"] },
+                { "nome": "Zinedine Zidane", "aliases": ["zidane", "zinedine zidane"] },
+                { "nome": "Luís Figo", "aliases": ["figo", "luis figo"] },
+                { "nome": "Rivaldo", "aliases": ["rivaldo"] },
+                { "nome": "Michael Owen", "aliases": ["owen", "michael owen"] },
+                { "nome": "Pavel Nedvěd", "aliases": ["nedved", "pavel nedved"] },
+                { "nome": "Fabio Cannavaro", "aliases": ["cannavaro", "fabio cannavaro"] },
+                { "nome": "Karim Benzema", "aliases": ["benzema", "karim benzema"] },
+                { "nome": "Luka Modrić", "aliases": ["modric", "luka modric"] },
+                { "nome": "Rodri", "aliases": ["rodri", "rodrigo hernandez"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores que jogaram no Brasileirão em 2024 você lembra?",
+            "respostas": [
+                { "nome": "Gabigol", "aliases": ["gabigol", "gabriel barbosa"] },
+                { "nome": "Hulk", "aliases": ["hulk"] },
+                { "nome": "Raphael Veiga", "aliases": ["raphael veiga", "veiga"] },
+                { "nome": "Pedro", "aliases": ["pedro"] },
+                { "nome": "Everton Ribeiro", "aliases": ["everton ribeiro"] },
+                { "nome": "Arrascaeta", "aliases": ["arrascaeta", "giorgian arrascaeta"] },
+                { "nome": "Endrick", "aliases": ["endrick"] },
+                { "nome": "Rony", "aliases": ["rony"] },
+                { "nome": "Yuri Alberto", "aliases": ["yuri alberto"] },
+                { "nome": "Pedro Raul", "aliases": ["pedro raul"] },
+                { "nome": "Paulinho", "aliases": ["paulinho"] },
+                { "nome": "Luciano", "aliases": ["luciano"] },
+                { "nome": "Calleri", "aliases": ["calleri", "jonathan calleri"] },
+                { "nome": "Alerrandro", "aliases": ["alerrandro"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos jogadores portugueses você lembra?",
+            "respostas": [
+                { "nome": "Cristiano Ronaldo", "aliases": ["cristiano ronaldo", "cr7", "cristiano"] },
+                { "nome": "Luís Figo", "aliases": ["figo", "luis figo"] },
+                { "nome": "Eusébio", "aliases": ["eusebio"] },
+                { "nome": "Rui Costa", "aliases": ["rui costa"] },
+                { "nome": "Deco", "aliases": ["deco"] },
+                { "nome": "Pepe", "aliases": ["pepe"] },
+                { "nome": "Bruno Fernandes", "aliases": ["bruno fernandes"] },
+                { "nome": "Bernardo Silva", "aliases": ["bernardo silva"] },
+                { "nome": "João Félix", "aliases": ["joao felix", "felix"] },
+                { "nome": "Rúben Dias", "aliases": ["ruben dias"] },
+                { "nome": "Nani", "aliases": ["nani"] },
+                { "nome": "Ricardo Carvalho", "aliases": ["ricardo carvalho"] },
+                { "nome": "Rafael Leão", "aliases": ["rafael leao", "leao"] },
+                { "nome": "Vitinha", "aliases": ["vitinha"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos artilheiros da Champions League você lembra?",
+            "respostas": [
+                { "nome": "Cristiano Ronaldo", "aliases": ["cristiano ronaldo", "cr7", "cristiano"] },
+                { "nome": "Lionel Messi", "aliases": ["messi", "lionel messi"] },
+                { "nome": "Robert Lewandowski", "aliases": ["lewandowski", "robert lewandowski", "lewa"] },
+                { "nome": "Karim Benzema", "aliases": ["benzema", "karim benzema"] },
+                { "nome": "Raúl", "aliases": ["raul"] },
+                { "nome": "Ruud van Nistelrooy", "aliases": ["van nistelrooy", "nistelrooy"] },
+                { "nome": "Thomas Müller", "aliases": ["muller", "thomas muller"] },
+                { "nome": "Thierry Henry", "aliases": ["henry", "thierry henry"] },
+                { "nome": "Alfredo Di Stéfano", "aliases": ["di stefano", "alfredo di stefano"] },
+                { "nome": "Andriy Shevchenko", "aliases": ["shevchenko", "andriy shevchenko"] },
+                { "nome": "Zlatan Ibrahimović", "aliases": ["ibrahimovic", "zlatan", "ibra"] },
+                { "nome": "Erling Haaland", "aliases": ["haaland", "erling haaland"] },
+                { "nome": "Kylian Mbappé", "aliases": ["mbappe", "kylian mbappe"] }
+            ]
+        },
+        {
+            "pergunta": "Quantos goleiros você lembra?",
+            "respostas": [
+                { "nome": "Gianluigi Buffon", "aliases": ["buffon", "gianluigi buffon"] },
+                { "nome": "Iker Casillas", "aliases": ["casillas", "iker casillas"] },
+                { "nome": "Manuel Neuer", "aliases": ["neuer", "manuel neuer"] },
+                { "nome": "Oliver Kahn", "aliases": ["kahn", "oliver kahn"] },
+                { "nome": "Petr Čech", "aliases": ["cech", "petr cech"] },
+                { "nome": "Edwin van der Sar", "aliases": ["van der sar"] },
+                { "nome": "Taffarel", "aliases": ["taffarel", "tafarel"] },
+                { "nome": "Dida", "aliases": ["dida"] },
+                { "nome": "Alisson", "aliases": ["alisson", "alisson becker"] },
+                { "nome": "Ederson", "aliases": ["ederson"] },
+                { "nome": "Thibaut Courtois", "aliases": ["courtois", "thibaut courtois"] },
+                { "nome": "Marc-André ter Stegen", "aliases": ["ter stegen"] },
+                { "nome": "Emiliano Martínez", "aliases": ["dibu", "emiliano martinez", "dibu martinez"] }
+            ]
+        }
+    ]
+}

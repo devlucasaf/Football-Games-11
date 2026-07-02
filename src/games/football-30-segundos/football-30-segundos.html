@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>30 Segundos | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-30-segundos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-30-segundos">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-stopwatch"></i>
+                    <h2 data-key="s30-tutorial-title">Como jogar 30 Segundos</h2>
+                    <p data-key="s30-tutorial-subtitle">Quantos você lembra em 30 segundos?</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="s30-tutorial-step1"> Uma pergunta aleatória sobre futebol aparece.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="s30-tutorial-step2"> Digite o máximo de respostas certas que conseguir.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="s30-tutorial-step3"> Você tem apenas 30 segundos no relógio!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="s30-tutorial-step4"> No fim, veja seus acertos e a lista completa.</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="s30-tutorial-play">Jogar</span></button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="s30-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="s30-container">
+            <div class="container">
+                <section class="game-area" id="gameArea">
+                    <div class="s30-topbar">
+                        <div class="s30-timer" id="timerBox">
+                            <i class="fas fa-stopwatch"></i>
+                            <span id="timerValue">30</span>s
+                        </div>
+                        <div class="s30-counter">
+                            <i class="fas fa-check-circle"></i>
+                            <span id="acertosCount">0</span>
+                            <span id="totalPossivel">/0</span>
+                        </div>
+                    </div>
+
+                    <div class="s30-timer-bar">
+                        <div class="s30-timer-fill" id="timerFill"></div>
+                    </div>
+
+                    <div class="s30-question" id="perguntaTexto"></div>
+
+                    <div class="guess-area">
+                        <div class="input-row">
+                            <input 
+                                type="text" 
+                                id="guessInput" 
+                                data-key="s30-input-placeholder" 
+                                placeholder="Digite um nome e pressione Enter..." 
+                                autocomplete="off"
+                            >
+                            <button class="btn-guess" id="btnGuess">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="guess-feedback hidden" id="guessFeedback"></div>
+                    </div>
+
+                    <div class="s30-hits" id="hitsList"></div>
+                </section>
+
+                <section class="final-result hidden" id="finalResult">
+                    <h2>
+                        <i class="fas fa-flag-checkered"></i> 
+                        <span data-key="s30-final-title">Tempo esgotado!</span>
+                    </h2>
+
+                    <div class="final-score">
+                        <span class="final-points" id="finalPoints">0</span>
+                        <span class="final-label" id="finalLabel"></span>
+                    </div>
+
+                    <p class="s30-final-question" id="finalQuestion"></p>
+
+                    <div class="s30-final-columns">
+                        <div class="s30-final-col">
+                            <h3 class="s30-col-title correct"><i class="fas fa-check"></i> <span data-key="s30-you-got">Você acertou</span></h3>
+                            <div class="s30-final-list" id="finalHits"></div>
+                        </div>
+                        <div class="s30-final-col">
+                            <h3 class="s30-col-title missed"><i class="fas fa-times"></i> <span data-key="s30-you-missed">Você não lembrou</span></h3>
+                            <div class="s30-final-list" id="finalMisses"></div>
+                        </div>
+                    </div>
+
+                    <div class="final-actions">
+                        <button class="btn-retry" id="btnRetry">
+                            <i class="fas fa-redo"></i> <span data-key="s30-retry">Novo Jogo</span>
+                        </button>
+
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> <span data-key="s30-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-futbol"></i> Football Games 11</h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4 data-key="footer-connect">Conecte-se</h4>
+                        <div class="social-icons">
+                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
