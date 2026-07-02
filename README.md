@@ -60,14 +60,28 @@ Football-Games-11/
 ├── src/
 │   ├── assets/                     # Icons das bandeiras
 │   ├── core/                       # Recursos compartilhados entre os jogos
+│   │   ├── pages/
+│   │   │   ├── configuracoes.html  # Página de configurações (tema, idioma, acessibilidade)
+│   │   │   ├── sobre.html          # Página institucional "Sobre"
+│   │   │   ├── privacidade.html    # Política de Privacidade
+│   │   │   └── licenca.html        # Página da licença (MIT)
 │   │   ├── scripts/
+│   │   │   ├── configuracoes.js    # Lógica da página de configurações
 │   │   │   ├── formation.js        # Script para montar as formações do futebol
+│   │   │   ├── header.js           # Renderização do cabeçalho compartilhado
 │   │   │   ├── script.js           # Tema, tutorial e utilitários globais
 │   │   │   └── traducao.js         # Lógica de tradução
 │   │   ├── styles/
 │   │   │   ├── global.css          # Estilos globais do site
-│   │   │   └── field.css           # Estilos do campo de futebol
-│   │   └── translation/            # Módulos JS de cada idioma (inglês, português, espanhol e alemão)
+│   │   │   ├── field.css           # Estilos do campo de futebol
+│   │   │   ├── institucional.css   # Estilos das páginas institucionais (sobre/privacidade/licença)
+│   │   │   └── settings.css        # Estilos da página de configurações
+│   │   └── translation/            # Módulos JS de cada idioma
+│   │       ├── english.js
+│   │       ├── french.js
+│   │       ├── german.js
+│   │       ├── portuguese.js
+│   │       └── spanish.js
 │   └── games/                      # Cada minigame é autônomo (HTML + data/ + scripts/ + styles/)
 │       ├── football-30-segundos/
 │       ├── football-acerta-escalacao/
