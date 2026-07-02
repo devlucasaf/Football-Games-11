@@ -10,6 +10,7 @@
         `${base}/translation/german.js`,
         `${base}/translation/portuguese.js`,
         `${base}/translation/spanish.js`,
+        `${base}/translation/french.js`,
         `${base}/scripts/header.js`,
         `${base}/scripts/script.js`
     ];
@@ -25,7 +26,8 @@ function obterTraducoes() {
         translations: typeof translations !== "undefined" ? translations : {},
         traducoes: typeof traducoes !== "undefined" ? traducoes : {},
         ubersetzungen: typeof ubersetzungen !== "undefined" ? ubersetzungen : {},
-        traducciones: typeof traducciones !== "undefined" ? traducciones : {}
+        traducciones: typeof traducciones !== "undefined" ? traducciones : {},
+        traductions: typeof traductions !== "undefined" ? traductions : {}
     };
 }
 

@@ -376,6 +376,50 @@ const ubersetzungen = {
     "treinador-retry": "Neues Spiel",
     "treinador-home": "Hauptmenü",
 
+    // Game: Acerta o Time (Verein erraten)
+    "football-acerte-time-title": "Verein erraten",
+    "football-acerte-time-desc": "Entdecke den Verein durch Hinweise zu seiner Geschichte!",
+
+    // Page: Acerta o Time
+    "time-tutorial-title": "So spielst du Verein erraten",
+    "time-tutorial-subtitle": "Entdecke den Verein durch Hinweise!",
+    "time-tutorial-step1": " Ein erster Hinweis wird aufgedeckt (Standort des Vereins).",
+    "time-tutorial-step2": " Versuche zu raten oder klicke auf Karten für mehr Hinweise.",
+    "time-tutorial-step3": " Je weniger Hinweise du brauchst, desto mehr Punkte bekommst du!",
+    "time-tutorial-step4": " Es gibt 10 Runden. Sammle so viele Punkte wie möglich!",
+    "time-tutorial-play": "Spielen",
+    "time-tutorial-skip": "Nicht mehr anzeigen",
+    "time-round": "Runde",
+    "time-pts": "Pkt",
+    "time-clues-revealed": "Hinweise aufgedeckt",
+    "time-input-placeholder": "Vereinsname...",
+    "time-skip": "Überspringen",
+    "time-next": "Weiter",
+    "time-final-title": "Ende!",
+    "time-final-label": " Punkte",
+    "time-retry": "Neues Spiel",
+    "time-home": "Hauptmenü",
+
+    // Game: 30 Segundos (30 Sekunden)
+    "football-30-segundos-title": "30 Sekunden",
+    "football-30-segundos-desc": "Nenne so viele Spieler wie möglich in 30 Sekunden!",
+
+    // Page: 30 Segundos
+    "s30-tutorial-title": "So spielst du 30 Sekunden",
+    "s30-tutorial-subtitle": "An wie viele erinnerst du dich in 30 Sekunden?",
+    "s30-tutorial-step1": " Eine zufällige Fußballfrage erscheint.",
+    "s30-tutorial-step2": " Tippe so viele richtige Antworten wie möglich.",
+    "s30-tutorial-step3": " Du hast nur 30 Sekunden auf der Uhr!",
+    "s30-tutorial-step4": " Am Ende siehst du deine Treffer und die komplette Liste.",
+    "s30-tutorial-play": "Spielen",
+    "s30-tutorial-skip": "Nicht mehr anzeigen",
+    "s30-input-placeholder": "Namen eingeben und Enter drücken...",
+    "s30-final-title": "Zeit abgelaufen!",
+    "s30-you-got": "Richtig",
+    "s30-you-missed": "Nicht erinnert",
+    "s30-retry": "Neues Spiel",
+    "s30-home": "Hauptmenü",
+
     // Game: Duelo de Elencos 
     "football-duelo-elencos-title": "Kader-Duell",
     "football-duelo-elencos-desc": "Wähle den besseren Spieler auf jeder Position zwischen zwei Kadern!",

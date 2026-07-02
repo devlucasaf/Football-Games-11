@@ -378,6 +378,50 @@ const translations = {
     "treinador-retry": "New Game",
     "treinador-home": "Main Menu",
 
+    // Game: Acerta o Time (Guess the Club)
+    "football-acerte-time-title": "Guess the Club",
+    "football-acerte-time-desc": "Discover the club through clues about its history!",
+
+    // Page: Acerta o Time
+    "time-tutorial-title": "How to play Guess the Club",
+    "time-tutorial-subtitle": "Discover the club through clues!",
+    "time-tutorial-step1": " An initial clue is revealed (club's location).",
+    "time-tutorial-step2": " Try to guess or click cards to reveal more clues.",
+    "time-tutorial-step3": " The fewer clues you use, the more points you earn!",
+    "time-tutorial-step4": " There are 10 rounds. Score as many points as possible!",
+    "time-tutorial-play": "Play",
+    "time-tutorial-skip": "Don't show again",
+    "time-round": "Round",
+    "time-pts": "pts",
+    "time-clues-revealed": "Clues revealed",
+    "time-input-placeholder": "Club name...",
+    "time-skip": "Skip",
+    "time-next": "Next",
+    "time-final-title": "Done!",
+    "time-final-label": " points",
+    "time-retry": "New Game",
+    "time-home": "Main Menu",
+
+    // Game: 30 Segundos (30 Seconds)
+    "football-30-segundos-title": "30 Seconds",
+    "football-30-segundos-desc": "Name as many players as you can in 30 seconds!",
+
+    // Page: 30 Segundos
+    "s30-tutorial-title": "How to play 30 Seconds",
+    "s30-tutorial-subtitle": "How many can you remember in 30 seconds?",
+    "s30-tutorial-step1": " A random football question appears.",
+    "s30-tutorial-step2": " Type as many correct answers as you can.",
+    "s30-tutorial-step3": " You only have 30 seconds on the clock!",
+    "s30-tutorial-step4": " At the end, see your hits and the full list.",
+    "s30-tutorial-play": "Play",
+    "s30-tutorial-skip": "Don't show again",
+    "s30-input-placeholder": "Type a name and press Enter...",
+    "s30-final-title": "Time's up!",
+    "s30-you-got": "You got",
+    "s30-you-missed": "You missed",
+    "s30-retry": "New Game",
+    "s30-home": "Main Menu",
+
     // Game: Duelo de Elencos (Squad Duel)
     "football-duelo-elencos-title": "Squad Duel",
     "football-duelo-elencos-desc": "Pick the better player at each position between two squads!",

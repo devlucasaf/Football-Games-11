@@ -378,6 +378,50 @@ const traducciones = {
     "treinador-retry": "Nuevo Juego",
     "treinador-home": "Menú Principal",
 
+    // Game: Acerta o Time (Adivina el Club)
+    "football-acerte-time-title": "Adivina el Club",
+    "football-acerte-time-desc": "¡Descubre el club por las pistas sobre su historia!",
+
+    // Page: Acerta o Time
+    "time-tutorial-title": "Cómo jugar Adivina el Club",
+    "time-tutorial-subtitle": "¡Descubre el club por las pistas!",
+    "time-tutorial-step1": " Se revela una pista inicial (ubicación del club).",
+    "time-tutorial-step2": " Intenta adivinar o haz clic en las cartas para más pistas.",
+    "time-tutorial-step3": " ¡Cuantas menos pistas uses, más puntos ganas!",
+    "time-tutorial-step4": " Son 10 rondas. ¡Acumula el máximo de puntos!",
+    "time-tutorial-play": "Jugar",
+    "time-tutorial-skip": "No mostrar de nuevo",
+    "time-round": "Ronda",
+    "time-pts": "pts",
+    "time-clues-revealed": "Pistas reveladas",
+    "time-input-placeholder": "Nombre del club...",
+    "time-skip": "Saltar",
+    "time-next": "Siguiente",
+    "time-final-title": "¡Fin!",
+    "time-final-label": " puntos",
+    "time-retry": "Nuevo Juego",
+    "time-home": "Menú Principal",
+
+    // Game: 30 Segundos (30 Segundos)
+    "football-30-segundos-title": "30 Segundos",
+    "football-30-segundos-desc": "¡Nombra a la mayor cantidad de jugadores en 30 segundos!",
+
+    // Page: 30 Segundos
+    "s30-tutorial-title": "Cómo jugar 30 Segundos",
+    "s30-tutorial-subtitle": "¿Cuántos recuerdas en 30 segundos?",
+    "s30-tutorial-step1": " Aparece una pregunta aleatoria sobre fútbol.",
+    "s30-tutorial-step2": " Escribe todas las respuestas correctas que puedas.",
+    "s30-tutorial-step3": " ¡Solo tienes 30 segundos en el reloj!",
+    "s30-tutorial-step4": " Al final, mira tus aciertos y la lista completa.",
+    "s30-tutorial-play": "Jugar",
+    "s30-tutorial-skip": "No mostrar de nuevo",
+    "s30-input-placeholder": "Escribe un nombre y pulsa Enter...",
+    "s30-final-title": "¡Se acabó el tiempo!",
+    "s30-you-got": "Acertaste",
+    "s30-you-missed": "No recordaste",
+    "s30-retry": "Nuevo Juego",
+    "s30-home": "Menú Principal",
+
     // Game: Duelo de Elencos 
     "football-duelo-elencos-title": "Duelo de Plantillas",
     "football-duelo-elencos-desc": "¡Elige al mejor jugador en cada posición entre dos plantillas!",
