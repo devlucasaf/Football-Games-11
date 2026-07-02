@@ -1205,6 +1205,10 @@ body > main {
     text-decoration: underline;
 }
 
+.footer-settings-link + .footer-settings-link {
+    margin-left: var(--spacing-md);
+}
+
 /* --- ACESSIBILIDADE: TAMANHO DA FONTE --- */
 html[data-font-size="pequeno"] {
     font-size: 87.5%;
