@@ -28,13 +28,13 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 5 | **Football Carreiras** | Descubra o jogador pela sequência de clubes da carreira |
 | 6 | **Football Impostor** | Encontre o jogador que não pertence ao grupo |
 | 7 | **Football Jogou Com** | Descubra quem jogou com todos os companheiros mostrados |
-| 8 | **Football Adivinha Jogador** | Adivinhe o jogador por pistas |
+| 8 | **Football Adivinha o Jogador** | Adivinhe o jogador por pistas |
 | 9 | **Football Top 10** | Complete listas de 10 maiores do futebol |
 | 10 | **Football Vc Escala!** | Monte sua escalação ideal com jogadores do Brasileirão |
 | 11 | **Football Vc Convoca!** | Convoque 26 jogadores para representar a sua seleção |
 | 12 | **Football Transferências** | Descubra o jogador pela sequência de clubes da carreira revelados um a um |
 | 13 | **Football Conexões** | Agrupe 16 jogadores em 4 categorias secretas |
-| 14 | **Football Acerta Treinador** | Descubra o treinador pelas dicas sobre sua carreira |
+| 14 | **Football Adivinha o Treinador** | Descubra o treinador pelas dicas sobre sua carreira |
 | 15 | **Football Duelo de Elencos** | Associe cada jogador ao elenco correto em duelos históricos |
 | 16 | **Football Acerta Escalação** | Adivinhe os 11 jogadores que começaram um jogo histórico |
 | 17 | **Football Conecta Clubes** | Encontre o jogador que une dois clubes |
@@ -47,6 +47,8 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 24 | **Football Gol a Gol** | Adivinhe quem marcou o gol icônico pelas dicas progressivas |
 | 25 | **Football Contexto** | Descubra o jogador secreto pela similaridade (estilo Contexto) |
 | 26 | **Football Pirâmide** | Ordene 10 jogadores na pirâmide pela categoria |
+| 27 | **Football 30 segundos** | Cite o máximo de jogadores que conseguir em 30 segundos |
+| 28 | **Football Adivinha o Clube** | Adivinhe o clube por pistas |
 
 ---
 
@@ -67,9 +69,11 @@ Football-Games-11/
 │   │   │   └── field.css           # Estilos do campo de futebol
 │   │   └── translation/            # Módulos JS de cada idioma (inglês, português, espanhol e alemão)
 │   └── games/                      # Cada minigame é autônomo (HTML + data/ + scripts/ + styles/)
+│       ├── football-30-segundos/
 │       ├── football-acerta-escalacao/
-│       ├── football-acerta-treinador/
+│       ├── football-adivinha-clube/
 │       ├── football-adivinha-jogador/
+│       ├── football-adivinha-treinador/
 │       ├── football-bingo/
 │       ├── football-carreiras/
 │       ├── football-conecta-clubes/
