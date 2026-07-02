@@ -247,8 +247,8 @@
             "nome": "Corinthians",
             "tecnicos": ["Tite", "Mano Menezes", "Oswaldo Brandão", "Nelsinho Batista", "Oswaldo de Oliveira"],
             "jogadores": {
-                "goleiro":   ["Cássio"],
-                "zagueiro":  ["Gamarra", "Chicão"],
+                "goleiro":   ["Cássio", "Hugo"],
+                "zagueiro":  ["Gamarra", "Chicão", "Gil"],
                 "lateral":   ["Fagner", "Roberto Carlos"],
                 "meioCampo": ["Renato Augusto", "Ralf", "Paulinho", "Sócrates", "M. Carioca", "Neto", "Biro-Biro", "Rivellino", "Danilo", "Vampeta"],
                 "atacante":  ["Ronaldo", "Paolo Guerrero", "Jô", "Emerson Sheik", "C. Tevez"]
@@ -284,10 +284,10 @@
             "tecnicos": ["Marcelo Oliveira", "Mano Menezes", "Vanderlei Luxemburgo", "Ílton Chaves"],
             "jogadores": {
                 "goleiro":   ["Fábio"],
-                "zagueiro":  [],
+                "zagueiro":  ["Dedé"],
                 "lateral":   [],
-                "meioCampo": ["Alex"],
-                "atacante":  ["Ronaldo", "Tostão"]
+                "meioCampo": ["Alex", "Lucas Silva", "Ricardo Goulart", "Éverton Ribeiro"],
+                "atacante":  ["Ronaldo", "Tostão", "Marcelo Moreno"]
             }
         },
         {
@@ -296,19 +296,19 @@
             "tecnicos": ["Cuca"],
             "jogadores": {
                 "goleiro":   ["Victor", "Everson"],
-                "zagueiro":  ["Leonardo Silva", "Réver"],
-                "lateral":   [],
-                "meioCampo": [],
-                "atacante":  ["Dadá Maravilha", "Hulk"]
+                "zagueiro":  ["Leonardo Silva", "Réver", "Junior Alonso"],
+                "lateral":   ["Guilherme Arana", "", "Marcos Rocha"],
+                "meioCampo": [""],
+                "atacante":  ["Dadá Maravilha", "Hulk", "Keno", "Diego Tardelli", "Éder Aleixo", "Jô", "Ronaldinho"]
             }
         },
         {
             "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg",
             "nome": "Grêmio",
-            "tecnicos": ["Renato Gaúcho"],
+            "tecnicos": ["Renato Gaúcho", "Roger Machado", "Felipão", "Tite", "Mano Menezes", "Foguinho", "Valdir Espinosa", "Telê Santana"],
             "jogadores": {
                 "goleiro":   ["Marcelo Grohe", "Danrlei"],
-                "zagueiro":  ["Geromel", "Hugo de León", "A. Batista"],
+                "zagueiro":  ["Geromel", "Hugo de León", "A. Batista", "Kannemann"],
                 "lateral":   ["Everaldo", "Roger Machado"],
                 "meioCampo": ["Ronaldinho"],
                 "atacante":  ["Renato Gaúcho", "Paulo Nunes", "Jardel"]
