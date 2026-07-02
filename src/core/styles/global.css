@@ -1165,6 +1165,22 @@ body > main {
     background: #333;
 }
 
+.social-icon:nth-child(4):hover {
+    background: #EA4335;
+}
+
+.social-icon:nth-child(5):hover {
+    background: #1DB954;
+}
+
+.social-icon:nth-child(6):hover {
+    background: #7289DA;
+}
+
+.social-icon:nth-child(7):hover {
+    background: #0077B5;
+}
+
 .copyright {
     opacity: 0.5;
     font-size: 0.75rem;
