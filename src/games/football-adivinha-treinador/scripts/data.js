@@ -2,7 +2,7 @@ import { estado } from "./core.js";
 
 // --- CARREGA DADOS DO JOGO ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-acerta-treinador.json");
+    const resp = await fetch("data/football-adivinha-treinador.json");
     const data = await resp.json();
     estado.treinadores = data.treinadores;
 }
