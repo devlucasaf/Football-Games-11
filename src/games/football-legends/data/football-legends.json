@@ -1,6 +1,7 @@
 {
     "Selecoes": [
         {
+            "escudo": "https://www.futbox.com/img/v1/fc8/26f/ef3/589/ce4738baa94fe1d4218f_zoom.png",
             "nome": "Brasil",
             "tecnicos": ["Telê Santana", "Zagallo", "Parreira", "Felipão", "Tite"],
             "jogadores": {
@@ -12,6 +13,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/f/fc/230px-Afa_logo.svg.png",
             "nome": "Argentina",
             "tecnicos": ["César Menotti", "Lionel Scaloni", "Jorge Sampaoli", "Luis Zubeldía", "Carlos Bianchi", "Marcelo Gallardo"],
             "jogadores": {
@@ -23,6 +25,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/4/47/Federacion_Colombiana_de_Futbol_logo.svg.png",
             "nome": "Colômbia",
             "tecnicos": ["Francisco Maturana", "Reinaldo Rueda"],
             "jogadores": {
@@ -34,6 +37,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/0/04/AUF.png",
             "nome": "Uruguai",
             "tecnicos": ["Óscar Tabárez", "Alberto Suppici", "Paulo Pezzolano", "Diego Aguirre", "Jorge Fossati"],
             "jogadores": {
@@ -45,6 +49,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/a/a1/Netherlands_national_football_team_logo_2017.png",
             "nome": "Holanda",
             "tecnicos": ["Rinus Michels", "Louis van Gaal"],
             "jogadores": {
@@ -56,6 +61,7 @@
             }
         },
         {
+            "escudo": "https://images.vexels.com/media/users/3/152460/isolated/preview/825e80bac186d247dd9332f1440d20df-logo-do-time-de-futebol-da-alemanha.png?w=360",
             "nome": "Alemanha",
             "tecnicos": ["Helmut Schön", "Joachim Löw", "J. Nagelsmann", "Hans-Dieter Flick", "Sepp Herberger", "Franz Beckenbauer", "Jürgen Klopp"],
             "jogadores": {
@@ -67,6 +73,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/b/b0/Royal_Belgian_FA_logo_2019.png",
             "nome": "Bélgica",
             "tecnicos": ["Vincent Kompany", "Georges Leekens", "Guy Thys"],
             "jogadores": {
@@ -78,6 +85,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/2/25/Logo_Sele%C3%A7%C3%A3o_Francesa_2018.png",
             "nome": "França",
             "tecnicos": ["Didier Deschamps", "Zinédine Zidane", "Albert Batteaux", "Aimé Jacquet", "Arsène Wenger"],
             "jogadores": {
@@ -89,6 +97,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/7/75/Portugal_FPF.png/250px-Portugal_FPF.png",
             "nome": "Portugal",
             "tecnicos": ["José Mourinho", "Jorge Jesus", "Abel Ferreira", "Fernando Santos", "Artur Jorge", "Otto Glória", "Leonardo Jardim", "Ruben Amorim", "Bruno Lage", "Vitor Pereira", "Luís Castro"],
             "jogadores": {
@@ -100,6 +109,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/3/31/Spain_National_Football_Team_badge.png",
             "nome": "Espanha",
             "tecnicos": ["Pep Guardiola", "Luis Enrique", "Vicente del Bosque", "Unai Emery", "Julen Lopetegui", "Rafael Benítez", "Mikel Arteta"],
             "jogadores": {
@@ -111,6 +121,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/500px-Logo_Italy_National_Football_Team_-_2023.svg.png",
             "nome": "Itália",
             "tecnicos": ["Carlo Ancelotti", "Arrigo Sacchi", "Antonio Conte", "Marcello Lippi", "Enzo Maresca", "Simone Inzaghi"],
             "jogadores": {
@@ -122,6 +133,7 @@
             }
         },
         {
+            "escudo": "https://images.seeklogo.com/logo-png/45/2/inglaterra-asociacion-de-futbol-inglesa-logo-png_seeklogo-459724.png",
             "nome": "Inglaterra",
             "tecnicos": ["Alf Ramsey", "Bobby Robson", "Gareth Southgate"],
             "jogadores": {
@@ -133,6 +145,7 @@
             }
         },
         {
+            "escudo": "https://img.uefa.com/imgml/uefaorg/new/logo.png",
             "nome": "Europa",
             "tecnicos": ["Carlo Ancelotti", "Pep Guardiola", "Luis Enrique", "Vicente del Bosque", "José Mourinho", "Rinus Michels", "Helmut Schön", "Franz Beckenbauer"],
             "jogadores": {
@@ -144,6 +157,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/7/74/CONMEBOL_logo_%282017%29.png",
             "nome": "América do Sul",
             "tecnicos": ["Zagallo", "Telê Santana", "Lionel Scaloni", "César Menotti", "Francisco Maturana"],
             "jogadores": {
@@ -155,6 +169,7 @@
             }
         },
         {
+            "escudo": "https://escudosfc.com.br/images/africana.png",
             "nome": "África",
             "tecnicos": ["Walid Regragui", "Hassan Shehata", "Charles Kumi Gyamfi", "Rabah Saâdane", "Mahmoud El-Gohary", "Stepen Keshi"],
             "jogadores": {
@@ -168,6 +183,7 @@
     ],
     "Clubes": [
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png",
             "nome": "Flamengo",
             "tecnicos": ["Filipe Luis", "Jorge Jesus", "Carpegiani", "Luxemburgo", "Dorival Jr", "Carlinhos", "Zagallo"],
             "jogadores": {
@@ -179,6 +195,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Fluminense_FC_escudo.png",
             "nome": "Fluminense",
             "tecnicos": ["Renato Gaúcho", "Abel Braga", "Muricy Ramalho", "Fernando Diniz", "Parreira", "Telê Santana"],
             "jogadores": {
@@ -190,6 +207,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Escudo_Botafogo.png",
             "nome": "Botafogo",
             "tecnicos": ["Artur Jorge", "João Saldanha"],
             "jogadores": {
@@ -201,6 +219,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/8/8b/EscudoDoVascoDaGama.svg/1920px-EscudoDoVascoDaGama.svg.png",
             "nome": "Vasco da Gama",
             "tecnicos": ["Joel Santana"],
             "jogadores": {
@@ -212,6 +231,7 @@
             }
         },
         {
+            "escudo": "https://www.palmeiras.com.br/wp-content/uploads/2021/10/escudos-inst_3.png",
             "nome": "Palmeiras",
             "tecnicos": [],
             "jogadores": {
@@ -223,6 +243,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/pt/b/b4/Corinthians_simbolo.png",
             "nome": "Corinthians",
             "tecnicos": ["Tite", "Mano Menezes", "Oswaldo Brandão", "Nelsinho Batista", "Oswaldo de Oliveira"],
             "jogadores": {
@@ -234,6 +255,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/3840px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png",
             "nome": "São Paulo",
             "tecnicos": ["Muricy Ramalho", "Paulo Autuori", "Telê Santana", "Dorival Jr"],
             "jogadores": {
@@ -245,6 +267,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/1/15/Santos_Logo.png",
             "nome": "Santos",
             "tecnicos": [],
             "jogadores": {
@@ -256,6 +279,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/1280px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png",
             "nome": "Cruzeiro",
             "tecnicos": ["Marcelo Oliveira", "Mano Menezes", "Vanderlei Luxemburgo", "Ílton Chaves"],
             "jogadores": {
@@ -267,6 +291,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Atletico_mineiro_galo.png",
             "nome": "Atlético Mineiro",
             "tecnicos": ["Cuca"],
             "jogadores": {
@@ -278,6 +303,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg",
             "nome": "Grêmio",
             "tecnicos": ["Renato Gaúcho"],
             "jogadores": {
@@ -289,6 +315,7 @@
             }
         },
         {
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Escudo_do_Sport_Club_Internacional.svg",
             "nome": "Internacional",
             "tecnicos": ["Abel Braga", "Ênio Andrade", "Rubens Minelli", "Teté"],
             "jogadores": {
