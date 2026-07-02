@@ -2,6 +2,7 @@
     "times": [
         {
             "nome": "Real Madrid",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
             "pais": "Espanha",
             "anoFundacao": 1902,
             "atualTreinador": "Xabi Alonso",
@@ -14,6 +15,7 @@
         },
         {
             "nome": "Barcelona",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
             "pais": "Espanha",
             "anoFundacao": 1899,
             "atualTreinador": "Hansi Flick",
@@ -26,6 +28,7 @@
         },
         {
             "nome": "Manchester United",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
             "pais": "Inglaterra",
             "anoFundacao": 1878,
             "atualTreinador": "Michael Carrick",
@@ -38,6 +41,7 @@
         },
         {
             "nome": "Liverpool",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
             "pais": "Inglaterra",
             "anoFundacao": 1892,
             "atualTreinador": "Andoni Iraola",
@@ -50,6 +54,7 @@
         },
         {
             "nome": "Bayern de Munique",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg",
             "pais": "Alemanha",
             "anoFundacao": 1900,
             "atualTreinador": "Vincent Kompany",
@@ -62,6 +67,7 @@
         },
         {
             "nome": "Juventus",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Juventus_FC_2017_icon_%28black%29.svg",
             "pais": "Itália",
             "anoFundacao": 1897,
             "atualTreinador": "Igor Tudor",
@@ -74,6 +80,7 @@
         },
         {
             "nome": "Milan",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
             "pais": "Itália",
             "anoFundacao": 1899,
             "atualTreinador": "Massimiliano Allegri",
@@ -86,6 +93,7 @@
         },
         {
             "nome": "Internazionale",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
             "pais": "Itália",
             "anoFundacao": 1908,
             "atualTreinador": "Cristian Chivu",
@@ -98,6 +106,7 @@
         },
         {
             "nome": "Manchester City",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
             "pais": "Inglaterra",
             "anoFundacao": 1880,
             "atualTreinador": "Pep Guardiola",
@@ -110,6 +119,7 @@
         },
         {
             "nome": "Paris Saint-Germain",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg",
             "pais": "França",
             "anoFundacao": 1970,
             "atualTreinador": "Luis Enrique",
@@ -122,6 +132,7 @@
         },
         {
             "nome": "Flamengo",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Clube_de_Regatas_do_Flamengo_logo.svg",
             "pais": "Brasil",
             "anoFundacao": 1895,
             "atualTreinador": "Leornardo Jardim",
@@ -134,6 +145,7 @@
         },
         {
             "nome": "Palmeiras",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Palmeiras_logo.svg",
             "pais": "Brasil",
             "anoFundacao": 1914,
             "atualTreinador": "Abel Ferreira",
@@ -146,6 +158,7 @@
         },
         {
             "nome": "Boca Juniors",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/51/CABJ70.svg",
             "pais": "Argentina",
             "anoFundacao": 1905,
             "atualTreinador": "Miguel Ángel Russo",
@@ -158,6 +171,7 @@
         },
         {
             "nome": "River Plate",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Escudo_del_C_A_River_Plate.svg",
             "pais": "Argentina",
             "anoFundacao": 1901,
             "atualTreinador": "Marcelo Gallardo",
@@ -170,6 +184,7 @@
         },
         {
             "nome": "Chelsea",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
             "pais": "Inglaterra",
             "anoFundacao": 1905,
             "atualTreinador": "Xabi Alonso",
@@ -182,6 +197,7 @@
         },
         {
             "nome": "Arsenal",
+            "escudo": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
             "pais": "Inglaterra",
             "anoFundacao": 1886,
             "atualTreinador": "Mikel Arteta",

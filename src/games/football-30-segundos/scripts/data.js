@@ -38,3 +38,12 @@ export function encontrarResposta(palpite) {
         return (r.aliases || []).some((a) => normalizar(a) === alvo);
     }) || null;
 }
+
+// --- OBTER TODOS OS NOMES ÚNICOS DE TODAS AS CATEGORIAS (para o autocomplete) ---
+export function obterNomes() {
+    const nomes = new Set();
+    estado.categorias.forEach((categoria) => {
+        categoria.respostas.forEach((r) => nomes.add(r.nome));
+    });
+    return [...nomes].sort((a, b) => a.localeCompare(b));
+}

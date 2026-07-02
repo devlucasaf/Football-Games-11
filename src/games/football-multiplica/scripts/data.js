@@ -58,7 +58,8 @@ export function valorDoJogador(jogador) {
     if (!jogador || !estado.desafioAtual) {
         return 0;
     }
-    return jogador.valor || jogador[estado.desafioAtual.tipo] || 0;
+    const chave = estado.desafioAtual.estatistica || estado.desafioAtual.tipo;
+    return jogador[chave] ?? jogador.valor ?? 0;
 }
 
 // --- MAPA DE NOMES DOS TIPOS ---
@@ -66,11 +67,13 @@ const NOMES_TIPO = {
     gols: "Gols",
     assistencias: "Assistências",
     copas: "Copas do Mundo",
+    quantidadeCopas: "Copas do Mundo",
     champions: "Champions League",
     libertadores: "Libertadores",
     bolasDeOuro: "Bolas de Ouro",
     brasileirao: "Brasileirão",
-    premierLeague: "Premier League"
+    premierLeague: "Premier League",
+    titulos: "Títulos"
 };
 
 // --- OBTER NOME DO TIPO ---

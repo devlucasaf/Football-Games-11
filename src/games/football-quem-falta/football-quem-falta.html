@@ -65,13 +65,16 @@
                     </div>
 
                     <div class="input-row">
-                        <input 
-                            type="text" 
-                            id="guessInput" 
-                            data-key="quem-falta-input-placeholder" 
-                            placeholder="Quem falta?" 
-                            autocomplete="off"
-                        >
+                        <div class="input-autocomplete">
+                            <input 
+                                type="text" 
+                                id="guessInput" 
+                                data-key="quem-falta-input-placeholder" 
+                                placeholder="Quem falta?" 
+                                autocomplete="off"
+                            >
+                            <ul class="suggestions-list hidden" id="suggestions"></ul>
+                        </div>
                         <button class="btn-guess" id="btnGuess">
                             <i class="fas fa-paper-plane"></i>
                         </button>

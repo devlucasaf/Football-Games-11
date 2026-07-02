@@ -1,5 +1,5 @@
 import { estado } from "./core.js";
-import { carregarDados, sortearCategoria, encontrarResposta } from "./data.js";
+import { carregarDados, sortearCategoria, encontrarResposta, obterNomes } from "./data.js";
 
 const els = {
     gameArea:      document.getElementById("gameArea"),
@@ -11,6 +11,7 @@ const els = {
     perguntaTexto: document.getElementById("perguntaTexto"),
     guessInput:    document.getElementById("guessInput"),
     guessFeedback: document.getElementById("guessFeedback"),
+    suggestions:   document.getElementById("suggestions"),
     hitsList:      document.getElementById("hitsList"),
     finalResult:   document.getElementById("finalResult"),
     finalPoints:   document.getElementById("finalPoints"),
@@ -19,6 +20,71 @@ const els = {
     finalHits:     document.getElementById("finalHits"),
     finalMisses:   document.getElementById("finalMisses")
 };
+
+// --- AUTOCOMPLETE ---
+let nomesDisponiveis = [];
+let sugestaoAtiva = -1;
+
+function esconderSugestoes() {
+    els.suggestions.classList.add("hidden");
+    els.suggestions.innerHTML = "";
+    sugestaoAtiva = -1;
+}
+
+function selecionarSugestao(nome) {
+    els.guessInput.value = nome;
+    esconderSugestoes();
+    els.guessInput.focus();
+}
+
+function atualizarSugestaoAtiva(itens) {
+    itens.forEach((item, i) => {
+        item.classList.toggle("active", i === sugestaoAtiva);
+        if (i === sugestaoAtiva) {
+            item.scrollIntoView({ block: "nearest" });
+        }
+    });
+}
+
+function renderizarSugestoes() {
+    const termo = els.guessInput.value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    sugestaoAtiva = -1;
+
+    if (!termo) {
+        esconderSugestoes();
+        return;
+    }
+
+    const filtrados = nomesDisponiveis
+        .filter((nome) => nome
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .includes(termo))
+        .slice(0, 8);
+
+    if (filtrados.length === 0) {
+        esconderSugestoes();
+        return;
+    }
+
+    els.suggestions.innerHTML = "";
+    filtrados.forEach((nome) => {
+        const li = document.createElement("li");
+        li.className = "suggestion-item";
+        li.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
+        li.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            selecionarSugestao(nome);
+        });
+        els.suggestions.appendChild(li);
+    });
+    els.suggestions.classList.remove("hidden");
+}
 
 // --- MOSTRA FEEDBACK RÁPIDO NO CAMPO ---
 let feedbackTimeout = null;
@@ -55,6 +121,7 @@ function verificarPalpite() {
 
     const resposta = encontrarResposta(palpite);
     els.guessInput.value = "";
+    esconderSugestoes();
 
     if (!resposta) {
         mostrarFeedback("Não está na lista!", "wrong");
@@ -150,6 +217,7 @@ function iniciarJogo() {
     els.guessFeedback.classList.add("hidden");
     els.guessInput.value = "";
     els.guessInput.disabled = false;
+    esconderSugestoes();
 
     atualizarTimer();
 
@@ -163,6 +231,7 @@ function iniciarJogo() {
 // --- INICIALIZA O JOGO ---
 async function init() {
     await carregarDados();
+    nomesDisponiveis = obterNomes();
 
     document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
     document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
@@ -170,9 +239,33 @@ async function init() {
         window.location.href = "../../../index.html";
     });
 
+    els.guessInput.addEventListener("input", renderizarSugestoes);
     els.guessInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            verificarPalpite();
+        const itens = [...els.suggestions.querySelectorAll(".suggestion-item")];
+
+        if (e.key === "ArrowDown" && itens.length > 0) {
+            e.preventDefault();
+            sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
+            atualizarSugestaoAtiva(itens);
+        } else if (e.key === "ArrowUp" && itens.length > 0) {
+            e.preventDefault();
+            sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
+            atualizarSugestaoAtiva(itens);
+        } else if (e.key === "Enter") {
+            if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
+                e.preventDefault();
+                selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
+            } else {
+                verificarPalpite();
+            }
+        } else if (e.key === "Escape") {
+            esconderSugestoes();
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".input-autocomplete")) {
+            esconderSugestoes();
         }
     });
 

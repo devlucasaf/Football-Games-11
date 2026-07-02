@@ -6,7 +6,6 @@ import {
     atualizarPulos,
     exibirJogador,
     renderizarMultiplicadores,
-    mostrarResultadoMultiplicacao,
     mostrarFinal,
     resetarUI
 } from "./ui.js";
@@ -33,7 +32,7 @@ function selecionarMultiplicador(idx, mult) {
     estado.multiplicadoresUsados[idx] = jogador.nome;
     estado.totalAcumulado += resultado;
     atualizarRodada();
-    mostrarResultadoMultiplicacao(valor, mult, resultado);
+    proxima();
 }
 
 // --- PULAR JOGADOR ---

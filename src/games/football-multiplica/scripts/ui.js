@@ -70,13 +70,15 @@ function atualizarProgresso() {
 export function exibirJogador(jogador, valorTipo) {
     els.jogadorNome.textContent = jogador.nome;
 
-    const tipo = estado.desafioAtual.tipo;
-    const tipoNome = nomeTipo(tipo);
+    const estatistica = estado.desafioAtual.estatistica || estado.desafioAtual.tipo;
+    const tipoNome = nomeTipo(estatistica);
 
     const statsMap = [
         { chave: "gols",            icone: "fa-futbol",         label: "Gols"     },
+        { chave: "titulos",         icone: "fa-trophy",         label: "Títulos"  },
         { chave: "assistencias",    icone: "fa-hands-helping",  label: "Assist."  },
         { chave: "copas",           icone: "fa-trophy",         label: "Copas"    },
+        { chave: "quantidadeCopas", icone: "fa-globe",          label: "Copas"    },
         { chave: "champions",       icone: "fa-star",           label: "UCL"      },
         { chave: "libertadores",    icone: "fa-award",          label: "Liberta." },
         { chave: "bolasDeOuro",     icone: "fa-medal",          label: "B. Ouro"  },
@@ -87,9 +89,8 @@ export function exibirJogador(jogador, valorTipo) {
     els.jogadorStats.innerHTML = "";
     statsMap.forEach(s => {
         const val = jogador[s.chave] || 0;
-        if (val > 0) {
-            const destaque = s.chave === tipo ? " destaque" : "";
-            els.jogadorStats.innerHTML += `<span class="stat-badge${destaque}"><i class="fas ${s.icone}"></i> ${s.label}: ${formatarNumero(val)}</span>`;
+        if (val > 0 && s.chave === estatistica) {
+            els.jogadorStats.innerHTML += `<span class="stat-badge destaque"><i class="fas ${s.icone}"></i> ${s.label}: ${formatarNumero(val)}</span>`;
         }
     });
 

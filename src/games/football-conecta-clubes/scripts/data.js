@@ -22,3 +22,12 @@ export function sortear() {
 export function normalizar(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
+
+// --- OBTER TODOS OS NOMES ÚNICOS (para o autocomplete) ---
+export function obterNomes() {
+    const nomes = new Set();
+    estado.conexoes.forEach(conexao => {
+        conexao.respostas.forEach(nome => nomes.add(nome));
+    });
+    return [...nomes].sort((a, b) => a.localeCompare(b));
+}

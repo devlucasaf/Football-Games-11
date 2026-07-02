@@ -99,18 +99,21 @@ main {
     display: flex;
     gap: 6px;
     justify-content: center;
+    width: 100%;
 }
 
 .termo-cell {
-    width: 52px;
-    height: 52px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 52px;
+    aspect-ratio: 1 / 1;
     border: 2px solid var(--border-color);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+    font-size: clamp(0.9rem, 4vw, 1.4rem);
     font-weight: 800;
     text-transform: uppercase;
     color: var(--text-primary);
@@ -468,9 +471,8 @@ main {
     }
 
     .termo-cell {
-        width: 42px;
-        height: 42px;
-        font-size: 1.1rem;
+        max-width: 42px;
+        font-size: clamp(0.8rem, 4vw, 1.1rem);
         border-width: 1.5px;
     }
 
@@ -516,9 +518,8 @@ main {
 
 @media (max-width: 400px) {
     .termo-cell {
-        width: 34px;
-        height: 34px;
-        font-size: 0.9rem;
+        max-width: 34px;
+        font-size: clamp(0.7rem, 4vw, 0.9rem);
         border-width: 1px;
         border-radius: 4px;
     }

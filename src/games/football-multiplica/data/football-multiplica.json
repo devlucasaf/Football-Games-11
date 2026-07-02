@@ -3,60 +3,70 @@
         {
             "tema": "Alcance 100.000 gols",
             "tipo": "gols",
+            "estatistica": "gols",
             "meta": 100000,
             "rodadas": 8
         },
         {
             "tema": "Alcance 750.000 gols",
             "tipo": "gols",
+            "estatistica": "gols",
             "meta": 750000,
             "rodadas": 8
         },
         {
             "tema": "Alcance 50.000 assistências",
             "tipo": "assistencias",
+            "estatistica": "assistencias",
             "meta": 50000,
             "rodadas": 8
         },
         {
             "tema": "Alcance 50 títulos de Copa do Mundo",
             "tipo": "copas",
+            "estatistica": "quantidadeCopas",
             "meta": 50,
             "rodadas": 8
         },
         {
             "tema": "Alcance 100 títulos de Champions League",
             "tipo": "champions",
+            "estatistica": "champions",
             "meta": 100,
             "rodadas": 8
         },
         {
             "tema": "Alcance 200 títulos de Libertadores",
             "tipo": "libertadores",
+            "estatistica": "libertadores",
             "meta": 200,
             "rodadas": 8
         },
         {
             "tema": "Alcance 80 títulos de Brasileirão",
             "tipo": "brasileirao",
+            "estatistica": "titulos",
             "meta": 80,
             "rodadas": 8
         },
         {
             "tema": "Alcance 1.000 gols de Brasileirão",
             "tipo": "brasileirao",
+            "estatistica": "gols",
             "meta": 1000,
             "rodadas": 8
         },
         {
             "tema": "Alcance 10.000 gols de Brasileirão",
             "tipo": "brasileirao",
-            "meta": 80,
+            "estatistica": "gols",
+            "meta": 10000,
             "rodadas": 8
         },
         {
             "tema": "Alcance 150 títulos de Premier League",
             "tipo": "premierLeague",
+            "estatistica": "premierLeague",
             "meta": 150,
             "rodadas": 8
         }
@@ -65,26 +75,26 @@
         "premierLeague": [
         ],
         "brasileirao": [
-            { "nome": "Roberto Dinamite",    "gols": 190 },
-            { "nome": "Fred",                "gols": 158 },
-            { "nome": "Romário",             "gols": 154 },
-            { "nome": "Edmundo",             "gols": 153 },
-            { "nome": "Zico",                "gols": 135 },
-            { "nome": "Diego Souza",         "gols": 130 },
-            { "nome": "Túlio Maravilha",     "gols": 129 },
-            { "nome": "Serginho Chulapada",  "gols": 127 },
-            { "nome": "Dadá Maravilha",      "gols": 127 },
-            { "nome": "Washington",          "gols": 126 },
-            { "nome": "Gabigol",             "gols": 126 },
-            { "nome": "Luís Fabiano",        "gols": 116 },
-            { "nome": "Wellington Paulista", "gols": 109 },
-            { "nome": "Paulo Baier",         "gols": 107 },
-            { "nome": "Alecsandro",          "gols": 105 },
-            { "nome": "Kléber Pereira",      "gols": 102 },
-            { "nome": "Pelé",                "gols": 101 },
-            { "nome": "Evair",               "gols": 101 },
-            { "nome": "D'Alessandro",        "gols": 41  },
-            { "nome": "Rodrigo Castillo",    "gols": 3   }
+            { "nome": "Roberto Dinamite",    "gols": 190, "titulos": 1 },
+            { "nome": "Fred",                "gols": 158, "titulos": 2 },
+            { "nome": "Romário",             "gols": 154, "titulos": 1 },
+            { "nome": "Edmundo",             "gols": 153, "titulos": 1 },
+            { "nome": "Zico",                "gols": 135, "titulos": 4 },
+            { "nome": "Diego Souza",         "gols": 130, "titulos": 0 },
+            { "nome": "Túlio Maravilha",     "gols": 129, "titulos": 1 },
+            { "nome": "Serginho Chulapada",  "gols": 127, "titulos": 2 },
+            { "nome": "Dadá Maravilha",      "gols": 127, "titulos": 1 },
+            { "nome": "Washington",          "gols": 126, "titulos": 1 },
+            { "nome": "Gabigol",             "gols": 126, "titulos": 2 },
+            { "nome": "Luís Fabiano",        "gols": 116, "titulos": 3 },
+            { "nome": "Wellington Paulista", "gols": 109, "titulos": 0 },
+            { "nome": "Paulo Baier",         "gols": 107, "titulos": 1 },
+            { "nome": "Alecsandro",          "gols": 105, "titulos": 1 },
+            { "nome": "Kléber Pereira",      "gols": 102, "titulos": 0 },
+            { "nome": "Pelé",                "gols": 101, "titulos": 6 },
+            { "nome": "Evair",               "gols": 101, "titulos": 2 },
+            { "nome": "D'Alessandro",        "gols": 41,  "titulos": 1 },
+            { "nome": "Rodrigo Castillo",    "gols": 3,   "titulos": 0 }
         ],
         "copas": [
             { "nome": "Pelé",                "quantidadeCopas": 3 },

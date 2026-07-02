@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Acerta o Time | Football Games 11</title>
+        <title>Adivinha o Clube | Football Games 11</title>
         <link rel="stylesheet" href="../../core/styles/global.css">
-        <link rel="stylesheet" href="styles/football-acerta-time.css">
+        <link rel="stylesheet" href="styles/football-adivinha-clube.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
@@ -15,7 +15,7 @@
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-shield-halved"></i>
-                    <h2 data-key="time-tutorial-title">Como jogar Acerta o Time</h2>
+                    <h2 data-key="time-tutorial-title">Como jogar Acerta o Clube</h2>
                     <p data-key="time-tutorial-subtitle">Descubra o time pelas dicas!</p>
                 </div>
 
@@ -59,13 +59,16 @@
 
                     <div class="guess-area">
                         <div class="input-row">
-                            <input 
-                                type="text" 
-                                id="guessInput" 
-                                data-key="time-input-placeholder" 
-                                placeholder="Nome do clube..." 
-                                autocomplete="off"
-                            >
+                            <div class="input-autocomplete">
+                                <input 
+                                    type="text" 
+                                    id="guessInput" 
+                                    data-key="time-input-placeholder" 
+                                    placeholder="Nome do clube..." 
+                                    autocomplete="off"
+                                >
+                                <ul class="suggestions-list hidden" id="suggestions"></ul>
+                            </div>
                             <button class="btn-guess" id="btnGuess">
                                 <i class="fas fa-paper-plane"></i>
                             </button>

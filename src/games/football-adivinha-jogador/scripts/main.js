@@ -128,6 +128,16 @@ function onCardClick(e) {
 }
 
 // --- CONFIGURAR EVENTOS ---
+let sugestaoAtiva = -1;
+
+// --- ATUALIZA O ITEM DESTACADO NA NAVEGAÇÃO POR TECLADO ---
+function atualizarSugestaoAtiva(itens) {
+    itens.forEach((item, i) => item.classList.toggle("ativo", i === sugestaoAtiva));
+    if (itens[sugestaoAtiva]) {
+        itens[sugestaoAtiva].scrollIntoView({ block: "nearest" });
+    }
+}
+
 function configurarEventos() {
     const input = document.getElementById("palpiteInput");
     const confirmarBtn = document.getElementById("confirmarBtn");
@@ -140,15 +150,40 @@ function configurarEventos() {
     });
 
     input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
+        const itens = [...document.querySelectorAll("#sugestoesLista .sugestao-item")];
+
+        if (e.key === "ArrowDown") {
             e.preventDefault();
-            verificarPalpite(input.value);
+            if (itens.length) {
+                sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
+                atualizarSugestaoAtiva(itens);
+            }
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            if (itens.length) {
+                sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
+                atualizarSugestaoAtiva(itens);
+            }
+        } else if (e.key === "Enter") {
+            e.preventDefault();
+            if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
+                input.value = itens[sugestaoAtiva].textContent;
+                esconderSugestoes();
+                sugestaoAtiva = -1;
+                verificarPalpite(input.value);
+            } else {
+                verificarPalpite(input.value);
+            }
+        } else if (e.key === "Escape") {
+            esconderSugestoes();
+            sugestaoAtiva = -1;
         }
     });
 
     proximaBtn.addEventListener("click", () => proximaRodada());
 
     input.addEventListener("input", () => {
+        sugestaoAtiva = -1;
         filtrarSugestoes(input.value);
     });
 
@@ -157,6 +192,7 @@ function configurarEventos() {
         if (item) {
             input.value = item.textContent;
             esconderSugestoes();
+            sugestaoAtiva = -1;
             verificarPalpite(input.value);
         }
     });
@@ -166,6 +202,7 @@ function configurarEventos() {
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".input-wrapper")) {
             esconderSugestoes();
+            sugestaoAtiva = -1;
         }
     });
 }

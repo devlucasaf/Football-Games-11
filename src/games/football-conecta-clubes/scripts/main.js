@@ -1,5 +1,5 @@
 import { estado } from "./core.js";
-import { carregarDados, sortear, normalizar } from "./data.js";
+import { carregarDados, sortear, normalizar, obterNomes } from "./data.js";
 import {
     atualizarRodada,
     atualizarAcertos,
@@ -12,17 +12,80 @@ import {
     getInput
 } from "./ui.js";
 
+// --- AUTOCOMPLETE ---
+let nomesDisponiveis = [];
+let sugestaoAtiva = -1;
+const guessInput = () => document.getElementById("guessInput");
+const suggestions = () => document.getElementById("suggestions");
+
+function esconderSugestoes() {
+    const lista = suggestions();
+    lista.classList.add("hidden");
+    lista.innerHTML = "";
+    sugestaoAtiva = -1;
+}
+
+function selecionarSugestao(nome) {
+    guessInput().value = nome;
+    esconderSugestoes();
+    guessInput().focus();
+}
+
+function atualizarSugestaoAtiva(itens) {
+    itens.forEach((item, i) => {
+        item.classList.toggle("active", i === sugestaoAtiva);
+        if (i === sugestaoAtiva) {
+            item.scrollIntoView({ block: "nearest" });
+        }
+    });
+}
+
+function renderizarSugestoes() {
+    const termo = normalizar(guessInput().value);
+    const lista = suggestions();
+    sugestaoAtiva = -1;
+
+    if (!termo) {
+        esconderSugestoes();
+        return;
+    }
+
+    const filtrados = nomesDisponiveis
+        .filter(nome => normalizar(nome).includes(termo))
+        .slice(0, 8);
+
+    if (filtrados.length === 0) {
+        esconderSugestoes();
+        return;
+    }
+
+    lista.innerHTML = "";
+    filtrados.forEach(nome => {
+        const li = document.createElement("li");
+        li.className = "suggestion-item";
+        li.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
+        li.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            selecionarSugestao(nome);
+        });
+        lista.appendChild(li);
+    });
+    lista.classList.remove("hidden");
+}
+
 // --- MOSTRAR RODADA ATUAL ---
 function mostrarRodada() {
     const conexao = estado.sorteadas[estado.rodadaAtual];
     atualizarRodada();
     estado.tentativasRestantes = 3;
     configurarRodada(conexao);
+    esconderSugestoes();
 }
 
 // --- VERIFICAR PALPITE ---
 function verificarPalpite() {
     const palpite = getInput();
+    esconderSugestoes();
     if (!palpite) {
         return;
     }
@@ -68,6 +131,7 @@ function iniciarJogo() {
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {
     await carregarDados();
+    nomesDisponiveis = obterNomes();
 
     document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
     document.getElementById("btnNext").addEventListener("click", proxima);
@@ -76,9 +140,34 @@ async function init() {
         window.location.href = "../../../index.html";
     });
 
-    document.getElementById("guessInput").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            verificarPalpite();
+    const input = guessInput();
+    input.addEventListener("input", renderizarSugestoes);
+    input.addEventListener("keydown", (e) => {
+        const itens = [...suggestions().querySelectorAll(".suggestion-item")];
+
+        if (e.key === "ArrowDown" && itens.length > 0) {
+            e.preventDefault();
+            sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
+            atualizarSugestaoAtiva(itens);
+        } else if (e.key === "ArrowUp" && itens.length > 0) {
+            e.preventDefault();
+            sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
+            atualizarSugestaoAtiva(itens);
+        } else if (e.key === "Enter") {
+            if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
+                e.preventDefault();
+                selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
+            } else {
+                verificarPalpite();
+            }
+        } else if (e.key === "Escape") {
+            esconderSugestoes();
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".input-autocomplete")) {
+            esconderSugestoes();
         }
     });
 

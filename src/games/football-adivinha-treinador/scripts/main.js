@@ -7,6 +7,7 @@ const els = {
     dicasGrid:      document.getElementById("dicasGrid"),
     guessInput:     document.getElementById("guessInput"),
     guessFeedback:  document.getElementById("guessFeedback"),
+    suggestions:    document.getElementById("suggestions"),
     gameArea:       document.getElementById("gameArea"),
     roundResult:    document.getElementById("roundResult"),
     roundIcon:      document.getElementById("roundIcon"),
@@ -20,6 +21,63 @@ const els = {
 };
 
 let dicasAtuais = [];
+let sugestaoAtiva = -1;
+
+// --- RENDERIZA AS SUGESTÕES DE TREINADORES ---
+function renderizarSugestoes() {
+    const termo = normalizar(els.guessInput.value.trim());
+    els.suggestions.innerHTML = "";
+    sugestaoAtiva = -1;
+
+    if (!termo) {
+        esconderSugestoes();
+        return;
+    }
+
+    const encontrados = estado.treinadores
+        .filter(treinador => normalizar(treinador.nome).includes(termo))
+        .slice(0, 8);
+
+    if (encontrados.length === 0) {
+        esconderSugestoes();
+        return;
+    }
+
+    encontrados.forEach((treinador) => {
+        const item = document.createElement("li");
+        item.className = "suggestion-item";
+        item.innerHTML = `<i class="fas fa-user-tie"></i><span>${treinador.nome}</span>`;
+        item.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            selecionarSugestao(treinador.nome);
+        });
+        els.suggestions.appendChild(item);
+    });
+
+    els.suggestions.classList.remove("hidden");
+}
+
+// --- SELECIONA UMA SUGESTÃO E ENVIA O PALPITE ---
+function selecionarSugestao(nome) {
+    els.guessInput.value = nome;
+    esconderSugestoes();
+    verificarPalpite();
+}
+
+// --- ESCONDE A LISTA DE SUGESTÕES ---
+function esconderSugestoes() {
+    els.suggestions.classList.add("hidden");
+    els.suggestions.innerHTML = "";
+    sugestaoAtiva = -1;
+}
+
+// --- ATUALIZA O ITEM DESTACADO NA NAVEGAÇÃO POR TECLADO ---
+function atualizarSugestaoAtiva(itens) {
+    itens.forEach((item, i) => item.classList.toggle("active", i === sugestaoAtiva));
+    if (itens[sugestaoAtiva]) {
+        itens[sugestaoAtiva].scrollIntoView({ block: "nearest" });
+    }
+}
 
 // --- MOSTRA A RODADA ATUAL ---
 function mostrarRodada() {
@@ -30,6 +88,7 @@ function mostrarRodada() {
     els.rodadaAtual.textContent = estado.rodadaAtual + 1;
     els.guessInput.value = "";
     els.guessFeedback.classList.add("hidden");
+    esconderSugestoes();
     els.gameArea.classList.remove("hidden");
     els.roundResult.classList.add("hidden");
     renderizarDicas();
@@ -99,6 +158,7 @@ function verificarPalpite() {
         els.guessFeedback.className = "guess-feedback wrong";
         els.guessFeedback.classList.remove("hidden");
         els.guessInput.value = "";
+        esconderSugestoes();
         els.guessInput.focus();
 
         if (estado.dicasReveladas < estado.maxDicas) {
@@ -203,8 +263,36 @@ async function init() {
     });
 
     document.getElementById("guessInput").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            verificarPalpite();
+        const itens = [...els.suggestions.querySelectorAll(".suggestion-item")];
+
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            if (itens.length) {
+                sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
+                atualizarSugestaoAtiva(itens);
+            }
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            if (itens.length) {
+                sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
+                atualizarSugestaoAtiva(itens);
+            }
+        } else if (e.key === "Enter") {
+            if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
+                selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
+            } else {
+                verificarPalpite();
+            }
+        } else if (e.key === "Escape") {
+            esconderSugestoes();
+        }
+    });
+
+    els.guessInput.addEventListener("input", renderizarSugestoes);
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".input-autocomplete")) {
+            esconderSugestoes();
         }
     });
 

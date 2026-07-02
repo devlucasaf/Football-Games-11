@@ -301,6 +301,12 @@
     padding-left: 1.3rem;
 }
 
+.sugestao-item.ativo {
+    background: rgba(26, 86, 50, 0.12);
+    color: var(--primary-green);
+    padding-left: 1.3rem;
+}
+
 /* --- AÇÕES DO INPUT --- */
 .input-actions {
     display: flex;
@@ -622,6 +628,11 @@
 
 [data-theme="dark"] .sugestao-item:hover {
     background: rgba(92, 185, 122, 0.12);
+    color: var(--accent-light-green);
+}
+
+[data-theme="dark"] .sugestao-item.ativo {
+    background: rgba(92, 185, 122, 0.18);
     color: var(--accent-light-green);
 }
 

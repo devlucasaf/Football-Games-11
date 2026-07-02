@@ -66,13 +66,16 @@
                             <span data-key="conecta-attempts">tentativa(s) restante(s)</span>
                         </div>
                         <div class="input-row">
-                            <input 
-                                type="text" 
-                                id="guessInput" 
-                                data-key="conecta-input-placeholder" 
-                                placeholder="Nome do jogador..." 
-                                autocomplete="off"
-                            >
+                            <div class="input-autocomplete">
+                                <input 
+                                    type="text" 
+                                    id="guessInput" 
+                                    data-key="conecta-input-placeholder" 
+                                    placeholder="Nome do jogador..." 
+                                    autocomplete="off"
+                                >
+                                <ul class="suggestions-list hidden" id="suggestions"></ul>
+                            </div>
                             <button class="btn-guess" id="btnGuess">
                                 <i class="fas fa-paper-plane"></i>
                             </button>

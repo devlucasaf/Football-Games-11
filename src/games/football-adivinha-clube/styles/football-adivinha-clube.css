@@ -194,6 +194,85 @@
     margin: 0 auto var(--spacing-sm);
 }
 
+.input-autocomplete {
+    position: relative;
+    flex: 1;
+}
+
+.input-autocomplete input {
+    width: 100%;
+}
+
+/* --- LISTA DE SUGESTÕES --- */
+.suggestions-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 30;
+    list-style: none;
+    margin: 0;
+    padding: 4px;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    max-height: 220px;
+    overflow-y: auto;
+    text-align: left;
+    animation: fadeInUp 0.15s ease;
+}
+
+.suggestions-list.hidden {
+    display: none;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.suggestion-item i {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.suggestion-escudo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+    background: rgba(26, 86, 50, 0.1);
+    color: var(--primary-green);
+}
+
+.suggestion-item:hover i,
+.suggestion-item.active i {
+    color: var(--primary-green);
+}
+
+[data-theme="dark"] .suggestion-item:hover,
+[data-theme="dark"] .suggestion-item.active {
+    background: rgba(92, 185, 122, 0.15);
+    color: var(--accent-light-green);
+}
+
+[data-theme="dark"] .suggestion-item:hover i,
+[data-theme="dark"] .suggestion-item.active i {
+    color: var(--accent-light-green);
+}
+
 .input-row input {
     flex: 1;
     padding: 0.8rem 1.2rem;
