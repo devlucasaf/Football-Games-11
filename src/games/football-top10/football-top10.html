@@ -29,7 +29,10 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn"><i class="fas fa-play"></i> <span data-key="top10-tutorial-play">Jogar</span></button>
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="top10-tutorial-play">Jogar</span>
+                    </button>
                     <button class="tutorial-skip" id="tutorialSkipBtn" data-key="top10-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
@@ -45,7 +48,6 @@
                     <p class="game-description" data-key="top10-game-desc">Complete a lista dos 10!</p>
                 </div>
 
-                <!-- --- PLACAR --- -->
                 <div class="top10-stats">
                     <div class="stat-item">
                         <i class="fas fa-check"></i>
@@ -68,48 +70,56 @@
                     </div>
                 </div>
 
-                <!-- --- TEMA DA RODADA --- -->
                 <div class="top10-tema" id="temaContainer">
                     <div class="tema-icone"><i class="fas fa-trophy" id="temaIcone"></i></div>
                     <h3 class="tema-texto" id="temaTexto">Carregando...</h3>
                     <span class="tema-categoria" id="temaCategoria"></span>
                 </div>
 
-                <!-- --- LISTA DOS 10 --- -->
                 <div class="top10-lista" id="top10Lista">
                     <!-- Gerado via JS -->
                 </div>
 
-                <!-- --- ÁREA DE INPUT --- -->
                 <div class="top10-input-area" id="inputArea">
                     <div class="input-wrapper">
-                        <input type="text" id="palpiteInput" class="palpite-input" data-key="top10-input-placeholder" placeholder="Digite um nome da lista..." autocomplete="off">
+                        <input 
+                            type="text" 
+                            id="palpiteInput" 
+                            class="palpite-input" 
+                            data-key="top10-input-placeholder" 
+                            placeholder="Digite um nome da lista..." 
+                            autocomplete="off"
+                        >
                         <div class="sugestoes-lista" id="sugestoesLista"></div>
                     </div>
 
                     <div class="input-actions">
                         <button id="confirmarBtn" class="btn-confirmar" title="Confirmar">
-                            <i class="fas fa-check"></i> <span data-key="top10-confirm">Confirmar</span>
+                            <i class="fas fa-check"></i> 
+                            <span data-key="top10-confirm">Confirmar</span>
                         </button>
+
                         <button id="desistirBtn" class="btn-desistir" title="Desistir e revelar">
-                            <i class="fas fa-flag"></i> <span data-key="top10-give-up">Desistir</span>
+                            <i class="fas fa-flag"></i> 
+                            <span data-key="top10-give-up">Desistir</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- --- FEEDBACK --- -->
                 <div class="top10-feedback" id="feedbackArea" style="display:none;">
                     <i id="feedbackIcone"></i>
                     <span id="feedbackTexto"></span>
                 </div>
 
-                <!-- --- RESULTADO --- -->
                 <div class="result-overlay" id="resultOverlay">
                     <div class="result-box">
                         <div class="result-icon" id="resultIcon"></div>
                         <h3 id="resultTitle"></h3>
                         <p class="result-text" id="resultText"></p>
-                        <button id="proximaRodadaBtn" class="btn-action"><i class="fas fa-arrow-right"></i> <span data-key="top10-next-list">Próxima Lista</span></button>
+                        <button id="proximaRodadaBtn" class="btn-action">
+                            <i class="fas fa-arrow-right"></i> 
+                            <span data-key="top10-next-list">Próxima Lista</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -119,28 +129,36 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-futbol" data-key="site-tittle"></i> Football Games 11</h3>
+                        <h3>
+                            <i class="fas fa-futbol"></i><span data-key="site-tittle">Football Games 11</span> 
+                        </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
-                    <div class="footer-social">
-                        <h4 data-key="footer-connect">Conecte-se</h4>
-                        <div class="social-icons">
-                            <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
-                                <i class="fab fa-gitlab"></i>
-                            </a>
-                            <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                        <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
                 </div>
             </div>
         </footer>
