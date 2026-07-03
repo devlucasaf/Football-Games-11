@@ -74,7 +74,15 @@ function atualizaSessaoTitulo(lingua) {
 // --- TRADUZ ELEMENTOS DE NAVEGAÇÃO POR CLASSE ---
 function atualizaElementosClass(lingua) {
     const linguas = obterTraducoes();
-    const navClasses = ["nav-home", "nav-sobre", "nav-musica", "nav-skills", "nav-certifications", "nav-projetos", "nav-contatos"];
+    const navClasses = [
+        "nav-home", 
+        "nav-sobre", 
+        "nav-musica", 
+        "nav-skills", 
+        "nav-certifications", 
+        "nav-projetos", 
+        "nav-contatos"
+    ];
     
     navClasses.forEach(className => {
         const elementos = document.getElementsByClassName(className);
