@@ -80,6 +80,7 @@ Football-Games-11/
 │   │       ├── english.js
 │   │       ├── french.js
 │   │       ├── german.js
+│   │       ├── japanese.js
 │   │       ├── portuguese.js
 │   │       └── spanish.js
 │   └── games/                      # Cada minigame é autônomo (HTML + data/ + scripts/ + styles/)
