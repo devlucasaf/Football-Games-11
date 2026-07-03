@@ -25,21 +25,22 @@
         {
             "pergunta": "Quantos jogadores italianos você lembra?",
             "respostas": [
-                { "nome": "Paolo Maldini", "aliases": ["maldini", "paolo maldini"] },
-                { "nome": "Franco Baresi", "aliases": ["baresi", "franco baresi"] },
-                { "nome": "Roberto Baggio", "aliases": ["baggio", "roberto baggio"] },
-                { "nome": "Alessandro Del Piero", "aliases": ["del piero", "delpiero"] },
-                { "nome": "Francesco Totti", "aliases": ["totti", "francesco totti"] },
-                { "nome": "Andrea Pirlo", "aliases": ["pirlo", "andrea pirlo"] },
-                { "nome": "Gianluigi Buffon", "aliases": ["buffon", "gianluigi buffon", "gigi buffon"] },
-                { "nome": "Fabio Cannavaro", "aliases": ["cannavaro", "fabio cannavaro"] },
-                { "nome": "Filippo Inzaghi", "aliases": ["inzaghi", "filippo inzaghi", "pippo inzaghi"] },
-                { "nome": "Alessandro Nesta", "aliases": ["nesta", "alessandro nesta"] },
-                { "nome": "Gennaro Gattuso", "aliases": ["gattuso", "gennaro gattuso"] },
-                { "nome": "Christian Vieri", "aliases": ["vieri", "christian vieri"] },
-                { "nome": "Marco Verratti", "aliases": ["verratti", "marco verratti"] },
-                { "nome": "Gianluca Vialli", "aliases": ["vialli", "gianluca vialli"] },
-                { "nome": "Federico Chiesa", "aliases": ["chiesa", "federico chiesa"] }
+                
+                { "nome": "Paolo Maldini",          "aliases": ["maldini", "paolo maldini"] },
+                { "nome": "Franco Baresi",          "aliases": ["baresi", "franco baresi"] },
+                { "nome": "Roberto Baggio",         "aliases": ["baggio", "roberto baggio"] },
+                { "nome": "Alessandro Del Piero",   "aliases": ["del piero", "delpiero"] },
+                { "nome": "Francesco Totti",        "aliases": ["totti", "francesco totti"] },
+                { "nome": "Andrea Pirlo",           "aliases": ["pirlo", "andrea pirlo"] },
+                { "nome": "Gianluigi Buffon",       "aliases": ["buffon", "gianluigi buffon"] },
+                { "nome": "Fabio Cannavaro",        "aliases": ["cannavaro", "fabio cannavaro"] },
+                { "nome": "Filippo Inzaghi",        "aliases": ["inzaghi", "filippo inzaghi"] },
+                { "nome": "Alessandro Nesta",       "aliases": ["nesta", "alessandro nesta"] },
+                { "nome": "Gennaro Gattuso",        "aliases": ["gattuso", "gennaro gattuso"] },
+                { "nome": "Christian Vieri",        "aliases": ["vieri", "christian vieri"] },
+                { "nome": "Marco Verratti",         "aliases": ["verratti", "marco verratti"] },
+                { "nome": "Gianluca Vialli",        "aliases": ["vialli", "gianluca vialli"] },
+                { "nome": "Federico Chiesa",        "aliases": ["chiesa", "federico chiesa"] }
             ]
         },
         {
