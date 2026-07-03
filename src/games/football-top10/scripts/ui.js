@@ -2,6 +2,7 @@ import estado from "./core.js";
 import { normalizar } from "./utils.js";
 import { obterNomesItens, obterOpcoes } from "./data.js";
 
+// --- REFERÊNCIAS AOS ELEMENTOS DOM ---
 const $lista          = document.getElementById("top10Lista");
 const $temaIcone      = document.getElementById("temaIcone");
 const $temaTexto      = document.getElementById("temaTexto");
@@ -20,9 +21,10 @@ const $resultIcon     = document.getElementById("resultIcon");
 const $resultTitle    = document.getElementById("resultTitle");
 const $resultText     = document.getElementById("resultText");
 
-let feedbackTimer = null;
-let indiceSugestao = -1;
+let feedbackTimer = null;          
+let indiceSugestao = -1;           
 
+// --- RENDERIZAÇÃO DO TEMA ---
 export function renderizarTema(lista) {
     $temaIcone.className = lista.icone;
     $temaTexto.textContent = lista.tema;
@@ -35,6 +37,7 @@ export function renderizarTema(lista) {
     $temaCategoria.textContent = cat[lista.categoria] || lista.categoria;
 }
 
+// --- RENDERIZAÇÃO DA LISTA DE ITENS ---
 export function renderizarLista(lista) {
     $lista.innerHTML = "";
 
@@ -53,6 +56,7 @@ export function renderizarLista(lista) {
     });
 }
 
+// --- REVELAÇÃO DE UM ITEM ---
 export function revelarItem(idx, modoDesistir = false) {
     const item = estado.listaAtual.itens[idx];
     const el   = $lista.querySelector(`[data-idx="${idx}"]`);
@@ -71,6 +75,7 @@ export function revelarItem(idx, modoDesistir = false) {
     `;
 }
 
+// --- REVELAÇÃO DE TODOS OS ITENS NÃO ACERTADOS ---
 export function revelarTodos() {
     estado.listaAtual.itens.forEach((_, idx) => {
         if (!estado.itensAcertados.has(idx)) {
@@ -79,6 +84,7 @@ export function revelarTodos() {
     });
 }
 
+// --- ATUALIZAÇÃO DO PLACAR ---
 export function atualizarPlacar() {
     $acertosCount.textContent = estado.acertosRodada;
     $vidasCount.textContent   = estado.vidas;
@@ -86,8 +92,9 @@ export function atualizarPlacar() {
     $rodadasCount.textContent = estado.totalRodadas;
 }
 
+// --- EXIBIÇÃO DE FEEDBACK ---
 export function mostrarFeedback(tipo, texto) {
-    clearTimeout(feedbackTimer);
+    clearTimeout(feedbackTimer);                             
 
     $feedbackArea.style.display = "";
     $feedbackArea.className = "top10-feedback " + tipo;
@@ -101,6 +108,7 @@ export function mostrarFeedback(tipo, texto) {
     }, 2000);
 }
 
+// --- INICIALIZAÇÃO DO SISTEMA DE SUGESTÕES ---
 export function inicializarSugestoes(onSelecionar) {
     $input.addEventListener("input", () => {
         indiceSugestao = -1;
@@ -147,7 +155,7 @@ export function inicializarSugestoes(onSelecionar) {
             div.addEventListener("click", () => {
                 $input.value = nome;
                 fecharSugestoes();
-                onSelecionar();
+                onSelecionar();              
             });
             $sugestoes.appendChild(div);
         });
@@ -184,38 +192,45 @@ export function inicializarSugestoes(onSelecionar) {
     });
 }
 
+// --- ATUALIZAÇÃO DA CLASSE "ATIVA" NA SUGESTÃO DESTACADA ---
 function atualizarSugestaoAtiva(itens) {
     itens.forEach((item, i) => {
         item.classList.toggle("ativa", i === indiceSugestao);
     });
 }
 
+// --- FECHAMENTO DA LISTA DE SUGESTÕES ---
 function fecharSugestoes() {
     $sugestoes.innerHTML = "";
     $sugestoes.classList.remove("ativa");
 }
 
+// --- LIMPEZA DO CAMPO DE INPUT E SUGESTÕES ---
 export function limparInput() {
     $input.value = "";
     fecharSugestoes();
 }
 
+// --- FOCA NO CAMPO DE INPUT ---
 export function focarInput() {
     $input.focus();
 }
 
+// --- DESABILITA INPUT E BOTÕES ---
 export function desabilitarInput() {
     $input.disabled = true;
     document.getElementById("confirmarBtn").disabled = true;
     document.getElementById("desistirBtn").disabled  = true;
 }
 
+// --- HABILITA INPUT E BOTÕES ---
 export function habilitarInput() {
     $input.disabled = false;
     document.getElementById("confirmarBtn").disabled = false;
     document.getElementById("desistirBtn").disabled  = false;
 }
 
+// --- EXIBIÇÃO DO OVERLAY DE RESULTADO DA RODADA ---
 export function mostrarResultado(acertos, total, pontos) {
     const completo = acertos === total;
 
@@ -235,6 +250,7 @@ export function mostrarResultado(acertos, total, pontos) {
     $resultOverlay.classList.add("active");
 }
 
+// --- FECHAMENTO DO OVERLAY DE RESULTADO ---
 export function fecharResultado() {
     $resultOverlay.classList.remove("active");
 }

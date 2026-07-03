@@ -1,11 +1,13 @@
 import estado from "./core.js";
 
+// --- CARREGAMENTO DOS DADOS ---
 export async function carregarDados() {
     const resp = await fetch("data/football-piramide.json");
     const dados = await resp.json();
     estado.categorias = dados.categorias;
 }
 
+// --- SORTEIO DE UMA CATEGORIA E PREPARAÇÃO DOS JOGADORES ---
 export function sortearCategoria() {
     const idx = Math.floor(Math.random() * estado.categorias.length);
     estado.categoriaAtual = estado.categorias[idx];
@@ -17,26 +19,29 @@ export function sortearCategoria() {
         .sort(() => Math.random() - 0.5);
 }
 
+// --- DETERMINAÇÃO DO TIER DE UM JOGADOR ---
 export function obterTierDoJogador(jogador) {
     const idx = estado.jogadoresOrdenados.findIndex(j => j.nome === jogador.nome);
     if (idx === 0) {
-        return 1;
+        return 1;          
     }
 
     if (idx <= 2) {
-        return 2;
+        return 2;          
     }
 
     if (idx <= 5) {
-        return 3;
+        return 3;          
     }
-    return 4;
+    return 4;             
 }
 
+// --- OBTÉM A POSIÇÃO CORRETA DE UM JOGADOR NA ORDENAÇÃO ---
 export function obterPosicaoCorreta(jogador) {
     return estado.jogadoresOrdenados.findIndex(j => j.nome === jogador.nome);
 }
 
+// --- CÁLCULO DA PONTUAÇÃO FINAL ---
 export function calcularAcertos() {
     let acertos = 0;
     for (let i = 0; i < 10; i++) {
@@ -48,6 +53,7 @@ export function calcularAcertos() {
     return acertos;
 }
 
+// --- MAPEAMENTO DE TIERS PARA SLOTS ---
 export function obterSlotsDoTier(tier) {
     switch (tier) {
         case 1: 

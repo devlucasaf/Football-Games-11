@@ -1,10 +1,11 @@
 import estado from "./core.js";
 
+// --- CRIAÇÃO DO TABULEIRO DO TERMO ---
 export function criarBoard() {
     const board = document.getElementById("termoBoard");
-    board.innerHTML = "";
+    board.innerHTML = ""; 
 
-    const tamanho = estado.secretoNormalizado.length;
+    const tamanho = estado.secretoNormalizado.length; 
 
     for (let i = 0; i < estado.MAX_TENTATIVAS; i++) {
         const row = document.createElement("div");
@@ -21,11 +22,11 @@ export function criarBoard() {
         board.appendChild(row);
     }
 
-    // --- DICA ---
     document.getElementById("hintText").textContent =
         `O nome do jogador tem ${tamanho} letras`;
 }
 
+// --- OBTENÇÃO DAS CÉLULAS DE UMA LINHA ESPECÍFICA ---
 export function getCelulasLinha(linha) {
     return Array.from(
         document.querySelectorAll(`.termo-cell[data-row="${linha}"]`)

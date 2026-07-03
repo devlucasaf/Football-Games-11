@@ -1,5 +1,6 @@
 import { estado } from "./core.js";
 
+// --- CARREGAMENTO DOS DADOS DAS PARTIDAS ---
 export async function carregarDados() {
     const resp = await fetch("data/football-quem-falta.json");
     const data = await resp.json();

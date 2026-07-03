@@ -1,6 +1,7 @@
 import { estado } from "./core.js";
 import { carregarDados, sortear } from "./data.js";
 
+// --- REFERÊNCIAS AOS ELEMENTOS DOM ---
 const els = {
     rodadaAtual:    document.getElementById("rodadaAtual"),
     acertos:        document.getElementById("acertos"),
@@ -21,6 +22,7 @@ const els = {
     gameInfo:       document.getElementById("gameInfo")
 };
 
+// --- EXIBIÇÃO DA RODADA ATUAL ---
 function mostrarRodada() {
     const jogador = estado.sorteados[estado.rodadaAtual];
     estado.tentativasRestantes = 3;
@@ -37,6 +39,7 @@ function mostrarRodada() {
     els.inputNumero.focus();
 }
 
+// --- VERIFICAÇÃO DO PALPITE DO JOGADOR ---
 function verificarPalpite() {
     const valor = els.inputNumero.value.trim();
     if (!valor) {
@@ -87,6 +90,7 @@ function verificarPalpite() {
     }
 }
 
+// --- EXIBIÇÃO DO RESULTADO DA RODADA ---
 function mostrarResultado(acertou, jogador) {
     els.gameArea.classList.add("hidden");
     els.roundResult.classList.remove("hidden");
@@ -108,6 +112,7 @@ function mostrarResultado(acertou, jogador) {
     }
 }
 
+// --- AVANÇA PARA PRÓXIMA RODADA OU FINAL ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -117,6 +122,7 @@ function proxima() {
     }
 }
 
+// --- TELA DE RESULTADO FINAL ---
 function mostrarFinal() {
     els.gameArea.classList.add("hidden");
     els.roundResult.classList.add("hidden");
@@ -139,6 +145,7 @@ function mostrarFinal() {
     els.finalDetails.innerHTML = `<p>${msg}</p>`;
 }
 
+// --- INICIALIZAÇÃO DO JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
@@ -150,6 +157,7 @@ function iniciarJogo() {
     mostrarRodada();
 }
 
+// --- CONFIGURAÇÃO INICIAL ASSÍNCRONA ---
 async function init() {
     await carregarDados();
 

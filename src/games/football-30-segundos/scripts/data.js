@@ -39,7 +39,7 @@ export function encontrarResposta(palpite) {
     }) || null;
 }
 
-// --- OBTER TODOS OS NOMES ÚNICOS DE TODAS AS CATEGORIAS (para o autocomplete) ---
+// --- OBTER TODOS OS NOMES ÚNICOS DE TODAS AS CATEGORIAS ---
 export function obterNomes() {
     const nomes = new Set();
     estado.categorias.forEach((categoria) => {

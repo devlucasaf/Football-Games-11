@@ -23,7 +23,7 @@ export function normalizar(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
 
-// --- OBTER TODOS OS NOMES ÚNICOS (para o autocomplete) ---
+// --- OBTER TODOS OS NOMES ÚNICOS ---
 export function obterNomes() {
     const nomes = new Set();
     estado.conexoes.forEach(conexao => {

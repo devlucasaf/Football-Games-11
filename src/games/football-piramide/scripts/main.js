@@ -1,6 +1,7 @@
 import estado from "./core.js";
 import { carregarDados, sortearCategoria, obterTierDoJogador, calcularAcertos, obterSlotsDoTier } from "./data.js";
 
+// --- REFERÊNCIAS AOS ELEMENTOS DOM ---
 const els = {
     modeSelect:     document.getElementById("modeSelect"),
     gameArea:       document.getElementById("gameArea"),
@@ -18,6 +19,7 @@ const els = {
     gameInfo:       document.getElementById("gameInfo")
 };
 
+// --- RENDERIZAÇÃO DA PIRÂMIDE ---
 function renderizarPiramide() {
     els.piramideGrid.innerHTML = "";
 
@@ -53,6 +55,7 @@ function renderizarPiramide() {
     });
 }
 
+// --- EXIBIÇÃO DO JOGADOR ATUAL ---
 function mostrarJogadorAtual() {
     if (estado.jogadorAtualIdx >= estado.jogadoresEmbaralhados.length) {
         finalizarJogo();
@@ -69,13 +72,13 @@ function mostrarJogadorAtual() {
         els.tierHint.className = `tier-hint tier-${tier}-hint`;
         els.tierHint.classList.remove("hidden");
         
-        // Highlight available slots
         destacarSlotsDoTier(tier);
     } else {
         els.tierHint.classList.add("hidden");
     }
 }
 
+// --- DESTAQUE DE SLOTS POR TIER ---
 function destacarSlotsDoTier(tier) {
     const slots = els.piramideGrid.querySelectorAll(".piramide-slot");
     const slotsValidos = obterSlotsDoTier(tier);
@@ -89,7 +92,9 @@ function destacarSlotsDoTier(tier) {
     });
 }
 
+// --- COLOCAR JOGADOR NO SLOT ---
 function colocarJogador(slotIdx) {
+    // Verifica se slot já está ocupado
     if (estado.piramide[slotIdx]) {
         return;
     }
@@ -104,7 +109,7 @@ function colocarJogador(slotIdx) {
         const tierCorreto = obterTierDoJogador(jogador);
         const slotsValidos = obterSlotsDoTier(tierCorreto);
         if (!slotsValidos.includes(slotIdx)) {
-            return;
+            return; 
         }
     }
 
@@ -114,12 +119,13 @@ function colocarJogador(slotIdx) {
     renderizarPiramide();
 
     if (estado.jogadorAtualIdx >= estado.jogadoresEmbaralhados.length) {
-        setTimeout(finalizarJogo, 400);
+        setTimeout(finalizarJogo, 400);  
     } else {
         mostrarJogadorAtual();
     }
 }
 
+// --- USAR AJUDA ---
 function usarAjuda() {
     if (estado.ajudaUsada) {
         return;
@@ -150,6 +156,7 @@ function usarAjuda() {
     }, 3000);
 }
 
+// --- FINALIZAÇÃO DO JOGO ---
 function finalizarJogo() {
     const acertos = calcularAcertos();
 
@@ -159,7 +166,6 @@ function finalizarJogo() {
 
     els.finalScore.textContent = acertos;
 
-    // Mostra a pirâmide correta
     let html = '<div class="final-piramide">';
     const tiers = [[0], [1, 2], [3, 4, 5], [6, 7, 8, 9]];
 
@@ -171,9 +177,15 @@ function finalizarJogo() {
             const acertou = colocado && colocado.nome === correto.nome;
 
             html += `<div class="final-slot ${acertou ? "acertou" : "errou"}">
-                <span class="final-slot-rank">${slotIdx + 1}º</span>
-                <span class="final-slot-nome">${correto.nome}</span>
-                <span class="final-slot-valor">${correto.valor}</span>
+                <span class="final-slot-rank">
+                    ${slotIdx + 1}º
+                </span>
+                <span class="final-slot-nome">
+                    ${correto.nome}
+                </span>
+                <span class="final-slot-valor">
+                    ${correto.valor}
+                </span>
             </div>`;
         });
         html += "</div>";
@@ -193,6 +205,7 @@ function finalizarJogo() {
     }
 }
 
+// --- INÍCIO DO JOGO ---
 function iniciarJogo(modo) {
     estado.modo = modo;
     estado.piramide = [null, null, null, null, null, null, null, null, null, null];
@@ -215,7 +228,7 @@ function iniciarJogo(modo) {
     mostrarJogadorAtual();
 }
 
-// --- EVENTS ---
+// --- EVENTOS DOS BOTÕES ---
 document.getElementById("btnFacil").addEventListener("click", () => iniciarJogo("facil"));
 document.getElementById("btnNormal").addEventListener("click", () => iniciarJogo("normal"));
 els.btnAjuda.addEventListener("click", usarAjuda);
@@ -250,7 +263,6 @@ document.getElementById("tutorialHelpBtn")?.addEventListener("click", () => {
     tutorialOverlay.classList.remove("hidden");
 });
 
-// --- INIT ---
 async function init() {
     await carregarDados();
 }

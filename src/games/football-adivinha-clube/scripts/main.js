@@ -23,7 +23,7 @@ const els = {
 let dicasAtuais = [];
 let sugestaoAtiva = -1;
 
-// --- RENDERIZA AS SUGESTÕES DE CLUBES (AUTOCOMPLETE) ---
+// --- RENDERIZA AS SUGESTÕES DE CLUBES ---
 function renderizarSugestoes() {
     const termo = normalizar(els.guessInput.value.trim());
     els.suggestions.innerHTML = "";

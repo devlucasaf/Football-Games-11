@@ -74,7 +74,7 @@ function adicionarJogador(pos, nome) {
     atualizarContador();
 }
 
-// --- REMOVER JOGADOR (delegação de evento) ---
+// --- REMOVER JOGADOR ---
 document.getElementById("positionGroups").addEventListener("click", (e) => {
     const removeBtn = e.target.closest(".slot-remove");
     if (!removeBtn) {

@@ -17,12 +17,13 @@ import {
     habilitarInput
 } from "./ui.js";
 
-// --- ELEMENTOS ---
+// --- REFERÊNCIAS AOS ELEMENTOS DOM ---
 const $confirmarBtn = document.getElementById("confirmarBtn");
 const $desistirBtn = document.getElementById("desistirBtn");
 const $proximaRodadaBtn = document.getElementById("proximaRodadaBtn");
 const $input = document.getElementById("palpiteInput");
 
+// --- INÍCIO DE UMA NOVA RODADA ---
 function iniciarRodada() {
     const lista = escolherLista();
 
@@ -41,23 +42,24 @@ function iniciarRodada() {
     fecharResultado();
 }
 
+// --- VERIFICAÇÃO DO PALPITE DO USUÁRIO ---
 function verificarPalpite() {
     if (!estado.jogoAtivo) {
-        return;
+        return;                                          
     }
 
     const valor = $input.value.trim();
     if (!valor) {
-        return;
+        return;                                          
     }
 
     const valorN = normalizar(valor);
     const itens  = estado.listaAtual.itens;
 
-    const matches = [];
+    const matches = [];                                 
     itens.forEach((item, idx) => {
         if (estado.itensAcertados.has(idx)) {
-            return;
+            return;                                      
         }
 
         if (normalizar(item.nome) === valorN) {
@@ -69,7 +71,7 @@ function verificarPalpite() {
         matches.forEach(idx => {
             estado.itensAcertados.add(idx);
             estado.acertosRodada++;
-            revelarItem(idx);
+            revelarItem(idx);                            
         });
 
         const pontosGanhos = 10 * matches.length;
@@ -94,18 +96,20 @@ function verificarPalpite() {
         focarInput();
 
         if (estado.vidas <= 0) {
-            revelarTodos();
+            revelarTodos();                              
             finalizarRodada();
         }
     }
 }
 
+// --- FUNÇÃO PARA DESISTIR DA RODADA ---
 function desistir() {
     if (!estado.jogoAtivo) return;
     revelarTodos();
     finalizarRodada();
 }
 
+// --- FINALIZAÇÃO DA RODADA ---
 function finalizarRodada() {
     estado.jogoAtivo = false;
     desabilitarInput();
@@ -117,8 +121,10 @@ function finalizarRodada() {
     mostrarResultado(acertos, total, pontos);
 }
 
+// --- EVENTOS DOS BOTÕES ---
 $confirmarBtn.addEventListener("click", verificarPalpite);
 
+// --- EVENTO DE TECLA ENTER NO INPUT ---
 const $sugestoes = document.getElementById("sugestoesLista");
 $input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -136,6 +142,7 @@ $proximaRodadaBtn.addEventListener("click", iniciarRodada);
 
 inicializarSugestoes(verificarPalpite);
 
+// --- INICIALIZAÇÃO DO JOGO ---
 async function init() {
     await carregarDados();
     iniciarRodada();
