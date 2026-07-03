@@ -692,7 +692,7 @@ const ubersetzungen = {
     "footer-settings": "Einstellungen",
     "search-placeholder": "Spiele suchen...",
     "search-no-results": "Keine Spiele gefunden.",
-    "footer-copyright": "© 2026 Football Legends. Alle Rechte vorbehalten.",
+    "footer-copyright": "© 2026 Football Games 11. Alle Rechte vorbehalten.",
 
     // Einstellungen
     "config-title": "Einstellungen",

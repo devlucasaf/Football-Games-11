@@ -696,7 +696,7 @@ const traductions = {
     "footer-settings": "Paramètres",
     "search-placeholder": "Rechercher des jeux...",
     "search-no-results": "Aucun jeu trouvé.",
-    "footer-copyright": "© 2026 Football Legends. Tous droits réservés.",
+    "footer-copyright": "© 2026 Football Games 11. Tous droits réservés.",
 
     // Configurações
     "config-title": "Paramètres",
