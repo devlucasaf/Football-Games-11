@@ -71,9 +71,9 @@ function applySavedLanguage() {
 
 // --- SELETOR DE IDIOMA ---
 function initLanguageSelector() {
-    const languageToggle        = document.getElementById("languageToggle");
-    const languageDropdown      = document.getElementById("languageDropdown");
-    const languageOptions       = document.querySelectorAll(".language-option");
+    const languageToggle = document.getElementById("languageToggle");
+    const languageDropdown = document.getElementById("languageDropdown");
+    const languageOptions = document.querySelectorAll(".language-option");
 
     if (!languageToggle || !languageDropdown) {
         return;
