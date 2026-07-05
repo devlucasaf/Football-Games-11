@@ -22,9 +22,10 @@ const els = {
 
 let nomes = [];
 
+// --- EXIBIÇÃO DA RODADA ATUAL ---
 function mostrarRodada() {
     const gol = estado.sorteados[estado.rodadaAtual];
-    estado.dicasReveladas = 1;
+    estado.dicasReveladas = 1;                            
 
     els.rodadaAtual.textContent = estado.rodadaAtual + 1;
     els.tentativas.textContent = estado.maxDicas;
@@ -38,6 +39,7 @@ function mostrarRodada() {
     els.palpiteInput.focus();
 }
 
+// --- RENDERIZAÇÃO DAS DICAS ---
 function renderizarDicas(gol) {
     els.dicasList.innerHTML = "";
     for (let i = 0; i < estado.dicasReveladas; i++) {
@@ -48,6 +50,7 @@ function renderizarDicas(gol) {
     }
 }
 
+// --- VERIFICAÇÃO DO PALPITE DO JOGADOR ---
 function verificarPalpite(palpite) {
     if (!palpite) {
         return;
@@ -88,6 +91,7 @@ function verificarPalpite(palpite) {
     }
 }
 
+// --- EXIBIÇÃO DO RESULTADO DA RODADA ---
 function mostrarResultado(acertou, gol) {
     els.gameArea.classList.add("hidden");
     els.roundResult.classList.remove("hidden");
@@ -109,6 +113,7 @@ function mostrarResultado(acertou, gol) {
     }
 }
 
+// --- AVANÇA PARA PRÓXIMA RODADA OU FINAL ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -118,6 +123,7 @@ function proxima() {
     }
 }
 
+// --- TELA DE RESULTADO FINAL ---
 function mostrarFinal() {
     els.gameArea.classList.add("hidden");
     els.roundResult.classList.add("hidden");
@@ -140,6 +146,7 @@ function mostrarFinal() {
     els.finalDetails.innerHTML = `<p>${mensagem}</p>`;
 }
 
+// --- INICIALIZAÇÃO DO JOGO ---
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
@@ -182,6 +189,7 @@ function atualizarAutocomplete(val) {
     list.classList.remove("hidden");
 }
 
+// --- CONFIGURAÇÃO DO CAMPO DE INPUT ---
 function configurarInput() {
     els.palpiteInput.addEventListener("input", () => {
         const val = els.palpiteInput.value.trim();
@@ -231,7 +239,7 @@ function configurarInput() {
     });
 }
 
-// --- INIT ---
+// --- INICIALIZAÇÃO DO JOGO ---
 async function init() {
     await carregarDados();
     nomes = obterNomesUnicos();

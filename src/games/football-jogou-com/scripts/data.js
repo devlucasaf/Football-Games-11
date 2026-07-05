@@ -1,6 +1,7 @@
 import estado from "./core.js";
 import { embaralhar } from "./utils.js";
 
+// --- CARREGAMENTO DOS DADOS DAS RODADAS ---
 export async function carregarDados() {
     const resposta = await fetch("data/football-jogou-com.json", { cache: "no-store" });
     if (!resposta.ok) {
@@ -9,15 +10,16 @@ export async function carregarDados() {
 
     const dados = await resposta.json();
     
-    estado.rodadas = dados.rodadas;
+    estado.rodadas = dados.rodadas;                
 }
 
+// --- SELEÇÃO DE UMA RODADA ALEATÓRIA NÃO UTILIZADA ---
 export function escolherRodada() {
     const disponiveis = estado.rodadas.filter((_, i) => !estado.rodadasUsadas.has(i));
 
     if (disponiveis.length === 0) {
-        estado.rodadasUsadas.clear();
-        return escolherRodada();
+        estado.rodadasUsadas.clear();               
+        return escolherRodada();                    
     }
 
     const indices = estado.rodadas
@@ -33,6 +35,7 @@ export function escolherRodada() {
     estado.jogoAtivo = true;
 }
 
+// --- OBTENÇÃO DA LISTA DE TODOS OS NOMES DOS JOGADORES ---
 export function obterNomesJogadores() {
     return estado.rodadas.map(r => r.resposta);
 }

@@ -2,6 +2,7 @@ import { normalizar }                   from "./utils.js";
 import { inserirLetra, apagarLetra }    from "./input.js";
 import { confirmarTentativa }           from "./logic.js";
 
+// --- CONFIGURAÇÃO DOS EVENTOS DO JOGO ---
 export function configurarEventos(reiniciarJogo) {
     document.addEventListener("keydown", (e) => {
         if (e.ctrlKey || e.altKey || e.metaKey) {
@@ -9,18 +10,18 @@ export function configurarEventos(reiniciarJogo) {
         }
 
         if (e.key === "Enter") {
-            e.preventDefault();
-            confirmarTentativa();
+            e.preventDefault();                 
+            confirmarTentativa();               
         } else if (e.key === "Backspace") {
-            e.preventDefault();
-            apagarLetra();
+            e.preventDefault();                 
+            apagarLetra();                      
         } else if (e.key === " ") {
-            e.preventDefault();
-            inserirLetra(" ");
+            e.preventDefault();                 
+            inserirLetra(" ");                  
         } else {
             const letra = e.key.toUpperCase();
             if (/^[A-Z]$/.test(letra)) {
-                inserirLetra(normalizar(letra));
+                inserirLetra(normalizar(letra)); 
             }
         }
     });
@@ -29,7 +30,7 @@ export function configurarEventos(reiniciarJogo) {
     document.getElementById("keyboard").addEventListener("click", (e) => {
         const tecla = e.target.closest(".key");
         if (!tecla) {
-            return;
+            return;                             
         }
 
         const key = tecla.dataset.key;
@@ -40,17 +41,15 @@ export function configurarEventos(reiniciarJogo) {
         } else if (key === " ") {
             inserirLetra(" ");
         } else {
-            inserirLetra(normalizar(key));
+            inserirLetra(normalizar(key));      
         }
     });
 
-    // --- NOVO JOGO ---
     document.getElementById("newGameBtn").addEventListener("click", () => {
-        reiniciarJogo();
+        reiniciarJogo();                        
     });
 
-    // --- FECHAR MENSAGEM E REINICIAR ---
     document.getElementById("messageCloseBtn").addEventListener("click", () => {
-        reiniciarJogo();
+        reiniciarJogo();                        
     });
 }

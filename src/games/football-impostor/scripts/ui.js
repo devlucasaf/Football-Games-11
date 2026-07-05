@@ -1,5 +1,6 @@
 import estado from "./core.js";
 
+// --- EXIBIÇÃO DA EXPLICAÇÃO/RESULTADO DA RODADA ---
 export function mostrarExplicacao(acertou) {
     const overlay       = document.getElementById("resultOverlay");
     const icon          = document.getElementById("resultIcon");
@@ -20,13 +21,15 @@ export function mostrarExplicacao(acertou) {
     impostorName.textContent = `O impostor era: ${estado.rodadaAtual.impostor}`;
     text.textContent = estado.rodadaAtual.explicacao;
 
-    overlay.classList.add("active");
+    overlay.classList.add("active");                         
 }
 
+// --- OCULTAÇÃO DO OVERLAY DE RESULTADO ---
 export function esconderResultado() {
     document.getElementById("resultOverlay").classList.remove("active");
 }
 
+// --- ATUALIZAÇÃO DO PLACAR ---
 export function atualizarPlacar() {
     document.getElementById("acertosCount").textContent = estado.acertos;
     document.getElementById("totalCount").textContent = estado.totalJogado;

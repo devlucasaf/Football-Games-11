@@ -6,11 +6,11 @@ import { mostrarMensagem } from "./ui.js";
 
 // --- CALCULA AS CORES DE CADA LETRA NA TENTATIVA ---
 export function calcularCores(chute) {
-    const tamanho       = estado.secretoNormalizado.length;
-    const resultado     = new Array(tamanho).fill("absent");
-    const secretoChars  = estado.secretoNormalizado.split("");
-    const chuteChars    = chute.split("");
-    const contagem      = {};
+    const tamanho = estado.secretoNormalizado.length;
+    const resultado = new Array(tamanho).fill("absent");
+    const secretoChars = estado.secretoNormalizado.split("");
+    const chuteChars = chute.split("");
+    const contagem = {};
 
     for (const c of secretoChars) {
         contagem[c] = (contagem[c] || 0) + 1;

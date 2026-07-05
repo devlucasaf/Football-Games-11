@@ -12,12 +12,12 @@ import {
     getInput
 } from "./ui.js";
 
-// --- AUTOCOMPLETE ---
 let nomesDisponiveis = [];
 let sugestaoAtiva = -1;
 const guessInput = () => document.getElementById("guessInput");
 const suggestions = () => document.getElementById("suggestions");
 
+// --- ESCONDER SUGESTÕES ---
 function esconderSugestoes() {
     const lista = suggestions();
     lista.classList.add("hidden");
@@ -25,21 +25,24 @@ function esconderSugestoes() {
     sugestaoAtiva = -1;
 }
 
+// --- SELECIONAR UMA SUGESTÃO ---
 function selecionarSugestao(nome) {
     guessInput().value = nome;
     esconderSugestoes();
     guessInput().focus();
 }
 
+// --- ATUALIZAR DESTAQUE DA SUGESTÃO ATIVA ---
 function atualizarSugestaoAtiva(itens) {
     itens.forEach((item, i) => {
         item.classList.toggle("active", i === sugestaoAtiva);
         if (i === sugestaoAtiva) {
-            item.scrollIntoView({ block: "nearest" });
+            item.scrollIntoView({ block: "nearest" });  
         }
     });
 }
 
+// --- RENDERIZAR SUGESTÕES ---
 function renderizarSugestoes() {
     const termo = normalizar(guessInput().value);
     const lista = suggestions();
@@ -65,7 +68,7 @@ function renderizarSugestoes() {
         li.className = "suggestion-item";
         li.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
         li.addEventListener("mousedown", (e) => {
-            e.preventDefault();
+            e.preventDefault();  
             selecionarSugestao(nome);
         });
         lista.appendChild(li);
@@ -73,7 +76,7 @@ function renderizarSugestoes() {
     lista.classList.remove("hidden");
 }
 
-// --- MOSTRAR RODADA ATUAL ---
+// --- EXIBIR A RODADA ATUAL ---
 function mostrarRodada() {
     const conexao = estado.sorteadas[estado.rodadaAtual];
     atualizarRodada();
@@ -82,7 +85,7 @@ function mostrarRodada() {
     esconderSugestoes();
 }
 
-// --- VERIFICAR PALPITE ---
+// --- VERIFICAR PALPITE DO USUÁRIO ---
 function verificarPalpite() {
     const palpite = getInput();
     esconderSugestoes();
@@ -102,14 +105,14 @@ function verificarPalpite() {
         atualizarTentativas();
 
         if (estado.tentativasRestantes <= 0) {
-            mostrarResultadoRodada(false, null, conexao);
+            mostrarResultadoRodada(false, null, conexao);  
         } else {
-            mostrarFeedbackErro(palpite);
+            mostrarFeedbackErro(palpite);                  
         }
     }
 }
 
-// --- PRÓXIMA RODADA ---
+// --- AVANÇAR PARA PRÓXIMA RODADA ---
 function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
@@ -133,6 +136,7 @@ async function init() {
     await carregarDados();
     nomesDisponiveis = obterNomes();
 
+    // --- EVENTOS DOS BOTÕES PRINCIPAIS ---
     document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
     document.getElementById("btnNext").addEventListener("click", proxima);
     document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
@@ -140,8 +144,9 @@ async function init() {
         window.location.href = "../../../index.html";
     });
 
+    // --- EVENTOS DO CAMPO DE INPUT ---
     const input = guessInput();
-    input.addEventListener("input", renderizarSugestoes);
+    input.addEventListener("input", renderizarSugestoes);  
     input.addEventListener("keydown", (e) => {
         const itens = [...suggestions().querySelectorAll(".suggestion-item")];
 
@@ -158,7 +163,7 @@ async function init() {
                 e.preventDefault();
                 selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
             } else {
-                verificarPalpite();
+                verificarPalpite();  
             }
         } else if (e.key === "Escape") {
             esconderSugestoes();
@@ -189,5 +194,6 @@ async function init() {
         });
     }
 }
+
 
 init();

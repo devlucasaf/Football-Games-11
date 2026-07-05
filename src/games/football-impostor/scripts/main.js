@@ -1,19 +1,21 @@
-import { carregarDados, escolherRodada } from "./data.js";
-import { criarCards } from "./game.js";
-import { atualizarPlacar, esconderResultado } from "./ui.js";
+import { carregarDados, escolherRodada }        from "./data.js";
+import { criarCards }                           from "./game.js";
+import { atualizarPlacar, esconderResultado }   from "./ui.js";
 
+// --- PRÓXIMA RODADA ---
 function proximaRodada() {
-    esconderResultado();
-    escolherRodada();
-    criarCards();
+    esconderResultado();                              
+    escolherRodada();                                 
+    criarCards();                                     
 }
 
+// --- INICIALIZAÇÃO DO JOGO ---
 async function init() {
     try {
-        await carregarDados();
-        escolherRodada();
-        criarCards();
-        atualizarPlacar();
+        await carregarDados();                        
+        escolherRodada();                             
+        criarCards();                                 
+        atualizarPlacar();                            
 
         document.getElementById("nextRoundBtn").addEventListener("click", () => proximaRodada());
     } catch (erro) {
@@ -21,4 +23,5 @@ async function init() {
     }
 }
 
+// --- EXECUÇÃO QUANDO O DOM ESTIVER PRONTO ---
 document.addEventListener("DOMContentLoaded", () => init());

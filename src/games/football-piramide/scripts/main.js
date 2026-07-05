@@ -94,7 +94,6 @@ function destacarSlotsDoTier(tier) {
 
 // --- COLOCAR JOGADOR NO SLOT ---
 function colocarJogador(slotIdx) {
-    // Verifica se slot já está ocupado
     if (estado.piramide[slotIdx]) {
         return;
     }

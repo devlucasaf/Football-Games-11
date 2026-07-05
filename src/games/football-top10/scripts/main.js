@@ -104,7 +104,9 @@ function verificarPalpite() {
 
 // --- FUNÇÃO PARA DESISTIR DA RODADA ---
 function desistir() {
-    if (!estado.jogoAtivo) return;
+    if (!estado.jogoAtivo) {
+        return;
+    }
     revelarTodos();
     finalizarRodada();
 }

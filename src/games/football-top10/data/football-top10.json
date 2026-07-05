@@ -136,13 +136,13 @@
             ],
             "opcoes": [
                 "Cristiano Ronaldo", "Iker Casillas", "Lionel Messi", "Thomas Müller", "Roberto Mussi",
-                "K. Benzema", "Xavi", "Toni Kroos", "Manuel Neuer", "Antonio Conte",
-                "Ryan Giggs", "Luka Modrić", "Raúl", "R. Lewandowski", "Dennis Bergkamp",
-                "Iniesta", "Piqué", "Sergio Ramos", "G. Buffon", "Cafu",
-                "Paolo Maldini", "Seedorf", "Thierry Henry", "A. Robben", 
-                "Frank Ribéry", "David Villa", "Eto'o", "Di María", "Luis Enrique",
-                "Bale", "Vinícius Jr.", "De Bruyne", "Harry Kane", "Matthias Sammer",
-                "K. Mbappé", "Neymar", "Suárez", "Z. Ibrahimović", "Paolo Rossi", 
+                "Karim Benzema", "Xavi", "Toni Kroos", "Manuel Neuer", "Antonio Conte",
+                "Ryan Giggs", "Luka Modrić", "Raúl", "Robert Lewandowski", "Dennis Bergkamp",
+                "Andrés Iniesta", "Gerard Piqué", "Sergio Ramos", "Gianluigi Buffon", "Cafu",
+                "Paolo Maldini", "Clarence Seedorf", "Thierry Henry", "Arjen Robben", 
+                "Frank Ribéry", "David Villa", "Samuel Eto'o", "Angel Di María", "Luis Enrique",
+                "Gareth Bale", "Vinícius Jr.", "De Bruyne", "Harry Kane", "Matthias Sammer",
+                "K. Mbappé", "Neymar Jr.", "Luis Suárez", "Zlatan Ibrahimović", "Paolo Rossi", 
                 "Jorge Burruchaga", "Sergio Batista", "Ricardo Giusti", "Nery Pumpido",
                 "Jorge Valdano", "Daniel Passarella", "Giuseppe Baresi", "Carlo Ancelotti", "Erwin Vandenbergh",
                 "Hussein Saeed", "Hugo Sánchez", "Carlos Hermosillo", "Michel Platini", "Alain Giresse",
@@ -174,7 +174,7 @@
             "categoria": "jogadores",
             "icone": "fa-trophy",
             "itens": [
-                { "posicao": 1,  "nome": "K. Mbappé",           "detalhe": "2022 (Qatar)"           },
+                { "posicao": 1,  "nome": "Kylian Mbappé",       "detalhe": "2022 (Qatar)"           },
                 { "posicao": 2,  "nome": "Harry Kane",          "detalhe": "2018 (Rússia)"          },
                 { "posicao": 3,  "nome": "James Rodríguez",     "detalhe": "2014 (Brasil)"          },
                 { "posicao": 4,  "nome": "Thomas Müller",       "detalhe": "2010 (África do Sul)"   },
@@ -193,7 +193,34 @@
                 "Paolo Maldini", "Seedorf", "Henry", "Robben", 
                 "Ribéry", "David Villa", "Eto'o", "Di María", 
                 "Bale", "Vinícius Jr.", "De Bruyne", "Kane", 
-                "K. Mbappé", "Neymar", "Suárez", "Z. Ibrahimović", "Ronaldo", "Gabriel Batistuta"
+                "K. Mbappé", "Neymar Jr.", "Suárez", "Z. Ibrahimović", "Ronaldo", "Gabriel Batistuta"
+            ]
+        },
+        {
+            "tema": "Artilheiros da Copa do Mundo de 2022",
+            "categoria": "jogadores",
+            "icone": "fa-trophy",
+            "itens": [
+                { "posicao": 1,  "nome": "Kylian Mbappé",       "detalhe": "França"     },
+                { "posicao": 2,  "nome": "Lionel Messi",        "detalhe": "Argentina"  },
+                { "posicao": 3,  "nome": "Julián Álvarez",      "detalhe": "Argentina"  },
+                { "posicao": 4,  "nome": "Oliver Giroud",       "detalhe": "França"     },
+                { "posicao": 5,  "nome": "Álvaro Morata",       "detalhe": "Espanha"    },
+                { "posicao": 6,  "nome": "Richarlison",         "detalhe": "Brasil"     },
+                { "posicao": 7,  "nome": "Bukayo Saka",         "detalhe": "Inglaterra" },
+                { "posicao": 8,  "nome": "Gonçalo Ramos",       "detalhe": "Portugal"   },
+                { "posicao": 9,  "nome": "Enner Valencia",      "detalhe": "Equador"    },
+                { "posicao": 10, "nome": "Marcus Rashford",     "detalhe": "Inglaterra" }
+            ],
+            "opcoes": [
+                "Cristiano Ronaldo", "Lionel Messi", "Thomas Müller", 
+                "Karim Benzema", "Xavi", "Toni Kroos", "Manuel Neuer", 
+                "Ryan Giggs", "Luka Modrić", "Raúl", "Robert Lewandowski", 
+                "Iniesta", "Piqué", "Sergio Ramos", "Julián Álvarez", 
+                "Paolo Maldini", "Seedorf", "Henry", "Robben", 
+                "Ribéry", "David Villa", "Eto'o", "Di María", 
+                "Bale", "Vinícius Jr.", "De Bruyne", "Kane", 
+                "Kylian Mbappé", "Neymar Jr.", "Suárez", "Oliver Giroud", "Ronaldo", "Gabriel Batistuta"
             ]
         },
         {
@@ -202,7 +229,7 @@
             "icone": "fa-trophy",
             "itens": [
                 { "posicao": 1,  "nome": "Enzo Fernández",    "detalhe": "2022 (Qatar)"           },
-                { "posicao": 2,  "nome": "K. Mbappé",         "detalhe": "2018 (Rússia)"          },
+                { "posicao": 2,  "nome": "Kylian Mbappé",     "detalhe": "2018 (Rússia)"          },
                 { "posicao": 3,  "nome": "Paul Pogba",        "detalhe": "2014 (Brasil)"          },
                 { "posicao": 4,  "nome": "Thomas Müller",     "detalhe": "2010 (África do Sul)"   },
                 { "posicao": 5,  "nome": "Lukas Podolski",    "detalhe": "2006 (Alemanha)"        },
@@ -214,17 +241,17 @@
             ],
             "opcoes": [
                 "Cristiano Ronaldo", "Iker Casillas", "Lionel Messi", "Thomas Müller", 
-                "K. Benzema", "Xavi", "Toni Kroos", "Manuel Neuer", 
-                "Ryan Giggs", "Luka Modrić", "Raúl", "R. Lewandowski", 
-                "Iniesta", "Piqué", "Sergio Ramos", "Buffon", 
-                "Paolo Maldini", "Seedorf", "Henry", "Robben", 
-                "Ribéry", "David Villa", "Eto'o", "Di María", 
+                "Karim Benzema", "Xavi", "Toni Kroos", "Manuel Neuer", 
+                "Ryan Giggs", "Luka Modrić", "Raúl", "Robert Lewandowski", 
+                "Andrés Iniesta", "Gerard Piqué", "Sergio Ramos", "Gianluigi Buffon", 
+                "Paolo Maldini", "Philippe Senderos", "Thierry Henry", "Arjen Robben", 
+                "Blaise Matuidi", "David Villa", "David Silva", "Angel Di María", 
                 "Bale", "Vinícius Jr.", "De Bruyne", "Kane", 
-                "K. Mbappé", "Neymar", "Suárez", "Z. Ibrahimović",
+                "Kylian Mbappé", "Neymar", "Suárez", "Zlatan Ibrahimović",
                 "Enzo Fernández", "Paul Pogba", "Lukas Podolski", 
                 "Landon Donovan", "Michael Owen", "Marc Overmars", 
                 "Robert Prosinečki", "Enzo Scifo", "Paul Pogba",
-                "O. Dembélé", "A. Griezmann", "Vinícius Jr",
+                "Ousmane Dembélé", "Antoine Griezmann", "Vinícius Jr.", "Phil Foden", "Jude Bellingham",
                 "Antony", "Pedro", "Raphinha", 
                 "Rodrygo", "N'golo Kanté", "Ronaldo" 
             ]

@@ -54,10 +54,10 @@ export function atualizarInfo() {
 
 // --- MOSTRA O FEEDBACK DE ACERTO OU ERRO DO PALPITE ---
 export function mostrarFeedback(acertou, pontosGanhos) {
-    const feedback  = document.getElementById("feedback");
-    const icon      = document.getElementById("feedbackIcon");
-    const text      = document.getElementById("feedbackText");
-    const answer    = document.getElementById("feedbackAnswer");
+    const feedback = document.getElementById("feedback");
+    const icon = document.getElementById("feedbackIcon");
+    const text = document.getElementById("feedbackText");
+    const answer = document.getElementById("feedbackAnswer");
 
     document.getElementById("clubsArea").classList.add("hidden");
     document.getElementById("guessArea").classList.add("hidden");

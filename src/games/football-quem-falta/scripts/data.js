@@ -1,12 +1,13 @@
 import { estado } from "./core.js";
 
-// --- CARREGAMENTO DOS DADOS DAS PARTIDAS ---
+// --- CARREGAMENTO DOS DADOS DOS DESAFIOS ---
 export async function carregarDados() {
     const resp = await fetch("data/football-quem-falta.json");
     const data = await resp.json();
     estado.desafios = data.desafios;
 }
 
+// --- SORTEIO DOS DESAFIOS PARA AS RODADAS ---
 export function sortear() {
     const copia = [...estado.desafios];
     const sorteados = [];
@@ -17,11 +18,12 @@ export function sortear() {
     estado.sorteados = sorteados;
 }
 
+// --- NORMALIZAÇÃO DE STRINGS ---
 export function normalizar(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
 
-// --- OBTER TODOS OS NOMES ÚNICOS DOS DESAFIOS ---
+// --- OBTENÇÃO DE TODOS OS NOMES ÚNICOS DOS DESAFIOS ---
 export function obterNomes() {
     const nomes = new Set();
     estado.desafios.forEach(desafio => {

@@ -1,10 +1,12 @@
+// --- DEFINIÇÃO DO OBJETO DE DADOS DA ESCALAÇÃO ---
 const EscalaDados = {
-    dadosTimes: null,
-    timesProcessados: [],
-    timeAtual: null,
-    jogadoresSelecionados: new Map(),
-    formacaoAtual: "4-3-3",
+    dadosTimes: null,                   
+    timesProcessados: [],               
+    timeAtual: null,                    
+    jogadoresSelecionados: new Map(),   
+    formacaoAtual: "4-3-3",             
 
+    // --- CARREGAMENTO DOS DADOS DO JSON ---
     async carregarDados() {
         const resposta = await fetch(EscalaConfig.CAMINHO_JSON);
         if (!resposta.ok) {
@@ -14,6 +16,7 @@ const EscalaDados = {
         this.processarDados();
     },
 
+    // --- PROCESSAMENTO DOS DADOS BRUTOS ---
     processarDados() {
         this.timesProcessados = [];
 
@@ -48,6 +51,7 @@ const EscalaDados = {
         }
     },
 
+    // --- CONTAGEM DE JOGADORES POR POSIÇÃO ---
     obterContagemPosicoes(jogadores) {
         const contagem = { 
             GK:  0, 
@@ -72,6 +76,7 @@ const EscalaDados = {
         return contagem;
     },
 
+    // --- OBTENÇÃO DO GRUPO DE UMA POSIÇÃO ---
     obterGrupoPosicao(posicao) {
         const pos = posicao.toUpperCase();
         for (const [chave, grupo] of Object.entries(EscalaConfig.gruposPosicao)) {
@@ -82,10 +87,12 @@ const EscalaDados = {
         return "Outros";
     },
 
+    // --- VERIFICA SE UM JOGADOR JÁ ESTÁ SELECIONADO EM ALGUMA POSIÇÃO ---
     jogadorEstaSelecionado(nomeJogador) {
         return Array.from(this.jogadoresSelecionados.values()).some(j => j.name === nomeJogador);
     },
 
+    // --- ADICIONA UM JOGADOR EM UMA POSIÇÃO ESPECÍFICA ---
     adicionarJogadorNaPosicao(indiceJogador, posicao) {
         const jogador = this.timeAtual.players[indiceJogador];
         if (!jogador) {
@@ -96,10 +103,12 @@ const EscalaDados = {
         this.jogadoresSelecionados.set(posicao, jogador);
     },
 
+    // --- REMOVE JOGADOR DE UMA POSIÇÃO ESPECÍFICA ---
     removerJogadorDaPosicao(posicao) {
         this.jogadoresSelecionados.delete(posicao);
     },
 
+    // --- REMOVE JOGADOR DE TODAS AS POSIÇÕES ---
     removerJogadorDeTodasPosicoes(nomeJogador) {
         for (const [posicao, jogador] of this.jogadoresSelecionados.entries()) {
             if (jogador.name === nomeJogador) {
@@ -109,6 +118,7 @@ const EscalaDados = {
         }
     },
 
+    // --- ENCONTRA UMA POSIÇÃO SIMILAR DISPONÍVEL ---
     encontrarPosicaoSimilar(posicaoAntiga) {
         for (const [categoria, posicoes] of Object.entries(EscalaConfig.posicoesSimilares)) {
             if (posicaoAntiga.includes(categoria)) {
@@ -122,6 +132,7 @@ const EscalaDados = {
         return null;
     },
 
+    // --- VERIFICA SE UMA POSIÇÃO CORRESPONDE AO FILTRO DE POSIÇÃO ---
     posicaoCorrespondeAoFiltro(posicao, filtro) {
         const pos = posicao.toUpperCase();
 
@@ -141,10 +152,12 @@ const EscalaDados = {
         }
     },
 
+    // --- REINICIA A ESCALAÇÃO ---
     reiniciarEscalacao() {
         this.jogadoresSelecionados.clear();
     },
 
+    // --- SALVA O TIME ESCOLHIDO NO LOCALSTORAGE ---
     salvarTime() {
         if (this.jogadoresSelecionados.size < 11) {
             return false;
@@ -168,6 +181,7 @@ const EscalaDados = {
         return true;
     },
 
+    // --- GERA TEXTO PARA COMPARTILHAMENTO ---
     gerarTextoCompartilhamento() {
         let texto = `Minha Escalação do ${this.timeAtual.name} - Brasileirão 2026\n`;
         texto += `Formação: ${this.formacaoAtual}\n\n`;
