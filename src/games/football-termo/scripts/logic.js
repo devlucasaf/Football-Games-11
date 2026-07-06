@@ -94,9 +94,27 @@ export async function confirmarTentativa() {
     if (chute === estado.secretoNormalizado) {
         await esperar(300);
         await animarVitoria(celulas);
-        mostrarMensagem(`GOLAÇO! Você acertou!\nO jogador era: ${estado.jogadorSecreto}`);
         if (window.registrarVitoria) {
             window.registrarVitoria();
+        }
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-termo", { 
+                venceu: true, 
+                bucket: estado.tentativaAtual, 
+                tamanho: estado.MAX_TENTATIVAS 
+            });
+            window.FG11Stats.mostrarModal("football-termo", {
+                venceu: true,
+                titulo: "GOLAÇO! Você acertou!",
+                resposta: `O jogador era: ${estado.jogadorSecreto}`,
+                tamanho: estado.MAX_TENTATIVAS,
+                rotulos: ["1", "2", "3", "4", "5", "6"],
+                tituloGrafico: "Acertos por tentativa",
+                bucketAtual: estado.tentativaAtual,
+                onReiniciar: () => document.getElementById("newGameBtn").click()
+            });
+        } else {
+            mostrarMensagem(`GOLAÇO! Você acertou!\nO jogador era: ${estado.jogadorSecreto}`);
         }
         return;
     }
@@ -106,9 +124,26 @@ export async function confirmarTentativa() {
     // --- DERROTA ---
     if (estado.tentativaAtual >= estado.MAX_TENTATIVAS) {
         await esperar(300);
-        mostrarMensagem(`Fim de jogo!\nO jogador era: ${estado.jogadorSecreto}`);
         if (window.registrarDerrota) {
             window.registrarDerrota();
+        }
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-termo", { 
+                venceu: false, 
+                tamanho: estado.MAX_TENTATIVAS 
+            });
+            window.FG11Stats.mostrarModal("football-termo", {
+                venceu: false,
+                titulo: "Fim de jogo!",
+                resposta: `O jogador era: ${estado.jogadorSecreto}`,
+                tamanho: estado.MAX_TENTATIVAS,
+                rotulos: ["1", "2", "3", "4", "5", "6"],
+                tituloGrafico: "Acertos por tentativa",
+                bucketAtual: -1,
+                onReiniciar: () => document.getElementById("newGameBtn").click()
+            });
+        } else {
+            mostrarMensagem(`Fim de jogo!\nO jogador era: ${estado.jogadorSecreto}`);
         }
         return;
     }

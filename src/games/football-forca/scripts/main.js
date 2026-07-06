@@ -129,6 +129,25 @@ function verificarVitoria() {
         window.registrarVitoria();
     }
     mostrarResultado(true);
+
+    if (window.FG11Stats) {
+        window.FG11Stats.registrar("football-forca", { 
+            venceu: true, 
+            bucket: estado.erros, 
+            tamanho: estado.maxErros 
+        });
+        window.FG11Stats.mostrarModal("football-forca", {
+            venceu: true,
+            titulo: "Você salvou o jogador!",
+            resposta: `Resposta: ${estado.atual.nome}`,
+            tamanho: estado.maxErros,
+            rotulos: ["0", "1", "2", "3", "4", "5"],
+            tituloGrafico: "Acertos por número de erros",
+            bucketAtual: estado.erros,
+            onReiniciar: novaPalavra,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- VERIFICA SE O JOGADOR PERDEU ---
@@ -151,6 +170,21 @@ function verificarDerrota() {
         window.registrarDerrota();
     }
     mostrarResultado(false);
+
+    if (window.FG11Stats) {
+        window.FG11Stats.registrar("football-forca", { venceu: false, tamanho: estado.maxErros });
+        window.FG11Stats.mostrarModal("football-forca", {
+            venceu: false,
+            titulo: "Enforcado! Fim da linha.",
+            resposta: `Resposta: ${estado.atual.nome}`,
+            tamanho: estado.maxErros,
+            rotulos: ["0", "1", "2", "3", "4", "5"],
+            tituloGrafico: "Acertos por número de erros",
+            bucketAtual: -1,
+            onReiniciar: novaPalavra,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- MOSTRA O RESULTADO DA RODADA ---
@@ -198,7 +232,7 @@ async function init() {
         if (overlay && !overlay.classList.contains("hidden")) {
             return;
         }
-        
+
         const letra = e.key.toUpperCase();
         if (/^[A-Z]$/.test(letra)) {
             tentarLetra(letra);

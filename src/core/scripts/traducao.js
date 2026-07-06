@@ -13,7 +13,8 @@
         `${base}/translation/french.js`,
         `${base}/translation/italian.js`,
         `${base}/scripts/header.js`,
-        `${base}/scripts/script.js`
+        `${base}/scripts/script.js`,
+        `${base}/scripts/estatisticas.js`
     ];
 
     scripts.forEach(src => {
