@@ -7,10 +7,14 @@ const caminhoBaseHeader = (function () {
 // --- MONTA E INJETA O CABEÇALHO ---
 function renderHeader() {
     const base = caminhoBaseHeader;
-    const inicio = new URL(`${base}/../../index.html`).href;
+    const inicioUrl = new URL(`${base}/../../index.html`);
+    const inicio = inicioUrl.href;
 
-    const enderecoAtual = window.location.href.split(/[?#]/)[0];
-    const ehInicio = inicio === enderecoAtual;
+    // --- CONSIDERA "/" EQUIVALENTE A "/index.html" (raiz, GitHub Pages, Live Server, etc.) ---
+    const normalizarCaminho = (caminho) => (caminho.endsWith("/") ? `${caminho}index.html` : caminho);
+    const atualUrl = new URL(window.location.href);
+    const ehInicio = atualUrl.origin === inicioUrl.origin
+        && normalizarCaminho(atualUrl.pathname) === normalizarCaminho(inicioUrl.pathname);
     const temTutorial = document.querySelector(".tutorial-overlay") !== null;
 
     const logo = ehInicio
