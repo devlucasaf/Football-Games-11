@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forca | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-forca.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-forca">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-spell-check"></i>
+                    <h2 data-key="forca-tutorial-title">Como jogar Forca</h2>
+                    <p data-key="forca-tutorial-subtitle">Descubra o jogador letra por letra!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="forca-tutorial-step1"> Um jogador de futebol está escondido — descubra o nome letra por letra.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="forca-tutorial-step2"> Clique nas letras ou use o teclado do computador.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="forca-tutorial-step3"> Cada erro desenha uma parte do boneco. São 6 erros no máximo!</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="forca-tutorial-step4"> Use a dica para ajudar. Acerte antes de ser enforcado!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="forca-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="forca-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="forca-container">
+            <div class="container">
+                <div class="game-info" id="gameInfo">
+                    <div class="game-round">
+                        <i class="fas fa-check"></i> 
+                        <span data-key="forca-hits">Acertos</span>: 
+                        <span id="acertos">0</span>
+                    </div>
+
+                    <div class="game-score">
+                        <i class="fas fa-fire"></i> 
+                        <span data-key="forca-streak">Sequência</span>: 
+                        <span id="sequencia">0</span>
+                    </div>
+                </div>
+
+                <section class="game-area" id="gameArea">
+                    <div class="forca-topo">
+                        <div class="forca-boneco">
+                            <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <line class="forca-base" x1="20" y1="225" x2="115" y2="225" />
+                                <line class="forca-base" x1="45" y1="225" x2="45" y2="20" />
+                                <line class="forca-base" x1="45" y1="20" x2="140" y2="20" />
+                                <line class="forca-base" x1="140" y1="20" x2="140" y2="45" />
+                                <circle class="forca-parte" id="p-cabeca" cx="140" cy="62" r="17" />
+                                <line class="forca-parte" id="p-tronco" x1="140" y1="79" x2="140" y2="150" />
+                                <line class="forca-parte" id="p-braco-e" x1="140" y1="95" x2="112" y2="120" />
+                                <line class="forca-parte" id="p-braco-d" x1="140" y1="95" x2="168" y2="120" />
+                                <line class="forca-parte" id="p-perna-e" x1="140" y1="150" x2="116" y2="185" />
+                                <line class="forca-parte" id="p-perna-d" x1="140" y1="150" x2="164" y2="185" />
+                            </svg>
+                        </div>
+
+                        <div class="forca-info">
+                            <div class="forca-dica-label" data-key="forca-hint-label">Dica</div>
+                            <div class="forca-dica" id="dica"></div>
+                            <div class="forca-erros">
+                                <span data-key="forca-errors">Erros</span>: 
+                                <span id="errosCount">0</span>/6
+                            </div>
+                            <div class="forca-usadas" id="letrasErradas"></div>
+                        </div>
+                    </div>
+
+                    <div class="forca-palavra" id="palavra"></div>
+
+                    <div class="keyboard" id="teclado"></div>
+                </section>
+
+                <section class="round-result hidden" id="roundResult">
+                    <div class="round-icon" id="roundIcon"></div>
+                    <p class="round-text" id="roundText"></p>
+                    <p class="round-answer" id="roundAnswer"></p>
+                    <div class="final-actions">
+                        <button class="btn-next" id="btnNova">
+                            <i class="fas fa-redo"></i> 
+                            <span data-key="forca-new-word">Nova palavra</span>
+                        </button>
+
+                        <button class="btn-home" id="btnHome">
+                            <i class="fas fa-home"></i> 
+                            <span data-key="forca-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-tittle">Football Games 11</span> 
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
