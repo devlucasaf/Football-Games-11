@@ -41,11 +41,11 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 18 | **Football Números** | Adivinhe o número da camisa do jogador |
 | 19 | **Football Linha do Tempo** | Coloque eventos do futebol em ordem cronológica |
 | 20 | **Football Placar** | Acerte o placar exato de jogos históricos |
-| 21 | **Football Quem Falta?** | Complete a lista com o nome que está faltando |
+| 21 | **Football Adivinha o Estádio** | Adivinhe o estádio por pistas |
 | 22 | **Football Multiplica** | Multiplique estatísticas de jogadores para alcançar a meta |
 | 23 | **Football Quiz** | Quiz temático com perguntas sobre Champions, Copa, Libertadores e mais |
 | 24 | **Football Gol a Gol** | Adivinhe quem marcou o gol icônico pelas dicas progressivas |
-| 25 | **Football Contexto** | Descubra o jogador secreto pela similaridade (estilo Contexto) |
+| 25 | **Football Forca** | Descubra o jogador letra por letra |
 | 26 | **Football Pirâmide** | Ordene 10 jogadores na pirâmide pela categoria |
 | 27 | **Football 30 segundos** | Cite o máximo de jogadores que conseguir em 30 segundos |
 | 28 | **Football Adivinha o Clube** | Adivinhe o clube por pistas |
@@ -62,6 +62,7 @@ Football-Games-11/
 │   ├── core/                       # Recursos compartilhados entre os jogos
 │   │   ├── pages/
 │   │   │   ├── configuracoes.html  # Página de configurações (tema, idioma, acessibilidade)
+│   │   │   ├── faq.html            # Página de Perguntas Frequentes
 │   │   │   ├── sobre.html          # Página institucional "Sobre"
 │   │   │   ├── privacidade.html    # Política de Privacidade
 │   │   │   └── licenca.html        # Página da licença (MIT)
@@ -80,21 +81,22 @@ Football-Games-11/
 │   │       ├── english.js
 │   │       ├── french.js
 │   │       ├── german.js
-│   │       ├── japanese.js
+│   │       ├── italian.js
 │   │       ├── portuguese.js
 │   │       └── spanish.js
 │   └── games/                      # Cada minigame é autônomo (HTML + data/ + scripts/ + styles/)
 │       ├── football-30-segundos/
 │       ├── football-acerta-escalacao/
 │       ├── football-adivinha-clube/
+│       ├── football-adivinha-estadio/
 │       ├── football-adivinha-jogador/
 │       ├── football-adivinha-treinador/
 │       ├── football-bingo/
 │       ├── football-carreiras/
 │       ├── football-conecta-clubes/
 │       ├── football-conexoes/
-│       ├── football-contexto/
 │       ├── football-duelo-elencos/
+│       ├── football-forca/
 │       ├── football-gol-a-gol/
 │       ├── football-grid/
 │       ├── football-impostor/
