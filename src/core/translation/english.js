@@ -540,27 +540,7 @@ const translations = {
     "linha-retry": "New Game",
     "linha-home": "Main Menu",
 
-    // Game: Quem Falta? (Who's Missing?)
-    "football-quem-falta-title": "Who's Missing?",
-    "football-quem-falta-desc": "Complete the list with the missing name!",
-    "quem-falta-tutorial-title": "How to play Who's Missing?",
-    "quem-falta-tutorial-subtitle": "Complete the list with the missing name!",
-    "quem-falta-tutorial-step1": " A list is shown with a hidden name.",
-    "quem-falta-tutorial-step2": " Use the hint if you need help.",
-    "quem-falta-tutorial-step3": " Type who is missing.",
-    "quem-falta-tutorial-step4": " 10 quick rounds!",
-    "quem-falta-tutorial-play": "Play",
-    "quem-falta-tutorial-skip": "Don't show again",
-    "quem-falta-round": "Round",
-    "quem-falta-hint": "Show Hint",
-    "quem-falta-input-placeholder": "Who's missing?",
-    "quem-falta-next": "Next",
-    "quem-falta-final-title": "Done!",
-    "quem-falta-final-label": "/10 correct",
-    "quem-falta-retry": "New Game",
-    "quem-falta-home": "Main Menu",
-
-    // Game: Números (Shirt Numbers)
+    // Game: Números 
     "football-numeros-title": "Shirt Numbers",
     "football-numeros-desc": "Guess the player's shirt number!",
 
@@ -582,7 +562,7 @@ const translations = {
     "numeros-retry": "New Game",
     "numeros-home": "Main Menu",
 
-    // Game: Multiplica (Multiply)
+    // Game: Multiplica 
     "football-multiplica-title": "Multiply",
     "football-multiplica-desc": "Multiply the values to reach the goal!",
     "multiplica-tutorial-title": "How to play Football Multiplica",
@@ -628,7 +608,7 @@ const translations = {
     "quiz-outro-tema": "Other Theme",
     "quiz-home": "Main Menu",
 
-    // Game: Gol a Gol (Goal by Goal)
+    // Game: Gol a Gol 
     "football-gol-a-gol-title": "Goal by Goal",
     "football-gol-a-gol-desc": "Guess who scored the iconic goal from the clues!",
     "gol-tutorial-title": "How to play Goal by Goal",
@@ -648,26 +628,6 @@ const translations = {
     "gol-final-label": "/10 correct",
     "gol-retry": "New Game",
     "gol-home": "Main Menu",
-
-    // Game: Contexto
-    "football-contexto-title": "Contexto",
-    "football-contexto-desc": "Find the secret player by similarity!",
-    "contexto-tutorial-title": "How to play Contexto",
-    "contexto-tutorial-subtitle": "Find the secret player!",
-    "contexto-tutorial-step1": " Type the name of a football player.",
-    "contexto-tutorial-step2": " Get a score from 0 to 100 based on similarity.",
-    "contexto-tutorial-step3": " The closer to 100, the more similar to the secret player.",
-    "contexto-tutorial-step4": " Use club, league, position and nationality as reference!",
-    "contexto-tutorial-play": "Play",
-    "contexto-tutorial-skip": "Don't show again",
-    "contexto-guesses": "Guesses:",
-    "contexto-input-placeholder": "Type a player name...",
-    "contexto-give-up": "Give up",
-    "contexto-final-title": "Done!",
-    "contexto-secret-was": "The secret player was:",
-    "contexto-final-label": "guesses",
-    "contexto-retry": "New Game",
-    "contexto-home": "Main Menu",
 
     // Game: Pyramid
     "football-piramide-title": "Pyramid",
@@ -691,6 +651,46 @@ const translations = {
     "piramide-final-label": "/10 correct",
     "piramide-retry": "New Game",
     "piramide-home": "Main Menu",
+
+    // Game: Guess the Stadium
+    "football-adivinha-estadio-title": "Guess the Stadium",
+    "football-adivinha-estadio-desc": "Discover the stadium from clues: country, opening year, club and more!",
+    "estadio-tutorial-title": "How to play Guess the Stadium",
+    "estadio-tutorial-subtitle": "Discover the stadium from the clues!",
+    "estadio-tutorial-step1": " An initial clue is revealed (the stadium's country).",
+    "estadio-tutorial-step2": " Try to guess or click the cards to reveal more clues.",
+    "estadio-tutorial-step3": " Clues go from the vaguest (country) to the most revealing (club).",
+    "estadio-tutorial-step4": " The fewer clues you use, the more points! There are 10 rounds.",
+    "estadio-tutorial-play": "Play",
+    "estadio-tutorial-skip": "Don't show again",
+    "estadio-round": "Round",
+    "estadio-pts": "pts",
+    "estadio-clues-revealed": "Clues revealed",
+    "estadio-input-placeholder": "Stadium name...",
+    "estadio-skip": "Skip",
+    "estadio-next": "Next",
+    "estadio-final-title": "The End!",
+    "estadio-final-label": " points",
+    "estadio-retry": "New Game",
+    "estadio-home": "Main Menu",
+
+    // Game: Hangman
+    "football-forca-title": "Hangman",
+    "football-forca-desc": "Guess the player letter by letter before you're hanged!",
+    "forca-tutorial-title": "How to play Hangman",
+    "forca-tutorial-subtitle": "Guess the player letter by letter!",
+    "forca-tutorial-step1": " A football player is hidden — guess the name letter by letter.",
+    "forca-tutorial-step2": " Click the letters or use your keyboard.",
+    "forca-tutorial-step3": " Each wrong guess draws a part of the figure. 6 mistakes max!",
+    "forca-tutorial-step4": " Use the hint to help. Guess it before you're hanged!",
+    "forca-tutorial-play": "Play",
+    "forca-tutorial-skip": "Don't show again",
+    "forca-hits": "Correct",
+    "forca-streak": "Streak",
+    "forca-hint-label": "Hint",
+    "forca-errors": "Mistakes",
+    "forca-new-word": "New word",
+    "forca-home": "Main Menu",
 
     // Footer
     "footer-made-with": "Made with ❤️ for football fans",
@@ -728,7 +728,7 @@ const translations = {
     "config-about-desc": "Football Games 11 — football minigames hub",
     "config-version": "Version",
 
-    // Page: Sobre (About)
+    // Page: Sobre 
     "nav-sobre": "About",
     "footer-about": "About",
     "sobre-badge": "Open source project",
@@ -764,7 +764,7 @@ const translations = {
     "sobre-cta-subtitle": "Pick one of the 28 minigames and show how much you know about football.",
     "sobre-cta-btn": "See all games",
 
-    // Footer (extra links)
+    // Footer 
     "footer-privacy": "Privacy",
     "footer-license": "License",
 
@@ -815,5 +815,47 @@ const translations = {
     "lic-full-title": "Full license text",
     "lic-cta-title": "Explore the code",
     "lic-cta-subtitle": "The project is fully open source. Contribute or take a look at the repository.",
-    "lic-cta-btn": "View on GitHub"
+    "lic-cta-btn": "View on GitHub",
+
+    // Page: FAQ
+    "faq-badge": "Help center",
+    "faq-hero-title": "Frequently Asked Questions",
+    "faq-hero-subtitle": "Clear up your doubts about the minigames, settings, progress, license and contributing to Football Games 11.",
+    "faq-general-title": "About Football Games 11",
+    "faq-q-what": "What is Football Games 11?",
+    "faq-a-what": "Football Games 11 is a free hub with 28 football minigames. You can play guessing, memory, logic, lineup, quiz and time-based challenges right in your browser.",
+    "faq-q-install": "Do I need to install anything to play?",
+    "faq-a-install": "No. The project runs directly in the browser, with no installation, no required downloads and no need to create an account.",
+    "faq-q-free": "Is Football Games 11 free?",
+    "faq-a-free": "Yes. Football Games 11 is free and open source. The goal is to offer a fun experience for football fans.",
+    "faq-games-title": "Games and how they work",
+    "faq-q-games-count": "How many minigames are there?",
+    "faq-a-games-count": "There are currently 28 football minigames, including guessing, team building, logic, matching, word, number and quick challenge games.",
+    "faq-q-how-play": "How do I start playing?",
+    "faq-a-how-play": "Just go to the home page, pick one of the available minigames and start the challenge. Each game may have its own rules and some show tutorials before the first match.",
+    "faq-q-tutorials": "Can I see the tutorials again?",
+    "faq-a-tutorials": "Yes. On the Settings page there is a 'Reactivate tutorials' option that makes the game tutorials appear again.",
+    "faq-q-mobile": "Does it work on mobile?",
+    "faq-a-mobile": "Yes. Football Games 11 was designed to work on computer, tablet and phone, with a responsive layout.",
+    "faq-settings-title": "Settings and preferences",
+    "faq-q-languages": "Which languages are available?",
+    "faq-a-languages": "The project supports multiple languages. On the Settings page you can choose between Portuguese, English, Spanish, German, French and Italian.",
+    "faq-q-theme": "Is there a light and dark theme?",
+    "faq-a-theme": "Yes. You can switch between light and dark theme on the Settings page.",
+    "faq-q-accessibility": "What accessibility options are there?",
+    "faq-a-accessibility": "You can reduce animations and change the font size between small, medium and large, adjusting the interface to your preferences.",
+    "faq-q-clear-data": "What happens when I clear all data?",
+    "faq-a-clear-data": "This option erases data saved in the browser, such as scores, preferences and progress. After that, some settings may return to default.",
+    "faq-project-title": "Project, code and license",
+    "faq-q-open-source": "Is the project open source?",
+    "faq-a-open-source": "Yes. Football Games 11 is an open-source project. You can study the code, suggest improvements and contribute through the official repository.",
+    "faq-q-license": "What is the project's license?",
+    "faq-a-license": "The project is distributed under the MIT License, allowing use, modification, distribution and commercial use, as long as the copyright notice and the license text are kept.",
+    "faq-q-contribute": "How can I contribute?",
+    "faq-a-contribute": "You can visit the repository on GitHub, open issues, suggest improvements, fix bugs, create new minigames or improve translations and accessibility.",
+    "faq-q-tech": "What technologies does the project use?",
+    "faq-a-tech": "The project is built with HTML5, CSS3, JavaScript and JSON, using pure web technologies, with no frameworks.",
+    "faq-cta-title": "Still have a question?",
+    "faq-cta-subtitle": "Visit the repository, send a suggestion or get in touch through the project's channels.",
+    "faq-cta-btn": "View on GitHub"
 };
