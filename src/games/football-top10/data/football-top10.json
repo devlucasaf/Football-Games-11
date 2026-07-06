@@ -311,7 +311,7 @@
         },
         {
             "tema": "Últimos 10 técnicos campeões da Copa do Mundo",
-            "categoria": "jogadores",
+            "categoria": "tecnicos",
             "icone": "fa-trophy",
             "itens": [
                 { "posicao": 1,  "nome": "Lionel Scaloni",      "detalhe": "2022 (Qatar)"           },
