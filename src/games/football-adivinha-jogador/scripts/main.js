@@ -31,6 +31,7 @@ function verificarPalpite(palpite) {
     estado.tentativas++;
 
     if (palpiteNorm === respostaNorm) {
+        const pistasNaVitoria = estado.pistasReveladas;
         estado.jogoAtivo = false;
         estado.acertos++;
         estado.totalRodadas++;
@@ -51,12 +52,34 @@ function verificarPalpite(palpite) {
             window.registrarVitoria();
         }
 
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-adivinha-jogador", {
+                venceu: true,
+                bucket: pistasNaVitoria - 1,
+                tamanho: 6
+            });
+        }
+
         setTimeout(() => {
             mostrarResultado(
                 "Acertou!",
                 `O jogador era ${estado.jogadorAtual.nome}! +${pts} pontos (${estado.pistasReveladas} pista${estado.pistasReveladas > 1 ? "s" : ""}).`,
                 "<i class='fas fa-check-circle' style='color:#2ecc71'></i>"
             );
+            
+            if (window.FG11Stats) {
+                window.FG11Stats.mostrarModal("football-adivinha-jogador", {
+                    venceu: true,
+                    titulo: "Acertou!",
+                    resposta: `O jogador era ${estado.jogadorAtual.nome}`,
+                    tamanho: 6,
+                    rotulos: ["1", "2", "3", "4", "5", "6"],
+                    tituloGrafico: "Vitórias por pistas reveladas",
+                    bucketAtual: pistasNaVitoria - 1,
+                    onReiniciar: proximaRodada,
+                    onHome: () => { window.location.href = "../../../index.html"; }
+                });
+            }
         }, 600);
     } else {
         if (estado.pistasReveladas >= 6) {
@@ -84,12 +107,32 @@ function finalizarErro() {
         window.registrarDerrota();
     }
 
+    if (window.FG11Stats) {
+        window.FG11Stats.registrar("football-adivinha-jogador", {
+            venceu: false,
+            tamanho: 6
+        });
+    }
+
     setTimeout(() => {
         mostrarResultado(
             "Não foi dessa vez!",
             `O jogador era ${estado.jogadorAtual.nome}.`,
             "<i class='fas fa-times-circle' style='color:#e74c3c'></i>"
         );
+        if (window.FG11Stats) {
+            window.FG11Stats.mostrarModal("football-adivinha-jogador", {
+                venceu: false,
+                titulo: "Não foi dessa vez!",
+                resposta: `O jogador era ${estado.jogadorAtual.nome}`,
+                tamanho: 6,
+                rotulos: ["1", "2", "3", "4", "5", "6"],
+                tituloGrafico: "Vitórias por pistas reveladas",
+                bucketAtual: -1,
+                onReiniciar: proximaRodada,
+                onHome: () => { window.location.href = "../../../index.html"; }
+            });
+        }
     }, 600);
 }
 

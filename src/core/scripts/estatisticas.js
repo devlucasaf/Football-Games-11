@@ -125,7 +125,9 @@
                 `<h3 class="fg11-stats-chart-title">${tituloGrafico}</h3>` +
                 `<div class="fg11-stats-chart">${barras}</div>` +
                 `<div class="fg11-stats-actions">` +
-                    `<button class="fg11-stats-btn primary" id="fg11StatsReiniciar"><i class="fas fa-redo"></i> Jogar novamente</button>` +
+                    `<button class="fg11-stats-btn primary" id="fg11StatsReiniciar">
+                        <i class="fas fa-redo"></i> Jogar novamente
+                    </button>` +
                     homeHtml +
                 `</div>` +
             `</div>`;

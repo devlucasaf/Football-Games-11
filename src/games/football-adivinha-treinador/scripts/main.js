@@ -192,12 +192,27 @@ function mostrarResultado(acertou, treinador) {
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
+
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-adivinha-treinador", {
+                venceu: true,
+                bucket: estado.dicasReveladas - 1,
+                tamanho: estado.maxDicas
+            });
+        }
     } else {
         els.roundIcon.className = "round-icon wrong";
         els.roundIcon.innerHTML = "<i class=\"fas fa-times-circle\"></i>";
         els.roundText.textContent = "Não acertou desta vez!";
         if (window.registrarDerrota) {
             window.registrarDerrota();
+        }
+        
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-adivinha-treinador", {
+                venceu: false,
+                tamanho: estado.maxDicas
+            });
         }
     }
 
@@ -242,6 +257,21 @@ function mostrarFinal() {
     }
 
     els.finalDetails.innerHTML = `<p>${msg}</p><p>Acertos: ${acertos}/${estado.totalRodadas}</p>`;
+
+    if (window.FG11Stats) {
+        const rotulos = Array.from({ length: estado.maxDicas }, (_, i) => String(i + 1));
+        window.FG11Stats.mostrarModal("football-adivinha-treinador", {
+            venceu: acertos >= estado.totalRodadas / 2,
+            titulo: "Fim de jogo!",
+            resposta: `Você acertou ${acertos} de ${estado.totalRodadas} · ${estado.pontos} pontos`,
+            tamanho: estado.maxDicas,
+            rotulos,
+            tituloGrafico: "Vitórias por dicas reveladas",
+            bucketAtual: -1,
+            onReiniciar: iniciarJogo,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- INICIA O JOGO ---
