@@ -58,7 +58,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 Football-Games-11/
 ├── index.html                      # Hub principal com todos os minigames
 ├── src/
-│   ├── icon/                       # Icons das bandeiras
+│   ├── icons/                      # Icons das bandeiras
 │   ├── core/                       # Recursos compartilhados entre os jogos
 │   │   ├── pages/
 │   │   │   ├── configuracoes.html  # Página de configurações (tema, idioma, acessibilidade)
@@ -107,7 +107,6 @@ Football-Games-11/
 │       ├── football-numeros/
 │       ├── football-piramide/
 │       ├── football-placar/
-│       ├── football-quem-falta/
 │       ├── football-quiz/
 │       ├── football-termo/
 │       ├── football-top10/
