@@ -202,6 +202,16 @@ function finalizarJogo() {
     } else {
         els.finalMessage.textContent = "Precisa estudar mais estatísticas!";
     }
+
+    if (acertos >= 5) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
 }
 
 // --- INÍCIO DO JOGO ---

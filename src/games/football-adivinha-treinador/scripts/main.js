@@ -189,10 +189,16 @@ function mostrarResultado(acertou, treinador) {
         els.roundIcon.className = "round-icon correct";
         els.roundIcon.innerHTML = "<i class=\"fas fa-check-circle\"></i>";
         els.roundText.textContent = `Correto! +${calcularPontos()} pontos`;
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
     } else {
         els.roundIcon.className = "round-icon wrong";
         els.roundIcon.innerHTML = "<i class=\"fas fa-times-circle\"></i>";
         els.roundText.textContent = "Não acertou desta vez!";
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
     }
 
     els.roundAnswer.textContent = `Resposta: ${treinador.nome}`;

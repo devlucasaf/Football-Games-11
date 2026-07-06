@@ -22,6 +22,9 @@ const GridTemporizador = {
 
             if (this.tempoRestante <= 0) {
                 this.pararJogo("Tempo esgotado!");
+                if (window.registrarDerrota) {
+                    window.registrarDerrota();
+                }
             }
         }, 1000);
     },

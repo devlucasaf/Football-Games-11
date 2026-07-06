@@ -126,6 +126,9 @@ const GridJogo = {
         const todasPreenchidas = celulas.every((c) => c.classList.contains("correct"));
         if (todasPreenchidas) {
             GridTemporizador.pararJogo("Parabéns! Você completou o grid! 🎉");
+            if (window.registrarVitoria) {
+                window.registrarVitoria();
+            }
         }
     },
 
@@ -205,6 +208,9 @@ const GridJogo = {
 
         btnParar?.addEventListener("click", () => {
             GridTemporizador.pararJogo("Você desistiu! Clique no botão de reiniciar para gerar um novo Grid.");
+            if (window.registrarDerrota) {
+                window.registrarDerrota();
+            }
         });
     }
 };

@@ -160,6 +160,16 @@ export function mostrarFinal() {
         msg = "Tente novamente!";
     }
 
+    if (pct >= 50) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     els.finalDetails.innerHTML = `<p>${msg}</p><p>${estado.pontos}/${maxPts} eventos na posição correta</p>`;
 }
 

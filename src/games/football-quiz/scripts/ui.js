@@ -129,6 +129,16 @@ export function mostrarFinal() {
         els.resultTitle.textContent = "Tente novamente!";
         els.resultText.textContent = "Estude mais sobre o tema e volte para tentar de novo.";
     }
+
+    if (pct >= 50) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
 }
 
 // --- MOSTRAR SELEÇÃO DE TEMA ---

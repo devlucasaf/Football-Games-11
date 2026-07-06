@@ -90,6 +90,16 @@ function selecionarJogador(nome, card) {
 
     atualizarPlacar();
 
+    if (acertou) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     // --- MOSTRAR EXPLICAÇÃO ---
     setTimeout(() => {
         mostrarExplicacao(acertou);

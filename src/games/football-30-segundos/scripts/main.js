@@ -168,6 +168,17 @@ function finalizar() {
     els.guessInput.disabled = true;
 
     const total = estado.categoriaAtual.respostas.length;
+
+    if (estado.acertos.length >= Math.ceil(total / 2)) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     els.finalPoints.textContent = estado.acertos.length;
     els.finalLabel.textContent = ` / ${total}`;
     els.finalQuestion.textContent = estado.categoriaAtual.pergunta;

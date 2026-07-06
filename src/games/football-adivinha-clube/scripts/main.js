@@ -48,7 +48,14 @@ function renderizarSugestoes() {
         item.className = "suggestion-item";
 
         const escudo = time.escudo
-            ? `<img class="suggestion-escudo" src="${time.escudo}" alt="" loading="lazy" onerror="this.outerHTML='<i class=\\'fas fa-shield-halved\\'></i>'">`
+            ? `
+            <img 
+                class="suggestion-escudo" 
+                src="${time.escudo}" 
+                alt="" loading="lazy" 
+                onerror="this.outerHTML='
+                <i class=\\'fas fa-shield-halved\\'></i>'"
+            >`
             : `<i class="fas fa-shield-halved"></i>`;
 
         item.innerHTML = `${escudo}<span>${time.nome}</span>`;
@@ -194,10 +201,16 @@ function mostrarResultado(acertou, time) {
         els.roundIcon.className = "round-icon correct";
         els.roundIcon.innerHTML = "<i class=\"fas fa-check-circle\"></i>";
         els.roundText.textContent = `Correto! +${calcularPontos()} pontos`;
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
     } else {
         els.roundIcon.className = "round-icon wrong";
         els.roundIcon.innerHTML = "<i class=\"fas fa-times-circle\"></i>";
         els.roundText.textContent = "Não acertou desta vez!";
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
     }
 
     els.roundAnswer.textContent = `Resposta: ${time.nome}`;

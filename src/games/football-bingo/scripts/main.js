@@ -65,6 +65,17 @@ function avancarJogador() {
             `${estado.acertos} acertos, ${estado.erros} erros (${pct}%). Bingos: ${estado.bingos}.`,
             estado.bingos > 0 ? "<i class='fas fa-trophy' style='color:#f1c40f'></i>" : "<i class='fas fa-flag-checkered' style='color:var(--text-secondary)'></i>"
         );
+
+        if (estado.bingos > 0) {
+            if (window.registrarVitoria) {
+                window.registrarVitoria();
+            }
+        } else {
+            if (window.registrarDerrota) {
+                window.registrarDerrota();
+            }
+        }
+
         return;
     }
 

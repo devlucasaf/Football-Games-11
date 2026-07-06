@@ -47,6 +47,10 @@ function verificarPalpite(palpite) {
         esconderFeedbackErro();
         atualizarPlacar();
 
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+
         setTimeout(() => {
             mostrarResultado(
                 "Acertou!",
@@ -75,6 +79,10 @@ function finalizarErro() {
     desabilitarInput();
     esconderFeedbackErro();
     atualizarPlacar();
+
+    if (window.registrarDerrota) {
+        window.registrarDerrota();
+    }
 
     setTimeout(() => {
         mostrarResultado(

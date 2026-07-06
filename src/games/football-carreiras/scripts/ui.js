@@ -18,9 +18,15 @@ export function mostrarResultado(acertou) {
     if (acertou) {
         icon.textContent = "";
         text.textContent = `Você acertou! O jogador era ${estado.jogadorAtual.nome}! (${estado.erros} erro${estado.erros !== 1 ? "s" : ""})`;
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
     } else {
         icon.textContent = "";
         text.textContent = `O jogador era ${estado.jogadorAtual.nome}!`;
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
     }
 
     overlay.classList.add("show");

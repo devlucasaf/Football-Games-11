@@ -111,6 +111,16 @@ export function mostrarResultadoFinal() {
         msg = "Difícil, né? Jogue novamente para aprender!";
     }
 
+    if (porcentagem >= 50) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     detailsDiv.innerHTML = `
         <div class="detail-item">${msg}</div>
         <div class="detail-item">Pontuação máxima possível: ${maxPontos} pts</div>

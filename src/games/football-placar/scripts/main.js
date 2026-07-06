@@ -123,6 +123,16 @@ function mostrarFinal() {
         msg = "Tente novamente!";
     }
 
+    if (pct >= 50) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     const exatos = estado.historico.filter(h => h.pontos === 3).length;
     els.finalDetails.innerHTML = `<p>${msg}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
 }

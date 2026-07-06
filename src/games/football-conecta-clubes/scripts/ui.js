@@ -64,10 +64,16 @@ export function mostrarResultadoRodada(acertou, palpite, conexao) {
         elementos.roundIcon.className = "round-icon correct";
         elementos.roundIcon.innerHTML = "<i class='fas fa-check-circle'></i>";
         elementos.roundText.textContent = `Correto! ${palpite} jogou em ambos!`;
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
     } else {
         elementos.roundIcon.className = "round-icon wrong";
         elementos.roundIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
         elementos.roundText.textContent = "Não acertou desta vez!";
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
     }
 
     elementos.roundAnswers.textContent = `Respostas possíveis: ${conexao.respostas.join(", ")}`;

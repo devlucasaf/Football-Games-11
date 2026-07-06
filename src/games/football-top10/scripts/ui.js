@@ -32,7 +32,9 @@ export function renderizarTema(lista) {
     const cat = {
         selecoes:  "Seleções",
         clubes:    "Clubes",
-        jogadores: "Jogadores"
+        jogadores: "Jogadores",
+        tecnicos:  "Técnicos",
+        arbitros:  "Árbitros"
     };
     $temaCategoria.textContent = cat[lista.categoria] || lista.categoria;
 }

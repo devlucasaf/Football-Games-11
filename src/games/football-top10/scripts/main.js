@@ -120,6 +120,16 @@ function finalizarRodada() {
     const acertos = estado.acertosRodada;
     const pontos = acertos * 10 + (acertos === total ? 20 : 0);
 
+    if (acertos === total) {
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else {
+        if (window.registrarDerrota) {
+            window.registrarDerrota();
+        }
+    }
+
     mostrarResultado(acertos, total, pontos);
 }
 
