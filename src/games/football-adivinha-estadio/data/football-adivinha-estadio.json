@@ -1,0 +1,238 @@
+{
+    "estadios": [
+        {
+            "nome": "Maracanã",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1950,
+            "capacidade": "78.838",
+            "primeiroJogo": "Seleção do Rio 3x1 Seleção de São Paulo (1950)",
+            "clube": "Flamengo e Fluminense"
+        },
+        {
+            "nome": "Morumbi",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1960,
+            "capacidade": "66.795",
+            "primeiroJogo": "São Paulo 1x0 Sporting (1960)",
+            "clube": "São Paulo"
+        },
+        {
+            "nome": "Allianz Parque",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 2014,
+            "capacidade": "43.713",
+            "primeiroJogo": "Palmeiras 0x2 Sport (2014)",
+            "clube": "Palmeiras"
+        },
+        {
+            "nome": "Neo Química Arena",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 2014,
+            "capacidade": "49.205",
+            "primeiroJogo": "Corinthians 1x0 Figueirense (2014)",
+            "clube": "Corinthians"
+        },
+        {
+            "nome": "Mineirão",
+            "pais": "Brasil",
+            "estado": "Minas Gerais",
+            "inauguracao": 1965,
+            "capacidade": "61.846",
+            "primeiroJogo": "Seleção Mineira 1x0 River Plate (1965)",
+            "clube": "Cruzeiro e Atlético-MG"
+        },
+        {
+            "nome": "Arena MRV",
+            "pais": "Brasil",
+            "estado": "Minas Gerais",
+            "inauguracao": 2023,
+            "capacidade": "44.892",
+            "primeiroJogo": "Atlético-MG 1x2 Santos (2023)",
+            "clube": "Atlético Mineiro"
+        },
+        {
+            "nome": "Beira-Rio",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Sul",
+            "inauguracao": 1969,
+            "capacidade": "50.842",
+            "primeiroJogo": "Internacional 2x1 Benfica (1969)",
+            "clube": "Internacional"
+        },
+        {
+            "nome": "Arena do Grêmio",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Sul",
+            "inauguracao": 2012,
+            "capacidade": "55.662",
+            "primeiroJogo": "Grêmio 2x1 Hamburgo (2012)",
+            "clube": "Grêmio"
+        },
+        {
+            "nome": "Arena Fonte Nova",
+            "pais": "Brasil",
+            "estado": "Bahia",
+            "inauguracao": 2013,
+            "capacidade": "47.907",
+            "primeiroJogo": "Bahia 5x1 Vitória (2013)",
+            "clube": "Bahia"
+        },
+        {
+            "nome": "Estádio Nilton Santos",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 2007,
+            "capacidade": "44.661",
+            "primeiroJogo": "Inaugurado para o Pan-Americano de 2007",
+            "clube": "Botafogo"
+        },
+        {
+            "nome": "São Januário",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1927,
+            "capacidade": "21.880",
+            "primeiroJogo": "Vasco 5x3 Santos (1927)",
+            "clube": "Vasco da Gama"
+        },
+        {
+            "nome": "Vila Belmiro",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1916,
+            "capacidade": "16.068",
+            "primeiroJogo": "Santos 2x1 Ypiranga (1916)",
+            "clube": "Santos"
+        },
+        {
+            "nome": "Castelão",
+            "pais": "Brasil",
+            "estado": "Ceará",
+            "inauguracao": 1973,
+            "capacidade": "63.903",
+            "primeiroJogo": "Reinaugurado para a Copa de 2014",
+            "clube": "Ceará e Fortaleza"
+        },
+        {
+            "nome": "Ligga Arena",
+            "pais": "Brasil",
+            "estado": "Paraná",
+            "inauguracao": 1999,
+            "capacidade": "42.372",
+            "primeiroJogo": "Reinaugurada como Arena da Baixada em 1999",
+            "clube": "Athletico Paranaense"
+        },
+        {
+            "nome": "Camp Nou",
+            "pais": "Espanha",
+            "estado": "Catalunha",
+            "inauguracao": 1957,
+            "capacidade": "99.354",
+            "primeiroJogo": "Barcelona 4x2 Legia (1957)",
+            "clube": "Barcelona"
+        },
+        {
+            "nome": "Santiago Bernabéu",
+            "pais": "Espanha",
+            "estado": "Comunidade de Madri",
+            "inauguracao": 1947,
+            "capacidade": "83.186",
+            "primeiroJogo": "Real Madrid 3x1 Os Belenenses (1947)",
+            "clube": "Real Madrid"
+        },
+        {
+            "nome": "Old Trafford",
+            "pais": "Inglaterra",
+            "estado": "Grande Manchester",
+            "inauguracao": 1910,
+            "capacidade": "74.310",
+            "primeiroJogo": "Manchester United 3x4 Liverpool (1910)",
+            "clube": "Manchester United"
+        },
+        {
+            "nome": "Anfield",
+            "pais": "Inglaterra",
+            "estado": "Merseyside",
+            "inauguracao": 1884,
+            "capacidade": "61.276",
+            "primeiroJogo": "O Everton foi o primeiro clube a mandar jogos (1884)",
+            "clube": "Liverpool"
+        },
+        {
+            "nome": "Allianz Arena",
+            "pais": "Alemanha",
+            "estado": "Baviera",
+            "inauguracao": 2005,
+            "capacidade": "75.024",
+            "primeiroJogo": "Inaugurada em 2005, casa de Bayern e 1860",
+            "clube": "Bayern de Munique"
+        },
+        {
+            "nome": "Signal Iduna Park",
+            "pais": "Alemanha",
+            "estado": "Renânia do Norte-Vestfália",
+            "inauguracao": 1974,
+            "capacidade": "81.365",
+            "primeiroJogo": "Construído para a Copa do Mundo de 1974",
+            "clube": "Borussia Dortmund"
+        },
+        {
+            "nome": "San Siro",
+            "pais": "Itália",
+            "estado": "Lombardia",
+            "inauguracao": 1926,
+            "capacidade": "75.817",
+            "primeiroJogo": "Inter 6x3 Milan (1926)",
+            "clube": "Milan e Inter"
+        },
+        {
+            "nome": "La Bombonera",
+            "pais": "Argentina",
+            "estado": "Buenos Aires",
+            "inauguracao": 1940,
+            "capacidade": "54.000",
+            "primeiroJogo": "Boca Juniors 2x0 San Lorenzo (1940)",
+            "clube": "Boca Juniors"
+        },
+        {
+            "nome": "Estádio Monumental",
+            "pais": "Argentina",
+            "estado": "Buenos Aires",
+            "inauguracao": 1938,
+            "capacidade": "83.196",
+            "primeiroJogo": "River Plate 3x1 Peñarol (1938)",
+            "clube": "River Plate"
+        },
+        {
+            "nome": "Estádio da Luz",
+            "pais": "Portugal",
+            "estado": "Lisboa",
+            "inauguracao": 2003,
+            "capacidade": "64.642",
+            "primeiroJogo": "Benfica 2x1 Nacional-URU (2003)",
+            "clube": "Benfica"
+        },
+        {
+            "nome": "Estádio Azteca",
+            "pais": "México",
+            "estado": "Cidade do México",
+            "inauguracao": 1966,
+            "capacidade": "87.523",
+            "primeiroJogo": "América 2x2 Torino (1966)",
+            "clube": "Club América"
+        },
+        {
+            "nome": "Wembley",
+            "pais": "Inglaterra",
+            "estado": "Londres",
+            "inauguracao": 2007,
+            "capacidade": "90.000",
+            "primeiroJogo": "Reconstruído e reaberto em 2007",
+            "clube": "Seleção da Inglaterra"
+        }
+    ]
+}
