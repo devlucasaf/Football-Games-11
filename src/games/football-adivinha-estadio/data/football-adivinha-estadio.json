@@ -6,80 +6,9 @@
             "estado": "Rio de Janeiro",
             "inauguracao": 1950,
             "capacidade": "78.838",
-            "primeiroJogo": "Seleção do Rio 3x1 Seleção de São Paulo (1950)",
+            "publicoRecorde": "199.854",
+            "primeiroJogo": "Seleção Carioca 3x1 Seleção Paulista (1950)",
             "clube": "Flamengo e Fluminense"
-        },
-        {
-            "nome": "Morumbi",
-            "pais": "Brasil",
-            "estado": "São Paulo",
-            "inauguracao": 1960,
-            "capacidade": "66.795",
-            "primeiroJogo": "São Paulo 1x0 Sporting (1960)",
-            "clube": "São Paulo"
-        },
-        {
-            "nome": "Allianz Parque",
-            "pais": "Brasil",
-            "estado": "São Paulo",
-            "inauguracao": 2014,
-            "capacidade": "43.713",
-            "primeiroJogo": "Palmeiras 0x2 Sport (2014)",
-            "clube": "Palmeiras"
-        },
-        {
-            "nome": "Neo Química Arena",
-            "pais": "Brasil",
-            "estado": "São Paulo",
-            "inauguracao": 2014,
-            "capacidade": "49.205",
-            "primeiroJogo": "Corinthians 1x0 Figueirense (2014)",
-            "clube": "Corinthians"
-        },
-        {
-            "nome": "Mineirão",
-            "pais": "Brasil",
-            "estado": "Minas Gerais",
-            "inauguracao": 1965,
-            "capacidade": "61.846",
-            "primeiroJogo": "Seleção Mineira 1x0 River Plate (1965)",
-            "clube": "Cruzeiro e Atlético-MG"
-        },
-        {
-            "nome": "Arena MRV",
-            "pais": "Brasil",
-            "estado": "Minas Gerais",
-            "inauguracao": 2023,
-            "capacidade": "44.892",
-            "primeiroJogo": "Atlético-MG 1x2 Santos (2023)",
-            "clube": "Atlético Mineiro"
-        },
-        {
-            "nome": "Beira-Rio",
-            "pais": "Brasil",
-            "estado": "Rio Grande do Sul",
-            "inauguracao": 1969,
-            "capacidade": "50.842",
-            "primeiroJogo": "Internacional 2x1 Benfica (1969)",
-            "clube": "Internacional"
-        },
-        {
-            "nome": "Arena do Grêmio",
-            "pais": "Brasil",
-            "estado": "Rio Grande do Sul",
-            "inauguracao": 2012,
-            "capacidade": "55.662",
-            "primeiroJogo": "Grêmio 2x1 Hamburgo (2012)",
-            "clube": "Grêmio"
-        },
-        {
-            "nome": "Arena Fonte Nova",
-            "pais": "Brasil",
-            "estado": "Bahia",
-            "inauguracao": 2013,
-            "capacidade": "47.907",
-            "primeiroJogo": "Bahia 5x1 Vitória (2013)",
-            "clube": "Bahia"
         },
         {
             "nome": "Estádio Nilton Santos",
@@ -87,7 +16,8 @@
             "estado": "Rio de Janeiro",
             "inauguracao": 2007,
             "capacidade": "44.661",
-            "primeiroJogo": "Inaugurado para o Pan-Americano de 2007",
+            "publicoRecorde": "43.810",
+            "primeiroJogo": "Fluminense 1x2 Botafogo",
             "clube": "Botafogo"
         },
         {
@@ -96,43 +26,508 @@
             "estado": "Rio de Janeiro",
             "inauguracao": 1927,
             "capacidade": "21.880",
-            "primeiroJogo": "Vasco 5x3 Santos (1927)",
+            "publicoRecorde": "60.000",
+            "primeiroJogo": "Vasco da Gama 3x5 Santos",
             "clube": "Vasco da Gama"
+        },
+        {
+            "nome": "Estádio da Gávea",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1938,
+            "capacidade": "4.000",
+            "publicoRecorde": "15.312",
+            "primeiroJogo": "Flamengo 0x2 Vasco da Gama)",
+            "clube": "Flamengo"
+        },
+        {
+            "nome": "Estádio de Laranjeiras",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1919,
+            "capacidade": "8.000",
+            "publicoRecorde": "25.718",
+            "primeiroJogo": "Brasil 6x0 Chile",
+            "clube": "Fluminense"
+        },
+        {
+            "nome": "Estádio Luso-Brasileiro",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1965,
+            "capacidade": "6.437",
+            "publicoRecorde": "18.204",
+            "primeiroJogo": "Portuguesa-RJ 0x2 Vasco da Gama",
+            "clube": "Portuguesa-RJ"
+        },
+        {
+            "nome": "Estádio de Moça Bonita",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1947,
+            "capacidade": "9.024",
+            "publicoRecorde": "32.000",
+            "primeiroJogo": "Bangu 4x2 Flamengo",
+            "clube": "Bangu"
+        },
+        {
+            "nome": "Estádio Giulite Coutinho",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 2000,
+            "capacidade": "13.544",
+            "publicoRecorde": "9.681",
+            "primeiroJogo": "América-RJ 3x1 Seleção Carioca",
+            "clube": "América-RJ"
+        },
+        {
+            "nome": "Estádio Raulino de Oliveira",
+            "pais": "Brasil",
+            "estado": "Rio de Janeiro",
+            "inauguracao": 1951,
+            "capacidade": "18.230",
+            "publicoRecorde": "24.509",
+            "primeiroJogo": "Botafogo 3x1 Fluminense",
+            "clube": "Volta Redonda"
+        },
+        {
+            "nome": "Mané Garrincha",
+            "pais": "Brasil",
+            "estado": "Distrito Federal",
+            "inauguracao": 1974,
+            "capacidade": "72.788",
+            "publicoRecorde": "71.244",
+            "primeiroJogo": "Ceub 1x2 Corinthians",
+            "clube": "Governo do Distrito Federal"
+        },
+        {
+            "nome": "MorumBIS",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1960,
+            "capacidade": "66.795",
+            "publicoRecorde": "146.082",
+            "primeiroJogo": "São Paulo 1x0 Sporting",
+            "clube": "São Paulo"
+        },
+        {
+            "nome": "Allianz Parque",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 2014,
+            "capacidade": "43.723",
+            "publicoRecorde": "41.468",
+            "primeiroJogo": "Palmeiras 0x2 Sport",
+            "clube": "Palmeiras"
+        },
+        {
+            "nome": "Estádio Palestra Italia",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1902,
+            "capacidade": "27.650",
+            "publicoRecorde": "40.283",
+            "primeiroJogo": "Mackenzie 2x1 Germânia",
+            "clube": "Palmeiras"
+        },
+        {
+            "nome": "Neo Química Arena",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 2014,
+            "capacidade": "49.205",
+            "publicoRecorde": "63.267",
+            "primeiroJogo": "Corinthians 0x1 Figueirense",
+            "clube": "Corinthians"
+        },
+        {
+            "nome": "Estádio Parque São Jorge",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1928,
+            "capacidade": "18.500",
+            "publicoRecorde": "34.419",
+            "primeiroJogo": "Corinthians 2x2 América-RJ",
+            "clube": "Corinthians"
         },
         {
             "nome": "Vila Belmiro",
             "pais": "Brasil",
             "estado": "São Paulo",
             "inauguracao": 1916,
-            "capacidade": "16.068",
-            "primeiroJogo": "Santos 2x1 Ypiranga (1916)",
+            "capacidade": "17.923",
+            "publicoRecorde": "32.986",
+            "primeiroJogo": "Santos 2x1 Ypiranga",
             "clube": "Santos"
         },
         {
-            "nome": "Castelão",
+            "nome": "Pacaembu",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1940,
+            "capacidade": "25.500",
+            "publicoRecorde": "77.215",
+            "primeiroJogo": "Palestra Italia 6x2 Coritiba",
+            "clube": "Prefeitura de São Paulo"
+        },
+        {
+            "nome": "Estádio do Canindé",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1956,
+            "capacidade": "22.315",
+            "publicoRecorde": "28.204",
+            "primeiroJogo": "Portuguesa 3x2 Palmeiras",
+            "clube": "Portuguesa"
+        },
+        {
+            "nome": "Arena Barueri",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 2007,
+            "capacidade": "31.452",
+            "publicoRecorde": "29.717",
+            "primeiroJogo": "Barueri 2x1 Criciúma",
+            "clube": "Prefeitura de Barueri"
+        },
+        {
+            "nome": "Brinco de Ouro",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1953,
+            "capacidade": "20.580",
+            "publicoRecorde": "52.002",
+            "primeiroJogo": "Guarani 3x1 Palmeiras",
+            "clube": "Guarani"
+        },
+        {
+            "nome": "Estádio Moisés Lucarelli",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1948,
+            "capacidade": "17.728",
+            "publicoRecorde": "37.274",
+            "primeiroJogo": "Ponte Preta 1x3 São Paulo",
+            "clube": "Ponte Preta"
+        },
+        {
+            "nome": "Estádio Santa Cruz",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1968,
+            "capacidade": "28.946",
+            "publicoRecorde": "62.000",
+            "primeiroJogo": "Botafogo-SP 6x2 Romênia",
+            "clube": "Botafogo-SP"
+        },
+        {
+            "nome": "Prudentão",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1982,
+            "capacidade": "45.954",
+            "publicoRecorde": "45.972",
+            "primeiroJogo": "Palmeiras 3x1 Corinthians",
+            "clube": "Grêmio Prudente"
+        },
+        {
+            "nome": "Estádio Novelli Junior",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1947,
+            "capacidade": "25.500",
+            "publicoRecorde": "77.215",
+            "primeiroJogo": "Ituano 6x1 Amparo",
+            "clube": "Ituano"
+        },
+        {
+            "nome": "Maião",
+            "pais": "Brasil",
+            "estado": "São Paulo",
+            "inauguracao": 1925,
+            "capacidade": "15.000",
+            "publicoRecorde": "11.967",
+            "primeiroJogo": "Mirassol 2x1 Jalense",
+            "clube": "Mirassol"
+        },
+        {
+            "nome": "Mané Garrincha",
+            "pais": "Brasil",
+            "estado": "Distrito Federal",
+            "inauguracao": 1974,
+            "capacidade": "72.788",
+            "publicoRecorde": "71.244",
+            "primeiroJogo": "Ceub 1x2 Corinthians",
+            "clube": "Governo do Distrito Federal"
+        },
+        {
+            "nome": "Bezerrão",
+            "pais": "Brasil",
+            "estado": "Distrito Federal",
+            "inauguracao": 1977,
+            "capacidade": "20.310",
+            "publicoRecorde": "19.157",
+            "primeiroJogo": "Game 0x3 Botafogo",
+            "clube": "Gama"
+        },
+        {
+            "nome": "Boca do Jacaré",
+            "pais": "Brasil",
+            "estado": "Distrito Federal",
+            "inauguracao": 1978,
+            "capacidade": "27.000",
+            "publicoRecorde": "34.228",
+            "primeiroJogo": "Taguatinga 1x0 Vila Nova",
+            "clube": "Brasiliense"
+        },
+        {
+            "nome": "Mineirão",
+            "pais": "Brasil",
+            "estado": "Minas Gerais",
+            "inauguracao": 1965,
+            "capacidade": "61.927",
+            "publicoRecorde": "132.834",
+            "primeiroJogo": "Seleção Mineira 1x0 River Plate",
+            "clube": "Cruzeiro"
+        },
+        {
+            "nome": "Arena MRV",
+            "pais": "Brasil",
+            "estado": "Minas Gerais",
+            "inauguracao": 2023,
+            "capacidade": "44.892",
+            "publicoRecorde": "44.876",
+            "primeiroJogo": "Atlético Mineiro 2x0 Santos",
+            "clube": "Atlético Mineiro"
+        },
+        {
+            "nome": "Arena Independência",
+            "pais": "Brasil",
+            "estado": "Minas Gerais",
+            "inauguracao": 1950,
+            "capacidade": "23.018",
+            "publicoRecorde": "32.722",
+            "primeiroJogo": "Iugoslávia 3x0 Suiça (1950)",
+            "clube": "América Mineiro"
+        },
+        {
+            "nome": "Estádio Parque do Sabiá",
+            "pais": "Brasil",
+            "estado": "Minas Gerais",
+            "inauguracao": 1982,
+            "capacidade": "53.000",
+            "publicoRecorde": "72.723",
+            "primeiroJogo": "Brasil 7x0 Irlanda",
+            "clube": "Uberlândia EC"
+        },
+        {
+            "nome": "Estádio do Arruda",
+            "pais": "Brasil",
+            "estado": "Pernambuco",
+            "inauguracao": 1972,
+            "capacidade": "60.044",
+            "publicoRecorde": "101.670",
+            "primeiroJogo": "Santa Cruz 0x0 Flamengo",
+            "clube": "Santa Cruz"
+        },
+        {
+            "nome": "Arena do Pernambuco",
+            "pais": "Brasil",
+            "estado": "Pernambuco",
+            "inauguracao": 2013,
+            "capacidade": "45.500",
+            "publicoRecorde": "45.500",
+            "primeiroJogo": "Santa Cruz 1x2 Barra-SC",
+            "clube": "Retrô FC"
+        },
+        {
+            "nome": "Ilha do Retiro",
+            "pais": "Brasil",
+            "estado": "Pernambuco",
+            "inauguracao": 1937,
+            "capacidade": "27.325",
+            "publicoRecorde": "56.875",
+            "primeiroJogo": "Sport 6x5 Santa Cruz",
+            "clube": "Sport"
+        },
+        {
+            "nome": "Estádio dos Aflitos",
+            "pais": "Brasil",
+            "estado": "Pernambuco",
+            "inauguracao": 1939,
+            "capacidade": "22.856",
+            "publicoRecorde": "31.613",
+            "primeiroJogo": "Náutico 5x2 Sport",
+            "clube": "Náutico"
+        },
+        {
+            "nome": "Beira-Rio",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Sul",
+            "inauguracao": 1969,
+            "capacidade": "50.842",
+            "publicoRecorde": "106.554",
+            "primeiroJogo": "Internacional 2x1 Benfica",
+            "clube": "Internacional"
+        },
+        {
+            "nome": "Arena do Grêmio",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Sul",
+            "inauguracao": 2012,
+            "capacidade": "60.540",
+            "publicoRecorde": "55.337",
+            "primeiroJogo": "Grêmio 2x1 Hamburgo",
+            "clube": "Grêmio"
+        },
+        {
+            "nome": "Estádio Olímpico Monumental",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Sul",
+            "inauguracao": 1954,
+            "capacidade": "45.000",
+            "publicoRecorde": "98.421",
+            "primeiroJogo": "Grêmio 2x0 Nacional",
+            "clube": "Grêmio"
+        },
+        {
+            "nome": "Estádio Alfredo Jaconi",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Sul",
+            "inauguracao": 1975,
+            "capacidade": "19.924",
+            "publicoRecorde": "27.740",
+            "primeiroJogo": "Juventude 0x0 Flamengo",
+            "clube": "Juventude"
+        },
+        {
+            "nome": "Arena Fonte Nova",
+            "pais": "Brasil",
+            "estado": "Bahia",
+            "inauguracao": 2013,
+            "capacidade": "48.661",
+            "publicoRecorde": "51.227",
+            "primeiroJogo": "Bahia 1x5 Vitória",
+            "clube": "Bahia"
+        },
+        {
+            "nome": "Barradão",
+            "pais": "Brasil",
+            "estado": "Bahia",
+            "inauguracao": 1986,
+            "capacidade": "30.793",
+            "publicoRecorde": "51.200",
+            "primeiroJogo": "Vitória 1x1 Santos",
+            "clube": "Vitória"
+        },
+        {
+            "nome": "Arena Castelão",
             "pais": "Brasil",
             "estado": "Ceará",
             "inauguracao": 1973,
             "capacidade": "63.903",
-            "primeiroJogo": "Reinaugurado para a Copa de 2014",
+            "publicoRecorde": "118.496",
+            "primeiroJogo": "Ceará 0x0 Fortaleza",
             "clube": "Ceará e Fortaleza"
         },
         {
-            "nome": "Ligga Arena",
+            "nome": "Arena da Baixada",
             "pais": "Brasil",
             "estado": "Paraná",
-            "inauguracao": 1999,
+            "inauguracao": 1913,
             "capacidade": "42.372",
-            "primeiroJogo": "Reinaugurada como Arena da Baixada em 1999",
+            "publicoRecorde": "42.177",
+            "primeiroJogo": "Internacional-PR 3x0 Paranaguá",
             "clube": "Athletico Paranaense"
+        },
+        {
+            "nome": "Estádio Couto Pereira",
+            "pais": "Brasil",
+            "estado": "Paraná",
+            "inauguracao": 1932,
+            "capacidade": "40.502",
+            "publicoRecorde": "67.391",
+            "primeiroJogo": "Coritiba 4x2 América-RJ",
+            "clube": "Coritiba"
+        },
+        {
+            "nome": "Estádio Serra Dourada",
+            "pais": "Brasil",
+            "estado": "Goiás",
+            "inauguracao": 1975,
+            "capacidade": "42.049",
+            "publicoRecorde": "77.790",
+            "primeiroJogo": "Seleção Goiana 1x3 Brasil",
+            "clube": "Goiás"
+        },
+        {
+            "nome": "Arena Pantanal",
+            "pais": "Brasil",
+            "estado": "Mato Grosso",
+            "inauguracao": 2014,
+            "capacidade": "42.968",
+            "publicoRecorde": "41.311",
+            "primeiroJogo": "Mixto 0x0 Santos",
+            "clube": "Cuiabá"
+        },
+        {
+            "nome": "Arena da Amazônia",
+            "pais": "Brasil",
+            "estado": "Amazonas",
+            "inauguracao": 2014,
+            "capacidade": "44.000",
+            "publicoRecorde": "44.896",
+            "primeiroJogo": "Nacional 2x2 Remo",
+            "clube": "Amazonas"
+        },
+        {
+            "nome": "Arena das Duanas",
+            "pais": "Brasil",
+            "estado": "Rio Grande do Norte",
+            "inauguracao": 2014,
+            "capacidade": "31.375",
+            "publicoRecorde": "30.575",
+            "primeiroJogo": "América-RN 2x0 Confiança",
+            "clube": "América-RN"
+        },
+        {
+            "nome": "Estádio Mangueirão",
+            "pais": "Brasil",
+            "estado": "Pará",
+            "inauguracao": 1978,
+            "capacidade": "53.645",
+            "publicoRecorde": "65.000",
+            "primeiroJogo": "Remo 1x0 Paysandu",
+            "clube": "Remo e Paysandu"
+        },
+        {
+            "nome": "Estádio Castelão",
+            "pais": "Brasil",
+            "estado": "Maranhão",
+            "inauguracao": 1982,
+            "capacidade": "40.149",
+            "publicoRecorde": "90.720",
+            "primeiroJogo": "Maranhão 1x1 Sampaio Corrêa",
+            "clube": "Sampaio Corrêa"
+        },
+        {
+            "nome": "Kléber Andrade",
+            "pais": "Brasil",
+            "estado": "Espírito Santo",
+            "inauguracao": 1983,
+            "capacidade": "21.000",
+            "publicoRecorde": "50.000",
+            "primeiroJogo": "Rio Branco-ES 3x2 Guarapari",
+            "clube": "Governo do Espírito Santo"
         },
         {
             "nome": "Camp Nou",
             "pais": "Espanha",
             "estado": "Catalunha",
             "inauguracao": 1957,
-            "capacidade": "99.354",
-            "primeiroJogo": "Barcelona 4x2 Legia (1957)",
+            "capacidade": "105.000",
+            "publicoRecorde": "120.000",
+            "primeiroJogo": "Barcelona 4x2 Legia",
             "clube": "Barcelona"
         },
         {
@@ -141,7 +536,8 @@
             "estado": "Comunidade de Madri",
             "inauguracao": 1947,
             "capacidade": "83.186",
-            "primeiroJogo": "Real Madrid 3x1 Os Belenenses (1947)",
+            "publicoRecorde": "130.000",
+            "primeiroJogo": "Real Madrid 3x1 Os Belenenses",
             "clube": "Real Madrid"
         },
         {
@@ -150,7 +546,8 @@
             "estado": "Grande Manchester",
             "inauguracao": 1910,
             "capacidade": "74.310",
-            "primeiroJogo": "Manchester United 3x4 Liverpool (1910)",
+            "publicoRecorde": "76.962",
+            "primeiroJogo": "Manchester United 3x4 Liverpool",
             "clube": "Manchester United"
         },
         {
@@ -159,8 +556,29 @@
             "estado": "Merseyside",
             "inauguracao": 1884,
             "capacidade": "61.276",
-            "primeiroJogo": "O Everton foi o primeiro clube a mandar jogos (1884)",
+            "publicoRecorde": "61.905",
+            "primeiroJogo": "Everton x Earlstown",
             "clube": "Liverpool"
+        },
+        {
+            "nome": "Estádio de Wembley",
+            "pais": "Inglaterra",
+            "estado": "Londres",
+            "inauguracao": 2007,
+            "capacidade": "90.000",
+            "publicoRecorde": "89.874",
+            "primeiroJogo": "Sub-21 Inglaterra 3x3 Italia Sub-21",
+            "clube": "Seleção da Inglaterra"
+        },
+        {
+            "nome": "Estádio Olímpico de Londres",
+            "pais": "Inglaterra",
+            "estado": "Londres",
+            "inauguracao": 2010,
+            "capacidade": "62.500",
+            "publicoRecorde": "89.874",
+            "primeiroJogo": "Jogos Olímpicos de Londres 2012",
+            "clube": "West Ham"
         },
         {
             "nome": "Allianz Arena",
@@ -168,7 +586,8 @@
             "estado": "Baviera",
             "inauguracao": 2005,
             "capacidade": "75.024",
-            "primeiroJogo": "Inaugurada em 2005, casa de Bayern e 1860",
+            "publicoRecorde": "75.000",
+            "primeiroJogo": "Bayern de Munique 4x2 Alemanha",
             "clube": "Bayern de Munique"
         },
         {
@@ -177,6 +596,7 @@
             "estado": "Renânia do Norte-Vestfália",
             "inauguracao": 1974,
             "capacidade": "81.365",
+            "publicoRecorde": "",
             "primeiroJogo": "Construído para a Copa do Mundo de 1974",
             "clube": "Borussia Dortmund"
         },
@@ -185,26 +605,69 @@
             "pais": "Itália",
             "estado": "Lombardia",
             "inauguracao": 1926,
-            "capacidade": "75.817",
-            "primeiroJogo": "Inter 6x3 Milan (1926)",
-            "clube": "Milan e Inter"
+            "capacidade": "80.018",
+            "publicoRecorde": "150.589",
+            "primeiroJogo": "Inter de Milão 6x3 Milan",
+            "clube": "Milan e Inter de Milão"
+        },
+        {
+            "nome": "Allianz Stadium",
+            "pais": "Itália",
+            "estado": "Turim",
+            "inauguracao": 2011,
+            "capacidade": "41.507",
+            "publicoRecorde": "41.507",
+            "primeiroJogo": "Juventus 1x1 Notts County",
+            "clube": "Juventus"
+        },
+        {
+            "nome": "Estádio Olímpico de Roma",
+            "pais": "Itália",
+            "estado": "Lácio",
+            "inauguracao": 2011,
+            "capacidade": "72.698",
+            "publicoRecorde": "78.886",
+            "primeiroJogo": "Itália 0x3 Hungria",
+            "clube": "Roma e Lazio"
+        },
+        {
+            "nome": "Estádio Artemio Franchi",
+            "pais": "Itália",
+            "estado": "Florença",
+            "inauguracao": 1931,
+            "capacidade": "47.282",
+            "publicoRecorde": "58.271",
+            "primeiroJogo": "Fiorentina 1x0 Admira Viena",
+            "clube": "Fiorentina"
+        },
+        {
+            "nome": "Estádio Diego Armando Maradona",
+            "pais": "Itália",
+            "estado": "Nápoles",
+            "inauguracao": 1959,
+            "capacidade": "54.726",
+            "publicoRecorde": "90.736",
+            "primeiroJogo": "Napoli 2x1 Juventus",
+            "clube": "Napoli"
         },
         {
             "nome": "La Bombonera",
             "pais": "Argentina",
             "estado": "Buenos Aires",
             "inauguracao": 1940,
-            "capacidade": "54.000",
-            "primeiroJogo": "Boca Juniors 2x0 San Lorenzo (1940)",
+            "capacidade": "57.200",
+            "publicoRecorde": "57.395",
+            "primeiroJogo": "Boca Juniors 2x1 San Lorenzo",
             "clube": "Boca Juniors"
         },
         {
-            "nome": "Estádio Monumental",
+            "nome": "Estádio Monumental de Nuñez",
             "pais": "Argentina",
             "estado": "Buenos Aires",
             "inauguracao": 1938,
-            "capacidade": "83.196",
-            "primeiroJogo": "River Plate 3x1 Peñarol (1938)",
+            "capacidade": "85.018",
+            "publicoRecorde": "85.780",
+            "primeiroJogo": "River Plate 3x1 Peñarol",
             "clube": "River Plate"
         },
         {
@@ -213,8 +676,59 @@
             "estado": "Lisboa",
             "inauguracao": 2003,
             "capacidade": "64.642",
-            "primeiroJogo": "Benfica 2x1 Nacional-URU (2003)",
+            "publicoRecorde": "",
+            "primeiroJogo": "Benfica 2x1 Nacional-URU",
             "clube": "Benfica"
+        },
+        {
+            "nome": "Estádio do Dragão",
+            "pais": "Portugal",
+            "estado": "Porto",
+            "inauguracao": 2003,
+            "capacidade": "50.033",
+            "publicoRecorde": "52.004",
+            "primeiroJogo": "Porto 2x0 Barcelona",
+            "clube": "FC Porto"
+        },
+        {
+            "nome": "Estádio José Alvalade",
+            "pais": "Portugal",
+            "estado": "Lisboa",
+            "inauguracao": 2003,
+            "capacidade": "52.095",
+            "publicoRecorde": "51.470",
+            "primeiroJogo": "Sporting CP 3x1 Manchester United",
+            "clube": "Sporting CP"
+        },
+        {
+            "nome": "Parc des Princes",
+            "pais": "França",
+            "estado": "Paris",
+            "inauguracao": 1897,
+            "capacidade": "48.583",
+            "publicoRecorde": "50.370",
+            "primeiroJogo": "Marseille 2x1 Bastia",
+            "clube": "Paris Saint-Germain"
+        },
+        {
+            "nome": "Stade de France",
+            "pais": "França",
+            "estado": "Paris",
+            "inauguracao": 1998,
+            "capacidade": "81.338",
+            "publicoRecorde": "80.000",
+            "primeiroJogo": "França 1x0 Espanha",
+            "clube": "Seleção Francesa"
+        },
+        {
+            "nome": "Vélodrome",
+            "pais": "França",
+            "estado": "Marseille",
+            "inauguracao": 1937,
+            "capacidade": "67.394",
+            "publicoRecorde": "66.046",
+            "primeiroJogo": "Olympique de Marseille x Torino",
+            "clube": "Olympique de Marseille"
         },
         {
             "nome": "Estádio Azteca",
@@ -222,17 +736,19 @@
             "estado": "Cidade do México",
             "inauguracao": 1966,
             "capacidade": "87.523",
-            "primeiroJogo": "América 2x2 Torino (1966)",
+            "publicoRecorde": "130.800",
+            "primeiroJogo": "Club América 2x2 Torino",
             "clube": "Club América"
         },
         {
-            "nome": "Wembley",
-            "pais": "Inglaterra",
-            "estado": "Londres",
-            "inauguracao": 2007,
-            "capacidade": "90.000",
-            "primeiroJogo": "Reconstruído e reaberto em 2007",
-            "clube": "Seleção da Inglaterra"
+            "nome": "Estádio Nacional de Pequim",
+            "pais": "China",
+            "estado": "Pequim",
+            "inauguracao": 2008,
+            "capacidade": "80.000",
+            "publicoRecorde": "89.102",
+            "primeiroJogo": "Competição de Marcha Atlética",
+            "clube": "Seleção Chinesa"
         }
     ]
 }
