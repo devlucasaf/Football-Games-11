@@ -164,6 +164,23 @@
             </section>
 
             <div class="container">
+                <div class="faq-search">
+                    <i class="fas fa-magnifying-glass faq-search-icon"></i>
+                    <input
+                        type="text"
+                        id="faqSearch"
+                        class="faq-search-input"
+                        data-key="faq-search-placeholder"
+                        placeholder="Buscar uma pergunta..."
+                        autocomplete="off"
+                        aria-label="Buscar no FAQ"
+                    >
+                </div>
+
+                <p class="faq-no-results hidden" id="faqNoResults" data-key="faq-no-results">
+                    Nenhuma pergunta encontrada. Tente outros termos.
+                </p>
+
                 <section class="sobre-card">
                     <div class="sobre-card-header">
                         <i class="fas fa-gamepad"></i>
@@ -378,31 +395,31 @@
                     <div class="footer-logo">
                         <h3>
                             <i class="fas fa-futbol"></i>
-                            <span data-key="site-tittle">Football Games 11</span> 
+                            <span data-key="site-title">Football Games 11</span> 
                         </h3>
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                     </div>
 
                     <div class="social-icons">
-                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab">
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
                             <i class="fab fa-gitlab"></i>
                         </a>
-                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub">
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email">
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify">
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
                             <i class="fab fa-spotify"></i>
                         </a>
-                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord">
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
                             <i class="fab fa-discord"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
@@ -412,5 +429,55 @@
         </footer>
 
         <script src="../scripts/traducao.js"></script>
+        <script>
+            (function () {
+                const campo = document.getElementById("faqSearch");
+                const semResultados = document.getElementById("faqNoResults");
+                const itens = Array.from(document.querySelectorAll(".faq-item"));
+                const secoes = Array.from(document.querySelectorAll(".sobre-card"));
+
+                if (!campo) {
+                    return;
+                }
+
+                function normalizar(texto) {
+                    return texto
+                        .normalize("NFD")
+                        .replace(/[\u0300-\u036f]/g, "")
+                        .toLowerCase()
+                        .trim();
+                }
+
+                function filtrar() {
+                    const termo = normalizar(campo.value);
+                    let encontrados = 0;
+
+                    itens.forEach((item) => {
+                        const texto = normalizar(item.textContent);
+                        const combina = termo === "" || texto.includes(termo);
+                        item.classList.toggle("hidden", !combina);
+
+                        if (combina) {
+                            encontrados++;
+                        }
+
+                        if (termo !== "") {
+                            item.open = combina;
+                        }
+                    });
+
+                    secoes.forEach((secao) => {
+                        const visiveis = secao.querySelectorAll(".faq-item:not(.hidden)").length;
+                        secao.classList.toggle("hidden", visiveis === 0);
+                    });
+
+                    if (semResultados) {
+                        semResultados.classList.toggle("hidden", encontrados !== 0);
+                    }
+                }
+
+                campo.addEventListener("input", filtrar);
+            })();
+        </script>
     </body>
 </html>
