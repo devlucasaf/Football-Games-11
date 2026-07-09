@@ -819,6 +819,8 @@ const translations = {
 
     // Page: FAQ
     "faq-badge": "Help center",
+    "faq-search-placeholder": "Search for a question...",
+    "faq-no-results": "No questions found. Try other terms.",
     "faq-hero-title": "Frequently Asked Questions",
     "faq-hero-subtitle": "Clear up your doubts about the minigames, settings, progress, license and contributing to Football Games 11.",
     "faq-general-title": "About Football Games 11",

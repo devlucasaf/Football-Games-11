@@ -1,6 +1,6 @@
 const traduzioni = {
     // Generale
-    "site-tittle": "Football Games 11",
+    "site-title": "Football Games 11",
     "theme-toggle-title": "Cambia tema",
     "play-button": "Gioca",
 
@@ -817,6 +817,8 @@ const traduzioni = {
 
     // Pagina: FAQ
     "faq-badge": "Centro assistenza",
+    "faq-search-placeholder": "Cerca una domanda...",
+    "faq-no-results": "Nessuna domanda trovata. Prova altri termini.",
     "faq-hero-title": "Domande Frequenti",
     "faq-hero-subtitle": "Chiarisci i tuoi dubbi sui minigiochi, le impostazioni, i progressi, la licenza e come contribuire a Football Games 11.",
     "faq-general-title": "Informazioni su Football Games 11",

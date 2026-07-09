@@ -640,6 +640,58 @@
     background: rgba(92, 185, 122, 0.04);
 }
 
+/* --- BUSCA DO FAQ --- */
+.faq-search {
+    position: relative;
+    max-width: 560px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.faq-search-icon {
+    position: absolute;
+    top: 50%;
+    left: var(--spacing-md);
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+.faq-search-input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) * 2.6);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    outline: none;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-search-input:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(26, 86, 50, 0.08), var(--shadow-sm);
+}
+
+.faq-search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.faq-no-results {
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: var(--spacing-lg);
+    margin: 0 0 var(--spacing-lg);
+}
+
+.hidden {
+    display: none !important;
+}
+
 /* --- PÁGINA DE CONFIGURAÇÕES --- */
 .settings-page {
     padding: var(--spacing-lg) 0 var(--spacing-2xl);
