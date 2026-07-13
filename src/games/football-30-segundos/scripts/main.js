@@ -210,6 +210,28 @@ function finalizar() {
 
     els.gameArea.classList.add("hidden");
     els.finalResult.classList.remove("hidden");
+
+    if (window.FG11Stats) {
+        const acertos = estado.acertos.length;
+        const venceu = acertos >= Math.ceil(total / 2);
+        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        window.FG11Stats.registrar("football-30-segundos", {
+            venceu,
+            bucket: acertos,
+            tamanho: total + 1
+        });
+        window.FG11Stats.mostrarModal("football-30-segundos", {
+            venceu,
+            titulo: "Tempo esgotado!",
+            resposta: `Você citou ${acertos} de ${total}`,
+            tamanho: total + 1,
+            rotulos,
+            tituloGrafico: "Acertos por partida",
+            bucketAtual: acertos,
+            onReiniciar: iniciarJogo,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- INICIA O JOGO ---

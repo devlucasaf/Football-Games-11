@@ -25,6 +25,7 @@ function verificarPalpite(nome) {
     if (correto) {
         const pontos = calcularPontos();
         estado.pontuacao += pontos;
+        estado.acertos++;
         mostrarFeedback(true, pontos);
     } else {
         mostrarFeedback(false, 0);
@@ -51,6 +52,7 @@ function revelarProximoClube() {
 function proximaRodada() {
     if (estado.rodada >= estado.totalRodadas) {
         mostrarResultadoFinal();
+        registrarEstatisticas();
         return;
     }
 
@@ -65,6 +67,34 @@ function iniciarRodada() {
     renderizarClubes();
     atualizarInfo();
     document.getElementById("guessInput").focus();
+}
+
+// --- REGISTRA E EXIBE AS ESTATÍSTICAS AO FINAL DO JOGO ---
+function registrarEstatisticas() {
+    if (!window.FG11Stats) {
+        return;
+    }
+
+    const total = estado.totalRodadas;
+    const venceu = estado.acertos >= Math.ceil(total / 2);
+    const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+    window.FG11Stats.registrar("football-transferencias", {
+        venceu,
+        bucket: estado.acertos,
+        tamanho: total + 1
+    });
+    
+    window.FG11Stats.mostrarModal("football-transferencias", {
+        venceu,
+        titulo: "Fim de jogo!",
+        resposta: `Você acertou ${estado.acertos} de ${total} · ${estado.pontuacao} pontos`,
+        tamanho: total + 1,
+        rotulos,
+        tituloGrafico: "Acertos por partida",
+        bucketAtual: estado.acertos,
+        onReiniciar: iniciarJogo,
+        onHome: () => { window.location.href = "../../../index.html"; }
+    });
 }
 
 // --- INICIA UM NOVO JOGO DO ZERO ---

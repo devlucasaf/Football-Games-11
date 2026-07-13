@@ -34,6 +34,9 @@ function confirmar() {
     });
 
     estado.pontos += corretos;
+    if (corretos === ordemCorreta.length) {
+        estado.rodadasPerfeitas++;
+    }
     atualizarPontos();
     mostrarRoundResult(corretos, ordemCorreta);
 }
@@ -52,10 +55,13 @@ function proxima() {
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
+    estado.rodadasPerfeitas = 0;
     resetarUI();
     sortear();
     mostrarRodada();
 }
+
+window.linhaTempoReiniciar = iniciarJogo;
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
 async function init() {

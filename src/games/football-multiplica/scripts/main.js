@@ -53,6 +53,25 @@ function proxima() {
     if (estado.rodadaAtual >= estado.desafioAtual.rodadas) {
         const venceu = estado.totalAcumulado >= estado.desafioAtual.meta;
         mostrarFinal(venceu);
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-multiplica", {
+                venceu,
+                bucket: 0,
+                tamanho: 1
+            });
+            
+            window.FG11Stats.mostrarModal("football-multiplica", {
+                venceu,
+                titulo: venceu ? "Meta batida!" : "Não foi dessa vez!",
+                resposta: `Total: ${estado.totalAcumulado} · Meta: ${estado.desafioAtual.meta}`,
+                tamanho: 1,
+                rotulos: ["Vitórias"],
+                tituloGrafico: "Desafios vencidos",
+                bucketAtual: venceu ? 0 : -1,
+                onReiniciar: iniciarJogo,
+                onHome: () => { window.location.href = "../../../index.html"; }
+            });
+        }
     } else {
         mostrarRodada();
     }

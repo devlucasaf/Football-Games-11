@@ -3,13 +3,29 @@ import { normalizar } from "./utils.js";
 
 // --- CARREGAR JOGADORES ---
 export async function carregarDados() {
+    let jogadoresCentral = [];
+    try {
+        const respostaCentral = await fetch("../../core/data/jogadores.json", { cache: "no-store" });
+        if (respostaCentral.ok) {
+            const dadosCentral = await respostaCentral.json();
+            jogadoresCentral = Array.isArray(dadosCentral.jogadores) ? dadosCentral.jogadores : [];
+        }
+    } catch (e) {
+        jogadoresCentral = [];
+    }
+
     const respostaCarreiras = await fetch("data/football-carreiras.json", { cache: "no-store" });
-    
+
     if (!respostaCarreiras.ok) {
         throw new Error(`Erro ao carregar carreiras (${respostaCarreiras.status})`);
     }
     const dadosCarreiras = await respostaCarreiras.json();
-    estado.jogadores = dadosCarreiras.jogadores.filter(j => j.clubes && j.clubes.length >= 3);
+
+    const porNome = new Map();
+    dadosCarreiras.jogadores.forEach(j => porNome.set(normalizar(j.nome), j));
+    jogadoresCentral.forEach(j => porNome.set(normalizar(j.nome), j));
+
+    estado.jogadores = [...porNome.values()].filter(j => j.clubes && j.clubes.length >= 3);
 
     const respostaGrid = await fetch(
         "../football-grid/data/football-grid.json",

@@ -1,0 +1,28 @@
+{
+    "jogadores": [
+        {
+            "nome": "Lionel Messi",
+            "clubes":   ["Barcelona", "Paris Saint-Germain", "Inter Miami"],
+            "selecoes": ["Argentina"],
+            "nivel": "facil"
+        },
+        {
+            "nome": "Diego Maradona",
+            "clubes":   ["Argentinos Juniors", "Boca Juniors", "Barcelona", "Napoli", "Sevilla", "Newell's Old Boys"],
+            "selecoes": ["Argentina"],
+            "nivel": "medio"
+        },
+        {
+            "nome": "Kylian Mbappé",
+            "clubes":   ["Monaco", "Paris Saint-Germain", "Real Madrid"],
+            "selecoes": ["França"],
+            "nivel": "facil"
+        },
+        {
+            "nome": "Erling Haaland",
+            "clubes":   ["Bryne", "Molde", "Red Bull Salzburg", "Borussia Dortmund", "Manchester City"],
+            "selecoes": ["Noruega"],
+            "nivel": "facil"
+        }
+    ]
+}

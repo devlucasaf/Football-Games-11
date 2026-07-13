@@ -13,6 +13,8 @@ function novoJogo() {
     esconderSugestoes();
 }
 
+window.carreirasProxima = novoJogo;
+
 // --- CONFIGURAR EVENTOS ---
 function configurarEventos() {
     const input             = document.getElementById("playerInput");

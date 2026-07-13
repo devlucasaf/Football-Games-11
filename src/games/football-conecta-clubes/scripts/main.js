@@ -117,6 +117,27 @@ function proxima() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
+        if (window.FG11Stats) {
+            const total = estado.totalRodadas;
+            const venceu = estado.acertos >= Math.ceil(total / 2);
+            const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+            window.FG11Stats.registrar("football-conecta-clubes", {
+                venceu,
+                bucket: estado.acertos,
+                tamanho: total + 1
+            });
+            window.FG11Stats.mostrarModal("football-conecta-clubes", {
+                venceu,
+                titulo: "Fim de jogo!",
+                resposta: `Você acertou ${estado.acertos} de ${total}`,
+                tamanho: total + 1,
+                rotulos,
+                tituloGrafico: "Acertos por partida",
+                bucketAtual: estado.acertos,
+                onReiniciar: iniciarJogo,
+                onHome: () => { window.location.href = "../../../index.html"; }
+            });
+        }
     } else {
         mostrarRodada();
     }

@@ -61,6 +61,12 @@ function iniciarQuiz(temaId) {
     mostrarPergunta();
 }
 
+window.quizReiniciar = () => {
+    if (estado.temaAtual) {
+        iniciarQuiz(estado.temaAtual.id);
+    }
+};
+
 // --- VOLTAR À SELEÇÃO DE TEMAS ---
 function voltarTemas() {
     mostrarSelecaoTema();

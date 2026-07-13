@@ -131,6 +131,28 @@ function finalizarRodada() {
     }
 
     mostrarResultado(acertos, total, pontos);
+
+    if (window.FG11Stats) {
+        const venceu = acertos >= Math.ceil(total / 2);
+        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        window.FG11Stats.registrar("football-top10", {
+            venceu,
+            bucket: acertos,
+            tamanho: total + 1
+        });
+        
+        window.FG11Stats.mostrarModal("football-top10", {
+            venceu,
+            titulo: acertos === total ? "Lista completa!" : "Fim da rodada!",
+            resposta: `Você encontrou ${acertos} de ${total} · ${pontos} pontos`,
+            tamanho: total + 1,
+            rotulos,
+            tituloGrafico: "Acertos por lista",
+            bucketAtual: acertos,
+            onReiniciar: iniciarRodada,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- EVENTOS DOS BOTÕES ---

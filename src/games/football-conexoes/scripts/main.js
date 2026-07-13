@@ -39,7 +39,10 @@ function confirmarSelecao() {
 
         if (estado.gruposAcertados.length === 4) {
             estado.jogoAtivo = false;
-            setTimeout(() => mostrarResultadoFinal(true), 600);
+            setTimeout(() => {
+                mostrarResultadoFinal(true);
+                registrarEstatisticas(true);
+            }, 600);
         }
     } else {
         estado.tentativasRestantes--;
@@ -65,9 +68,34 @@ function confirmarSelecao() {
                     }
                 });
                 mostrarResultadoFinal(false);
+                registrarEstatisticas(false);
             }, 800);
         }
     }
+}
+
+// --- REGISTRA E EXIBE AS ESTATÍSTICAS DO PUZZLE ---
+function registrarEstatisticas(venceu) {
+    if (!window.FG11Stats) {
+        return;
+    }
+    const acertados = estado.gruposAcertados.length;
+    window.FG11Stats.registrar("football-conexoes", {
+        venceu,
+        bucket: acertados,
+        tamanho: 5
+    });
+    window.FG11Stats.mostrarModal("football-conexoes", {
+        venceu,
+        titulo: venceu ? "Você conectou tudo!" : "Fim de jogo!",
+        resposta: `Grupos acertados: ${acertados} de 4`,
+        tamanho: 5,
+        rotulos: ["0", "1", "2", "3", "4"],
+        tituloGrafico: "Grupos acertados por partida",
+        bucketAtual: acertados,
+        onReiniciar: iniciarPuzzle,
+        onHome: () => { window.location.href = "../../../index.html"; }
+    });
 }
 
 // --- EVENTOS DOS BOTÕES ---

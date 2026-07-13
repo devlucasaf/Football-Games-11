@@ -8,6 +8,7 @@ export const estado = {
     rodada:             1,
     totalRodadas:       5,
     pontuacao:          0,
+    acertos:            0,
     jogoAtivo:          true,
     palpite: ""
 };
@@ -18,6 +19,7 @@ export function resetEstado() {
     estado.clubesRevelados = 0;
     estado.rodada = 1;
     estado.pontuacao = 0;
+    estado.acertos = 0;
     estado.jogoAtivo = true;
     estado.palpite = "";
 }

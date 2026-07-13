@@ -171,6 +171,29 @@ export function mostrarFinal() {
     }
 
     els.finalDetails.innerHTML = `<p>${msg}</p><p>${estado.pontos}/${maxPts} eventos na posição correta</p>`;
+
+    if (window.FG11Stats) {
+        const total = estado.totalRodadas;
+        const venceu = pct >= 50;
+        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        window.FG11Stats.registrar("football-linha-do-tempo", {
+            venceu,
+            bucket: estado.rodadasPerfeitas,
+            tamanho: total + 1
+        });
+        
+        window.FG11Stats.mostrarModal("football-linha-do-tempo", {
+            venceu,
+            titulo: "Fim de jogo!",
+            resposta: `${estado.pontos}/${maxPts} eventos certos · ${estado.rodadasPerfeitas} rodadas perfeitas`,
+            tamanho: total + 1,
+            rotulos,
+            tituloGrafico: "Rodadas perfeitas por partida",
+            bucketAtual: estado.rodadasPerfeitas,
+            onReiniciar: window.linhaTempoReiniciar,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- RESETAR INTERFACE ---

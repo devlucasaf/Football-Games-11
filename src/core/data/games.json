@@ -1,0 +1,61 @@
+{
+    "_comentario": "Registro central dos minigames do Football Games 11. Use este arquivo como fonte única de metadados (nome, descrição, ícone, categoria, recursos suportados).",
+    "categorias": {
+        "adivinhacao": { 
+            "rotuloKey": "cat-adivinhacao", 
+            "icone": "fa-magnifying-glass" 
+        },
+        "palavra": { 
+            "rotuloKey": "cat-palavra", 
+            "icone": "fa-spell-check" },
+        "logica": { 
+            "rotuloKey": "cat-logica", 
+            "icone": "fa-puzzle-piece" },
+        "ordenacao": { 
+            "rotuloKey": "cat-ordenacao", 
+            "icone": "fa-list-ol" },
+        "montar-time": { 
+            "rotuloKey": "cat-montar-time", 
+            "icone": "fa-clipboard-list" },
+        "conhecimento": { 
+            "rotuloKey": "cat-conhecimento", 
+            "icone": "fa-question-circle" },
+        "memoria": { 
+            "rotuloKey": "cat-memoria", 
+            "icone": "fa-stopwatch" },
+        "sorte": { 
+            "rotuloKey": "cat-sorte", 
+            "icone": "fa-dice" 
+        }
+    },
+    "jogos": [
+        { "id": "football-adivinha-jogador",   "tituloKey": "football-adivinha-jogador-title",   "descKey": "football-adivinha-jogador-desc",   "icone": "fa-magnifying-glass", "categoria": "adivinhacao",  "pagina": "src/games/football-adivinha-jogador/football-adivinha-jogador.html",   "estatisticas": true,  "dificuldade": false },
+        { "id": "football-adivinha-clube",     "tituloKey": "football-acerte-time-title",        "descKey": "football-acerte-time-desc",        "icone": "fa-shield-halved",    "categoria": "adivinhacao",  "pagina": "src/games/football-adivinha-clube/football-adivinha-clube.html",       "estatisticas": true,  "dificuldade": false },
+        { "id": "football-adivinha-treinador", "tituloKey": "football-acerta-treinador-title",   "descKey": "football-acerta-treinador-desc",   "icone": "fa-user-tie",         "categoria": "adivinhacao",  "pagina": "src/games/football-adivinha-treinador/football-adivinha-treinador.html", "estatisticas": true,  "dificuldade": false },
+        { "id": "football-adivinha-estadio",   "tituloKey": "football-adivinha-estadio-title",   "descKey": "football-adivinha-estadio-desc",   "icone": "fa-location-dot",     "categoria": "adivinhacao",  "pagina": "src/games/football-adivinha-estadio/football-adivinha-estadio.html",   "estatisticas": true,  "dificuldade": false },
+        { "id": "football-carreiras",          "tituloKey": "football-carreiras-title",          "descKey": "football-carreiras-desc",          "icone": "fa-road",             "categoria": "adivinhacao",  "pagina": "src/games/football-carreiras/football-carreiras.html",                 "estatisticas": true, "dificuldade": false },
+        { "id": "football-transferencias",     "tituloKey": "football-transferencias-title",     "descKey": "football-transferencias-desc",     "icone": "fa-exchange-alt",     "categoria": "adivinhacao",  "pagina": "src/games/football-transferencias/football-transferencias.html",       "estatisticas": true, "dificuldade": false },
+        { "id": "football-jogou-com",          "tituloKey": "football-jogou-com-title",          "descKey": "football-jogou-com-desc",          "icone": "fa-link",             "categoria": "adivinhacao",  "pagina": "src/games/football-jogou-com/football-jogou-com.html",                 "estatisticas": true, "dificuldade": false },
+        { "id": "football-conecta-clubes",     "tituloKey": "football-concecta-clubes-title",    "descKey": "football-conecta-clubes-desc",     "icone": "fa-link",             "categoria": "adivinhacao",  "pagina": "src/games/football-conecta-clubes/football-conecta-clubes.html",       "estatisticas": true, "dificuldade": false },
+        { "id": "football-gol-a-gol",          "tituloKey": "football-gol-a-gol-title",          "descKey": "football-gol-a-gol-desc",          "icone": "fa-futbol",           "categoria": "adivinhacao",  "pagina": "src/games/football-gol-a-gol/football-gol-a-gol.html",                 "estatisticas": true, "dificuldade": false },
+        { "id": "football-numeros",            "tituloKey": "football-numeros-title",            "descKey": "football-numeros-desc",            "icone": "fa-hashtag",          "categoria": "adivinhacao",  "pagina": "src/games/football-numeros/football-numeros.html",                     "estatisticas": true, "dificuldade": false },
+        { "id": "football-termo",              "tituloKey": "football-termo-title",              "descKey": "football-termo-desc",              "icone": "fa-keyboard",         "categoria": "palavra",      "pagina": "src/games/football-termo/football-termo.html",                         "estatisticas": true,  "dificuldade": false },
+        { "id": "football-forca",              "tituloKey": "football-forca-title",              "descKey": "football-forca-desc",              "icone": "fa-spell-check",      "categoria": "palavra",      "pagina": "src/games/football-forca/football-forca.html",                         "estatisticas": true,  "dificuldade": false },
+        { "id": "football-conexoes",           "tituloKey": "football-conexoes-title",           "descKey": "football-conexoes-desc",           "icone": "fa-puzzle-piece",     "categoria": "logica",       "pagina": "src/games/football-conexoes/football-conexoes.html",                   "estatisticas": true, "dificuldade": false },
+        { "id": "football-impostor",           "tituloKey": "football-impostor-title",           "descKey": "football-impostor-desc",           "icone": "fa-user-secret",      "categoria": "logica",       "pagina": "src/games/football-impostor/football-impostor.html",                   "estatisticas": false, "dificuldade": false },
+        { "id": "football-duelo-elencos",      "tituloKey": "football-duelo-elencos-title",      "descKey": "football-duelo-elencos-desc",      "icone": "fa-users",            "categoria": "logica",       "pagina": "src/games/football-duelo-elencos/football-duelo-elencos.html",         "estatisticas": false, "dificuldade": false },
+        { "id": "football-multiplica",         "tituloKey": "football-multiplica-title",         "descKey": "football-multiplica-desc",         "icone": "fa-xmark",            "categoria": "logica",       "pagina": "src/games/football-multiplica/football-multiplica.html",               "estatisticas": true, "dificuldade": false },
+        { "id": "football-grid",               "tituloKey": "football-grid-tittle",              "descKey": "football-grid-desc",               "icone": "fa-table-cells",      "categoria": "logica",       "pagina": "src/games/football-grid/football-grid.html",                           "estatisticas": false, "dificuldade": false },
+        { "id": "football-top10",              "tituloKey": "football-top10-title",              "descKey": "football-top10-desc",              "icone": "fa-list-ol",          "categoria": "ordenacao",    "pagina": "src/games/football-top10/football-top10.html",                         "estatisticas": true, "dificuldade": false },
+        { "id": "football-piramide",           "tituloKey": "football-piramide-title",           "descKey": "football-piramide-desc",           "icone": "fa-sort-amount-up",   "categoria": "ordenacao",    "pagina": "src/games/football-piramide/football-piramide.html",                   "estatisticas": true, "dificuldade": false },
+        { "id": "football-linha-do-tempo",     "tituloKey": "football-linha-tempo-title",        "descKey": "football-linha-tempo-desc",        "icone": "fa-clock-rotate-left","categoria": "ordenacao",    "pagina": "src/games/football-linha-do-tempo/football-linha-do-tempo.html",       "estatisticas": true, "dificuldade": false },
+        { "id": "football-quiz",               "tituloKey": "football-quiz-title",               "descKey": "football-quiz-desc",               "icone": "fa-question-circle",  "categoria": "conhecimento", "pagina": "src/games/football-quiz/football-quiz.html",                           "estatisticas": true, "dificuldade": false },
+        { "id": "football-placar",             "tituloKey": "football-placar-title",             "descKey": "football-placar-desc",             "icone": "fa-futbol",           "categoria": "conhecimento", "pagina": "src/games/football-placar/football-placar.html",                       "estatisticas": true, "dificuldade": false },
+        { "id": "football-30-segundos",        "tituloKey": "football-30-segundos-title",        "descKey": "football-30-segundos-desc",        "icone": "fa-stopwatch",        "categoria": "memoria",      "pagina": "src/games/football-30-segundos/football-30-segundos.html",             "estatisticas": true, "dificuldade": false },
+        { "id": "football-legends",            "tituloKey": "football-legends-title",            "descKey": "football-legends-desc",            "icone": "fa-crown",            "categoria": "montar-time",  "pagina": "src/games/football-legends/football-legends.html",                     "estatisticas": false, "dificuldade": false },
+        { "id": "football-vc-escala",          "tituloKey": "football-vc-escala-title",          "descKey": "football-vc-escala-desc",          "icone": "fa-question-circle",  "categoria": "montar-time",  "pagina": "src/games/football-vc-escala/football-vc-escala.html",                 "estatisticas": false, "dificuldade": false },
+        { "id": "football-vc-convoca",         "tituloKey": "football-vc-convoca-title",         "descKey": "football-vc-convoca-desc",         "icone": "fa-clipboard-list",   "categoria": "montar-time",  "pagina": "src/games/football-vc-convoca/football-vc-convoca.html",               "estatisticas": false, "dificuldade": false },
+        { "id": "football-acerta-escalacao",   "tituloKey": "football-acerta-escalacao-title",   "descKey": "football-acerta-escalacao-desc",   "icone": "fa-clipboard-list",   "categoria": "montar-time",  "pagina": "src/games/football-acerta-escalacao/football-acerta-escalacao.html",   "estatisticas": true, "dificuldade": false },
+        { "id": "football-bingo",              "tituloKey": "football-bingo-tittle",             "descKey": "football-bingo-desc",              "icone": "fa-chess-board",      "categoria": "sorte",        "pagina": "src/games/football-bingo/football-bingo.html",                         "estatisticas": false, "dificuldade": false }
+    ]
+}

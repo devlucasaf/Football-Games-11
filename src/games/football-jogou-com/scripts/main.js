@@ -51,6 +51,15 @@ function verificarPalpite(palpite) {
             window.registrarVitoria();
         }
 
+        if (window.FG11Stats) {
+            const bucket = Math.min(Math.max(estado.companheirosRevelados - 1, 0), 4);
+            window.FG11Stats.registrar("football-jogou-com", {
+                venceu: true,
+                bucket,
+                tamanho: 5
+            });
+        }
+
         setTimeout(() => {
             mostrarResultado(
                 "Acertou!",
@@ -102,12 +111,32 @@ function finalizarErro() {
         window.registrarDerrota();
     }
 
+    if (window.FG11Stats) {
+        window.FG11Stats.registrar("football-jogou-com", {
+            venceu: false,
+            tamanho: 5
+        });
+    }
+
     setTimeout(() => {
         mostrarResultado(
             "Não foi dessa vez!",
             `O jogador era ${estado.rodadaAtual.resposta}.`,
             '<i class="fas fa-times-circle" style="color:#e74c3c"></i>'
         );
+        if (window.FG11Stats) {
+            window.FG11Stats.mostrarModal("football-jogou-com", {
+                venceu: false,
+                titulo: "Fim da sequência!",
+                resposta: `O jogador era ${estado.rodadaAtual.resposta} · melhor sequência: ${estado.melhorSequencia}`,
+                tamanho: 5,
+                rotulos: ["1", "2", "3", "4", "5"],
+                tituloGrafico: "Vitórias por pistas usadas",
+                bucketAtual: -1,
+                onReiniciar: proximaRodada,
+                onHome: () => { window.location.href = "../../../index.html"; }
+            });
+        }
     }, 800);
 }
 

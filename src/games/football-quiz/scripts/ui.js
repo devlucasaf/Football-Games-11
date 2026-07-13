@@ -139,6 +139,28 @@ export function mostrarFinal() {
             window.registrarDerrota();
         }
     }
+
+    if (window.FG11Stats) {
+        const venceu = pct >= 50;
+        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        window.FG11Stats.registrar("football-quiz", {
+            venceu,
+            bucket: acertos,
+            tamanho: total + 1
+        });
+        
+        window.FG11Stats.mostrarModal("football-quiz", {
+            venceu,
+            titulo: venceu ? "Muito bem!" : "Fim do quiz!",
+            resposta: `Você acertou ${acertos} de ${total}`,
+            tamanho: total + 1,
+            rotulos,
+            tituloGrafico: "Acertos por partida",
+            bucketAtual: acertos,
+            onReiniciar: window.quizReiniciar,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- MOSTRAR SELEÇÃO DE TEMA ---

@@ -21,11 +21,38 @@ export function mostrarResultado(acertou) {
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
+        
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-carreiras", {
+                venceu: true,
+                bucket: Math.min(estado.erros, 5),
+                tamanho: 6
+            });
+        }
     } else {
         icon.textContent = "";
         text.textContent = `O jogador era ${estado.jogadorAtual.nome}!`;
         if (window.registrarDerrota) {
             window.registrarDerrota();
+        }
+        if (window.FG11Stats) {
+            window.FG11Stats.registrar("football-carreiras", {
+                venceu: false,
+                tamanho: 6
+            });
+            setTimeout(() => {
+                window.FG11Stats.mostrarModal("football-carreiras", {
+                    venceu: false,
+                    titulo: "Não foi dessa vez!",
+                    resposta: `O jogador era ${estado.jogadorAtual.nome}`,
+                    tamanho: 6,
+                    rotulos: ["0", "1", "2", "3", "4", "5+"],
+                    tituloGrafico: "Vitórias por erros cometidos",
+                    bucketAtual: -1,
+                    onReiniciar: window.carreirasProxima,
+                    onHome: () => { window.location.href = "../../../index.html"; }
+                });
+            }, 600);
         }
     }
 

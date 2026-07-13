@@ -1,7 +1,6 @@
 import estado from "./core.js";
 import { carregarDados, sortearCategoria, obterTierDoJogador, calcularAcertos, obterSlotsDoTier } from "./data.js";
 
-// --- REFERÊNCIAS AOS ELEMENTOS DOM ---
 const els = {
     modeSelect:     document.getElementById("modeSelect"),
     gameArea:       document.getElementById("gameArea"),
@@ -211,6 +210,27 @@ function finalizarJogo() {
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
+    }
+
+    if (window.FG11Stats) {
+        const venceu = acertos >= 5;
+        const rotulos = Array.from({ length: 11 }, (_, i) => String(i));
+        window.FG11Stats.registrar("football-piramide", {
+            venceu,
+            bucket: acertos,
+            tamanho: 11
+        });
+        window.FG11Stats.mostrarModal("football-piramide", {
+            venceu,
+            titulo: acertos === 10 ? "Pirâmide perfeita!" : "Fim de jogo!",
+            resposta: `Você acertou ${acertos} de 10 posições`,
+            tamanho: 11,
+            rotulos,
+            tituloGrafico: "Acertos por partida",
+            bucketAtual: acertos,
+            onReiniciar: () => iniciarJogo(estado.modo),
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
     }
 }
 

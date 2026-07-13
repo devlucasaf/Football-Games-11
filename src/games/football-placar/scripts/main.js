@@ -135,6 +135,28 @@ function mostrarFinal() {
 
     const exatos = estado.historico.filter(h => h.pontos === 3).length;
     els.finalDetails.innerHTML = `<p>${msg}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
+
+    if (window.FG11Stats) {
+        const total = estado.totalRodadas;
+        const venceu = pct >= 50;
+        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        window.FG11Stats.registrar("football-placar", {
+            venceu,
+            bucket: exatos,
+            tamanho: total + 1
+        });
+        window.FG11Stats.mostrarModal("football-placar", {
+            venceu,
+            titulo: "Fim de jogo!",
+            resposta: `${estado.pontos} pontos · ${exatos} placares exatos`,
+            tamanho: total + 1,
+            rotulos,
+            tituloGrafico: "Placares exatos por partida",
+            bucketAtual: exatos,
+            onReiniciar: iniciarJogo,
+            onHome: () => { window.location.href = "../../../index.html"; }
+        });
+    }
 }
 
 // --- INICIAR JOGO ---

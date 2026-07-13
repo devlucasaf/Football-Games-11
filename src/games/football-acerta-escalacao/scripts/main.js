@@ -63,7 +63,30 @@ function finalizarJogo() {
         }
     });
 
-    setTimeout(() => mostrarResultadoFinal(), 1500);
+    setTimeout(() => {
+        mostrarResultadoFinal();
+        if (window.FG11Stats) {
+            const venceu = estado.acertos >= 11;
+            const rotulos = Array.from({ length: 12 }, (_, i) => String(i));
+            window.FG11Stats.registrar("football-acerta-escalacao", {
+                venceu,
+                bucket: estado.acertos,
+                tamanho: 12
+            });
+            
+            window.FG11Stats.mostrarModal("football-acerta-escalacao", {
+                venceu,
+                titulo: venceu ? "Escalação completa!" : "Fim de jogo!",
+                resposta: `Você acertou ${estado.acertos} de 11 jogadores`,
+                tamanho: 12,
+                rotulos,
+                tituloGrafico: "Jogadores acertados por partida",
+                bucketAtual: estado.acertos,
+                onReiniciar: iniciarJogo,
+                onHome: () => { window.location.href = "../../../index.html"; }
+            });
+        }
+    }, 1500);
 }
 
 // --- INICIA O CRONÔMETRO ---
