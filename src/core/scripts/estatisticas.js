@@ -36,6 +36,66 @@
         localStorage.setItem(PREFIXO + gameId, JSON.stringify(dados));
     }
 
+    // --- CHAVE DA SEQUÊNCIA DE DIAS (STREAK) ---
+    const CHAVE_STREAK = "fg11_streak";
+
+    // --- RETORNA A DATA LOCAL NO FORMATO AAAA-MM-DD ---
+    function diaDeHoje() {
+        const agora = new Date();
+        const ano = agora.getFullYear();
+        const mes = String(agora.getMonth() + 1).padStart(2, "0");
+        const dia = String(agora.getDate()).padStart(2, "0");
+        return `${ano}-${mes}-${dia}`;
+    }
+
+    // --- LÊ A SEQUÊNCIA DE DIAS ---
+    function obterStreak() {
+        let dados = null;
+        try {
+            dados = JSON.parse(localStorage.getItem(CHAVE_STREAK));
+        } catch (e) {
+            dados = null;
+        }
+        
+        if (!dados || typeof dados !== "object") {
+            dados = { ultimoDia: null, sequencia: 0, recorde: 0 };
+        }
+        dados.sequencia = dados.sequencia || 0;
+        dados.recorde = dados.recorde || 0;
+        dados.ultimoDia = dados.ultimoDia || null;
+        return dados;
+    }
+
+    // --- ATUALIZA A SEQUÊNCIA DE DIAS AO JOGAR ---
+    function atualizarStreak() {
+        const dados = obterStreak();
+        const hoje = diaDeHoje();
+
+        if (dados.ultimoDia === hoje) {
+            return dados;
+        }
+
+        // --- CALCULA A DIFERENÇA EM DIAS ENTRE A ÚLTIMA PARTIDA E HOJE ---
+        let sequenciaNova = 1;
+        if (dados.ultimoDia) {
+            const anterior = new Date(dados.ultimoDia + "T00:00:00");
+            const atual = new Date(hoje + "T00:00:00");
+            const diffDias = Math.round((atual - anterior) / 86400000);
+            if (diffDias === 1) {
+                sequenciaNova = dados.sequencia + 1;
+            }
+        }
+
+        dados.sequencia = sequenciaNova;
+        dados.ultimoDia = hoje;
+        if (sequenciaNova > dados.recorde) {
+            dados.recorde = sequenciaNova;
+        }
+
+        localStorage.setItem(CHAVE_STREAK, JSON.stringify(dados));
+        return dados;
+    }
+
     // --- REGISTRA O RESULTADO DE UMA PARTIDA ---
     function registrar(gameId, opcoes) {
         const { venceu, bucket, tamanho } = opcoes;
@@ -51,6 +111,7 @@
         }
 
         salvar(gameId, dados);
+        atualizarStreak();
         return dados;
     }
 
@@ -159,5 +220,5 @@
         return dados;
     }
 
-    window.FG11Stats = { obter, registrar, mostrarModal, fechar };
+    window.FG11Stats = { obter, registrar, mostrarModal, fechar, obterStreak, atualizarStreak };
 })();

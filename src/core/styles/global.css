@@ -1819,3 +1819,135 @@ html[data-reduce-motion="true"] *::after {
         font-size: 2rem;
     }
 }
+
+/* --- BOTÃO DE FAVORITAR NOS CARDS --- */
+.coming-soon-card.tem-favorito {
+    padding-top: calc(var(--spacing-lg) + 8px);
+}
+
+.fav-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    z-index: 2;
+    transition: all var(--transition-fast);
+}
+
+.fav-toggle:hover {
+    transform: scale(1.12);
+    border-color: #f1c40f;
+    color: #f1c40f;
+}
+
+.fav-toggle.ativo {
+    color: #f1c40f;
+    border-color: #f1c40f;
+    background: rgba(241, 196, 15, 0.12);
+}
+
+/* --- SELO DE SEQUÊNCIA DE DIAS NO HERO --- */
+.streak-badge .stat-number {
+    color: #e67e22;
+}
+
+.streak-badge .stat-number i {
+    margin-right: 4px;
+}
+
+/* --- DESAFIO DO DIA --- */
+.desafio-dia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.desafio-dia-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-sm);
+}
+
+.desafio-dia-nome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.desafio-dia-sub {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    max-width: 46ch;
+}
+
+.desafio-dia-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.desafio-dia-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.desafio-dia-btn.feito {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .desafio-dia {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .desafio-dia-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

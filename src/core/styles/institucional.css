@@ -1405,3 +1405,170 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* --- PÁGINA MINHAS ESTATÍSTICAS --- */
+.stats-resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stats-resumo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stats-resumo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stats-resumo-card i {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 4px;
+}
+
+.stats-resumo-valor {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.stats-resumo-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.stats-grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.stats-jogo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stats-jogo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stats-jogo-icone {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stats-jogo-icone i {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.stats-jogo-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.stats-jogo-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stats-jogo-barra {
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.stats-jogo-barra-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stats-jogo-nums {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stats-jogo-nums .stats-vit {
+    color: var(--primary-green);
+}
+
+.stats-jogo-nums .stats-der {
+    color: var(--accent-red, #c0392b);
+}
+
+.stats-jogo-nums .stats-taxa {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-weight: 800;
+}
+
+.stats-vazio {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.stats-vazio i {
+    font-size: 3rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.stats-vazio h2 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stats-vazio p {
+    margin-bottom: var(--spacing-lg);
+    max-width: 46ch;
+    margin-left: auto;
+    margin-right: auto;
+}
