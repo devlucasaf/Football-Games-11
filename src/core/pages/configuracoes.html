@@ -6,6 +6,7 @@
         <title>Configurações | Football Games 11</title>
 
         <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/portal.css">
         <link rel="stylesheet" href="../styles/settings.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -14,10 +15,18 @@
     <body>
         <header class="main-header"></header>
 
-        <main class="container settings-page">
-            <div class="settings-heading">
-                <h2 data-key="config-title">Configurações</h2>
-            </div>
+        <main id="conteudo">
+            <section class="page-hero page-hero--compact">
+                <div class="container">
+                    <h1>
+                        <i class="fas fa-sliders" aria-hidden="true"></i>
+                        <span data-key="config-title">Configurações</span>
+                    </h1>
+                    <p data-key="config-page-subtitle">Idioma, tema, acessibilidade e seus dados — tudo em um só lugar.</p>
+                </div>
+            </section>
+
+            <div class="container settings-page">
 
             <section class="settings-card">
                 <div class="settings-card-header">
@@ -70,12 +79,12 @@
                             <span>Français</span>
                         </button>
 
-                        <button class="language-option" data-language="traductions">
-                            <img 
-                                src="../../icons/it-flag-icon.png" 
-                                alt="Italian"
+                        <button class="language-option" data-language="traduzioni">
+                            <img
+                                src="../../icons/it-flag-icon.png"
+                                alt=""
                             />
-                            <span>Italian</span>
+                            <span>Italiano</span>
                         </button>
                     </div>
                 </div>
@@ -211,6 +220,7 @@
                     </div>
                 </div>
             </section>
+            </div>
         </main>
 
         <footer class="main-footer">

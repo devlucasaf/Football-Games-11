@@ -1,0 +1,51 @@
+(function () {
+    const categorias = {
+        "adivinhacao":  { rotuloKey: "cat-adivinhacao",  rotulo: "Adivinhação",  icone: "fa-magnifying-glass" },
+        "palavra":      { rotuloKey: "cat-palavra",      rotulo: "Palavras",     icone: "fa-spell-check" },
+        "logica":       { rotuloKey: "cat-logica",       rotulo: "Lógica",       icone: "fa-puzzle-piece" },
+        "ordenacao":    { rotuloKey: "cat-ordenacao",    rotulo: "Ordenação",    icone: "fa-list-ol" },
+        "montar-time":  { rotuloKey: "cat-montar-time",  rotulo: "Montar time",  icone: "fa-clipboard-list" },
+        "conhecimento": { rotuloKey: "cat-conhecimento", rotulo: "Conhecimento", icone: "fa-question-circle" },
+        "memoria":      { rotuloKey: "cat-memoria",      rotulo: "Memória",      icone: "fa-stopwatch" },
+        "sorte":        { rotuloKey: "cat-sorte",        rotulo: "Sorte",        icone: "fa-dice" }
+    };
+
+    // --- DESTAQUE: JOGOS EM EVIDÊNCIA NA HOME ---
+    const jogos = [
+        { id: "football-termo",              tituloKey: "football-termo-title",              titulo: "Termo",               descKey: "football-termo-desc",              desc: "Adivinhe o nome do jogador de futebol em 6 tentativas!",           icone: "fa-keyboard",          categoria: "palavra",      estatisticas: true,  destaque: true },
+        { id: "football-grid",               tituloKey: "football-grid-tittle",              titulo: "Grid",                descKey: "football-grid-desc",               desc: "Football Grid 3x3",                                                icone: "fa-table-cells",       categoria: "logica",       estatisticas: false, destaque: true },
+        { id: "football-legends",            tituloKey: "football-legends-title",            titulo: "Legends",             descKey: "football-legends-desc",            desc: "Escale o melhor time do seu clube ou seleção de coração.",         icone: "fa-crown",             categoria: "montar-time",  estatisticas: false, destaque: true },
+        { id: "football-quiz",               tituloKey: "football-quiz-title",               titulo: "Quiz",                descKey: "football-quiz-desc",               desc: "Teste seus conhecimentos sobre o futebol mundial!",                icone: "fa-question-circle",   categoria: "conhecimento", estatisticas: true,  destaque: true },
+        { id: "football-adivinha-jogador",   tituloKey: "football-adivinha-jogador-title",   titulo: "Adivinha o Jogador",  descKey: "football-adivinha-jogador-desc",   desc: "Descubra o jogador pelas pistas: país, idade, clube e títulos!",   icone: "fa-magnifying-glass",  categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-carreiras",          tituloKey: "football-carreiras-title",          titulo: "Carreiras",           descKey: "football-carreiras-desc",          desc: "Descubra o jogador pelos clubes da carreira!",                     icone: "fa-road",              categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-transferencias",     tituloKey: "football-transferencias-title",     titulo: "Transferências",      descKey: "football-transferencias-desc",     desc: "Descubra o jogador pela sequência de clubes da carreira!",         icone: "fa-exchange-alt",      categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-jogou-com",          tituloKey: "football-jogou-com-title",          titulo: "Jogou Com",           descKey: "football-jogou-com-desc",          desc: "Descubra o jogador misterioso pelos companheiros de equipe!",      icone: "fa-link",              categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-adivinha-treinador", tituloKey: "football-acerta-treinador-title",   titulo: "Acerta o Treinador",  descKey: "football-acerta-treinador-desc",   desc: "Descubra o treinador pelas dicas sobre sua carreira!",             icone: "fa-user-tie",          categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-adivinha-clube",     tituloKey: "football-acerte-time-title",        titulo: "Adivinha o Clube",    descKey: "football-acerte-time-desc",        desc: "Descubra o clube pelas dicas sobre sua história!",                 icone: "fa-shield-halved",     categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-adivinha-estadio",   tituloKey: "football-adivinha-estadio-title",   titulo: "Adivinha o Estádio",  descKey: "football-adivinha-estadio-desc",   desc: "Descubra o estádio pelas dicas: país, inauguração, clube e mais!", icone: "fa-location-dot",      categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-conecta-clubes",     tituloKey: "football-concecta-clubes-title",    titulo: "Conecta Clubes",      descKey: "football-conecta-clubes-desc",     desc: "Encontre o jogador que jogou nos dois clubes!",                    icone: "fa-link",              categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-gol-a-gol",          tituloKey: "football-gol-a-gol-title",          titulo: "Gol a Gol",           descKey: "football-gol-a-gol-desc",          desc: "Adivinhe quem marcou o gol pelas dicas!",                          icone: "fa-futbol",            categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-numeros",            tituloKey: "football-numeros-title",            titulo: "Números",             descKey: "football-numeros-desc",            desc: "Adivinhe o número da camisa do jogador!",                          icone: "fa-hashtag",           categoria: "adivinhacao",  estatisticas: true },
+        { id: "football-forca",              tituloKey: "football-forca-title",              titulo: "Forca",               descKey: "football-forca-desc",              desc: "Descubra o jogador letra por letra antes de ser enforcado!",       icone: "fa-spell-check",       categoria: "palavra",      estatisticas: true },
+        { id: "football-conexoes",           tituloKey: "football-conexoes-title",           titulo: "Conexões",            descKey: "football-conexoes-desc",           desc: "Agrupe 16 jogadores em 4 categorias secretas!",                    icone: "fa-puzzle-piece",      categoria: "logica",       estatisticas: true },
+        { id: "football-impostor",           tituloKey: "football-impostor-title",           titulo: "Impostor",            descKey: "football-impostor-desc",           desc: "Encontre o jogador que não pertence ao grupo!",                    icone: "fa-user-secret",       categoria: "logica",       estatisticas: false },
+        { id: "football-duelo-elencos",      tituloKey: "football-duelo-elencos-title",      titulo: "Duelo de Elencos",    descKey: "football-duelo-elencos-desc",      desc: "Associe cada jogador ao elenco correto em duelos históricos!",     icone: "fa-users",             categoria: "logica",       estatisticas: false },
+        { id: "football-multiplica",         tituloKey: "football-multiplica-title",         titulo: "Multiplica",          descKey: "football-multiplica-desc",         desc: "Multiplique os valores para alcançar a meta!",                     icone: "fa-xmark",             categoria: "logica",       estatisticas: true },
+        { id: "football-top10",              tituloKey: "football-top10-title",              titulo: "Top 10",              descKey: "football-top10-desc",              desc: "Complete a lista dos 10 maiores do futebol!",                      icone: "fa-list-ol",           categoria: "ordenacao",    estatisticas: true },
+        { id: "football-piramide",           tituloKey: "football-piramide-title",           titulo: "Pirâmide",            descKey: "football-piramide-desc",           desc: "Ordene 10 jogadores na pirâmide pela categoria!",                  icone: "fa-sort-amount-up",    categoria: "ordenacao",    estatisticas: true },
+        { id: "football-linha-do-tempo",     tituloKey: "football-linha-tempo-title",        titulo: "Linha do Tempo",      descKey: "football-linha-tempo-desc",        desc: "Coloque os eventos do futebol em ordem cronológica!",              icone: "fa-clock-rotate-left", categoria: "ordenacao",    estatisticas: true },
+        { id: "football-placar",             tituloKey: "football-placar-title",             titulo: "Placar",              descKey: "football-placar-desc",             desc: "Acerte o placar de jogos históricos do futebol!",                  icone: "fa-futbol",            categoria: "conhecimento", estatisticas: true },
+        { id: "football-30-segundos",        tituloKey: "football-30-segundos-title",        titulo: "30 Segundos",         descKey: "football-30-segundos-desc",        desc: "Cite o máximo de jogadores que conseguir em 30 segundos!",         icone: "fa-stopwatch",         categoria: "memoria",      estatisticas: true },
+        { id: "football-vc-escala",          tituloKey: "football-vc-escala-title",          titulo: "Vc Escala!",          descKey: "football-vc-escala-desc",          desc: "Escale seu time e escolha os melhores jogadores.",                 icone: "fa-people-group",      categoria: "montar-time",  estatisticas: false },
+        { id: "football-vc-convoca",         tituloKey: "football-vc-convoca-title",         titulo: "Vc Convoca!",         descKey: "football-vc-convoca-desc",         desc: "Convoque 26 jogadores para representar a sua seleção!",            icone: "fa-clipboard-list",    categoria: "montar-time",  estatisticas: false },
+        { id: "football-acerta-escalacao",   tituloKey: "football-acerta-escalacao-title",   titulo: "Acerta a Escalação",  descKey: "football-acerta-escalacao-desc",   desc: "Adivinhe os 11 jogadores que começaram o jogo histórico!",         icone: "fa-chess-board",       categoria: "montar-time",  estatisticas: true },
+        { id: "football-bingo",              tituloKey: "football-bingo-tittle",             titulo: "Bingo",               descKey: "football-bingo-desc",              desc: "Jogue o nosso bingo.",                                             icone: "fa-dice",              categoria: "sorte",        estatisticas: false }
+    ];
+
+    // --- CAMINHO DA PÁGINA DE CADA JOGO ---
+    jogos.forEach(jogo => {
+        jogo.pagina = `src/games/${jogo.id}/${jogo.id}.html`;
+    });
+
+    window.FG11Catalogo = { categorias, jogos };
+})();

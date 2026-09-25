@@ -1,39 +1,50 @@
+// --- APLICA TEMA E ACESSIBILIDADE O QUANTO ANTES (EVITA "PISCAR" O TEMA CLARO) ---
+document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "light");
+document.documentElement.setAttribute("data-reduce-motion", localStorage.getItem("fg11_reduzir_animacoes") === "true" ? "true" : "false");
+document.documentElement.setAttribute("data-font-size", localStorage.getItem("fg11_tamanho_fonte") || "medio");
+
+// --- TEXTO TRADUZIDO PARA CONTEÚDO GERADO VIA JS (ARIA, PLACEHOLDERS) ---
+function fg11Texto(chave, padrao) {
+    const lingua = localStorage.getItem("preferredLanguage") || "traducoes";
+    const linguas = window.translations || {};
+    return (linguas[lingua] && linguas[lingua][chave]) || padrao;
+}
+
+// --- BOTÕES DE TEMA (CABEÇALHO E TELA DE CONFIGURAÇÕES) ---
+function obterBotoesTema() {
+    return document.querySelectorAll("#themeToggle, [data-theme-toggle]");
+}
+
 // --- APLICA O TEMA SALVO ---
 function applySavedTheme() {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
 
-    const themeToggle = document.getElementById("themeToggle");
-    if (themeToggle) {
-        updateThemeIcon(savedTheme, themeToggle.querySelector("i"));
-    }
+    obterBotoesTema().forEach(botao => updateThemeIcon(savedTheme, botao.querySelector("i")));
 }
 
 // --- ALTERNADOR DE TEMA ---
 function initThemeToggle() {
-    const themeToggle = document.getElementById("themeToggle");
+    obterBotoesTema().forEach(themeToggle => {
+        // --- ALTERNA O TEMA AO CLICAR ---
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "light" ? "dark" : "light";
 
-    if (!themeToggle) {
-        return;
-    }
+            document.documentElement.setAttribute("data-theme", newTheme);
 
-    const themeIcon = themeToggle.querySelector("i");
+            localStorage.setItem("theme", newTheme);
 
-    // --- ALTERNA O TEMA AO CLICAR ---
-    themeToggle.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        
-        document.documentElement.setAttribute("data-theme", newTheme);
-        
-        localStorage.setItem("theme", newTheme);
-        
-        updateThemeIcon(newTheme, themeIcon);
-        
-        themeToggle.style.transform = "rotate(180deg) scale(1.1)";
-        setTimeout(() => {
-            themeToggle.style.transform = "rotate(0deg) scale(1)";
-        }, 300);
+            obterBotoesTema().forEach(botao => updateThemeIcon(newTheme, botao.querySelector("i")));
+
+            const icone = themeToggle.querySelector("i");
+            if (icone) {
+                icone.style.transform = "rotate(180deg) scale(1.1)";
+                setTimeout(() => {
+                    icone.style.transform = "";
+                }, 300);
+            }
+        });
     });
 }
 
@@ -42,14 +53,16 @@ function updateThemeIcon(theme, iconElement) {
     if (!iconElement) {
         return;
     }
-    
-    if (theme === "dark") {
-        iconElement.className = "fas fa-sun";
-        iconElement.parentElement.title = "Alternar para tema claro";
-    } else {
-        iconElement.className = "fas fa-moon";
-        iconElement.parentElement.title = "Alternar para tema escuro";
-    }
+
+    const botao = iconElement.parentElement;
+    const rotulo = theme === "dark"
+        ? fg11Texto("theme-to-light", "Alternar para tema claro")
+        : fg11Texto("theme-to-dark", "Alternar para tema escuro");
+
+    iconElement.className = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+    botao.title = rotulo;
+    botao.setAttribute("aria-label", rotulo);
+    botao.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
 }
 
 // --- APLICA O IDIOMA SALVO ---
@@ -147,7 +160,8 @@ function applySavedAccessibility() {
     document.documentElement.setAttribute("data-font-size", tamanhoFonte);
 }
 
-// --- BUSCA DE JOGOS ---
+// --- BUSCA DE JOGOS NO CABEÇALHO ---
+// --- O CABEÇALHO SÓ EMITE O TERMO; A HOME (home.js) FAZ A FILTRAGEM ---
 function initGameSearch() {
     const container = document.getElementById("headerSearch");
     const botao = document.getElementById("btnSearchGames");
@@ -157,72 +171,68 @@ function initGameSearch() {
         return;
     }
 
-    // --- FILTRA OS CARDS PELO TÍTULO E DESCRIÇÃO ---
-    function filtrar(termo) {
-        const busca = termo.trim().toLowerCase();
-        const cards = document.querySelectorAll(".coming-soon-card");
-        let visiveis = 0;
-
-        cards.forEach(card => {
-            const titulo = card.querySelector("h4")?.textContent.toLowerCase() || "";
-            const descricao = card.querySelector("p")?.textContent.toLowerCase() || "";
-            const combina = busca === "" || titulo.includes(busca) || descricao.includes(busca);
-
-            card.style.display = combina ? "" : "none";
-            if (combina) {
-                visiveis++;
-            }
-        });
-
-        atualizarMensagemVazia(visiveis === 0 && busca !== "");
-    }
-
-    // --- MOSTRA/OCULTA MENSAGEM ---
-    function atualizarMensagemVazia(mostrar) {
-        const grid = document.querySelector(".coming-soon-grid");
-        if (!grid) {
-            return;
-        }
-
-        let aviso = document.getElementById("searchNoResults");
-
-        if (mostrar) {
-            if (!aviso) {
-                aviso = document.createElement("p");
-                aviso.id = "searchNoResults";
-                aviso.className = "search-no-results";
-                aviso.setAttribute("data-key", "search-no-results");
-                aviso.textContent = "Nenhum jogo encontrado.";
-                grid.after(aviso);
-            }
-            aviso.style.display = "";
-        } else if (aviso) {
-            aviso.style.display = "none";
-        }
+    // --- AVISA A PÁGINA SOBRE O NOVO TERMO ---
+    function emitir(termo) {
+        document.dispatchEvent(new CustomEvent("fg11:busca", { detail: { termo, origem: "header" } }));
     }
 
     // --- ABRE/FECHA A BARRA DE BUSCA ---
     botao.addEventListener("click", () => {
         const aberto = container.classList.toggle("open");
+        botao.setAttribute("aria-expanded", aberto ? "true" : "false");
 
         if (aberto) {
             input.focus();
+            document.getElementById("jogos")?.scrollIntoView({ behavior: "smooth", block: "start" });
         } else {
             input.value = "";
-            filtrar("");
+            emitir("");
         }
     });
 
     // --- FILTRA ENQUANTO DIGITA ---
-    input.addEventListener("input", () => filtrar(input.value));
+    input.addEventListener("input", () => emitir(input.value));
 
     // --- FECHA COM A TECLA ESC ---
     input.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             input.value = "";
-            filtrar("");
+            emitir("");
             container.classList.remove("open");
+            botao.setAttribute("aria-expanded", "false");
+            botao.focus();
         }
+    });
+}
+
+// --- TRANSIÇÃO SUAVE AO SAIR DA PÁGINA ---
+function initPageTransitions() {
+    document.addEventListener("click", (e) => {
+        const link = e.target.closest("a[href]");
+        if (!link || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+            return;
+        }
+
+        const reduzir = document.documentElement.getAttribute("data-reduce-motion") === "true"
+            || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const destino = new URL(link.href, window.location.href);
+        const mesmaPagina = destino.pathname === window.location.pathname && destino.search === window.location.search;
+
+        if (reduzir || link.target === "_blank" || link.hasAttribute("download") || mesmaPagina
+            || destino.origin !== window.location.origin || !/^(https?|file):$/.test(destino.protocol)) {
+            return;
+        }
+
+        e.preventDefault();
+        document.body.classList.add("is-leaving");
+        setTimeout(() => {
+            window.location.href = destino.href;
+        }, 160);
+    });
+
+    // --- RESTAURA A PÁGINA AO VOLTAR PELO HISTÓRICO (BFCACHE) ---
+    window.addEventListener("pageshow", () => {
+        document.body.classList.remove("is-leaving");
     });
 }
 
@@ -236,41 +246,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initLanguageSelector();
     initScoreboard();
     initGameSearch();
-    
-    const comingSoonCards = document.querySelectorAll(".coming-soon-card");
-    comingSoonCards.forEach((card, index) => {
-        card.style.animation = `fadeInUp 0.6s ease ${index * 0.2}s both`;
-    });
-    
-    const gameCards = document.querySelectorAll(".game-card");
-    gameCards.forEach((card, index) => {
-        card.style.animation = `fadeInUp 0.6s ease ${index * 0.15}s both`;
-    });
+    initPageTransitions();
 });
-
-// --- FUNÇÃO AUXILIAR PARA ANIMAÇÕES ---
-if (!document.querySelector("#fadeInUpAnimation")) {
-    const style = document.createElement("style");
-    style.id = "fadeInUpAnimation";
-    style.textContent = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-}
 
 document.getElementById("btn-football-grid")?.addEventListener("click", function() {
     window.location.href = "src/games/football-grid/football-grid.html";
-}); 
+});
 
 // --- ABRE O MODAL DE SELEÇÃO DE TIME ---
 function openTimeSelection() {
@@ -313,20 +294,34 @@ function initTutorial() {
     const btnSkip = document.getElementById("tutorialSkipBtn");
     const btnHelp = document.getElementById("tutorialHelpBtn");
 
+    // --- SEMÂNTICA DE DIÁLOGO PARA LEITORES DE TELA ---
+    const caixa = tutorial.querySelector(".tutorial-box");
+    const tituloTutorial = tutorial.querySelector(".tutorial-header h2");
+    if (caixa) {
+        caixa.setAttribute("role", "dialog");
+        caixa.setAttribute("aria-modal", "true");
+        if (tituloTutorial) {
+            tituloTutorial.id = tituloTutorial.id || "tutorialTitulo";
+            caixa.setAttribute("aria-labelledby", tituloTutorial.id);
+        }
+    }
+
     // --- ABRE O TUTORIAL ---
     function abrirTutorial() {
         tutorial.classList.remove("hidden");
+        btnStart?.focus();
     }
 
     // --- FECHA O TUTORIAL ---
     function fecharTutorial() {
         tutorial.classList.add("hidden");
+        btnHelp?.focus();
     }
 
     // --- NÃO MOSTRAR NOVAMENTE ---
     function naoMostrarNovamente() {
         localStorage.setItem(chave, "true");
-        tutorial.classList.add("hidden");
+        fecharTutorial();
     }
 
     btnStart?.addEventListener("click", fecharTutorial);
@@ -339,10 +334,18 @@ function initTutorial() {
         }
     });
 
+    // --- FECHA COM A TECLA ESC ---
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !tutorial.classList.contains("hidden")) {
+            fecharTutorial();
+        }
+    });
+
     if (localStorage.getItem(chave)) {
         tutorial.classList.add("hidden");
     } else {
         tutorial.classList.remove("hidden");
+        setTimeout(() => btnStart?.focus(), 50);
     }
 }
 
@@ -398,3 +401,4 @@ window.atualizarPlacar = atualizarPlacar;
 window.getScoreboard = getScoreboard;
 window.applySavedAccessibility = applySavedAccessibility;
 window.selectLanguage = selectLanguage;
+window.fg11Texto = fg11Texto;

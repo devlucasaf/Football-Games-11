@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#07190f" />
+        <title>Estatísticas | Football Games 11</title>
+        <meta name="description" content="Seu perfil de jogador no Football Games 11: nível, ranking dos seus minigames e conquistas.">
+
+        <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/portal.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+
+    <body>
+        <header class="main-header"></header>
+
+        <main id="conteudo">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>
+                        <i class="fas fa-chart-simple" aria-hidden="true"></i>
+                        <span data-key="stats-page-title">Estatísticas</span>
+                    </h1>
+                    <p data-key="stats-page-subtitle">Seu perfil de jogador, a classificação dos seus minigames e as medalhas que você já conquistou.</p>
+                </div>
+            </section>
+
+            <div class="container">
+                <!-- --- PERFIL + NÚMEROS GERAIS --- -->
+                <div class="stats-top">
+                    <div class="profile-side">
+                        <div id="cartaJogador"></div>
+
+                        <form class="nick-form" id="formApelido" hidden>
+                            <label class="sr-only" for="inputApelido" data-key="profile-nick-label">Seu apelido</label>
+                            <input type="text" id="inputApelido" maxlength="18" placeholder="Seu apelido" data-key="profile-nick-label" autocomplete="nickname">
+                            <button type="submit" class="btn btn-sm">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-key="profile-nick-save">Salvar</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="kpi-grid" id="kpis"></div>
+                        <div class="panel">
+                            <h2 class="panel-title">
+                                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                                <span data-key="tier-title">Nível do jogador</span>
+                            </h2>
+                            <div id="progressoNivel"></div>
+                            <p class="note">
+                                <i class="fas fa-circle-info" aria-hidden="true"></i>
+                                <span data-key="stats-local-note">As estatísticas ficam salvas apenas neste navegador. Você pode apagá-las em Configurações.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- CLASSIFICAÇÃO DOS JOGOS --- -->
+                <section class="fg-section" aria-labelledby="tituloTabela">
+                    <div class="fg-section-head">
+                        <h2 class="fg-section-title" id="tituloTabela">
+                            <i class="fas fa-ranking-star" aria-hidden="true"></i>
+                            <span data-key="stats-table-title">Classificação dos jogos</span>
+                        </h2>
+                    </div>
+
+                    <div class="table-toolbar">
+                        <div class="chip-row" id="filtrosCategoria" role="group" aria-label="Filtrar por categoria"></div>
+                        <div class="segmented" id="ordenacao" role="group" aria-label="Ordenar por">
+                            <button type="button" data-ordem="vitorias" aria-pressed="true" data-key="sort-wins">Vitórias</button>
+                            <button type="button" data-ordem="aproveitamento" aria-pressed="false" data-key="sort-rate">Aproveitamento</button>
+                            <button type="button" data-ordem="partidas" aria-pressed="false" data-key="sort-played">Partidas</button>
+                        </div>
+                    </div>
+
+                    <div class="table-scroll">
+                        <table class="league-table">
+                            <caption class="sr-only" data-key="stats-table-title">Classificação dos jogos</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col-pos">#</th>
+                                    <th scope="col" data-key="table-game">Jogo</th>
+                                    <th scope="col" title="Partidas jogadas" data-key="attr-played">PJ</th>
+                                    <th scope="col" title="Vitórias" data-key="ranking-wins-short">V</th>
+                                    <th scope="col" title="Derrotas" data-key="ranking-losses-short">D</th>
+                                    <th scope="col" data-key="stat-win-rate">Aproveitamento</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaJogos"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- --- CONQUISTAS --- -->
+                <section class="fg-section" aria-labelledby="tituloConquistas">
+                    <div class="fg-section-head">
+                        <h2 class="fg-section-title" id="tituloConquistas">
+                            <i class="fas fa-medal" aria-hidden="true"></i>
+                            <span data-key="ach-title">Conquistas</span>
+                        </h2>
+                        <p class="fg-section-sub"><strong id="contagemConquistas">0/10</strong> <span data-key="ach-unlocked">desbloqueadas</span></p>
+                    </div>
+                    <div class="ach-grid" id="conquistas"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+        <script src="../scripts/traducao.js"></script>
+        <script src="../scripts/pagina-estatisticas.js"></script>
+    </body>
+</html>
