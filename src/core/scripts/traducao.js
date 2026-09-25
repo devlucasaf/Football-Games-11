@@ -16,7 +16,8 @@
         `${base}/scripts/perfil.js`,
         `${base}/scripts/header.js`,
         `${base}/scripts/script.js`,
-        `${base}/scripts/estatisticas.js`
+        `${base}/scripts/estatisticas.js`,
+        `${base}/scripts/fg11-extras.js`
     ];
 
     scripts.forEach(src => {

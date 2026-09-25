@@ -726,6 +726,26 @@ const traducoes = {
     "config-about-desc": "Football Games 11 — hub de minigames de futebol",
     "config-version": "Versão",
 
+    // Features: Favoritos, Desafio do Dia, Streak e Estatísticas
+    "footer-stats": "Minhas Estatísticas",
+    "streak-label": "dias seguidos",
+    "daily-tag": "Desafio do Dia",
+    "daily-sub": "O mesmo desafio para todos, hoje. Volte amanhã para um novo!",
+    "daily-play": "Jogar agora",
+    "daily-done": "Jogado hoje",
+    "stats-badge": "Seu desempenho",
+    "stats-hero-title": "Minhas Estatísticas",
+    "stats-hero-subtitle": "Acompanhe suas vitórias, derrotas e sua sequência de dias em todos os minigames. Tudo fica salvo neste navegador.",
+    "stats-total-wins": "Vitórias",
+    "stats-total-losses": "Derrotas",
+    "stats-winrate": "Taxa de acerto",
+    "stats-games-played": "Jogos jogados",
+    "stats-streak": "Dias seguidos",
+    "stats-streak-record": "Recorde de dias",
+    "stats-empty-title": "Você ainda não jogou nada por aqui",
+    "stats-empty-sub": "Jogue alguns minigames e volte para ver seu histórico de vitórias e derrotas.",
+    "stats-empty-btn": "Ver todos os jogos",
+
     // Page: Sobre
     "nav-sobre": "Sobre",
     "footer-about": "Sobre",
