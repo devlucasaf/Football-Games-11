@@ -62,18 +62,25 @@ Football-Games-11/
 │   ├── core/                       # Recursos compartilhados entre os jogos
 │   │   ├── pages/
 │   │   │   ├── configuracoes.html  # Página de configurações (tema, idioma, acessibilidade)
+│   │   │   ├── estatisticas.html   # Perfil do jogador, classificação dos jogos e conquistas
 │   │   │   ├── faq.html            # Página de Perguntas Frequentes
 │   │   │   ├── sobre.html          # Página institucional "Sobre"
 │   │   │   ├── privacidade.html    # Política de Privacidade
 │   │   │   └── licenca.html        # Página da licença (MIT)
 │   │   ├── scripts/
+│   │   │   ├── catalogo.js         # Catálogo dos minigames (espelho de data/games.json)
 │   │   │   ├── configuracoes.js    # Lógica da página de configurações
+│   │   │   ├── estatisticas.js     # Registro de resultados e tela de fim de partida
 │   │   │   ├── formation.js        # Script para montar as formações do futebol
-│   │   │   ├── header.js           # Renderização do cabeçalho compartilhado
+│   │   │   ├── header.js           # Cabeçalho, menu e rodapé compartilhados
+│   │   │   ├── home.js             # Home: cards, filtros, destaques e perfil
+│   │   │   ├── pagina-estatisticas.js # Página de estatísticas
+│   │   │   ├── perfil.js           # Nível, OVR, ranking e conquistas do jogador
 │   │   │   ├── script.js           # Tema, tutorial e utilitários globais
 │   │   │   └── traducao.js         # Lógica de tradução
 │   │   ├── styles/
-│   │   │   ├── global.css          # Estilos globais do site
+│   │   │   ├── global.css          # Design system (tokens) e componentes globais
+│   │   │   ├── portal.css          # Home, estatísticas e cabeçalhos de página
 │   │   │   ├── field.css           # Estilos do campo de futebol
 │   │   │   ├── institucional.css   # Estilos das páginas institucionais (sobre/privacidade/licença)
 │   │   │   └── settings.css        # Estilos da página de configurações
