@@ -13,6 +13,8 @@
         `${base}/translation/french.js`,
         `${base}/translation/italian.js`,
         `${base}/scripts/catalogo.js`,
+        `${base}/scripts/avisos.js`,
+        `${base}/scripts/diario.js`,
         `${base}/scripts/perfil.js`,
         `${base}/scripts/header.js`,
         `${base}/scripts/script.js`,
