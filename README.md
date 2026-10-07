@@ -136,6 +136,13 @@ football-numeros/
 
 ---
 
+## 📅 Desafio do Dia e conquistas
+
+- **Desafio do Dia:** todo dia a página inicial sorteia um minigame (entre os que registram resultado). Ele abre com `?diario=1`, e nesse modo o sorteio usa uma semente fixa (data + jogo), então todos jogam a mesma partida. Só a primeira partida concluída do dia conta.
+- **Histórico e sequência:** os resultados ficam em `localStorage` (`fg11_diario_historico`). A página inicial mostra os últimos 7 dias e a sequência de dias seguidos.
+- **Conquistas:** incluem metas de dias seguidos e de Desafios do Dia. Ao desbloquear uma, aparece um aviso na tela do jogo (`avisos.js`).
+- **Compartilhar:** ao concluir o desafio, o aviso oferece um botão para compartilhar ou copiar o resultado.
+
 ## 🚀 Como rodar
 
 1. Clone o repositório:
