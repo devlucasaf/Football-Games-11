@@ -39,13 +39,9 @@
     // --- CHAVE DA SEQUÊNCIA DE DIAS (STREAK) ---
     const CHAVE_STREAK = "fg11_streak";
 
-    // --- RETORNA A DATA LOCAL NO FORMATO AAAA-MM-DD ---
+    // --- DATA LOCAL (AAAA-MM-DD), COMPARTILHADA COM O MODO DIÁRIO ---
     function diaDeHoje() {
-        const agora = new Date();
-        const ano = agora.getFullYear();
-        const mes = String(agora.getMonth() + 1).padStart(2, "0");
-        const dia = String(agora.getDate()).padStart(2, "0");
-        return `${ano}-${mes}-${dia}`;
+        return window.FG11Daily.diaDeHoje();
     }
 
     // --- LÊ A SEQUÊNCIA DE DIAS ---
@@ -112,6 +108,11 @@
 
         salvar(gameId, dados);
         atualizarStreak();
+        window.FG11Daily.registrarResultado(gameId, venceu);
+
+        if (window.FG11Perfil) {
+            setTimeout(window.FG11Perfil.avisarNovasConquistas, 900);
+        }
         return dados;
     }
 

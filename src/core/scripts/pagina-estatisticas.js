@@ -48,7 +48,9 @@
             kpi("fa-xmark", "score-defeats", "Derrotas", resumo.derrotas) +
             kpi("fa-percent", "stat-win-rate", "Aproveitamento", perfil.porcentagem(resumo.aproveitamento)) +
             kpi("fa-compass", "stat-explored", "Jogos explorados", `${resumo.jogosDiferentes}<small>/${resumo.totalJogos}</small>`) +
-            kpi("fa-medal", "ach-title", "Conquistas", `${resumo.desbloqueadas}<small>/${resumo.conquistas.length}</small>`);
+            kpi("fa-medal", "ach-title", "Conquistas", `${resumo.desbloqueadas}<small>/${resumo.conquistas.length}</small>`) +
+            kpi("fa-fire", "kpi-streak", "Sequência", `${resumo.sequenciaAtual}<small> / ${resumo.recordeSequencia}</small>`) +
+            kpi("fa-calendar-check", "kpi-dailies", "Desafios do Dia", `${resumo.diariosConcluidos}<small> (${resumo.diariosVencidos}✓)</small>`);
 
         document.getElementById("progressoNivel").innerHTML = perfil.htmlProgressoNivel(resumo);
     }
