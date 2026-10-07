@@ -29,65 +29,6 @@
 
     window.FG11Favoritos = { obter: obterFavoritos, alternar: alternarFavorito, ehFavorito };
 
-    const CHAVE_DIARIO = "fg11_diario";
-
-    function diaDeHoje() {
-        const agora = new Date();
-        const ano = agora.getFullYear();
-        const mes = String(agora.getMonth() + 1).padStart(2, "0");
-        const dia = String(agora.getDate()).padStart(2, "0");
-        return `${ano}-${mes}-${dia}`;
-    }
-
-    // --- GERA UM NÚMERO ESTÁVEL A PARTIR DE UMA STRING ---
-    function semente(texto) {
-        let h = 0;
-        for (let i = 0; i < texto.length; i++) {
-            h = (h * 31 + texto.charCodeAt(i)) >>> 0;
-        }
-        return h;
-    }
-
-    // --- ESCOLHE UM ITEM DE FORMA DETERMINÍSTICA PARA O DIA ---
-    function escolherDoDia(lista) {
-        if (!lista || lista.length === 0) {
-            return null;
-        }
-        const idx = semente(diaDeHoje()) % lista.length;
-        return lista[idx];
-    }
-
-    function obterDiario() {
-        let dados = null;
-        try {
-            dados = JSON.parse(localStorage.getItem(CHAVE_DIARIO));
-        } catch (e) {
-            dados = null;
-        }
-
-        if (!dados || typeof dados !== "object") {
-            dados = { 
-                dia: null, 
-                feito: false 
-            };
-        }
-        return dados;
-    }
-
-    function marcarDiarioFeito() {
-        localStorage.setItem(CHAVE_DIARIO, JSON.stringify({ 
-            dia: diaDeHoje(), 
-            feito: true 
-        }));
-    }
-
-    function diarioFeitoHoje() {
-        const d = obterDiario();
-        return d.feito === true && d.dia === diaDeHoje();
-    }
-
-    window.FG11Daily = { escolherDoDia, diaDeHoje, marcarFeito: marcarDiarioFeito, feitoHoje: diarioFeitoHoje };
-
     //  --- MONTAGEM NA PÁGINA INICIAL ---
     document.addEventListener("DOMContentLoaded", () => {
         const grade = document.querySelector(".coming-soon-grid");
@@ -200,15 +141,11 @@
             const resp = await fetch("src/core/data/games.json", { cache: "no-store" });
             if (resp.ok) {
                 const dados = await resp.json();
-                const categoriasValidas = ["adivinhacao", "palavra", "logica", "ordenacao", "conhecimento", "memoria"];
-                jogos = (dados.jogos || []).filter(j => categoriasValidas.includes(j.categoria));
+                // --- SÓ ENTRAM JOGOS QUE REGISTRAM O RESULTADO (PARA CONCLUIR O DESAFIO) ---
+                jogos = (dados.jogos || []).filter(j => j.estatisticas === true);
             }
         } catch (e) {
             jogos = [];
-        }
-
-        if (jogos.length === 0) {
-            return;
         }
 
         const jogo = window.FG11Daily.escolherDoDia(jogos);
@@ -216,7 +153,19 @@
             return;
         }
 
-        const feito = window.FG11Daily.feitoHoje();
+        const resultado = window.FG11Daily.resultadoDeHoje();
+        const feito = resultado !== null;
+        const sequencia = window.FG11Daily.sequenciaDiaria();
+
+        // --- JOGO DO DIA ABRE NO MODO DIÁRIO; DEPOIS DE CONCLUÍDO, ABRE NO MODO LIVRE ---
+        const destino = feito ? jogo.pagina : `${jogo.pagina}?diario=1`;
+        const chaveBotao = !feito ? "daily-play" : (resultado.venceu ? "daily-done-win" : "daily-done-loss");
+        const textoBotao = !feito ? "Jogar agora" : (resultado.venceu ? "Vencido hoje" : "Concluído hoje");
+
+        const semana = window.FG11Daily.ultimosDias(7).map(item => {
+            const estado = item.resultado ? (item.resultado.venceu ? "vitoria" : "derrota") : "vazio";
+            return `<span class="desafio-dia-ponto ${estado}${item.hoje ? " hoje" : ""}" title="${item.dia}"></span>`;
+        }).join("");
 
         const bloco = document.createElement("section");
         bloco.className = "desafio-dia";
@@ -226,21 +175,20 @@
                 <span class="desafio-dia-tag" data-key="daily-tag"><i class="fas fa-calendar-day"></i> Desafio do Dia</span>
                 <h3 class="desafio-dia-nome">
                     <i class="fas ${jogo.icone}"></i>
-                    <span data-key="${jogo.tituloKey}">${jogo.id}</span>
+                    <span data-key="${jogo.tituloKey}">${jogo.titulo || jogo.id}</span>
                 </h3>
                 <p class="desafio-dia-sub" data-key="daily-sub">O mesmo desafio para todos, hoje. Volte amanhã para um novo!</p>
+                <div class="desafio-dia-progresso">
+                    <span class="desafio-dia-semana" role="img" aria-label="Últimos 7 dias">${semana}</span>
+                    ${sequencia > 0 ? `<span class="desafio-dia-seq"><i class="fas fa-fire"></i> ${sequencia} <span data-key="daily-streak-text">dias seguidos no desafio</span></span>` : ""}
+                </div>
             </div>
-            <a href="${jogo.pagina}" class="desafio-dia-btn${feito ? " feito" : ""}" id="desafioDiaBtn">
+            <a href="${destino}" class="desafio-dia-btn${feito ? " feito" : ""}" id="desafioDiaBtn">
                 <i class="fas ${feito ? "fa-check" : "fa-play"}"></i>
-                <span data-key="${feito ? "daily-done" : "daily-play"}">${feito ? "Jogado hoje" : "Jogar agora"}</span>
+                <span data-key="${chaveBotao}">${textoBotao}</span>
             </a>`;
 
         secao.insertBefore(bloco, secao.firstChild);
-
-        const botao = document.getElementById("desafioDiaBtn");
-        if (botao) {
-            botao.addEventListener("click", () => window.FG11Daily.marcarFeito());
-        }
 
         if (window.applyTranslation) {
             const idioma = localStorage.getItem("preferredLanguage") || "traducoes";

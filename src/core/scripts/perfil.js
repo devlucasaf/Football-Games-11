@@ -3,6 +3,7 @@
     const CHAVE_RECENTES = "fg11_recentes";
     const CHAVE_APELIDO = "fg11_apelido";
     const MAX_RECENTES = 6;
+    const CHAVE_CONQUISTAS_VISTAS = "fg11_conquistas_vistas";
 
     // --- FAIXAS DE NÍVEL POR VITÓRIAS ---
     const NIVEIS = [
@@ -24,7 +25,13 @@
         { id: "cinquenta",    icone: "fa-trophy",         medalha: "ouro",   tituloKey: "ach-fifty-title",      titulo: "Artilheiro",     descKey: "ach-fifty-desc",      desc: "Acumule 50 vitórias",                        meta: 50,  valor: r => r.vitorias },
         { id: "craque",       icone: "fa-star",           medalha: "ouro",   tituloKey: "ach-ace-title",        titulo: "Craque",         descKey: "ach-ace-desc",        desc: "70% de aproveitamento em 20+ partidas",      meta: 70,  valor: r => (r.partidas >= 20 ? Math.round(r.aproveitamento * 100) : 0) },
         { id: "enciclopedia", icone: "fa-book-open",      medalha: "ouro",   tituloKey: "ach-encyclopedia-title", titulo: "Enciclopédia", descKey: "ach-encyclopedia-desc", desc: "Jogue todos os minigames",                  meta: null, valor: r => r.jogosDiferentes },
-        { id: "centenario",   icone: "fa-crown",          medalha: "ouro",   tituloKey: "ach-hundred-title",    titulo: "Lenda do clube", descKey: "ach-hundred-desc",    desc: "Acumule 100 vitórias",                       meta: 100, valor: r => r.vitorias }
+        { id: "centenario",   icone: "fa-crown",          medalha: "ouro",   tituloKey: "ach-hundred-title",    titulo: "Lenda do clube", descKey: "ach-hundred-desc",    desc: "Acumule 100 vitórias",                       meta: 100, valor: r => r.vitorias },
+        { id: "rotina",       icone: "fa-calendar-check", medalha: "bronze", tituloKey: "ach-routine-title",    titulo: "Rotina",         descKey: "ach-routine-desc",    desc: "Jogue 3 dias seguidos",                      meta: 3,   valor: r => r.recordeSequencia },
+        { id: "desafiante",   icone: "fa-calendar-day",   medalha: "bronze", tituloKey: "ach-challenger-title", titulo: "Desafiante",     descKey: "ach-challenger-desc", desc: "Conclua um Desafio do Dia",                  meta: 1,   valor: r => r.diariosConcluidos },
+        { id: "semana",       icone: "fa-fire",           medalha: "prata",  tituloKey: "ach-week-title",       titulo: "Semana de fogo", descKey: "ach-week-desc",       desc: "Jogue 7 dias seguidos",                      meta: 7,   valor: r => r.recordeSequencia },
+        { id: "diarista",     icone: "fa-calendar-week",  medalha: "prata",  tituloKey: "ach-daily-title",      titulo: "Diarista",       descKey: "ach-daily-desc",      desc: "Conclua 7 Desafios do Dia",                  meta: 7,   valor: r => r.diariosConcluidos },
+        { id: "mes",          icone: "fa-fire-flame-curved", medalha: "ouro", tituloKey: "ach-month-title",     titulo: "Mês imparável",  descKey: "ach-month-desc",      desc: "Jogue 30 dias seguidos",                     meta: 30,  valor: r => r.recordeSequencia },
+        { id: "rei-do-dia",   icone: "fa-chess-king",     medalha: "ouro",   tituloKey: "ach-king-title",       titulo: "Rei do Dia",     descKey: "ach-king-desc",       desc: "Vença 15 Desafios do Dia",                   meta: 15,  valor: r => r.diariosVencidos }
     ];
 
     // --- LEITURA SEGURA DO LOCALSTORAGE ---
@@ -129,7 +136,22 @@
             .filter(item => item.partidas > 0)
             .sort((a, b) => b.vitorias - a.vitorias || b.aproveitamento - a.aproveitamento || b.partidas - a.partidas);
 
-        const base = { vitorias, derrotas, partidas, aproveitamento, jogosDiferentes };
+        // --- SEQUÊNCIA DE DIAS E DESAFIOS DO DIA ---
+        const streak = lerJSON("fg11_streak", {});
+        const diario = window.FG11Daily ? window.FG11Daily.totais() : { concluidos: 0, vencidos: 0, sequencia: 0 };
+
+        const base = {
+            vitorias,
+            derrotas,
+            partidas,
+            aproveitamento,
+            jogosDiferentes,
+            sequenciaAtual: (streak && streak.sequencia) || 0,
+            recordeSequencia: (streak && streak.recorde) || 0,
+            diariosConcluidos: diario.concluidos,
+            diariosVencidos: diario.vencidos,
+            sequenciaDiaria: diario.sequencia
+        };
 
         const conquistas = CONQUISTAS.map(c => {
             const meta = c.meta ?? catalogo.length;
@@ -160,6 +182,63 @@
             apelido: obterApelido()
         };
     }
+
+    // --- CONQUISTAS JÁ NOTIFICADAS ---
+    function lerConquistasVistas() {
+        const lista = lerJSON(CHAVE_CONQUISTAS_VISTAS, null);
+        return Array.isArray(lista) ? lista : null;
+    }
+
+    function salvarConquistasVistas(ids) {
+        try {
+            localStorage.setItem(CHAVE_CONQUISTAS_VISTAS, JSON.stringify(ids));
+        } catch (e) {
+            // --- ARMAZENAMENTO INDISPONÍVEL: IGNORA ---
+        }
+    }
+
+    // --- NA PRIMEIRA VISITA, REGISTRA O QUE JÁ ESTÁ DESBLOQUEADO PARA NÃO AVISAR DE NOVO ---
+    function iniciarConquistasVistas() {
+        if (lerConquistasVistas() !== null) {
+            return;
+        }
+        try {
+            salvarConquistasVistas(resumo().conquistas.filter(c => c.desbloqueada).map(c => c.id));
+        } catch (e) {
+            // --- CATÁLOGO AINDA NÃO CARREGADO: TENTA NA PRÓXIMA PÁGINA ---
+        }
+    }
+
+    // --- AVISA (TOAST) AS CONQUISTAS DESBLOQUEADAS DESDE A ÚLTIMA VERIFICAÇÃO ---
+    function avisarNovasConquistas() {
+        const vistas = lerConquistasVistas();
+        if (vistas === null) {
+            return [];
+        }
+
+        const novas = resumo().conquistas.filter(c => c.desbloqueada && !vistas.includes(c.id));
+        if (novas.length === 0) {
+            return [];
+        }
+
+        salvarConquistasVistas(vistas.concat(novas.map(c => c.id)));
+
+        novas.forEach(conquista => {
+            if (!window.FG11Avisos) {
+                return;
+            }
+            const texto = (chave, padrao) => (window.fg11Texto ? window.fg11Texto(chave, padrao) : padrao);
+            window.FG11Avisos.mostrar({
+                icone: conquista.icone,
+                titulo: `${texto("ach-toast-unlocked", "Conquista desbloqueada!")} ${texto(conquista.tituloKey, conquista.titulo)}`,
+                texto: texto(conquista.descKey, conquista.desc),
+                duracao: 8000
+            });
+        });
+        return novas;
+    }
+
+    iniciarConquistasVistas();
 
     // --- FORMATAÇÃO ---
     function porcentagem(valor) {
@@ -291,6 +370,7 @@
         porcentagem,
         escapar,
         retraduzir,
+        avisarNovasConquistas,
         NIVEIS
     };
 })();
