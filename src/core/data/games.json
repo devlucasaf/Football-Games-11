@@ -7,22 +7,28 @@
         },
         "palavra": { 
             "rotuloKey": "cat-palavra", 
-            "icone": "fa-spell-check" },
+            "icone": "fa-spell-check" 
+        },
         "logica": { 
             "rotuloKey": "cat-logica", 
-            "icone": "fa-puzzle-piece" },
+            "icone": "fa-puzzle-piece" 
+        },
         "ordenacao": { 
             "rotuloKey": "cat-ordenacao", 
-            "icone": "fa-list-ol" },
+            "icone": "fa-list-ol" 
+        },
         "montar-time": { 
             "rotuloKey": "cat-montar-time", 
-            "icone": "fa-clipboard-list" },
+            "icone": "fa-clipboard-list" 
+        },
         "conhecimento": { 
             "rotuloKey": "cat-conhecimento", 
-            "icone": "fa-question-circle" },
+            "icone": "fa-question-circle" 
+        },
         "memoria": { 
             "rotuloKey": "cat-memoria", 
-            "icone": "fa-stopwatch" },
+            "icone": "fa-stopwatch" 
+        },
         "sorte": { 
             "rotuloKey": "cat-sorte", 
             "icone": "fa-dice" 
@@ -56,6 +62,7 @@
         { "id": "football-vc-escala",          "tituloKey": "football-vc-escala-title",          "descKey": "football-vc-escala-desc",          "icone": "fa-question-circle",  "categoria": "montar-time",  "pagina": "src/games/football-vc-escala/football-vc-escala.html",                 "estatisticas": false, "dificuldade": false },
         { "id": "football-vc-convoca",         "tituloKey": "football-vc-convoca-title",         "descKey": "football-vc-convoca-desc",         "icone": "fa-clipboard-list",   "categoria": "montar-time",  "pagina": "src/games/football-vc-convoca/football-vc-convoca.html",               "estatisticas": false, "dificuldade": false },
         { "id": "football-acerta-escalacao",   "tituloKey": "football-acerta-escalacao-title",   "descKey": "football-acerta-escalacao-desc",   "icone": "fa-clipboard-list",   "categoria": "montar-time",  "pagina": "src/games/football-acerta-escalacao/football-acerta-escalacao.html",   "estatisticas": true, "dificuldade": false },
+        { "id": "football-monte-seu-time",     "tituloKey": "football-monte-seu-time-title",     "descKey": "football-monte-seu-time-desc",     "icone": "fa-shirt",           "categoria": "montar-time",  "pagina": "src/games/football-monte-seu-time/football-monte-seu-time.html",     "estatisticas": true, "dificuldade": false },
         { "id": "football-bingo",              "tituloKey": "football-bingo-tittle",             "descKey": "football-bingo-desc",              "icone": "fa-chess-board",      "categoria": "sorte",        "pagina": "src/games/football-bingo/football-bingo.html",                         "estatisticas": false, "dificuldade": false }
     ]
 }

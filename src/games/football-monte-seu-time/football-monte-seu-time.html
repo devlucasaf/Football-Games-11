@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monte seu Time | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-monte-seu-time.css?v=3">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-monte-seu-time">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-shirt"></i>
+                    <h2 data-key="monte-tutorial-title">Como jogar Monte seu Time</h2>
+                    <p data-key="monte-tutorial-subtitle">Aloque times aleatórios nas 7 categorias e monte o Time Perfeito!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li>
+                        <span class="tutorial-step-number">1</span>
+                        <span data-key="monte-tutorial-step1"> A cada rodada, um time é sorteado aleatoriamente.</span>
+                    </li>
+                    <li>
+                        <span class="tutorial-step-number">2</span>
+                        <span data-key="monte-tutorial-step2"> Escolha um slot vazio e coloque o time sorteado nele (Escudo, Estádio, Uniforme...).</span>
+                    </li>
+                    <li>
+                        <span class="tutorial-step-number">3</span>
+                        <span data-key="monte-tutorial-step3"> Ou pule a rodada e outro time será sorteado.</span>
+                    </li>
+                    <li>
+                        <span class="tutorial-step-number">4</span>
+                        <span data-key="monte-tutorial-step4"> Complete os 7 slots em até 20 rodadas para montar o Time Perfeito!</span>
+                    </li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                        <i class="fas fa-play"></i>
+                        <span data-key="monte-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="monte-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="monte-container">
+            <div class="container">
+                <section class="monte-hero">
+                    <div class="monte-hero-content">
+                        <h1 class="monte-hero-title">
+                            <i class="fas fa-shirt" aria-hidden="true"></i>
+                            <span data-key="monte-hero-title">Monte seu Time</span>
+                        </h1>
+                        <p data-key="monte-hero-subtitle">Sorteie times, aloque-os nas 7 categorias e construa o Time Perfeito em até 20 rodadas.</p>
+                    </div>
+
+                    <div class="monte-info-bar">
+                        <div class="monte-info-item">
+                            <i class="fas fa-dice" aria-hidden="true"></i>
+                            <span data-key="monte-round">Rodada</span>
+                            <strong id="hudRodada">0</strong>
+                            <span>/</span>
+                            <span id="hudTotal">20</span>
+                        </div>
+                        <div class="monte-info-item">
+                            <i class="fas fa-shoe-prints" aria-hidden="true"></i>
+                            <span data-key="monte-slots-free">Slots livres</span>
+                            <strong id="hudSlots">0</strong>
+                            <span>/7</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="monte-draw" id="drawArea" aria-live="polite">
+                    <div class="monte-draw-card">
+                        <div class="monte-draw-top">
+                            <div class="monte-draw-badge" id="drawBadge"></div>
+                            <div class="monte-draw-texts">
+                                <span class="monte-draw-tag" data-key="monte-draw-title">Time sorteado</span>
+                                <h2 class="monte-draw-name" id="drawName">—</h2>
+                                <p class="monte-draw-info" id="drawInfo"></p>
+                            </div>
+                        </div>
+                        <div class="monte-draw-actions" id="drawActions" aria-label="Ações para o time sorteado"></div>
+                    </div>
+                </section>
+
+                <section class="monte-slots" aria-labelledby="slotsTitle">
+                    <h2 class="monte-slots-title" id="slotsTitle">
+                        <i class="fas fa-layer-group" aria-hidden="true"></i>
+                        <span data-key="monte-team-title">Meu Time</span>
+                    </h2>
+                    <div class="monte-slots-grid" id="slotsGrid"></div>
+                </section>
+
+                <div class="loading-state" id="loadingState">
+                    <div class="loading-spinner">
+                        <i class="fas fa-futbol fa-spin" aria-hidden="true"></i>
+                    </div>
+                    <p data-key="monte-loading">Carregando times...</p>
+                </div>
+
+                <div class="error-state" id="errorState" hidden>
+                    <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                    <p data-key="monte-error">Erro ao carregar os times. Tente recarregar a página.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-title">Football Games 11</span>
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- --- MODAL DE RESULTADO FINAL --- -->
+        <div class="monte-final-overlay hidden" id="finalOverlay">
+            <div class="monte-final-box" role="dialog" aria-modal="true" aria-labelledby="finalTitle">
+                <button class="monte-final-close" id="finalClose" aria-label="Fechar">
+                    <i class="fas fa-xmark" aria-hidden="true"></i>
+                </button>
+
+                <span class="monte-final-kicker" id="finalKicker"></span>
+                <h2 class="monte-final-title" id="finalTitle"></h2>
+                <p class="monte-final-subtitle" id="finalSubtitle"></p>
+
+                <div class="monte-final-banner" id="finalBanner"></div>
+
+                <div class="monte-final-actions">
+                    <button class="btn-retry" id="finalRetry">
+                        <i class="fas fa-redo" aria-hidden="true"></i>
+                        <span data-key="monte-play-again">Jogar novamente</span>
+                    </button>
+                    <button class="btn-home" id="finalHome">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span data-key="monte-home">Menu Principal</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js?v=3"></script>
+    </body>
+</html>
