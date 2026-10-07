@@ -602,10 +602,6 @@
 }
 
 /* --- UTILITÁRIOS --- */
-.hidden {
-    display: none !important;
-}
-
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 640px) {
     .conecta-container {

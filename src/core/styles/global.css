@@ -1967,3 +1967,170 @@ html[data-reduce-motion="true"] *::after {
     }
 }
 
+
+/* --- UTILITÁRIO COMPARTILHADO POR TODOS OS JOGOS --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- DESAFIO DO DIA: PROGRESSO DA SEMANA E SEQUÊNCIA --- */
+.desafio-dia-progresso {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.desafio-dia-semana {
+    display: inline-flex;
+    gap: 6px;
+}
+
+.desafio-dia-ponto {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.desafio-dia-ponto.vitoria {
+    background: #b4f03c;
+    border-color: #b4f03c;
+}
+
+.desafio-dia-ponto.derrota {
+    background: #f2b01e;
+    border-color: #f2b01e;
+}
+
+.desafio-dia-ponto.hoje {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.55);
+}
+
+.desafio-dia-seq {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* --- SELO DO MODO DIÁRIO NA PÁGINA DO JOGO --- */
+.fg11-diario-selo {
+    position: fixed;
+    left: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+}
+
+/* --- AVISOS (TOASTS): CONQUISTAS E DESAFIO DO DIA --- */
+.fg11-avisos {
+    position: fixed;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 10100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: min(360px, calc(100vw - 24px));
+    pointer-events: none;
+}
+
+.fg11-aviso {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid #b4f03c;
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    box-shadow: var(--shadow-lg);
+    animation: fg11AvisoEntrar 0.3s ease;
+}
+
+.fg11-aviso.saindo {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.fg11-aviso-icone {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: #fff;
+}
+
+.fg11-aviso-corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex: 1;
+    font-size: 0.85rem;
+}
+
+.fg11-aviso-corpo strong {
+    font-family: var(--font-heading);
+}
+
+.fg11-aviso-acao {
+    flex-shrink: 0;
+    background: var(--primary-green);
+    color: #fff;
+    border: 0;
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.fg11-aviso-fechar {
+    flex-shrink: 0;
+    background: transparent;
+    border: 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 4px;
+}
+
+@keyframes fg11AvisoEntrar {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-reduce-motion="true"] .fg11-aviso {
+    animation: none;
+}

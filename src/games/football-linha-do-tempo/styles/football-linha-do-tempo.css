@@ -555,11 +555,6 @@
 }
 
 /* --- UTILITÁRIOS --- */
-.hidden {
-    display: none !important;
-}
-
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 640px) {
     .timeline-container {
         padding: var(--spacing-md) 0;

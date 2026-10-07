@@ -617,10 +617,6 @@
 }
 
 /* --- UTILITÁRIOS --- */
-.hidden {
-    display: none !important;
-}
-
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .treinador-container {

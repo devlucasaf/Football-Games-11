@@ -342,10 +342,6 @@
 }
 
 /* --- UTILITÁRIOS --- */
-.hidden {
-    display: none !important;
-}
-
 /* --- ANIMAÇÕES --- */
 @keyframes fadeInUp {
     from {
