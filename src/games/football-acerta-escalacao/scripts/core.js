@@ -5,6 +5,6 @@ export const estado = {
     jogadoresRestantes: [],
     jogoAtivo:          false,
     tempoRestante:      300,
-    timerInterval:      null,
+    identificadorIntervaloCronometro: null,
     modoComTempo:       true
 };

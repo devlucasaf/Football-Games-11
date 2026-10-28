@@ -1,32 +1,32 @@
 import estado from "./core.js";
 
 // --- RENDERIZAR CARDS ---
-export function renderizarCards() {
-    const cards = document.querySelectorAll(".companheiro-card");
+export function renderizarCartoesCompanheiros() {
+    const cartoesCompanheiros = document.querySelectorAll(".companheiro-card");
     const companheiros = estado.rodadaAtual.companheiros;
 
-    cards.forEach((card, idx) => {
-        const nomeEl = card.querySelector(".card-nome");
-        nomeEl.textContent = companheiros[idx] || "";
-        card.classList.remove("revelado");
-        card.classList.add("oculto");
+    cartoesCompanheiros.forEach((cartaoCompanheiro, indiceCompanheiro) => {
+        const elementoNome = cartaoCompanheiro.querySelector(".card-nome");
+        elementoNome.textContent = companheiros[indiceCompanheiro] || "";
+        cartaoCompanheiro.classList.remove("revelado");
+        cartaoCompanheiro.classList.add("oculto");
     });
 
     revelarCompanheiro(0);
 }
 
 // --- REVELAR COMPANHEIRO POR ÍNDICE ---
-export function revelarCompanheiro(idx) {
-    const cards = document.querySelectorAll(".companheiro-card");
-    if (idx < 0 || idx >= cards.length) {
+export function revelarCompanheiro(indiceCompanheiro) {
+    const cartoesCompanheiros = document.querySelectorAll(".companheiro-card");
+    if (indiceCompanheiro < 0 || indiceCompanheiro >= cartoesCompanheiros.length) {
         return;
     }
 
-    const card = cards[idx];
+    const cartaoCompanheiro = cartoesCompanheiros[indiceCompanheiro];
 
-    card.classList.remove("oculto");
-    card.classList.add("revelado");
-    estado.companheirosRevelados = idx + 1;
+    cartaoCompanheiro.classList.remove("oculto");
+    cartaoCompanheiro.classList.add("revelado");
+    estado.companheirosRevelados = indiceCompanheiro + 1;
 }
 
 // --- REVELAR PRÓXIMO COMPANHEIRO ---
@@ -41,35 +41,35 @@ export function revelarProximo() {
 
 // --- MOSTRAR RESPOSTA ---
 export function mostrarResposta(acertou) {
-    const cardResposta = document.getElementById("respostaCard");
-    const nomeEl = document.getElementById("respostaNome");
-    const iconeEl = document.getElementById("respostaIcone");
+    const cartaoResposta = document.getElementById("respostaCard");
+    const elementoNome = document.getElementById("respostaNome");
+    const elementoIcone = document.getElementById("respostaIcone");
 
-    nomeEl.textContent = estado.rodadaAtual.resposta;
-    iconeEl.className = acertou ? "fas fa-trophy resposta-icone" : "fas fa-times-circle resposta-icone";
-    cardResposta.classList.remove("revelado", "errado");
-    cardResposta.classList.add(acertou ? "revelado" : "errado");
+    elementoNome.textContent = estado.rodadaAtual.resposta;
+    elementoIcone.className = acertou ? "fas fa-trophy resposta-icone" : "fas fa-times-circle resposta-icone";
+    cartaoResposta.classList.remove("revelado", "errado");
+    cartaoResposta.classList.add(acertou ? "revelado" : "errado");
 }
 
 // --- RESETAR CARD DE RESPOSTA ---
-export function resetarRespostaCard() {
-    const cardResposta = document.getElementById("respostaCard");
-    const nomeEl = document.getElementById("respostaNome");
-    const iconeEl = document.getElementById("respostaIcone");
+export function reiniciarCartaoResposta() {
+    const cartaoResposta = document.getElementById("respostaCard");
+    const elementoNome = document.getElementById("respostaNome");
+    const elementoIcone = document.getElementById("respostaIcone");
 
-    nomeEl.textContent = "???";
-    iconeEl.className = "fas fa-question resposta-icone";
-    cardResposta.classList.remove("revelado", "errado");
+    elementoNome.textContent = "???";
+    elementoIcone.className = "fas fa-question resposta-icone";
+    cartaoResposta.classList.remove("revelado", "errado");
 }
 
 // --- MOSTRAR DICA ---
 export function mostrarDica() {
-    const container = document.getElementById("dicaContainer");
+    const recipienteDica = document.getElementById("dicaContainer");
     const texto = document.getElementById("dicaTexto");
 
     if (estado.rodadaAtual.dica) {
         texto.textContent = estado.rodadaAtual.dica;
-        container.style.display = "";
+        recipienteDica.style.display = "";
     }
 }
 
@@ -100,29 +100,29 @@ export function esconderResultado() {
 }
 
 // --- LIMPAR INPUT ---
-export function limparInput() {
-    const input = document.getElementById("palpiteInput");
-    input.value = "";
+export function limparCampoPalpite() {
+    const campoPalpite = document.getElementById("palpiteInput");
+    campoPalpite.value = "";
     esconderSugestoes();
 }
 
 // --- FOCAR INPUT ---
-export function focarInput() {
+export function focarCampoPalpite() {
     document.getElementById("palpiteInput").focus();
 }
 
 // --- DESABILITAR INPUT ---
-export function desabilitarInput() {
+export function desabilitarCampoPalpite() {
     document.getElementById("palpiteInput").disabled = true;
-    document.getElementById("confirmarBtn").disabled = true;
-    document.getElementById("pularBtn").disabled = true;
+    document.getElementById("btnConfirmarPalpite").disabled = true;
+    document.getElementById("btnRevelarProximaPista").disabled = true;
 }
 
 // --- HABILITAR INPUT ---
-export function habilitarInput() {
+export function habilitarCampoPalpite() {
     document.getElementById("palpiteInput").disabled = false;
-    document.getElementById("confirmarBtn").disabled = false;
-    document.getElementById("pularBtn").disabled = false;
+    document.getElementById("btnConfirmarPalpite").disabled = false;
+    document.getElementById("btnRevelarProximaPista").disabled = false;
 }
 
 // --- SUGESTÕES / AUTOCOMPLETE ---
@@ -136,10 +136,10 @@ export function mostrarSugestoes(sugestoes) {
     }
 
     sugestoes.slice(0, 6).forEach(nome => {
-        const div = document.createElement("div");
-        div.className = "sugestao-item";
-        div.textContent = nome;
-        lista.appendChild(div);
+        const elementoSugestao = document.createElement("div");
+        elementoSugestao.className = "sugestao-item";
+        elementoSugestao.textContent = nome;
+        lista.appendChild(elementoSugestao);
     });
 
     lista.classList.add("ativa");
@@ -154,7 +154,7 @@ export function esconderSugestoes() {
 
 // --- REVELAR TODOS OS COMPANHEIROS RESTANTES ---
 export function revelarTodos() {
-    for (let i = estado.companheirosRevelados; i < 5; i++) {
-        revelarCompanheiro(i);
+    for (let indiceCompanheiro = estado.companheirosRevelados; indiceCompanheiro < 5; indiceCompanheiro++) {
+        revelarCompanheiro(indiceCompanheiro);
     }
 }

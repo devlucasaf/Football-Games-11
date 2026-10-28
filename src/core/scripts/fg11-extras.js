@@ -1,30 +1,39 @@
+// --- RECURSOS EXTRAS ---
 (function () {
     const CHAVE_FAVORITOS = "fg11_favoritos";
 
+    // --- OBTÉM A LISTA DE JOGOS FAVORITOS ---
     function obterFavoritos() {
         let lista = null;
         try {
             lista = JSON.parse(localStorage.getItem(CHAVE_FAVORITOS));
-        } catch (e) {
+        } catch (erro) {
             lista = null;
         }
-        return Array.isArray(lista) ? lista : [];
-    }
 
-    function ehFavorito(id) {
-        return obterFavoritos().includes(id);
-    }
-
-    function alternarFavorito(id) {
-        const lista = obterFavoritos();
-        const idx = lista.indexOf(id);
-        if (idx >= 0) {
-            lista.splice(idx, 1);
+        if (Array.isArray(lista)) {
+            return lista;
         } else {
-            lista.push(id);
+            return [];
+        }
+    }
+
+    // --- VERIFICA SE UM JOGO É FAVORITO ---
+    function ehFavorito(identificadorJogo) {
+        return obterFavoritos().includes(identificadorJogo);
+    }
+
+    // --- ALTERNA O STATUS DE FAVORITO DE UM JOGO ---
+    function alternarFavorito(identificadorJogo) {
+        const lista = obterFavoritos();
+        const indiceFavorito = lista.indexOf(identificadorJogo);
+        if (indiceFavorito >= 0) {
+            lista.splice(indiceFavorito, 1);
+        } else {
+            lista.push(identificadorJogo);
         }
         localStorage.setItem(CHAVE_FAVORITOS, JSON.stringify(lista));
-        return idx < 0; 
+        return indiceFavorito < 0; 
     }
 
     window.FG11Favoritos = { obter: obterFavoritos, alternar: alternarFavorito, ehFavorito };
@@ -37,96 +46,113 @@
         }
 
         montarFavoritos(grade);
-        montarBadgeStreak();
+        montarSeloSequenciaDias();
         montarDesafioDoDia();
     });
 
     // --- EXTRAI O ID DO JOGO A PARTIR DO LINK DO CARD ---
-    function idDoCard(card) {
-        const link = card.querySelector("a[href*='src/games/']");
-        if (!link) {
+    function obterIdentificadorJogoCartao(cartaoJogo) {
+        const ligacaoJogo = cartaoJogo.querySelector("a[href*='src/games/']");
+        if (!ligacaoJogo) {
             return null;
         }
-        const m = link.getAttribute("href").match(/src\/games\/([^/]+)\//);
-        return m ? m[1] : null;
+        const correspondenciaCaminho = ligacaoJogo.getAttribute("href").match(/src\/games\/([^/]+)\//);
+        
+        if (correspondenciaCaminho) {
+            return correspondenciaCaminho[1];
+        } else {
+            return null;
+        }
     }
 
     // --- ADICIONA ESTRELA DE FAVORITO EM CADA CARD E REORDENA ---
     function montarFavoritos(grade) {
-        const cards = Array.from(grade.querySelectorAll(".coming-soon-card"));
+        const cartoesJogos = Array.from(grade.querySelectorAll(".coming-soon-card"));
 
-        cards.forEach(card => {
-            const id = idDoCard(card);
-            if (!id) {
+        cartoesJogos.forEach(cartaoJogo => {
+            const identificadorJogo = obterIdentificadorJogoCartao(cartaoJogo);
+            if (!identificadorJogo) {
                 return;
             }
 
-            const botao = document.createElement("button");
-            botao.className = "fav-toggle";
-            botao.type = "button";
-            botao.setAttribute("aria-label", "Favoritar jogo");
-            botao.title = "Favoritar";
-            botao.innerHTML = "<i class=\"fa-star\"></i>";
-            atualizarEstadoBotao(botao, window.FG11Favoritos.ehFavorito(id));
+            const btnAlternarFavorito = document.createElement("button");
+            
+            btnAlternarFavorito.className = "fav-toggle";
+            btnAlternarFavorito.type = "button";
+            btnAlternarFavorito.setAttribute("aria-label", "Favoritar jogo");
+            btnAlternarFavorito.title = "Favoritar";
+            btnAlternarFavorito.innerHTML = "<i class=\"fa-star\"></i>";
+            
+            atualizarEstadoBotaoFavorito(btnAlternarFavorito, window.FG11Favoritos.ehFavorito(identificadorJogo));
 
-            botao.addEventListener("click", (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const virouFavorito = window.FG11Favoritos.alternar(id);
-                atualizarEstadoBotao(botao, virouFavorito);
+            btnAlternarFavorito.addEventListener("click", (evento) => {
+                evento.preventDefault();
+                evento.stopPropagation();
+                const virouFavorito = window.FG11Favoritos.alternar(identificadorJogo);
+                atualizarEstadoBotaoFavorito(btnAlternarFavorito, virouFavorito);
                 reordenarFavoritos(grade);
             });
 
-            card.classList.add("tem-favorito");
-            card.insertBefore(botao, card.firstChild);
+            cartaoJogo.classList.add("tem-favorito");
+            cartaoJogo.insertBefore(btnAlternarFavorito, cartaoJogo.firstChild);
         });
 
         reordenarFavoritos(grade);
     }
 
-    function atualizarEstadoBotao(botao, ativo) {
-        const icone = botao.querySelector("i");
-        botao.classList.toggle("ativo", ativo);
+    // --- ATUALIZA O ESTADO VISUAL DO BOTÃO DE FAVORITO ---
+    function atualizarEstadoBotaoFavorito(btnAlternarFavorito, ativo) {
+        const icone = btnAlternarFavorito.querySelector("i");
+        btnAlternarFavorito.classList.toggle("ativo", ativo);
         if (icone) {
-            icone.className = ativo ? "fas fa-star" : "far fa-star";
+            if (ativo) {
+                icone.className = "fas fa-star";
+            } else {
+                icone.className = "far fa-star";
+            }
         }
-        botao.setAttribute("aria-pressed", ativo ? "true" : "false");
+        
+        if (ativo) {
+            btnAlternarFavorito.setAttribute("aria-pressed", "true");
+        } else {
+            btnAlternarFavorito.setAttribute("aria-pressed", "false");
+        }
     }
 
     // --- MOVE OS CARDS FAVORITOS PARA O TOPO ---
     function reordenarFavoritos(grade) {
         const favoritos = window.FG11Favoritos.obter();
-        const cards = Array.from(grade.querySelectorAll(".coming-soon-card"));
+        const cartoesJogos = Array.from(grade.querySelectorAll(".coming-soon-card"));
 
-        cards
-            .filter(card => favoritos.includes(idDoCard(card)))
+        cartoesJogos
+            .filter(cartaoJogo => favoritos.includes(obterIdentificadorJogoCartao(cartaoJogo)))
             .reverse()
-            .forEach(card => grade.insertBefore(card, grade.firstChild));
+            .forEach(cartaoJogo => grade.insertBefore(cartaoJogo, grade.firstChild));
     }
 
     // --- MOSTRA O SELO DE SEQUÊNCIA DE DIAS NO HERO ---
-    function montarBadgeStreak() {
+    function montarSeloSequenciaDias() {
         if (!window.FG11Stats || !window.FG11Stats.obterStreak) {
             return;
         }
 
-        const streak = window.FG11Stats.obterStreak();
-        if (!streak.sequencia || streak.sequencia < 1) {
+        const sequenciaDias = window.FG11Stats.obterStreak();
+        if (!sequenciaDias.sequencia || sequenciaDias.sequencia < 1) {
             return;
         }
 
-        const heroStats = document.querySelector(".hero-stats");
-        if (!heroStats || document.getElementById("streakBadge")) {
+        const indicadoresDestaque = document.querySelector(".hero-stats");
+        if (!indicadoresDestaque || document.getElementById("streakBadge")) {
             return;
         }
 
-        const badge = document.createElement("div");
-        badge.className = "stat streak-badge";
-        badge.id = "streakBadge";
-        badge.innerHTML =
-            `<span class="stat-number"><i class="fas fa-fire"></i> ${streak.sequencia}</span>` +
+        const seloSequencia = document.createElement("div");
+        seloSequencia.className = "stat streak-badge";
+        seloSequencia.id = "streakBadge";
+        seloSequencia.innerHTML =
+            `<span class="stat-number"><i class="fas fa-fire"></i> ${sequenciaDias.sequencia}</span>` +
             `<span class="stat-label" data-key="streak-label">dias seguidos</span>`;
-        heroStats.appendChild(badge);
+        indicadoresDestaque.appendChild(seloSequencia);
     }
 
     // --- MONTA A SEÇÃO "DESAFIO DO DIA" ---
@@ -138,13 +164,12 @@
 
         let jogos = [];
         try {
-            const resp = await fetch("src/core/data/games.json", { cache: "no-store" });
-            if (resp.ok) {
-                const dados = await resp.json();
-                // --- SÓ ENTRAM JOGOS QUE REGISTRAM O RESULTADO (PARA CONCLUIR O DESAFIO) ---
-                jogos = (dados.jogos || []).filter(j => j.estatisticas === true);
+            const respostaCatalogo = await fetch("src/core/data/games.json", { cache: "no-store" });
+            if (respostaCatalogo.ok) {
+                const dados = await respostaCatalogo.json();
+                jogos = (dados.jogos || []).filter(jogo => jogo.estatisticas === true);
             }
-        } catch (e) {
+        } catch (erro) {
             jogos = [];
         }
 
@@ -157,15 +182,65 @@
         const feito = resultado !== null;
         const sequencia = window.FG11Daily.sequenciaDiaria();
 
-        // --- JOGO DO DIA ABRE NO MODO DIÁRIO; DEPOIS DE CONCLUÍDO, ABRE NO MODO LIVRE ---
-        const destino = feito ? jogo.pagina : `${jogo.pagina}?diario=1`;
-        const chaveBotao = !feito ? "daily-play" : (resultado.venceu ? "daily-done-win" : "daily-done-loss");
-        const textoBotao = !feito ? "Jogar agora" : (resultado.venceu ? "Vencido hoje" : "Concluído hoje");
+        let destino;
+        if (feito) {
+            destino = jogo.pagina;
+        } else {
+            destino = `${jogo.pagina}?diario=1`;
+        }
+
+        let chaveBotao;
+        if (!feito) {
+            chaveBotao = "daily-play";
+        } else if (resultado.venceu) {
+            chaveBotao = "daily-done-win";
+        } else {
+            chaveBotao = "daily-done-loss";
+        }
+
+        let textoBotao;
+        if (!feito) {
+            textoBotao = "Jogar agora";
+        } else if (resultado.venceu) {
+            textoBotao = "Vencido hoje";
+        } else {
+            textoBotao = "Concluído hoje";
+        }
 
         const semana = window.FG11Daily.ultimosDias(7).map(item => {
-            const estado = item.resultado ? (item.resultado.venceu ? "vitoria" : "derrota") : "vazio";
-            return `<span class="desafio-dia-ponto ${estado}${item.hoje ? " hoje" : ""}" title="${item.dia}"></span>`;
+            let estado;
+            if (!item.resultado) {
+                estado = "vazio";
+            } else if (item.resultado.venceu) {
+                estado = "vitoria";
+            } else {
+                estado = "derrota";
+            }
+
+            let classeHoje = "";
+            if (item.hoje) {
+                classeHoje = " hoje";
+            }
+
+            return `<span class="desafio-dia-ponto ${estado}${classeHoje}" title="${item.dia}"></span>`;
         }).join("");
+
+        let marcacaoSequencia = "";
+        if (sequencia > 0) {
+            marcacaoSequencia = `<span class="desafio-dia-seq"><i class="fas fa-fire"></i> ${sequencia} <span data-key="daily-streak-text">dias seguidos no desafio</span></span>`;
+        }
+
+        let classeBotao = "desafio-dia-btn";
+        if (feito) {
+            classeBotao = "desafio-dia-btn feito";
+        }
+
+        let iconeBotao;
+        if (feito) {
+            iconeBotao = "fa-check";
+        } else {
+            iconeBotao = "fa-play";
+        }
 
         const bloco = document.createElement("section");
         bloco.className = "desafio-dia";
@@ -180,11 +255,11 @@
                 <p class="desafio-dia-sub" data-key="daily-sub">O mesmo desafio para todos, hoje. Volte amanhã para um novo!</p>
                 <div class="desafio-dia-progresso">
                     <span class="desafio-dia-semana" role="img" aria-label="Últimos 7 dias">${semana}</span>
-                    ${sequencia > 0 ? `<span class="desafio-dia-seq"><i class="fas fa-fire"></i> ${sequencia} <span data-key="daily-streak-text">dias seguidos no desafio</span></span>` : ""}
+                    ${marcacaoSequencia}
                 </div>
             </div>
-            <a href="${destino}" class="desafio-dia-btn${feito ? " feito" : ""}" id="desafioDiaBtn">
-                <i class="fas ${feito ? "fa-check" : "fa-play"}"></i>
+            <a href="${destino}" class="${classeBotao}" id="desafioDiaBtn">
+                <i class="fas ${iconeBotao}"></i>
                 <span data-key="${chaveBotao}">${textoBotao}</span>
             </a>`;
 

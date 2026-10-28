@@ -1,87 +1,63 @@
 import { estado } from "./core.js";
 
-function normalizar(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+function normalizarTexto(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
 // --- RENDERIZA A LINHA DO TEMPO COM OS CLUBES DO JOGADOR ATUAL ---
 export function renderizarClubes() {
-    const timeline = document.getElementById("clubsTimeline");
-    timeline.innerHTML = "";
-
+    const linhaTempoClubes = document.getElementById("clubsTimeline");
+    linhaTempoClubes.innerHTML = "";
     if (!estado.jogadorAtual) {
         return;
     }
-
     const clubes = estado.jogadorAtual.clubes;
-
-    for (let i = 0; i < clubes.length; i++) {
-        const div = document.createElement("div");
-
-        if (i < estado.clubesRevelados) {
-            div.className = "club-item";
-            div.innerHTML = `
-                <span class="club-number">${i + 1}</span>
-                <span class="club-name">${clubes[i].clube}</span>
-                <span class="club-period">${clubes[i].periodo}</span>
-            `;
+    
+    for (let indiceClube = 0; indiceClube < clubes.length; indiceClube++) {
+        const elementoClube = document.createElement("div");
+        if (indiceClube < estado.clubesRevelados) {
+            elementoClube.className = "club-item";
+            elementoClube.innerHTML = `<span class="club-number">${indiceClube + 1}</span><span class="club-name">${clubes[indiceClube].clube}</span><span class="club-period">${clubes[indiceClube].periodo}</span>`;
         } else {
-            div.className = "club-item hidden-club";
-            div.innerHTML = `
-                <span class="club-number">${i + 1}</span>
-                <span class="club-name">???</span>
-                <span class="club-period">-</span>
-            `;
+            elementoClube.className = "club-item hidden-club";
+            elementoClube.innerHTML = `<span class="club-number">${indiceClube + 1}</span><span class="club-name">???</span><span class="club-period">-</span>`;
         }
-        timeline.appendChild(div);
+        linhaTempoClubes.appendChild(elementoClube);
     }
-
-    const btnReveal = document.getElementById("btnReveal");
-    if (estado.clubesRevelados >= clubes.length) {
-        btnReveal.disabled = true;
-        btnReveal.innerHTML = "<i class='fas fa-eye-slash'></i> Todos revelados";
-    } else {
-        btnReveal.disabled = false;
-        btnReveal.innerHTML = "<i class='fas fa-eye'></i> Revelar próximo clube";
-    }
+    const btnRevelarProximoClube = document.getElementById("btnReveal");
+    btnRevelarProximoClube.disabled = estado.clubesRevelados >= clubes.length;
+    btnRevelarProximoClube.innerHTML = btnRevelarProximoClube.disabled ? "<i class='fas fa-eye-slash'></i> Todos revelados" : "<i class='fas fa-eye'></i> Revelar próximo clube";
 }
 
 // --- ATUALIZA AS INFORMAÇÕES EXIBIDAS NA TELA ---
-export function atualizarInfo() {
+export function atualizarInformacoesRodada() {
     document.getElementById("pontuacao").textContent = estado.pontuacao;
     document.getElementById("rodadaAtual").textContent = estado.rodada;
 }
 
 // --- MOSTRA O FEEDBACK DE ACERTO OU ERRO DO PALPITE ---
-export function mostrarFeedback(acertou, pontosGanhos) {
-    const feedback = document.getElementById("feedback");
-    const icon = document.getElementById("feedbackIcon");
-    const text = document.getElementById("feedbackText");
-    const answer = document.getElementById("feedbackAnswer");
-
+export function mostrarRetornoPalpite(acertou, pontosGanhos) {
+    const retornoPalpite = document.getElementById("feedback");
+    const iconeRetornoPalpite = document.getElementById("feedbackIcon");
+    const textoRetornoPalpite = document.getElementById("feedbackText");
+    const respostaPalpite = document.getElementById("feedbackAnswer");
     document.getElementById("clubsArea").classList.add("hidden");
     document.getElementById("guessArea").classList.add("hidden");
-    feedback.classList.remove("hidden");
-
+    retornoPalpite.classList.remove("hidden");
     if (acertou) {
-        icon.innerHTML = "<i class='fas fa-check-circle'></i>";
-        icon.className = "feedback-icon correct";
-        text.innerHTML = `Acertou! <span class="points-earned">+${pontosGanhos} pts</span>`;
-        answer.classList.add("hidden");
+        iconeRetornoPalpite.innerHTML = "<i class='fas fa-check-circle'></i>";
+        iconeRetornoPalpite.className = "feedback-icon correct";
+        textoRetornoPalpite.innerHTML = `Acertou! <span class="points-earned">+${pontosGanhos} pts</span>`;
+        respostaPalpite.classList.add("hidden");
     } else {
-        icon.innerHTML = "<i class='fas fa-times-circle'></i>";
-        icon.className = "feedback-icon wrong";
-        text.textContent = "Errou!";
-        answer.textContent = `Era: ${estado.jogadorAtual.nome}`;
-        answer.classList.remove("hidden");
+        iconeRetornoPalpite.innerHTML = "<i class='fas fa-times-circle'></i>";
+        iconeRetornoPalpite.className = "feedback-icon wrong";
+        textoRetornoPalpite.textContent = "Errou!";
+        respostaPalpite.textContent = `Era: ${estado.jogadorAtual.nome}`;
+        respostaPalpite.classList.remove("hidden");
     }
-
-    const btnNext = document.getElementById("btnNext");
-    if (estado.rodada >= estado.totalRodadas) {
-        btnNext.innerHTML = "<i class='fas fa-trophy'></i> Ver Resultado";
-    } else {
-        btnNext.innerHTML = "<i class='fas fa-arrow-right'></i> Próxima Rodada";
-    }
+    const btnProximaRodada = document.getElementById("btnNext");
+    btnProximaRodada.innerHTML = estado.rodada >= estado.totalRodadas ? "<i class='fas fa-trophy'></i> Ver Resultado" : "<i class='fas fa-arrow-right'></i> Próxima Rodada";
 }
 
 // --- EXIBE A TELA DE RESULTADO FINAL DO JOGO ---
@@ -90,45 +66,26 @@ export function mostrarResultadoFinal() {
     document.getElementById("guessArea").classList.add("hidden");
     document.getElementById("feedback").classList.add("hidden");
     document.getElementById("gameInfo").classList.add("hidden");
-
-    const final = document.getElementById("finalResult");
-    final.classList.remove("hidden");
+    const resultadoFinal = document.getElementById("finalResult");
+    resultadoFinal.classList.remove("hidden");
     document.getElementById("finalPoints").textContent = estado.pontuacao;
-
-    const maxPontos = estado.totalRodadas * 10;
-    const detailsDiv = document.getElementById("finalDetails");
-    const porcentagem = Math.round((estado.pontuacao / maxPontos) * 100);
-    
-    let msg = "";
-
+    const pontuacaoMaxima = estado.totalRodadas * 10;
+    const detalhesResultado = document.getElementById("finalDetails");
+    const porcentagem = Math.round((estado.pontuacao / pontuacaoMaxima) * 100);
+    let mensagemResultado = "";
     if (porcentagem >= 80) {
-        msg = "Excelente! Você é um expert em transferências!";
-    } else if (porcentagem >= 50) {
-        msg = "Bom trabalho! Conhece bem o mercado!";
-    } else if (porcentagem >= 20) {
-        msg = "Pode melhorar! Tente de novo!";
-    } else {
-        msg = "Difícil, né? Jogue novamente para aprender!";
-    }
-
+        mensagemResultado = "Excelente! Você é um expert em transferências!";
+    } else if (porcentagem >= 50) mensagemResultado = "Bom trabalho! Conhece bem o mercado!";
+    else if (porcentagem >= 20) mensagemResultado = "Pode melhorar! Tente de novo!";
+    else mensagemResultado = "Difícil, né? Jogue novamente para aprender!";
     if (porcentagem >= 50) {
-        if (window.registrarVitoria) {
-            window.registrarVitoria();
-        }
-    } else {
-        if (window.registrarDerrota) {
-            window.registrarDerrota();
-        }
-    }
-
-    detailsDiv.innerHTML = `
-        <div class="detail-item">${msg}</div>
-        <div class="detail-item">Pontuação máxima possível: ${maxPontos} pts</div>
-    `;
+        if (window.registrarVitoria) window.registrarVitoria();
+    } else if (window.registrarDerrota) window.registrarDerrota();
+    detalhesResultado.innerHTML = `<div class="detail-item">${mensagemResultado}</div><div class="detail-item">Pontuação máxima possível: ${pontuacaoMaxima} pts</div>`;
 }
 
 // --- RESETA A INTERFACE VISUAL PARA UMA NOVA RODADA ---
-export function resetarVisual() {
+export function reiniciarInterfaceRodada() {
     document.getElementById("clubsArea").classList.remove("hidden");
     document.getElementById("guessArea").classList.remove("hidden");
     document.getElementById("feedback").classList.add("hidden");
@@ -139,71 +96,63 @@ export function resetarVisual() {
 }
 
 // --- CONFIGURA O SISTEMA DE AUTOCOMPLETAR PARA O CAMPO DE ENTRADA ---
-export function configurarAutocomplete(nomes, onSelect) {
-    const input = document.getElementById("guessInput");
-    const list = document.getElementById("autocompleteList");
-    let highlightIndex = -1;
-
-    input.addEventListener("input", () => {
-        const val = normalizar(input.value.trim());
-        list.innerHTML = "";
-        highlightIndex = -1;
-
-        if (val.length < 2) {
-            list.classList.remove("active");
+export function configurarPreenchimentoAutomatico(nomes, aoSelecionarJogador) {
+    const campoPalpite = document.getElementById("guessInput");
+    const listaSugestoes = document.getElementById("autocompleteList");
+    let indiceSugestaoDestacada = -1;
+    campoPalpite.addEventListener("input", () => {
+        const valorNormalizado = normalizarTexto(campoPalpite.value.trim());
+        listaSugestoes.innerHTML = "";
+        indiceSugestaoDestacada = -1;
+        if (valorNormalizado.length < 2) {
+            listaSugestoes.classList.remove("active");
             return;
         }
-
-        const filtrados = nomes.filter(n => normalizar(n).includes(val)).slice(0, 6);
-
-        if (filtrados.length === 0) {
-            list.classList.remove("active");
+        const filtrados = nomes.filter(nomeJogador => normalizarTexto(nomeJogador).includes(valorNormalizado)).slice(0, 6);
+        if (!filtrados.length) {
+            listaSugestoes.classList.remove("active");
             return;
         }
-
         filtrados.forEach(nome => {
-            const div = document.createElement("div");
-            div.className = "autocomplete-item";
-            div.textContent = nome;
-            div.addEventListener("click", () => {
-                input.value = nome;
-                list.classList.remove("active");
-                onSelect(nome);
+            const elementoSugestao = document.createElement("div");
+            
+            elementoSugestao.className = "autocomplete-item";
+            elementoSugestao.textContent = nome;
+            elementoSugestao.addEventListener("click", () => {
+                campoPalpite.value = nome;
+                listaSugestoes.classList.remove("active");
+                aoSelecionarJogador(nome);
             });
-            list.appendChild(div);
+            listaSugestoes.appendChild(elementoSugestao);
         });
-        list.classList.add("active");
+        listaSugestoes.classList.add("active");
     });
-
-    input.addEventListener("keydown", (e) => {
-        const items = list.querySelectorAll(".autocomplete-item");
-        if (!items.length && e.key !== "Enter") {
-            return;
-        }
-
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
-            highlightIndex = Math.min(highlightIndex + 1, items.length - 1);
-            items.forEach((it, i) => it.classList.toggle("highlighted", i === highlightIndex));
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            highlightIndex = Math.max(highlightIndex - 1, 0);
-            items.forEach((it, i) => it.classList.toggle("highlighted", i === highlightIndex));
-        } else if (e.key === "Enter") {
-            e.preventDefault();
-            if (highlightIndex >= 0 && items[highlightIndex]) {
-                items[highlightIndex].click();
-            } else if (input.value.trim()) {
-                onSelect(input.value.trim());
+    campoPalpite.addEventListener("keydown", eventoTeclado => {
+        const itensSugestoes = listaSugestoes.querySelectorAll(".autocomplete-item");
+        if (!itensSugestoes.length && eventoTeclado.key !== "Enter") return;
+        if (eventoTeclado.key === "ArrowDown") {
+            eventoTeclado.preventDefault();
+            indiceSugestaoDestacada = Math.min(indiceSugestaoDestacada + 1, itensSugestoes.length - 1);
+            itensSugestoes.forEach((itemSugestao, indiceSugestao) => itemSugestao.classList.toggle("highlighted", indiceSugestao === indiceSugestaoDestacada));
+        } else if (eventoTeclado.key === "ArrowUp") {
+            eventoTeclado.preventDefault();
+            indiceSugestaoDestacada = Math.max(indiceSugestaoDestacada - 1, 0);
+            itensSugestoes.forEach((itemSugestao, indiceSugestao) => itemSugestao.classList.toggle("highlighted", indiceSugestao === indiceSugestaoDestacada));
+        } else if (eventoTeclado.key === "Enter") {
+            eventoTeclado.preventDefault();
+            if (indiceSugestaoDestacada >= 0 && itensSugestoes[indiceSugestaoDestacada]) {
+                itensSugestoes[indiceSugestaoDestacada].click();
+            } else if (campoPalpite.value.trim()) {
+                aoSelecionarJogador(campoPalpite.value.trim());
             }
-        } else if (e.key === "Escape") {
-            list.classList.remove("active");
+        } else if (eventoTeclado.key === "Escape") {
+            listaSugestoes.classList.remove("active");
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-wrapper")) {
-            list.classList.remove("active");
+    document.addEventListener("click", eventoClique => {
+        if (!eventoClique.target.closest(".input-wrapper")) {
+            listaSugestoes.classList.remove("active");
         }
     });
 }

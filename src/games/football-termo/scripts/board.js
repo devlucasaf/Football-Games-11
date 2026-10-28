@@ -1,34 +1,34 @@
 import estado from "./core.js";
 
 // --- CRIAÇÃO DO TABULEIRO DO TERMO ---
-export function criarBoard() {
-    const board = document.getElementById("termoBoard");
-    board.innerHTML = ""; 
+export function criarTabuleiroTermo() {
+    const tabuleiro = document.getElementById("tabuleiroTermo");
+    tabuleiro.innerHTML = "";
 
     const tamanho = estado.secretoNormalizado.length; 
 
-    for (let i = 0; i < estado.MAX_TENTATIVAS; i++) {
-        const row = document.createElement("div");
-        row.className = "termo-row";
-        row.dataset.row = i;
+    for (let indiceLinha = 0; indiceLinha < estado.MAXIMO_TENTATIVAS; indiceLinha++) {
+        const linha = document.createElement("div");
+        linha.className = "termo-linha";
+        linha.dataset.linha = indiceLinha;
 
-        for (let j = 0; j < tamanho; j++) {
-            const cell = document.createElement("div");
-            cell.className = "termo-cell";
-            cell.dataset.row = i;
-            cell.dataset.col = j;
-            row.appendChild(cell);
+        for (let indiceColuna = 0; indiceColuna < tamanho; indiceColuna++) {
+            const celula = document.createElement("div");
+            celula.className = "termo-celula";
+            celula.dataset.linha = indiceLinha;
+            celula.dataset.coluna = indiceColuna;
+            linha.appendChild(celula);
         }
-        board.appendChild(row);
+        tabuleiro.appendChild(linha);
     }
 
-    document.getElementById("hintText").textContent =
+    document.getElementById("textoDicaJogador").textContent =
         `O nome do jogador tem ${tamanho} letras`;
 }
 
 // --- OBTENÇÃO DAS CÉLULAS DE UMA LINHA ESPECÍFICA ---
-export function getCelulasLinha(linha) {
+export function obterCelulasLinha(linha) {
     return Array.from(
-        document.querySelectorAll(`.termo-cell[data-row="${linha}"]`)
+        document.querySelectorAll(`.termo-celula[data-linha="${linha}"]`)
     );
 }

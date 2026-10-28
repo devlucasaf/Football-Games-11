@@ -1,5 +1,4 @@
 import estado from "./core.js";
-import { embaralhar } from "./utils.js";
 
 // --- CARREGAMENTO DOS DADOS DAS RODADAS ---
 export async function carregarDados() {
@@ -15,7 +14,7 @@ export async function carregarDados() {
 
 // --- SELEÇÃO DE UMA RODADA ALEATÓRIA NÃO UTILIZADA ---
 export function escolherRodada() {
-    const disponiveis = estado.rodadas.filter((_, i) => !estado.rodadasUsadas.has(i));
+    const disponiveis = estado.rodadas.filter((rodada, indiceRodada) => !estado.rodadasUsadas.has(indiceRodada));
 
     if (disponiveis.length === 0) {
         estado.rodadasUsadas.clear();               
@@ -23,13 +22,13 @@ export function escolherRodada() {
     }
 
     const indices = estado.rodadas
-        .map((_, i) => i)
-        .filter(i => !estado.rodadasUsadas.has(i));
+        .map((rodada, indiceRodada) => indiceRodada)
+        .filter(indiceRodada => !estado.rodadasUsadas.has(indiceRodada));
 
-    const idx = indices[Math.floor(Math.random() * indices.length)];
+    const indiceRodada = indices[Math.floor(Math.random() * indices.length)];
 
-    estado.rodadasUsadas.add(idx);
-    estado.rodadaAtual = estado.rodadas[idx];
+    estado.rodadasUsadas.add(indiceRodada);
+    estado.rodadaAtual = estado.rodadas[indiceRodada];
     estado.companheirosRevelados = 0;
     estado.tentativas = 0;
     estado.jogoAtivo = true;
@@ -37,5 +36,5 @@ export function escolherRodada() {
 
 // --- OBTENÇÃO DA LISTA DE TODOS OS NOMES DOS JOGADORES ---
 export function obterNomesJogadores() {
-    return estado.rodadas.map(r => r.resposta);
+    return estado.rodadas.map(rodada => rodada.resposta);
 }

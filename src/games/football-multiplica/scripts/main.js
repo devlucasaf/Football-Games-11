@@ -7,7 +7,7 @@ import {
     exibirJogador,
     renderizarMultiplicadores,
     mostrarFinal,
-    resetarUI
+    reiniciarInterface
 } from "./ui.js";
 
 // --- MOSTRAR RODADA ---
@@ -24,15 +24,15 @@ function mostrarRodada() {
 }
 
 // --- SELECIONAR MULTIPLICADOR ---
-function selecionarMultiplicador(idx, mult) {
+function selecionarMultiplicador(indiceMultiplicador, multiplicador) {
     const jogador = jogadorAtual();
     const valor = valorDoJogador(jogador);
-    const resultado = valor * mult;
+    const resultado = valor * multiplicador;
 
-    estado.multiplicadoresUsados[idx] = jogador.nome;
+    estado.multiplicadoresUsados[indiceMultiplicador] = jogador.nome;
     estado.totalAcumulado += resultado;
     atualizarRodada();
-    proxima();
+    avancarRodada();
 }
 
 // --- PULAR JOGADOR ---
@@ -47,7 +47,7 @@ function pularJogador() {
 }
 
 // --- PRÓXIMA RODADA ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     estado.indiceSorteados++;
     if (estado.rodadaAtual >= estado.desafioAtual.rodadas) {
@@ -82,9 +82,9 @@ function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.indiceSorteados = 0;
     estado.totalAcumulado = 0;
-    estado.pulosRestantes = estado.maxPulos;
+    estado.pulosRestantes = estado.maximoPulos;
     estado.multiplicadoresUsados = {};
-    resetarUI();
+    reiniciarInterface();
     sortearDesafio();
     sortearJogadores();
     exibirDesafio();
@@ -92,33 +92,33 @@ function iniciarJogo() {
 }
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-async function init() {
+async function inicializarJogoMultiplicacao() {
     await carregarDados();
 
-    document.getElementById("btnProximo").addEventListener("click", proxima);
-    document.getElementById("btnPular").addEventListener("click", pularJogador);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnAvancarRodada").addEventListener("click", avancarRodada);
+    document.getElementById("btnPularJogador").addEventListener("click", pularJogador);
+    document.getElementById("btnJogarNovamente").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-multiplica";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-multiplica";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
     }
 }
 
-init();
+inicializarJogoMultiplicacao();

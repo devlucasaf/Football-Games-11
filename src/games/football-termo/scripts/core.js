@@ -1,5 +1,5 @@
 const estado = {
-    MAX_TENTATIVAS:     6,
+    MAXIMO_TENTATIVAS:  6,
     jogadores:          [],
     jogadorSecreto:     "",
     secretoNormalizado: "",

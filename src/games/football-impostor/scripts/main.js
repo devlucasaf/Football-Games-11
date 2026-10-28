@@ -1,27 +1,27 @@
 import { carregarDados, escolherRodada }        from "./data.js";
-import { criarCards }                           from "./game.js";
+import { criarCartoesJogadores }                 from "./game.js";
 import { atualizarPlacar, esconderResultado }   from "./ui.js";
 
 // --- PRÓXIMA RODADA ---
 function proximaRodada() {
     esconderResultado();                              
     escolherRodada();                                 
-    criarCards();                                     
+    criarCartoesJogadores();
 }
 
 // --- INICIALIZAÇÃO DO JOGO ---
-async function init() {
+async function inicializarJogoImpostor() {
     try {
         await carregarDados();                        
         escolherRodada();                             
-        criarCards();                                 
+        criarCartoesJogadores();
         atualizarPlacar();                            
 
-        document.getElementById("nextRoundBtn").addEventListener("click", () => proximaRodada());
+        document.getElementById("btnAvancarRodada").addEventListener("click", () => proximaRodada());
     } catch (erro) {
         console.error("Erro ao inicializar Football Impostor:", erro);
     }
 }
 
 // --- EXECUÇÃO QUANDO O DOM ESTIVER PRONTO ---
-document.addEventListener("DOMContentLoaded", () => init());
+document.addEventListener("DOMContentLoaded", () => inicializarJogoImpostor());

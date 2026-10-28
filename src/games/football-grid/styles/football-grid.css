@@ -396,9 +396,9 @@ main {
 }
 
 /* --- BOTÕES --- */
-#searchBtn,
-#stopBtn,
-#newGridBtn {
+#btnBuscarJogador,
+#btnDesistirPartida,
+#btnGerarNovaGrade {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -416,42 +416,42 @@ main {
     box-shadow: 0 2px 8px rgba(26, 86, 50, 0.12);
 }
 
-#searchBtn:hover:not(:disabled),
-#stopBtn:hover:not(:disabled),
-#newGridBtn:hover:not(:disabled) {
+#btnBuscarJogador:hover:not(:disabled),
+#btnDesistirPartida:hover:not(:disabled),
+#btnGerarNovaGrade:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(26, 86, 50, 0.2);
 }
 
-#searchBtn:active:not(:disabled),
-#stopBtn:active:not(:disabled),
-#newGridBtn:active:not(:disabled) {
+#btnBuscarJogador:active:not(:disabled),
+#btnDesistirPartida:active:not(:disabled),
+#btnGerarNovaGrade:active:not(:disabled) {
     transform: scale(0.95);
 }
 
-#searchBtn:disabled,
-#stopBtn:disabled {
+#btnBuscarJogador:disabled,
+#btnDesistirPartida:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-#stopBtn {
+#btnDesistirPartida {
     background: var(--gradient-secondary);
     box-shadow: 0 2px 8px rgba(91, 45, 142, 0.12);
 }
 
-#stopBtn:hover:not(:disabled) {
+#btnDesistirPartida:hover:not(:disabled) {
     box-shadow: 0 4px 16px rgba(91, 45, 142, 0.2);
 }
 
-#newGridBtn {
+#btnGerarNovaGrade {
     background: var(--bg-secondary);
     color: var(--text-primary);
     border: 2px solid var(--border-color);
     box-shadow: none;
 }
 
-#newGridBtn:hover {
+#btnGerarNovaGrade:hover {
     border-color: var(--primary-green);
     color: var(--primary-green);
     box-shadow: var(--shadow-md);
@@ -608,9 +608,9 @@ main {
         }
     }
 
-    #searchBtn,
-    #stopBtn,
-    #newGridBtn {
+    #btnBuscarJogador,
+    #btnDesistirPartida,
+    #btnGerarNovaGrade {
         width: 100%;
         max-width: 220px;
         padding: 0.6rem 1rem;
@@ -692,7 +692,7 @@ main {
     background: var(--bg-card);
 }
 
-[data-theme="dark"] #newGridBtn {
+[data-theme="dark"] #btnGerarNovaGrade {
     background: var(--bg-secondary);
 }
 

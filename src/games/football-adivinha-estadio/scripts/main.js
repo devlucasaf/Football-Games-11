@@ -1,11 +1,11 @@
 import { estado } from "./core.js";
-import { carregarDados, sortear, normalizar, obterDicas } from "./data.js";
+import { carregarDados, sortearEstadiosRodadas, normalizarTextoComparacao, obterDicas } from "./data.js";
 
-const els = {
+const elementosInterface = {
     rodadaAtual:    document.getElementById("rodadaAtual"),
     pontos:         document.getElementById("pontos"),
     dicasGrid:      document.getElementById("dicasGrid"),
-    guessInput:     document.getElementById("guessInput"),
+    campoPalpite:     document.getElementById("guessInput"),
     guessFeedback:  document.getElementById("guessFeedback"),
     suggestions:    document.getElementById("suggestions"),
     gameArea:       document.getElementById("gameArea"),
@@ -25,8 +25,8 @@ let sugestaoAtiva = -1;
 
 // --- RENDERIZA AS SUGESTÕES DE ESTÁDIOS ---
 function renderizarSugestoes() {
-    const termo = normalizar(els.guessInput.value.trim());
-    els.suggestions.innerHTML = "";
+    const termo = normalizarTextoComparacao(elementosInterface.campoPalpite.value.trim());
+    elementosInterface.suggestions.innerHTML = "";
     sugestaoAtiva = -1;
 
     if (!termo) {
@@ -35,7 +35,7 @@ function renderizarSugestoes() {
     }
 
     const encontrados = estado.estadios
-        .filter(estadio => normalizar(estadio.nome).includes(termo))
+        .filter(estadio => normalizarTextoComparacao(estadio.nome).includes(termo))
         .slice(0, 8);
 
     if (encontrados.length === 0) {
@@ -47,33 +47,33 @@ function renderizarSugestoes() {
         const item = document.createElement("li");
         item.className = "suggestion-item";
         item.innerHTML = `<i class="fas fa-location-dot"></i><span>${estadio.nome}</span>`;
-        item.addEventListener("mousedown", (e) => {
-            e.preventDefault();
+        item.addEventListener("mousedown", (eventoSelecao) => {
+            eventoSelecao.preventDefault();
             selecionarSugestao(estadio.nome);
         });
-        els.suggestions.appendChild(item);
+        elementosInterface.suggestions.appendChild(item);
     });
 
-    els.suggestions.classList.remove("hidden");
+    elementosInterface.suggestions.classList.remove("hidden");
 }
 
 // --- SELECIONA UMA SUGESTÃO E ENVIA O PALPITE ---
 function selecionarSugestao(nome) {
-    els.guessInput.value = nome;
+    elementosInterface.campoPalpite.value = nome;
     esconderSugestoes();
     verificarPalpite();
 }
 
 // --- ESCONDE A LISTA DE SUGESTÕES ---
 function esconderSugestoes() {
-    els.suggestions.classList.add("hidden");
-    els.suggestions.innerHTML = "";
+    elementosInterface.suggestions.classList.add("hidden");
+    elementosInterface.suggestions.innerHTML = "";
     sugestaoAtiva = -1;
 }
 
 // --- ATUALIZA O ITEM DESTACADO NA NAVEGAÇÃO POR TECLADO ---
 function atualizarSugestaoAtiva(itens) {
-    itens.forEach((item, i) => item.classList.toggle("active", i === sugestaoAtiva));
+    itens.forEach((item, indiceSugestao) => item.classList.toggle("active", indiceSugestao === sugestaoAtiva));
     if (itens[sugestaoAtiva]) {
         itens[sugestaoAtiva].scrollIntoView({ block: "nearest" });
     }
@@ -85,45 +85,45 @@ function mostrarRodada() {
     dicasAtuais = obterDicas(estadio);
     estado.dicasReveladas = 1;
 
-    els.rodadaAtual.textContent = estado.rodadaAtual + 1;
-    els.guessInput.value = "";
-    els.guessInput.disabled = false;
-    els.guessFeedback.classList.add("hidden");
+    elementosInterface.rodadaAtual.textContent = estado.rodadaAtual + 1;
+    elementosInterface.campoPalpite.value = "";
+    elementosInterface.campoPalpite.disabled = false;
+    elementosInterface.guessFeedback.classList.add("hidden");
     esconderSugestoes();
-    els.gameArea.classList.remove("hidden");
-    els.roundResult.classList.add("hidden");
+    elementosInterface.gameArea.classList.remove("hidden");
+    elementosInterface.roundResult.classList.add("hidden");
     renderizarDicas();
-    els.guessInput.focus();
+    elementosInterface.campoPalpite.focus();
 }
 
 // --- RENDERIZA AS DICAS NA TELA ---
 function renderizarDicas() {
-    els.dicasGrid.innerHTML = "";
-    els.dicasCount.textContent = `${estado.dicasReveladas}/${estado.maxDicas}`;
+    elementosInterface.dicasGrid.innerHTML = "";
+    elementosInterface.dicasCount.textContent = `${estado.dicasReveladas}/${estado.maxDicas}`;
 
-    dicasAtuais.forEach((dica, i) => {
-        const card = document.createElement("div");
-        card.className = "dica-card";
+    dicasAtuais.forEach((dica, indiceDica) => {
+        const cartaoDica = document.createElement("div");
+        cartaoDica.className = "dica-card";
 
-        if (i < estado.dicasReveladas) {
-            card.classList.add("revealed");
-            card.innerHTML = `<span class="dica-label">${dica.label}</span><span class="dica-valor">${dica.valor}</span>`;
+        if (indiceDica < estado.dicasReveladas) {
+            cartaoDica.classList.add("revealed");
+            cartaoDica.innerHTML = `<span class="dica-label">${dica.rotulo}</span><span class="dica-valor">${dica.valor}</span>`;
         } else {
-            card.classList.add("hidden-dica");
-            card.innerHTML = `<span class="dica-label">Dica ${i + 1}</span><span class="dica-valor"><i class="fas fa-lock"></i></span>`;
-            card.addEventListener("click", () => revelarDica(i));
+            cartaoDica.classList.add("hidden-dica");
+            cartaoDica.innerHTML = `<span class="dica-label">Dica ${indiceDica + 1}</span><span class="dica-valor"><i class="fas fa-lock"></i></span>`;
+            cartaoDica.addEventListener("click", () => revelarDica(indiceDica));
         }
 
-        els.dicasGrid.appendChild(card);
+        elementosInterface.dicasGrid.appendChild(cartaoDica);
     });
 }
 
 // --- REVELA UMA DICA ESPECÍFICA ---
-function revelarDica(index) {
-    if (index < estado.dicasReveladas) {
+function revelarDica(indiceDica) {
+    if (indiceDica < estado.dicasReveladas) {
         return;
     }
-    estado.dicasReveladas = index + 1;
+    estado.dicasReveladas = indiceDica + 1;
     renderizarDicas();
 }
 
@@ -135,32 +135,32 @@ function calcularPontos() {
 
 // --- VERIFICA O PALPITE ---
 function verificarPalpite() {
-    const palpite = els.guessInput.value.trim();
+    const palpite = elementosInterface.campoPalpite.value.trim();
     if (!palpite) {
         return;
     }
 
     const estadio = estado.sorteados[estado.rodadaAtual];
-    const acertou = normalizar(palpite) === normalizar(estadio.nome);
+    const acertou = normalizarTextoComparacao(palpite) === normalizarTextoComparacao(estadio.nome);
 
     if (acertou) {
-        const pts = calcularPontos();
-        estado.pontos += pts;
-        els.pontos.textContent = estado.pontos;
+        const pontosRodada = calcularPontos();
+        estado.pontos += pontosRodada;
+        elementosInterface.pontos.textContent = estado.pontos;
         estado.historico.push({
             estadio: estadio.nome,
             acertou: true,
             dicas: estado.dicasReveladas,
-            pontos: pts
+            pontos: pontosRodada
         });
         mostrarResultado(true, estadio);
     } else {
-        els.guessFeedback.textContent = `"${palpite}" não é o estádio. Tente novamente!`;
-        els.guessFeedback.className = "guess-feedback wrong";
-        els.guessFeedback.classList.remove("hidden");
-        els.guessInput.value = "";
+        elementosInterface.guessFeedback.textContent = `"${palpite}" não é o estádio. Tente novamente!`;
+        elementosInterface.guessFeedback.className = "guess-feedback wrong";
+        elementosInterface.guessFeedback.classList.remove("hidden");
+        elementosInterface.campoPalpite.value = "";
         esconderSugestoes();
-        els.guessInput.focus();
+        elementosInterface.campoPalpite.focus();
 
         if (estado.dicasReveladas < estado.maxDicas) {
             estado.dicasReveladas++;
@@ -170,7 +170,7 @@ function verificarPalpite() {
 }
 
 // --- PULA A RODADA ATUAL ---
-function pular() {
+function pularRodada() {
     const estadio = estado.sorteados[estado.rodadaAtual];
     estado.historico.push({
         estadio: estadio.nome,
@@ -183,13 +183,13 @@ function pular() {
 
 // --- MOSTRA O RESULTADO DA RODADA ---
 function mostrarResultado(acertou, estadio) {
-    els.gameArea.classList.add("hidden");
-    els.roundResult.classList.remove("hidden");
+    elementosInterface.gameArea.classList.add("hidden");
+    elementosInterface.roundResult.classList.remove("hidden");
 
     if (acertou) {
-        els.roundIcon.className = "round-icon correct";
-        els.roundIcon.innerHTML = "<i class=\"fas fa-check-circle\"></i>";
-        els.roundText.textContent = `Correto! +${calcularPontos()} pontos`;
+        elementosInterface.roundIcon.className = "round-icon correct";
+        elementosInterface.roundIcon.innerHTML = "<i class=\"fas fa-check-circle\"></i>";
+        elementosInterface.roundText.textContent = `Correto! +${calcularPontos()} pontos`;
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
@@ -202,9 +202,9 @@ function mostrarResultado(acertou, estadio) {
             });
         }
     } else {
-        els.roundIcon.className = "round-icon wrong";
-        els.roundIcon.innerHTML = "<i class=\"fas fa-times-circle\"></i>";
-        els.roundText.textContent = "Não acertou desta vez!";
+        elementosInterface.roundIcon.className = "round-icon wrong";
+        elementosInterface.roundIcon.innerHTML = "<i class=\"fas fa-times-circle\"></i>";
+        elementosInterface.roundText.textContent = "Não acertou desta vez!";
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
@@ -217,15 +217,15 @@ function mostrarResultado(acertou, estadio) {
         }
     }
 
-    els.roundAnswer.textContent = `Resposta: ${estadio.nome}`;
+    elementosInterface.roundAnswer.textContent = `Resposta: ${estadio.nome}`;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
-        document.getElementById("btnNext").innerHTML = "<i class=\"fas fa-flag-checkered\"></i> Ver Resultado";
+        document.getElementById("btnAvancarRodada").innerHTML = "<i class=\"fas fa-flag-checkered\"></i> Ver Resultado";
     }
 }
 
 // --- AVANÇA PARA A PRÓXIMA RODADA OU MOSTRA O RESULTADO FINAL ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
@@ -236,31 +236,31 @@ function proxima() {
 
 // --- MOSTRA O RESULTADO FINAL DO JOGO ---
 function mostrarFinal() {
-    els.gameArea.classList.add("hidden");
-    els.roundResult.classList.add("hidden");
-    els.gameInfo.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
-    els.finalPoints.textContent = estado.pontos;
+    elementosInterface.gameArea.classList.add("hidden");
+    elementosInterface.roundResult.classList.add("hidden");
+    elementosInterface.gameInfo.classList.add("hidden");
+    elementosInterface.finalResult.classList.remove("hidden");
+    elementosInterface.finalPoints.textContent = estado.pontos;
 
-    const maxPts = estado.totalRodadas * estado.maxDicas;
-    const pct = Math.round((estado.pontos / maxPts) * 100);
-    const acertos = estado.historico.filter(h => h.acertou).length;
+    const pontuacaoMaxima = estado.totalRodadas * estado.maxDicas;
+    const porcentagemAcertos = Math.round((estado.pontos / pontuacaoMaxima) * 100);
+    const acertos = estado.historico.filter(resultadoRodada => resultadoRodada.acertou).length;
 
-    let msg = "";
-    if (pct >= 80) {
-        msg = "Guia de estádios! Você conhece cada arena!";
-    } else if (pct >= 50) {
-        msg = "Bom conhecimento sobre os templos do futebol!";
-    } else if (pct >= 30) {
-        msg = "Precisa visitar mais estádios!";
+    let mensagemResultado = "";
+    if (porcentagemAcertos >= 80) {
+        mensagemResultado = "Guia de estádios! Você conhece cada arena!";
+    } else if (porcentagemAcertos >= 50) {
+        mensagemResultado = "Bom conhecimento sobre os templos do futebol!";
+    } else if (porcentagemAcertos >= 30) {
+        mensagemResultado = "Precisa visitar mais estádios!";
     } else {
-        msg = "Tente novamente!";
+        mensagemResultado = "Tente novamente!";
     }
 
-    els.finalDetails.innerHTML = `<p>${msg}</p><p>Acertos: ${acertos}/${estado.totalRodadas}</p>`;
+    elementosInterface.finalDetails.innerHTML = `<p>${mensagemResultado}</p><p>Acertos: ${acertos}/${estado.totalRodadas}</p>`;
 
     if (window.FG11Stats) {
-        const rotulos = Array.from({ length: estado.maxDicas }, (_, i) => String(i + 1));
+        const rotulos = Array.from({ length: estado.maxDicas }, (valorNaoUtilizado, indiceDica) => String(indiceDica + 1));
         window.FG11Stats.mostrarModal("football-adivinha-estadio", {
             venceu: acertos >= estado.totalRodadas / 2,
             titulo: "Fim de jogo!",
@@ -280,27 +280,27 @@ function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
     estado.historico = [];
-    els.pontos.textContent = "0";
-    els.finalResult.classList.add("hidden");
-    els.gameInfo.classList.remove("hidden");
-    sortear();
+    elementosInterface.pontos.textContent = "0";
+    elementosInterface.finalResult.classList.add("hidden");
+    elementosInterface.gameInfo.classList.remove("hidden");
+    sortearEstadiosRodadas();
     mostrarRodada();
 }
 
 // --- INICIALIZA O JOGO ---
-async function init() {
+async function inicializarJogoAdivinhaEstadio() {
     await carregarDados();
 
-    document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
-    document.getElementById("btnSkip").addEventListener("click", pular);
-    document.getElementById("btnNext").addEventListener("click", proxima);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnEnviarPalpite").addEventListener("click", verificarPalpite);
+    document.getElementById("btnPularRodada").addEventListener("click", pularRodada);
+    document.getElementById("btnAvancarRodada").addEventListener("click", avancarRodada);
+    document.getElementById("btnReiniciarPartida").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
     document.getElementById("guessInput").addEventListener("keydown", (e) => {
-        const itens = [...els.suggestions.querySelectorAll(".suggestion-item")];
+        const itens = [...elementosInterface.suggestions.querySelectorAll(".suggestion-item")];
 
         if (e.key === "ArrowDown") {
             e.preventDefault();
@@ -325,7 +325,7 @@ async function init() {
         }
     });
 
-    els.guessInput.addEventListener("input", renderizarSugestoes);
+    elementosInterface.campoPalpite.addEventListener("input", renderizarSugestoes);
 
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".input-autocomplete")) {
@@ -336,4 +336,4 @@ async function init() {
     iniciarJogo();
 }
 
-init();
+inicializarJogoAdivinhaEstadio();

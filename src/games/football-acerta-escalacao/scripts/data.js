@@ -2,19 +2,19 @@ import { estado } from "./core.js";
 
 // --- CARREGA DADOS DO JOGO ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-acerta-escalacao.json");
-    const data = await resp.json();
-    estado.escalacoes = data.escalacoes;
+    const respostaCarregamento = await fetch("data/football-acerta-escalacao.json");
+    const dadosEscalacoes = await respostaCarregamento.json();
+    estado.escalacoes = dadosEscalacoes.escalacoes;
 }
 
 // --- ESCOLHA ALEATÓRIA DE ESCALAÇÃO ---
 export function escolherEscalacao() {
-    const idx = Math.floor(Math.random() * estado.escalacoes.length);
-    return estado.escalacoes[idx];
+    const indiceEscalacao = Math.floor(Math.random() * estado.escalacoes.length);
+    return estado.escalacoes[indiceEscalacao];
 }
 
 // --- MAPA DE POSIÇÕES PADRÃO NO CAMPO ---
-const posicoesMap = {
+const mapaPosicoesCampo = {
     "GOL":  { top: 90, left: 50 },
     "LD":   { top: 75, left: 80 },
     "ZAG1": { top: 75, left: 60 },
@@ -100,20 +100,20 @@ const ajustesFormacao = {
 };
 
 // --- OBTER POSIÇÃO NO CAMPO ---
-export function obterPosicao(posicaoCode, formacao) {
+export function obterPosicao(codigoPosicao, formacao) {
     const ajustes = ajustesFormacao[formacao] || {};
-    if (ajustes[posicaoCode]) {
-        return ajustes[posicaoCode];
+    if (ajustes[codigoPosicao]) {
+        return ajustes[codigoPosicao];
     }
-    return posicoesMap[posicaoCode] || { 
+    return mapaPosicoesCampo[codigoPosicao] || { 
         top: 50, 
         left: 50 
     };
 }
 
 // --- OBTER LABEL EXIBÍVEL DA POSIÇÃO ---
-export function obterLabelPosicao(posicaoCode) {
-    const labels = {
+export function obterRotuloPosicao(codigoPosicao) {
+    const rotulosPosicoes = {
         "GOL":  "GOL",
         "LD":   "LD",
         "ZAG1": "ZAG",
@@ -133,5 +133,5 @@ export function obterLabelPosicao(posicaoCode) {
         "SS":   "SS",
         "SS2":  "SS"
     };
-    return labels[posicaoCode] || posicaoCode;
+    return rotulosPosicoes[codigoPosicao] || codigoPosicao;
 }

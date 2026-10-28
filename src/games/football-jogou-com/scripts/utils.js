@@ -1,14 +1,14 @@
 // --- FUNÇÃO DE EMBARALHAMENTO ---
-export function embaralhar(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));     
-        [array[i], array[j]] = [array[j], array[i]];       
+export function embaralharJogadores(jogadores) {
+    for (let indiceAtual = jogadores.length - 1; indiceAtual > 0; indiceAtual--) {
+        const indiceSorteado = Math.floor(Math.random() * (indiceAtual + 1));
+        [jogadores[indiceAtual], jogadores[indiceSorteado]] = [jogadores[indiceSorteado], jogadores[indiceAtual]];
     }
-    return array;                                          
+    return jogadores;
 }
 
 // --- FUNÇÃO DE NORMALIZAÇÃO DE TEXTO ---
-export function normalizar(texto) {
+export function normalizarNomeJogador(texto) {
     return texto
         .toLowerCase()                                    
         .normalize("NFD")                                 

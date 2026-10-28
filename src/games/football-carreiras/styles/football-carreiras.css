@@ -350,7 +350,7 @@ main {
     }
 }
 
-#guessBtn {
+#btnEnviarPalpite {
     background: var(--gradient-primary);
     border: none;
     border-radius: var(--radius-sm);
@@ -367,16 +367,16 @@ main {
     box-shadow: 0 2px 8px rgba(26, 86, 50, 0.15);
 }
 
-#guessBtn:hover:not(:disabled) {
+#btnEnviarPalpite:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(26, 86, 50, 0.25);
 }
 
-#guessBtn:active:not(:disabled) {
+#btnEnviarPalpite:active:not(:disabled) {
     transform: scale(0.95);
 }
 
-#guessBtn:disabled {
+#btnEnviarPalpite:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }

@@ -1,6 +1,6 @@
 import estado from "./core.js";
 import { carregarDados, escolherJogador } from "./data.js";
-import { criarBoard } from "./board.js";
+import { criarTabuleiroTermo } from "./board.js";
 import { esconderMensagem } from "./ui.js";
 import { configurarEventos } from "./events.js";
 
@@ -12,21 +12,21 @@ function reiniciarJogo() {
     estado.estadoTeclas.clear();                
 
     // --- RESETAR TECLADO ---
-    document.querySelectorAll(".key").forEach((k) => {
-        k.classList.remove("key-correct", "key-present", "key-absent");
+    document.querySelectorAll(".key").forEach((teclaVirtual) => {
+        teclaVirtual.classList.remove("key-correct", "key-present", "key-absent");
     });
 
     esconderMensagem();                          
     escolherJogador();                           
-    criarBoard();                                
+    criarTabuleiroTermo();
 }
 
 // --- INICIALIZAÇÃO DO JOGO ---
-async function iniciar() {
+async function inicializarJogoTermo() {
     try {
         await carregarDados();                   
         escolherJogador();                       
-        criarBoard();                            
+        criarTabuleiroTermo();
         configurarEventos(reiniciarJogo);        
     } catch (erro) {
         console.error(erro);
@@ -34,4 +34,4 @@ async function iniciar() {
     }
 }
 
-iniciar();
+inicializarJogoTermo();

@@ -1,13 +1,13 @@
 import { carregarDados, escolherJogador } from "./data.js";
-import { criarGrid } from "./grid.js";
+import { criarGradeClubesCarreira } from "./grid.js";
 import { esconderResultado, esconderSugestoes, mostrarSugestoes } from "./ui.js";
-import { tratarPalpite, pular } from "./logic.js";
+import { tratarPalpite, pularRodadaCarreira } from "./logic.js";
 
 // -- NOVO JOGO ---
 function novoJogo() {
     esconderResultado();
     escolherJogador();
-    criarGrid();
+    criarGradeClubesCarreira();
     document.getElementById("playerInput").value = "";
     document.getElementById("playerInput").focus();
     esconderSugestoes();
@@ -17,34 +17,34 @@ window.carreirasProxima = novoJogo;
 
 // --- CONFIGURAR EVENTOS ---
 function configurarEventos() {
-    const input             = document.getElementById("playerInput");
-    const guessBtn          = document.getElementById("guessBtn");
-    const skipBtn           = document.getElementById("skipBtn");
-    const newGameBtn        = document.getElementById("newGameBtn");
-    const resultCloseBtn    = document.getElementById("resultCloseBtn");
+    const campoPalpite = document.getElementById("playerInput");
+    const btnEnviarPalpite = document.getElementById("btnEnviarPalpite");
+    const btnPularRodada = document.getElementById("btnPularRodada");
+    const btnIniciarNovaPartida = document.getElementById("btnIniciarNovaPartida");
+    const btnFecharResultado = document.getElementById("btnFecharResultado");
 
-    guessBtn?.addEventListener("click", () => tratarPalpite());
+    btnEnviarPalpite?.addEventListener("click", () => tratarPalpite());
 
-    input?.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
+    campoPalpite?.addEventListener("keydown", (eventoTeclado) => {
+        if (eventoTeclado.key === "Enter") {
+            eventoTeclado.preventDefault();
             tratarPalpite();
         }
     });
 
-    input?.addEventListener("input", () => {
-        mostrarSugestoes(input.value, () => tratarPalpite());
+    campoPalpite?.addEventListener("input", () => {
+        mostrarSugestoes(campoPalpite.value, () => tratarPalpite());
     });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-container") && !e.target.closest(".suggestions-container")) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".input-container") && !eventoClique.target.closest(".suggestions-container")) {
             esconderSugestoes();
         }
     });
 
-    skipBtn?.addEventListener("click", () => pular());
-    newGameBtn?.addEventListener("click", () => novoJogo());
-    resultCloseBtn?.addEventListener("click", () => novoJogo());
+    btnPularRodada?.addEventListener("click", () => pularRodadaCarreira());
+    btnIniciarNovaPartida?.addEventListener("click", () => novoJogo());
+    btnFecharResultado?.addEventListener("click", () => novoJogo());
 }
 
 // --- INICIALIZAR ---
@@ -52,7 +52,7 @@ async function iniciar() {
     try {
         await carregarDados();
         escolherJogador();
-        criarGrid();
+        criarGradeClubesCarreira();
         configurarEventos();
     } catch (erro) {
         console.error(erro);

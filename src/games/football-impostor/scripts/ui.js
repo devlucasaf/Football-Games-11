@@ -2,26 +2,26 @@ import estado from "./core.js";
 
 // --- EXIBIÇÃO DA EXPLICAÇÃO/RESULTADO DA RODADA ---
 export function mostrarExplicacao(acertou) {
-    const overlay       = document.getElementById("resultOverlay");
-    const icon          = document.getElementById("resultIcon");
-    const title         = document.getElementById("resultTitle");
-    const text          = document.getElementById("resultText");
-    const impostorName  = document.getElementById("impostorName");
+    const sobreposicaoResultado = document.getElementById("resultOverlay");
+    const iconeResultado = document.getElementById("resultIcon");
+    const tituloResultado = document.getElementById("resultTitle");
+    const textoResultado = document.getElementById("resultText");
+    const nomeImpostor = document.getElementById("impostorName");
 
     if (acertou) {
-        icon.innerHTML = '<i class="fas fa-check-circle"></i>';
-        icon.className = "result-icon correct";
-        title.textContent = "Você encontrou o impostor!";
+        iconeResultado.innerHTML = '<i class="fas fa-check-circle"></i>';
+        iconeResultado.className = "result-icon correct";
+        tituloResultado.textContent = "Você encontrou o impostor!";
     } else {
-        icon.innerHTML = '<i class="fas fa-times-circle"></i>';
-        icon.className = "result-icon wrong";
-        title.textContent = "Errou!";
+        iconeResultado.innerHTML = '<i class="fas fa-times-circle"></i>';
+        iconeResultado.className = "result-icon wrong";
+        tituloResultado.textContent = "Errou!";
     }
 
-    impostorName.textContent = `O impostor era: ${estado.rodadaAtual.impostor}`;
-    text.textContent = estado.rodadaAtual.explicacao;
+    nomeImpostor.textContent = `O impostor era: ${estado.rodadaAtual.impostor}`;
+    textoResultado.textContent = estado.rodadaAtual.explicacao;
 
-    overlay.classList.add("active");                         
+    sobreposicaoResultado.classList.add("active");
 }
 
 // --- OCULTAÇÃO DO OVERLAY DE RESULTADO ---

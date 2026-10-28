@@ -1,67 +1,67 @@
-import { estado, resetConvocados, totalConvocados, LIMITES } from "./core.js";
+import { estado, reiniciarConvocados, obterTotalConvocados, LIMITES } from "./core.js";
 import { carregarDados, obterSelecoes, obterConvocadosOficiais, obterBandeira } from "./data.js";
-import { renderizarGrupos, atualizarContador, abrirModal, fecharModal, renderizarResultados } from "./ui.js";
+import { renderizarGruposPosicoes, atualizarContadorConvocados, abrirModalJogadores, fecharModalJogadores, renderizarResultadosConvocacao } from "./ui.js";
 
-const modeSection = document.getElementById("modeSelection");
-const teamSection = document.getElementById("teamSelection");
-const builderSection = document.getElementById("squadBuilder");
-const resultsSection = document.getElementById("results");
+const secaoSelecaoModo = document.getElementById("modeSelection");
+const secaoSelecaoTime = document.getElementById("teamSelection");
+const secaoMontagemConvocacao = document.getElementById("squadBuilder");
+const secaoResultados = document.getElementById("results");
 
 function mostrarSecao(secao) {
-    [modeSection, teamSection, builderSection, resultsSection].forEach(s => s.classList.add("hidden"));
+    [secaoSelecaoModo, secaoSelecaoTime, secaoMontagemConvocacao, secaoResultados].forEach(secaoJogo => secaoJogo.classList.add("hidden"));
     secao.classList.remove("hidden");
 }
 
 // --- SELEÇÃO DE MODO ---
-document.querySelectorAll(".mode-card").forEach(card => {
-    card.addEventListener("click", () => {
-        estado.modo = card.dataset.mode;
+document.querySelectorAll(".mode-card").forEach(cartaoModo => {
+    cartaoModo.addEventListener("click", () => {
+        estado.modo = cartaoModo.dataset.mode;
         document.getElementById("modeLabel").textContent =
             estado.modo === "copa2026" ? "Copa do Mundo 2026" : "Melhor de Todos os Tempos";
         renderizarTimes();
-        mostrarSecao(teamSection);
+        mostrarSecao(secaoSelecaoTime);
     });
 });
 
 // --- RENDERIZAR TIMES ---
 function renderizarTimes() {
-    const grid = document.getElementById("teamsGrid");
-    grid.innerHTML = "";
+    const gradeSelecoes = document.getElementById("teamsGrid");
+    gradeSelecoes.innerHTML = "";
     const selecoes = obterSelecoes();
-    selecoes.forEach(s => {
-        const btn = document.createElement("button");
-        btn.className = "team-card";
-        btn.innerHTML = `<img class="flag" src="${s.bandeira}" alt="${s.nome}" loading="lazy"><span class="team-name">${s.nome}</span>`;
-        btn.addEventListener("click", () => iniciarConvocacao(s.key));
-        grid.appendChild(btn);
+    selecoes.forEach(selecao => {
+        const btnSelecionarSelecao = document.createElement("button");
+        btnSelecionarSelecao.className = "team-card";
+        btnSelecionarSelecao.innerHTML = `<img class="flag" src="${selecao.bandeira}" alt="${selecao.nome}" loading="lazy"><span class="team-name">${selecao.nome}</span>`;
+        btnSelecionarSelecao.addEventListener("click", () => iniciarConvocacao(selecao.chaveSelecao));
+        gradeSelecoes.appendChild(btnSelecionarSelecao);
     });
 }
 
 // --- INICIAR CONVOCAÇÃO ---
-function iniciarConvocacao(key) {
-    estado.selecao = key;
-    resetConvocados();
+function iniciarConvocacao(chaveSelecao) {
+    estado.selecao = chaveSelecao;
+    reiniciarConvocados();
 
     document.getElementById("selectedFlag").innerHTML = `<img src="${obterBandeira()}" alt="">`;
     document.getElementById("selectedTeamName").textContent =
-        key.charAt(0).toUpperCase() + key.slice(1);
+        chaveSelecao.charAt(0).toUpperCase() + chaveSelecao.slice(1);
 
-    renderizarGrupos(abrirSelecao);
-    atualizarContador();
-    mostrarSecao(builderSection);
+    renderizarGruposPosicoes(abrirSelecaoJogador);
+    atualizarContadorConvocados();
+    mostrarSecao(secaoMontagemConvocacao);
 }
 
 // --- ABRIR SELEÇÃO DE JOGADOR PARA UMA POSIÇÃO ---
-function abrirSelecao(pos) {
-    if (estado.convocados[pos].length >= LIMITES[pos]) {
+function abrirSelecaoJogador(posicao) {
+    if (estado.convocados[posicao].length >= LIMITES[posicao]) {
         return;
     }
-    abrirModal(pos, adicionarJogador);
+    abrirModalJogadores(posicao, adicionarJogador);
 }
 
 // --- ADICIONAR JOGADOR ---
-function adicionarJogador(pos, nome) {
-    if (estado.convocados[pos].length >= LIMITES[pos]) {
+function adicionarJogador(posicao, nome) {
+    if (estado.convocados[posicao].length >= LIMITES[posicao]) {
         return;
     }
 
@@ -69,55 +69,55 @@ function adicionarJogador(pos, nome) {
         return;
     }
 
-    estado.convocados[pos].push(nome);
-    renderizarGrupos(abrirSelecao);
-    atualizarContador();
+    estado.convocados[posicao].push(nome);
+    renderizarGruposPosicoes(abrirSelecaoJogador);
+    atualizarContadorConvocados();
 }
 
 // --- REMOVER JOGADOR ---
-document.getElementById("positionGroups").addEventListener("click", (e) => {
-    const removeBtn = e.target.closest(".slot-remove");
-    if (!removeBtn) {
+document.getElementById("positionGroups").addEventListener("click", (eventoClique) => {
+    const btnRemoverConvocado = eventoClique.target.closest(".slot-remove");
+    if (!btnRemoverConvocado) {
         return;
     }
 
-    const { pos, index } = removeBtn.dataset;
-    estado.convocados[pos].splice(Number(index), 1);
-    renderizarGrupos(abrirSelecao);
-    atualizarContador();
+    const { posicao, indiceJogador } = btnRemoverConvocado.dataset;
+    estado.convocados[posicao].splice(Number(indiceJogador), 1);
+    renderizarGruposPosicoes(abrirSelecaoJogador);
+    atualizarContadorConvocados();
 });
 
 // --- FECHAR MODAL ---
-document.getElementById("modalClose").addEventListener("click", fecharModal);
-document.getElementById("playerModal").addEventListener("click", (e) => {
-    if (e.target === e.currentTarget) {
-        fecharModal();
+document.getElementById("modalClose").addEventListener("click", fecharModalJogadores);
+document.getElementById("playerModal").addEventListener("click", (eventoClique) => {
+    if (eventoClique.target === eventoClique.currentTarget) {
+        fecharModalJogadores();
     }
 });
 
 // --- CONFIRMAR CONVOCAÇÃO ---
 document.getElementById("btnConfirm").addEventListener("click", () => {
-    if (totalConvocados() < 26) {
+    if (obterTotalConvocados() < 26) {
         return;
     }
     const oficiais = obterConvocadosOficiais();
-    renderizarResultados(estado.convocados, oficiais);
-    mostrarSecao(resultsSection);
+    renderizarResultadosConvocacao(estado.convocados, oficiais);
+    mostrarSecao(secaoResultados);
 });
 
 // --- BOTÕES DE NAVEGAÇÃO ---
-document.getElementById("btnBackMode").addEventListener("click", () => mostrarSecao(modeSection));
-document.getElementById("btnBackTeam").addEventListener("click", () => mostrarSecao(teamSection));
+document.getElementById("btnBackMode").addEventListener("click", () => mostrarSecao(secaoSelecaoModo));
+document.getElementById("btnBackTeam").addEventListener("click", () => mostrarSecao(secaoSelecaoTime));
 document.getElementById("btnRetry").addEventListener("click", () => {
-    resetConvocados();
-    mostrarSecao(teamSection);
+    reiniciarConvocados();
+    mostrarSecao(secaoSelecaoTime);
 });
 document.getElementById("btnHome").addEventListener("click", () => {
     window.location.href = "../../../index.html";
 });
 
-async function init() {
+async function inicializarJogoConvocacao() {
     await carregarDados();
 }
 
-init();
+inicializarJogoConvocacao();

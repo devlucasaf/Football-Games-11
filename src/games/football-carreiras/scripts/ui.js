@@ -2,7 +2,7 @@ import estado from "./core.js";
 import { normalizar } from "./utils.js";
 
 // --- ATUALIZAR INFORMAÇÕES NA TELA ---
-export function atualizarInfo() {
+export function atualizarInformacoesCarreira() {
     document.getElementById("clubesCount").textContent = estado.jogadorAtual.clubes.length;
     document.getElementById("errosCount").textContent = estado.erros;
     document.getElementById("reveladosCount").textContent =
@@ -11,13 +11,13 @@ export function atualizarInfo() {
 
 // --- MOSTRAR RESULTADO ---
 export function mostrarResultado(acertou) {
-    const overlay = document.getElementById("resultOverlay");
-    const icon = document.getElementById("resultIcon");
-    const text = document.getElementById("resultText");
+    const sobreposicaoResultado = document.getElementById("resultOverlay");
+    const iconeResultado = document.getElementById("resultIcon");
+    const textoResultado = document.getElementById("resultText");
 
     if (acertou) {
-        icon.textContent = "";
-        text.textContent = `Você acertou! O jogador era ${estado.jogadorAtual.nome}! (${estado.erros} erro${estado.erros !== 1 ? "s" : ""})`;
+        iconeResultado.textContent = "";
+        textoResultado.textContent = `Você acertou! O jogador era ${estado.jogadorAtual.nome}! (${estado.erros} erro${estado.erros !== 1 ? "s" : ""})`;
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
@@ -30,8 +30,8 @@ export function mostrarResultado(acertou) {
             });
         }
     } else {
-        icon.textContent = "";
-        text.textContent = `O jogador era ${estado.jogadorAtual.nome}!`;
+        iconeResultado.textContent = "";
+        textoResultado.textContent = `O jogador era ${estado.jogadorAtual.nome}!`;
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
@@ -56,7 +56,7 @@ export function mostrarResultado(acertou) {
         }
     }
 
-    overlay.classList.add("show");
+    sobreposicaoResultado.classList.add("show");
 }
 
 // --- ESCONDER RESULTADO ---
@@ -65,17 +65,17 @@ export function esconderResultado() {
 }
 
 // --- MOSTRAR SUGESTÕES DO AUTOCOMPLETE ---
-export function mostrarSugestoes(consulta, onSelect) {
-    const dropdown = document.getElementById("suggestionsDropdown");
+export function mostrarSugestoes(consulta, tratarSelecaoJogador) {
+    const listaSugestoesJogadores = document.getElementById("suggestionsDropdown");
 
     if (!consulta || consulta.length < 2) {
         esconderSugestoes();
         return;
     }
 
-    const consultaNorm = normalizar(consulta);
+    const consultaNormalizada = normalizar(consulta);
     const correspondencias = estado.jogadores
-        .filter(j => normalizar(j.nome).includes(consultaNorm))
+        .filter(jogador => normalizar(jogador.nome).includes(consultaNormalizada))
         .slice(0, 8);
 
     if (correspondencias.length === 0) {
@@ -83,26 +83,26 @@ export function mostrarSugestoes(consulta, onSelect) {
         return;
     }
 
-    dropdown.innerHTML = "";
-    correspondencias.forEach(j => {
+    listaSugestoesJogadores.innerHTML = "";
+    correspondencias.forEach(jogador => {
         const item = document.createElement("div");
         item.className = "suggestion-item";
-        item.textContent = j.nome;
+        item.textContent = jogador.nome;
         item.addEventListener("click", () => {
-            document.getElementById("playerInput").value = j.nome;
+            document.getElementById("playerInput").value = jogador.nome;
             esconderSugestoes();
-            onSelect();
+            tratarSelecaoJogador();
         });
-        dropdown.appendChild(item);
+        listaSugestoesJogadores.appendChild(item);
     });
-    dropdown.style.display = "block";
+    listaSugestoesJogadores.style.display = "block";
 }
 
 // --- ESCONDER SUGESTÕES ---
 export function esconderSugestoes() {
-    const dropdown = document.getElementById("suggestionsDropdown");
-    if (dropdown) {
-        dropdown.style.display = "none";
-        dropdown.innerHTML = "";
+    const listaSugestoesJogadores = document.getElementById("suggestionsDropdown");
+    if (listaSugestoesJogadores) {
+        listaSugestoesJogadores.style.display = "none";
+        listaSugestoesJogadores.innerHTML = "";
     }
 }

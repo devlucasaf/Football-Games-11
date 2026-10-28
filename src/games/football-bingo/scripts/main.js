@@ -1,16 +1,14 @@
 import estado from "./core.js";
-import { carregarDados, selecionarGrid, selecionarFila, jogadorAtual, proximoJogador, jogadorCorresponde } from "./data.js";
-import { renderizarGrid, exibirJogador, mostrarBotaoProximo, atualizarPlacar, mostrarResultado, esconderResultado, verificarBingos } from "./ui.js";
+import { carregarDados, selecionarGradeCategorias, selecionarFila, jogadorAtual, proximoJogador, jogadorCorresponde } from "./data.js";
+import { renderizarGradeCategorias, exibirJogador, mostrarBotaoProximo, atualizarPlacar, mostrarResultado, esconderResultado, verificarBingos } from "./ui.js";
 
 // --- SELECIONAR/DESSELECIONAR CÉLULA ---
-function alternarCelula(cell) {
-    const idx = parseInt(cell.dataset.indice);
-
-    if (cell.classList.contains("locked")) {
+function alternarCelula(btnMarcarCategoria) {
+    if (btnMarcarCategoria.classList.contains("locked")) {
         return;
     }
 
-    cell.classList.toggle("selecionado");
+    btnMarcarCategoria.classList.toggle("selecionado");
 }
 
 // --- CONFIRMAR MARCAÇÕES DO JOGADOR ATUAL ---
@@ -20,29 +18,29 @@ function confirmarMarcacoes() {
         return;
     }
 
-    const cells = document.querySelectorAll(".bingo-cell");
+    const botoesCategorias = document.querySelectorAll(".bingo-cell");
     let acertosRodada   = 0;
     let errosRodada     = 0;
 
-    cells.forEach((cell, idx) => {
-        if (cell.classList.contains("locked")) {
+    botoesCategorias.forEach((btnMarcarCategoria, indiceCategoria) => {
+        if (btnMarcarCategoria.classList.contains("locked")) {
             return;
         }
 
-        const selecionado   = cell.classList.contains("selecionado");
-        const cat           = estado.gridCategorias[idx];
-        const corresponde   = jogadorCorresponde(jogador, cat);
+        const selecionado = btnMarcarCategoria.classList.contains("selecionado");
+        const categoria = estado.gradeCategorias[indiceCategoria];
+        const corresponde = jogadorCorresponde(jogador, categoria);
 
         if (selecionado && corresponde) {
-            cell.classList.remove("selecionado");
-            cell.classList.add("correto", "locked");
-            estado.celulasMarcadas.add(idx);
+            btnMarcarCategoria.classList.remove("selecionado");
+            btnMarcarCategoria.classList.add("correto", "locked");
+            estado.celulasMarcadas.add(indiceCategoria);
             acertosRodada++;
         } else if (selecionado && !corresponde) {
-            cell.classList.remove("selecionado");
-            cell.classList.add("errado");
+            btnMarcarCategoria.classList.remove("selecionado");
+            btnMarcarCategoria.classList.add("errado");
             errosRodada++;
-            setTimeout(() => cell.classList.remove("errado"), 600);
+            setTimeout(() => btnMarcarCategoria.classList.remove("errado"), 600);
         }
     });
 
@@ -59,10 +57,10 @@ function avancarJogador() {
     const jogador = proximoJogador();
     if (!jogador) {
         const total = estado.acertos + estado.erros;
-        const pct = total > 0 ? Math.round((estado.acertos / total) * 100) : 0;
+        const porcentagemAcertos = total > 0 ? Math.round((estado.acertos / total) * 100) : 0;
         mostrarResultado(
             estado.bingos > 0 ? "BINGO!" : "Fim de Jogo!",
-            `${estado.acertos} acertos, ${estado.erros} erros (${pct}%). Bingos: ${estado.bingos}.`,
+            `${estado.acertos} acertos, ${estado.erros} erros (${porcentagemAcertos}%). Bingos: ${estado.bingos}.`,
             estado.bingos > 0 ? "<i class='fas fa-trophy' style='color:#f1c40f'></i>" : "<i class='fas fa-flag-checkered' style='color:var(--text-secondary)'></i>"
         );
 
@@ -81,14 +79,14 @@ function avancarJogador() {
 
     exibirJogador(jogador);
     atualizarPlacar();
-    renderizarGrid();
-    configurarGridEventos();
+    renderizarGradeCategorias();
+    configurarEventosGradeCategorias();
 }
 
 // --- CONFIGURAR CLIQUE NAS CÉLULAS ---
-function configurarGridEventos() {
-    document.querySelectorAll(".bingo-cell").forEach(cell => {
-        cell.addEventListener("click", () => alternarCelula(cell));
+function configurarEventosGradeCategorias() {
+    document.querySelectorAll(".bingo-cell").forEach(btnMarcarCategoria => {
+        btnMarcarCategoria.addEventListener("click", () => alternarCelula(btnMarcarCategoria));
     });
 }
 
@@ -104,31 +102,31 @@ async function novoJogo() {
     const modo = localStorage.getItem("bingo_modo") || "mundial";
     await carregarDados(modo);
 
-    selecionarGrid();
+    selecionarGradeCategorias();
     selecionarFila();
 
-    renderizarGrid();
-    configurarGridEventos();
+    renderizarGradeCategorias();
+    configurarEventosGradeCategorias();
     exibirJogador(jogadorAtual());
     atualizarPlacar();
 }
 
 // --- CONFIGURAR EVENTOS GLOBAIS ---
 function configurarEventos() {
-    document.getElementById("confirmarBtn").addEventListener("click",   () => confirmarMarcacoes());
-    document.getElementById("proximoBtn").addEventListener("click",     () => avancarJogador());
-    document.getElementById("novoJogoBtn").addEventListener("click",    () => novoJogo());
-    document.getElementById("resultCloseBtn").addEventListener("click", () => novoJogo());
+    document.getElementById("btnConfirmarMarcacoes").addEventListener("click", () => confirmarMarcacoes());
+    document.getElementById("btnExibirProximoJogador").addEventListener("click", () => avancarJogador());
+    document.getElementById("btnIniciarNovaPartida").addEventListener("click", () => novoJogo());
+    document.getElementById("btnFecharResultado").addEventListener("click", () => novoJogo());
 }
 
 // --- INICIALIZAR ---
 async function iniciar(modo = "mundial") {
     try {
         await carregarDados(modo);
-        selecionarGrid();
+        selecionarGradeCategorias();
         selecionarFila();
-        renderizarGrid();
-        configurarGridEventos();
+        renderizarGradeCategorias();
+        configurarEventosGradeCategorias();
         exibirJogador(jogadorAtual());
         atualizarPlacar();
         configurarEventos();

@@ -2,17 +2,17 @@ import { estado } from "./core.js";
 
 // --- CARREGAMENTO DE DADOS ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-multiplica.json");
-    const data = await resp.json();
+    const resposta = await fetch("data/football-multiplica.json");
+    const dados = await resposta.json();
     
-    estado.desafios = data.desafios;
-    estado.jogadores = data.jogadores;
+    estado.desafios = dados.desafios;
+    estado.jogadores = dados.jogadores;
 }
 
 // --- SORTEAR DESAFIO ---
 export function sortearDesafio() {
-    const idx = Math.floor(Math.random() * estado.desafios.length);
-    estado.desafioAtual = estado.desafios[idx];
+    const indiceDesafio = Math.floor(Math.random() * estado.desafios.length);
+    estado.desafioAtual = estado.desafios[indiceDesafio];
     estado.multiplicadores = obterMultiplicadoresPorMeta(estado.desafioAtual.meta);
 }
 
@@ -41,9 +41,9 @@ export function sortearJogadores() {
     const sorteados = [];
     const total = estado.desafioAtual.rodadas;
 
-    for (let i = 0; i < total && copia.length > 0; i++) {
-        const idx = Math.floor(Math.random() * copia.length);
-        sorteados.push(copia.splice(idx, 1)[0]);
+    for (let indiceRodada = 0; indiceRodada < total && copia.length > 0; indiceRodada++) {
+        const indiceJogador = Math.floor(Math.random() * copia.length);
+        sorteados.push(copia.splice(indiceJogador, 1)[0]);
     }
     estado.jogadoresSorteados = sorteados;
 }

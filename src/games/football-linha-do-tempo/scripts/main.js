@@ -1,14 +1,14 @@
 import { estado } from "./core.js";
-import { carregarDados, sortear, embaralhar } from "./data.js";
+import { carregarDados, sortearRodadas, embaralharEventos } from "./data.js";
 import {
     renderizarLista,
     atualizarRodada,
     atualizarTema,
     atualizarPontos,
-    mostrarTimelineCard,
-    mostrarRoundResult,
+    mostrarCartaoLinhaTempo,
+    mostrarResultadoRodada,
     mostrarFinal,
-    resetarUI
+    reiniciarInterface
 } from "./ui.js";
 
 // --- MOSTRAR RODADA ATUAL ---
@@ -16,19 +16,19 @@ function mostrarRodada() {
     const rodada = estado.sorteadas[estado.rodadaAtual];
     atualizarRodada();
     atualizarTema(rodada.tema);
-    estado.ordemAtual = embaralhar(rodada.eventos);
-    mostrarTimelineCard();
+    estado.ordemAtual = embaralharEventos(rodada.eventos);
+    mostrarCartaoLinhaTempo();
     renderizarLista();
 }
 
 // --- CONFIRMAR ORDEM ---
-function confirmar() {
+function confirmarOrdemEventos() {
     const rodada = estado.sorteadas[estado.rodadaAtual];
-    const ordemCorreta = [...rodada.eventos].sort((a, b) => a.ano - b.ano);
+    const ordemCorreta = [...rodada.eventos].sort((eventoAnterior, eventoSeguinte) => eventoAnterior.ano - eventoSeguinte.ano);
 
     let corretos = 0;
-    estado.ordemAtual.forEach((evento, idx) => {
-        if (evento.ano === ordemCorreta[idx].ano) {
+    estado.ordemAtual.forEach((evento, indiceEvento) => {
+        if (evento.ano === ordemCorreta[indiceEvento].ano) {
             corretos++;
         }
     });
@@ -38,11 +38,11 @@ function confirmar() {
         estado.rodadasPerfeitas++;
     }
     atualizarPontos();
-    mostrarRoundResult(corretos, ordemCorreta);
+    mostrarResultadoRodada(corretos, ordemCorreta);
 }
 
 // --- PRÓXIMA RODADA ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
@@ -56,41 +56,41 @@ function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
     estado.rodadasPerfeitas = 0;
-    resetarUI();
-    sortear();
+    reiniciarInterface();
+    sortearRodadas();
     mostrarRodada();
 }
 
 window.linhaTempoReiniciar = iniciarJogo;
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-async function init() {
+async function inicializarLinhaTempo() {
     await carregarDados();
 
-    document.getElementById("btnConfirmar").addEventListener("click", confirmar);
-    document.getElementById("btnNext").addEventListener("click", proxima);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnConfirmarOrdemEventos").addEventListener("click", confirmarOrdemEventos);
+    document.getElementById("btnAvancarRodada").addEventListener("click", avancarRodada);
+    document.getElementById("btnJogarNovamente").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-linha-do-tempo";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-linha-do-tempo";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
     }
 }
 
-init();
+inicializarLinhaTempo();

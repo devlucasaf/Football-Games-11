@@ -3,7 +3,7 @@ const estado = {
     categoriaAtual:         null,
     jogadoresOrdenados:     [],
     jogadoresEmbaralhados:  [],
-    jogadorAtualIdx:        0,
+    indiceJogadorAtual:        0,
     piramide:               [null, null, null, null, null, null, null, null, null, null],
     modo:                   "normal",  
     ajudaUsada:             false,

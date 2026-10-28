@@ -1,4 +1,4 @@
-const GridDados = {
+const GradeDados = {
     dadosBrutos:    null,
     bancoJogadores: [],
     listaClubes:    [],
@@ -9,12 +9,12 @@ const GridDados = {
     indicePaises:   new Map(),
 
     // --- DEDUPLICAR POR CHAVE CANONIZADA ---
-    deduplicarPorCanon(itens, pegarNome) {
+    deduplicarPorNomeCanonico(itens, obterNome) {
         const vistos = new Set();
         const resultado = [];
 
         for (const item of itens) {
-            const chave = GridConfig.canonizar(pegarNome(item));
+            const chave = GradeConfiguracao.canonizarNome(obterNome(item));
 
             if (vistos.has(chave)) {
                 continue;
@@ -31,7 +31,7 @@ const GridDados = {
 
     // --- CARREGAR DADOS DO JSON ---
     async carregarDados() {
-        const resposta = await fetch(GridConfig.CAMINHO_JSON, {
+        const resposta = await fetch(GradeConfiguracao.CAMINHO_JSON, {
             cache: "no-store"
         });
 
@@ -42,7 +42,7 @@ const GridDados = {
     },
 
     // --- CONVERTER VALOR PARA ARRAY ---
-    paraArray(valor) {
+    converterParaLista(valor) {
         if (Array.isArray(valor)) {
             return valor;
         }
@@ -58,8 +58,8 @@ const GridDados = {
         this.dadosBrutos = dados;
 
         // --- CLUBES ---
-        const paresClubes = this.deduplicarPorCanon(dados.clubes ?? [], (c) => c.nome);
-        this.listaClubes = paresClubes.map((p) => p.chave);
+        const paresClubes = this.deduplicarPorNomeCanonico(dados.clubes ?? [], (clube) => clube.nome);
+        this.listaClubes = paresClubes.map((parClube) => parClube.chave);
         this.clubeExibicao = new Map(
             paresClubes.map(({ chave, item }) => [chave, {
                 nome: item.nome,
@@ -68,56 +68,56 @@ const GridDados = {
         );
 
         // --- PAÍSES ---
-        const paresPaises = this.deduplicarPorCanon(
-            (dados.selecoes ?? []).map((s) => ({ 
-                nome: s.pais || s, 
-                bandeira: s.bandeira ?? null 
+        const paresPaises = this.deduplicarPorNomeCanonico(
+            (dados.selecoes ?? []).map((selecao) => ({
+                nome: selecao.pais || selecao,
+                bandeira: selecao.bandeira ?? null
             })),
-            (x) => x.nome
+            (selecao) => selecao.nome
         );
-        this.listaPaises = paresPaises.map((p) => p.chave);
+        this.listaPaises = paresPaises.map((parPais) => parPais.chave);
         this.paisExibicao = new Map(paresPaises.map(({ chave, item }) => [chave, {
             nome: item.nome,
             bandeira: item.bandeira
         }]));
 
         // --- JOGADORES ---
-        this.bancoJogadores = (dados.jogadores ?? []).map((j) => ({
-            nome: j.nome,
-            nomeCanon: GridConfig.normalizar(j.nome),
-            clubes: this.paraArray(j.clubes).map((c) => GridConfig.canonizar(c)),
-            selecoes: this.paraArray(j.selecoes).map((s) => GridConfig.canonizar(s)),
-            foto: j.foto ?? null
+        this.bancoJogadores = (dados.jogadores ?? []).map((jogador) => ({
+            nome: jogador.nome,
+            nomeCanonico: GradeConfiguracao.normalizarTexto(jogador.nome),
+            clubes: this.converterParaLista(jogador.clubes).map((clube) => GradeConfiguracao.canonizarNome(clube)),
+            selecoes: this.converterParaLista(jogador.selecoes).map((selecao) => GradeConfiguracao.canonizarNome(selecao)),
+            foto: jogador.foto ?? null
         }));
 
         // --- ÍNDICES ---
         this.indiceClubes = new Map();
         this.indicePaises = new Map();
 
-        this.bancoJogadores.forEach((j, idx) => {
-            j.clubes.forEach((cl) => {
-                if (!this.indiceClubes.has(cl)) {
-                    this.indiceClubes.set(cl, []);
+        this.bancoJogadores.forEach((jogador, indiceJogador) => {
+            jogador.clubes.forEach((clube) => {
+                if (!this.indiceClubes.has(clube)) {
+                    this.indiceClubes.set(clube, []);
                 }
-                this.indiceClubes.get(cl).push(idx);
+                this.indiceClubes.get(clube).push(indiceJogador);
             });
 
-            j.selecoes.forEach((sel) => {
-                if (!this.indicePaises.has(sel)) {
-                    this.indicePaises.set(sel, []);
+            jogador.selecoes.forEach((selecao) => {
+                if (!this.indicePaises.has(selecao)) {
+                    this.indicePaises.set(selecao, []);
                 }
-                this.indicePaises.get(sel).push(idx);
+                this.indicePaises.get(selecao).push(indiceJogador);
             });
         });
     },
 
     // --- BUSCAR JOGADOR POR NOME ---
     buscarJogadorPorNome(texto) {
-        const n = GridConfig.normalizar(texto);
-        const exato = this.bancoJogadores.find((j) => j.nomeCanon === n);
+        const nomeNormalizado = GradeConfiguracao.normalizarTexto(texto);
+        const exato = this.bancoJogadores.find((jogador) => jogador.nomeCanonico === nomeNormalizado);
         if (exato) {
             return exato;
         }
-        return this.bancoJogadores.find((j) => j.nomeCanon.includes(n) || n.includes(j.nomeCanon)) || null;
+        return this.bancoJogadores.find((jogador) => jogador.nomeCanonico.includes(nomeNormalizado) || nomeNormalizado.includes(jogador.nomeCanonico)) || null;
     }
 };

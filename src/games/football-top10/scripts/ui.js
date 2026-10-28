@@ -1,74 +1,74 @@
 import estado from "./core.js";
-import { normalizar } from "./utils.js";
+import { normalizarTexto } from "./utils.js";
 import { obterNomesItens, obterOpcoes } from "./data.js";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DOM ---
-const $lista          = document.getElementById("top10Lista");
-const $temaIcone      = document.getElementById("temaIcone");
-const $temaTexto      = document.getElementById("temaTexto");
-const $temaCategoria  = document.getElementById("temaCategoria");
-const $acertosCount   = document.getElementById("acertosCount");
-const $vidasCount     = document.getElementById("vidasCount");
-const $pontosCount    = document.getElementById("pontosCount");
-const $rodadasCount   = document.getElementById("rodadasCount");
-const $input          = document.getElementById("palpiteInput");
-const $sugestoes      = document.getElementById("sugestoesLista");
-const $feedbackArea   = document.getElementById("feedbackArea");
-const $feedbackIcone  = document.getElementById("feedbackIcone");
-const $feedbackTexto  = document.getElementById("feedbackTexto");
-const $resultOverlay  = document.getElementById("resultOverlay");
-const $resultIcon     = document.getElementById("resultIcon");
-const $resultTitle    = document.getElementById("resultTitle");
-const $resultText     = document.getElementById("resultText");
+const listaClassificacao = document.getElementById("top10Lista");
+const iconeTema = document.getElementById("temaIcone");
+const textoTema = document.getElementById("temaTexto");
+const categoriaTema = document.getElementById("temaCategoria");
+const contadorAcertos = document.getElementById("acertosCount");
+const contadorVidas = document.getElementById("vidasCount");
+const contadorPontos = document.getElementById("pontosCount");
+const contadorRodadas = document.getElementById("rodadasCount");
+const campoPalpite = document.getElementById("palpiteInput");
+const listaSugestoes = document.getElementById("sugestoesLista");
+const areaRetornoPalpite = document.getElementById("feedbackArea");
+const iconeRetornoPalpite = document.getElementById("feedbackIcone");
+const textoRetornoPalpite = document.getElementById("feedbackTexto");
+const sobreposicaoResultado = document.getElementById("resultOverlay");
+const iconeResultado = document.getElementById("resultIcon");
+const tituloResultado = document.getElementById("resultTitle");
+const textoResultado = document.getElementById("resultText");
 
-let feedbackTimer = null;          
+let temporizadorRetornoPalpite = null;
 let indiceSugestao = -1;           
 
 // --- RENDERIZAÇÃO DO TEMA ---
 export function renderizarTema(lista) {
-    $temaIcone.className = lista.icone;
-    $temaTexto.textContent = lista.tema;
+    iconeTema.className = lista.icone;
+    textoTema.textContent = lista.tema;
 
-    const cat = {
+    const rotulosCategorias = {
         selecoes:  "Seleções",
         clubes:    "Clubes",
         jogadores: "Jogadores",
         tecnicos:  "Técnicos",
         arbitros:  "Árbitros"
     };
-    $temaCategoria.textContent = cat[lista.categoria] || lista.categoria;
+    categoriaTema.textContent = rotulosCategorias[lista.categoria] || lista.categoria;
 }
 
 // --- RENDERIZAÇÃO DA LISTA DE ITENS ---
 export function renderizarLista(lista) {
-    $lista.innerHTML = "";
+    listaClassificacao.innerHTML = "";
 
-    lista.itens.forEach((item, idx) => {
-        const div = document.createElement("div");
-        div.classList.add("top10-item");
-        div.dataset.pos = item.posicao;
-        div.dataset.idx = idx;
+    lista.itens.forEach((item, indiceItem) => {
+        const elementoItem = document.createElement("div");
+        elementoItem.classList.add("top10-item");
+        elementoItem.dataset.posicao = item.posicao;
+        elementoItem.dataset.indiceItem = indiceItem;
 
-        div.innerHTML = `
+        elementoItem.innerHTML = `
             <span class="item-posicao">${item.posicao}.</span>
             <span class="item-oculto">???</span>
         `;
 
-        $lista.appendChild(div);
+        listaClassificacao.appendChild(elementoItem);
     });
 }
 
 // --- REVELAÇÃO DE UM ITEM ---
-export function revelarItem(idx, modoDesistir = false) {
-    const item = estado.listaAtual.itens[idx];
-    const el   = $lista.querySelector(`[data-idx="${idx}"]`);
-    if (!el) {
+export function revelarItem(indiceItem, modoDesistir = false) {
+    const item = estado.listaAtual.itens[indiceItem];
+    const elementoItem = listaClassificacao.querySelector(`[data-indice-item="${indiceItem}"]`);
+    if (!elementoItem) {
         return;
     }
 
-    el.classList.add(modoDesistir ? "desistiu" : "revelado");
+    elementoItem.classList.add(modoDesistir ? "desistiu" : "revelado");
 
-    el.innerHTML = `
+    elementoItem.innerHTML = `
         <span class="item-posicao">${item.posicao}.</span>
         <div class="item-conteudo">
             <span class="item-nome">${item.nome}</span>
@@ -79,68 +79,68 @@ export function revelarItem(idx, modoDesistir = false) {
 
 // --- REVELAÇÃO DE TODOS OS ITENS NÃO ACERTADOS ---
 export function revelarTodos() {
-    estado.listaAtual.itens.forEach((_, idx) => {
-        if (!estado.itensAcertados.has(idx)) {
-            revelarItem(idx, true);
+    estado.listaAtual.itens.forEach((itemLista, indiceItem) => {
+        if (!estado.itensAcertados.has(indiceItem)) {
+            revelarItem(indiceItem, true);
         }
     });
 }
 
 // --- ATUALIZAÇÃO DO PLACAR ---
 export function atualizarPlacar() {
-    $acertosCount.textContent = estado.acertosRodada;
-    $vidasCount.textContent   = estado.vidas;
-    $pontosCount.textContent  = estado.pontosTotal;
-    $rodadasCount.textContent = estado.totalRodadas;
+    contadorAcertos.textContent = estado.acertosRodada;
+    contadorVidas.textContent = estado.vidas;
+    contadorPontos.textContent = estado.pontosTotal;
+    contadorRodadas.textContent = estado.totalRodadas;
 }
 
 // --- EXIBIÇÃO DE FEEDBACK ---
-export function mostrarFeedback(tipo, texto) {
-    clearTimeout(feedbackTimer);                             
+export function mostrarRetornoPalpite(tipo, texto) {
+    clearTimeout(temporizadorRetornoPalpite);
 
-    $feedbackArea.style.display = "";
-    $feedbackArea.className = "top10-feedback " + tipo;
-    $feedbackIcone.className = tipo === "acerto"
+    areaRetornoPalpite.style.display = "";
+    areaRetornoPalpite.className = "top10-feedback " + tipo;
+    iconeRetornoPalpite.className = tipo === "acerto"
         ? "fas fa-check-circle"
         : "fas fa-times-circle";
-    $feedbackTexto.textContent = texto;
+    textoRetornoPalpite.textContent = texto;
 
-    feedbackTimer = setTimeout(() => {
-        $feedbackArea.style.display = "none";
+    temporizadorRetornoPalpite = setTimeout(() => {
+        areaRetornoPalpite.style.display = "none";
     }, 2000);
 }
 
 // --- INICIALIZAÇÃO DO SISTEMA DE SUGESTÕES ---
-export function inicializarSugestoes(onSelecionar) {
-    $input.addEventListener("input", () => {
+export function inicializarSugestoes(aoSelecionarSugestao) {
+    campoPalpite.addEventListener("input", () => {
         indiceSugestao = -1;
-        const valor = $input.value.trim();
+        const valor = campoPalpite.value.trim();
         if (valor.length < 2) {
             fecharSugestoes();
             return;
         }
 
         const opcoes = obterOpcoes();
-        const valorN = normalizar(valor);
+        const valorNormalizado = normalizarTexto(valor);
 
         const nomesAcertados = new Set(
-            [...estado.itensAcertados].map(idx => normalizar(estado.listaAtual.itens[idx].nome))
+            [...estado.itensAcertados].map(indiceItem => normalizarTexto(estado.listaAtual.itens[indiceItem].nome))
         );
 
         const sugestoes = opcoes.filter(nome => {
-            if (nomesAcertados.has(normalizar(nome))) {
+            if (nomesAcertados.has(normalizarTexto(nome))) {
                 return false;
             }
-            return normalizar(nome).includes(valorN);
+            return normalizarTexto(nome).includes(valorNormalizado);
         });
 
         const vistos = new Set();
-        const unicos = sugestoes.filter(n => {
-            const norm = normalizar(n);
-            if (vistos.has(norm)) {
+        const unicos = sugestoes.filter(nomeSugerido => {
+            const nomeNormalizado = normalizarTexto(nomeSugerido);
+            if (vistos.has(nomeNormalizado)) {
                 return false;
             }
-            vistos.add(norm);
+            vistos.add(nomeNormalizado);
             return true;
         });
 
@@ -149,46 +149,46 @@ export function inicializarSugestoes(onSelecionar) {
             return;
         }
 
-        $sugestoes.innerHTML = "";
+        listaSugestoes.innerHTML = "";
         unicos.slice(0, 6).forEach(nome => {
-            const div = document.createElement("div");
-            div.classList.add("sugestao-item");
-            div.textContent = nome;
-            div.addEventListener("click", () => {
-                $input.value = nome;
+            const elementoSugestao = document.createElement("div");
+            elementoSugestao.classList.add("sugestao-item");
+            elementoSugestao.textContent = nome;
+            elementoSugestao.addEventListener("click", () => {
+                campoPalpite.value = nome;
                 fecharSugestoes();
-                onSelecionar();              
+                aoSelecionarSugestao();
             });
-            $sugestoes.appendChild(div);
+            listaSugestoes.appendChild(elementoSugestao);
         });
 
-        $sugestoes.classList.add("ativa");
+        listaSugestoes.classList.add("ativa");
     });
 
-    $input.addEventListener("keydown", (e) => {
-        const itens = $sugestoes.querySelectorAll(".sugestao-item");
-        if (!itens.length || !$sugestoes.classList.contains("ativa")) {
+    campoPalpite.addEventListener("keydown", (eventoTeclado) => {
+        const itens = listaSugestoes.querySelectorAll(".sugestao-item");
+        if (!itens.length || !listaSugestoes.classList.contains("ativa")) {
             return;
         }
 
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
+        if (eventoTeclado.key === "ArrowDown") {
+            eventoTeclado.preventDefault();
             indiceSugestao = (indiceSugestao + 1) % itens.length;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "ArrowUp") {
+            eventoTeclado.preventDefault();
             indiceSugestao = indiceSugestao <= 0 ? itens.length - 1 : indiceSugestao - 1;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === "Enter" && indiceSugestao >= 0) {
-            e.preventDefault();
-            $input.value = itens[indiceSugestao].textContent;
+        } else if (eventoTeclado.key === "Enter" && indiceSugestao >= 0) {
+            eventoTeclado.preventDefault();
+            campoPalpite.value = itens[indiceSugestao].textContent;
             fecharSugestoes();
-            onSelecionar();
+            aoSelecionarSugestao();
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (!$input.contains(e.target) && !$sugestoes.contains(e.target)) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!campoPalpite.contains(eventoClique.target) && !listaSugestoes.contains(eventoClique.target)) {
             fecharSugestoes();
         }
     });
@@ -196,38 +196,38 @@ export function inicializarSugestoes(onSelecionar) {
 
 // --- ATUALIZAÇÃO DA CLASSE "ATIVA" NA SUGESTÃO DESTACADA ---
 function atualizarSugestaoAtiva(itens) {
-    itens.forEach((item, i) => {
-        item.classList.toggle("ativa", i === indiceSugestao);
+    itens.forEach((item, indiceItem) => {
+        item.classList.toggle("ativa", indiceItem === indiceSugestao);
     });
 }
 
 // --- FECHAMENTO DA LISTA DE SUGESTÕES ---
 function fecharSugestoes() {
-    $sugestoes.innerHTML = "";
-    $sugestoes.classList.remove("ativa");
+    listaSugestoes.innerHTML = "";
+    listaSugestoes.classList.remove("ativa");
 }
 
 // --- LIMPEZA DO CAMPO DE INPUT E SUGESTÕES ---
-export function limparInput() {
-    $input.value = "";
+export function limparCampoPalpite() {
+    campoPalpite.value = "";
     fecharSugestoes();
 }
 
 // --- FOCA NO CAMPO DE INPUT ---
-export function focarInput() {
-    $input.focus();
+export function focarCampoPalpite() {
+    campoPalpite.focus();
 }
 
 // --- DESABILITA INPUT E BOTÕES ---
-export function desabilitarInput() {
-    $input.disabled = true;
+export function desabilitarCampoPalpite() {
+    campoPalpite.disabled = true;
     document.getElementById("confirmarBtn").disabled = true;
     document.getElementById("desistirBtn").disabled  = true;
 }
 
 // --- HABILITA INPUT E BOTÕES ---
-export function habilitarInput() {
-    $input.disabled = false;
+export function habilitarCampoPalpite() {
+    campoPalpite.disabled = false;
     document.getElementById("confirmarBtn").disabled = false;
     document.getElementById("desistirBtn").disabled  = false;
 }
@@ -236,23 +236,23 @@ export function habilitarInput() {
 export function mostrarResultado(acertos, total, pontos) {
     const completo = acertos === total;
 
-    $resultIcon.innerHTML = completo
+    iconeResultado.innerHTML = completo
         ? "<i class='fas fa-trophy' style='color: #f1c40f;'></i>"
         : "<i class='fas fa-list-check' style='color: var(--primary-green);'></i>";
 
-    $resultTitle.textContent = completo
+    tituloResultado.textContent = completo
         ? "Lista completa!"
         : "Fim da rodada!";
 
-    $resultText.innerHTML = `
+    textoResultado.innerHTML = `
         Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> itens.<br>
         Pontos nesta rodada: <strong>+${pontos}</strong>
     `;
 
-    $resultOverlay.classList.add("active");
+    sobreposicaoResultado.classList.add("active");
 }
 
 // --- FECHAMENTO DO OVERLAY DE RESULTADO ---
 export function fecharResultado() {
-    $resultOverlay.classList.remove("active");
+    sobreposicaoResultado.classList.remove("active");
 }

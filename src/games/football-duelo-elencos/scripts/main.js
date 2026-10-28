@@ -31,12 +31,12 @@ function verificarEscolha(escolha) {
     });
 
     registrarEscolha(escolha);
-    colocarJogadorNoCampo(estado.posicaoIdx, jogador, escolha);
+    colocarJogadorNoCampo(estado.indicePosicao, jogador, escolha);
 
     setTimeout(() => {
-        estado.posicaoIdx++;
-        if (estado.posicaoIdx >= estado.totalPosicoes) {
-            finalizar();
+        estado.indicePosicao++;
+        if (estado.indicePosicao >= estado.totalPosicoes) {
+            finalizarDuelo();
         } else {
             proximaPosicao();
         }
@@ -51,13 +51,13 @@ function proximaPosicao() {
 }
 
 // --- FINALIZAR ---
-function finalizar() {
+function finalizarDuelo() {
     mostrarResultadoFinal();
 }
 
 // --- INICIAR DUELO ---
 function iniciarDuelo() {
-    estado.posicaoIdx = 0;
+    estado.indicePosicao = 0;
     estado.respondido = false;
     estado.escolhas = [];
 
@@ -72,36 +72,36 @@ function iniciarDuelo() {
 }
 
 // --- INIT ---
-async function init() {
+async function inicializarDuelo() {
     await carregarDados();
 
     document.getElementById("cardA").addEventListener("click", () => verificarEscolha("A"));
     document.getElementById("cardB").addEventListener("click", () => verificarEscolha("B"));
-    document.getElementById("btnRetry").addEventListener("click", () => {
+    document.getElementById("btnIniciarNovoDuelo").addEventListener("click", () => {
         document.getElementById("finalResult").classList.add("hidden");
         iniciarDuelo();
     });
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const gameKey = tutorialOverlay?.dataset.game;
-    const skipKey = gameKey ? `tutorial_skip_${gameKey}` : null;
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveJogo = sobreposicaoTutorial?.dataset.game;
+    const chaveDispensaTutorial = chaveJogo ? `tutorial_skip_${chaveJogo}` : null;
 
-    if (skipKey && localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (chaveDispensaTutorial && localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarDuelo();
-    } else if (tutorialOverlay) {
+    } else if (sobreposicaoTutorial) {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarDuelo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            if (skipKey) {
-                localStorage.setItem(skipKey, "true");
+            if (chaveDispensaTutorial) {
+                localStorage.setItem(chaveDispensaTutorial, "true");
             }
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarDuelo();
         });
     } else {
@@ -109,4 +109,4 @@ async function init() {
     }
 }
 
-init();
+inicializarDuelo();

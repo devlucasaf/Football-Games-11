@@ -13,7 +13,7 @@ export const estado = {
     palpite: ""
 };
 
-export function resetEstado() {
+export function reiniciarEstadoTransferencias() {
     estado.jogadoresUsados = [];
     estado.jogadorAtual = null;
     estado.clubesRevelados = 0;

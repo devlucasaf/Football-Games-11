@@ -1,8 +1,8 @@
 import { estado } from "./core.js";
-import { carregarDados, sortear } from "./data.js";
+import { carregarDados, sortearJogadoresDasRodadas } from "./data.js";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DOM ---
-const els = {
+const elementosJogo = {
     rodadaAtual:    document.getElementById("rodadaAtual"),
     acertos:        document.getElementById("acertos"),
     jogadorNome:    document.getElementById("jogadorNome"),
@@ -27,30 +27,30 @@ function mostrarRodada() {
     const jogador = estado.sorteados[estado.rodadaAtual];
     estado.tentativasRestantes = 3;
 
-    els.rodadaAtual.textContent = estado.rodadaAtual + 1;
-    els.jogadorNome.textContent = jogador.nome;
-    els.jogadorClube.textContent = jogador.clube;
-    els.jogadorPeriodo.textContent = jogador.periodo;
-    els.tentativas.textContent = estado.tentativasRestantes;
-    els.inputNumero.value = "";
-    els.guessFeedback.classList.add("hidden");
-    els.gameArea.classList.remove("hidden");
-    els.roundResult.classList.add("hidden");
-    els.inputNumero.focus();
+    elementosJogo.rodadaAtual.textContent = estado.rodadaAtual + 1;
+    elementosJogo.jogadorNome.textContent = jogador.nome;
+    elementosJogo.jogadorClube.textContent = jogador.clube;
+    elementosJogo.jogadorPeriodo.textContent = jogador.periodo;
+    elementosJogo.tentativas.textContent = estado.tentativasRestantes;
+    elementosJogo.inputNumero.value = "";
+    elementosJogo.guessFeedback.classList.add("hidden");
+    elementosJogo.gameArea.classList.remove("hidden");
+    elementosJogo.roundResult.classList.add("hidden");
+    elementosJogo.inputNumero.focus();
 }
 
 // --- VERIFICAÇÃO DO PALPITE DO JOGADOR ---
 function verificarPalpite() {
-    const valor = els.inputNumero.value.trim();
+    const valor = elementosJogo.inputNumero.value.trim();
     if (!valor) {
         return;
     }
 
     const palpite = parseInt(valor);
     if (isNaN(palpite) || palpite < 1 || palpite > 99) {
-        els.guessFeedback.textContent = "Digite um número entre 1 e 99.";
-        els.guessFeedback.className = "guess-feedback wrong";
-        els.guessFeedback.classList.remove("hidden");
+        elementosJogo.guessFeedback.textContent = "Digite um número entre 1 e 99.";
+        elementosJogo.guessFeedback.className = "guess-feedback wrong";
+        elementosJogo.guessFeedback.classList.remove("hidden");
         return;
     }
 
@@ -59,7 +59,7 @@ function verificarPalpite() {
 
     if (palpite === correto) {
         estado.acertos++;
-        els.acertos.textContent = estado.acertos;
+        elementosJogo.acertos.textContent = estado.acertos;
         estado.historico.push({ 
             jogador: jogador.nome, 
             clube: jogador.clube, 
@@ -69,7 +69,7 @@ function verificarPalpite() {
         mostrarResultado(true, jogador);
     } else {
         estado.tentativasRestantes--;
-        els.tentativas.textContent = estado.tentativasRestantes;
+        elementosJogo.tentativas.textContent = estado.tentativasRestantes;
 
         if (estado.tentativasRestantes <= 0) {
             estado.historico.push({ 
@@ -81,37 +81,37 @@ function verificarPalpite() {
             mostrarResultado(false, jogador);
         } else {
             const dica = palpite < correto ? "⬆ Maior!" : "⬇ Menor!";
-            els.guessFeedback.textContent = dica;
-            els.guessFeedback.className = "guess-feedback hint";
-            els.guessFeedback.classList.remove("hidden");
-            els.inputNumero.value = "";
-            els.inputNumero.focus();
+            elementosJogo.guessFeedback.textContent = dica;
+            elementosJogo.guessFeedback.className = "guess-feedback hint";
+            elementosJogo.guessFeedback.classList.remove("hidden");
+            elementosJogo.inputNumero.value = "";
+            elementosJogo.inputNumero.focus();
         }
     }
 }
 
 // --- EXIBIÇÃO DO RESULTADO DA RODADA ---
 function mostrarResultado(acertou, jogador) {
-    els.gameArea.classList.add("hidden");
-    els.roundResult.classList.remove("hidden");
+    elementosJogo.gameArea.classList.add("hidden");
+    elementosJogo.roundResult.classList.remove("hidden");
 
     if (acertou) {
-        els.roundIcon.className = "round-icon correct";
-        els.roundIcon.innerHTML = "<i class='fas fa-check-circle'></i>";
-        els.roundText.textContent = "Correto!";
+        elementosJogo.roundIcon.className = "round-icon correct";
+        elementosJogo.roundIcon.innerHTML = "<i class='fas fa-check-circle'></i>";
+        elementosJogo.roundText.textContent = "Correto!";
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
     } else {
-        els.roundIcon.className = "round-icon wrong";
-        els.roundIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
-        els.roundText.textContent = "Não acertou!";
+        elementosJogo.roundIcon.className = "round-icon wrong";
+        elementosJogo.roundIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
+        elementosJogo.roundText.textContent = "Não acertou!";
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
     }
 
-    els.roundAnswer.textContent = `${jogador.nome} usava a camisa ${jogador.numero} no ${jogador.clube}`;
+    elementosJogo.roundAnswer.textContent = `${jogador.nome} usava a camisa ${jogador.numero} no ${jogador.clube}`;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
         document.getElementById("btnNext").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
@@ -119,7 +119,7 @@ function mostrarResultado(acertou, jogador) {
 }
 
 // --- AVANÇA PARA PRÓXIMA RODADA OU FINAL ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
@@ -130,30 +130,30 @@ function proxima() {
 
 // --- TELA DE RESULTADO FINAL ---
 function mostrarFinal() {
-    els.gameArea.classList.add("hidden");
-    els.roundResult.classList.add("hidden");
-    els.gameInfo.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
-    els.finalPoints.textContent = estado.acertos;
+    elementosJogo.gameArea.classList.add("hidden");
+    elementosJogo.roundResult.classList.add("hidden");
+    elementosJogo.gameInfo.classList.add("hidden");
+    elementosJogo.finalResult.classList.remove("hidden");
+    elementosJogo.finalPoints.textContent = estado.acertos;
 
-    const pct = Math.round((estado.acertos / estado.totalRodadas) * 100);
-    let msg = "";
-    if (pct === 100) {
-        msg = "Memória fotográfica de camisas!";
-    } else if (pct >= 70) {
-        msg = "Ótimo conhecimento numérico!";
-    } else if (pct >= 40) {
-        msg = "Bom, mas pode melhorar!";
+    const porcentagemAcertos = Math.round((estado.acertos / estado.totalRodadas) * 100);
+    let mensagemResultado = "";
+    if (porcentagemAcertos === 100) {
+        mensagemResultado = "Memória fotográfica de camisas!";
+    } else if (porcentagemAcertos >= 70) {
+        mensagemResultado = "Ótimo conhecimento numérico!";
+    } else if (porcentagemAcertos >= 40) {
+        mensagemResultado = "Bom, mas pode melhorar!";
     } else {
-        msg = "Tente novamente!";
+        mensagemResultado = "Tente novamente!";
     }
 
-    els.finalDetails.innerHTML = `<p>${msg}</p>`;
+    elementosJogo.finalDetails.innerHTML = `<p>${mensagemResultado}</p>`;
 
     if (window.FG11Stats) {
         const total = estado.totalRodadas;
         const venceu = estado.acertos >= Math.ceil(total / 2);
-        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        const rotulos = Array.from({ length: total + 1 }, (valorIgnorado, indiceAcertos) => String(indiceAcertos));
         window.FG11Stats.registrar("football-numeros", {
             venceu,
             bucket: estado.acertos,
@@ -178,47 +178,47 @@ function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
     estado.historico = [];
-    els.acertos.textContent = "0";
-    els.finalResult.classList.add("hidden");
-    els.gameInfo.classList.remove("hidden");
-    sortear();
+    elementosJogo.acertos.textContent = "0";
+    elementosJogo.finalResult.classList.add("hidden");
+    elementosJogo.gameInfo.classList.remove("hidden");
+    sortearJogadoresDasRodadas();
     mostrarRodada();
 }
 
 // --- CONFIGURAÇÃO INICIAL ASSÍNCRONA ---
-async function init() {
+async function inicializarJogoNumeros() {
     await carregarDados();
 
     document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
-    document.getElementById("btnNext").addEventListener("click", proxima);
+    document.getElementById("btnNext").addEventListener("click", avancarRodada);
     document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
     document.getElementById("btnHome").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    document.getElementById("inputNumero").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
+    document.getElementById("inputNumero").addEventListener("keydown", (eventoTeclado) => {
+        if (eventoTeclado.key === "Enter") {
             verificarPalpite();
         }
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-numeros";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-numeros";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
     }
 }
 
-init();
+inicializarJogoNumeros();

@@ -1,5 +1,5 @@
 // --- FUNÇÃO DE NORMALIZAÇÃO DE TEXTO ---
-export function normalizar(texto) {
+export function normalizarTexto(texto) {
     return texto
         .normalize("NFD")                         
         .replace(/[\u0300-\u036f]/g, "")          
@@ -8,6 +8,6 @@ export function normalizar(texto) {
 }
 
 // --- FUNÇÃO DE ESPERA ASSÍNCRONA ---
-export function esperar(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));  
+export function esperarMilissegundos(milissegundos) {
+    return new Promise((concluirEspera) => setTimeout(concluirEspera, milissegundos));
 }

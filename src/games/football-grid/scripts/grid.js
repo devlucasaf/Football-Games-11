@@ -1,12 +1,12 @@
-const GridGerador = {
+const GradeGerador = {
     escolhaPesoPonderado(objetoPesos) {
         const entradas = Object.entries(objetoPesos);
-        const total = entradas.reduce((acc, [, peso]) => acc + peso, 0);
-        let r = Math.random() * total;
+        const total = entradas.reduce((pesoAcumulado, [, peso]) => pesoAcumulado + peso, 0);
+        let pesoSorteado = Math.random() * total;
 
         for (const [chave, peso] of entradas) {
-            r -= peso;
-            if (r <= 0) {
+            pesoSorteado -= peso;
+            if (pesoSorteado <= 0) {
                 return chave;
             }
         }
@@ -15,56 +15,56 @@ const GridGerador = {
 
     // --- SORTEAR ITENS ÚNICOS ---
     sortearUnicos(lista, quantidade, excluir = new Set()) {
-        const filtrados = lista.filter((x) => !excluir.has(x));
+        const filtrados = lista.filter((item) => !excluir.has(item));
         if (filtrados.length < quantidade) {
             return null;
         }
 
-        const arr = filtrados.slice();
-        for (let i = arr.length - 1; i > 0; i--) {
-            const j = (Math.random() * (i + 1)) | 0;
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+        const itensEmbaralhados = filtrados.slice();
+        for (let indiceAtual = itensEmbaralhados.length - 1; indiceAtual > 0; indiceAtual--) {
+            const indiceSorteado = (Math.random() * (indiceAtual + 1)) | 0;
+            [itensEmbaralhados[indiceAtual], itensEmbaralhados[indiceSorteado]] = [itensEmbaralhados[indiceSorteado], itensEmbaralhados[indiceAtual]];
         }
-        return arr.slice(0, quantidade);
+        return itensEmbaralhados.slice(0, quantidade);
     },
 
     // --- VERIFICAR INTERSECÇÃO DE JOGADORES ---
     temIntersecaoJogadores(linhaChave, linhaTipo, colunaChave, colunaTipo) {
-        const { indiceClubes, indicePaises } = GridDados;
+        const { indiceClubes, indicePaises } = GradeDados;
 
         if (linhaTipo === "clube" && colunaTipo === "clube") {
-            const a = indiceClubes.get(linhaChave) || [];
-            const bSet = new Set(indiceClubes.get(colunaChave) || []);
-            return a.some((idx) => bSet.has(idx));
+            const jogadoresLinha = indiceClubes.get(linhaChave) || [];
+            const jogadoresColuna = new Set(indiceClubes.get(colunaChave) || []);
+            return jogadoresLinha.some((indiceJogador) => jogadoresColuna.has(indiceJogador));
         }
 
-        const isLinhaPaisColClube = linhaTipo === "pais" && colunaTipo === "clube";
-        const paisChave = isLinhaPaisColClube ? linhaChave : colunaChave;
-        const clubeChave = isLinhaPaisColClube ? colunaChave : linhaChave;
+        const linhaPaisColunaClube = linhaTipo === "pais" && colunaTipo === "clube";
+        const paisChave = linhaPaisColunaClube ? linhaChave : colunaChave;
+        const clubeChave = linhaPaisColunaClube ? colunaChave : linhaChave;
 
         const porPais = indicePaises.get(paisChave) || [];
-        const porClubeSet = new Set(indiceClubes.get(clubeChave) || []);
-        return porPais.some((idx) => porClubeSet.has(idx));
+        const jogadoresClube = new Set(indiceClubes.get(clubeChave) || []);
+        return porPais.some((indiceJogador) => jogadoresClube.has(indiceJogador));
     },
 
     // --- VALIDAR GRID GERADO ---
-    validarGrid(linhas, colunas, linhasTipo, colunasTipo) {
-        const { TAMANHO_GRID } = GridConfig;
+    validarGrade(linhas, colunas, linhasTipo, colunasTipo) {
+        const { TAMANHO_GRADE } = GradeConfiguracao;
         let contagemValidos = 0;
-        const matriz = Array.from({ length: TAMANHO_GRID }, () =>
-            Array.from({ length: TAMANHO_GRID }, () => false)
+        const matriz = Array.from({ length: TAMANHO_GRADE }, () =>
+            Array.from({ length: TAMANHO_GRADE }, () => false)
         );
 
-        for (let i = 0; i < TAMANHO_GRID; i++) {
-            for (let j = 0; j < TAMANHO_GRID; j++) {
-                const ok = this.temIntersecaoJogadores(
-                    linhas[i], 
+        for (let indiceLinha = 0; indiceLinha < TAMANHO_GRADE; indiceLinha++) {
+            for (let indiceColuna = 0; indiceColuna < TAMANHO_GRADE; indiceColuna++) {
+                const possuiJogadorCompativel = this.temIntersecaoJogadores(
+                    linhas[indiceLinha],
                     linhasTipo, 
-                    colunas[j], 
+                    colunas[indiceColuna],
                     colunasTipo
                 );
-                matriz[i][j] = ok;
-                if (ok) {
+                matriz[indiceLinha][indiceColuna] = possuiJogadorCompativel;
+                if (possuiJogadorCompativel) {
                     contagemValidos++;
                 }
             }
@@ -77,13 +77,13 @@ const GridGerador = {
 
     // --- SORTEAR LINHAS E COLUNAS ---
     sortearLinhasColunas(linhasTipo, colunasTipo) {
-        const { listaClubes, listaPaises } = GridDados;
-        const { TAMANHO_GRID } = GridConfig;
+        const { listaClubes, listaPaises } = GradeDados;
+        const { TAMANHO_GRADE } = GradeConfiguracao;
 
         const listaLinhas = linhasTipo  === "clube" ? listaClubes : listaPaises;
-        const listaCols   = colunasTipo === "clube" ? listaClubes : listaPaises;
+        const listaColunas = colunasTipo === "clube" ? listaClubes : listaPaises;
 
-        const linhas = this.sortearUnicos(listaLinhas, TAMANHO_GRID);
+        const linhas = this.sortearUnicos(listaLinhas, TAMANHO_GRADE);
         if (!linhas) {
             return null;
         }
@@ -93,7 +93,7 @@ const GridGerador = {
             excluir = new Set(linhas);
         }
 
-        const colunas = this.sortearUnicos(listaCols, TAMANHO_GRID, excluir);
+        const colunas = this.sortearUnicos(listaColunas, TAMANHO_GRADE, excluir);
         if (!colunas) {
             return null;
         }
@@ -106,7 +106,7 @@ const GridGerador = {
 
     // --- ESCOLHER MODO DO GRID ---
     escolherModo() {
-        const escolha = this.escolhaPesoPonderado(GridConfig.PESOS_MODO);
+        const escolha = this.escolhaPesoPonderado(GradeConfiguracao.PESOS_MODO);
         if (escolha === "linhasPais_colunasClubes") {
             return { 
                 linhasTipo: "pais", 
@@ -120,10 +120,10 @@ const GridGerador = {
     },
 
     // --- CRIAR CONFIGURAÇÃO DO GRID ---
-    criarConfigGrid() {
-        const { MAX_TENTATIVAS, MIN_CELULAS_VALIDAS } = GridConfig;
+    criarConfiguracaoGrade() {
+        const { MAXIMO_TENTATIVAS, MINIMO_CELULAS_VALIDAS } = GradeConfiguracao;
 
-        for (let tentativa = 1; tentativa <= MAX_TENTATIVAS; tentativa++) {
+        for (let tentativa = 1; tentativa <= MAXIMO_TENTATIVAS; tentativa++) {
             const { linhasTipo, colunasTipo } = this.escolherModo();
             const sorteio = this.sortearLinhasColunas(linhasTipo, colunasTipo);
 
@@ -132,9 +132,9 @@ const GridGerador = {
             }
 
             const { linhas, colunas } = sorteio;
-            const { contagemValidos, matriz } = this.validarGrid(linhas, colunas, linhasTipo, colunasTipo);
+            const { contagemValidos, matriz } = this.validarGrade(linhas, colunas, linhasTipo, colunasTipo);
 
-            if (contagemValidos >= MIN_CELULAS_VALIDAS) {
+            if (contagemValidos >= MINIMO_CELULAS_VALIDAS) {
                 return { 
                     linhas, 
                     colunas, 

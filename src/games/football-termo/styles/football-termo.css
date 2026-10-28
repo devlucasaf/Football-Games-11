@@ -95,14 +95,14 @@ main {
     margin-bottom: var(--spacing-lg);
 }
 
-.termo-row {
+.termo-linha {
     display: flex;
     gap: 6px;
     justify-content: center;
     width: 100%;
 }
 
-.termo-cell {
+.termo-celula {
     flex: 1 1 0;
     min-width: 0;
     max-width: 52px;
@@ -122,12 +122,12 @@ main {
     box-shadow: var(--shadow-sm);
 }
 
-.termo-cell.active {
+.termo-celula.active {
     border-color: var(--text-secondary);
     box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.08);
 }
 
-.termo-cell.filled {
+.termo-celula.filled {
     border-color: var(--text-primary);
     animation: popIn 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -145,28 +145,28 @@ main {
 }
 
 /* --- CORES DAS LETRAS --- */
-.termo-cell.correct {
+.termo-celula.correct {
     background: #538d4e;
     border-color: #538d4e;
     color: #ffffff;
     box-shadow: 0 2px 12px rgba(83, 141, 78, 0.25);
 }
 
-.termo-cell.present {
+.termo-celula.present {
     background: #b59f3b;
     border-color: #b59f3b;
     color: #ffffff;
     box-shadow: 0 2px 12px rgba(181, 159, 59, 0.25);
 }
 
-.termo-cell.absent {
+.termo-celula.absent {
     background: #3a3a3c;
     border-color: #3a3a3c;
     color: #ffffff;
 }
 
 /* --- ANIMAÇÃO DE REVELAÇÃO (FLIP) --- */
-.termo-cell.flip {
+.termo-celula.flip {
     animation: flipCell 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
@@ -189,7 +189,7 @@ main {
 }
 
 /* --- ANIMAÇÃO DE VITÓRIA (BOUNCE) --- */
-.termo-cell.bounce {
+.termo-celula.bounce {
     animation: bounceCell 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -213,7 +213,7 @@ main {
 }
 
 /* --- ANIMAÇÃO DE ERRO (SHAKE) --- */
-.termo-row.shake {
+.termo-linha.shake {
     animation: shakeRow 0.4s ease;
 }
 
@@ -470,13 +470,13 @@ main {
         font-size: 1.4rem;
     }
 
-    .termo-cell {
+    .termo-celula {
         max-width: 42px;
         font-size: clamp(0.8rem, 4vw, 1.1rem);
         border-width: 1.5px;
     }
 
-    .termo-row {
+    .termo-linha {
         gap: 4px;
     }
 

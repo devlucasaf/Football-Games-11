@@ -1,5 +1,5 @@
 import estado from "./core.js";
-import { getCelulasLinha } from "./board.js";
+import { obterCelulasLinha } from "./board.js";
 
 // --- INSERE UMA LETRA NA CÉLULA ATUAL ---
 export function inserirLetra(letra) {
@@ -12,7 +12,7 @@ export function inserirLetra(letra) {
         return;
     }
 
-    const celulas = getCelulasLinha(estado.tentativaAtual);
+    const celulas = obterCelulasLinha(estado.tentativaAtual);
     const celula = celulas[estado.colunaAtual];
     celula.textContent = letra;
     celula.classList.add("filled");
@@ -30,7 +30,7 @@ export function apagarLetra() {
     }
 
     estado.colunaAtual--;
-    const celulas = getCelulasLinha(estado.tentativaAtual);
+    const celulas = obterCelulasLinha(estado.tentativaAtual);
     const celula = celulas[estado.colunaAtual];
     celula.textContent = "";
     celula.classList.remove("filled");

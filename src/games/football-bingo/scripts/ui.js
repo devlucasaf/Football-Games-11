@@ -1,79 +1,79 @@
 import estado from "./core.js";
 
 // --- RENDERIZA A GRADE DO BINGO ---
-export function renderizarGrid() {
-    const grid = document.getElementById("bingoGrid");
-    grid.innerHTML = "";
+export function renderizarGradeCategorias() {
+    const gradeCategorias = document.getElementById("bingoGrid");
+    gradeCategorias.innerHTML = "";
 
-    estado.gridCategorias.forEach((cat, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "bingo-cell";
-        btn.dataset.indice = idx;
+    estado.gradeCategorias.forEach((categoria, indiceCategoria) => {
+        const btnMarcarCategoria = document.createElement("button");
+        btnMarcarCategoria.className = "bingo-cell";
+        btnMarcarCategoria.dataset.indice = indiceCategoria;
 
-        if (estado.celulasMarcadas.has(idx)) {
-            btn.classList.add("correto", "locked");
+        if (estado.celulasMarcadas.has(indiceCategoria)) {
+            btnMarcarCategoria.classList.add("correto", "locked");
         }
 
-        if (cat.tipo === "clube" && cat.escudo) {
-            const img = document.createElement("img");
-            img.className = "cell-escudo";
-            img.src = cat.escudo;
-            img.alt = cat.texto;
-            img.onerror = () => {
-                img.remove();
-                const icon = document.createElement("i");
-                icon.className = `fas ${cat.icone} cell-icon`;
-                btn.prepend(icon);
+        if (categoria.tipo === "clube" && categoria.escudo) {
+            const imagemEscudo = document.createElement("img");
+            imagemEscudo.className = "cell-escudo";
+            imagemEscudo.src = categoria.escudo;
+            imagemEscudo.alt = categoria.texto;
+            imagemEscudo.onerror = () => {
+                imagemEscudo.remove();
+                const iconeCategoria = document.createElement("i");
+                iconeCategoria.className = `fas ${categoria.icone} cell-icon`;
+                btnMarcarCategoria.prepend(iconeCategoria);
             };
-            btn.appendChild(img);
-        } else if (cat.tipo === "selecao" && cat.bandeira) {
+            btnMarcarCategoria.appendChild(imagemEscudo);
+        } else if (categoria.tipo === "selecao" && categoria.bandeira) {
             const bandeira = document.createElement("span");
             bandeira.className = "cell-bandeira";
-            bandeira.textContent = cat.bandeira;
-            btn.appendChild(bandeira);
+            bandeira.textContent = categoria.bandeira;
+            btnMarcarCategoria.appendChild(bandeira);
         } else {
-            const icon = document.createElement("i");
-            icon.className = `fas ${cat.icone} cell-icon`;
-            btn.appendChild(icon);
+            const iconeCategoria = document.createElement("i");
+            iconeCategoria.className = `fas ${categoria.icone} cell-icon`;
+            btnMarcarCategoria.appendChild(iconeCategoria);
         }
 
         const texto = document.createElement("span");
         texto.className = "cell-texto";
-        texto.textContent = cat.texto;
-        btn.appendChild(texto);
+        texto.textContent = categoria.texto;
+        btnMarcarCategoria.appendChild(texto);
 
-        grid.appendChild(btn);
+        gradeCategorias.appendChild(btnMarcarCategoria);
     });
 }
 
 // --- EXIBIR JOGADOR ATUAL ---
 export function exibirJogador(jogador) {
-    const nomeEl = document.getElementById("jogadorNome");
-    nomeEl.textContent = jogador ? jogador.nome : "---";
+    const nomeJogador = document.getElementById("jogadorNome");
+    nomeJogador.textContent = jogador ? jogador.nome : "---";
 
-    document.getElementById("confirmarBtn").style.display = jogador ? "" : "none";
-    document.getElementById("proximoBtn").style.display = "none";
+    document.getElementById("btnConfirmarMarcacoes").style.display = jogador ? "" : "none";
+    document.getElementById("btnExibirProximoJogador").style.display = "none";
 }
 
 // --- MOSTRAR BOTÃO PRÓXIMO ---
 export function mostrarBotaoProximo() {
-    document.getElementById("confirmarBtn").style.display = "none";
-    document.getElementById("proximoBtn").style.display = "";
+    document.getElementById("btnConfirmarMarcacoes").style.display = "none";
+    document.getElementById("btnExibirProximoJogador").style.display = "";
 }
 
 // --- ATUALIZA O PLACAR ---
 export function atualizarPlacar() {
-    document.getElementById("jogadorNum").textContent = estado.jogadorIdx + 1;
+    document.getElementById("jogadorNum").textContent = estado.indiceJogadorAtual + 1;
     document.getElementById("jogadorTotal").textContent = estado.filaJogadores.length;
     document.getElementById("acertosCount").textContent = estado.acertos;
     document.getElementById("errosCount").textContent = estado.erros;
     document.getElementById("bingosCount").textContent = estado.bingos;
 
-    const indicator = document.getElementById("bingoIndicator");
+    const indicadorBingo = document.getElementById("bingoIndicator");
     if (estado.bingos > 0) {
-        indicator.classList.add("has-bingo");
+        indicadorBingo.classList.add("has-bingo");
     } else {
-        indicator.classList.remove("has-bingo");
+        indicadorBingo.classList.remove("has-bingo");
     }
 }
 
@@ -96,41 +96,41 @@ export function verificarBingos() {
     let bingos = 0;
     const linhasBingo = new Set();
 
-    for (let row = 0; row < 5; row++) {
-        const indices = [0, 1, 2, 3, 4].map(c => row * 5 + c);
-        if (indices.every(i => marcadas.has(i))) {
+    for (let indiceLinha = 0; indiceLinha < 5; indiceLinha++) {
+        const indices = [0, 1, 2, 3, 4].map(indiceColuna => indiceLinha * 5 + indiceColuna);
+        if (indices.every(indiceCelula => marcadas.has(indiceCelula))) {
             bingos++;
-            indices.forEach(i => linhasBingo.add(i));
+            indices.forEach(indiceCelula => linhasBingo.add(indiceCelula));
         }
     }
 
-    for (let col = 0; col < 5; col++) {
-        const indices = [0, 1, 2, 3, 4].map(r => r * 5 + col);
-        if (indices.every(i => marcadas.has(i))) {
+    for (let indiceColuna = 0; indiceColuna < 5; indiceColuna++) {
+        const indices = [0, 1, 2, 3, 4].map(indiceLinha => indiceLinha * 5 + indiceColuna);
+        if (indices.every(indiceCelula => marcadas.has(indiceCelula))) {
             bingos++;
-            indices.forEach(i => linhasBingo.add(i));
+            indices.forEach(indiceCelula => linhasBingo.add(indiceCelula));
         }
     }
 
-    const diag1 = [0, 6, 12, 18, 24];
-    if (diag1.every(i => marcadas.has(i))) {
+    const diagonalPrincipal = [0, 6, 12, 18, 24];
+    if (diagonalPrincipal.every(indiceCelula => marcadas.has(indiceCelula))) {
         bingos++;
-        diag1.forEach(i => linhasBingo.add(i));
+        diagonalPrincipal.forEach(indiceCelula => linhasBingo.add(indiceCelula));
     }
 
-    const diag2 = [4, 8, 12, 16, 20];
-    if (diag2.every(i => marcadas.has(i))) {
+    const diagonalSecundaria = [4, 8, 12, 16, 20];
+    if (diagonalSecundaria.every(indiceCelula => marcadas.has(indiceCelula))) {
         bingos++;
-        diag2.forEach(i => linhasBingo.add(i));
+        diagonalSecundaria.forEach(indiceCelula => linhasBingo.add(indiceCelula));
     }
 
     estado.bingos = bingos;
 
-    document.querySelectorAll(".bingo-cell").forEach((cell, idx) => {
-        if (linhasBingo.has(idx)) {
-            cell.classList.add("bingo-line");
+    document.querySelectorAll(".bingo-cell").forEach((btnMarcarCategoria, indiceCelula) => {
+        if (linhasBingo.has(indiceCelula)) {
+            btnMarcarCategoria.classList.add("bingo-line");
         } else {
-            cell.classList.remove("bingo-line");
+            btnMarcarCategoria.classList.remove("bingo-line");
         }
     });
 }

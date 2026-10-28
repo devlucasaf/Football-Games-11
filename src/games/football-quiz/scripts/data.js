@@ -2,14 +2,14 @@ import { estado } from "./core.js";
 
 // --- CARREGAMENTO DE DADOS ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-quiz.json");
-    const data = await resp.json();
-    estado.temas = data.temas;
+    const resposta = await fetch("data/football-quiz.json");
+    const dadosTemas = await resposta.json();
+    estado.temas = dadosTemas.temas;
 }
 
 // --- SELECIONAR TEMA ---
-export function selecionarTema(temaId) {
-    estado.temaAtual = estado.temas.find(t => t.id === temaId);
+export function selecionarTema(identificadorTema) {
+    estado.temaAtual = estado.temas.find(tema => tema.id === identificadorTema);
 }
 
 // --- SORTEAR PERGUNTAS ---
@@ -20,15 +20,15 @@ export function sortearPerguntas() {
     const copia = [...estado.temaAtual.perguntas];
     const sorteadas = [];
 
-    for (let i = 0; i < estado.totalPerguntas && copia.length > 0; i++) {
-        const idx = Math.floor(Math.random() * copia.length);
-        sorteadas.push(copia.splice(idx, 1)[0]);
+    for (let indicePergunta = 0; indicePergunta < estado.totalPerguntas && copia.length > 0; indicePergunta++) {
+        const indicePerguntaSorteada = Math.floor(Math.random() * copia.length);
+        sorteadas.push(copia.splice(indicePerguntaSorteada, 1)[0]);
     }
 
     estado.perguntas = sorteadas;
 }
 
 // --- OBTER PERGUNTA ATUAL ---
-export function perguntaAtual() {
+export function obterPerguntaAtual() {
     return estado.perguntas[estado.perguntaAtual] || null;
 }

@@ -1,56 +1,56 @@
 import estado from "./core.js";
-import { embaralhar } from "./utils.js";
+import { embaralharJogadores } from "./utils.js";
 import { mostrarExplicacao, atualizarPlacar } from "./ui.js";
 
 // --- CRIAR CARDS DA RODADA ---
-export function criarCards() {
-    const grid = document.getElementById("impostorGrid");
-    const temaEl = document.getElementById("temaTexto");
-    const dificuldadeEl = document.getElementById("dificuldadeBadge");
+export function criarCartoesJogadores() {
+    const gradeJogadores = document.getElementById("impostorGrid");
+    const elementoTema = document.getElementById("temaTexto");
+    const elementoDificuldade = document.getElementById("dificuldadeBadge");
 
-    grid.innerHTML = "";
+    gradeJogadores.innerHTML = "";
 
     // --- EXIBIR TEMA ---
-    temaEl.textContent = estado.rodadaAtual.tema;
+    elementoTema.textContent = estado.rodadaAtual.tema;
 
     // --- EXIBIR DIFICULDADE ---
-    dificuldadeEl.textContent = estado.rodadaAtual.dificuldade;
-    dificuldadeEl.className = `dificuldade-badge ${estado.rodadaAtual.dificuldade}`;
+    elementoDificuldade.textContent = estado.rodadaAtual.dificuldade;
+    elementoDificuldade.className = `dificuldade-badge ${estado.rodadaAtual.dificuldade}`;
 
     // --- COMBINAR E EMBARALHAR ---
-    const todosJogadores = embaralhar([
+    const todosJogadores = embaralharJogadores([
         ...estado.rodadaAtual.jogadores,
         estado.rodadaAtual.impostor
     ]);
 
-    todosJogadores.forEach((nome, idx) => {
-        const card = document.createElement("div");
-        card.className = "impostor-card";
-        card.dataset.nome = nome;
-        card.style.animation = `fadeInCard 0.4s ease ${idx * 0.07}s both`;
+    todosJogadores.forEach((nome, indiceJogador) => {
+        const cartaoJogador = document.createElement("div");
+        cartaoJogador.className = "impostor-card";
+        cartaoJogador.dataset.nome = nome;
+        cartaoJogador.style.animation = `fadeInCard 0.4s ease ${indiceJogador * 0.07}s both`;
 
         // --- ÍCONE ---
-        const icon = document.createElement("div");
-        icon.className = "card-icon";
-        icon.innerHTML = '<i class="fas fa-user"></i>';
-        card.appendChild(icon);
+        const elementoIcone = document.createElement("div");
+        elementoIcone.className = "card-icon";
+        elementoIcone.innerHTML = '<i class="fas fa-user"></i>';
+        cartaoJogador.appendChild(elementoIcone);
 
         // --- NOME ---
-        const nomeEl = document.createElement("div");
-        nomeEl.className = "card-nome";
-        nomeEl.textContent = nome;
-        card.appendChild(nomeEl);
+        const elementoNome = document.createElement("div");
+        elementoNome.className = "card-nome";
+        elementoNome.textContent = nome;
+        cartaoJogador.appendChild(elementoNome);
 
-        card.addEventListener("click", () => selecionarJogador(nome, card));
+        cartaoJogador.addEventListener("click", () => selecionarJogador(nome, cartaoJogador));
 
-        grid.appendChild(card);
+        gradeJogadores.appendChild(cartaoJogador);
     });
 
     estado.jogoAtivo = true;
 }
 
 // --- SELECIONAR JOGADOR ---
-function selecionarJogador(nome, card) {
+function selecionarJogador(nome, cartaoJogador) {
     if (!estado.jogoAtivo) {
         return;
     }
@@ -66,25 +66,25 @@ function selecionarJogador(nome, card) {
         if (estado.sequencia > estado.melhorSequencia) {
             estado.melhorSequencia = estado.sequencia;
         }
-        card.classList.add("impostor-found");
+        cartaoJogador.classList.add("impostor-found");
     } else {
         estado.sequencia = 0;
-        card.classList.add("wrong-choice");
+        cartaoJogador.classList.add("wrong-choice");
 
         // --- REVELAR O IMPOSTOR VERDADEIRO ---
-        const cards = document.querySelectorAll(".impostor-card");
-        cards.forEach(c => {
-            if (c.dataset.nome === estado.rodadaAtual.impostor) {
-                setTimeout(() => c.classList.add("impostor-reveal"), 400);
+        const cartoesJogadores = document.querySelectorAll(".impostor-card");
+        cartoesJogadores.forEach(cartao => {
+            if (cartao.dataset.nome === estado.rodadaAtual.impostor) {
+                setTimeout(() => cartao.classList.add("impostor-reveal"), 400);
             }
         });
     }
 
     // --- DIMINUIR OPACIDADE DOS OUTROS ---
-    const cards = document.querySelectorAll(".impostor-card");
-    cards.forEach(c => {
-        if (c !== card && c.dataset.nome !== estado.rodadaAtual.impostor) {
-            c.classList.add("dimmed");
+    const cartoesJogadores = document.querySelectorAll(".impostor-card");
+    cartoesJogadores.forEach(cartao => {
+        if (cartao !== cartaoJogador && cartao.dataset.nome !== estado.rodadaAtual.impostor) {
+            cartao.classList.add("dimmed");
         }
     });
 

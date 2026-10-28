@@ -1,7 +1,7 @@
 import estado from "./core.js";
-import { carregarDados, sortearCategoria, obterTierDoJogador, calcularAcertos, obterSlotsDoTier } from "./data.js";
+import { carregarDados, sortearCategoria, obterNivelDoJogador, calcularAcertos, obterPosicoesDoNivel } from "./data.js";
 
-const els = {
+const elementosJogo = {
     modeSelect:     document.getElementById("modeSelect"),
     gameArea:       document.getElementById("gameArea"),
     finalResult:    document.getElementById("finalResult"),
@@ -20,103 +20,103 @@ const els = {
 
 // --- RENDERIZAÇÃO DA PIRÂMIDE ---
 function renderizarPiramide() {
-    els.piramideGrid.innerHTML = "";
+    elementosJogo.piramideGrid.innerHTML = "";
 
-    const tiers = [
-        { tier: 1, slots: [0] },
-        { tier: 2, slots: [1, 2] },
-        { tier: 3, slots: [3, 4, 5] },
-        { tier: 4, slots: [6, 7, 8, 9] }
+    const niveis = [
+        { nivel: 1, posicoes: [0] },
+        { nivel: 2, posicoes: [1, 2] },
+        { nivel: 3, posicoes: [3, 4, 5] },
+        { nivel: 4, posicoes: [6, 7, 8, 9] }
     ];
 
-    tiers.forEach(({ tier, slots }) => {
-        const row = document.createElement("div");
-        row.className = `piramide-row tier-${tier}`;
+    niveis.forEach(({ nivel, posicoes }) => {
+        const linhaNivel = document.createElement("div");
+        linhaNivel.className = `piramide-row tier-${nivel}`;
 
-        slots.forEach(slotIdx => {
-            const slot = document.createElement("div");
-            slot.className = "piramide-slot";
-            slot.dataset.index = slotIdx;
+        posicoes.forEach(indicePosicao => {
+            const elementoPosicao = document.createElement("div");
+            elementoPosicao.className = "piramide-slot";
+            elementoPosicao.dataset.indicePosicao = indicePosicao;
 
-            if (estado.piramide[slotIdx]) {
-                slot.classList.add("filled");
-                slot.innerHTML = `<span class="slot-nome">${estado.piramide[slotIdx].nome}</span>`;
+            if (estado.piramide[indicePosicao]) {
+                elementoPosicao.classList.add("filled");
+                elementoPosicao.innerHTML = `<span class="slot-nome">${estado.piramide[indicePosicao].nome}</span>`;
             } else {
-                slot.innerHTML = `<span class="slot-number">${slotIdx + 1}º</span>`;
-                slot.classList.add("empty");
-                slot.addEventListener("click", () => colocarJogador(slotIdx));
+                elementoPosicao.innerHTML = `<span class="slot-number">${indicePosicao + 1}º</span>`;
+                elementoPosicao.classList.add("empty");
+                elementoPosicao.addEventListener("click", () => colocarJogador(indicePosicao));
             }
 
-            row.appendChild(slot);
+            linhaNivel.appendChild(elementoPosicao);
         });
 
-        els.piramideGrid.appendChild(row);
+        elementosJogo.piramideGrid.appendChild(linhaNivel);
     });
 }
 
 // --- EXIBIÇÃO DO JOGADOR ATUAL ---
 function mostrarJogadorAtual() {
-    if (estado.jogadorAtualIdx >= estado.jogadoresEmbaralhados.length) {
+    if (estado.indiceJogadorAtual >= estado.jogadoresEmbaralhados.length) {
         finalizarJogo();
         return;
     }
 
-    const jogador = estado.jogadoresEmbaralhados[estado.jogadorAtualIdx];
-    els.jogadorNome.textContent = jogador.nome;
-    els.progresso.textContent = `${estado.jogadorAtualIdx + 1}/10`;
+    const jogador = estado.jogadoresEmbaralhados[estado.indiceJogadorAtual];
+    elementosJogo.jogadorNome.textContent = jogador.nome;
+    elementosJogo.progresso.textContent = `${estado.indiceJogadorAtual + 1}/10`;
 
     if (estado.modo === "facil") {
-        const tier = obterTierDoJogador(jogador);
-        els.tierHint.textContent = `Tier ${tier}`;
-        els.tierHint.className = `tier-hint tier-${tier}-hint`;
-        els.tierHint.classList.remove("hidden");
+        const nivel = obterNivelDoJogador(jogador);
+        elementosJogo.tierHint.textContent = `Nível ${nivel}`;
+        elementosJogo.tierHint.className = `tier-hint tier-${nivel}-hint`;
+        elementosJogo.tierHint.classList.remove("hidden");
         
-        destacarSlotsDoTier(tier);
+        destacarPosicoesDoNivel(nivel);
     } else {
-        els.tierHint.classList.add("hidden");
+        elementosJogo.tierHint.classList.add("hidden");
     }
 }
 
 // --- DESTAQUE DE SLOTS POR TIER ---
-function destacarSlotsDoTier(tier) {
-    const slots = els.piramideGrid.querySelectorAll(".piramide-slot");
-    const slotsValidos = obterSlotsDoTier(tier);
+function destacarPosicoesDoNivel(nivel) {
+    const elementosPosicoes = elementosJogo.piramideGrid.querySelectorAll(".piramide-slot");
+    const posicoesValidas = obterPosicoesDoNivel(nivel);
     
-    slots.forEach(slot => {
-        slot.classList.remove("highlighted");
-        const idx = parseInt(slot.dataset.index);
-        if (slotsValidos.includes(idx) && !estado.piramide[idx]) {
-            slot.classList.add("highlighted");
+    elementosPosicoes.forEach(elementoPosicao => {
+        elementoPosicao.classList.remove("highlighted");
+        const indicePosicao = parseInt(elementoPosicao.dataset.indicePosicao);
+        if (posicoesValidas.includes(indicePosicao) && !estado.piramide[indicePosicao]) {
+            elementoPosicao.classList.add("highlighted");
         }
     });
 }
 
 // --- COLOCAR JOGADOR NO SLOT ---
-function colocarJogador(slotIdx) {
-    if (estado.piramide[slotIdx]) {
+function colocarJogador(indicePosicao) {
+    if (estado.piramide[indicePosicao]) {
         return;
     }
 
-    if (estado.jogadorAtualIdx >= estado.jogadoresEmbaralhados.length) {
+    if (estado.indiceJogadorAtual >= estado.jogadoresEmbaralhados.length) {
         return;
     }
 
-    const jogador = estado.jogadoresEmbaralhados[estado.jogadorAtualIdx];
+    const jogador = estado.jogadoresEmbaralhados[estado.indiceJogadorAtual];
 
     if (estado.modo === "facil") {
-        const tierCorreto = obterTierDoJogador(jogador);
-        const slotsValidos = obterSlotsDoTier(tierCorreto);
-        if (!slotsValidos.includes(slotIdx)) {
+        const nivelCorreto = obterNivelDoJogador(jogador);
+        const posicoesValidas = obterPosicoesDoNivel(nivelCorreto);
+        if (!posicoesValidas.includes(indicePosicao)) {
             return; 
         }
     }
 
-    estado.piramide[slotIdx] = jogador;
-    estado.jogadorAtualIdx++;
+    estado.piramide[indicePosicao] = jogador;
+    estado.indiceJogadorAtual++;
 
     renderizarPiramide();
 
-    if (estado.jogadorAtualIdx >= estado.jogadoresEmbaralhados.length) {
+    if (estado.indiceJogadorAtual >= estado.jogadoresEmbaralhados.length) {
         setTimeout(finalizarJogo, 400);  
     } else {
         mostrarJogadorAtual();
@@ -129,27 +129,27 @@ function usarAjuda() {
         return;
     }
     estado.ajudaUsada = true;
-    els.btnAjuda.disabled = true;
-    els.btnAjuda.classList.add("used");
+    elementosJogo.btnAjuda.disabled = true;
+    elementosJogo.btnAjuda.classList.add("used");
 
-    const slots = els.piramideGrid.querySelectorAll(".piramide-slot.filled");
-    slots.forEach(slot => {
-        const idx = parseInt(slot.dataset.index);
-        const jogador = estado.piramide[idx];
+    const posicoesPreenchidas = elementosJogo.piramideGrid.querySelectorAll(".piramide-slot.filled");
+    posicoesPreenchidas.forEach(elementoPosicao => {
+        const indicePosicao = parseInt(elementoPosicao.dataset.indicePosicao);
+        const jogador = estado.piramide[indicePosicao];
         if (jogador) {
-            const correto = estado.jogadoresOrdenados[idx];
+            const correto = estado.jogadoresOrdenados[indicePosicao];
             if (jogador.nome === correto.nome) {
-                slot.classList.add("correct-reveal");
+                elementoPosicao.classList.add("correct-reveal");
             } else {
-                slot.classList.add("wrong-reveal");
+                elementoPosicao.classList.add("wrong-reveal");
             }
         }
     });
 
     setTimeout(() => {
-        const slots = els.piramideGrid.querySelectorAll(".piramide-slot");
-        slots.forEach(s => {
-            s.classList.remove("correct-reveal", "wrong-reveal");
+        const posicoesPiramide = elementosJogo.piramideGrid.querySelectorAll(".piramide-slot");
+        posicoesPiramide.forEach(elementoPosicao => {
+            elementoPosicao.classList.remove("correct-reveal", "wrong-reveal");
         });
     }, 3000);
 }
@@ -158,25 +158,25 @@ function usarAjuda() {
 function finalizarJogo() {
     const acertos = calcularAcertos();
 
-    els.gameArea.classList.add("hidden");
-    els.gameInfo.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
+    elementosJogo.gameArea.classList.add("hidden");
+    elementosJogo.gameInfo.classList.add("hidden");
+    elementosJogo.finalResult.classList.remove("hidden");
 
-    els.finalScore.textContent = acertos;
+    elementosJogo.finalScore.textContent = acertos;
 
-    let html = '<div class="final-piramide">';
-    const tiers = [[0], [1, 2], [3, 4, 5], [6, 7, 8, 9]];
+    let conteudoResultado = '<div class="final-piramide">';
+    const niveis = [[0], [1, 2], [3, 4, 5], [6, 7, 8, 9]];
 
-    tiers.forEach((slots, tierIdx) => {
-        html += `<div class="final-row tier-${tierIdx + 1}">`;
-        slots.forEach(slotIdx => {
-            const correto = estado.jogadoresOrdenados[slotIdx];
-            const colocado = estado.piramide[slotIdx];
+    niveis.forEach((posicoes, indiceNivel) => {
+        conteudoResultado += `<div class="final-row tier-${indiceNivel + 1}">`;
+        posicoes.forEach(indicePosicao => {
+            const correto = estado.jogadoresOrdenados[indicePosicao];
+            const colocado = estado.piramide[indicePosicao];
             const acertou = colocado && colocado.nome === correto.nome;
 
-            html += `<div class="final-slot ${acertou ? "acertou" : "errou"}">
+            conteudoResultado += `<div class="final-slot ${acertou ? "acertou" : "errou"}">
                 <span class="final-slot-rank">
-                    ${slotIdx + 1}º
+                    ${indicePosicao + 1}º
                 </span>
                 <span class="final-slot-nome">
                     ${correto.nome}
@@ -186,20 +186,20 @@ function finalizarJogo() {
                 </span>
             </div>`;
         });
-        html += "</div>";
+        conteudoResultado += "</div>";
     });
-    html += "</div>";
+    conteudoResultado += "</div>";
 
-    els.finalCorrect.innerHTML = html;
+    elementosJogo.finalCorrect.innerHTML = conteudoResultado;
 
     if (acertos === 10) {
-        els.finalMessage.textContent = "Perfeito! Você é um gênio do futebol!";
+        elementosJogo.finalMessage.textContent = "Perfeito! Você é um gênio do futebol!";
     } else if (acertos >= 7) {
-        els.finalMessage.textContent = "Ótimo! Conhecimento impressionante!";
+        elementosJogo.finalMessage.textContent = "Ótimo! Conhecimento impressionante!";
     } else if (acertos >= 4) {
-        els.finalMessage.textContent = "Bom, mas pode melhorar!";
+        elementosJogo.finalMessage.textContent = "Bom, mas pode melhorar!";
     } else {
-        els.finalMessage.textContent = "Precisa estudar mais estatísticas!";
+        elementosJogo.finalMessage.textContent = "Precisa estudar mais estatísticas!";
     }
 
     if (acertos >= 5) {
@@ -214,7 +214,7 @@ function finalizarJogo() {
 
     if (window.FG11Stats) {
         const venceu = acertos >= 5;
-        const rotulos = Array.from({ length: 11 }, (_, i) => String(i));
+        const rotulos = Array.from({ length: 11 }, (valorIgnorado, indiceAcertos) => String(indiceAcertos));
         window.FG11Stats.registrar("football-piramide", {
             venceu,
             bucket: acertos,
@@ -238,20 +238,20 @@ function finalizarJogo() {
 function iniciarJogo(modo) {
     estado.modo = modo;
     estado.piramide = [null, null, null, null, null, null, null, null, null, null];
-    estado.jogadorAtualIdx = 0;
+    estado.indiceJogadorAtual = 0;
     estado.ajudaUsada = false;
     estado.acertos = 0;
 
-    els.btnAjuda.disabled = false;
-    els.btnAjuda.classList.remove("used");
+    elementosJogo.btnAjuda.disabled = false;
+    elementosJogo.btnAjuda.classList.remove("used");
 
     sortearCategoria();
-    els.categoria.textContent = estado.categoriaAtual.titulo;
+    elementosJogo.categoria.textContent = estado.categoriaAtual.titulo;
 
-    els.modeSelect.classList.add("hidden");
-    els.finalResult.classList.add("hidden");
-    els.gameArea.classList.remove("hidden");
-    els.gameInfo.classList.remove("hidden");
+    elementosJogo.modeSelect.classList.add("hidden");
+    elementosJogo.finalResult.classList.add("hidden");
+    elementosJogo.gameArea.classList.remove("hidden");
+    elementosJogo.gameInfo.classList.remove("hidden");
 
     renderizarPiramide();
     mostrarJogadorAtual();
@@ -260,11 +260,11 @@ function iniciarJogo(modo) {
 // --- EVENTOS DOS BOTÕES ---
 document.getElementById("btnFacil").addEventListener("click", () => iniciarJogo("facil"));
 document.getElementById("btnNormal").addEventListener("click", () => iniciarJogo("normal"));
-els.btnAjuda.addEventListener("click", usarAjuda);
+elementosJogo.btnAjuda.addEventListener("click", usarAjuda);
 
 document.getElementById("btnRetry").addEventListener("click", () => {
-    els.finalResult.classList.add("hidden");
-    els.modeSelect.classList.remove("hidden");
+    elementosJogo.finalResult.classList.add("hidden");
+    elementosJogo.modeSelect.classList.remove("hidden");
 });
 
 document.getElementById("btnHome").addEventListener("click", () => {
@@ -272,28 +272,28 @@ document.getElementById("btnHome").addEventListener("click", () => {
 });
 
 // --- TUTORIAL ---
-const tutorialOverlay = document.getElementById("tutorialOverlay");
-const gameKey = tutorialOverlay?.dataset.game;
+const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+const chaveJogo = sobreposicaoTutorial?.dataset.game;
 
-if (gameKey && localStorage.getItem(`tutorial_${gameKey}`) === "skip") {
-    tutorialOverlay.classList.add("hidden");
+if (chaveJogo && localStorage.getItem(`tutorial_${chaveJogo}`) === "skip") {
+    sobreposicaoTutorial.classList.add("hidden");
 }
 
 document.getElementById("tutorialStartBtn")?.addEventListener("click", () => {
-    tutorialOverlay.classList.add("hidden");
+    sobreposicaoTutorial.classList.add("hidden");
 });
 
 document.getElementById("tutorialSkipBtn")?.addEventListener("click", () => {
-    localStorage.setItem(`tutorial_${gameKey}`, "skip");
-    tutorialOverlay.classList.add("hidden");
+    localStorage.setItem(`tutorial_${chaveJogo}`, "skip");
+    sobreposicaoTutorial.classList.add("hidden");
 });
 
 document.getElementById("tutorialHelpBtn")?.addEventListener("click", () => {
-    tutorialOverlay.classList.remove("hidden");
+    sobreposicaoTutorial.classList.remove("hidden");
 });
 
-async function init() {
+async function inicializarJogoPiramide() {
     await carregarDados();
 }
 
-init();
+inicializarJogoPiramide();

@@ -1,24 +1,24 @@
-import { estado } from "./core.js";
-import { carregarDados, sortearCategoria, encontrarResposta, obterNomes } from "./data.js";
+import { estado }                                                           from "./core.js";
+import { carregarDados, sortearCategoria, encontrarResposta, obterNomes }   from "./data.js";
 
-const els = {
-    gameArea:      document.getElementById("gameArea"),
-    timerValue:    document.getElementById("timerValue"),
-    timerBox:      document.getElementById("timerBox"),
-    timerFill:     document.getElementById("timerFill"),
-    acertosCount:  document.getElementById("acertosCount"),
-    totalPossivel: document.getElementById("totalPossivel"),
-    perguntaTexto: document.getElementById("perguntaTexto"),
-    guessInput:    document.getElementById("guessInput"),
-    guessFeedback: document.getElementById("guessFeedback"),
-    suggestions:   document.getElementById("suggestions"),
-    hitsList:      document.getElementById("hitsList"),
-    finalResult:   document.getElementById("finalResult"),
-    finalPoints:   document.getElementById("finalPoints"),
-    finalLabel:    document.getElementById("finalLabel"),
-    finalQuestion: document.getElementById("finalQuestion"),
-    finalHits:     document.getElementById("finalHits"),
-    finalMisses:   document.getElementById("finalMisses")
+const elementosInterface = {
+    areaJogo:               document.getElementById("gameArea"),
+    valorCronometro:        document.getElementById("timerValue"),
+    recipienteCronometro:   document.getElementById("timerBox"),
+    barraTempoRestante:     document.getElementById("timerFill"),
+    contadorAcertos:        document.getElementById("acertosCount"),
+    totalPossivel:          document.getElementById("totalPossivel"),
+    perguntaTexto:          document.getElementById("perguntaTexto"),
+    campoPalpite:           document.getElementById("guessInput"),
+    mensagemPalpite:        document.getElementById("guessFeedback"),
+    listaSugestoes:         document.getElementById("suggestions"),
+    listaAcertos:           document.getElementById("hitsList"),
+    resultadoFinal:         document.getElementById("finalResult"),
+    pontuacaoFinal:         document.getElementById("finalPoints"),
+    rotuloPontuacaoFinal:   document.getElementById("finalLabel"),
+    perguntaResultadoFinal: document.getElementById("finalQuestion"),
+    acertosResultadoFinal:  document.getElementById("finalHits"),
+    respostasNaoAcertadas:  document.getElementById("finalMisses")
 };
 
 // --- AUTOCOMPLETE ---
@@ -26,28 +26,28 @@ let nomesDisponiveis = [];
 let sugestaoAtiva = -1;
 
 function esconderSugestoes() {
-    els.suggestions.classList.add("hidden");
-    els.suggestions.innerHTML = "";
+    elementosInterface.listaSugestoes.classList.add("hidden");
+    elementosInterface.listaSugestoes.innerHTML = "";
     sugestaoAtiva = -1;
 }
 
 function selecionarSugestao(nome) {
-    els.guessInput.value = nome;
+    elementosInterface.campoPalpite.value = nome;
     esconderSugestoes();
-    els.guessInput.focus();
+    elementosInterface.campoPalpite.focus();
 }
 
 function atualizarSugestaoAtiva(itens) {
-    itens.forEach((item, i) => {
-        item.classList.toggle("active", i === sugestaoAtiva);
-        if (i === sugestaoAtiva) {
+    itens.forEach((item, indiceSugestao) => {
+        item.classList.toggle("active", indiceSugestao === sugestaoAtiva);
+        if (indiceSugestao === sugestaoAtiva) {
             item.scrollIntoView({ block: "nearest" });
         }
     });
 }
 
 function renderizarSugestoes() {
-    const termo = els.guessInput.value
+    const termo = elementosInterface.campoPalpite.value
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
@@ -72,40 +72,40 @@ function renderizarSugestoes() {
         return;
     }
 
-    els.suggestions.innerHTML = "";
+    elementosInterface.listaSugestoes.innerHTML = "";
     filtrados.forEach((nome) => {
-        const li = document.createElement("li");
-        li.className = "suggestion-item";
-        li.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
-        li.addEventListener("mousedown", (e) => {
-            e.preventDefault();
+        const itemSugestao = document.createElement("li");
+        itemSugestao.className = "suggestion-item";
+        itemSugestao.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
+        itemSugestao.addEventListener("mousedown", (eventoSelecao) => {
+            eventoSelecao.preventDefault();
             selecionarSugestao(nome);
         });
-        els.suggestions.appendChild(li);
+        elementosInterface.listaSugestoes.appendChild(itemSugestao);
     });
-    els.suggestions.classList.remove("hidden");
+    elementosInterface.listaSugestoes.classList.remove("hidden");
 }
 
 // --- MOSTRA FEEDBACK RÁPIDO NO CAMPO ---
-let feedbackTimeout = null;
-function mostrarFeedback(texto, tipo) {
-    els.guessFeedback.textContent = texto;
-    els.guessFeedback.className = `guess-feedback ${tipo}`;
-    els.guessFeedback.classList.remove("hidden");
+let identificadorOcultacaoMensagem = null;
+function mostrarMensagemPalpite(texto, tipo) {
+    elementosInterface.mensagemPalpite.textContent = texto;
+    elementosInterface.mensagemPalpite.className = `guess-feedback ${tipo}`;
+    elementosInterface.mensagemPalpite.classList.remove("hidden");
 
-    clearTimeout(feedbackTimeout);
-    feedbackTimeout = setTimeout(() => {
-        els.guessFeedback.classList.add("hidden");
+    clearTimeout(identificadorOcultacaoMensagem);
+    identificadorOcultacaoMensagem = setTimeout(() => {
+        elementosInterface.mensagemPalpite.classList.add("hidden");
     }, 1200);
 }
 
 // --- RENDERIZA UM ACERTO NA LISTA ---
 function adicionarAcertoVisual(nome) {
-    const chip = document.createElement("div");
-    chip.className = "s30-hit-chip";
-    chip.innerHTML = `<i class="fas fa-check"></i> ${nome}`;
-    els.hitsList.prepend(chip);
-    els.acertosCount.textContent = estado.acertos.length;
+    const marcadorAcerto = document.createElement("div");
+    marcadorAcerto.className = "s30-hit-chip";
+    marcadorAcerto.innerHTML = `<i class="fas fa-check"></i> ${nome}`;
+    elementosInterface.listaAcertos.prepend(marcadorAcerto);
+    elementosInterface.contadorAcertos.textContent = estado.acertos.length;
 }
 
 // --- VERIFICA O PALPITE ---
@@ -114,58 +114,58 @@ function verificarPalpite() {
         return;
     }
 
-    const palpite = els.guessInput.value.trim();
+    const palpite = elementosInterface.campoPalpite.value.trim();
     if (!palpite) {
         return;
     }
 
     const resposta = encontrarResposta(palpite);
-    els.guessInput.value = "";
+    elementosInterface.campoPalpite.value = "";
     esconderSugestoes();
 
     if (!resposta) {
-        mostrarFeedback("Não está na lista!", "wrong");
+        mostrarMensagemPalpite("Não está na lista!", "wrong");
         return;
     }
 
     if (estado.acertos.includes(resposta.nome)) {
-        mostrarFeedback("Você já disse esse!", "hint");
+        mostrarMensagemPalpite("Você já disse esse!", "hint");
         return;
     }
 
     estado.acertos.push(resposta.nome);
     adicionarAcertoVisual(resposta.nome);
-    mostrarFeedback("Correto!", "correct");
+    mostrarMensagemPalpite("Correto!", "correct");
 }
 
 // --- ATUALIZA O RELÓGIO ---
-function atualizarTimer() {
-    els.timerValue.textContent = estado.tempoRestante;
-    const pct = (estado.tempoRestante / estado.tempoTotal) * 100;
-    els.timerFill.style.width = `${pct}%`;
+function atualizarCronometro() {
+    elementosInterface.valorCronometro.textContent = estado.tempoRestante;
+    const porcentagemTempoRestante = (estado.tempoRestante / estado.tempoTotal) * 100;
+    elementosInterface.barraTempoRestante.style.width = `${porcentagemTempoRestante}%`;
 
     if (estado.tempoRestante <= 10) {
-        els.timerBox.classList.add("urgente");
+        elementosInterface.recipienteCronometro.classList.add("urgente");
     } else {
-        els.timerBox.classList.remove("urgente");
+        elementosInterface.recipienteCronometro.classList.remove("urgente");
     }
 }
 
 // --- TICK DO RELÓGIO ---
-function tick() {
+function descontarSegundoCronometro() {
     estado.tempoRestante--;
-    atualizarTimer();
+    atualizarCronometro();
 
     if (estado.tempoRestante <= 0) {
-        finalizar();
+        finalizarPartida();
     }
 }
 
 // --- FINALIZA A PARTIDA ---
-function finalizar() {
-    clearInterval(estado.timerId);
+function finalizarPartida() {
+    clearInterval(estado.identificadorIntervaloCronometro);
     estado.jogando = false;
-    els.guessInput.disabled = true;
+    elementosInterface.campoPalpite.disabled = true;
 
     const total = estado.categoriaAtual.respostas.length;
 
@@ -179,42 +179,42 @@ function finalizar() {
         }
     }
 
-    els.finalPoints.textContent = estado.acertos.length;
-    els.finalLabel.textContent = ` / ${total}`;
-    els.finalQuestion.textContent = estado.categoriaAtual.pergunta;
+    elementosInterface.pontuacaoFinal.textContent = estado.acertos.length;
+    elementosInterface.rotuloPontuacaoFinal.textContent = ` / ${total}`;
+    elementosInterface.perguntaResultadoFinal.textContent = estado.categoriaAtual.pergunta;
 
-    els.finalHits.innerHTML = "";
-    els.finalMisses.innerHTML = "";
+    elementosInterface.acertosResultadoFinal.innerHTML = "";
+    elementosInterface.respostasNaoAcertadas.innerHTML = "";
 
-    estado.categoriaAtual.respostas.forEach((r) => {
+    estado.categoriaAtual.respostas.forEach((respostaCategoria) => {
         const item = document.createElement("div");
         item.className = "s30-final-item";
-        item.textContent = r.nome;
+        item.textContent = respostaCategoria.nome;
 
-        if (estado.acertos.includes(r.nome)) {
+        if (estado.acertos.includes(respostaCategoria.nome)) {
             item.classList.add("hit");
-            els.finalHits.appendChild(item);
+            elementosInterface.acertosResultadoFinal.appendChild(item);
         } else {
             item.classList.add("miss");
-            els.finalMisses.appendChild(item);
+            elementosInterface.respostasNaoAcertadas.appendChild(item);
         }
     });
 
-    if (els.finalHits.childElementCount === 0) {
-        els.finalHits.innerHTML = "<span class=\"s30-empty\">—</span>";
+    if (elementosInterface.acertosResultadoFinal.childElementCount === 0) {
+        elementosInterface.acertosResultadoFinal.innerHTML = "<span class=\"s30-empty\">—</span>";
     }
     
-    if (els.finalMisses.childElementCount === 0) {
-        els.finalMisses.innerHTML = "<span class=\"s30-empty\">—</span>";
+    if (elementosInterface.respostasNaoAcertadas.childElementCount === 0) {
+        elementosInterface.respostasNaoAcertadas.innerHTML = "<span class=\"s30-empty\">—</span>";
     }
 
-    els.gameArea.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
+    elementosInterface.areaJogo.classList.add("hidden");
+    elementosInterface.resultadoFinal.classList.remove("hidden");
 
     if (window.FG11Stats) {
         const acertos = estado.acertos.length;
         const venceu = acertos >= Math.ceil(total / 2);
-        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        const rotulos = Array.from({ length: total + 1 }, (valorNaoUtilizado, indicePontuacao) => String(indicePontuacao));
         window.FG11Stats.registrar("football-30-segundos", {
             venceu,
             bucket: acertos,
@@ -236,89 +236,89 @@ function finalizar() {
 
 // --- INICIA O JOGO ---
 function iniciarJogo() {
-    clearInterval(estado.timerId);
+    clearInterval(estado.identificadorIntervaloCronometro);
 
     sortearCategoria();
     estado.tempoRestante = estado.tempoTotal;
     estado.acertos = [];
     estado.jogando = true;
 
-    els.perguntaTexto.textContent = estado.categoriaAtual.pergunta;
-    els.totalPossivel.textContent = `/${estado.categoriaAtual.respostas.length}`;
-    els.acertosCount.textContent = "0";
-    els.hitsList.innerHTML = "";
-    els.guessFeedback.classList.add("hidden");
-    els.guessInput.value = "";
-    els.guessInput.disabled = false;
+    elementosInterface.perguntaTexto.textContent = estado.categoriaAtual.pergunta;
+    elementosInterface.totalPossivel.textContent = `/${estado.categoriaAtual.respostas.length}`;
+    elementosInterface.contadorAcertos.textContent = "0";
+    elementosInterface.listaAcertos.innerHTML = "";
+    elementosInterface.mensagemPalpite.classList.add("hidden");
+    elementosInterface.campoPalpite.value = "";
+    elementosInterface.campoPalpite.disabled = false;
     esconderSugestoes();
 
-    atualizarTimer();
+    atualizarCronometro();
 
-    els.finalResult.classList.add("hidden");
-    els.gameArea.classList.remove("hidden");
-    els.guessInput.focus();
+    elementosInterface.resultadoFinal.classList.add("hidden");
+    elementosInterface.areaJogo.classList.remove("hidden");
+    elementosInterface.campoPalpite.focus();
 
-    estado.timerId = setInterval(tick, 1000);
+    estado.identificadorIntervaloCronometro = setInterval(descontarSegundoCronometro, 1000);
 }
 
 // --- INICIALIZA O JOGO ---
-async function init() {
+async function inicializarJogoTrintaSegundos() {
     await carregarDados();
     nomesDisponiveis = obterNomes();
 
-    document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnEnviarPalpite").addEventListener("click", verificarPalpite);
+    document.getElementById("btnReiniciarPartida").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    els.guessInput.addEventListener("input", renderizarSugestoes);
-    els.guessInput.addEventListener("keydown", (e) => {
-        const itens = [...els.suggestions.querySelectorAll(".suggestion-item")];
+    elementosInterface.campoPalpite.addEventListener("input", renderizarSugestoes);
+    elementosInterface.campoPalpite.addEventListener("keydown", (eventoTeclado) => {
+        const itens = [...elementosInterface.listaSugestoes.querySelectorAll(".suggestion-item")];
 
-        if (e.key === "ArrowDown" && itens.length > 0) {
-            e.preventDefault();
+        if (eventoTeclado.key === "ArrowDown" && itens.length > 0) {
+            eventoTeclado.preventDefault();
             sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === "ArrowUp" && itens.length > 0) {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "ArrowUp" && itens.length > 0) {
+            eventoTeclado.preventDefault();
             sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === "Enter") {
+        } else if (eventoTeclado.key === "Enter") {
             if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
-                e.preventDefault();
+                eventoTeclado.preventDefault();
                 selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
             } else {
                 verificarPalpite();
             }
-        } else if (e.key === "Escape") {
+        } else if (eventoTeclado.key === "Escape") {
             esconderSugestoes();
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-autocomplete")) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".input-autocomplete")) {
             esconderSugestoes();
         }
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-30-segundos";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-30-segundos";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
     }
 }
 
-init();
+inicializarJogoTrintaSegundos();

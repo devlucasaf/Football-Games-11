@@ -1,12 +1,12 @@
 import estado from "./core.js";
 import { carregarDados, escolherRodada, obterNomesJogadores } from "./data.js";
-import { normalizar } from "./utils.js";
+import { normalizarNomeJogador } from "./utils.js";
 import {
-    renderizarCards, revelarProximo, revelarTodos,
-    mostrarResposta, resetarRespostaCard,
+    renderizarCartoesCompanheiros, revelarProximo, revelarTodos,
+    mostrarResposta, reiniciarCartaoResposta,
     mostrarDica, esconderDica,
     atualizarPlacar, mostrarResultado, esconderResultado,
-    limparInput, focarInput, desabilitarInput, habilitarInput,
+    limparCampoPalpite, focarCampoPalpite, desabilitarCampoPalpite, habilitarCampoPalpite,
     mostrarSugestoes, esconderSugestoes
 } from "./ui.js";
 
@@ -22,16 +22,16 @@ function verificarPalpite(palpite) {
         return;
     }
 
-    const respostaNorm = normalizar(estado.rodadaAtual.resposta);
-    const palpiteNorm = normalizar(palpite);
+    const respostaNormalizada = normalizarNomeJogador(estado.rodadaAtual.resposta);
+    const palpiteNormalizado = normalizarNomeJogador(palpite);
 
-    if (!palpiteNorm) {
+    if (!palpiteNormalizado) {
         return;
     }
 
     estado.tentativas++;
 
-    if (palpiteNorm === respostaNorm) {
+    if (palpiteNormalizado === respostaNormalizada) {
         estado.jogoAtivo = false;
         estado.acertos++;
         estado.totalRodadas++;
@@ -39,12 +39,12 @@ function verificarPalpite(palpite) {
         if (estado.sequencia > estado.melhorSequencia) {
             estado.melhorSequencia = estado.sequencia;
         }
-        const pts = calcularPontos();
-        estado.pontos += pts;
+        const pontosRodada = calcularPontos();
+        estado.pontos += pontosRodada;
 
         revelarTodos();
         mostrarResposta(true);
-        desabilitarInput();
+        desabilitarCampoPalpite();
         atualizarPlacar();
 
         if (window.registrarVitoria) {
@@ -52,10 +52,10 @@ function verificarPalpite(palpite) {
         }
 
         if (window.FG11Stats) {
-            const bucket = Math.min(Math.max(estado.companheirosRevelados - 1, 0), 4);
+            const indiceFaixaEstatistica = Math.min(Math.max(estado.companheirosRevelados - 1, 0), 4);
             window.FG11Stats.registrar("football-jogou-com", {
                 venceu: true,
-                bucket,
+                bucket: indiceFaixaEstatistica,
                 tamanho: 5
             });
         }
@@ -63,7 +63,7 @@ function verificarPalpite(palpite) {
         setTimeout(() => {
             mostrarResultado(
                 "Acertou!",
-                `O jogador era ${estado.rodadaAtual.resposta}. +${pts} pontos! (${estado.companheirosRevelados} pista${estado.companheirosRevelados > 1 ? "s" : ""} usada${estado.companheirosRevelados > 1 ? "s" : ""})`,
+                `O jogador era ${estado.rodadaAtual.resposta}. +${pontosRodada} pontos! (${estado.companheirosRevelados} pista${estado.companheirosRevelados > 1 ? "s" : ""} usada${estado.companheirosRevelados > 1 ? "s" : ""})`,
                 '<i class="fas fa-check-circle" style="color:#2ecc71"></i>'
             );
         }, 800);
@@ -71,13 +71,13 @@ function verificarPalpite(palpite) {
         if (estado.companheirosRevelados >= 5) {
             finalizarErro();
         } else {
-            limparInput();
-            focarInput();
+            limparCampoPalpite();
+            focarCampoPalpite();
         }
     }
 }
 
-function pular() {
+function revelarProximaPista() {
     if (!estado.jogoAtivo) {
         return;
     }
@@ -93,8 +93,8 @@ function pular() {
         mostrarDica();
     }
 
-    limparInput();
-    focarInput();
+    limparCampoPalpite();
+    focarCampoPalpite();
 }
 
 function finalizarErro() {
@@ -104,7 +104,7 @@ function finalizarErro() {
 
     revelarTodos();
     mostrarResposta(false);
-    desabilitarInput();
+    desabilitarCampoPalpite();
     atualizarPlacar();
 
     if (window.registrarDerrota) {
@@ -144,12 +144,12 @@ function finalizarErro() {
 function proximaRodada() {
     esconderResultado();
     esconderDica();
-    resetarRespostaCard();
+    reiniciarCartaoResposta();
     escolherRodada();
-    renderizarCards();
-    limparInput();
-    habilitarInput();
-    focarInput();
+    renderizarCartoesCompanheiros();
+    limparCampoPalpite();
+    habilitarCampoPalpite();
+    focarCampoPalpite();
     atualizarPlacar();
 }
 
@@ -160,54 +160,54 @@ function filtrarSugestoes(texto) {
         return;
     }
 
-    const norm = normalizar(texto);
+    const textoNormalizado = normalizarNomeJogador(texto);
     const nomes = obterNomesJogadores();
-    const filtrados = nomes.filter(n => normalizar(n).includes(norm));
+    const filtrados = nomes.filter(nome => normalizarNomeJogador(nome).includes(textoNormalizado));
     mostrarSugestoes(filtrados);
 }
 
 // --- CONFIGURAR EVENTOS ---
 function configurarEventos() {
-    const input = document.getElementById("palpiteInput");
-    const confirmarBtn = document.getElementById("confirmarBtn");
-    const pularBtn = document.getElementById("pularBtn");
-    const proximaBtn = document.getElementById("proximaRodadaBtn");
+    const campoPalpite = document.getElementById("palpiteInput");
+    const btnConfirmarPalpite = document.getElementById("btnConfirmarPalpite");
+    const btnRevelarProximaPista = document.getElementById("btnRevelarProximaPista");
+    const btnAvancarRodada = document.getElementById("btnAvancarRodada");
     const sugestoesLista = document.getElementById("sugestoesLista");
 
     // --- CONFIRMAR ---
-    confirmarBtn.addEventListener("click", () => {
-        verificarPalpite(input.value);
+    btnConfirmarPalpite.addEventListener("click", () => {
+        verificarPalpite(campoPalpite.value);
     });
 
     // --- ENTER NO INPUT ---
-    input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            verificarPalpite(input.value);
+    campoPalpite.addEventListener("keydown", (evento) => {
+        if (evento.key === "Enter") {
+            evento.preventDefault();
+            verificarPalpite(campoPalpite.value);
         }
     });
 
-    pularBtn.addEventListener("click", () => pular());
-    proximaBtn.addEventListener("click", () => proximaRodada());
+    btnRevelarProximaPista.addEventListener("click", () => revelarProximaPista());
+    btnAvancarRodada.addEventListener("click", () => proximaRodada());
 
     // --- AUTOCOMPLETE TYPING ---
-    input.addEventListener("input", () => {
-        filtrarSugestoes(input.value);
+    campoPalpite.addEventListener("input", () => {
+        filtrarSugestoes(campoPalpite.value);
     });
 
     // --- CLICAR EM SUGESTÃO ---
-    sugestoesLista.addEventListener("click", (e) => {
-        const item = e.target.closest(".sugestao-item");
+    sugestoesLista.addEventListener("click", (evento) => {
+        const item = evento.target.closest(".sugestao-item");
         if (item) {
-            input.value = item.textContent;
+            campoPalpite.value = item.textContent;
             esconderSugestoes();
-            verificarPalpite(input.value);
+            verificarPalpite(campoPalpite.value);
         }
     });
 
     // --- FECHAR SUGESTÕES AO CLICAR FORA ---
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-wrapper")) {
+    document.addEventListener("click", (evento) => {
+        if (!evento.target.closest(".input-wrapper")) {
             esconderSugestoes();
         }
     });
@@ -218,10 +218,10 @@ async function iniciar() {
     try {
         await carregarDados();
         escolherRodada();
-        renderizarCards();
+        renderizarCartoesCompanheiros();
         atualizarPlacar();
         configurarEventos();
-        focarInput();
+        focarCampoPalpite();
     } catch (erro) {
         console.error("Erro ao inicializar Football Jogou Com:", erro);
     }

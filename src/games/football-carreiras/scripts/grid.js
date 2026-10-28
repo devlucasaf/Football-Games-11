@@ -1,28 +1,28 @@
 import estado from "./core.js";
 import { buscarEscudo } from "./data.js";
-import { atualizarInfo } from "./ui.js";
+import { atualizarInformacoesCarreira } from "./ui.js";
 
 // --- CRIA A GRADE DE CLUBES ---
-export function criarGrid() {
-    const grid = document.getElementById("carreirasGrid");
-    grid.innerHTML = "";
+export function criarGradeClubesCarreira() {
+    const gradeClubesCarreira = document.getElementById("carreirasGrid");
+    gradeClubesCarreira.innerHTML = "";
 
     const clubes = estado.jogadorAtual.clubes;
 
-    clubes.forEach((clube, idx) => {
-        const card = document.createElement("div");
+    clubes.forEach((clube, indiceClube) => {
+        const cartaoClube = document.createElement("div");
 
-        card.className = "clube-card hidden-club";
-        card.dataset.index = idx;
+        cartaoClube.className = "clube-card hidden-club";
+        cartaoClube.dataset.index = indiceClube;
 
         const numero = document.createElement("div");
 
         numero.className = "clube-number";
-        numero.textContent = idx + 1;
-        card.appendChild(numero);
+        numero.textContent = indiceClube + 1;
+        cartaoClube.appendChild(numero);
 
-        const escudoContainer = document.createElement("div");
-        escudoContainer.className = "clube-escudo";
+        const recipienteEscudo = document.createElement("div");
+        recipienteEscudo.className = "clube-escudo";
         const escudo = buscarEscudo(clube);
         if (escudo) {
             const imagem = document.createElement("img");
@@ -30,59 +30,59 @@ export function criarGrid() {
             imagem.src = escudo;
             imagem.alt = clube;
             imagem.title = clube;
-            imagem.onerror = () => { escudoContainer.textContent = clube; };
+            imagem.onerror = () => { recipienteEscudo.textContent = clube; };
 
-            escudoContainer.appendChild(imagem);
+            recipienteEscudo.appendChild(imagem);
         } else {
-            escudoContainer.style.fontSize = "0.65rem";
-            escudoContainer.style.fontWeight = "700";
-            escudoContainer.style.color = "var(--text-primary)";
-            escudoContainer.style.textAlign = "center";
-            escudoContainer.style.padding = "4px";
-            escudoContainer.textContent = clube;
+            recipienteEscudo.style.fontSize = "0.65rem";
+            recipienteEscudo.style.fontWeight = "700";
+            recipienteEscudo.style.color = "var(--text-primary)";
+            recipienteEscudo.style.textAlign = "center";
+            recipienteEscudo.style.padding = "4px";
+            recipienteEscudo.textContent = clube;
         }
-        card.appendChild(escudoContainer);
+        cartaoClube.appendChild(recipienteEscudo);
 
         const nome = document.createElement("div");
 
         nome.className = "clube-nome";
         nome.textContent = clube;
 
-        card.appendChild(nome);
+        cartaoClube.appendChild(nome);
 
-        grid.appendChild(card);
+        gradeClubesCarreira.appendChild(cartaoClube);
     });
 
     revelarProximo();
-    atualizarInfo();
+    atualizarInformacoesCarreira();
 }
 
 // --- REVELA O PRÓXIMO CLUBE ---
 export function revelarProximo() {
-    const cards = document.querySelectorAll(".clube-card");
+    const cartoesClubes = document.querySelectorAll(".clube-card");
     
-    if (estado.clubesRevelados >= cards.length) {
+    if (estado.clubesRevelados >= cartoesClubes.length) {
         return;
     }
 
-    const card = cards[estado.clubesRevelados];
+    const cartaoClube = cartoesClubes[estado.clubesRevelados];
 
-    card.classList.remove("hidden-club");
-    card.classList.add("revealed");
+    cartaoClube.classList.remove("hidden-club");
+    cartaoClube.classList.add("revealed");
     
     estado.clubesRevelados++;
-    atualizarInfo();
+    atualizarInformacoesCarreira();
 }
 
 // --- REVELA TODOS OS CLUBES RESTANTES ---
 export function revelarTodos() {
-    const cards = document.querySelectorAll(".clube-card");
-    cards.forEach((card, idx) => {
-        if (!card.classList.contains("revealed")) {
+    const cartoesClubes = document.querySelectorAll(".clube-card");
+    cartoesClubes.forEach((cartaoClube, indiceClube) => {
+        if (!cartaoClube.classList.contains("revealed")) {
             setTimeout(() => {
-                card.classList.remove("hidden-club");
-                card.classList.add("revealed", "reveal-all");
-            }, idx * 80);
+                cartaoClube.classList.remove("hidden-club");
+                cartaoClube.classList.add("revealed", "reveal-all");
+            }, indiceClube * 80);
         }
     });
 }

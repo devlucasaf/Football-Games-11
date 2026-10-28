@@ -10,7 +10,7 @@ export async function carregarDados() {
             const dadosCentral = await respostaCentral.json();
             jogadoresCentral = Array.isArray(dadosCentral.jogadores) ? dadosCentral.jogadores : [];
         }
-    } catch (e) {
+    } catch (erroCarregamentoCentral) {
         jogadoresCentral = [];
     }
 
@@ -22,23 +22,23 @@ export async function carregarDados() {
     const dadosCarreiras = await respostaCarreiras.json();
 
     const porNome = new Map();
-    dadosCarreiras.jogadores.forEach(j => porNome.set(normalizar(j.nome), j));
-    jogadoresCentral.forEach(j => porNome.set(normalizar(j.nome), j));
+    dadosCarreiras.jogadores.forEach(jogador => porNome.set(normalizar(jogador.nome), jogador));
+    jogadoresCentral.forEach(jogador => porNome.set(normalizar(jogador.nome), jogador));
 
-    estado.jogadores = [...porNome.values()].filter(j => j.clubes && j.clubes.length >= 3);
+    estado.jogadores = [...porNome.values()].filter(jogador => jogador.clubes && jogador.clubes.length >= 3);
 
-    const respostaGrid = await fetch(
+    const respostaEscudosClubes = await fetch(
         "../football-grid/data/football-grid.json",
         { cache: "no-store" }
     );
 
-    if (!respostaGrid.ok) {
-        throw new Error(`Erro ao carregar escudos (${respostaGrid.status})`);
+    if (!respostaEscudosClubes.ok) {
+        throw new Error(`Erro ao carregar escudos (${respostaEscudosClubes.status})`);
     }
-    const dadosGrid = await respostaGrid.json();
+    const dadosEscudosClubes = await respostaEscudosClubes.json();
 
-    dadosGrid.clubes.forEach(c => {
-        estado.escudos.set(normalizar(c.nome), c.escudo);
+    dadosEscudosClubes.clubes.forEach(clube => {
+        estado.escudos.set(normalizar(clube.nome), clube.escudo);
     });
 }
 
@@ -49,9 +49,9 @@ export function buscarEscudo(nomeClube) {
 
 // --- ESCOLHER JOGADOR ALEATÓRIO ---
 export function escolherJogador() {
-    const idx = Math.floor(Math.random() * estado.jogadores.length);
+    const indiceJogador = Math.floor(Math.random() * estado.jogadores.length);
     
-    estado.jogadorAtual = estado.jogadores[idx];
+    estado.jogadorAtual = estado.jogadores[indiceJogador];
     estado.clubesRevelados = 0;
     estado.erros = 0;
     estado.jogoAtivo = true;

@@ -1,5 +1,5 @@
 (function () {
-    const categorias = {
+    const categoriasJogos = {
         "adivinhacao":  { 
             rotuloKey: "cat-adivinhacao",  
             rotulo: "Adivinhação",  
@@ -42,8 +42,8 @@
         }
     };
 
-    // --- DESTAQUE: JOGOS EM EVIDÊNCIA NA HOME ---
-    const jogos = [
+    // --- JOGOS EM EVIDÊNCIA NA HOME ---
+    const jogosCatalogo = [
         { 
             id: "football-termo",              
             tituloKey: "football-termo-title",              
@@ -322,12 +322,12 @@
     ];
 
     // --- CAMINHO DA PÁGINA DE CADA JOGO ---
-    jogos.forEach(jogo => {
+    jogosCatalogo.forEach(jogo => {
         jogo.pagina = `src/games/${jogo.id}/${jogo.id}.html`;
     });
 
     window.FG11Catalogo = { 
-        categorias, 
-        jogos 
+        categorias: categoriasJogos, 
+        jogos: jogosCatalogo 
     };
 })();

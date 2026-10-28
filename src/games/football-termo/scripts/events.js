@@ -1,55 +1,55 @@
-import { normalizar }                   from "./utils.js";
+import { normalizar as normalizarTexto }                   from "./utils.js";
 import { inserirLetra, apagarLetra }    from "./input.js";
 import { confirmarTentativa }           from "./logic.js";
 
 // --- CONFIGURAÇÃO DOS EVENTOS DO JOGO ---
 export function configurarEventos(reiniciarJogo) {
-    document.addEventListener("keydown", (e) => {
-        if (e.ctrlKey || e.altKey || e.metaKey) {
+    document.addEventListener("keydown", (eventoTeclado) => {
+        if (eventoTeclado.ctrlKey || eventoTeclado.altKey || eventoTeclado.metaKey) {
             return;
         }
 
-        if (e.key === "Enter") {
-            e.preventDefault();                 
+        if (eventoTeclado.key === "Enter") {
+            eventoTeclado.preventDefault();
             confirmarTentativa();               
-        } else if (e.key === "Backspace") {
-            e.preventDefault();                 
+        } else if (eventoTeclado.key === "Backspace") {
+            eventoTeclado.preventDefault();
             apagarLetra();                      
-        } else if (e.key === " ") {
-            e.preventDefault();                 
+        } else if (eventoTeclado.key === " ") {
+            eventoTeclado.preventDefault();
             inserirLetra(" ");                  
         } else {
-            const letra = e.key.toUpperCase();
+            const letra = eventoTeclado.key.toUpperCase();
             if (/^[A-Z]$/.test(letra)) {
-                inserirLetra(normalizar(letra)); 
+                inserirLetra(normalizarTexto(letra)); 
             }
         }
     });
 
     // --- TECLADO VIRTUAL ---
-    document.getElementById("keyboard").addEventListener("click", (e) => {
-        const tecla = e.target.closest(".key");
+    document.getElementById("tecladoVirtual").addEventListener("click", (eventoClique) => {
+        const tecla = eventoClique.target.closest(".key");
         if (!tecla) {
             return;                             
         }
 
-        const key = tecla.dataset.key;
-        if (key === "ENTER") {
+        const valorTecla = tecla.dataset.key;
+        if (valorTecla === "ENTER") {
             confirmarTentativa();
-        } else if (key === "BACKSPACE") {
+        } else if (valorTecla === "BACKSPACE") {
             apagarLetra();
-        } else if (key === " ") {
+        } else if (valorTecla === " ") {
             inserirLetra(" ");
         } else {
-            inserirLetra(normalizar(key));      
+            inserirLetra(normalizarTexto(valorTecla));
         }
     });
 
-    document.getElementById("newGameBtn").addEventListener("click", () => {
+    document.getElementById("btnIniciarNovoJogo").addEventListener("click", () => {
         reiniciarJogo();                        
     });
 
-    document.getElementById("messageCloseBtn").addEventListener("click", () => {
+    document.getElementById("btnFecharMensagem").addEventListener("click", () => {
         reiniciarJogo();                        
     });
 }

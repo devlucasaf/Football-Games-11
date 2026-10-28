@@ -1,99 +1,99 @@
-import { estado, totalConvocados, POSICOES, LIMITES, LABELS } from "./core.js";
+import { estado, obterTotalConvocados, POSICOES, LIMITES, ROTULOS_POSICOES } from "./core.js";
 import { obterOpcoesPorPosicao } from "./data.js";
 
 // --- RENDERIZA TODOS OS GRUPOS DE POSIÇÃO COM SLOTS ---
-export function renderizarGrupos(onSlotClick) {
-    const container = document.getElementById("positionGroups");
-    container.innerHTML = "";
+export function renderizarGruposPosicoes(aoSelecionarPosicao) {
+    const gruposPosicoes = document.getElementById("positionGroups");
+    gruposPosicoes.innerHTML = "";
 
-    POSICOES.forEach(pos => {
-        const limite = LIMITES[pos];
-        const group = document.createElement("div");
-        group.className = "position-group";
-        group.id = `group-${pos}`;
+    POSICOES.forEach(posicao => {
+        const limite = LIMITES[posicao];
+        const grupoPosicao = document.createElement("div");
+        grupoPosicao.className = "position-group";
+        grupoPosicao.id = `grupo-${posicao}`;
 
-        const preenchidos = estado.convocados[pos].length;
+        const preenchidos = estado.convocados[posicao].length;
 
-        group.innerHTML = `
+        grupoPosicao.innerHTML = `
             <div class="group-header">
-                <h3>${LABELS[pos]}</h3>
+                <h3>${ROTULOS_POSICOES[posicao]}</h3>
                 <span class="group-counter">${preenchidos}/${limite}</span>
             </div>
-            <div class="slots-container" id="slots-${pos}"></div>
+            <div class="slots-container" id="posicoes-${posicao}"></div>
         `;
 
-        const slotsDiv = group.querySelector(".slots-container");
+        const posicoesConvocacao = grupoPosicao.querySelector(".slots-container");
 
-        for (let i = 0; i < limite; i++) {
-            const jogador = estado.convocados[pos][i];
-            const slot = document.createElement("button");
-            slot.className = "player-slot" + (jogador ? " filled" : "");
-            slot.dataset.pos = pos;
-            slot.dataset.index = i;
+        for (let indiceJogador = 0; indiceJogador < limite; indiceJogador++) {
+            const jogador = estado.convocados[posicao][indiceJogador];
+            const btnSelecionarConvocado = document.createElement("button");
+            btnSelecionarConvocado.className = "player-slot" + (jogador ? " filled" : "");
+            btnSelecionarConvocado.dataset.posicao = posicao;
+            btnSelecionarConvocado.dataset.indiceJogador = indiceJogador;
 
             if (jogador) {
-                slot.innerHTML = `<span class="slot-name">${jogador}</span><span class="slot-remove" data-pos="${pos}" data-index="${i}"><i class="fas fa-xmark"></i></span>`;
+                btnSelecionarConvocado.innerHTML = `<span class="slot-name">${jogador}</span><span class="slot-remove" data-posicao="${posicao}" data-indice-jogador="${indiceJogador}"><i class="fas fa-xmark"></i></span>`;
             } else {
-                slot.innerHTML = `<i class="fas fa-plus"></i><span class="slot-label">Escolher</span>`;
-                slot.addEventListener("click", () => onSlotClick(pos));
+                btnSelecionarConvocado.innerHTML = `<i class="fas fa-plus"></i><span class="slot-label">Escolher</span>`;
+                btnSelecionarConvocado.addEventListener("click", () => aoSelecionarPosicao(posicao));
             }
 
-            slotsDiv.appendChild(slot);
+            posicoesConvocacao.apbtnSelecionarConvocadoChild(slot);
         }
 
-        container.appendChild(group);
+        gruposPosicoes.appendChild(grupoPosicao);
     });
 }
 
 // --- ATUALIZA CONTADOR GERAL ---
-export function atualizarContador() {
-    document.getElementById("squadCount").textContent = totalConvocados();
-    const btnConfirm = document.getElementById("btnConfirm");
-    btnConfirm.disabled = totalConvocados() < 26;
+export function atualizarContadorConvocados() {
+    document.getElementById("squadCount").textContent = obterTotalConvocados();
+    const btnConfirmarConvocacao = document.getElementById("btnConfirm");
+    btnConfirmarConvocacao.disabled = obterTotalConvocados() < 26;
 }
 
 // --- ABRE MODAL DE OPÇÕES PARA UMA POSIÇÃO ---
-export function abrirModal(pos, onSelect) {
+export function abrirModalJogadores(posicao, aoSelecionarJogador) {
     const modal = document.getElementById("playerModal");
-    const title = document.getElementById("modalTitle");
-    const list = document.getElementById("modalPlayerList");
+    const tituloModalJogadores = document.getElementById("modalTitle");
+    const listaJogadores = document.getElementById("modalPlayerList");
 
-    title.textContent = `${LABELS[pos]} (${estado.convocados[pos].length}/${LIMITES[pos]})`;
-    list.innerHTML = "";
+    tituloModalJogadores.textContent = `${ROTULOS_POSICOES[posicao]} (${estado.convocados[posicao].length}/${LIMITES[posicao]})`;
+    listaJogadores.innerHTML = "";
 
-    const opcoes = obterOpcoesPorPosicao(pos);
+    const opcoes = obterOpcoesPorPosicao(posicao);
     const jaEscolhidos = Object.values(estado.convocados).flat();
 
     opcoes.forEach(nome => {
-        const item = document.createElement("button");
-        item.className = "modal-player-item";
+        const btnSelecionarJogador = document.createElement("button");
+        btnSelecionarJogador.className = "modal-player-item";
 
         if (jaEscolhidos.includes(nome)) {
-            item.classList.add("disabled");
-            item.disabled = true;
-            item.innerHTML = `<span>${nome}</span><i class="fas fa-check"></i>`;
+            btnSelecionarJogador.classList.add("disabled");
+            btnSelecionarJogador.disabled = true;
+            btnSelecionarJogador.innerHTML = `<span>${nome}</span><i class="fas fa-check"></i>`;
         } else {
-            item.innerHTML = `<span>${nome}</span>`;
-            item.addEventListener("click", () => {
-                onSelect(pos, nome);
-                fecharModal();
+            btnSelecionarJogador.innerHTML = `<span>${nome}</span>`;
+            btnSelecionarJogador.addEventListener("click", () => {
+                aoSelecionarJogador(posicao, nome);
+                fecharModalJogadores();
             });
         }
 
-        list.appendChild(item);
+        listaJogadores.apbtnSelecionarJogadorChild(item);
     });
 
     modal.classList.add("active");
 }
 
 // --- FECHA MODAL ---
-export function fecharModal() {
+export function fecharModalJogadores() {
     document.getElementById("playerModal").classList.remove("active");
 }
 
 // --- RENDERIZA TELA DE RESULTADOS ---
-export function renderizarResultados(convocadosUsuario, convocadosOficiais) {
-    const nomesOficiais = convocadosOficiais.map(j => j.nome);
+export function renderizarResultadosConvocacao(convocadosUsuario, convocadosOficiais) {
+    const nomesOficiais = convocadosOficiais.map(jogador => jogador.nome);
     const nomesUsuario = Object.values(convocadosUsuario).flat();
 
     let acertos = 0;
@@ -106,47 +106,47 @@ export function renderizarResultados(convocadosUsuario, convocadosOficiais) {
     document.getElementById("scoreNumber").textContent = acertos;
 
     // --- SUA CONVOCAÇÃO ---
-    const yourDiv = document.getElementById("yourSquadResult");
-    yourDiv.innerHTML = "";
-    POSICOES.forEach(pos => {
-        if (convocadosUsuario[pos].length === 0) {
+    const resultadoConvocacaoUsuario = document.getElementById("yourSquadResult");
+    resultadoConvocacaoUsuario.innerHTML = "";
+    POSICOES.forEach(posicao => {
+        if (convocadosUsuario[posicao].length === 0) {
             return;
         }
 
-        const group = document.createElement("div");
-        group.className = "result-group";
-        group.innerHTML = `<h4>${LABELS[pos]}</h4><ul></ul>`;
+        const grupoResultado = document.createElement("div");
+        grupoResultado.className = "result-group";
+        grupoResultado.innerHTML = `<h4>${ROTULOS_POSICOES[posicao]}</h4><ul></ul>`;
         
-        const ul = group.querySelector("ul");
-        convocadosUsuario[pos].forEach(nome => {
-            const li = document.createElement("li");
-            li.textContent = nome;
-            li.className = nomesOficiais.includes(nome) ? "correct" : "wrong";
-            ul.appendChild(li);
+        const listaJogadores = grupoResultado.querySelector("ul");
+        convocadosUsuario[posicao].forEach(nome => {
+            const itemJogador = document.createElement("li");
+            itemJogador.textContent = nome;
+            itemJogador.className = nomesOficiais.includes(nome) ? "correct" : "wrong";
+            listaJogadores.appendChild(itemJogador);
         });
-        yourDiv.appendChild(group);
+        resultadoConvocacaoUsuario.appendChild(grupoResultado);
     });
 
     // --- CONVOCAÇÃO OFICIAL ---
-    const officialDiv = document.getElementById("officialSquadResult");
-    officialDiv.innerHTML = "";
-    POSICOES.forEach(pos => {
-        const jogadores = convocadosOficiais.filter(j => j.posicao === pos);
+    const resultadoConvocacaoOficial = document.getElementById("officialSquadResult");
+    resultadoConvocacaoOficial.innerHTML = "";
+    POSICOES.forEach(posicao => {
+        const jogadores = convocadosOficiais.filter(jogador => jogador.posicao === posicao);
         if (jogadores.length === 0) {
             return;
         }
 
-        const group = document.createElement("div");
-        group.className = "result-group";
-        group.innerHTML = `<h4>${LABELS[pos]}</h4><ul></ul>`;
+        const grupoResultado = document.createElement("div");
+        grupoResultado.className = "result-group";
+        grupoResultado.innerHTML = `<h4>${ROTULOS_POSICOES[posicao]}</h4><ul></ul>`;
 
-        const ul = group.querySelector("ul");
-        jogadores.forEach(j => {
-            const li = document.createElement("li");
-            li.textContent = j.nome;
-            li.className = nomesUsuario.includes(j.nome) ? "correct" : "missed";
-            ul.appendChild(li);
+        const listaJogadores = grupoResultado.querySelector("ul");
+        jogadores.forEach(jogador => {
+            const itemJogador = document.createElement("li");
+            itemJogador.textContent = jogador.nome;
+            itemJogador.className = nomesUsuario.includes(jogador.nome) ? "correct" : "missed";
+            listaJogadores.appendChild(itemJogador);
         });
-        officialDiv.appendChild(group);
+        resultadoConvocacaoOficial.appendChild(grupoResultado);
     });
 }

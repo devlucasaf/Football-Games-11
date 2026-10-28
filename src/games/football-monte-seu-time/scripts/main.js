@@ -3,8 +3,8 @@ import {
     carregarDados,
     sortearProximo,
     reiniciarJogo,
-    contarSlotsOcupados,
-    slotsCompletos,
+    contarCategoriasPreenchidas,
+    todasCategoriasPreenchidas,
     imagemDaCategoria,
     legendaDaCategoria
 } from "./data.js?v=3";
@@ -26,56 +26,56 @@ const CORES_TIMES = {
     "bahia": "#0d6bb0"
 };
 
-const ID_JOGO = "football-monte-seu-time";
+const IDENTIFICADOR_JOGO = "football-monte-seu-time";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DO DOM ---
-const els = {
-    hudRodada:      document.getElementById("hudRodada"),
-    hudTotal:       document.getElementById("hudTotal"),
-    hudSlots:       document.getElementById("hudSlots"),
-    drawArea:       document.getElementById("drawArea"),
-    drawBadge:      document.getElementById("drawBadge"),
-    drawName:       document.getElementById("drawName"),
-    drawInfo:       document.getElementById("drawInfo"),
-    drawActions:    document.getElementById("drawActions"),
-    slotsGrid:      document.getElementById("slotsGrid"),
-    loadingState:   document.getElementById("loadingState"),
-    errorState:     document.getElementById("errorState"),
-    finalOverlay:   document.getElementById("finalOverlay"),
-    finalClose:     document.getElementById("finalClose"),
-    finalKicker:    document.getElementById("finalKicker"),
-    finalTitle:     document.getElementById("finalTitle"),
-    finalSubtitle:  document.getElementById("finalSubtitle"),
-    finalBanner:    document.getElementById("finalBanner"),
-    finalRetry:     document.getElementById("finalRetry"),
-    finalHome:      document.getElementById("finalHome")
+const elementosMontagemTime = {
+    painelRodada:      document.getElementById("hudRodada"),
+    painelTotalRodadas:       document.getElementById("hudTotal"),
+    painelCategoriasLivres:       document.getElementById("hudSlots"),
+    areaSorteio:       document.getElementById("drawArea"),
+    escudoTimeSorteado:      document.getElementById("drawBadge"),
+    nomeTimeSorteado:       document.getElementById("drawName"),
+    informacoesTimeSorteado:       document.getElementById("drawInfo"),
+    acoesTimeSorteado:    document.getElementById("drawActions"),
+    gradeCategorias:      document.getElementById("slotsGrid"),
+    estadoCarregamento:   document.getElementById("loadingState"),
+    estadoErro:     document.getElementById("errorState"),
+    sobreposicaoResultadoFinal:   document.getElementById("finalOverlay"),
+    btnFecharResultadoFinal:     document.getElementById("btnFecharResultadoFinal"),
+    resumoResultadoFinal:    document.getElementById("finalKicker"),
+    tituloResultadoFinal:     document.getElementById("finalTitle"),
+    subtituloResultadoFinal:  document.getElementById("finalSubtitle"),
+    painelTimeFinal:    document.getElementById("finalBanner"),
+    btnJogarNovamente:     document.getElementById("btnJogarNovamente"),
+    btnVoltarPaginaInicial:      document.getElementById("btnVoltarPaginaInicial")
 };
 
 // --- TEXTO TRADUZIDO COM FALLBACK ---
-function t(chave, padrao) {
+function obterTextoTraduzido(chave, padrao) {
     return window.fg11Texto ? window.fg11Texto(chave, padrao) : padrao;
 }
 
 // --- ÍCONE DE CADA CATEGORIA ---
-function iconeDe(categoria) {
+function obterIconeCategoria(categoria) {
     return categoria.icone || "fa-question-circle";
 }
 
 // --- CATEGORIAS CUJA IMAGEM É UM LOGO/PEÇA (aparece inteira, sem cortar) ---
 const CATEGORIAS_AJUSTADAS = ["escudo", "dinheiro", "uniforme"];
 
-function eAjustada(categoriaId, time) {
-    return CATEGORIAS_AJUSTADAS.includes(categoriaId) || time[categoriaId + "_ajuste"] === "contain";
+function imagemCategoriaAjustada(identificadorCategoria, time) {
+    return CATEGORIAS_AJUSTADAS.includes(identificadorCategoria) || time[identificadorCategoria + "_ajuste"] === "contain";
 }
 
 // --- CONSTRÓI O BLOCO DE IMAGEM + FALLBACK ---
-function htmlMedia(time, categoriaId, classe = "") {
-    const url = imagemDaCategoria(time, categoriaId);
-    const legenda = legendaDaCategoria(time, categoriaId);
-    const icone = iconeDe(CATEGORIAS.find(c => c.id === categoriaId));
+function gerarMarcacaoImagemCategoria(time, identificadorCategoria, classe = "") {
+    const enderecoImagem = imagemDaCategoria(time, identificadorCategoria);
+    const legenda = legendaDaCategoria(time, identificadorCategoria);
+    const icone = obterIconeCategoria(CATEGORIAS.find(categoria => categoria.id === identificadorCategoria));
     const inicial = (time.nome || "?").substring(0, 3).toUpperCase();
 
-    if (!url) {
+    if (!enderecoImagem) {
         return `
             <div class="monte-media-fallback ${classe}">
                 <i class="fas ${icone}"></i>
@@ -84,8 +84,8 @@ function htmlMedia(time, categoriaId, classe = "") {
     }
 
     return `
-        <img class="monte-slot-img${eAjustada(categoriaId, time) ? " is-contain" : ""} ${classe}"
-            src="${url}"
+        <img class="monte-slot-img${imagemCategoriaAjustada(identificadorCategoria, time) ? " is-contain" : ""} ${classe}"
+            src="${enderecoImagem}"
             alt="${legenda}"
             loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
@@ -97,18 +97,18 @@ function htmlMedia(time, categoriaId, classe = "") {
 }
 
 // --- VERSÃO PARA O CARTÃO DO SORTEIO ---
-function htmlEscudoSorteio(time) {
-    const url = imagemDaCategoria(time, "escudo");
+function gerarMarcacaoEscudoSorteio(time) {
+    const enderecoImagem = imagemDaCategoria(time, "escudo");
     const inicial = (time.nome || "?").substring(0, 3).toUpperCase();
     const icone = "fa-shield-halved";
 
-    if (!url) {
+    if (!enderecoImagem) {
         return `<div class="monte-media-fallback is-lg"><i class="fas ${icone}"></i><span>${inicial}</span></div>`;
     }
 
     return `
         <img class="monte-slot-img is-badge is-lg"
-            src="${url}"
+            src="${enderecoImagem}"
             alt="${time.nome}"
             onerror="this.style.display='none';this.parentElement.querySelector('.monte-media-fallback').style.display='flex';"
         />
@@ -119,14 +119,14 @@ function htmlEscudoSorteio(time) {
 }
 
 // --- ATUALIZA O HUD ---
-function atualizarHud() {
-    const livres = CATEGORIAS.length - contarSlotsOcupados();
-    if (els.hudRodada) {
-        els.hudRodada.textContent = String(estado.rodada);
+function atualizarPainelPartida() {
+    const livres = CATEGORIAS.length - contarCategoriasPreenchidas();
+    if (elementosMontagemTime.painelRodada) {
+        elementosMontagemTime.painelRodada.textContent = String(estado.rodada);
     }
 
-    if (els.hudSlots) {
-        els.hudSlots.textContent = String(livres);
+    if (elementosMontagemTime.painelCategoriasLivres) {
+        elementosMontagemTime.painelCategoriasLivres.textContent = String(livres);
     }
 }
 
@@ -138,106 +138,106 @@ function renderizarSorteio() {
     }
 
     const cor = CORES_TIMES[time.id] || "#22703f";
-    const card = els.drawArea;
-    card.style.setProperty("--team-accent", cor);
+    const cartaoSorteio = elementosMontagemTime.areaSorteio;
+    cartaoSorteio.style.setProperty("--team-accent", cor);
 
-    els.drawBadge.innerHTML = htmlEscudoSorteio(time);
-    els.drawName.textContent = time.nome;
-    els.drawInfo.textContent = [time.cidade, time.apelido, time.pais].filter(Boolean).join(" · ");
+    elementosMontagemTime.escudoTimeSorteado.innerHTML = gerarMarcacaoEscudoSorteio(time);
+    elementosMontagemTime.nomeTimeSorteado.textContent = time.nome;
+    elementosMontagemTime.informacoesTimeSorteado.textContent = [time.cidade, time.apelido, time.pais].filter(Boolean).join(" · ");
 
-    card.classList.remove("is-revealed");
-    void card.offsetWidth;
-    card.classList.add("is-revealed");
+    cartaoSorteio.classList.remove("is-revealed");
+    void cartaoSorteio.offsetWidth;
+    cartaoSorteio.classList.add("is-revealed");
 
     renderizarAcoes(time);
 }
 
 // --- BOTÕES DE AÇÃO ---
 function renderizarAcoes(time) {
-    const vazios = CATEGORIAS.filter(categoria => estado.slots[categoria.id] === null);
+    const vazios = CATEGORIAS.filter(categoria => estado.categoriasPreenchidas[categoria.id] === null);
 
-    const chips = vazios.map(categoria => `
-        <button class="monte-place-chip" data-cat="${categoria.id}" type="button">
-            <i class="fas ${iconeDe(categoria)}" aria-hidden="true"></i>
+    const marcacaoBotoesCategorias = vazios.map(categoria => `
+        <button class="monte-place-chip" data-categoria="${categoria.id}" type="button">
+            <i class="fas ${obterIconeCategoria(categoria)}" aria-hidden="true"></i>
             <span>${categoria.etiqueta}</span>
         </button>`).join("");
 
-    els.drawActions.innerHTML = `
-        <div class="monte-draw-hint">${t("monte-place-hint", "Colocar em:")}</div>
-        <div class="monte-chips">${chips}</div>
-        <button class="monte-skip-btn" id="skipRoundBtn" type="button">
+    elementosMontagemTime.acoesTimeSorteado.innerHTML = `
+        <div class="monte-draw-hint">${obterTextoTraduzido("monte-place-hint", "Colocar em:")}</div>
+        <div class="monte-chips">${marcacaoBotoesCategorias}</div>
+        <button class="monte-skip-btn" id="btnPularRodada" type="button">
             <i class="fas fa-forward-step" aria-hidden="true"></i>
-            <span>${t("monte-skip-round", "Pular rodada")}</span>
+            <span>${obterTextoTraduzido("monte-skip-round", "Pular rodada")}</span>
         </button>`;
 
-    els.drawActions.querySelectorAll(".monte-place-chip").forEach(chip => {
-        chip.addEventListener("click", () => colocarNaCategoria(chip.dataset.cat));
+    elementosMontagemTime.acoesTimeSorteado.querySelectorAll(".monte-place-chip").forEach(btnPreencherCategoria => {
+        btnPreencherCategoria.addEventListener("click", () => colocarNaCategoria(btnPreencherCategoria.dataset.categoria));
     });
 
-    els.drawActions.querySelector("#skipRoundBtn").addEventListener("click", pularRodada);
+    elementosMontagemTime.acoesTimeSorteado.querySelector("#btnPularRodada").addEventListener("click", pularRodada);
 }
 
 // --- RENDERIZA OS 7 SLOTS DO PAINEL ---
-function renderizarSlots() {
-    els.slotsGrid.innerHTML = "";
+function renderizarCategoriasTime() {
+    elementosMontagemTime.gradeCategorias.innerHTML = "";
 
     CATEGORIAS.forEach(categoria => {
-        const ocupado = estado.slots[categoria.id] !== null;
-        const slot = document.createElement(ocupado ? "div" : "button");
-        slot.className = `monte-slot-card${ocupado ? " is-filled" : ""}`;
-        slot.dataset.cat = categoria.id;
+        const ocupado = estado.categoriasPreenchidas[categoria.id] !== null;
+        const elementoCategoria = document.createElement(ocupado ? "div" : "button");
+        elementoCategoria.className = `monte-slot-card${ocupado ? " is-filled" : ""}`;
+        elementoCategoria.dataset.categoria = categoria.id;
 
         if (!ocupado) {
-            slot.type = "button";
-            slot.setAttribute("aria-label", categoria.etiqueta);
-            slot.innerHTML = `
+            elementoCategoria.type = "button";
+            elementoCategoria.setAttribute("aria-label", categoria.etiqueta);
+            elementoCategoria.innerHTML = `
                 <div class="monte-slot-media">
                     <div class="monte-slot-empty">
-                        <i class="fas ${iconeDe(categoria)}" aria-hidden="true"></i>
+                        <i class="fas ${obterIconeCategoria(categoria)}" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="monte-slot-body">
                     <span class="monte-slot-label">${categoria.etiqueta}</span>
-                    <span class="monte-slot-caption">${t("monte-slot-free", "Slot vazio")}</span>
+                    <span class="monte-slot-caption">${obterTextoTraduzido("monte-slot-free", "Slot vazio")}</span>
                 </div>`;
-            slot.addEventListener("click", () => colocarNaCategoria(categoria.id));
+            elementoCategoria.addEventListener("click", () => colocarNaCategoria(categoria.id));
         } else {
-            const time = estado.slots[categoria.id].time;
-            slot.setAttribute("aria-label", `${categoria.etiqueta}: ${time.nome}`);
-            slot.innerHTML = `
-                <div class="monte-slot-media${eAjustada(categoria.id, time) ? " is-contain" : ""}">${htmlMedia(time, categoria.id)}</div>
+            const time = estado.categoriasPreenchidas[categoria.id].time;
+            elementoCategoria.setAttribute("aria-label", `${categoria.etiqueta}: ${time.nome}`);
+            elementoCategoria.innerHTML = `
+                <div class="monte-slot-media${imagemCategoriaAjustada(categoria.id, time) ? " is-contain" : ""}">${gerarMarcacaoImagemCategoria(time, categoria.id)}</div>
                 <div class="monte-slot-body">
                     <span class="monte-slot-label">${categoria.etiqueta}</span>
                     <span class="monte-slot-caption">${legendaDaCategoria(time, categoria.id)}</span>
                 </div>`;
         }
 
-        els.slotsGrid.appendChild(slot);
+        elementosMontagemTime.gradeCategorias.appendChild(elementoCategoria);
     });
 }
 
 // --- COLOCA O TIME SORTEADO NUMA CATEGORIA ---
-function colocarNaCategoria(categoriaId) {
+function colocarNaCategoria(identificadorCategoria) {
     if (estado.terminado || !estado.timeAtual) {
         return;
     }
 
-    if (estado.slots[categoriaId] !== null) {
+    if (estado.categoriasPreenchidas[identificadorCategoria] !== null) {
         return; 
     }
 
-    estado.slots[categoriaId] = { time: estado.timeAtual };
+    estado.categoriasPreenchidas[identificadorCategoria] = { time: estado.timeAtual };
     estado.timeAtual = null;
 
-    renderizarSlots();
-    atualizarHud();
+    renderizarCategoriasTime();
+    atualizarPainelPartida();
 
-    if (slotsCompletos()) {
+    if (todasCategoriasPreenchidas()) {
         terminarJogo(true);
         return;
     }
 
-    avancar();
+    avancarSorteio();
 }
 
 // --- PULA A RODADA ---
@@ -246,11 +246,11 @@ function pularRodada() {
         return;
     }
     estado.timeAtual = null;
-    avancar();
+    avancarSorteio();
 }
 
 // --- AVANÇA PARA O PRÓXIMO SORTEIO OU ENCERRA O JOGO AO ATINGIR O LIMITE ---
-function avancar() {
+function avancarSorteio() {
     if (estado.rodada >= LIMITE_RODADAS) {
         terminarJogo(false);
         return;
@@ -258,7 +258,7 @@ function avancar() {
 
     estado.rodada++;
     sortearProximo();
-    atualizarHud();
+    atualizarPainelPartida();
     renderizarSorteio();
 }
 
@@ -267,10 +267,10 @@ function terminarJogo(venceu) {
     estado.terminado = true;
     estado.venceu = venceu;
 
-    const ocupados = contarSlotsOcupados();
+    const ocupados = contarCategoriasPreenchidas();
 
     if (window.FG11Stats) {
-        window.FG11Stats.registrar(ID_JOGO, {
+        window.FG11Stats.registrar(IDENTIFICADOR_JOGO, {
             venceu,
             bucket: ocupados,
             tamanho: CATEGORIAS.length
@@ -282,29 +282,29 @@ function terminarJogo(venceu) {
 
 // --- CONTEÚDO DO MODAL DE RESULTADO ---
 function renderizarModalFinal(venceu) {
-    const ocupados = contarSlotsOcupados();
+    const ocupados = contarCategoriasPreenchidas();
 
-    els.finalKicker.textContent = venceu
-        ? t("monte-win-kicker", "7/7 categorias completadas")
-        : t("monte-loss-kicker", `Limite de ${LIMITE_RODADAS} sorteios atingido`);
+    elementosMontagemTime.resumoResultadoFinal.textContent = venceu
+        ? obterTextoTraduzido("monte-win-kicker", "7/7 categorias completadas")
+        : obterTextoTraduzido("monte-loss-kicker", `Limite de ${LIMITE_RODADAS} sorteios atingido`);
 
-    els.finalTitle.textContent = venceu
-        ? t("monte-win-title", "Time Perfeito!")
-        : t("monte-loss-title", "Fim de Jogo");
+    elementosMontagemTime.tituloResultadoFinal.textContent = venceu
+        ? obterTextoTraduzido("monte-win-title", "Time Perfeito!")
+        : obterTextoTraduzido("monte-loss-title", "Fim de Jogo");
 
-    els.finalSubtitle.textContent = venceu
-        ? t("monte-win-sub", `Você completou as 7 categorias em ${estado.rodada} de ${LIMITE_RODADAS} sorteios. Este é o seu Time Perfeito!`)
-        : t("monte-loss-sub", `Você chegou ao limite de ${LIMITE_RODADAS} sorteios com ${ocupados} de 7 slots ocupados. Tente de novo!`);
+    elementosMontagemTime.subtituloResultadoFinal.textContent = venceu
+        ? obterTextoTraduzido("monte-win-sub", `Você completou as 7 categorias em ${estado.rodada} de ${LIMITE_RODADAS} sorteios. Este é o seu Time Perfeito!`)
+        : obterTextoTraduzido("monte-loss-sub", `Você chegou ao limite de ${LIMITE_RODADAS} sorteios com ${ocupados} de 7 slots ocupados. Tente de novo!`);
 
     renderizarBannerFinal();
 
-    els.finalOverlay.classList.remove("is-defeat", "is-victory");
-    els.finalOverlay.classList.add(venceu ? "is-victory" : "is-defeat");
-    els.finalOverlay.classList.remove("hidden");
+    elementosMontagemTime.sobreposicaoResultadoFinal.classList.remove("is-defeat", "is-victory");
+    elementosMontagemTime.sobreposicaoResultadoFinal.classList.add(venceu ? "is-victory" : "is-defeat");
+    elementosMontagemTime.sobreposicaoResultadoFinal.classList.remove("hidden");
 
     setTimeout(() => {
-        if (els.finalRetry) {
-            els.finalRetry.focus();
+        if (elementosMontagemTime.btnJogarNovamente) {
+            elementosMontagemTime.btnJogarNovamente.focus();
         }
     }, 120);
 }
@@ -312,28 +312,28 @@ function renderizarModalFinal(venceu) {
 // --- BANNER DO TIME ---
 function renderizarBannerFinal() {
     const itens = CATEGORIAS.map(categoria => {
-        const slot = estado.slots[categoria.id];
-        const icone = iconeDe(categoria);
+        const categoriaPreenchida = estado.categoriasPreenchidas[categoria.id];
+        const icone = obterIconeCategoria(categoria);
 
-        if (!slot) {
+        if (!categoriaPreenchida) {
             return `
                 <div class="monte-final-item is-empty">
                     <div class="monte-final-media">
                         <i class="fas ${icone}" aria-hidden="true"></i>
                     </div>
                     <span class="monte-final-caption">${categoria.etiqueta}</span>
-                    <span class="monte-final-team">${t("monte-slot-free", "Vazio")}</span>
+                    <span class="monte-final-team">${obterTextoTraduzido("monte-slot-free", "Vazio")}</span>
                 </div>`;
         }
 
-        const time = slot.time;
-        const url = imagemDaCategoria(time, categoria.id);
+        const time = categoriaPreenchida.time;
+        const enderecoImagem = imagemDaCategoria(time, categoria.id);
         const legenda = legendaDaCategoria(time, categoria.id);
         const inicial = (time.nome || "?").substring(0, 3).toUpperCase();
 
-        const media = url
-            ? `<img class="monte-final-img${eAjustada(categoria.id, time) ? " is-contain" : ""}"
-                    src="${url}"
+        const marcacaoImagem = enderecoImagem
+            ? `<img class="monte-final-img${imagemCategoriaAjustada(categoria.id, time) ? " is-contain" : ""}"
+                src="${enderecoImagem}"
                     alt="${legenda}"
                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                 <div class="monte-final-fallback" style="display:none">
@@ -347,35 +347,35 @@ function renderizarBannerFinal() {
 
         return `
             <div class="monte-final-item" title="${categoria.etiqueta}">
-                <div class="monte-final-media${eAjustada(categoria.id, time) ? " is-contain" : ""}">${media}</div>
+                <div class="monte-final-media${imagemCategoriaAjustada(categoria.id, time) ? " is-contain" : ""}">${marcacaoImagem}</div>
                 <span class="monte-final-caption">${categoria.etiqueta}</span>
                 <span class="monte-final-team">${time.nome}</span>
             </div>`;
     }).join("");
 
-    els.finalBanner.innerHTML = itens;
+    elementosMontagemTime.painelTimeFinal.innerHTML = itens;
 }
 
 // --- FECHA O MODAL ---
 function fecharModalFinal() {
-    els.finalOverlay.classList.add("hidden");
+    elementosMontagemTime.sobreposicaoResultadoFinal.classList.add("hidden");
     if (!estado.terminado) {
         return;
     }
     
-    els.drawActions.innerHTML = `
-        <button class="monte-skip-btn" id="replayBtn" type="button">
+    elementosMontagemTime.acoesTimeSorteado.innerHTML = `
+        <button class="monte-skip-btn" id="btnJogarNovamenteAposResultado" type="button">
             <i class="fas fa-redo" aria-hidden="true"></i>
-            <span>${t("monte-play-again", "Jogar novamente")}</span>
+            <span>${obterTextoTraduzido("monte-play-again", "Jogar novamente")}</span>
         </button>`;
-    els.drawActions.querySelector("#replayBtn").addEventListener("click", iniciarJogo);
+    elementosMontagemTime.acoesTimeSorteado.querySelector("#btnJogarNovamenteAposResultado").addEventListener("click", iniciarJogo);
 }
 
 // --- INÍCIO DA PARTIDA ---
 function iniciarJogo() {
     reiniciarJogo();
-    els.finalOverlay.classList.add("hidden");
-    els.drawArea.classList.remove("is-revealed");
+    elementosMontagemTime.sobreposicaoResultadoFinal.classList.add("hidden");
+    elementosMontagemTime.areaSorteio.classList.remove("is-revealed");
 
     if (!estado.times.length) {
         return;
@@ -383,35 +383,35 @@ function iniciarJogo() {
 
     estado.rodada = 1;
     sortearProximo();
-    atualizarHud();
-    renderizarSlots();
+    atualizarPainelPartida();
+    renderizarCategoriasTime();
     renderizarSorteio();
 }
 
 // --- INÍCIO DO MINIGAME ---
-async function init() {
+async function inicializarMontagemTime() {
     try {
         await carregarDados();
 
-        if (els.loadingState) {
-            els.loadingState.style.display = "none";
+        if (elementosMontagemTime.estadoCarregamento) {
+            elementosMontagemTime.estadoCarregamento.style.display = "none";
         }
 
-        if (els.hudTotal) {
-            els.hudTotal.textContent = String(LIMITE_RODADAS);
+        if (elementosMontagemTime.painelTotalRodadas) {
+            elementosMontagemTime.painelTotalRodadas.textContent = String(LIMITE_RODADAS);
         }
 
-        els.finalRetry.addEventListener("click", iniciarJogo);
-        els.finalHome.addEventListener("click", () => {
+        elementosMontagemTime.btnJogarNovamente.addEventListener("click", iniciarJogo);
+        elementosMontagemTime.btnVoltarPaginaInicial.addEventListener("click", () => {
             window.location.href = "../../../index.html";
         });
 
-        if (els.finalClose) {
-            els.finalClose.addEventListener("click", fecharModalFinal);
+        if (elementosMontagemTime.btnFecharResultadoFinal) {
+            elementosMontagemTime.btnFecharResultadoFinal.addEventListener("click", fecharModalFinal);
         }
 
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && !els.finalOverlay.classList.contains("hidden")) {
+        document.addEventListener("keydown", (evento) => {
+            if (evento.key === "Escape" && !elementosMontagemTime.sobreposicaoResultadoFinal.classList.contains("hidden")) {
                 fecharModalFinal();
             }
         });
@@ -419,14 +419,14 @@ async function init() {
         iniciarJogo();
     } catch (erro) {
         console.error("Erro ao iniciar Monte seu Time:", erro);
-        if (els.loadingState) {
-            els.loadingState.style.display = "none";
+        if (elementosMontagemTime.estadoCarregamento) {
+            elementosMontagemTime.estadoCarregamento.style.display = "none";
         }
 
-        if (els.errorState) {
-            els.errorState.hidden = false;
+        if (elementosMontagemTime.estadoErro) {
+            elementosMontagemTime.estadoErro.hidden = false;
         }
     }
 }
 
-init();
+inicializarMontagemTime();

@@ -74,12 +74,12 @@
                         <span data-key="termo-game-title">Football Termo</span>
                     </h2>
                     <p class="game-description" data-key="termo-game-desc">Adivinhe o nome do jogador de futebol!</p>
-                    <p class="game-hint" id="hintText"></p>
+                    <p class="game-hint" id="textoDicaJogador"></p>
                 </div>
 
-                <div class="termo-board" id="termoBoard"></div>
+                <div class="termo-board" id="tabuleiroTermo"></div>
 
-                <div class="keyboard" id="keyboard">
+                <div class="keyboard" id="tecladoVirtual">
                     <div class="keyboard-row">
                         <button class="key" data-key="Q">Q</button>
                         <button class="key" data-key="W">W</button>
@@ -127,16 +127,16 @@
                 </div>
 
                 <div class="actions-container">
-                    <button id="newGameBtn" class="btn-action">
+                    <button id="btnIniciarNovoJogo" class="btn-action">
                         <i class="fas fa-redo"></i> 
                         <span data-key="termo-new-game">Novo Jogo</span>
                     </button>
                 </div>
 
-                <div class="message-overlay" id="messageOverlay">
-                    <div class="message-box" id="messageBox">
-                        <p id="messageText"></p>
-                        <button id="messageCloseBtn" class="btn-action">
+                <div class="message-overlay" id="sobreposicaoMensagem">
+                    <div class="message-box" id="caixaMensagem">
+                        <p id="textoMensagem"></p>
+                        <button id="btnFecharMensagem" class="btn-action">
                             <i class="fas fa-redo"></i> 
                             <span data-key="termo-play-again">Jogar Novamente</span>
                         </button>

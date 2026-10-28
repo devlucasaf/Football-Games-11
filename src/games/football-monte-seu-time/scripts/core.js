@@ -46,7 +46,7 @@ export const estado = {
     baralho: [],        
     timeAtual: null,    
     rodada: 0,          
-    slots: {},          
+    categoriasPreenchidas: {},
     terminado: false,
     venceu: false
 };

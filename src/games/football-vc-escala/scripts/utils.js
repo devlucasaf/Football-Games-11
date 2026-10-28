@@ -1,4 +1,4 @@
-const EscalaUtils = {
+const EscalaUtilitarios = {
     alternarTema() {
         const temaAtual = document.documentElement.getAttribute("data-theme");
         const novoTema = temaAtual === "dark" ? "light" : "dark";
@@ -25,5 +25,5 @@ const EscalaUtils = {
 
 // --- AGUARDA O CARREGAMENTO COMPLETO DO DOM ANTES DE INICIALIZAR ---
 document.addEventListener("DOMContentLoaded", () => {
-    EscalaUtils.inicializarTema();
+    EscalaUtilitarios.inicializarTema();
 });

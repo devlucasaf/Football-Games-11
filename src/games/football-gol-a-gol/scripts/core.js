@@ -5,7 +5,7 @@ const estado = {
     acertos:        0,
     totalRodadas:   10,
     dicasReveladas: 0,
-    maxDicas:       10,
+    maximoDicas:    10,
     historico:      []
 };
 

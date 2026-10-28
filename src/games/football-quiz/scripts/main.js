@@ -1,46 +1,46 @@
 import { estado } from "./core.js";
-import { carregarDados, selecionarTema, sortearPerguntas, perguntaAtual } from "./data.js";
+import { carregarDados, selecionarTema, sortearPerguntas, obterPerguntaAtual } from "./data.js";
 import {
     renderizarTemas,
     mostrarQuiz,
-    atualizarInfo,
+    atualizarInformacoesPerguntas,
     exibirPergunta,
     mostrarResposta,
     mostrarFinal,
     mostrarSelecaoTema,
-    resetarUI
+    reiniciarInterfacePerguntas
 } from "./ui.js";
 
 // --- MOSTRAR PERGUNTA ---
 function mostrarPergunta() {
-    const p = perguntaAtual();
-    if (!p) {
+    const pergunta = obterPerguntaAtual();
+    if (!pergunta) {
         return;
     }
 
     estado.respondida = false;
-    atualizarInfo();
-    exibirPergunta(p, responder);
+    atualizarInformacoesPerguntas();
+    exibirPergunta(pergunta, responderPergunta);
 }
 
 // --- RESPONDER PERGUNTA ---
-function responder(indice) {
+function responderPergunta(indiceResposta) {
     if (estado.respondida) {
         return;
     }
     estado.respondida = true;
 
-    const p = perguntaAtual();
-    if (indice === p.resposta) {
+    const pergunta = obterPerguntaAtual();
+    if (indiceResposta === pergunta.resposta) {
         estado.acertos++;
     }
 
-    atualizarInfo();
-    mostrarResposta(indice, p.resposta);
+    atualizarInformacoesPerguntas();
+    mostrarResposta(indiceResposta, pergunta.resposta);
 }
 
 // --- PRÓXIMA PERGUNTA ---
-function proxima() {
+function avancarPergunta() {
     estado.perguntaAtual++;
     if (estado.perguntaAtual >= estado.totalPerguntas) {
         mostrarFinal();
@@ -50,57 +50,57 @@ function proxima() {
 }
 
 // --- INICIAR QUIZ ---
-function iniciarQuiz(temaId) {
-    selecionarTema(temaId);
+function iniciarQuestionario(identificadorTema) {
+    selecionarTema(identificadorTema);
     estado.perguntaAtual = 0;
     estado.acertos = 0;
     estado.respondida = false;
-    resetarUI();
+    reiniciarInterfacePerguntas();
     sortearPerguntas();
     mostrarQuiz();
     mostrarPergunta();
 }
 
-window.quizReiniciar = () => {
+window.reiniciarQuestionario = () => {
     if (estado.temaAtual) {
-        iniciarQuiz(estado.temaAtual.id);
+        iniciarQuestionario(estado.temaAtual.id);
     }
 };
 
 // --- VOLTAR À SELEÇÃO DE TEMAS ---
-function voltarTemas() {
+function voltarSelecaoTemas() {
     mostrarSelecaoTema();
 }
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-async function init() {
+async function inicializarJogoPerguntas() {
     await carregarDados();
 
-    renderizarTemas(iniciarQuiz);
+    renderizarTemas(iniciarQuestionario);
 
-    document.getElementById("btnProxima").addEventListener("click", proxima);
+    document.getElementById("btnProxima").addEventListener("click", avancarPergunta);
     document.getElementById("btnRetry").addEventListener("click", () => {
-        iniciarQuiz(estado.temaAtual.id);
+        iniciarQuestionario(estado.temaAtual.id);
     });
-    document.getElementById("btnOutroTema").addEventListener("click", voltarTemas);
+    document.getElementById("btnOutroTema").addEventListener("click", voltarSelecaoTemas);
     document.getElementById("btnHome").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-quiz";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-quiz";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
         });
     }
 }
 
-init();
+inicializarJogoPerguntas();

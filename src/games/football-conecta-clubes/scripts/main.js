@@ -1,5 +1,5 @@
 import { estado } from "./core.js";
-import { carregarDados, sortear, normalizar, obterNomes } from "./data.js";
+import { carregarDados, sortearConexoesRodadas, normalizarTextoComparacao, obterNomes } from "./data.js";
 import {
     atualizarRodada,
     atualizarAcertos,
@@ -8,18 +8,18 @@ import {
     mostrarFeedbackErro,
     mostrarResultadoRodada,
     mostrarFinal,
-    resetarUI,
-    getInput
+    reiniciarInterfaceJogo,
+    obterPalpiteInformado
 } from "./ui.js";
 
 let nomesDisponiveis = [];
 let sugestaoAtiva = -1;
-const guessInput = () => document.getElementById("guessInput");
-const suggestions = () => document.getElementById("suggestions");
+const obterCampoPalpite = () => document.getElementById("guessInput");
+const obterListaSugestoes = () => document.getElementById("suggestions");
 
 // --- ESCONDER SUGESTÕES ---
 function esconderSugestoes() {
-    const lista = suggestions();
+    const lista = obterListaSugestoes();
     lista.classList.add("hidden");
     lista.innerHTML = "";
     sugestaoAtiva = -1;
@@ -27,16 +27,16 @@ function esconderSugestoes() {
 
 // --- SELECIONAR UMA SUGESTÃO ---
 function selecionarSugestao(nome) {
-    guessInput().value = nome;
+    obterCampoPalpite().value = nome;
     esconderSugestoes();
-    guessInput().focus();
+    obterCampoPalpite().focus();
 }
 
 // --- ATUALIZAR DESTAQUE DA SUGESTÃO ATIVA ---
 function atualizarSugestaoAtiva(itens) {
-    itens.forEach((item, i) => {
-        item.classList.toggle("active", i === sugestaoAtiva);
-        if (i === sugestaoAtiva) {
+    itens.forEach((item, indiceSugestao) => {
+        item.classList.toggle("active", indiceSugestao === sugestaoAtiva);
+        if (indiceSugestao === sugestaoAtiva) {
             item.scrollIntoView({ block: "nearest" });  
         }
     });
@@ -44,8 +44,8 @@ function atualizarSugestaoAtiva(itens) {
 
 // --- RENDERIZAR SUGESTÕES ---
 function renderizarSugestoes() {
-    const termo = normalizar(guessInput().value);
-    const lista = suggestions();
+    const termo = normalizarTextoComparacao(obterCampoPalpite().value);
+    const lista = obterListaSugestoes();
     sugestaoAtiva = -1;
 
     if (!termo) {
@@ -54,7 +54,7 @@ function renderizarSugestoes() {
     }
 
     const filtrados = nomesDisponiveis
-        .filter(nome => normalizar(nome).includes(termo))
+        .filter(nome => normalizarTextoComparacao(nome).includes(termo))
         .slice(0, 8);
 
     if (filtrados.length === 0) {
@@ -64,14 +64,14 @@ function renderizarSugestoes() {
 
     lista.innerHTML = "";
     filtrados.forEach(nome => {
-        const li = document.createElement("li");
-        li.className = "suggestion-item";
-        li.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
-        li.addEventListener("mousedown", (e) => {
-            e.preventDefault();  
+        const itemSugestao = document.createElement("li");
+        itemSugestao.className = "suggestion-item";
+        itemSugestao.innerHTML = `<i class="fas fa-user"></i><span>${nome}</span>`;
+        itemSugestao.addEventListener("mousedown", (eventoSelecao) => {
+            eventoSelecao.preventDefault();
             selecionarSugestao(nome);
         });
-        lista.appendChild(li);
+        lista.appendChild(itemSugestao);
     });
     lista.classList.remove("hidden");
 }
@@ -87,14 +87,14 @@ function mostrarRodada() {
 
 // --- VERIFICAR PALPITE DO USUÁRIO ---
 function verificarPalpite() {
-    const palpite = getInput();
+    const palpite = obterPalpiteInformado();
     esconderSugestoes();
     if (!palpite) {
         return;
     }
 
     const conexao = estado.sorteadas[estado.rodadaAtual];
-    const acertou = conexao.respostas.some(r => normalizar(r) === normalizar(palpite));
+    const acertou = conexao.respostas.some(respostaConexao => normalizarTextoComparacao(respostaConexao) === normalizarTextoComparacao(palpite));
 
     if (acertou) {
         estado.acertos++;
@@ -113,14 +113,14 @@ function verificarPalpite() {
 }
 
 // --- AVANÇAR PARA PRÓXIMA RODADA ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
         if (window.FG11Stats) {
             const total = estado.totalRodadas;
             const venceu = estado.acertos >= Math.ceil(total / 2);
-            const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+            const rotulos = Array.from({ length: total + 1 }, (valorNaoUtilizado, indicePontuacao) => String(indicePontuacao));
             window.FG11Stats.registrar("football-conecta-clubes", {
                 venceu,
                 bucket: estado.acertos,
@@ -147,52 +147,52 @@ function proxima() {
 function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
-    resetarUI();
-    sortear();
+    reiniciarInterfaceJogo();
+    sortearConexoesRodadas();
     mostrarRodada();
 }
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-async function init() {
+async function inicializarJogoConectaClubes() {
     await carregarDados();
     nomesDisponiveis = obterNomes();
 
     // --- EVENTOS DOS BOTÕES PRINCIPAIS ---
-    document.getElementById("btnGuess").addEventListener("click", verificarPalpite);
-    document.getElementById("btnNext").addEventListener("click", proxima);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnEnviarPalpite").addEventListener("click", verificarPalpite);
+    document.getElementById("btnAvancarRodada").addEventListener("click", avancarRodada);
+    document.getElementById("btnReiniciarPartida").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
     // --- EVENTOS DO CAMPO DE INPUT ---
-    const input = guessInput();
-    input.addEventListener("input", renderizarSugestoes);  
-    input.addEventListener("keydown", (e) => {
-        const itens = [...suggestions().querySelectorAll(".suggestion-item")];
+    const campoPalpite = obterCampoPalpite();
+    campoPalpite.addEventListener("input", renderizarSugestoes);
+    campoPalpite.addEventListener("keydown", (eventoTeclado) => {
+        const itens = [...obterListaSugestoes().querySelectorAll(".suggestion-item")];
 
-        if (e.key === "ArrowDown" && itens.length > 0) {
-            e.preventDefault();
+        if (eventoTeclado.key === "ArrowDown" && itens.length > 0) {
+            eventoTeclado.preventDefault();
             sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === "ArrowUp" && itens.length > 0) {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "ArrowUp" && itens.length > 0) {
+            eventoTeclado.preventDefault();
             sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
             atualizarSugestaoAtiva(itens);
-        } else if (e.key === "Enter") {
+        } else if (eventoTeclado.key === "Enter") {
             if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
-                e.preventDefault();
+                eventoTeclado.preventDefault();
                 selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
             } else {
                 verificarPalpite();  
             }
-        } else if (e.key === "Escape") {
+        } else if (eventoTeclado.key === "Escape") {
             esconderSugestoes();
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-autocomplete")) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".input-autocomplete")) {
             esconderSugestoes();
         }
     });
@@ -217,4 +217,4 @@ async function init() {
 }
 
 
-init();
+inicializarJogoConectaClubes();

@@ -2,21 +2,21 @@ import { estado } from "./core.js";
 
 // --- CARREGAMENTO DE DADOS ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-duelo-elencos.json");
-    const data = await resp.json();
-    estado.duelos = data.duelos;
+    const resposta = await fetch("data/football-duelo-elencos.json");
+    const dados = await resposta.json();
+    estado.duelos = dados.duelos;
 }
 
 // --- ESCOLHER DUELO ALEATÓRIO ---
 export function escolherDuelo() {
-    const disponiveis = estado.duelos.filter((_, i) => !estado.duelosUsados.includes(i));
+    const disponiveis = estado.duelos.filter((duelo, indiceDuelo) => !estado.duelosUsados.includes(indiceDuelo));
     if (disponiveis.length === 0) {
         return null;
     }
-    const idx = Math.floor(Math.random() * disponiveis.length);
-    const realIdx = estado.duelos.indexOf(disponiveis[idx]);
-    estado.duelosUsados.push(realIdx);
-    return disponiveis[idx];
+    const indiceSorteado = Math.floor(Math.random() * disponiveis.length);
+    const indiceDuelo = estado.duelos.indexOf(disponiveis[indiceSorteado]);
+    estado.duelosUsados.push(indiceDuelo);
+    return disponiveis[indiceSorteado];
 }
 
 // --- OBTER POSIÇÃO ATUAL ---
@@ -24,7 +24,7 @@ export function obterPosicaoAtual() {
     if (!estado.dueloAtual) {
         return null;
     }
-    return estado.dueloAtual.posicoes[estado.posicaoIdx];
+    return estado.dueloAtual.posicoes[estado.indicePosicao];
 }
 
 // --- COORDENADAS DA POSIÇÃO NO CAMPO ---
@@ -49,8 +49,8 @@ export function obterCoordenadasPosicao(posicao) {
 }
 
 // --- LABEL DA POSIÇÃO ---
-export function obterLabelPosicao(posicao) {
-    const labels = {
+export function obterRotuloPosicao(posicao) {
+    const rotulos = {
         "GOL": "GOL", 
         "LD": "LD", 
         "ZAG1": "ZAG", "ZAG2": "ZAG",
@@ -61,5 +61,5 @@ export function obterLabelPosicao(posicao) {
         "CA": "CA", 
         "PD": "PD"
     };
-    return labels[posicao] || posicao;
+    return rotulos[posicao] || posicao;
 }

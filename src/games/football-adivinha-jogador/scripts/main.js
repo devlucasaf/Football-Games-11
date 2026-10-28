@@ -2,11 +2,11 @@ import estado from "./core.js";
 import { carregarDados, escolherJogador, obterNomesJogadores } from "./data.js";
 import { normalizar } from "./utils.js";
 import {
-    preencherPistas, resetarCards, revelarCard, revelarTodos,
+    preencherPistas, reiniciarCartoesPistas, revelarCartaoPista, revelarTodos,
     atualizarContador, atualizarPlacar,
     mostrarResultado, esconderResultado,
     mostrarFeedbackErro, esconderFeedbackErro,
-    limparInput, focarInput, desabilitarInput, habilitarInput,
+    limparCampoPalpite, focarCampoPalpite, desabilitarCampoPalpite, habilitarCampoPalpite,
     mostrarSugestoes, esconderSugestoes
 } from "./ui.js";
 
@@ -21,16 +21,16 @@ function verificarPalpite(palpite) {
         return;
     }
 
-    const respostaNorm = normalizar(estado.jogadorAtual.nome);
-    const palpiteNorm = normalizar(palpite);
+    const respostaNormalizada = normalizar(estado.jogadorAtual.nome);
+    const palpiteNormalizado = normalizar(palpite);
 
-    if (!palpiteNorm) {
+    if (!palpiteNormalizado) {
         return;
     }
 
     estado.tentativas++;
 
-    if (palpiteNorm === respostaNorm) {
+    if (palpiteNormalizado === respostaNormalizada) {
         const pistasNaVitoria = estado.pistasReveladas;
         estado.jogoAtivo = false;
         estado.acertos++;
@@ -40,11 +40,11 @@ function verificarPalpite(palpite) {
             estado.melhorSequencia = estado.sequencia;
         }
 
-        const pts = calcularPontos();
-        estado.pontos += pts;
+        const pontosRodada = calcularPontos();
+        estado.pontos += pontosRodada;
 
         revelarTodos();
-        desabilitarInput();
+        desabilitarCampoPalpite();
         esconderFeedbackErro();
         atualizarPlacar();
 
@@ -63,7 +63,7 @@ function verificarPalpite(palpite) {
         setTimeout(() => {
             mostrarResultado(
                 "Acertou!",
-                `O jogador era ${estado.jogadorAtual.nome}! +${pts} pontos (${estado.pistasReveladas} pista${estado.pistasReveladas > 1 ? "s" : ""}).`,
+                `O jogador era ${estado.jogadorAtual.nome}! +${pontosRodada} pontos (${estado.pistasReveladas} pista${estado.pistasReveladas > 1 ? "s" : ""}).`,
                 "<i class='fas fa-check-circle' style='color:#2ecc71'></i>"
             );
             
@@ -86,8 +86,8 @@ function verificarPalpite(palpite) {
             finalizarErro();
         } else {
             mostrarFeedbackErro("Não é esse! Tente novamente ou revele mais pistas.");
-            limparInput();
-            focarInput();
+            limparCampoPalpite();
+            focarCampoPalpite();
         }
     }
 }
@@ -99,7 +99,7 @@ function finalizarErro() {
     estado.sequencia = 0;
 
     revelarTodos();
-    desabilitarInput();
+    desabilitarCampoPalpite();
     esconderFeedbackErro();
     atualizarPlacar();
 
@@ -142,11 +142,11 @@ function proximaRodada() {
     esconderFeedbackErro();
     escolherJogador();
     preencherPistas();
-    resetarCards();
+    reiniciarCartoesPistas();
     atualizarContador();
-    limparInput();
-    habilitarInput();
-    focarInput();
+    limparCampoPalpite();
+    habilitarCampoPalpite();
+    focarCampoPalpite();
     atualizarPlacar();
 }
 
@@ -157,25 +157,25 @@ function filtrarSugestoes(texto) {
         return;
     }
 
-    const norm = normalizar(texto);
+    const textoNormalizado = normalizar(texto);
     const nomes = obterNomesJogadores();
-    const filtrados = nomes.filter(n => normalizar(n).includes(norm));
+    const filtrados = nomes.filter(nomeJogador => normalizar(nomeJogador).includes(textoNormalizado));
     mostrarSugestoes(filtrados);
 }
 
 // --- CLIQUE NO CARD DE PISTA ---
-function onCardClick(e) {
+function tratarCliqueCartaoPista(eventoClique) {
     if (!estado.jogoAtivo) {
         return;
     }
 
-    const card = e.target.closest(".pista-card");
-    if (!card || !card.classList.contains("oculto")) {
+    const cartaoPista = eventoClique.target.closest(".pista-card");
+    if (!cartaoPista || !cartaoPista.classList.contains("oculto")) {
         return;
     }
 
-    const idx = parseInt(card.dataset.idx);
-    revelarCard(idx);
+    const indicePista = parseInt(cartaoPista.dataset.idx);
+    revelarCartaoPista(indicePista);
 }
 
 // --- CONFIGURAR EVENTOS ---
@@ -183,7 +183,7 @@ let sugestaoAtiva = -1;
 
 // --- ATUALIZA O ITEM DESTACADO NA NAVEGAÇÃO POR TECLADO ---
 function atualizarSugestaoAtiva(itens) {
-    itens.forEach((item, i) => item.classList.toggle("ativo", i === sugestaoAtiva));
+    itens.forEach((item, indiceSugestao) => item.classList.toggle("ativo", indiceSugestao === sugestaoAtiva));
     if (itens[sugestaoAtiva]) {
         itens[sugestaoAtiva].scrollIntoView({ block: "nearest" });
     }
@@ -191,12 +191,12 @@ function atualizarSugestaoAtiva(itens) {
 
 function configurarEventos() {
     const input = document.getElementById("palpiteInput");
-    const confirmarBtn = document.getElementById("confirmarBtn");
-    const proximaBtn = document.getElementById("proximaRodadaBtn");
+    const btnConfirmarPalpite = document.getElementById("btnConfirmarPalpite");
+    const btnIniciarProximaRodada = document.getElementById("btnIniciarProximaRodada");
     const sugestoesLista = document.getElementById("sugestoesLista");
     const pistasGrid = document.getElementById("pistasGrid");
 
-    confirmarBtn.addEventListener("click", () => {
+    btnConfirmarPalpite.addEventListener("click", () => {
         verificarPalpite(input.value);
     });
 
@@ -231,7 +231,7 @@ function configurarEventos() {
         }
     });
 
-    proximaBtn.addEventListener("click", () => proximaRodada());
+    btnIniciarProximaRodada.addEventListener("click", () => proximaRodada());
 
     input.addEventListener("input", () => {
         sugestaoAtiva = -1;
@@ -248,7 +248,7 @@ function configurarEventos() {
         }
     });
 
-    pistasGrid.addEventListener("click", onCardClick);
+    pistasGrid.addEventListener("click", tratarCliqueCartaoPista);
 
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".input-wrapper")) {
@@ -264,11 +264,11 @@ async function iniciar() {
         await carregarDados();
         escolherJogador();
         preencherPistas();
-        resetarCards();
+        reiniciarCartoesPistas();
         atualizarContador();
         atualizarPlacar();
         configurarEventos();
-        focarInput();
+        focarCampoPalpite();
     } catch (erro) {
         console.error("Erro ao inicializar Football Adivinha Jogador:", erro);
     }

@@ -7,24 +7,24 @@
 
     const estado = { categoria: "todas", termo: "" };
     const resumo = perfil.resumo();
-    const statsPorJogo = new Map(resumo.jogos.map(item => [item.jogo.id, item]));
+    const estatisticasPorJogo = new Map(resumo.jogos.map(item => [item.jogo.id, item]));
 
-    const grade             = document.getElementById("gamesGrid");
-    const gradeDestaques    = document.getElementById("gradeDestaques");
-    const filtros           = document.getElementById("filtrosCategoria");
-    const busca             = document.getElementById("buscaCatalogo");
-    const limparBusca       = document.getElementById("limparBusca");
-    const estadoVazio       = document.getElementById("estadoVazio");
-    const contagem          = document.getElementById("contagemJogos");
+    const grade = document.getElementById("gamesGrid");
+    const gradeDestaques = document.getElementById("gradeDestaques");
+    const filtros = document.getElementById("filtrosCategoria");
+    const busca = document.getElementById("buscaCatalogo");
+    const btnLimparBuscaCatalogo = document.getElementById("limparBusca");
+    const estadoVazio = document.getElementById("estadoVazio");
+    const contagem = document.getElementById("contagemJogos");
 
     // --- REMOVE ACENTOS PARA BUSCAR "ESTADIO" E ACHAR "ESTÁDIO" ---
-    function normalizar(texto) {
+    function normalizarTextoBusca(texto) {
         return String(texto || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
     }
 
     // --- DESTAQUE DE PONTUAÇÃO DO CARD ---
-    function htmlPlacar(jogo) {
-        const stats = statsPorJogo.get(jogo.id);
+    function gerarMarcacaoPlacarJogo(jogo) {
+        const estatisticasJogo = estatisticasPorJogo.get(jogo.id);
 
         if (!jogo.estatisticas) {
             return `
@@ -34,7 +34,7 @@
                 </div>`;
         }
 
-        if (!stats || stats.partidas === 0) {
+        if (!estatisticasJogo || estatisticasJogo.partidas === 0) {
             return `
                 <div class="gcard-score gcard-score--new">
                     <i class="fas fa-flag-checkered" aria-hidden="true"></i>
@@ -46,27 +46,27 @@
             <div class="gcard-score">
                 <span class="gcard-record">
                     <i class="fas fa-trophy" aria-hidden="true"></i>
-                    <strong>${stats.vitorias}</strong>
+                    <strong>${estatisticasJogo.vitorias}</strong>
                     <span data-key="ranking-wins-short">V</span>
                     <span class="gcard-sep" aria-hidden="true">·</span>
-                    <strong>${stats.derrotas}</strong>
+                    <strong>${estatisticasJogo.derrotas}</strong>
                     <span data-key="ranking-losses-short">D</span>
                 </span>
-                <span class="gcard-rate" title="Aproveitamento">${perfil.porcentagem(stats.aproveitamento)}</span>
+                <span class="gcard-rate" title="Aproveitamento">${perfil.porcentagem(estatisticasJogo.aproveitamento)}</span>
                 <span class="gcard-meter" aria-hidden="true">
-                    <span style="width:${Math.round(stats.aproveitamento * 100)}%"></span>
+                    <span style="width:${Math.round(estatisticasJogo.aproveitamento * 100)}%"></span>
                 </span>
             </div>`;
     }
 
     // --- CARD DE JOGO ---
-    function htmlCard(jogo, indice, opcoes = {}) {
+    function gerarMarcacaoCartaoJogo(jogo, indice, opcoes = {}) {
         const categoria = catalogo.categorias[jogo.categoria];
-        const idTitulo = `${opcoes.prefixo || "g"}-${jogo.id}`;
+        const identificadorTitulo = `${opcoes.prefixo || "g"}-${jogo.id}`;
         const numero = String(indice + 1).padStart(2, "0");
 
         return `
-            <article class="gcard${opcoes.destaque ? " gcard--featured" : ""}" data-id="${jogo.id}" data-cat="${jogo.categoria}" style="--i:${indice}" aria-labelledby="${idTitulo}">
+            <article class="gcard${opcoes.destaque ? " gcard--featured" : ""}" data-id="${jogo.id}" data-cat="${jogo.categoria}" style="--i:${indice}" aria-labelledby="${identificadorTitulo}">
                 <div class="gcard-cover" aria-hidden="true">
                     <span class="gcard-number">${numero}</span>
                     <i class="fas ${jogo.icone} gcard-icon"></i>
@@ -77,9 +77,9 @@
                         <i class="fas ${categoria.icone}" aria-hidden="true"></i>
                         <span data-key="${categoria.rotuloKey}">${categoria.rotulo}</span>
                     </span>
-                    <h3 class="gcard-title" id="${idTitulo}" data-key="${jogo.tituloKey}">${jogo.titulo}</h3>
+                    <h3 class="gcard-title" id="${identificadorTitulo}" data-key="${jogo.tituloKey}">${jogo.titulo}</h3>
                     <p class="gcard-desc" data-key="${jogo.descKey}">${jogo.desc}</p>
-                    ${htmlPlacar(jogo)}
+                    ${gerarMarcacaoPlacarJogo(jogo)}
                     <a class="btn gcard-cta" href="${jogo.pagina}" data-jogo="${jogo.id}">
                         <i class="fas fa-play" aria-hidden="true"></i>
                         <span data-key="play-now">Jogar agora</span>
@@ -89,54 +89,54 @@
     }
 
     // --- CHIPS DE CATEGORIA ---
-    function renderFiltros() {
+    function renderizarFiltrosCategorias() {
         const contagens = {};
         catalogo.jogos.forEach(jogo => {
             contagens[jogo.categoria] = (contagens[jogo.categoria] || 0) + 1;
         });
 
-        const chip = (id, chave, rotulo, icone, total) => `
-            <button type="button" class="chip" data-categoria="${id}" aria-pressed="${estado.categoria === id}">
+        const gerarMarcacaoFiltroCategoria = (identificadorCategoria, chave, rotulo, icone, total) => `
+            <button type="button" class="chip" data-categoria="${identificadorCategoria}" aria-pressed="${estado.categoria === identificadorCategoria}">
                 <i class="fas ${icone}" aria-hidden="true"></i>
                 <span data-key="${chave}">${rotulo}</span>
                 <span class="chip-count">${total}</span>
             </button>`;
 
         filtros.innerHTML =
-            chip("todas", "cat-all", "Todos", "fa-border-all", catalogo.jogos.length) +
+            gerarMarcacaoFiltroCategoria("todas", "cat-all", "Todos", "fa-border-all", catalogo.jogos.length) +
             Object.entries(catalogo.categorias)
-                .map(([id, cat]) => chip(id, cat.rotuloKey, cat.rotulo, cat.icone, contagens[id] || 0))
+                .map(([identificadorCategoria, categoria]) => gerarMarcacaoFiltroCategoria(identificadorCategoria, categoria.rotuloKey, categoria.rotulo, categoria.icone, contagens[identificadorCategoria] || 0))
                 .join("");
     }
 
     // --- APLICA CATEGORIA + BUSCA NOS CARDS ---
     function aplicarFiltros() {
-        const termo = normalizar(estado.termo);
+        const termo = normalizarTextoBusca(estado.termo);
         let visiveis = 0;
 
-        grade.querySelectorAll(".gcard").forEach(card => {
-            const combinaCategoria = estado.categoria === "todas" || card.dataset.cat === estado.categoria;
-            const texto = normalizar(card.textContent);
+        grade.querySelectorAll(".gcard").forEach(cartaoJogo => {
+            const combinaCategoria = estado.categoria === "todas" || cartaoJogo.dataset.cat === estado.categoria;
+            const texto = normalizarTextoBusca(cartaoJogo.textContent);
             const combinaBusca = termo === "" || texto.includes(termo);
             const mostrar = combinaCategoria && combinaBusca;
 
-            card.hidden = !mostrar;
+            cartaoJogo.hidden = !mostrar;
             if (mostrar) {
-                card.style.setProperty("--i", visiveis);
+                cartaoJogo.style.setProperty("--i", visiveis);
                 visiveis++;
             }
         });
 
         contagem.textContent = visiveis;
         estadoVazio.hidden = visiveis !== 0;
-        limparBusca.hidden = estado.termo === "";
+        btnLimparBuscaCatalogo.hidden = estado.termo === "";
 
-        filtros.querySelectorAll(".chip").forEach(chip => {
-            chip.setAttribute("aria-pressed", chip.dataset.categoria === estado.categoria ? "true" : "false");
+        filtros.querySelectorAll(".chip").forEach(btnFiltrarCategoria => {
+            btnFiltrarCategoria.setAttribute("aria-pressed", btnFiltrarCategoria.dataset.categoria === estado.categoria ? "true" : "false");
         });
     }
 
-    function definirTermo(termo) {
+    function definirTermoBusca(termo) {
         estado.termo = termo;
         if (busca.value !== termo) {
             busca.value = termo;
@@ -145,7 +145,7 @@
     }
 
     // --- CONTINUE JOGANDO ---
-    function renderRecentes() {
+    function renderizarJogosRecentes() {
         const secao = document.getElementById("continuar");
         const lista = document.getElementById("listaRecentes");
         if (!secao || !lista || resumo.recentes.length === 0) {
@@ -170,19 +170,19 @@
     }
 
     // --- NÚMEROS DO HERO ---
-    function renderHero() {
-        const definir = (id, valor) => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.textContent = valor;
+    function renderizarIndicadoresDestaque() {
+        const definirValorIndicador = (identificadorElemento, valor) => {
+            const elementoIndicador = document.getElementById(identificadorElemento);
+            if (elementoIndicador) {
+                elementoIndicador.textContent = valor;
             }
         };
 
-        definir("heroPartidas", resumo.partidas);
-        definir("heroAproveitamento", perfil.porcentagem(resumo.aproveitamento));
-        definir("heroExplorados", resumo.jogosDiferentes);
-        definir("heroTotal", resumo.totalJogos);
-        definir("heroOvr", resumo.ovr);
+        definirValorIndicador("heroPartidas", resumo.partidas);
+        definirValorIndicador("heroAproveitamento", perfil.porcentagem(resumo.aproveitamento));
+        definirValorIndicador("heroExplorados", resumo.jogosDiferentes);
+        definirValorIndicador("heroTotal", resumo.totalJogos);
+        definirValorIndicador("heroOvr", resumo.ovr);
 
         const nivel = document.getElementById("heroNivel");
         if (nivel) {
@@ -194,117 +194,119 @@
     }
 
     // --- PERFIL + RANKING ---
-    function renderPerfil() {
+    function renderizarPerfilJogador() {
         const carta = document.getElementById("cartaJogador");
         const progresso = document.getElementById("progressoNivel");
-        const ranking = document.getElementById("rankingResumo");
+        const classificacaoJogos = document.getElementById("rankingResumo");
 
         if (carta) {
             carta.innerHTML = perfil.htmlCarta(resumo);
         }
+
         if (progresso) {
             progresso.innerHTML = perfil.htmlProgressoNivel(resumo);
         }
-        if (ranking) {
-            ranking.innerHTML = perfil.htmlRanking(resumo, 5, "");
+        
+        if (classificacaoJogos) {
+            classificacaoJogos.innerHTML = perfil.htmlRanking(resumo, 5, "");
         }
     }
 
     // --- NAVEGA COM A TRANSIÇÃO DE SAÍDA ---
-    function irPara(href) {
+    function navegarParaPagina(enderecoDestino) {
         const reduzir = document.documentElement.getAttribute("data-reduce-motion") === "true"
             || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         
         if (reduzir) {
-            window.location.href = href;
+            window.location.href = enderecoDestino;
             return;
         }
         document.body.classList.add("is-leaving");
         setTimeout(() => {
-            window.location.href = href;
+            window.location.href = enderecoDestino;
         }, 160);
     }
 
     // --- CLIQUE EM QUALQUER PARTE DO CARD ABRE O JOGO ---
-    function aoClicarNoCard(e) {
-        const link = e.target.closest("[data-jogo]");
-        if (link) {
-            perfil.registrarAcesso(link.dataset.jogo);
+    function aoClicarCartaoJogo(evento) {
+        const ligacaoJogo = evento.target.closest("[data-jogo]");
+        if (ligacaoJogo) {
+            perfil.registrarAcesso(ligacaoJogo.dataset.jogo);
             return;
         }
 
-        const card = e.target.closest(".gcard");
-        if (!card || e.target.closest("a, button")) {
+        const cartaoJogo = evento.target.closest(".gcard");
+        if (!cartaoJogo || evento.target.closest("a, button")) {
             return;
         }
 
-        const cta = card.querySelector(".gcard-cta");
-        card.classList.add("is-selected");
-        perfil.registrarAcesso(card.dataset.id);
-        irPara(cta.href);
+        const ligacaoIniciarJogo = cartaoJogo.querySelector(".gcard-cta");
+        cartaoJogo.classList.add("is-selected");
+        perfil.registrarAcesso(cartaoJogo.dataset.id);
+        navegarParaPagina(ligacaoIniciarJogo.href);
     }
 
     // --- SORTEIA UM JOGO ---
-    function partidaRapida() {
+    function iniciarPartidaRapida() {
         const jogos = catalogo.jogos;
         const escolhido = jogos[Math.floor(Math.random() * jogos.length)];
-        const botao = document.getElementById("btnPartidaRapida");
-        botao?.classList.add("is-rolling");
+        const btnIniciarPartidaRapida = document.getElementById("btnPartidaRapida");
+        btnIniciarPartidaRapida?.classList.add("is-rolling");
         perfil.registrarAcesso(escolhido.id);
-        irPara(escolhido.pagina);
+        navegarParaPagina(escolhido.pagina);
     }
 
     // --- RENDERIZAÇÃO INICIAL ---
     const destaques = catalogo.jogos.filter(jogo => jogo.destaque);
-    gradeDestaques.innerHTML = destaques.map((jogo, i) => htmlCard(jogo, i, { destaque: true, prefixo: "d" })).join("");
-    grade.innerHTML = catalogo.jogos.map((jogo, i) => htmlCard(jogo, i)).join("");
+    gradeDestaques.innerHTML = destaques.map((jogo, indiceJogo) => gerarMarcacaoCartaoJogo(jogo, indiceJogo, { destaque: true, prefixo: "d" })).join("");
+    grade.innerHTML = catalogo.jogos.map((jogo, indiceJogo) => gerarMarcacaoCartaoJogo(jogo, indiceJogo)).join("");
 
-    renderFiltros();
-    renderRecentes();
-    renderHero();
-    renderPerfil();
+    renderizarFiltrosCategorias();
+    renderizarJogosRecentes();
+    renderizarIndicadoresDestaque();
+    renderizarPerfilJogador();
     aplicarFiltros();
 
     // --- EVENTOS ---
-    filtros.addEventListener("click", (e) => {
-        const chip = e.target.closest(".chip");
-        if (!chip) {
+    filtros.addEventListener("click", (evento) => {
+        const btnFiltrarCategoria = evento.target.closest(".chip");
+        if (!btnFiltrarCategoria) {
             return;
         }
-        estado.categoria = chip.dataset.categoria;
+        estado.categoria = btnFiltrarCategoria.dataset.categoria;
         aplicarFiltros();
     });
 
-    busca.addEventListener("input", () => definirTermo(busca.value));
+    busca.addEventListener("input", () => definirTermoBusca(busca.value));
 
-    busca.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            definirTermo("");
+    busca.addEventListener("keydown", (evento) => {
+        if (evento.key === "Escape") {
+            definirTermoBusca("");
         }
     });
 
-    limparBusca.addEventListener("click", () => {
-        definirTermo("");
+    btnLimparBuscaCatalogo.addEventListener("click", () => {
+        definirTermoBusca("");
         busca.focus();
     });
 
     document.getElementById("limparFiltros")?.addEventListener("click", () => {
         estado.categoria = "todas";
-        definirTermo("");
+        definirTermoBusca("");
     });
 
     // --- BUSCA DO CABEÇALHO ---
-    document.addEventListener("fg11:busca", (e) => definirTermo(e.detail.termo || ""));
+    document.addEventListener("fg11:busca", (evento) => definirTermoBusca(evento.detail.termo || ""));
 
     [grade, gradeDestaques, document.getElementById("listaRecentes")].forEach(area => {
-        area?.addEventListener("click", aoClicarNoCard);
+        area?.addEventListener("click", aoClicarCartaoJogo);
     });
 
-    document.getElementById("btnPartidaRapida")?.addEventListener("click", partidaRapida);
+    document.getElementById("btnPartidaRapida")?.addEventListener("click", iniciarPartidaRapida);
 
     // --- RESTAURA O ESTADO AO VOLTAR PELO HISTÓRICO ---
     window.addEventListener("pageshow", () => {
-        document.querySelectorAll(".gcard.is-selected").forEach(card => card.classList.remove("is-selected"));
+        document.querySelectorAll(".gcard.is-selected").forEach(cartaoJogo => cartaoJogo.classList.remove("is-selected"));
         document.getElementById("btnPartidaRapida")?.classList.remove("is-rolling");
     });
 })();

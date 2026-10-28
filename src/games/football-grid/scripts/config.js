@@ -1,8 +1,8 @@
-const GridConfig = {
-    TAMANHO_GRID: 3,
+const GradeConfiguracao = {
+    TAMANHO_GRADE: 3,
     CAMINHO_JSON: "data/football-grid.json",
-    MIN_CELULAS_VALIDAS: 3,
-    MAX_TENTATIVAS: 50,
+    MINIMO_CELULAS_VALIDAS: 3,
+    MAXIMO_TENTATIVAS: 50,
 
     PESOS_MODO: {
         linhasPais_colunasClubes: 0.6,
@@ -65,8 +65,8 @@ const GridConfig = {
         ["polônia", "polonia"]
     ]),
 
-    normalizar(s) {
-        return (s ?? "")
+    normalizarTexto(texto) {
+        return (texto ?? "")
             .toString()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
@@ -74,7 +74,7 @@ const GridConfig = {
             .trim();
     },
 
-    canonizar(s) {
-        return this.APELIDOS.get(this.normalizar(s)) || this.normalizar(s);
+    canonizarNome(texto) {
+        return this.APELIDOS.get(this.normalizarTexto(texto)) || this.normalizarTexto(texto);
     }
 };

@@ -79,7 +79,7 @@ export function mostrarResultadoRodada(acertou, palpite, conexao) {
     elementos.roundAnswers.textContent = `Respostas possíveis: ${conexao.respostas.join(", ")}`;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
-        document.getElementById("btnNext").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
+        document.getElementById("btnAvancarRodada").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
     }
 }
 
@@ -91,14 +91,14 @@ export function mostrarFinal() {
     elementos.finalResult.classList.remove("hidden");
     elementos.finalPoints.textContent = estado.acertos;
 
-    const pct = Math.round((estado.acertos / 10) * 100);
+    const porcentagemAcertos = Math.round((estado.acertos / 10) * 100);
     let mensagem = "";
     
-    if (pct === 100) {
+    if (porcentagemAcertos === 100) {
         mensagem = "Enciclopédia ambulante!";
-    } else if (pct >= 70) {
+    } else if (porcentagemAcertos >= 70) {
         mensagem = "Ótimo conhecimento de transferências!";
-    } else if (pct >= 40) {
+    } else if (porcentagemAcertos >= 40) {
         mensagem = "Bom, mas pode melhorar!";
     } else {
         mensagem = "Estude mais o mercado da bola!";
@@ -108,13 +108,13 @@ export function mostrarFinal() {
 }
 
 // --- RESETAR INTERFACE ---
-export function resetarUI() {
+export function reiniciarInterfaceJogo() {
     elementos.acertos.textContent = "0";
     elementos.finalResult.classList.add("hidden");
     elementos.gameInfo.classList.remove("hidden");
 }
 
 // --- OBTER VALOR DO INPUT ---
-export function getInput() {
+export function obterPalpiteInformado() {
     return elementos.guessInput.value.trim();
 }

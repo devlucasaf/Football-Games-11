@@ -1,5 +1,5 @@
-const EscalaConfig = {
-    CAMINHO_JSON: "data/players-brasileirao-2026.json",
+const EscalaConfiguracoes = {
+    CAMINHO_DADOS_JOGADORES: "data/players-brasileirao-2026.json",
 
     // --- ESCUDOS DOS TIMES ---
     escudos: {
@@ -25,27 +25,27 @@ const EscalaConfig = {
         "Vitória":       { sigla: "VIT", cor: "#FF0000", url: "https://r2.thesportsdb.com/images/media/team/badge/tysrrx1473538156.png" }
     },
 
-    obterEscudoHTML(nomeTime, tamanho) {
-        const info = this.escudos[nomeTime];
+    obterMarcacaoEscudo(nomeTime, tamanho) {
+        const informacoesEscudo = this.escudos[nomeTime];
         const classe = tamanho === "sm" ? "badge-sm" : "";
 
-        if (!info) {
+        if (!informacoesEscudo) {
             return `<div class="badge-initials ${classe}" style="background:#2e7d32">${nomeTime.substring(0, 3).toUpperCase()}</div>`;
         }
 
-        if (info.url) {
+        if (informacoesEscudo.url) {
             return `
                 <img 
                     class="badge-img ${classe}" 
-                    src="${info.url}" 
+                    src="${informacoesEscudo.url}"
                     alt="${nomeTime}" 
                     onerror="this.style.display="none";this.nextElementSibling.style.display="flex""
                 />
-                <div class="badge-initials ${classe}" style="background:${info.cor};display:none">${info.sigla}</div>
+                <div class="badge-initials ${classe}" style="background:${informacoesEscudo.cor};display:none">${informacoesEscudo.sigla}</div>
             `;
         }
 
-        return `<div class="badge-initials ${classe}" style="background:${info.cor}">${info.sigla}</div>`;
+        return `<div class="badge-initials ${classe}" style="background:${informacoesEscudo.cor}">${informacoesEscudo.sigla}</div>`;
     },
 
     // --- CONFIGURAÇÕES DE FORMAÇÕES ---

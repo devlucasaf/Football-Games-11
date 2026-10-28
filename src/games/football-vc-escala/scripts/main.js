@@ -13,7 +13,7 @@ const EscalaConstrutor = {
 
             await EscalaDados.carregarDados();
 
-            EscalaDados.timeAtual = EscalaDados.timesProcessados.find(t => t.key === chaveTime);
+            EscalaDados.timeAtual = EscalaDados.timesProcessados.find(time => time.chave === chaveTime);
 
             if (!EscalaDados.timeAtual) {
                 window.location.href = "football-vc-escala.html";
@@ -33,25 +33,25 @@ const EscalaConstrutor = {
 
     // --- ATUALIZA OS ELEMENTOS DA INTERFACE COM INFORMAÇÕES DO TIME ---
     atualizarInterfaceConstrutor() {
-        const nomeTimeEl = document.getElementById("teamName");
-        const nomeCompletoEl = document.getElementById("teamFullName");
-        const contagemJogadoresEl = document.getElementById("playerCount");
-        const badgeEl = document.getElementById("teamBadge");
+        const elementoNomeTime = document.getElementById("teamName");
+        const elementoNomeCompleto = document.getElementById("teamFullName");
+        const elementoContagemJogadores = document.getElementById("playerCount");
+        const elementoEscudoTime = document.getElementById("teamBadge");
 
-        if (nomeTimeEl) {
-            nomeTimeEl.textContent = EscalaDados.timeAtual.name;
+        if (elementoNomeTime) {
+            elementoNomeTime.textContent = EscalaDados.timeAtual.nome;
         }
 
-        if (nomeCompletoEl) {
-            nomeCompletoEl.textContent = `Escalação - ${EscalaDados.timeAtual.name}`;
+        if (elementoNomeCompleto) {
+            elementoNomeCompleto.textContent = `Escalação - ${EscalaDados.timeAtual.nome}`;
         }
 
-        if (contagemJogadoresEl) {
-            contagemJogadoresEl.textContent = EscalaDados.timeAtual.players.length;
+        if (elementoContagemJogadores) {
+            elementoContagemJogadores.textContent = EscalaDados.timeAtual.jogadores.length;
         }
 
-        if (badgeEl) {
-            badgeEl.innerHTML = EscalaConfig.obterEscudoHTML(EscalaDados.timeAtual.name);
+        if (elementoEscudoTime) {
+            elementoEscudoTime.innerHTML = EscalaConfiguracoes.obterMarcacaoEscudo(EscalaDados.timeAtual.nome);
         }
     },
 
@@ -71,7 +71,7 @@ const EscalaConstrutor = {
         // --- LIMPA A LISTA ANTERIOR ---
         listaJogadores.innerHTML = "";
 
-        EscalaDados.timeAtual.players.forEach((jogador, indice) => {
+        EscalaDados.timeAtual.jogadores.forEach((jogador, indice) => {
             const elemento = this.criarElementoJogador(jogador, indice);
             listaJogadores.appendChild(elemento);
         });
@@ -81,28 +81,28 @@ const EscalaConstrutor = {
 
     // --- CRIA O ELEMENTO HTML PARA UM JOGADOR NA LISTA ---
     criarElementoJogador(jogador, indice) {
-        const div = document.createElement("div");
+        const elementoJogador = document.createElement("div");
 
-        div.className = "player-item";
-        if (EscalaDados.jogadorEstaSelecionado(jogador.name)) {
-            div.classList.add("selected");
+        elementoJogador.className = "player-item";
+        if (EscalaDados.jogadorEstaSelecionado(jogador.nome)) {
+            elementoJogador.classList.add("selected");
         }
-        div.dataset.playerIndex = indice;
+        elementoJogador.dataset.indiceJogador = indice;
 
-        const grupoPosicao = EscalaDados.obterGrupoPosicao(jogador.pos);
+        const grupoPosicao = EscalaDados.obterGrupoPosicao(jogador.posicao);
 
-        div.innerHTML = `
+        elementoJogador.innerHTML = `
             <div class="player-header">
-                <span class="player-name">${jogador.name}</span>
-                <span class="player-position">${jogador.pos}</span>
+                <span class="player-name">${jogador.nome}</span>
+                <span class="player-position">${jogador.posicao}</span>
             </div>
             <div class="player-info">
                 <span>${grupoPosicao}</span>
-                <i class="fas fa-${EscalaDados.jogadorEstaSelecionado(jogador.name) ? "check-circle" : "plus-circle"}"></i>
+                <i class="fas fa-${EscalaDados.jogadorEstaSelecionado(jogador.nome) ? "check-circle" : "plus-circle"}"></i>
             </div>
         `;
 
-        div.addEventListener("click", () => {
+        elementoJogador.addEventListener("click", () => {
             if (this.posicaoSelecionada) {
                 EscalaDados.adicionarJogadorNaPosicao(indice, this.posicaoSelecionada);
                 this.posicaoSelecionada = null;
@@ -110,7 +110,7 @@ const EscalaConstrutor = {
             }
         });
 
-        return div;
+        return elementoJogador;
     },
 
     // --- RENDERIZA O CAMPO COM AS POSIÇÕES E JOGADORES SELECIONADOS ---
@@ -122,43 +122,43 @@ const EscalaConstrutor = {
 
         posicoesFormacao.innerHTML = "";
 
-        const posicoes = EscalaConfig.formacoes[EscalaDados.formacaoAtual].posicoes;
+        const posicoes = EscalaConfiguracoes.formacoes[EscalaDados.formacaoAtual].posicoes;
 
-        posicoes.forEach(pos => {
-            const slot = this.criarSlotPosicao(pos);
-            posicoesFormacao.appendChild(slot);
+        posicoes.forEach(posicao => {
+            const elementoPosicao = this.criarElementoPosicao(posicao);
+            posicoesFormacao.appendChild(elementoPosicao);
         });
 
-        const formacaoAtualEl = document.getElementById("currentFormation");
-        if (formacaoAtualEl) {
-            formacaoAtualEl.textContent = EscalaDados.formacaoAtual;
+        const elementoFormacaoAtual = document.getElementById("currentFormation");
+        if (elementoFormacaoAtual) {
+            elementoFormacaoAtual.textContent = EscalaDados.formacaoAtual;
         }
     },
 
     // --- CRIA UM SLOT DE POSIÇÃO NO CAMPO PARA COLOCAR UM JOGADOR ---
-    criarSlotPosicao(posicao) {
-        const slot = document.createElement("div");
+    criarElementoPosicao(posicao) {
+        const elementoPosicao = document.createElement("div");
 
-        slot.className = "position-slot";
-        slot.dataset.position = posicao.id;
-        slot.style.left = `${posicao.x}%`;
-        slot.style.top = `${posicao.y}%`;
+        elementoPosicao.className = "position-slot";
+        elementoPosicao.dataset.posicao = posicao.id;
+        elementoPosicao.style.left = `${posicao.x}%`;
+        elementoPosicao.style.top = `${posicao.y}%`;
 
         // --- BUSCA O JOGADOR JÁ ATRIBUÍDO A ESTA POSIÇÃO ---
         const jogador = EscalaDados.jogadoresSelecionados.get(posicao.id);
         if (jogador) {
-            slot.classList.add("filled");
-            slot.innerHTML = `<div class="position-label">${jogador.name}</div>`;
+            elementoPosicao.classList.add("filled");
+            elementoPosicao.innerHTML = `<div class="position-label">${jogador.nome}</div>`;
         } else {
-            slot.innerHTML = `<div class="position-label">${posicao.id}</div>`;
+            elementoPosicao.innerHTML = `<div class="position-label">${posicao.id}</div>`;
         }
 
         if (this.posicaoSelecionada === posicao.id) {
-            slot.classList.add("active");
+            elementoPosicao.classList.add("active");
         }
 
         // --- ADICIONA EVENTO DE CLIQUE PARA SELECIONAR OU REMOVER JOGADOR ---
-        slot.addEventListener("click", (e) => {
+        elementoPosicao.addEventListener("click", (e) => {
             e.stopPropagation();
             if (jogador) {
                 EscalaDados.removerJogadorDaPosicao(posicao.id);
@@ -169,14 +169,14 @@ const EscalaConstrutor = {
             }
         });
 
-        return slot;
+        return elementoPosicao;
     },
 
     // --- SELECIONA UMA POSIÇÃO NO CAMPO E PREPARA PARA ADICIONAR JOGADOR ---
-    selecionarPosicao(posicaoId) {
-        this.posicaoSelecionada = posicaoId;
+    selecionarPosicao(identificadorPosicao) {
+        this.posicaoSelecionada = identificadorPosicao;
         this.renderizarFormacao();
-        this.filtrarJogadoresPorPosicaoSlot(posicaoId);
+        this.filtrarJogadoresPorPosicaoSelecionada(identificadorPosicao);
 
         const painel = document.querySelector(".players-panel");
         if (painel) {
@@ -189,25 +189,25 @@ const EscalaConstrutor = {
     },
 
     // --- FILTRA JOGADORES COMPATÍVEIS COM A POSIÇÃO SELECIONADA ---
-    filtrarJogadoresPorPosicaoSlot(posicaoId) {
+    filtrarJogadoresPorPosicaoSelecionada(posicaoId) {
         const listaJogadores = document.getElementById("playersList");
         if (!listaJogadores) {
             return;
         }
 
         const itens = listaJogadores.querySelectorAll(".player-item");
-        const posBase = posicaoId.replace(/[0-9]/g, "");
+        const posicaoBase = posicaoId.replace(/[0-9]/g, "");
 
         let filtro;
-        if (posBase === "GK") {
+        if (posicaoBase === "GK") {
             filtro = "GK";
-        } else if (posBase === "ZAG") {
+        } else if (posicaoBase === "ZAG") {
             filtro = "ZAG";
-        } else if (posBase === "LD" || posBase === "LE" || posBase === "LAT") {
+        } else if (posicaoBase === "LD" || posicaoBase === "LE" || posicaoBase === "LAT") {
             filtro = "LD/LE";
-        } else if (["VOL", "MEI", "ME", "MD", "CAM", "MOD", "MOE"].includes(posBase)) {
+        } else if (["VOL", "MEI", "ME", "MD", "CAM", "MOD", "MOE"].includes(posicaoBase)) {
             filtro = "VOL/MEI";
-        } else if (["ATA", "CA", "PD", "PE", "SA"].includes(posBase)) {
+        } else if (["ATA", "CA", "PD", "PE", "SA"].includes(posicaoBase)) {
             filtro = "ATA";
         } else {
             filtro = "all";
@@ -258,34 +258,34 @@ const EscalaConstrutor = {
         }
 
         // --- CRIA UM GRID PARA EXIBIR OS JOGADORES SELECIONADOS ---
-        const grid = document.createElement("div");
-        grid.className = "selected-players-grid";
+        const gradeJogadoresSelecionados = document.createElement("div");
+        gradeJogadoresSelecionados.className = "selected-players-grid";
 
         EscalaDados.jogadoresSelecionados.forEach((jogador, posicao) => {
             const elemento = document.createElement("div");
             elemento.className = "selected-player";
             elemento.innerHTML = `
-                <div class="selected-player-name">${jogador.name}</div>
+                <div class="selected-player-name">${jogador.nome}</div>
                 <div class="selected-player-position">${posicao}</div>
             `;
-            grid.appendChild(elemento);
+            gradeJogadoresSelecionados.appendChild(elemento);
         });
 
         elementoSelecionados.innerHTML = "";
-        elementoSelecionados.appendChild(grid);
+        elementoSelecionados.appendChild(gradeJogadoresSelecionados);
     },
 
     // --- ATUALIZA A CONTAGEM DE JOGADORES NO CAMPO ---
     atualizarContagemCampo() {
-        const contagemEl = document.getElementById("fieldCount");
-        if (contagemEl) {
-            contagemEl.textContent = `${EscalaDados.jogadoresSelecionados.size}/11`;
+        const elementoContagemCampo = document.getElementById("fieldCount");
+        if (elementoContagemCampo) {
+            elementoContagemCampo.textContent = `${EscalaDados.jogadoresSelecionados.size}/11`;
         }
     },
 
     // --- MUDA A FORMAÇÃO DO TIME ---
     mudarFormacao(formacao) {
-        if (EscalaConfig.formacoes[formacao]) {
+        if (EscalaConfiguracoes.formacoes[formacao]) {
             EscalaDados.formacaoAtual = formacao;
             this.renderizarFormacao();
 
@@ -323,10 +323,10 @@ const EscalaConstrutor = {
         const itens = listaJogadores.querySelectorAll(".player-item");
 
         itens.forEach(item => {
-            const indice = parseInt(item.dataset.playerIndex);
-            const jogador = EscalaDados.timeAtual.players[indice];
+            const indice = parseInt(item.dataset.indiceJogador);
+            const jogador = EscalaDados.timeAtual.jogadores[indice];
 
-            if (filtro === "all" || EscalaDados.posicaoCorrespondeAoFiltro(jogador.pos, filtro)) {
+            if (filtro === "all" || EscalaDados.posicaoCorrespondeAoFiltro(jogador.posicao, filtro)) {
                 item.style.display = "block";
             } else {
                 item.style.display = "none";
@@ -476,9 +476,9 @@ const EscalaConstrutor = {
         // --- FECHAR MENU AO CLICAR FORA ---
         document.addEventListener("click", (e) => {
             const menu = document.getElementById("formationsMenu");
-            const toggle = document.getElementById("formationToggle");
+            const btnAlternarFormacoes = document.getElementById("formationToggle");
 
-            if (menu && toggle && !menu.contains(e.target) && !toggle.contains(e.target)) {
+            if (menu && btnAlternarFormacoes && !menu.contains(e.target) && !btnAlternarFormacoes.contains(e.target)) {
                 menu.classList.remove("active");
             }
         });

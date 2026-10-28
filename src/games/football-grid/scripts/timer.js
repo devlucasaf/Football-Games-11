@@ -1,24 +1,24 @@
-const GridTemporizador = {
-    intervaloTimer: null,
+const GradeTemporizador = {
+    intervaloTemporizador: null,
     tempoRestante:  0,
 
     // --- INICIAR TIMER ---
-    iniciarTimer(minutos) {
+    iniciarTemporizador(minutos) {
         if (minutos === "unlimited") {
-            this.atualizarDisplayTimer("∞");
+            this.atualizarExibicaoTempo("∞");
             return;
         }
 
         this.tempoRestante = parseInt(minutos) * 60;
-        this.atualizarDisplayTimer(this.formatarTempo(this.tempoRestante));
+        this.atualizarExibicaoTempo(this.formatarTempo(this.tempoRestante));
 
-        if (this.intervaloTimer) {
-            clearInterval(this.intervaloTimer);
+        if (this.intervaloTemporizador) {
+            clearInterval(this.intervaloTemporizador);
         }
 
-        this.intervaloTimer = setInterval(() => {
+        this.intervaloTemporizador = setInterval(() => {
             this.tempoRestante--;
-            this.atualizarDisplayTimer(this.formatarTempo(this.tempoRestante));
+            this.atualizarExibicaoTempo(this.formatarTempo(this.tempoRestante));
 
             if (this.tempoRestante <= 0) {
                 this.pararJogo("Tempo esgotado!");
@@ -31,35 +31,35 @@ const GridTemporizador = {
 
     // --- FORMATAR TEMPO ---
     formatarTempo(segundos) {
-        const mins = Math.floor(segundos / 60);
-        const segs = segundos % 60;
-        return `${mins}:${segs.toString().padStart(2, "0")}`;
+        const minutos = Math.floor(segundos / 60);
+        const segundosRestantes = segundos % 60;
+        return `${minutos}:${segundosRestantes.toString().padStart(2, "0")}`;
     },
 
     // --- ATUALIZAR DISPLAY DO TIMER ---
-    atualizarDisplayTimer(texto) {
-        let timerEl = document.getElementById("timer-display");
-        if (!timerEl) {
+    atualizarExibicaoTempo(texto) {
+        let elementoTemporizador = document.getElementById("timer-display");
+        if (!elementoTemporizador) {
             const cabecalho = document.querySelector(".game-header");
-            timerEl = document.createElement("div");
-            timerEl.id = "timer-display";
-            timerEl.style = "font-size: 1.5rem; font-weight: bold; color: #e74c3c; margin-top: 10px;";
-            cabecalho.appendChild(timerEl);
+            elementoTemporizador = document.createElement("div");
+            elementoTemporizador.id = "timer-display";
+            elementoTemporizador.style = "font-size: 1.5rem; font-weight: bold; color: #e74c3c; margin-top: 10px;";
+            cabecalho.appendChild(elementoTemporizador);
         }
-        timerEl.textContent = `Tempo: ${texto}`;
+        elementoTemporizador.textContent = `Tempo: ${texto}`;
     },
 
     // --- PARAR JOGO ---
     pararJogo(mensagem) {
-        GridJogo.jogoParado = true;
-        clearInterval(this.intervaloTimer);
-        const { inputJogador, btnBuscar } = GridInterface.elementos;
-        if (inputJogador) {
-            inputJogador.disabled = true;
+        GradeJogo.jogoParado = true;
+        clearInterval(this.intervaloTemporizador);
+        const { campoJogador, btnBuscarJogador } = GradeInterface.elementos;
+        if (campoJogador) {
+            campoJogador.disabled = true;
         }
         
-        if (btnBuscar) {
-            btnBuscar.disabled = true;
+        if (btnBuscarJogador) {
+            btnBuscarJogador.disabled = true;
         }
         alert(mensagem);
     }

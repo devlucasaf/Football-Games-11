@@ -1,5 +1,5 @@
 import estado from "./core.js";
-import { normalizar } from "./utils.js";
+import { normalizarTexto } from "./utils.js";
 import { carregarDados, escolherLista } from "./data.js";
 import {
     renderizarTema,
@@ -7,21 +7,21 @@ import {
     revelarItem,
     revelarTodos,
     atualizarPlacar,
-    mostrarFeedback,
+    mostrarRetornoPalpite,
     mostrarResultado,
     fecharResultado,
     inicializarSugestoes,
-    limparInput,
-    focarInput,
-    desabilitarInput,
-    habilitarInput
+    limparCampoPalpite,
+    focarCampoPalpite,
+    desabilitarCampoPalpite,
+    habilitarCampoPalpite
 } from "./ui.js";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DOM ---
-const $confirmarBtn = document.getElementById("confirmarBtn");
-const $desistirBtn = document.getElementById("desistirBtn");
-const $proximaRodadaBtn = document.getElementById("proximaRodadaBtn");
-const $input = document.getElementById("palpiteInput");
+const btnConfirmarPalpite = document.getElementById("confirmarBtn");
+const btnDesistirRodada = document.getElementById("desistirBtn");
+const btnProximaRodada = document.getElementById("proximaRodadaBtn");
+const campoPalpite = document.getElementById("palpiteInput");
 
 // --- INÍCIO DE UMA NOVA RODADA ---
 function iniciarRodada() {
@@ -36,9 +36,9 @@ function iniciarRodada() {
     renderizarTema(lista);
     renderizarLista(lista);
     atualizarPlacar();
-    habilitarInput();
-    limparInput();
-    focarInput();
+    habilitarCampoPalpite();
+    limparCampoPalpite();
+    focarCampoPalpite();
     fecharResultado();
 }
 
@@ -48,39 +48,39 @@ function verificarPalpite() {
         return;                                          
     }
 
-    const valor = $input.value.trim();
+    const valor = campoPalpite.value.trim();
     if (!valor) {
         return;                                          
     }
 
-    const valorN = normalizar(valor);
+    const valorNormalizado = normalizarTexto(valor);
     const itens  = estado.listaAtual.itens;
 
-    const matches = [];                                 
-    itens.forEach((item, idx) => {
-        if (estado.itensAcertados.has(idx)) {
+    const indicesCorrespondentes = [];
+    itens.forEach((item, indiceItem) => {
+        if (estado.itensAcertados.has(indiceItem)) {
             return;                                      
         }
 
-        if (normalizar(item.nome) === valorN) {
-            matches.push(idx);
+        if (normalizarTexto(item.nome) === valorNormalizado) {
+            indicesCorrespondentes.push(indiceItem);
         }
     });
 
-    if (matches.length > 0) {
-        matches.forEach(idx => {
-            estado.itensAcertados.add(idx);
+    if (indicesCorrespondentes.length > 0) {
+        indicesCorrespondentes.forEach(indiceItem => {
+            estado.itensAcertados.add(indiceItem);
             estado.acertosRodada++;
-            revelarItem(idx);                            
+            revelarItem(indiceItem);
         });
 
-        const pontosGanhos = 10 * matches.length;
+        const pontosGanhos = 10 * indicesCorrespondentes.length;
         estado.pontosTotal += pontosGanhos;
 
         atualizarPlacar();
-        mostrarFeedback("acerto", `Acertou! +${pontosGanhos} pts`);
-        limparInput();
-        focarInput();
+        mostrarRetornoPalpite("acerto", `Acertou! +${pontosGanhos} pts`);
+        limparCampoPalpite();
+        focarCampoPalpite();
 
         if (estado.acertosRodada >= itens.length) {
             const bonus = 20;
@@ -91,9 +91,9 @@ function verificarPalpite() {
     } else {
         estado.vidas--;
         atualizarPlacar();
-        mostrarFeedback("erro", `Errou! Vidas restantes: ${estado.vidas}`);
-        limparInput();
-        focarInput();
+        mostrarRetornoPalpite("erro", `Errou! Vidas restantes: ${estado.vidas}`);
+        limparCampoPalpite();
+        focarCampoPalpite();
 
         if (estado.vidas <= 0) {
             revelarTodos();                              
@@ -103,7 +103,7 @@ function verificarPalpite() {
 }
 
 // --- FUNÇÃO PARA DESISTIR DA RODADA ---
-function desistir() {
+function desistirRodada() {
     if (!estado.jogoAtivo) {
         return;
     }
@@ -114,7 +114,7 @@ function desistir() {
 // --- FINALIZAÇÃO DA RODADA ---
 function finalizarRodada() {
     estado.jogoAtivo = false;
-    desabilitarInput();
+    desabilitarCampoPalpite();
 
     const total = estado.listaAtual.itens.length;
     const acertos = estado.acertosRodada;
@@ -134,7 +134,7 @@ function finalizarRodada() {
 
     if (window.FG11Stats) {
         const venceu = acertos >= Math.ceil(total / 2);
-        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        const rotulos = Array.from({ length: total + 1 }, (valorIgnorado, indiceAcertos) => String(indiceAcertos));
         window.FG11Stats.registrar("football-top10", {
             venceu,
             bucket: acertos,
@@ -156,30 +156,30 @@ function finalizarRodada() {
 }
 
 // --- EVENTOS DOS BOTÕES ---
-$confirmarBtn.addEventListener("click", verificarPalpite);
+btnConfirmarPalpite.addEventListener("click", verificarPalpite);
 
 // --- EVENTO DE TECLA ENTER NO INPUT ---
-const $sugestoes = document.getElementById("sugestoesLista");
-$input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        const temSugestaoAtiva = $sugestoes.querySelector(".sugestao-item.ativa");
+const listaSugestoes = document.getElementById("sugestoesLista");
+campoPalpite.addEventListener("keydown", (eventoTeclado) => {
+    if (eventoTeclado.key === "Enter") {
+        const temSugestaoAtiva = listaSugestoes.querySelector(".sugestao-item.ativa");
         if (!temSugestaoAtiva) {
-            e.preventDefault();
+            eventoTeclado.preventDefault();
             verificarPalpite();
         }
     }
 });
 
-$desistirBtn.addEventListener("click", desistir);
+btnDesistirRodada.addEventListener("click", desistirRodada);
 
-$proximaRodadaBtn.addEventListener("click", iniciarRodada);
+btnProximaRodada.addEventListener("click", iniciarRodada);
 
 inicializarSugestoes(verificarPalpite);
 
 // --- INICIALIZAÇÃO DO JOGO ---
-async function init() {
+async function inicializarJogoListaDez() {
     await carregarDados();
     iniciarRodada();
 }
 
-init();
+inicializarJogoListaDez();

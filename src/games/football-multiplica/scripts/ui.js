@@ -1,79 +1,79 @@
 import { estado } from "./core.js";
 import { nomeTipo } from "./data.js";
 
-const els = {
+const elementosMultiplicacao = {
     desafioTema:            document.getElementById("desafioTema"),
     metaValor:              document.getElementById("metaValor"),
     rodadaAtual:            document.getElementById("rodadaAtual"),
     rodadaTotal:            document.getElementById("rodadaTotal"),
     totalAcumulado:         document.getElementById("totalAcumulado"),
-    progressFill:           document.getElementById("progressFill"),
-    progressLabel:          document.getElementById("progressLabel"),
+    preenchimentoProgresso:           document.getElementById("progressFill"),
+    rotuloProgresso:          document.getElementById("progressLabel"),
     jogadorNome:            document.getElementById("jogadorNome"),
-    jogadorStats:           document.getElementById("jogadorStats"),
-    valorLabel:             document.getElementById("valorLabel"),
+    estatisticasJogador:           document.getElementById("jogadorStats"),
+    rotuloValor:             document.getElementById("valorLabel"),
     valorNumero:            document.getElementById("valorNumero"),
-    jogadorCard:            document.getElementById("jogadorCard"),
-    multiplicadoresGrid:    document.getElementById("multiplicadoresGrid"),
+    cartaoJogador:            document.getElementById("jogadorCard"),
+    gradeMultiplicadores:    document.getElementById("multiplicadoresGrid"),
     multiplicacaoResultado: document.getElementById("multiplicacaoResultado"),
     resultadoCalculo:       document.getElementById("resultadoCalculo"),
-    finalResult:            document.getElementById("finalResult"),
-    resultIcon:             document.getElementById("resultIcon"),
-    resultTitle:            document.getElementById("resultTitle"),
-    resultText:             document.getElementById("resultText"),
-    resultDetails:          document.getElementById("resultDetails"),
-    gameInfo:               document.getElementById("gameInfo"),
-    btnPular:               document.getElementById("btnPular"),
+    resultadoFinal:            document.getElementById("finalResult"),
+    iconeResultado:             document.getElementById("resultIcon"),
+    tituloResultado:            document.getElementById("resultTitle"),
+    textoResultado:             document.getElementById("resultText"),
+    detalhesResultado:          document.getElementById("resultDetails"),
+    informacoesJogo:               document.getElementById("gameInfo"),
+    btnPularJogador:               document.getElementById("btnPularJogador"),
     pulosRestantes:         document.getElementById("pulosRestantes"),
-    pulosInfo:              document.getElementById("pulosInfo"),
-    skipSection:            document.getElementById("skipSection")
+    informacoesPulos:              document.getElementById("pulosInfo"),
+    secaoPularJogador:            document.getElementById("skipSection")
 };
 
 // --- FORMATAR NÚMERO ---
-function formatarNumero(n) {
-    return n.toLocaleString("pt-BR");
+function formatarNumero(numero) {
+    return numero.toLocaleString("pt-BR");
 }
 
 // --- EXIBIR DESAFIO ---
 export function exibirDesafio() {
-    const d = estado.desafioAtual;
+    const desafio = estado.desafioAtual;
 
-    els.desafioTema.textContent = d.tema;
-    els.metaValor.textContent = formatarNumero(d.meta);
-    els.rodadaTotal.textContent = d.rodadas;
+    elementosMultiplicacao.desafioTema.textContent = desafio.tema;
+    elementosMultiplicacao.metaValor.textContent = formatarNumero(desafio.meta);
+    elementosMultiplicacao.rodadaTotal.textContent = desafio.rodadas;
 
     atualizarProgresso();
 }
 
 // --- ATUALIZAR RODADA ---
 export function atualizarRodada() {
-    els.rodadaAtual.textContent = estado.rodadaAtual + 1;
-    els.totalAcumulado.textContent = formatarNumero(estado.totalAcumulado);
+    elementosMultiplicacao.rodadaAtual.textContent = estado.rodadaAtual + 1;
+    elementosMultiplicacao.totalAcumulado.textContent = formatarNumero(estado.totalAcumulado);
     atualizarProgresso();
 }
 
 // --- ATUALIZAR PROGRESSO ---
 function atualizarProgresso() {
     const meta = estado.desafioAtual.meta;
-    const pct = Math.min((estado.totalAcumulado / meta) * 100, 100);
-    els.progressFill.style.width = `${pct}%`;
-    els.progressLabel.textContent = `${Math.round(pct)}%`;
+    const percentualProgresso = Math.min((estado.totalAcumulado / meta) * 100, 100);
+    elementosMultiplicacao.preenchimentoProgresso.style.width = `${percentualProgresso}%`;
+    elementosMultiplicacao.rotuloProgresso.textContent = `${Math.round(percentualProgresso)}%`;
 
-    if (pct >= 100) {
-        els.progressFill.classList.add("meta-atingida");
+    if (percentualProgresso >= 100) {
+        elementosMultiplicacao.preenchimentoProgresso.classList.add("meta-atingida");
     } else {
-        els.progressFill.classList.remove("meta-atingida");
+        elementosMultiplicacao.preenchimentoProgresso.classList.remove("meta-atingida");
     }
 }
 
 // --- EXIBIR JOGADOR ---
 export function exibirJogador(jogador, valorTipo) {
-    els.jogadorNome.textContent = jogador.nome;
+    elementosMultiplicacao.jogadorNome.textContent = jogador.nome;
 
     const estatistica = estado.desafioAtual.estatistica || estado.desafioAtual.tipo;
     const tipoNome = nomeTipo(estatistica);
 
-    const statsMap = [
+    const definicoesEstatisticas = [
         { chave: "gols",            icone: "fa-futbol",         label: "Gols"     },
         { chave: "titulos",         icone: "fa-trophy",         label: "Títulos"  },
         { chave: "assistencias",    icone: "fa-hands-helping",  label: "Assist."  },
@@ -86,93 +86,93 @@ export function exibirJogador(jogador, valorTipo) {
         { chave: "premierLeague",   icone: "fa-shield-alt",     label: "PL"       }
     ];
 
-    els.jogadorStats.innerHTML = "";
-    statsMap.forEach(s => {
-        const val = jogador[s.chave] || 0;
-        if (val > 0 && s.chave === estatistica) {
-            els.jogadorStats.innerHTML += `<span class="stat-badge destaque"><i class="fas ${s.icone}"></i> ${s.label}: ${formatarNumero(val)}</span>`;
+    elementosMultiplicacao.estatisticasJogador.innerHTML = "";
+    definicoesEstatisticas.forEach(definicaoEstatistica => {
+        const valorEstatistica = jogador[definicaoEstatistica.chave] || 0;
+        if (valorEstatistica > 0 && definicaoEstatistica.chave === estatistica) {
+            elementosMultiplicacao.estatisticasJogador.innerHTML += `<span class="stat-badge destaque"><i class="fas ${definicaoEstatistica.icone}"></i> ${definicaoEstatistica.label}: ${formatarNumero(valorEstatistica)}</span>`;
         }
     });
 
-    els.valorLabel.textContent = `${tipoNome}:`;
-    els.valorNumero.textContent = formatarNumero(valorTipo);
+    elementosMultiplicacao.rotuloValor.textContent = `${tipoNome}:`;
+    elementosMultiplicacao.valorNumero.textContent = formatarNumero(valorTipo);
 
-    els.jogadorCard.classList.remove("hidden");
-    els.multiplicacaoResultado.classList.add("hidden");
-    els.skipSection.classList.remove("hidden");
+    elementosMultiplicacao.cartaoJogador.classList.remove("hidden");
+    elementosMultiplicacao.multiplicacaoResultado.classList.add("hidden");
+    elementosMultiplicacao.secaoPularJogador.classList.remove("hidden");
     atualizarPulos();
-    els.multiplicadoresGrid.classList.remove("hidden");
+    elementosMultiplicacao.gradeMultiplicadores.classList.remove("hidden");
 }
 
 // --- RENDERIZAR MULTIPLICADORES ---
-export function renderizarMultiplicadores(onSelect) {
-    els.multiplicadoresGrid.innerHTML = "";
-    estado.multiplicadores.forEach((mult, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "btn-multiplicador";
+export function renderizarMultiplicadores(aoSelecionarMultiplicador) {
+    elementosMultiplicacao.gradeMultiplicadores.innerHTML = "";
+    estado.multiplicadores.forEach((multiplicador, indiceMultiplicador) => {
+        const btnSelecionarMultiplicador = document.createElement("button");
+        btnSelecionarMultiplicador.className = "btn-multiplicador";
 
-        const usado = estado.multiplicadoresUsados[idx];
+        const usado = estado.multiplicadoresUsados[indiceMultiplicador];
         if (usado) {
-            btn.classList.add("usado");
-            btn.disabled = true;
-            btn.innerHTML = `<span class="mult-valor">x${mult}</span><span class="mult-jogador">${usado}</span>`;
+            btnSelecionarMultiplicador.classList.add("usado");
+            btnSelecionarMultiplicador.disabled = true;
+            btnSelecionarMultiplicador.innerHTML = `<span class="mult-valor">x${multiplicador}</span><span class="mult-jogador">${usado}</span>`;
         } else {
-            if (mult <= 10) {
-                btn.classList.add("baixo");
-            } else if (mult <= 75) {
-                btn.classList.add("medio");
+            if (multiplicador <= 10) {
+                btnSelecionarMultiplicador.classList.add("baixo");
+            } else if (multiplicador <= 75) {
+                btnSelecionarMultiplicador.classList.add("medio");
             } else {
-                btn.classList.add("alto");
+                btnSelecionarMultiplicador.classList.add("alto");
             }
-            btn.textContent = `x${mult}`;
-            btn.addEventListener("click", () => onSelect(idx, mult));
+            btnSelecionarMultiplicador.textContent = `x${multiplicador}`;
+            btnSelecionarMultiplicador.addEventListener("click", () => aoSelecionarMultiplicador(indiceMultiplicador, multiplicador));
         }
 
-        els.multiplicadoresGrid.appendChild(btn);
+        elementosMultiplicacao.gradeMultiplicadores.appendChild(btnSelecionarMultiplicador);
     });
 }
 
 // --- MOSTRAR RESULTADO DA MULTIPLICAÇÃO ---
-export function mostrarResultadoMultiplicacao(valor, mult, resultado) {
-    els.skipSection.classList.add("hidden");
-    els.multiplicadoresGrid.classList.add("hidden");
-    els.multiplicacaoResultado.classList.remove("hidden");
+export function mostrarResultadoMultiplicacao(valor, multiplicador, resultado) {
+    elementosMultiplicacao.secaoPularJogador.classList.add("hidden");
+    elementosMultiplicacao.gradeMultiplicadores.classList.add("hidden");
+    elementosMultiplicacao.multiplicacaoResultado.classList.remove("hidden");
 
-    els.resultadoCalculo.innerHTML = `
-        ${formatarNumero(valor)} × ${mult} = <span class="resultado-valor">${formatarNumero(resultado)}</span>
+    elementosMultiplicacao.resultadoCalculo.innerHTML = `
+        ${formatarNumero(valor)} × ${multiplicador} = <span class="resultado-valor">${formatarNumero(resultado)}</span>
         <br>Total acumulado: <strong>${formatarNumero(estado.totalAcumulado)}</strong>
     `;
 
     if (estado.rodadaAtual >= estado.desafioAtual.rodadas - 1) {
-        document.getElementById("btnProximo").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
+        document.getElementById("btnAvancarRodada").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
     }
 }
 
 // --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal(venceu) {
-    els.jogadorCard.classList.add("hidden");
-    els.gameInfo.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
+    elementosMultiplicacao.cartaoJogador.classList.add("hidden");
+    elementosMultiplicacao.informacoesJogo.classList.add("hidden");
+    elementosMultiplicacao.resultadoFinal.classList.remove("hidden");
 
     const meta = estado.desafioAtual.meta;
 
     if (venceu) {
-        els.resultIcon.innerHTML = "<i class='fas fa-trophy' style='color: #f1c40f;'></i>";
-        els.resultTitle.textContent = "Meta alcançada!";
-        els.resultText.textContent = "Parabéns, você atingiu o objetivo!";
+        elementosMultiplicacao.iconeResultado.innerHTML = "<i class='fas fa-trophy' style='color: #f1c40f;'></i>";
+        elementosMultiplicacao.tituloResultado.textContent = "Meta alcançada!";
+        elementosMultiplicacao.textoResultado.textContent = "Parabéns, você atingiu o objetivo!";
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
     } else {
-        els.resultIcon.innerHTML = "<i class='fas fa-times-circle' style='color: #e74c3c;'></i>";
-        els.resultTitle.textContent = "Não foi dessa vez!";
-        els.resultText.textContent = "Você não alcançou a meta.";
+        elementosMultiplicacao.iconeResultado.innerHTML = "<i class='fas fa-times-circle' style='color: #e74c3c;'></i>";
+        elementosMultiplicacao.tituloResultado.textContent = "Não foi dessa vez!";
+        elementosMultiplicacao.textoResultado.textContent = "Você não alcançou a meta.";
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }   
     }
 
-    els.resultDetails.innerHTML = `
+    elementosMultiplicacao.detalhesResultado.innerHTML = `
         <p>Meta: ${formatarNumero(meta)}</p>
         <p>Seu total: ${formatarNumero(estado.totalAcumulado)}</p>
         <p>${venceu ? "Superou em " + formatarNumero(estado.totalAcumulado - meta) + "!" : "Faltaram " + formatarNumero(meta - estado.totalAcumulado)}</p>
@@ -181,27 +181,27 @@ export function mostrarFinal(venceu) {
 
 // --- ATUALIZAR PULOS ---
 export function atualizarPulos() {
-    els.pulosRestantes.textContent = estado.pulosRestantes;
-    els.pulosInfo.textContent = `${estado.pulosRestantes}/${estado.maxPulos}`;
+    elementosMultiplicacao.pulosRestantes.textContent = estado.pulosRestantes;
+    elementosMultiplicacao.informacoesPulos.textContent = `${estado.pulosRestantes}/${estado.maximoPulos}`;
 
     if (estado.pulosRestantes <= 0) {
-        els.btnPular.disabled = true;
-        els.btnPular.classList.add("disabled");
+        elementosMultiplicacao.btnPularJogador.disabled = true;
+        elementosMultiplicacao.btnPularJogador.classList.add("disabled");
     } else {
-        els.btnPular.disabled = false;
-        els.btnPular.classList.remove("disabled");
+        elementosMultiplicacao.btnPularJogador.disabled = false;
+        elementosMultiplicacao.btnPularJogador.classList.remove("disabled");
     }
 }
 
 // --- RESETAR UI ---
-export function resetarUI() {
-    els.finalResult.classList.add("hidden");
-    els.gameInfo.classList.remove("hidden");
-    els.jogadorCard.classList.remove("hidden");
-    els.totalAcumulado.textContent = "0";
-    els.progressFill.style.width = "0%";
-    els.progressFill.classList.remove("meta-atingida");
-    els.progressLabel.textContent = "0%";
+export function reiniciarInterface() {
+    elementosMultiplicacao.resultadoFinal.classList.add("hidden");
+    elementosMultiplicacao.informacoesJogo.classList.remove("hidden");
+    elementosMultiplicacao.cartaoJogador.classList.remove("hidden");
+    elementosMultiplicacao.totalAcumulado.textContent = "0";
+    elementosMultiplicacao.preenchimentoProgresso.style.width = "0%";
+    elementosMultiplicacao.preenchimentoProgresso.classList.remove("meta-atingida");
+    elementosMultiplicacao.rotuloProgresso.textContent = "0%";
     atualizarPulos();
-    document.getElementById("btnProximo").innerHTML = "<i class='fas fa-arrow-right'></i> Próximo";
+    document.getElementById("btnAvancarRodada").innerHTML = "<i class='fas fa-arrow-right'></i> Próximo";
 }

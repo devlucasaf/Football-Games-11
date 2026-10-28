@@ -1,12 +1,12 @@
 import estado from "./core.js";
 
-const JSON_PATH = "data/football-top10.json";
+const CAMINHO_DADOS_LISTAS = "data/football-top10.json";
 
 // --- CARREGA OS DADOS DO ARQUIVO JSON ---
 export async function carregarDados() {
-    const res  = await fetch(JSON_PATH);
-    const json = await res.json();
-    estado.listas = json.listas;
+    const resposta = await fetch(CAMINHO_DADOS_LISTAS);
+    const dadosListas = await resposta.json();
+    estado.listas = dadosListas.listas;
 }
 
 // --- ESCOLHE UMA LISTA ALEATÓRIA QUE AINDA NÃO FOI USADA ---
@@ -15,12 +15,12 @@ export function escolherLista() {
         estado.listasUsadas.clear();
     }
 
-    const disponiveis = estado.listas.filter((_, i) => !estado.listasUsadas.has(i));
-    const idx = Math.floor(Math.random() * disponiveis.length);
-    const listaEscolhida = disponiveis[idx];
-    const idxReal = estado.listas.indexOf(listaEscolhida);
+    const disponiveis = estado.listas.filter((listaCandidata, indiceLista) => !estado.listasUsadas.has(indiceLista));
+    const indiceListaSorteada = Math.floor(Math.random() * disponiveis.length);
+    const listaEscolhida = disponiveis[indiceListaSorteada];
+    const indiceListaOriginal = estado.listas.indexOf(listaEscolhida);
 
-    estado.listasUsadas.add(idxReal);
+    estado.listasUsadas.add(indiceListaOriginal);
     estado.listaAtual = listaEscolhida;
 
     return listaEscolhida;

@@ -1,23 +1,23 @@
-(async function iniciarFootballGrid() {
+(async function inicializarJogoGrade() {
     try {
-        GridInterface.iniciarElementos();
+        GradeInterface.iniciarElementos();
 
-        const dados = await GridDados.carregarDados();
-        GridDados.construirDados(dados);
+        const dados = await GradeDados.carregarDados();
+        GradeDados.construirDados(dados);
 
-        const cfg = GridGerador.criarConfigGrid();
-        if (!cfg) {
+        const configuracaoGrade = GradeGerador.criarConfiguracaoGrade();
+        if (!configuracaoGrade) {
             throw new Error("Falha ao gerar uma grade jogável.");
         }
 
-        GridJogo.gridAtual = cfg;
-        GridInterface.aplicarGridNoDOM(cfg);
-        GridJogo.configurarEventos();
+        GradeJogo.gradeAtual = configuracaoGrade;
+        GradeInterface.aplicarGradeNaPagina(configuracaoGrade);
+        GradeJogo.configurarEventos();
 
         // --- TIMER ---
         const parametrosUrl = new URLSearchParams(window.location.search);
         const modoTempo = parametrosUrl.get("time") || "unlimited";
-        GridTemporizador.iniciarTimer(modoTempo);
+        GradeTemporizador.iniciarTemporizador(modoTempo);
     } catch (erro) {
         console.error(erro);
         alert(`Erro ao inicializar: ${erro.message}`);

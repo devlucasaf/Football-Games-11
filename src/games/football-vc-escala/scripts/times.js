@@ -2,7 +2,7 @@ const EscalaTimes = {
     async iniciar() {
         try {
             await EscalaDados.carregarDados();
-            this.renderizarGridTimes();
+            this.renderizarGradeTimes();
             this.atualizarEstatisticas();
             this.configurarEventos();
         } catch (erro) {
@@ -12,8 +12,8 @@ const EscalaTimes = {
     },
 
     // --- RENDERIZA UM GRID COM CARTÕES DE TODOS OS TIMES DISPONÍVEIS ---
-    renderizarGridTimes() {
-        const gridTimes = document.getElementById("teamsGrid");
+    renderizarGradeTimes() {
+        const gradeTimes = document.getElementById("teamsGrid");
         const elementoCarregando = document.getElementById("loadingTeams");
 
         if (!EscalaDados.timesProcessados || EscalaDados.timesProcessados.length === 0) {
@@ -25,11 +25,11 @@ const EscalaTimes = {
             elementoCarregando.style.display = "none";
         }
 
-        gridTimes.innerHTML = "";
+        gradeTimes.innerHTML = "";
 
         EscalaDados.timesProcessados.forEach(time => {
             const cartao = this.criarCartaoTime(time);
-            gridTimes.appendChild(cartao);
+            gradeTimes.appendChild(cartao);
         });
     },
 
@@ -37,22 +37,22 @@ const EscalaTimes = {
     criarCartaoTime(time) {
         const cartao = document.createElement("div");
         cartao.className = "team-card";
-        cartao.dataset.teamKey = time.key;
+        cartao.dataset.chaveTime = time.chave;
 
-        const contagemPosicoes = EscalaDados.obterContagemPosicoes(time.players);
+        const contagemPosicoes = EscalaDados.obterContagemPosicoes(time.jogadores);
 
         cartao.innerHTML = `
             <div class="team-badge">
-                ${EscalaConfig.obterEscudoHTML(time.name)}
+                ${EscalaConfiguracoes.obterMarcacaoEscudo(time.nome)}
             </div>
 
-            <h3>${time.name}</h3>
+            <h3>${time.nome}</h3>
 
             <div class="team-type">Brasileirão 2026</div>
 
             <div class="team-count">
                 <i class="fas fa-users"></i>
-                ${time.players.length} jogadores
+                ${time.jogadores.length} jogadores
             </div>
 
             <div class="position-breakdown">
@@ -64,7 +64,7 @@ const EscalaTimes = {
         `;
 
         cartao.addEventListener("click", () => {
-            window.location.href = `escala-builder.html?team=${encodeURIComponent(time.key)}`;
+            window.location.href = `escala-builder.html?team=${encodeURIComponent(time.chave)}`;
         });
 
         return cartao;
@@ -76,16 +76,16 @@ const EscalaTimes = {
             return;
         }
 
-        const totalTimesEl = document.getElementById("totalTeams");
-        const totalJogadoresEl = document.getElementById("totalPlayers");
+        const elementoTotalTimes = document.getElementById("totalTeams");
+        const elementoTotalJogadores = document.getElementById("totalPlayers");
 
-        if (totalTimesEl) {
-            totalTimesEl.textContent = EscalaDados.timesProcessados.length;
+        if (elementoTotalTimes) {
+            elementoTotalTimes.textContent = EscalaDados.timesProcessados.length;
         }
 
-        if (totalJogadoresEl) {
-            const contagem = EscalaDados.timesProcessados.reduce((total, time) => total + time.players.length, 0);
-            totalJogadoresEl.textContent = contagem;
+        if (elementoTotalJogadores) {
+            const contagem = EscalaDados.timesProcessados.reduce((total, time) => total + time.jogadores.length, 0);
+            elementoTotalJogadores.textContent = contagem;
         }
     },
 
@@ -107,7 +107,7 @@ const EscalaTimes = {
     configurarEventos() {
         const botaoTema = document.getElementById("themeToggle");
         if (botaoTema) {
-            botaoTema.addEventListener("click", EscalaUtils.alternarTema);
+            botaoTema.addEventListener("click", EscalaUtilitarios.alternarTema);
         }
     }
 };

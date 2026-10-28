@@ -2,51 +2,51 @@ import estado from "./core.js";
 
 // --- PREENCHER VALORES DAS PISTAS ---
 export function preencherPistas() {
-    const j = estado.jogadorAtual;
-    if (!j) {
+    const jogadorAtual = estado.jogadorAtual;
+    if (!jogadorAtual) {
         return;
     }
 
-    document.getElementById("pistaVal0").textContent = j.posicao;
-    document.getElementById("pistaVal1").textContent = j.pais;
-    document.getElementById("pistaBandeira").textContent = j.bandeira;
-    document.getElementById("pistaVal2").textContent = `${j.idade} anos`;
-    document.getElementById("pistaVal3").textContent = j.principalClube;
-    document.getElementById("pistaVal4").textContent = j.titulos.slice(0, 3).join(", ");
-    document.getElementById("pistaVal5").textContent = j.curiosidade;
+    document.getElementById("pistaVal0").textContent = jogadorAtual.posicao;
+    document.getElementById("pistaVal1").textContent = jogadorAtual.pais;
+    document.getElementById("pistaBandeira").textContent = jogadorAtual.bandeira;
+    document.getElementById("pistaVal2").textContent = `${jogadorAtual.idade} anos`;
+    document.getElementById("pistaVal3").textContent = jogadorAtual.principalClube;
+    document.getElementById("pistaVal4").textContent = jogadorAtual.titulos.slice(0, 3).join(", ");
+    document.getElementById("pistaVal5").textContent = jogadorAtual.curiosidade;
 }
 
 // --- RESETAR CARDS ---
-export function resetarCards() {
-    const cards = document.querySelectorAll(".pista-card");
-    cards.forEach((card, idx) => {
-        if (idx === 0) {
-            card.classList.remove("oculto");
-            card.classList.add("revelado");
+export function reiniciarCartoesPistas() {
+    const cartoesPistas = document.querySelectorAll(".pista-card");
+    cartoesPistas.forEach((cartaoPista, indicePista) => {
+        if (indicePista === 0) {
+            cartaoPista.classList.remove("oculto");
+            cartaoPista.classList.add("revelado");
         } else {
-            card.classList.add("oculto");
-            card.classList.remove("revelado");
+            cartaoPista.classList.add("oculto");
+            cartaoPista.classList.remove("revelado");
 
-            const iconeFrente = card.querySelector(".pista-frente i");
+            const iconeFrente = cartaoPista.querySelector(".pista-frente i");
             iconeFrente.className = "fas fa-lock";
         }
     });
 }
 
 // --- REVELAR UM CARD ---
-export function revelarCard(idx) {
-    const cards = document.querySelectorAll(".pista-card");
-    if (idx < 0 || idx >= cards.length) {
+export function revelarCartaoPista(indicePista) {
+    const cartoesPistas = document.querySelectorAll(".pista-card");
+    if (indicePista < 0 || indicePista >= cartoesPistas.length) {
         return false;
     }
 
-    const card = cards[idx];
-    if (!card.classList.contains("oculto")) {
+    const cartaoPista = cartoesPistas[indicePista];
+    if (!cartaoPista.classList.contains("oculto")) {
         return false;
     }
 
-    card.classList.remove("oculto");
-    card.classList.add("revelado");
+    cartaoPista.classList.remove("oculto");
+    cartaoPista.classList.add("revelado");
     estado.pistasReveladas++;
     atualizarContador();
     return true;
@@ -54,10 +54,10 @@ export function revelarCard(idx) {
 
 // --- REVELAR TODOS ---
 export function revelarTodos() {
-    const cards = document.querySelectorAll(".pista-card");
-    cards.forEach(card => {
-        card.classList.remove("oculto");
-        card.classList.add("revelado");
+    const cartoesPistas = document.querySelectorAll(".pista-card");
+    cartoesPistas.forEach(cartaoPista => {
+        cartaoPista.classList.remove("oculto");
+        cartaoPista.classList.add("revelado");
     });
     estado.pistasReveladas = 6;
     atualizarContador();
@@ -90,14 +90,14 @@ export function esconderResultado() {
 
 // --- FEEDBACK ERRO ---
 export function mostrarFeedbackErro(texto) {
-    const el = document.getElementById("feedbackErro");
+    const mensagemErroPalpite = document.getElementById("feedbackErro");
     document.getElementById("feedbackTexto").textContent = texto;
-    el.style.display = "";
-    el.style.animation = "none";
-    el.offsetHeight; 
-    el.style.animation = "";
+    mensagemErroPalpite.style.display = "";
+    mensagemErroPalpite.style.animation = "none";
+    mensagemErroPalpite.offsetHeight;
+    mensagemErroPalpite.style.animation = "";
 
-    setTimeout(() => { el.style.display = "none"; }, 3000);
+    setTimeout(() => { mensagemErroPalpite.style.display = "none"; }, 3000);
 }
 
 // --- ESCONDER FEEDBACK ERRO ---
@@ -106,26 +106,26 @@ export function esconderFeedbackErro() {
 }
 
 // --- INPUT ---
-export function limparInput() {
+export function limparCampoPalpite() {
     document.getElementById("palpiteInput").value = "";
     esconderSugestoes();
 }
 
 // --- FOCAR INPUT ---
-export function focarInput() {
+export function focarCampoPalpite() {
     document.getElementById("palpiteInput").focus();
 }
 
 // --- HABILITAR/DESABILITAR INPUT ---
-export function desabilitarInput() {
+export function desabilitarCampoPalpite() {
     document.getElementById("palpiteInput").disabled = true;
-    document.getElementById("confirmarBtn").disabled = true;
+    document.getElementById("btnConfirmarPalpite").disabled = true;
 }
 
 // --- HABILITAR INPUT ---
-export function habilitarInput() {
+export function habilitarCampoPalpite() {
     document.getElementById("palpiteInput").disabled = false;
-    document.getElementById("confirmarBtn").disabled = false;
+    document.getElementById("btnConfirmarPalpite").disabled = false;
 }
 
 // --- SUGESTÕES ---
@@ -139,10 +139,10 @@ export function mostrarSugestoes(sugestoes) {
     }
 
     sugestoes.slice(0, 6).forEach(nome => {
-        const div = document.createElement("div");
-        div.className = "sugestao-item";
-        div.textContent = nome;
-        lista.appendChild(div);
+        const itemSugestao = document.createElement("div");
+        itemSugestao.className = "sugestao-item";
+        itemSugestao.textContent = nome;
+        lista.appendChild(itemSugestao);
     });
 
     lista.classList.add("ativa");

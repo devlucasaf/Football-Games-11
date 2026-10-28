@@ -13,7 +13,7 @@ export async function carregarDados() {
 
 // --- ESCOLHA ALEATÓRIA DE JOGADOR ---
 export function escolherJogador() {
-    const disponiveis = estado.jogadores.filter((_, i) => !estado.jogadoresUsados.has(i));
+    const disponiveis = estado.jogadores.filter((jogadorNaoUtilizado, indiceJogador) => !estado.jogadoresUsados.has(indiceJogador));
 
     if (disponiveis.length === 0) {
         estado.jogadoresUsados.clear();
@@ -21,13 +21,13 @@ export function escolherJogador() {
     }
 
     const indices = estado.jogadores
-        .map((_, i) => i)
-        .filter(i => !estado.jogadoresUsados.has(i));
+        .map((jogadorNaoUtilizado, indiceJogador) => indiceJogador)
+        .filter(indiceJogador => !estado.jogadoresUsados.has(indiceJogador));
 
-    const idx = indices[Math.floor(Math.random() * indices.length)];
+    const indiceJogadorSorteado = indices[Math.floor(Math.random() * indices.length)];
     
-    estado.jogadoresUsados.add(idx);
-    estado.jogadorAtual = estado.jogadores[idx];
+    estado.jogadoresUsados.add(indiceJogadorSorteado);
+    estado.jogadorAtual = estado.jogadores[indiceJogadorSorteado];
     estado.pistasReveladas = 1;
     estado.tentativas = 0;
     estado.jogoAtivo = true;
@@ -35,5 +35,5 @@ export function escolherJogador() {
 
 // --- OBTER LISTA DE NOMES DOS JOGADORES ---
 export function obterNomesJogadores() {
-    return estado.jogadores.map(j => j.nome);
+    return estado.jogadores.map(jogador => jogador.nome);
 }

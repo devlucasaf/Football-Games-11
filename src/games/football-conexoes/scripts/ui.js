@@ -1,37 +1,37 @@
 import { estado } from "./core.js";
-import { embaralhar } from "./data.js";
+import { embaralharJogadores } from "./data.js";
 
 // --- RENDERIZAR GRID DE JOGADORES ---
-export function renderizarGrid() {
-    const grid = document.getElementById("playersGrid");
-    grid.innerHTML = "";
+export function renderizarGradeJogadores() {
+    const gradeJogadores = document.getElementById("playersGrid");
+    gradeJogadores.innerHTML = "";
 
     estado.jogadoresRestantes.forEach(nome => {
-        const tile = document.createElement("button");
-        tile.className = "player-tile";
-        tile.textContent = nome;
-        tile.dataset.nome = nome;
+        const btnSelecionarJogador = document.createElement("button");
+        btnSelecionarJogador.className = "player-tile";
+        btnSelecionarJogador.textContent = nome;
+        btnSelecionarJogador.dataset.nome = nome;
 
         if (estado.selecionados.includes(nome)) {
-            tile.classList.add("selected");
+            btnSelecionarJogador.classList.add("selected");
         }
 
-        tile.addEventListener("click", () => toggleSelecao(nome));
-        grid.appendChild(tile);
+        btnSelecionarJogador.addEventListener("click", () => alternarSelecaoJogador(nome));
+        gradeJogadores.appendChild(btnSelecionarJogador);
     });
 
     atualizarBotoes();
 }
 
 // --- ALTERNAR SELEÇÃO DE JOGADOR ---
-function toggleSelecao(nome) {
+function alternarSelecaoJogador(nome) {
     if (!estado.jogoAtivo) {
         return;
     }
     
-    const idx = estado.selecionados.indexOf(nome);
-    if (idx >= 0) {
-        estado.selecionados.splice(idx, 1);
+    const indiceJogadorSelecionado = estado.selecionados.indexOf(nome);
+    if (indiceJogadorSelecionado >= 0) {
+        estado.selecionados.splice(indiceJogadorSelecionado, 1);
     } else {
         if (estado.selecionados.length >= 4) {
             return;
@@ -39,85 +39,85 @@ function toggleSelecao(nome) {
         estado.selecionados.push(nome);
     }
 
-    renderizarGrid();
+    renderizarGradeJogadores();
 }
 
 // --- ATUALIZAR ESTADO DOS BOTÕES ---
 export function atualizarBotoes() {
-    const btnDeselect = document.getElementById("btnDeselect");
-    const btnSubmit   = document.getElementById("btnSubmit");
+    const btnLimparSelecao = document.getElementById("btnLimparSelecao");
+    const btnConfirmarSelecao = document.getElementById("btnConfirmarSelecao");
 
-    btnDeselect.disabled = estado.selecionados.length === 0;
-    btnSubmit.disabled = estado.selecionados.length !== 4;
+    btnLimparSelecao.disabled = estado.selecionados.length === 0;
+    btnConfirmarSelecao.disabled = estado.selecionados.length !== 4;
 }
 
 // --- RENDERIZAR VIDAS ---
 export function renderizarVidas() {
-    const dots = document.querySelectorAll("#livesDots .dot");
-    dots.forEach((dot, i) => {
-        if (i >= estado.tentativasRestantes) {
-            dot.classList.add("lost");
+    const indicadoresVidas = document.querySelectorAll("#livesDots .dot");
+    indicadoresVidas.forEach((indicadorVida, indiceVida) => {
+        if (indiceVida >= estado.tentativasRestantes) {
+            indicadorVida.classList.add("lost");
         } else {
-            dot.classList.remove("lost");
+            indicadorVida.classList.remove("lost");
         }
     });
 }
 
 // --- RENDERIZAR GRUPO ACERTADO ---
 export function renderizarGrupoAcertado(grupo) {
-    const container = document.getElementById("solvedGroups");
-    const div       = document.createElement("div");
+    const recipienteGruposAcertados = document.getElementById("solvedGroups");
+    const cartaoGrupo = document.createElement("div");
 
-    div.className = "solved-group";
-    div.style.backgroundColor = grupo.cor;
-    div.innerHTML = `
+    cartaoGrupo.className = "solved-group";
+    cartaoGrupo.style.backgroundColor = grupo.cor;
+    cartaoGrupo.innerHTML = `
         <div class="group-category">${grupo.categoria}</div>
         <div class="group-players">${grupo.jogadores.join(", ")}</div>
     `;
-    container.appendChild(div);
+    recipienteGruposAcertados.appendChild(cartaoGrupo);
 }
 
 // --- MOSTRAR FEEDBACK ---
-export function mostrarFeedback(tipo, texto) {
-    const msg = document.getElementById("feedbackMsg");
+export function mostrarMensagemSelecao(tipo, texto) {
+    const mensagemSelecao = document.getElementById("feedbackMsg");
 
-    msg.textContent = texto;
-    msg.className = `feedback-msg ${tipo}`;
-    msg.classList.remove("hidden");
+    mensagemSelecao.textContent = texto;
+    mensagemSelecao.className = `feedback-msg ${tipo}`;
+    mensagemSelecao.classList.remove("hidden");
 
     setTimeout(() => {
-        msg.classList.add("hidden");
+        mensagemSelecao.classList.add("hidden");
     }, 2500);
 }
 
 // --- ANIMAR ERRO ---
 export function animarErro() {
-    const tiles = document.querySelectorAll(".player-tile.selected");
-    tiles.forEach(t => {
-        t.classList.add("shake");
-        setTimeout(() => t.classList.remove("shake"), 400);
+    const botoesJogadoresSelecionados = document.querySelectorAll(".player-tile.selected");
+    botoesJogadoresSelecionados.forEach(btnSelecionarJogador => {
+        btnSelecionarJogador.classList.add("shake");
+        setTimeout(() => btnSelecionarJogador.classList.remove("shake"), 400);
     });
 }
 
 // --- ANIMAR QUASE LÁ ---
 export function animarQuaseLa() {
-    const tiles = document.querySelectorAll(".player-tile.selected");
-    tiles.forEach(t => {
-        t.classList.add("almost");
-        setTimeout(() => t.classList.remove("almost"), 600);
+    const botoesJogadoresSelecionados = document.querySelectorAll(".player-tile.selected");
+    botoesJogadoresSelecionados.forEach(btnSelecionarJogador => {
+        btnSelecionarJogador.classList.add("almost");
+        setTimeout(() => btnSelecionarJogador.classList.remove("almost"), 600);
     });
 }
 
 // --- EMBARALHAR GRID ---
-export function embaralharGrid() {
-    estado.jogadoresRestantes = embaralhar(estado.jogadoresRestantes);
-    renderizarGrid();
+export function embaralharGradeJogadores() {
+    estado.jogadoresRestantes = embaralharJogadores(estado.jogadoresRestantes);
+    renderizarGradeJogadores();
 }
 
 // --- LIMPAR SELEÇÃO ---
 export function limparSelecao() {
     estado.selecionados = [];
-    renderizarGrid();
+    renderizarGradeJogadores();
 }
 
 // --- MOSTRAR RESULTADO FINAL ---
@@ -126,45 +126,45 @@ export function mostrarResultadoFinal(venceu) {
     document.querySelector(".lives-area").classList.add("hidden");
     document.querySelector(".game-actions").classList.add("hidden");
 
-    const final = document.getElementById("finalResult");
-    final.classList.remove("hidden");
+    const resultadoFinal = document.getElementById("finalResult");
+    resultadoFinal.classList.remove("hidden");
 
-    const icon = document.getElementById("finalIcon");
-    const title = document.getElementById("finalTitle");
-    const text = document.getElementById("finalText");
+    const iconeResultado = document.getElementById("finalIcon");
+    const tituloResultado = document.getElementById("finalTitle");
+    const textoResultado = document.getElementById("finalText");
 
     if (venceu) {
-        icon.textContent = "";
-        title.textContent = "Parabéns!";
-        text.textContent = "Você encontrou todos os grupos!";
+        iconeResultado.textContent = "";
+        tituloResultado.textContent = "Parabéns!";
+        textoResultado.textContent = "Você encontrou todos os grupos!";
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
     } else {
-        icon.textContent = "";
-        title.textContent = "Fim de jogo!";
-        text.textContent = "Suas tentativas acabaram. Veja os grupos:";
+        iconeResultado.textContent = "";
+        tituloResultado.textContent = "Fim de jogo!";
+        textoResultado.textContent = "Suas tentativas acabaram. Veja os grupos:";
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
     }
 
-    const groupsDiv = document.getElementById("finalGroups");
-    groupsDiv.innerHTML = "";
-    estado.puzzleAtual.grupos.forEach(g => {
+    const recipienteGruposFinais = document.getElementById("finalGroups");
+    recipienteGruposFinais.innerHTML = "";
+    estado.desafioAtual.grupos.forEach(grupo => {
         const item = document.createElement("div");
         item.className = "final-group-item";
-        item.style.backgroundColor = g.cor;
+        item.style.backgroundColor = grupo.cor;
         item.innerHTML = `
-            <div class="fg-cat">${g.categoria}</div>
-            <div class="fg-players">${g.jogadores.join(", ")}</div>
+            <div class="fg-cat">${grupo.categoria}</div>
+            <div class="fg-players">${grupo.jogadores.join(", ")}</div>
         `;
-        groupsDiv.appendChild(item);
+        recipienteGruposFinais.appendChild(item);
     });
 }
 
 // --- RESETAR VISUAL ---
-export function resetarVisual() {
+export function reiniciarInterfaceDesafio() {
     document.getElementById("playersGrid").classList.remove("hidden");
     document.querySelector(".lives-area").classList.remove("hidden");
     document.querySelector(".game-actions").classList.remove("hidden");
@@ -172,5 +172,5 @@ export function resetarVisual() {
     document.getElementById("solvedGroups").innerHTML = "";
     document.getElementById("feedbackMsg").classList.add("hidden");
 
-    document.querySelectorAll("#livesDots .dot").forEach(d => d.classList.remove("lost"));
+    document.querySelectorAll("#livesDots .dot").forEach(indicadorVida => indicadorVida.classList.remove("lost"));
 }

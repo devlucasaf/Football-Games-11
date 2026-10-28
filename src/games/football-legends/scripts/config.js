@@ -1,4 +1,4 @@
-const LegendsConfig = {
+const LendasConfiguracao = {
     CAMINHO_JSON: "data/football-legends.json",
 
     // --- CONFIGURAÇÕES DE FORMAÇÕES ---

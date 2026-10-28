@@ -1,4 +1,4 @@
-const LegendsUtils = {
+const LendasUtilitarios = {
     alternarTema() {
         const temaAtual = document.documentElement.getAttribute("data-theme");
         const novoTema = temaAtual === "dark" ? "light" : "dark";
@@ -24,5 +24,5 @@ const LegendsUtils = {
 
 // --- INICIALIZA TEMA AO CARREGAR ---
 document.addEventListener("DOMContentLoaded", () => {
-    LegendsUtils.inicializarTema();
+    LendasUtilitarios.inicializarTema();
 });

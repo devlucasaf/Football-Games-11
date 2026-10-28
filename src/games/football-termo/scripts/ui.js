@@ -1,12 +1,12 @@
 // --- EXIBIÇÃO DE MENSAGEM ---
 export function mostrarMensagem(texto) {
-    const overlay = document.getElementById("messageOverlay");
-    const mensagem = document.getElementById("messageText");
+    const sobreposicaoMensagem = document.getElementById("sobreposicaoMensagem");
+    const mensagem = document.getElementById("textoMensagem");
     mensagem.textContent = texto;              
-    overlay.classList.add("show");             
+    sobreposicaoMensagem.classList.add("show");
 }
 
 // --- OCULTAR MENSAGEM ---
 export function esconderMensagem() {
-    document.getElementById("messageOverlay").classList.remove("show");
+    document.getElementById("sobreposicaoMensagem").classList.remove("show");
 }

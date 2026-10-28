@@ -2,8 +2,8 @@ import { estado } from "./core.js";
 
 // --- CARREGA OS DADOS DO ARQUIVO JSON DE CONVOCAÇÕES ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-vc-convoca.json");
-    estado.dados = await resp.json();
+    const resposta = await fetch("data/football-vc-convoca.json");
+    estado.dados = await resposta.json();
 }
 
 // --- RETORNA A LISTA DE SELEÇÕES DO MODO SELECIONADO ---
@@ -11,11 +11,11 @@ export function obterSelecoes() {
     if (!estado.dados || !estado.modo) {
         return [];
     }
-    const modoData = estado.dados[estado.modo];
-    return Object.keys(modoData).map(key => ({
-        key,
-        nome: key.charAt(0).toUpperCase() + key.slice(1),
-        bandeira: modoData[key].bandeira
+    const dadosModo = estado.dados[estado.modo];
+    return Object.keys(dadosModo).map(chaveSelecao => ({
+        chaveSelecao,
+        nome: chaveSelecao.charAt(0).toUpperCase() + chaveSelecao.slice(1),
+        bandeira: dadosModo[chaveSelecao].bandeira
     }));
 }
 

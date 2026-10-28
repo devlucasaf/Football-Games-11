@@ -28,13 +28,13 @@ export function sortearProximo() {
 }
 
 // --- CONTA QUANTOS SLOTS ESTÃO OCUPADOS ---
-export function contarSlotsOcupados() {
-    return CATEGORIAS.filter(categoria => estado.slots[categoria.id]).length;
+export function contarCategoriasPreenchidas() {
+    return CATEGORIAS.filter(categoria => estado.categoriasPreenchidas[categoria.id]).length;
 }
 
 // --- VERIFICA SE AS 7 CATEGORIAS ESTÃO COMPLETAS ---
-export function slotsCompletos() {
-    return CATEGORIAS.every(categoria => estado.slots[categoria.id]);
+export function todasCategoriasPreenchidas() {
+    return CATEGORIAS.every(categoria => estado.categoriasPreenchidas[categoria.id]);
 }
 
 // --- REINICIA O ESTADO PARA UMA NOVA PARTIDA ---
@@ -42,24 +42,24 @@ export function reiniciarJogo() {
     estado.baralho = [];
     estado.timeAtual = null;
     estado.rodada = 0;
-    estado.slots = {};
+    estado.categoriasPreenchidas = {};
     CATEGORIAS.forEach(categoria => {
-        estado.slots[categoria.id] = null;
+        estado.categoriasPreenchidas[categoria.id] = null;
     });
     estado.terminado = false;
     estado.venceu = false;
 }
 
 // --- OBTÉM A URL DA IMAGEM POR CATEGORIA ---
-export function imagemDaCategoria(time, categoriaId) {
-    if (categoriaId === "escudo") {
+export function imagemDaCategoria(time, identificadorCategoria) {
+    if (identificadorCategoria === "escudo") {
         return time.escudo_url || "";
     }
-    return time[categoriaId + "_img"] || "";
+    return time[identificadorCategoria + "_img"] || "";
 }
 
 // --- OBTÉM A LEGENDA POR CATEGORIA ---
-export function legendaDaCategoria(time, categoriaId) {
-    const valor = time[categoriaId + "_nome"];
+export function legendaDaCategoria(time, identificadorCategoria) {
+    const valor = time[identificadorCategoria + "_nome"];
     return (valor && valor.trim()) ? valor : time.nome;
 }

@@ -12,7 +12,7 @@ export const LIMITES = {
     CA: 5
 };
 
-export const LABELS = {
+export const ROTULOS_POSICOES = {
     GOL: "Goleiro",
     LE: "Lateral Esquerdo",
     LD: "Lateral Direito",
@@ -41,10 +41,10 @@ export const estado = {
     }
 };
 
-export function resetConvocados() {
-    POSICOES.forEach(pos => { estado.convocados[pos] = []; });
+export function reiniciarConvocados() {
+    POSICOES.forEach(posicao => { estado.convocados[posicao] = []; });
 }
 
-export function totalConvocados() {
-    return Object.values(estado.convocados).reduce((t, arr) => t + arr.length, 0);
+export function obterTotalConvocados() {
+    return Object.values(estado.convocados).reduce((totalJogadores, jogadoresPosicao) => totalJogadores + jogadoresPosicao.length, 0);
 }

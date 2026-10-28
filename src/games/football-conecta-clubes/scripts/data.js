@@ -2,25 +2,25 @@ import { estado } from "./core.js";
 
 // --- CARREGA DADOS DO JOGO ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-conecta-clubes.json");
-    const data = await resp.json();
-    estado.conexoes = data.conexoes;
+    const respostaCarregamento = await fetch("data/football-conecta-clubes.json");
+    const dadosConexoes = await respostaCarregamento.json();
+    estado.conexoes = dadosConexoes.conexoes;
 }
 
 // --- SORTEAR CONEXÕES PARA AS RODADAS ---
-export function sortear() {
+export function sortearConexoesRodadas() {
     const copia = [...estado.conexoes];
     const sorteadas = [];
-    for (let i = 0; i < estado.totalRodadas && copia.length > 0; i++) {
-        const idx = Math.floor(Math.random() * copia.length);
-        sorteadas.push(copia.splice(idx, 1)[0]);
+    for (let indiceRodada = 0; indiceRodada < estado.totalRodadas && copia.length > 0; indiceRodada++) {
+        const indiceConexao = Math.floor(Math.random() * copia.length);
+        sorteadas.push(copia.splice(indiceConexao, 1)[0]);
     }
     estado.sorteadas = sorteadas;
 }
 
 // --- NORMALIZAÇÃO DE TEXTO ---
-export function normalizar(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+export function normalizarTextoComparacao(textoComparacao) {
+    return textoComparacao.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
 
 // --- OBTER TODOS OS NOMES ÚNICOS ---
@@ -29,5 +29,5 @@ export function obterNomes() {
     estado.conexoes.forEach(conexao => {
         conexao.respostas.forEach(nome => nomes.add(nome));
     });
-    return [...nomes].sort((a, b) => a.localeCompare(b));
+    return [...nomes].sort((primeiroNome, segundoNome) => primeiroNome.localeCompare(segundoNome));
 }

@@ -1,23 +1,23 @@
 import estado from "./core.js";
-import { carregarDados, sortear, verificarResposta, obterNomesUnicos, normalizar } from "./data.js";
+import { carregarDados, sortearGols, verificarResposta, obterNomesUnicos, normalizarNomeJogador } from "./data.js";
 
-const els = {
+const elementosGols = {
     rodadaAtual:        document.getElementById("rodadaAtual"),
     acertos:            document.getElementById("acertos"),
     tentativas:         document.getElementById("tentativas"),
-    dicasList:          document.getElementById("dicasList"),
-    palpiteInput:       document.getElementById("palpiteInput"),
-    autocompleteList:   document.getElementById("autocompleteList"),
-    guessFeedback:      document.getElementById("guessFeedback"),
-    gameArea:           document.getElementById("gameArea"),
-    roundResult:        document.getElementById("roundResult"),
-    roundIcon:          document.getElementById("roundIcon"),
-    roundText:          document.getElementById("roundText"),
-    roundAnswer:        document.getElementById("roundAnswer"),
-    finalResult:        document.getElementById("finalResult"),
-    finalPoints:        document.getElementById("finalPoints"),
-    finalDetails:       document.getElementById("finalDetails"),
-    gameInfo:           document.getElementById("gameInfo")
+    listaDicas:          document.getElementById("dicasList"),
+    campoPalpite:       document.getElementById("palpiteInput"),
+    listaSugestoesJogadores:   document.getElementById("autocompleteList"),
+    mensagemPalpite:      document.getElementById("guessFeedback"),
+    areaJogo:           document.getElementById("gameArea"),
+    resultadoRodada:        document.getElementById("roundResult"),
+    iconeRodada:          document.getElementById("roundIcon"),
+    textoRodada:          document.getElementById("roundText"),
+    respostaRodada:        document.getElementById("roundAnswer"),
+    resultadoFinal:        document.getElementById("finalResult"),
+    pontosFinais:        document.getElementById("finalPoints"),
+    detalhesResultadoFinal:       document.getElementById("finalDetails"),
+    informacoesJogo:           document.getElementById("gameInfo")
 };
 
 let nomes = [];
@@ -27,26 +27,26 @@ function mostrarRodada() {
     const gol = estado.sorteados[estado.rodadaAtual];
     estado.dicasReveladas = 1;                            
 
-    els.rodadaAtual.textContent = estado.rodadaAtual + 1;
-    els.tentativas.textContent = estado.maxDicas;
-    els.palpiteInput.value = "";
-    els.guessFeedback.classList.add("hidden");
-    els.autocompleteList.classList.add("hidden");
-    els.gameArea.classList.remove("hidden");
-    els.roundResult.classList.add("hidden");
+    elementosGols.rodadaAtual.textContent = estado.rodadaAtual + 1;
+    elementosGols.tentativas.textContent = estado.maximoDicas;
+    elementosGols.campoPalpite.value = "";
+    elementosGols.mensagemPalpite.classList.add("hidden");
+    elementosGols.listaSugestoesJogadores.classList.add("hidden");
+    elementosGols.areaJogo.classList.remove("hidden");
+    elementosGols.resultadoRodada.classList.add("hidden");
 
     renderizarDicas(gol);
-    els.palpiteInput.focus();
+    elementosGols.campoPalpite.focus();
 }
 
 // --- RENDERIZAÇÃO DAS DICAS ---
 function renderizarDicas(gol) {
-    els.dicasList.innerHTML = "";
-    for (let i = 0; i < estado.dicasReveladas; i++) {
-        const li = document.createElement("li");
-        li.className = "dica-item";
-        li.innerHTML = `<span class="dica-number">${i + 1}</span><span class="dica-text">${gol.dicas[i]}</span>`;
-        els.dicasList.appendChild(li);
+    elementosGols.listaDicas.innerHTML = "";
+    for (let indiceDica = 0; indiceDica < estado.dicasReveladas; indiceDica++) {
+        const elementoDica = document.createElement("li");
+        elementoDica.className = "dica-item";
+        elementoDica.innerHTML = `<span class="dica-number">${indiceDica + 1}</span><span class="dica-text">${gol.dicas[indiceDica]}</span>`;
+        elementosGols.listaDicas.appendChild(elementoDica);
     }
 }
 
@@ -61,7 +61,7 @@ function verificarPalpite(palpite) {
 
     if (acertou) {
         estado.acertos++;
-        els.acertos.textContent = estado.acertos;
+        elementosGols.acertos.textContent = estado.acertos;
         estado.historico.push({ 
             resposta: gol.resposta, 
             acertou: true, 
@@ -70,57 +70,57 @@ function verificarPalpite(palpite) {
         mostrarResultado(true, gol);
     } else {
         estado.dicasReveladas++;
-        const restantes = estado.maxDicas - estado.dicasReveladas + 1;
-        els.tentativas.textContent = restantes;
+        const restantes = estado.maximoDicas - estado.dicasReveladas + 1;
+        elementosGols.tentativas.textContent = restantes;
 
-        if (estado.dicasReveladas > estado.maxDicas) {
+        if (estado.dicasReveladas > estado.maximoDicas) {
             estado.historico.push({ 
                 resposta: gol.resposta, 
                 acertou: false, 
-                tentativas: estado.maxDicas 
+                tentativas: estado.maximoDicas
             });
             mostrarResultado(false, gol);
         } else {
-            els.guessFeedback.textContent = `"${palpite}" não é o jogador!`;
-            els.guessFeedback.className = "guess-feedback wrong";
-            els.guessFeedback.classList.remove("hidden");
+            elementosGols.mensagemPalpite.textContent = `"${palpite}" não é o jogador!`;
+            elementosGols.mensagemPalpite.className = "guess-feedback wrong";
+            elementosGols.mensagemPalpite.classList.remove("hidden");
             renderizarDicas(gol);
-            els.palpiteInput.value = "";
-            els.palpiteInput.focus();
+            elementosGols.campoPalpite.value = "";
+            elementosGols.campoPalpite.focus();
         }
     }
 }
 
 // --- EXIBIÇÃO DO RESULTADO DA RODADA ---
 function mostrarResultado(acertou, gol) {
-    els.gameArea.classList.add("hidden");
-    els.roundResult.classList.remove("hidden");
+    elementosGols.areaJogo.classList.add("hidden");
+    elementosGols.resultadoRodada.classList.remove("hidden");
 
     if (acertou) {
-        els.roundIcon.className = "round-icon correct";
-        els.roundIcon.innerHTML = "<i class='fas fa-futbol'></i>";
-        els.roundText.textContent = "Goool! Você acertou!";
+        elementosGols.iconeRodada.className = "round-icon correct";
+        elementosGols.iconeRodada.innerHTML = "<i class='fas fa-futbol'></i>";
+        elementosGols.textoRodada.textContent = "Goool! Você acertou!";
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
     } else {
-        els.roundIcon.className = "round-icon wrong";
-        els.roundIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
-        els.roundText.textContent = "Não acertou desta vez!";
+        elementosGols.iconeRodada.className = "round-icon wrong";
+        elementosGols.iconeRodada.innerHTML = "<i class='fas fa-times-circle'></i>";
+        elementosGols.textoRodada.textContent = "Não acertou desta vez!";
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
     }
 
-    els.roundAnswer.textContent = `Resposta: ${gol.resposta}`;
+    elementosGols.respostaRodada.textContent = `Resposta: ${gol.resposta}`;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
-        document.getElementById("btnNext").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
+        document.getElementById("btnAvancarRodada").innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
     }
 }
 
 // --- AVANÇA PARA PRÓXIMA RODADA OU FINAL ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
@@ -131,30 +131,30 @@ function proxima() {
 
 // --- TELA DE RESULTADO FINAL ---
 function mostrarFinal() {
-    els.gameArea.classList.add("hidden");
-    els.roundResult.classList.add("hidden");
-    els.gameInfo.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
-    els.finalPoints.textContent = estado.acertos;
+    elementosGols.areaJogo.classList.add("hidden");
+    elementosGols.resultadoRodada.classList.add("hidden");
+    elementosGols.informacoesJogo.classList.add("hidden");
+    elementosGols.resultadoFinal.classList.remove("hidden");
+    elementosGols.pontosFinais.textContent = estado.acertos;
 
-    const pct = Math.round((estado.acertos / estado.totalRodadas) * 100);
+    const percentualAcertos = Math.round((estado.acertos / estado.totalRodadas) * 100);
     let mensagem = "";
-    if (pct === 100) {
+    if (percentualAcertos === 100) {
         mensagem = "Craque absoluto! Memória enciclopédica!";
-    } else if (pct >= 70) {
+    } else if (percentualAcertos >= 70) {
         mensagem = "Ótimo conhecimento de gols históricos!";
-    } else if (pct >= 40) {
+    } else if (percentualAcertos >= 40) {
         mensagem = "Bom, mas pode melhorar!";
     } else {
         mensagem = "Precisa assistir mais jogos!";
     }
 
-    els.finalDetails.innerHTML = `<p>${mensagem}</p>`;
+    elementosGols.detalhesResultadoFinal.innerHTML = `<p>${mensagem}</p>`;
 
     if (window.FG11Stats) {
         const total = estado.totalRodadas;
         const venceu = estado.acertos >= Math.ceil(total / 2);
-        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        const rotulos = Array.from({ length: total + 1 }, (valorIgnorado, indiceAcertos) => String(indiceAcertos));
         window.FG11Stats.registrar("football-gol-a-gol", {
             venceu,
             bucket: estado.acertos,
@@ -179,123 +179,123 @@ function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.acertos = 0;
     estado.historico = [];
-    els.acertos.textContent = "0";
-    els.finalResult.classList.add("hidden");
-    els.gameInfo.classList.remove("hidden");
-    sortear();
+    elementosGols.acertos.textContent = "0";
+    elementosGols.resultadoFinal.classList.add("hidden");
+    elementosGols.informacoesJogo.classList.remove("hidden");
+    sortearGols();
     mostrarRodada();
 }
 
 // --- AUTOCOMPLETE ---
-function atualizarAutocomplete(val) {
-    const list = els.autocompleteList;
-    list.innerHTML = "";
+function atualizarSugestoesJogadores(textoPalpite) {
+    const listaSugestoes = elementosGols.listaSugestoesJogadores;
+    listaSugestoes.innerHTML = "";
 
-    if (val.length < 2) {
-        list.classList.add("hidden");
+    if (textoPalpite.length < 2) {
+        listaSugestoes.classList.add("hidden");
         return;
     }
 
-    const filtrados = nomes.filter(n => normalizar(n).includes(normalizar(val)));
+    const filtrados = nomes.filter(nome => normalizarNomeJogador(nome).includes(normalizarNomeJogador(textoPalpite)));
 
     if (filtrados.length === 0) {
-        list.classList.add("hidden");
+        listaSugestoes.classList.add("hidden");
         return;
     }
 
     filtrados.slice(0, 8).forEach(nome => {
-        const li = document.createElement("li");
-        li.textContent = nome;
-        li.addEventListener("click", () => {
+        const elementoSugestao = document.createElement("li");
+        elementoSugestao.textContent = nome;
+        elementoSugestao.addEventListener("click", () => {
             verificarPalpite(nome);
-            els.palpiteInput.value = "";
-            list.classList.add("hidden");
+            elementosGols.campoPalpite.value = "";
+            listaSugestoes.classList.add("hidden");
         });
-        list.appendChild(li);
+        listaSugestoes.appendChild(elementoSugestao);
     });
 
-    list.classList.remove("hidden");
+    listaSugestoes.classList.remove("hidden");
 }
 
 // --- CONFIGURAÇÃO DO CAMPO DE INPUT ---
-function configurarInput() {
-    els.palpiteInput.addEventListener("input", () => {
-        const val = els.palpiteInput.value.trim();
-        atualizarAutocomplete(val);
+function configurarCampoPalpite() {
+    elementosGols.campoPalpite.addEventListener("input", () => {
+        const textoPalpite = elementosGols.campoPalpite.value.trim();
+        atualizarSugestoesJogadores(textoPalpite);
     });
 
-    els.palpiteInput.addEventListener("keydown", (e) => {
-        const items = els.autocompleteList.querySelectorAll("li");
-        const activeItem = els.autocompleteList.querySelector("li.active");
+    elementosGols.campoPalpite.addEventListener("keydown", (evento) => {
+        const sugestoes = elementosGols.listaSugestoesJogadores.querySelectorAll("li");
+        const sugestaoAtiva = elementosGols.listaSugestoesJogadores.querySelector("li.active");
 
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
-            if (!activeItem && items.length > 0) {
-                items[0].classList.add("active");
-            } else if (activeItem) {
-                activeItem.classList.remove("active");
-                const next = activeItem.nextElementSibling || items[0];
-                next.classList.add("active");
+        if (evento.key === "ArrowDown") {
+            evento.preventDefault();
+            if (!sugestaoAtiva && sugestoes.length > 0) {
+                sugestoes[0].classList.add("active");
+            } else if (sugestaoAtiva) {
+                sugestaoAtiva.classList.remove("active");
+                const proximaSugestao = sugestaoAtiva.nextElementSibling || sugestoes[0];
+                proximaSugestao.classList.add("active");
             }
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            if (activeItem) {
-                activeItem.classList.remove("active");
-                const prev = activeItem.previousElementSibling || items[items.length - 1];
-                prev.classList.add("active");
+        } else if (evento.key === "ArrowUp") {
+            evento.preventDefault();
+            if (sugestaoAtiva) {
+                sugestaoAtiva.classList.remove("active");
+                const sugestaoAnterior = sugestaoAtiva.previousElementSibling || sugestoes[sugestoes.length - 1];
+                sugestaoAnterior.classList.add("active");
             }
-        } else if (e.key === "Enter") {
-            e.preventDefault();
-            if (activeItem) {
-                verificarPalpite(activeItem.textContent);
-                els.palpiteInput.value = "";
-                els.autocompleteList.classList.add("hidden");
-            } else if (els.palpiteInput.value.trim()) {
-                verificarPalpite(els.palpiteInput.value.trim());
-                els.palpiteInput.value = "";
-                els.autocompleteList.classList.add("hidden");
+        } else if (evento.key === "Enter") {
+            evento.preventDefault();
+            if (sugestaoAtiva) {
+                verificarPalpite(sugestaoAtiva.textContent);
+                elementosGols.campoPalpite.value = "";
+                elementosGols.listaSugestoesJogadores.classList.add("hidden");
+            } else if (elementosGols.campoPalpite.value.trim()) {
+                verificarPalpite(elementosGols.campoPalpite.value.trim());
+                elementosGols.campoPalpite.value = "";
+                elementosGols.listaSugestoesJogadores.classList.add("hidden");
             }
-        } else if (e.key === "Escape") {
-            els.autocompleteList.classList.add("hidden");
+        } else if (evento.key === "Escape") {
+            elementosGols.listaSugestoesJogadores.classList.add("hidden");
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".autocomplete-wrapper")) {
-            els.autocompleteList.classList.add("hidden");
+    document.addEventListener("click", (evento) => {
+        if (!evento.target.closest(".autocomplete-wrapper")) {
+            elementosGols.listaSugestoesJogadores.classList.add("hidden");
         }
     });
 }
 
 // --- INICIALIZAÇÃO DO JOGO ---
-async function init() {
+async function inicializarJogoGols() {
     await carregarDados();
     nomes = obterNomesUnicos();
-    configurarInput();
+    configurarCampoPalpite();
 
-    document.getElementById("btnNext").addEventListener("click", proxima);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnAvancarRodada").addEventListener("click", avancarRodada);
+    document.getElementById("btnJogarNovamente").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-gol-a-gol";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-gol-a-gol";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
     }
 }
 
-init();
+inicializarJogoGols();

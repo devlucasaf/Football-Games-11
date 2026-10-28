@@ -8,6 +8,6 @@ export const estado = {
     indiceSorteados:       0,
     totalAcumulado:        0,
     pulosRestantes:        5,
-    maxPulos:              5,
+    maximoPulos:           5,
     multiplicadoresUsados: {}
 };

@@ -1,21 +1,21 @@
-import { estado, resetPuzzle } from "./core.js";
-import { carregarDados, escolherPuzzle, obterTodosJogadores, embaralhar, verificarGrupo } from "./data.js";
-import { renderizarGrid, renderizarVidas, renderizarGrupoAcertado, mostrarFeedback, animarErro, animarQuaseLa, embaralharGrid, limparSelecao, mostrarResultadoFinal, resetarVisual } from "./ui.js";
+import { estado, reiniciarEstadoDesafio } from "./core.js";
+import { carregarDados, escolherDesafio, obterTodosJogadores, embaralharJogadores, verificarGrupo } from "./data.js";
+import { renderizarGradeJogadores, renderizarVidas, renderizarGrupoAcertado, mostrarMensagemSelecao, animarErro, animarQuaseLa, embaralharGradeJogadores, limparSelecao, mostrarResultadoFinal, reiniciarInterfaceDesafio } from "./ui.js";
 
 // --- INICIAR PUZZLE ---
-function iniciarPuzzle() {
-    resetPuzzle();
-    resetarVisual();
+function iniciarDesafio() {
+    reiniciarEstadoDesafio();
+    reiniciarInterfaceDesafio();
 
-    const puzzle = escolherPuzzle();
-    if (!puzzle) {
+    const desafio = escolherDesafio();
+    if (!desafio) {
         return;
     }
 
-    const todos = obterTodosJogadores(puzzle);
-    estado.jogadoresRestantes = embaralhar(todos);
+    const todosJogadores = obterTodosJogadores(desafio);
+    estado.jogadoresRestantes = embaralharJogadores(todosJogadores);
 
-    renderizarGrid();
+    renderizarGradeJogadores();
     renderizarVidas();
 }
 
@@ -25,17 +25,17 @@ function confirmarSelecao() {
         return;
     }
 
-    const resultado = verificarGrupo(estado.selecionados, estado.puzzleAtual);
+    const resultado = verificarGrupo(estado.selecionados, estado.desafioAtual);
 
     if (resultado.acertou) {
         estado.gruposAcertados.push(resultado.grupo);
         estado.jogadoresRestantes = estado.jogadoresRestantes.filter(
-            j => !resultado.grupo.jogadores.includes(j)
+            jogador => !resultado.grupo.jogadores.includes(jogador)
         );
         estado.selecionados = [];
 
         renderizarGrupoAcertado(resultado.grupo);
-        renderizarGrid();
+        renderizarGradeJogadores();
 
         if (estado.gruposAcertados.length === 4) {
             estado.jogoAtivo = false;
@@ -50,21 +50,21 @@ function confirmarSelecao() {
 
         if (resultado.quaseLa) {
             animarQuaseLa();
-            mostrarFeedback("almost", "Quase lá! 3 de 4 estão corretos.");
+            mostrarMensagemSelecao("almost", "Quase lá! 3 de 4 estão corretos.");
         } else {
             animarErro();
-            mostrarFeedback("wrong", "Não é um grupo válido.");
+            mostrarMensagemSelecao("wrong", "Não é um grupo válido.");
         }
 
         estado.selecionados = [];
-        renderizarGrid();
+        renderizarGradeJogadores();
 
         if (estado.tentativasRestantes <= 0) {
             estado.jogoAtivo = false;
             setTimeout(() => {
-                estado.puzzleAtual.grupos.forEach(g => {
-                    if (!estado.gruposAcertados.includes(g)) {
-                        renderizarGrupoAcertado(g);
+                estado.desafioAtual.grupos.forEach(grupo => {
+                    if (!estado.gruposAcertados.includes(grupo)) {
+                        renderizarGrupoAcertado(grupo);
                     }
                 });
                 mostrarResultadoFinal(false);
@@ -93,25 +93,25 @@ function registrarEstatisticas(venceu) {
         rotulos: ["0", "1", "2", "3", "4"],
         tituloGrafico: "Grupos acertados por partida",
         bucketAtual: acertados,
-        onReiniciar: iniciarPuzzle,
+        onReiniciar: iniciarDesafio,
         onHome: () => { window.location.href = "../../../index.html"; }
     });
 }
 
 // --- EVENTOS DOS BOTÕES ---
-document.getElementById("btnSubmit").addEventListener("click", confirmarSelecao);
-document.getElementById("btnDeselect").addEventListener("click", limparSelecao);
-document.getElementById("btnShuffle").addEventListener("click", embaralharGrid);
-document.getElementById("btnNextPuzzle").addEventListener("click", iniciarPuzzle);
-document.getElementById("btnHome").addEventListener("click", () => {
+document.getElementById("btnConfirmarSelecao").addEventListener("click", confirmarSelecao);
+document.getElementById("btnLimparSelecao").addEventListener("click", limparSelecao);
+document.getElementById("btnEmbaralharJogadores").addEventListener("click", embaralharGradeJogadores);
+document.getElementById("btnIniciarProximoDesafio").addEventListener("click", iniciarDesafio);
+document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
     window.location.href = "../../../index.html";
 });
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-async function init() {
+async function inicializarJogoConexoes() {
     await carregarDados();
-    estado.puzzleIndex = Math.floor(Math.random() * estado.puzzles.length);
-    iniciarPuzzle();
+    estado.indiceDesafioAtual = Math.floor(Math.random() * estado.desafios.length);
+    iniciarDesafio();
 }
 
-init();
+inicializarJogoConexoes();

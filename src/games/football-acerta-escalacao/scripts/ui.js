@@ -1,5 +1,5 @@
 import { estado } from "./core.js";
-import { obterPosicao, obterLabelPosicao } from "./data.js";
+import { obterPosicao, obterRotuloPosicao } from "./data.js";
 
 const elementos = {
     timer:              document.getElementById("timer"),
@@ -19,60 +19,60 @@ const elementos = {
     modeSelect:         document.getElementById("modeSelect")
 };
 
-let currentOnSelect = null;
-let currentNomes    = [];
+let tratarSelecaoJogadorAtual = null;
+let nomesJogadoresDisponiveis    = [];
 
 // --- RENDERIZAÇÃO DO CAMPO ---
 export function renderizarCampo(escalacao) {
     elementos.playersLayer.innerHTML = "";
     elementos.matchInfo.textContent = `${escalacao.time} — ${escalacao.evento} (${escalacao.formacao})`;
 
-    escalacao.jogadores.forEach((jogador, idx) => {
-        const pos   = obterPosicao(jogador.posicao, escalacao.formacao);
-        const label = obterLabelPosicao(jogador.posicao);
+    escalacao.jogadores.forEach((jogador, indiceJogador) => {
+        const coordenadasPosicao = obterPosicao(jogador.posicao, escalacao.formacao);
+        const rotuloPosicao = obterRotuloPosicao(jogador.posicao);
 
-        const slot = document.createElement("div");
-        slot.className = "player-slot";
-        slot.id = `slot-${idx}`;
-        slot.style.top = `${pos.top}%`;
-        slot.style.left = `${pos.left}%`;
+        const posicaoJogador = document.createElement("div");
+        posicaoJogador.className = "player-slot";
+        posicaoJogador.id = `slot-${indiceJogador}`;
+        posicaoJogador.style.top = `${coordenadasPosicao.top}%`;
+        posicaoJogador.style.left = `${coordenadasPosicao.left}%`;
 
-        slot.innerHTML = `
-            <div class="player-circle">${label}</div>
+        posicaoJogador.innerHTML = `
+            <div class="player-circle">${rotuloPosicao}</div>
             <span class="player-label">?</span>
         `;
 
-        elementos.playersLayer.appendChild(slot);
+        elementos.playersLayer.appendChild(posicaoJogador);
     });
 }
 
 // --- REVELAR JOGADOR ACERTADO ---
-export function revelarJogador(idx, nome) {
-    const slot = document.getElementById(`slot-${idx}`);
-    if (!slot) {
+export function revelarJogador(indiceJogador, nome) {
+    const posicaoJogador = document.getElementById(`slot-${indiceJogador}`);
+    if (!posicaoJogador) {
         return;
     }
-    slot.classList.add("revealed");
-    slot.querySelector(".player-circle").innerHTML = "<i class='fas fa-check'></i>";
-    slot.querySelector(".player-label").textContent = nome;
+    posicaoJogador.classList.add("revealed");
+    posicaoJogador.querySelector(".player-circle").innerHTML = "<i class='fas fa-check'></i>";
+    posicaoJogador.querySelector(".player-label").textContent = nome;
 }
 
 // --- REVELAR JOGADOR NÃO ACERTADO ---
-export function revelarNaoAcertado(idx, nome) {
-    const slot = document.getElementById(`slot-${idx}`);
-    if (!slot) {
+export function revelarNaoAcertado(indiceJogador, nome) {
+    const posicaoJogador = document.getElementById(`slot-${indiceJogador}`);
+    if (!posicaoJogador) {
         return;
     }
-    slot.classList.add("missed");
-    slot.querySelector(".player-circle").innerHTML = "<i class='fas fa-times'></i>";
-    slot.querySelector(".player-label").textContent = nome;
+    posicaoJogador.classList.add("missed");
+    posicaoJogador.querySelector(".player-circle").innerHTML = "<i class='fas fa-times'></i>";
+    posicaoJogador.querySelector(".player-label").textContent = nome;
 }
 
 // --- ATUALIZAÇÃO DO TIMER ---
-export function atualizarTimer() {
-    const min = Math.floor(estado.tempoRestante / 60);
-    const sec = estado.tempoRestante % 60;
-    elementos.timer.textContent = `${min}:${sec.toString().padStart(2, "0")}`;
+export function atualizarCronometro() {
+    const minutosRestantes = Math.floor(estado.tempoRestante / 60);
+    const segundosRestantes = estado.tempoRestante % 60;
+    elementos.timer.textContent = `${minutosRestantes}:${segundosRestantes.toString().padStart(2, "0")}`;
 
     if (estado.tempoRestante <= 30) {
         elementos.gameTimerArea.classList.add("danger");
@@ -87,12 +87,12 @@ export function atualizarAcertos() {
 }
 
 // --- ESCONDER TIMER ---
-export function esconderTimer() {
+export function esconderCronometro() {
     elementos.gameTimerArea.classList.add("hidden");
 }
 
 // --- MOSTRAR SELEÇÃO DE MODO ---
-export function mostrarModeSelect() {
+export function mostrarSelecaoModoJogo() {
     elementos.modeSelect.classList.remove("hidden");
     elementos.gameInfo.classList.add("hidden");
     elementos.fieldWrapper.classList.add("hidden");
@@ -102,7 +102,7 @@ export function mostrarModeSelect() {
 }
 
 // --- ESCONDER SELEÇÃO DE MODO ---
-export function esconderModeSelect() {
+export function esconderSelecaoModoJogo() {
     elementos.modeSelect.classList.add("hidden");
     elementos.gameInfo.classList.remove("hidden");
     elementos.fieldWrapper.classList.remove("hidden");
@@ -112,133 +112,133 @@ export function esconderModeSelect() {
 }
 
 // --- ATUALIZAÇÃO DA LISTA DE AUTOCOMPLETE ---
-function atualizarLista(val) {
-    const list = elementos.autocompleteList;
-    list.innerHTML = "";
+function atualizarListaSugestoes(valorPalpite) {
+    const listaSugestoes = elementos.autocompleteList;
+    listaSugestoes.innerHTML = "";
 
-    if (val.length < 2) {
-        list.classList.add("hidden");
+    if (valorPalpite.length < 2) {
+        listaSugestoes.classList.add("hidden");
         return;
     }
 
-    const normalizar = str => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const normalizarNomeJogador = nomeJogador => nomeJogador.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     const extras = estado.escalacaoAtual?.extras || [];
-    const filtrados = currentNomes.filter(n => {
-        if (!normalizar(n).includes(normalizar(val))) {
+    const filtrados = nomesJogadoresDisponiveis.filter(nomeJogador => {
+        if (!normalizarNomeJogador(nomeJogador).includes(normalizarNomeJogador(valorPalpite))) {
             return false;
         }
 
-        if (extras.some(e => normalizar(e) === normalizar(n))) {
+        if (extras.some(nomeAlternativo => normalizarNomeJogador(nomeAlternativo) === normalizarNomeJogador(nomeJogador))) {
             return true;
         }
-        return estado.jogadoresRestantes.some(j => normalizar(j.nome) === normalizar(n));
+        return estado.jogadoresRestantes.some(jogadorRestante => normalizarNomeJogador(jogadorRestante.nome) === normalizarNomeJogador(nomeJogador));
     });
 
     if (filtrados.length === 0) {
-        list.classList.add("hidden");
+        listaSugestoes.classList.add("hidden");
         return;
     }
 
     filtrados.slice(0, 8).forEach(nome => {
-        const li = document.createElement("li");
-        li.textContent = nome;
-        li.addEventListener("click", () => {
-            currentOnSelect(nome);
+        const itemSugestao = document.createElement("li");
+        itemSugestao.textContent = nome;
+        itemSugestao.addEventListener("click", () => {
+            tratarSelecaoJogadorAtual(nome);
             elementos.guessInput.value = "";
-            list.classList.add("hidden");
+            listaSugestoes.classList.add("hidden");
         });
-        list.appendChild(li);
+        listaSugestoes.appendChild(itemSugestao);
     });
 
-    list.classList.remove("hidden");
+    listaSugestoes.classList.remove("hidden");
 }
 
 // --- CONFIGURAÇÃO DO AUTOCOMPLETE ---
-export function configurarAutocomplete(nomes, onSelect) {
-    currentNomes    = nomes;
-    currentOnSelect = onSelect;
+export function configurarSugestoesJogadores(nomes, tratarSelecaoJogador) {
+    nomesJogadoresDisponiveis    = nomes;
+    tratarSelecaoJogadorAtual = tratarSelecaoJogador;
 
-    const input = elementos.guessInput;
-    const list  = elementos.autocompleteList;
+    const campoPalpite = elementos.guessInput;
+    const listaSugestoes = elementos.autocompleteList;
 
-    const newInput = input.cloneNode(true);
-    input.parentNode.replaceChild(newInput, input);
-    elementos.guessInput = newInput;
+    const novoCampoPalpite = campoPalpite.cloneNode(true);
+    campoPalpite.parentNode.replaceChild(novoCampoPalpite, campoPalpite);
+    elementos.guessInput = novoCampoPalpite;
 
-    newInput.addEventListener("input", () => {
-        atualizarLista(newInput.value.trim().toLowerCase());
+    novoCampoPalpite.addEventListener("input", () => {
+        atualizarListaSugestoes(novoCampoPalpite.value.trim().toLowerCase());
     });
 
-    newInput.addEventListener("keydown", (e) => {
-        const items = list.querySelectorAll("li");
-        const activeItem = list.querySelector("li.active");
+    novoCampoPalpite.addEventListener("keydown", (eventoTeclado) => {
+        const itensSugestoes = listaSugestoes.querySelectorAll("li");
+        const sugestaoAtiva = listaSugestoes.querySelector("li.active");
 
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
-            if (!activeItem && items.length > 0) {
-                items[0].classList.add("active");
-            } else if (activeItem) {
-                activeItem.classList.remove("active");
-                const next = activeItem.nextElementSibling || items[0];
-                next.classList.add("active");
-                next.scrollIntoView({ 
+        if (eventoTeclado.key === "ArrowDown") {
+            eventoTeclado.preventDefault();
+            if (!sugestaoAtiva && itensSugestoes.length > 0) {
+                itensSugestoes[0].classList.add("active");
+            } else if (sugestaoAtiva) {
+                sugestaoAtiva.classList.remove("active");
+                const proximaSugestao = sugestaoAtiva.nextElementSibling || itensSugestoes[0];
+                proximaSugestao.classList.add("active");
+                proximaSugestao.scrollIntoView({ 
                     block: "nearest" 
                 });
             }
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            if (activeItem) {
-                activeItem.classList.remove("active");
-                const prev = activeItem.previousElementSibling || items[items.length - 1];
-                prev.classList.add("active");
-                prev.scrollIntoView({ 
+        } else if (eventoTeclado.key === "ArrowUp") {
+            eventoTeclado.preventDefault();
+            if (sugestaoAtiva) {
+                sugestaoAtiva.classList.remove("active");
+                const sugestaoAnterior = sugestaoAtiva.previousElementSibling || itensSugestoes[itensSugestoes.length - 1];
+                sugestaoAnterior.classList.add("active");
+                sugestaoAnterior.scrollIntoView({ 
                     block: "nearest" 
                 });
-            } else if (items.length > 0) {
-                items[items.length - 1].classList.add("active");
+            } else if (itensSugestoes.length > 0) {
+                itensSugestoes[itensSugestoes.length - 1].classList.add("active");
             }
-        } else if (e.key === "ArrowRight") {
-            if (activeItem) {
-                e.preventDefault();
-                currentOnSelect(activeItem.textContent);
-                newInput.value = "";
-                list.classList.add("hidden");
+        } else if (eventoTeclado.key === "ArrowRight") {
+            if (sugestaoAtiva) {
+                eventoTeclado.preventDefault();
+                tratarSelecaoJogadorAtual(sugestaoAtiva.textContent);
+                novoCampoPalpite.value = "";
+                listaSugestoes.classList.add("hidden");
             }
-        } else if (e.key === "Enter") {
-            e.preventDefault();
-            if (activeItem) {
-                currentOnSelect(activeItem.textContent);
-                newInput.value = "";
-                list.classList.add("hidden");
-            } else if (newInput.value.trim()) {
-                currentOnSelect(newInput.value.trim());
-                newInput.value = "";
-                list.classList.add("hidden");
+        } else if (eventoTeclado.key === "Enter") {
+            eventoTeclado.preventDefault();
+            if (sugestaoAtiva) {
+                tratarSelecaoJogadorAtual(sugestaoAtiva.textContent);
+                novoCampoPalpite.value = "";
+                listaSugestoes.classList.add("hidden");
+            } else if (novoCampoPalpite.value.trim()) {
+                tratarSelecaoJogadorAtual(novoCampoPalpite.value.trim());
+                novoCampoPalpite.value = "";
+                listaSugestoes.classList.add("hidden");
             }
-        } else if (e.key === "Escape") {
-            list.classList.add("hidden");
+        } else if (eventoTeclado.key === "Escape") {
+            listaSugestoes.classList.add("hidden");
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".autocomplete-wrapper")) {
-            list.classList.add("hidden");
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".autocomplete-wrapper")) {
+            listaSugestoes.classList.add("hidden");
         }
     });
 }
 
 // --- FOCAR NO INPUT ---
-export function focarInput() {
+export function focarCampoPalpite() {
     elementos.guessInput.focus();
 }
 
 // --- HELPER DE TRADUÇÃO ---
-function t(key, fallback) {
+function obterTextoTraduzido(chaveTraducao, textoAlternativo) {
     const lingua = localStorage.getItem("preferredLanguage") || "traducoes";
-    if (window.translations && window.translations[lingua] && window.translations[lingua][key]) {
-        return window.translations[lingua][key];
+    if (window.translations && window.translations[lingua] && window.translations[lingua][chaveTraducao]) {
+        return window.translations[lingua][chaveTraducao];
     }
-    return fallback;
+    return textoAlternativo;
 }
 
 // --- EXIBIR RESULTADO FINAL ---
@@ -263,30 +263,30 @@ export function mostrarResultadoFinal() {
 
     let mensagem = "";
     if (porcentagem === 100) {
-        mensagem = t("acerta-result-perfect", "Perfeito! Você lembrou de todos!");
+        mensagem = obterTextoTraduzido("acerta-result-perfect", "Perfeito! Você lembrou de todos!");
     } else if (porcentagem >= 80) {
-        mensagem = t("acerta-result-great", "Memória quase perfeita!");
+        mensagem = obterTextoTraduzido("acerta-result-great", "Memória quase perfeita!");
     } else if (porcentagem >= 50) {
-        mensagem = t("acerta-result-good", "Bom conhecimento!");
+        mensagem = obterTextoTraduzido("acerta-result-good", "Bom conhecimento!");
     } else {
-        mensagem = t("acerta-result-try-again", "Tente novamente!");
+        mensagem = obterTextoTraduzido("acerta-result-try-again", "Tente novamente!");
     }
 
     let detalhes = `<p>${mensagem}</p>`;
     if (estado.modoComTempo) {
         const tempoUsado = 300 - estado.tempoRestante;
-        const min = Math.floor(tempoUsado / 60);
-        const sec = tempoUsado % 60;
-        detalhes += `<p>${t("acerta-time-label", "Tempo")}: ${min}:${sec.toString().padStart(2, "0")}</p>`;
+        const minutosUsados = Math.floor(tempoUsado / 60);
+        const segundosUsados = tempoUsado % 60;
+        detalhes += `<p>${obterTextoTraduzido("acerta-time-label", "Tempo")}: ${minutosUsados}:${segundosUsados.toString().padStart(2, "0")}</p>`;
     } else {
-        detalhes += `<p>${t("acerta-mode-no-time-result", "Modo: Sem Tempo")}</p>`;
+        detalhes += `<p>${obterTextoTraduzido("acerta-mode-no-time-result", "Modo: Sem Tempo")}</p>`;
     }
     detalhes += `<p><strong>${estado.escalacaoAtual.time}</strong> — ${estado.escalacaoAtual.evento}</p>`;
     elementos.finalDetails.innerHTML = detalhes;
 }
 
 // --- RESETAR INTERFACE ---
-export function resetarUI() {
+export function reiniciarInterfaceJogo() {
     elementos.finalResult.classList.add("hidden");
     elementos.fieldWrapper.classList.remove("hidden");
     elementos.guessInputArea.classList.remove("hidden");

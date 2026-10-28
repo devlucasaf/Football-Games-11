@@ -1,46 +1,46 @@
 import { estado } from "./core.js";
 
 export async function carregarDados() {
-    const resp = await fetch("data/football-conexoes.json");
-    const data = await resp.json();
-    estado.puzzles = data.puzzles;
+    const respostaCarregamento = await fetch("data/football-conexoes.json");
+    const dadosDesafios = await respostaCarregamento.json();
+    estado.desafios = dadosDesafios.puzzles;
 }
 
 // --- ESCOLHER PUZZLE ---
-export function escolherPuzzle() {
-    if (estado.puzzles.length === 0) {
+export function escolherDesafio() {
+    if (estado.desafios.length === 0) {
         return null;
     }
 
-    estado.puzzleAtual = estado.puzzles[estado.puzzleIndex % estado.puzzles.length];
-    estado.puzzleIndex++;
-    return estado.puzzleAtual;
+    estado.desafioAtual = estado.desafios[estado.indiceDesafioAtual % estado.desafios.length];
+    estado.indiceDesafioAtual++;
+    return estado.desafioAtual;
 }
 
 // --- EMBARALHAR ARRAY ---
-export function embaralhar(array) {
-    const arr = [...array];
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+export function embaralharJogadores(jogadores) {
+    const jogadoresEmbaralhados = [...jogadores];
+    for (let indiceJogador = jogadoresEmbaralhados.length - 1; indiceJogador > 0; indiceJogador--) {
+        const indiceSorteado = Math.floor(Math.random() * (indiceJogador + 1));
+        [jogadoresEmbaralhados[indiceJogador], jogadoresEmbaralhados[indiceSorteado]] = [jogadoresEmbaralhados[indiceSorteado], jogadoresEmbaralhados[indiceJogador]];
     }
-    return arr;
+    return jogadoresEmbaralhados;
 }
 
 // --- OBTER TODOS OS JOGADORES DO PUZZLE ---
-export function obterTodosJogadores(puzzle) {
-    const todos = [];
-    puzzle.grupos.forEach(g => {
-        g.jogadores.forEach(j => todos.push(j));
+export function obterTodosJogadores(desafio) {
+    const todosJogadores = [];
+    desafio.grupos.forEach(grupo => {
+        grupo.jogadores.forEach(jogador => todosJogadores.push(jogador));
     });
-    return todos;
+    return todosJogadores;
 }
 
 // --- VERIFICAR SE SELEÇÃO FORMA UM GRUPO ---
-export function verificarGrupo(selecionados, puzzle) {
-    for (const grupo of puzzle.grupos) {
+export function verificarGrupo(selecionados, desafio) {
+    for (const grupo of desafio.grupos) {
         const jogadoresGrupo = grupo.jogadores;
-        const acertos = selecionados.filter(s => jogadoresGrupo.includes(s)).length;
+        const acertos = selecionados.filter(jogadorSelecionado => jogadoresGrupo.includes(jogadorSelecionado)).length;
         if (acertos === 4) {
             return { 
                 acertou: true, 

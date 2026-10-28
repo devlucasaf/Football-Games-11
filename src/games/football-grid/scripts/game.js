@@ -1,8 +1,8 @@
-const GridJogo = {
+const GradeJogo = {
     jogoParado:         false,
     jogadoresUsados:    new Set(),
     celulaSelecionada:  null,
-    gridAtual:          null,
+    gradeAtual:         null,
 
     // --- VERIFICAR SE JOGADOR ATENDE A CÉLULA ---
     jogadorAtendeCelula(jogador, linhaChave, linhaTipo, colunaChave, colunaTipo) {
@@ -25,44 +25,44 @@ const GridJogo = {
 
     // --- TRATAR PALPITE DO JOGADOR ---
     tratarPalpite() {
-        const { inputJogador } = GridInterface.elementos;
-        const celulas = GridInterface.elementos.celulas;
+        const { campoJogador } = GradeInterface.elementos;
+        const celulas = GradeInterface.elementos.celulas;
 
         if (this.jogoParado) {
             alert("Jogo encerrado. Clique no botão de reiniciar para jogar novamente.");
             return;
         }
 
-        if (!inputJogador) {
+        if (!campoJogador) {
             return;
         }
 
-        const palpite = inputJogador.value.trim();
+        const palpite = campoJogador.value.trim();
         if (!palpite) {
             return;
         }
 
-        const jogador = GridDados.buscarJogadorPorNome(palpite);
+        const jogador = GradeDados.buscarJogadorPorNome(palpite);
         if (!jogador) {
             alert("Jogador não encontrado no banco de dados.");
-            inputJogador.value = "";
-            GridInterface.esconderSugestoes();
+            campoJogador.value = "";
+            GradeInterface.esconderSugestoes();
             return;
         }
 
-        const chaveUsada = GridConfig.normalizar(jogador.nome);
+        const chaveUsada = GradeConfiguracao.normalizarTexto(jogador.nome);
         if (this.jogadoresUsados.has(chaveUsada)) {
             alert("Este jogador já foi usado nesta grade.");
-            inputJogador.value = "";
-            GridInterface.esconderSugestoes();
+            campoJogador.value = "";
+            GradeInterface.esconderSugestoes();
             return;
         }
 
-        const celulasVazias = celulas.filter((c) => !c.classList.contains("correct"));
+        const celulasVazias = celulas.filter((celula) => !celula.classList.contains("correct"));
         let celulaAlvo = null;
 
         if (this.celulaSelecionada && !this.celulaSelecionada.classList.contains("correct")) {
-            const ok = this.jogadorAtendeCelula(
+            const jogadorCompativel = this.jogadorAtendeCelula(
                 jogador,
                 this.celulaSelecionada.dataset.linha,
                 this.celulaSelecionada.dataset.linhaTipo,
@@ -70,19 +70,19 @@ const GridJogo = {
                 this.celulaSelecionada.dataset.colunaTipo
             );
 
-            if (ok) {
+            if (jogadorCompativel) {
                 celulaAlvo = this.celulaSelecionada;
             }
         }
 
         if (!celulaAlvo) {
-            celulaAlvo = celulasVazias.find((c) =>
+            celulaAlvo = celulasVazias.find((celula) =>
                 this.jogadorAtendeCelula(
                     jogador,
-                    c.dataset.linha,
-                    c.dataset.linhaTipo,
-                    c.dataset.coluna,
-                    c.dataset.colunaTipo
+                    celula.dataset.linha,
+                    celula.dataset.linhaTipo,
+                    celula.dataset.coluna,
+                    celula.dataset.colunaTipo
                 )
             );
         }
@@ -109,23 +109,23 @@ const GridJogo = {
             celulaAlvo.classList.remove("selected");
             this.jogadoresUsados.add(chaveUsada);
             this.celulaSelecionada = null;
-            celulas.forEach((c) => c.classList.remove("selected"));
-            inputJogador.value = "";
-            GridInterface.esconderSugestoes();
+            celulas.forEach((celula) => celula.classList.remove("selected"));
+            campoJogador.value = "";
+            GradeInterface.esconderSugestoes();
             this.verificarVitoria();
         } else {
             alert("Este jogador não se encaixa em nenhuma célula disponível.");
-            inputJogador.value = "";
-            GridInterface.esconderSugestoes();
+            campoJogador.value = "";
+            GradeInterface.esconderSugestoes();
         }
     },
 
     // --- VERIFICAR VITÓRIA ---
     verificarVitoria() {
-        const celulas = GridInterface.elementos.celulas;
-        const todasPreenchidas = celulas.every((c) => c.classList.contains("correct"));
+        const celulas = GradeInterface.elementos.celulas;
+        const todasPreenchidas = celulas.every((celula) => celula.classList.contains("correct"));
         if (todasPreenchidas) {
-            GridTemporizador.pararJogo("Parabéns! Você completou o grid! 🎉");
+            GradeTemporizador.pararJogo("Parabéns! Você completou o grid! 🎉");
             if (window.registrarVitoria) {
                 window.registrarVitoria();
             }
@@ -142,11 +142,11 @@ const GridJogo = {
             return;
         }
 
-        const celulas = GridInterface.elementos.celulas;
-        celulas.forEach((c) => c.classList.remove("selected"));
+        const celulas = GradeInterface.elementos.celulas;
+        celulas.forEach((elementoCelula) => elementoCelula.classList.remove("selected"));
         celula.classList.add("selected");
         this.celulaSelecionada = celula;
-        GridInterface.elementos.inputJogador.focus();
+        GradeInterface.elementos.campoJogador.focus();
     },
 
     // --- REINICIAR JOGO ---
@@ -158,27 +158,27 @@ const GridJogo = {
 
     // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
-        const { inputJogador, btnBuscar, btnNovoGrid, btnParar, celulas } = GridInterface.elementos;
+        const { campoJogador, btnBuscarJogador, btnGerarNovaGrade, btnDesistirPartida, celulas } = GradeInterface.elementos;
 
-        btnBuscar?.addEventListener("click", () => this.tratarPalpite());
+        btnBuscarJogador?.addEventListener("click", () => this.tratarPalpite());
 
-        inputJogador?.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
+        campoJogador?.addEventListener("keydown", (evento) => {
+            if (evento.key === "Enter") {
                 this.tratarPalpite();
             }
         });
 
-        inputJogador?.addEventListener("input", () => {
-            GridInterface.mostrarSugestoes(
-                inputJogador.value,
+        campoJogador?.addEventListener("input", () => {
+            GradeInterface.mostrarSugestoes(
+                campoJogador.value,
                 this.jogadoresUsados,
                 () => this.tratarPalpite()
             );
         });
 
-        document.addEventListener("click", (e) => {
-            if (!e.target.closest(".input-container")) {
-                GridInterface.esconderSugestoes();
+        document.addEventListener("click", (evento) => {
+            if (!evento.target.closest(".input-container")) {
+                GradeInterface.esconderSugestoes();
             }
         });
 
@@ -186,28 +186,28 @@ const GridJogo = {
             celula.addEventListener("click", () => this.selecionarCelula(celula));
         });
 
-        btnNovoGrid?.addEventListener("click", () => {
-            const cfg = GridGerador.criarConfigGrid();
-            if (!cfg) {
+        btnGerarNovaGrade?.addEventListener("click", () => {
+            const configuracaoGrade = GradeGerador.criarConfiguracaoGrade();
+            if (!configuracaoGrade) {
                 alert("Não foi possível gerar uma grade válida. Tente novamente.");
                 return;
             }
 
             this.reiniciarJogo();
-            inputJogador.disabled = false;
-            btnBuscar.disabled = false;
-            btnParar.disabled = false;
-            inputJogador.value = "";
-            inputJogador.focus();
-            celulas.forEach((c) => c.classList.remove("selected"));
-            GridInterface.esconderSugestoes();
+            campoJogador.disabled = false;
+            btnBuscarJogador.disabled = false;
+            btnDesistirPartida.disabled = false;
+            campoJogador.value = "";
+            campoJogador.focus();
+            celulas.forEach((celula) => celula.classList.remove("selected"));
+            GradeInterface.esconderSugestoes();
 
-            this.gridAtual = cfg;
-            GridInterface.aplicarGridNoDOM(cfg);
+            this.gradeAtual = configuracaoGrade;
+            GradeInterface.aplicarGradeNaPagina(configuracaoGrade);
         });
 
-        btnParar?.addEventListener("click", () => {
-            GridTemporizador.pararJogo("Você desistiu! Clique no botão de reiniciar para gerar um novo Grid.");
+        btnDesistirPartida?.addEventListener("click", () => {
+            GradeTemporizador.pararJogo("Você desistiu! Clique no botão de reiniciar para gerar um novo Grid.");
             if (window.registrarDerrota) {
                 window.registrarDerrota();
             }

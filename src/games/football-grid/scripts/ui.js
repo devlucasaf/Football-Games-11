@@ -1,102 +1,102 @@
-const GridInterface = {
+const GradeInterface = {
     elementos: {
-        inputJogador:       null,
-        btnBuscar:          null,
-        btnNovoGrid:        null,
-        btnParar:           null,
+        campoJogador:       null,
+        btnBuscarJogador:   null,
+        btnGerarNovaGrade:  null,
+        btnDesistirPartida: null,
         celulas:            [],
         cabecalhosColunas:  [],
         cabecalhosLinhas:   [],
-        sugestoesEl:        null
+        elementoSugestoes:  null
     },
 
     // --- INICIAR ELEMENTOS DO DOM ---
     iniciarElementos() {
-        this.elementos.inputJogador = document.getElementById("playerInput");
-        this.elementos.btnBuscar = document.getElementById("searchBtn");
-        this.elementos.btnNovoGrid = document.getElementById("newGridBtn");
-        this.elementos.btnParar = document.getElementById("stopBtn");
+        this.elementos.campoJogador = document.getElementById("playerInput");
+        this.elementos.btnBuscarJogador = document.getElementById("btnBuscarJogador");
+        this.elementos.btnGerarNovaGrade = document.getElementById("btnGerarNovaGrade");
+        this.elementos.btnDesistirPartida = document.getElementById("btnDesistirPartida");
         this.elementos.celulas = Array.from(document.querySelectorAll(".play-cell"));
         this.elementos.cabecalhosColunas = Array.from(document.querySelectorAll(".club-header"));
         this.elementos.cabecalhosLinhas = Array.from(document.querySelectorAll(".club-side"));
 
         // --- CRIA ELEMENTOS DE SUGESTÕES ---
-        const containerInput = document.querySelector(".input-field") || document.querySelector(".input-container");
-        if (containerInput) {
-            this.elementos.sugestoesEl = document.createElement("div");
-            this.elementos.sugestoesEl.className = "suggestions-dropdown";
-            this.elementos.sugestoesEl.style.display = "none";
-            containerInput.style.position = "relative";
-            containerInput.appendChild(this.elementos.sugestoesEl);
+        const recipienteCampo = document.querySelector(".input-field") || document.querySelector(".input-container");
+        if (recipienteCampo) {
+            this.elementos.elementoSugestoes = document.createElement("div");
+            this.elementos.elementoSugestoes.className = "suggestions-dropdown";
+            this.elementos.elementoSugestoes.style.display = "none";
+            recipienteCampo.style.position = "relative";
+            recipienteCampo.appendChild(this.elementos.elementoSugestoes);
         }
     },
 
     // --- OBTER NOME DE EXIBIÇÃO ---
     obterNomeExibicao(tipo, chave) {
         if (tipo === "clube") {
-            const info = GridDados.clubeExibicao.get(chave);
+            const informacoes = GradeDados.clubeExibicao.get(chave);
             return { 
-                nome: String(info?.nome ?? chave).toUpperCase(), 
-                imagem: info?.escudo ?? null 
+                nome: String(informacoes?.nome ?? chave).toUpperCase(),
+                imagem: informacoes?.escudo ?? null
             };
         }
-        const info = GridDados.paisExibicao.get(chave);
+        const informacoes = GradeDados.paisExibicao.get(chave);
         return { 
-            nome: String(info?.nome ?? chave).toUpperCase(), 
-            imagem: info?.bandeira ?? null 
+            nome: String(informacoes?.nome ?? chave).toUpperCase(),
+            imagem: informacoes?.bandeira ?? null
         };
     },
 
     // --- APLICAR CABEÇALHOS ---
     aplicarCabecalhos(elementosCabecalho, chaves, tipo) {
-        const { TAMANHO_GRID } = GridConfig;
-        if (elementosCabecalho.length !== TAMANHO_GRID) {
+        const { TAMANHO_GRADE } = GradeConfiguracao;
+        if (elementosCabecalho.length !== TAMANHO_GRADE) {
             return;
         }
 
-        for (let i = 0; i < TAMANHO_GRID; i++) {
-            const chave = chaves[i];
-            const el = elementosCabecalho[i];
+        for (let indiceCabecalho = 0; indiceCabecalho < TAMANHO_GRADE; indiceCabecalho++) {
+            const chave = chaves[indiceCabecalho];
+            const elementoCabecalho = elementosCabecalho[indiceCabecalho];
             const { nome, imagem } = this.obterNomeExibicao(tipo, chave);
 
-            el.innerHTML = "";
+            elementoCabecalho.innerHTML = "";
             if (imagem) {
-                const img = document.createElement("img");
-                img.src = imagem;
-                img.alt = nome;
-                img.title = nome;
-                img.className = "header-badge";
-                img.onerror = () => { el.textContent = nome; };
-                el.appendChild(img);
+                const imagemCabecalho = document.createElement("img");
+                imagemCabecalho.src = imagem;
+                imagemCabecalho.alt = nome;
+                imagemCabecalho.title = nome;
+                imagemCabecalho.className = "header-badge";
+                imagemCabecalho.onerror = () => { elementoCabecalho.textContent = nome; };
+                elementoCabecalho.appendChild(imagemCabecalho);
             } else {
-                el.textContent = nome;
+                elementoCabecalho.textContent = nome;
             }
-            el.dataset.type = tipo;
-            el.dataset.key = chave;
+            elementoCabecalho.dataset.type = tipo;
+            elementoCabecalho.dataset.key = chave;
         }
     },
 
     // --- APLICAR GRID NO DOM ---
-    aplicarGridNoDOM(config) {
-        const { linhas, colunas, linhasTipo, colunasTipo } = config;
-        const { TAMANHO_GRID } = GridConfig;
+    aplicarGradeNaPagina(configuracaoGrade) {
+        const { linhas, colunas, linhasTipo, colunasTipo } = configuracaoGrade;
+        const { TAMANHO_GRADE } = GradeConfiguracao;
 
-        const cabColunas = document.querySelectorAll(".club-header");
-        const cabLinhas = document.querySelectorAll(".club-side");
+        const cabecalhosColunas = document.querySelectorAll(".club-header");
+        const cabecalhosLinhas = document.querySelectorAll(".club-side");
         const celulas = document.querySelectorAll(".play-cell");
 
-        this.aplicarCabecalhos(Array.from(cabColunas), colunas, colunasTipo);
-        this.aplicarCabecalhos(Array.from(cabLinhas), linhas, linhasTipo);
+        this.aplicarCabecalhos(Array.from(cabecalhosColunas), colunas, colunasTipo);
+        this.aplicarCabecalhos(Array.from(cabecalhosLinhas), linhas, linhasTipo);
 
-        celulas.forEach((celula, idx) => {
-            const l = Math.floor(idx / TAMANHO_GRID);
-            const c = idx % TAMANHO_GRID;
+        celulas.forEach((celula, indiceCelula) => {
+            const indiceLinha = Math.floor(indiceCelula / TAMANHO_GRADE);
+            const indiceColuna = indiceCelula % TAMANHO_GRADE;
 
             celula.textContent = "";
             celula.classList.remove("correct", "selected", "wrong");
 
-            celula.dataset.linha = linhas[l];
-            celula.dataset.coluna = colunas[c];
+            celula.dataset.linha = linhas[indiceLinha];
+            celula.dataset.coluna = colunas[indiceColuna];
             celula.dataset.linhaTipo = linhasTipo;
             celula.dataset.colunaTipo = colunasTipo;
         });
@@ -104,8 +104,8 @@ const GridInterface = {
 
     // --- MOSTRAR SUGESTÕES ---
     mostrarSugestoes(consulta, jogadoresUsados, aoSelecionar) {
-        const sugestoesEl = this.elementos.sugestoesEl;
-        if (!sugestoesEl) {
+        const elementoSugestoes = this.elementos.elementoSugestoes;
+        if (!elementoSugestoes) {
             return;
         }
 
@@ -114,10 +114,10 @@ const GridInterface = {
             return;
         }
 
-        const consultaNormalizada = GridConfig.normalizar(consulta);
-        const correspondencias = GridDados.bancoJogadores
-            .filter((j) => !jogadoresUsados.has(GridConfig.normalizar(j.nome)))
-            .filter((j) => j.nomeCanon.includes(consultaNormalizada))
+        const consultaNormalizada = GradeConfiguracao.normalizarTexto(consulta);
+        const correspondencias = GradeDados.bancoJogadores
+            .filter((jogador) => !jogadoresUsados.has(GradeConfiguracao.normalizarTexto(jogador.nome)))
+            .filter((jogador) => jogador.nomeCanonico.includes(consultaNormalizada))
             .slice(0, 30);
 
         if (correspondencias.length === 0) {
@@ -125,27 +125,27 @@ const GridInterface = {
             return;
         }
 
-        sugestoesEl.innerHTML = "";
-        correspondencias.forEach((j) => {
+        elementoSugestoes.innerHTML = "";
+        correspondencias.forEach((jogador) => {
             const item = document.createElement("div");
             item.className = "suggestion-item";
-            item.textContent = j.nome;
+            item.textContent = jogador.nome;
             item.addEventListener("click", () => {
-                this.elementos.inputJogador.value = j.nome;
+                this.elementos.campoJogador.value = jogador.nome;
                 this.esconderSugestoes();
                 aoSelecionar();
             });
-            sugestoesEl.appendChild(item);
+            elementoSugestoes.appendChild(item);
         });
-        sugestoesEl.style.display = "block";
+        elementoSugestoes.style.display = "block";
     },
 
     // --- ESCONDER SUGESTÕES ---
     esconderSugestoes() {
-        const sugestoesEl = this.elementos.sugestoesEl;
-        if (sugestoesEl) {
-            sugestoesEl.style.display = "none";
-            sugestoesEl.innerHTML = "";
+        const elementoSugestoes = this.elementos.elementoSugestoes;
+        if (elementoSugestoes) {
+            elementoSugestoes.style.display = "none";
+            elementoSugestoes.innerHTML = "";
         }
     }
 };

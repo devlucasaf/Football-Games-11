@@ -24,28 +24,28 @@ export async function carregarDados(modo = "mundial") {
 }
 
 // --- ESCOLHER JOGADOR ALEATÓRIO ---
-export function selecionarGrid() {
-    estado.gridCategorias = embaralhar([...estado.categorias]).slice(0, 25);
+export function selecionarGradeCategorias() {
+    estado.gradeCategorias = embaralhar([...estado.categorias]).slice(0, 25);
 }
 
 // --- ESCOLHER JOGADOR ALEATÓRIO ---
 export function selecionarFila() {
     estado.filaJogadores = embaralhar([...estado.jogadores]);
-    estado.jogadorIdx = 0;
+    estado.indiceJogadorAtual = 0;
 }
 
 // --- OBTER JOGADOR ATUAL ---
 export function jogadorAtual() {
-    return estado.filaJogadores[estado.jogadorIdx] || null;
+    return estado.filaJogadores[estado.indiceJogadorAtual] || null;
 }
 
 // --- OBTER CATEGORIA ATUAL ---
 export function proximoJogador() {
-    estado.jogadorIdx++;
-    if (estado.jogadorIdx >= estado.filaJogadores.length) {
+    estado.indiceJogadorAtual++;
+    if (estado.indiceJogadorAtual >= estado.filaJogadores.length) {
         return null;
     }
-    return estado.filaJogadores[estado.jogadorIdx];
+    return estado.filaJogadores[estado.indiceJogadorAtual];
 }
 
 // --- VERIFICAR SE JOGADOR CORRESPONDE A UMA CATEGORIA ---
@@ -57,14 +57,14 @@ export function jogadorCorresponde(jogador, categoria) {
     switch (categoria.tipo) {
         case "clube": {
             const nomeClube = categoria.texto.replace("Jogou no ", "").replace("Jogou na ", "");
-            return jogador.clubes.some(c =>
-                c.toLowerCase() === nomeClube.toLowerCase()
+            return jogador.clubes.some(clube =>
+                clube.toLowerCase() === nomeClube.toLowerCase()
             );
         }
         case "selecao": {
             const nacionalidade = categoria.texto;
             const selecaoMapeada = Object.entries(estado.mapeamentoSelecao)
-                .find(([, adj]) => adj === nacionalidade);
+                .find(([, adjetivoNacionalidade]) => adjetivoNacionalidade === nacionalidade);
             if (selecaoMapeada) {
                 return jogador.selecao === selecaoMapeada[0];
             }

@@ -2,20 +2,20 @@ import { estado } from "./core.js";
 
 // --- CARREGA DADOS DO JOGO ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-30-segundos.json");
-    const data = await resp.json();
-    estado.categorias = data.categorias;
+    const respostaCarregamento = await fetch("data/football-30-segundos.json");
+    const dadosCategorias = await respostaCarregamento.json();
+    estado.categorias = dadosCategorias.categorias;
 }
 
 // --- SORTEIA UMA CATEGORIA ---
 export function sortearCategoria() {
-    const idx = Math.floor(Math.random() * estado.categorias.length);
-    estado.categoriaAtual = estado.categorias[idx];
+    const indiceCategoria = Math.floor(Math.random() * estado.categorias.length);
+    estado.categoriaAtual = estado.categorias[indiceCategoria];
 }
 
 // --- NORMALIZAÇÃO DE TEXTO ---
-export function normalizar(str) {
-    return str
+export function normalizarTextoComparacao(textoComparacao) {
+    return textoComparacao
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
@@ -26,16 +26,16 @@ export function normalizar(str) {
 
 // --- VERIFICA O PALPITE CONTRA A LISTA DE RESPOSTAS ---
 export function encontrarResposta(palpite) {
-    const alvo = normalizar(palpite);
+    const alvo = normalizarTextoComparacao(palpite);
     if (!alvo) {
         return null;
     }
 
-    return estado.categoriaAtual.respostas.find((r) => {
-        if (normalizar(r.nome) === alvo) {
+    return estado.categoriaAtual.respostas.find((respostaCategoria) => {
+        if (normalizarTextoComparacao(respostaCategoria.nome) === alvo) {
             return true;
         }
-        return (r.aliases || []).some((a) => normalizar(a) === alvo);
+        return (respostaCategoria.aliases || []).some((nomeAlternativo) => normalizarTextoComparacao(nomeAlternativo) === alvo);
     }) || null;
 }
 
@@ -43,7 +43,7 @@ export function encontrarResposta(palpite) {
 export function obterNomes() {
     const nomes = new Set();
     estado.categorias.forEach((categoria) => {
-        categoria.respostas.forEach((r) => nomes.add(r.nome));
+        categoria.respostas.forEach((respostaCategoria) => nomes.add(respostaCategoria.nome));
     });
-    return [...nomes].sort((a, b) => a.localeCompare(b));
+    return [...nomes].sort((primeiroNome, segundoNome) => primeiroNome.localeCompare(segundoNome));
 }

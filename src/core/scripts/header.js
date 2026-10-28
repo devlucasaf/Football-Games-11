@@ -1,5 +1,5 @@
 // --- DERIVA O CAMINHO BASE DO CORE ---
-const caminhoBaseHeader = (function () {
+const caminhoBaseCabecalho = (function () {
     const atual = document.currentScript;
     return atual ? atual.src.replace(/\/scripts\/header\.js.*$/, "") : "";
 })();
@@ -11,13 +11,13 @@ function normalizarCaminho(caminho) {
 
 // --- MONTA OS ENDEREÇOS DO SITE A PARTIR DO CORE ---
 function obterRotas() {
-    const base = caminhoBaseHeader;
+    const base = caminhoBaseCabecalho;
     return {
         inicio: new URL(`${base}/../../index.html`).href,
         jogos: new URL(`${base}/../../index.html#jogos`).href,
         estatisticas: new URL(`${base}/pages/estatisticas.html`).href,
         configuracoes: new URL(`${base}/pages/configuracoes.html`).href,
-        faq: new URL(`${base}/pages/faq.html`).href,
+        perguntasFrequentes: new URL(`${base}/pages/faq.html`).href,
         sobre: new URL(`${base}/pages/sobre.html`).href,
         privacidade: new URL(`${base}/pages/privacidade.html`).href,
         licenca: new URL(`${base}/pages/licenca.html`).href
@@ -32,7 +32,7 @@ function ehPaginaAtual(endereco) {
 }
 
 // --- MONTA E INJETA O CABEÇALHO ---
-function renderHeader() {
+function renderizarCabecalho() {
     const rotas = obterRotas();
     const ehInicio = ehPaginaAtual(rotas.inicio);
     const temTutorial = document.querySelector(".tutorial-overlay") !== null;
@@ -41,17 +41,47 @@ function renderHeader() {
     inserirLinkDeAtalho();
 
     // --- NÃO SOBRESCREVE CABEÇALHOS PERSONALIZADOS ---
-    let header = document.querySelector("header.main-header");
-    if (header && header.children.length > 0) {
+    let cabecalho = document.querySelector("header.main-header");
+    if (cabecalho && cabecalho.children.length > 0) {
         return;
     }
 
     const itensMenu = [
-        { href: rotas.inicio, icone: "fa-house", chave: "menu-home", texto: "Início", atual: ehInicio },
-        { href: ehInicio ? "#jogos" : rotas.jogos, icone: "fa-gamepad", chave: "menu-games", texto: "Jogos", atual: false },
-        { href: rotas.estatisticas, icone: "fa-chart-simple", chave: "menu-stats", texto: "Estatísticas", atual: ehPaginaAtual(rotas.estatisticas) },
-        { href: rotas.configuracoes, icone: "fa-sliders", chave: "menu-settings", texto: "Configurações", atual: ehPaginaAtual(rotas.configuracoes) },
-        { href: rotas.faq, icone: "fa-circle-question", chave: "menu-faq", texto: "FAQ", atual: ehPaginaAtual(rotas.faq) }
+        { 
+            href: rotas.inicio, 
+            icone: "fa-house", 
+            chave: "menu-home", 
+            texto: "Início", 
+            atual: ehInicio 
+        },
+        {
+            href: ehInicio ? "#jogos" : rotas.jogos,
+            icone: "fa-gamepad",
+            chave: "menu-games",
+            texto: "Jogos",
+            atual: false
+        },
+        {
+            href: rotas.estatisticas,
+            icone: "fa-chart-simple",
+            chave: "menu-stats",
+            texto: "Estatísticas",
+            atual: ehPaginaAtual(rotas.estatisticas)
+        },
+        {
+            href: rotas.configuracoes,
+            icone: "fa-sliders",
+            chave: "menu-settings",
+            texto: "Configurações",
+            atual: ehPaginaAtual(rotas.configuracoes)
+        },
+        {
+            href: rotas.perguntasFrequentes,
+            icone: "fa-circle-question",
+            chave: "menu-faq",
+            texto: "FAQ",
+            atual: ehPaginaAtual(rotas.perguntasFrequentes)
+        }
     ];
 
     const menu = itensMenu.map(item => `
@@ -62,7 +92,7 @@ function renderHeader() {
                             </a>
                         </li>`).join("");
 
-    const botaoAjuda = temTutorial
+    const marcacaoBotaoAjuda = temTutorial
         ? ` <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial" aria-label="Ver tutorial">
                 <i class="fas fa-question" aria-hidden="true"></i>
             </button>`
@@ -87,7 +117,7 @@ function renderHeader() {
         : "";
 
     // --- HTML DO CABEÇALHO ---
-    const html = `
+    const marcacaoCabecalho = `
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
@@ -107,7 +137,7 @@ function renderHeader() {
 
                     <div class="header-actions">
                         ${buscaJogos}
-                        ${botaoAjuda}
+                        ${marcacaoBotaoAjuda}
                         <button class="btn-theme" data-theme-toggle title="Alterar tema" aria-label="Alterar tema">
                             <i class="fas fa-moon" aria-hidden="true"></i>
                         </button>
@@ -119,49 +149,49 @@ function renderHeader() {
             </div>`;
 
     // --- INSERE NO CABEÇALHO EXISTENTE OU CRIA UM NOVO ---
-    if (!header) {
-        header = document.createElement("header");
-        header.className = "main-header";
-        document.body.insertBefore(header, document.body.firstChild);
+    if (!cabecalho) {
+        cabecalho = document.createElement("header");
+        cabecalho.className = "main-header";
+        document.body.insertBefore(cabecalho, document.body.firstChild);
     }
-    header.innerHTML = html;
+    cabecalho.innerHTML = marcacaoCabecalho;
 
-    initMenuMobile(header);
+    inicializarMenuResponsivo(cabecalho);
 }
 
 // --- MENU RESPONSIVO ---
-function initMenuMobile(header) {
-    const botao = header.querySelector("#btnMenu");
-    const nav = header.querySelector("#mainNav");
-    if (!botao || !nav) {
+function inicializarMenuResponsivo(cabecalho) {
+    const btnAlternarMenu = cabecalho.querySelector("#btnMenu");
+    const navegacaoPrincipal = cabecalho.querySelector("#mainNav");
+    if (!btnAlternarMenu || !navegacaoPrincipal) {
         return;
     }
 
-    function definir(aberto) {
-        nav.classList.toggle("open", aberto);
-        botao.setAttribute("aria-expanded", aberto ? "true" : "false");
-        botao.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
-        botao.querySelector("i").className = aberto ? "fas fa-xmark" : "fas fa-bars";
+    function definirAberturaMenu(aberto) {
+        navegacaoPrincipal.classList.toggle("open", aberto);
+        btnAlternarMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
+        btnAlternarMenu.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+        btnAlternarMenu.querySelector("i").className = aberto ? "fas fa-xmark" : "fas fa-bars";
     }
 
-    botao.addEventListener("click", () => definir(!nav.classList.contains("open")));
+    btnAlternarMenu.addEventListener("click", () => definirAberturaMenu(!navegacaoPrincipal.classList.contains("open")));
 
-    nav.addEventListener("click", (e) => {
-        if (e.target.closest("a")) {
-            definir(false);
+    navegacaoPrincipal.addEventListener("click", (evento) => {
+        if (evento.target.closest("a")) {
+            definirAberturaMenu(false);
         }
     });
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && nav.classList.contains("open")) {
-            definir(false);
-            botao.focus();
+    document.addEventListener("keydown", (evento) => {
+        if (evento.key === "Escape" && navegacaoPrincipal.classList.contains("open")) {
+            definirAberturaMenu(false);
+            btnAlternarMenu.focus();
         }
     });
 
-    document.addEventListener("click", (e) => {
-        if (nav.classList.contains("open") && !header.contains(e.target)) {
-            definir(false);
+    document.addEventListener("click", (evento) => {
+        if (navegacaoPrincipal.classList.contains("open") && !cabecalho.contains(evento.target)) {
+            definirAberturaMenu(false);
         }
     });
 }
@@ -191,18 +221,18 @@ function inserirLinkDeAtalho() {
         return;
     }
 
-    const link = document.createElement("a");
-    link.className = "skip-link";
-    link.href = `#${alvo.id}`;
-    link.setAttribute("data-key", "skip-to-content");
-    link.textContent = "Pular para o conteúdo";
-    document.body.insertBefore(link, document.body.firstChild);
+    const ligacaoAtalho = document.createElement("a");
+    ligacaoAtalho.className = "skip-link";
+    ligacaoAtalho.href = `#${alvo.id}`;
+    ligacaoAtalho.setAttribute("data-key", "skip-to-content");
+    ligacaoAtalho.textContent = "Pular para o conteúdo";
+    document.body.insertBefore(ligacaoAtalho, document.body.firstChild);
 }
 
 // --- MONTA O RODAPÉ PADRÃO EM TODAS AS PÁGINAS ---
-function renderFooter() {
-    const footer = document.querySelector("footer.main-footer");
-    if (!footer) {
+function renderizarRodape() {
+    const rodape = document.querySelector("footer.main-footer");
+    if (!rodape) {
         return;
     }
 
@@ -226,21 +256,21 @@ function renderFooter() {
     }).join("");
 
     // --- COLUNA DE LINKS ---
-    const coluna = (chaveTitulo, titulo, links) => `
+    const gerarColunaRodape = (chaveTitulo, titulo, ligacoes) => `
                     <nav class="footer-col" aria-label="${titulo}">
                         <h4 data-key="${chaveTitulo}">${titulo}</h4>
                         <ul>
-                            ${links.map(l => `
+                            ${ligacoes.map(ligacao => `
                             <li>
-                                <a href="${l.href}">
-                                    <i class="fas ${l.icone}" aria-hidden="true"></i>
-                                    <span data-key="${l.chave}">${l.texto}</span>
+                                <a href="${ligacao.href}">
+                                    <i class="fas ${ligacao.icone}" aria-hidden="true"></i>
+                                    <span data-key="${ligacao.chave}">${ligacao.texto}</span>
                                 </a>
                             </li>`).join("")}
                         </ul>
                     </nav>`;
 
-    footer.innerHTML = `
+    rodape.innerHTML = `
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
@@ -256,17 +286,17 @@ function renderFooter() {
                         <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
                         <div class="social-icons">${icones}</div>
                     </div>
-                    ${coluna("footer-col-play", "Jogar", [
+                    ${gerarColunaRodape("footer-col-play", "Jogar", [
                         { href: rotas.inicio, icone: "fa-house", chave: "menu-home", texto: "Início" },
                         { href: rotas.jogos, icone: "fa-gamepad", chave: "menu-games", texto: "Jogos" },
                         { href: rotas.estatisticas, icone: "fa-chart-simple", chave: "menu-stats", texto: "Estatísticas" }
                     ])}
-                    ${coluna("footer-col-project", "Projeto", [
+                    ${gerarColunaRodape("footer-col-project", "Projeto", [
                         { href: rotas.sobre, icone: "fa-circle-info", chave: "footer-about", texto: "Sobre" },
-                        { href: rotas.faq, icone: "fa-circle-question", chave: "footer-faq", texto: "FAQ" },
+                        { href: rotas.perguntasFrequentes, icone: "fa-circle-question", chave: "footer-faq", texto: "FAQ" },
                         { href: rotas.configuracoes, icone: "fa-sliders", chave: "footer-settings", texto: "Configurações" }
                     ])}
-                    ${coluna("footer-col-legal", "Legal", [
+                    ${gerarColunaRodape("footer-col-legal", "Legal", [
                         { href: rotas.privacidade, icone: "fa-shield-halved", chave: "footer-privacy", texto: "Privacidade" },
                         { href: rotas.licenca, icone: "fa-scale-balanced", chave: "footer-license", texto: "Licença" }
                     ])}
@@ -280,20 +310,20 @@ function renderFooter() {
 }
 
 // --- FAVICON EMBUTIDO (EVITA 404 DE /favicon.ico) ---
-function inserirFavicon() {
+function inserirIconeSite() {
     if (document.querySelector('link[rel~="icon"]')) {
         return;
     }
-    const svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a5632'/><circle cx='32' cy='32' r='18' fill='%23fff'/><path d='M32 20l8 6-3 10h-10l-3-10z' fill='%2307190f'/><rect x='38' y='40' width='22' height='18' rx='5' fill='%23b4f03c'/><text x='49' y='54' font-family='Arial' font-weight='900' font-size='13' text-anchor='middle' fill='%230b2618'>11</text></svg>";
-    const link = document.createElement("link");
-    link.rel = "icon";
-    link.href = `data:image/svg+xml,${svg}`;
-    document.head.appendChild(link);
+    const imagemVetorialIcone = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a5632'/><circle cx='32' cy='32' r='18' fill='%23fff'/><path d='M32 20l8 6-3 10h-10l-3-10z' fill='%2307190f'/><rect x='38' y='40' width='22' height='18' rx='5' fill='%23b4f03c'/><text x='49' y='54' font-family='Arial' font-weight='900' font-size='13' text-anchor='middle' fill='%230b2618'>11</text></svg>";
+    const ligacaoIconeSite = document.createElement("link");
+    ligacaoIconeSite.rel = "icon";
+    ligacaoIconeSite.href = `data:image/svg+xml,${imagemVetorialIcone}`;
+    document.head.appendChild(ligacaoIconeSite);
 }
 
-inserirFavicon();
+inserirIconeSite();
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderHeader();
-    renderFooter();
+    renderizarCabecalho();
+    renderizarRodape();
 });

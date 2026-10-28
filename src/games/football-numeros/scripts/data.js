@@ -2,19 +2,19 @@ import { estado } from "./core.js";
 
 // --- CARREGA OS DADOS DO ARQUIVO JSON DE NÚMEROS ---
 export async function carregarDados() {
-    const resp = await fetch("data/football-numeros.json");
-    const data = await resp.json();
-    estado.jogadores = data.jogadores;
+    const resposta = await fetch("data/football-numeros.json");
+    const dadosJogadores = await resposta.json();
+    estado.jogadores = dadosJogadores.jogadores;
 }
 
 // --- SORTEIA UMA SELEÇÃO DE JOGADORES PARA AS RODADAS ---
-export function sortear() {
+export function sortearJogadoresDasRodadas() {
     const copia = [...estado.jogadores];
     const sorteados = [];
 
-    for (let i = 0; i < estado.totalRodadas && copia.length > 0; i++) {
-        const idx = Math.floor(Math.random() * copia.length);
-        sorteados.push(copia.splice(idx, 1)[0]);
+    for (let indiceRodada = 0; indiceRodada < estado.totalRodadas && copia.length > 0; indiceRodada++) {
+        const indiceJogadorSorteado = Math.floor(Math.random() * copia.length);
+        sorteados.push(copia.splice(indiceJogadorSorteado, 1)[0]);
     }
 
     estado.sorteados = sorteados;

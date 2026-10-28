@@ -1,4 +1,4 @@
-const formations = {
+const formacoesTaticas = {
     "4-4-2": {
         name: "4-4-2",
         positions: {
@@ -33,9 +33,9 @@ const formations = {
             ATA: [{x: 50, y: 15}] // centroavante
         },
         stats: {
-            attack:       85,
-            defense:      75,
-            midfield:     70,
+            attack: 85,
+            defense: 75,
+            midfield: 70,
             description: "O 4-3-3 é uma formação que utiliza uma linha de quatro defensores - composta por dois zagueiros e dois laterais - atrás de uma linha de meio-campo com três jogadores."
         }
     },
@@ -51,9 +51,9 @@ const formations = {
             ATA: [{x: 35, y: 15}, {x: 65, y: 15}] // atacantes
         },
         stats: {
-            attack:       75,
-            defense:      70,
-            midfield:     90,
+            attack: 75,
+            defense: 70,
+            midfield: 90,
             description: "Sistema com três zagueiros e alas ofensivos que apoiam o ataque, priorizando o controle e superioridade numérica no meio-campo."
         }
     },
@@ -71,9 +71,9 @@ const formations = {
             ATA: [{x: 50, y: 15}] // centroavante
         },
         stats: {
-            attack:       60,
-            defense:      80,
-            midfield:     90,
+            attack: 60,
+            defense: 80,
+            midfield: 90,
             description: "Formação compacta e defensiva que povoa o meio-campo para dificultar a criação do adversário, deixando apenas um atacante isolado."
         }
     },
@@ -90,9 +90,9 @@ const formations = {
             ATA: [{x: 50, y: 15}] // centroavante
         },
         stats: {
-            attack:       50,
-            defense:      95,
-            midfield:     70,
+            attack: 50,
+            defense: 95,
+            midfield: 70,
             description: "Estratégia ultra-defensiva 'retranca', com três zagueiros e dois alas recuados, focada em fechar espaços e explorar contra-ataques."
         }
     },
@@ -108,9 +108,9 @@ const formations = {
             ATA: [{x: 35, y: 15}, {x: 65, y: 15}] // atacantes
         },
         stats: {
-            attack:       65,
-            defense:      90,
-            midfield:     75,
+            attack: 65,
+            defense: 90,
+            midfield: 75,
             description: "Variação mais defensiva do 3-5-2, onde os alas têm menos liberdade para atacar e o foco é a solidez da linha de zaga."
         }
     },
@@ -127,16 +127,16 @@ const formations = {
             ATA: [{x: 35, y: 15}, {x: 65, y: 15}] // atacantes
         },
         stats: {
-            attack:       95,
-            defense:      50,
-            midfield:     60,
+            attack: 95,
+            defense: 50,
+            midfield: 60,
             description: "Esquema clássico e extremamente ofensivo (famoso no Brasil de 58/70), com quatro atacantes e apenas dois jogadores de armação."
         }
     }
 };
 
 // --- MAPEAMENTO DE ABREVIAÇÕES PARA NOMES COMPLETOS DAS POSIÇÕES ---
-const positionLabels = {
+const rotulosPosicoes = {
     "GK": "Goleiro",
     "LD": "Lateral Direito",
     "ZAG": "Zagueiro",
@@ -147,4 +147,8 @@ const positionLabels = {
     "PD": "Ponta Direita",
     "ATA": "Atacante"
 };
+
+// --- CONTRATOS LEGADOS DAS FORMAÇÕES E DOS DADOS DE POSIÇÃO ---
+const formations = formacoesTaticas;
+const positionLabels = rotulosPosicoes;
 

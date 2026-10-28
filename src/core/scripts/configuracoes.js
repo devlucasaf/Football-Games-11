@@ -1,92 +1,99 @@
 // --- CONTROLES DA TELA DE CONFIGURAÇÕES ---
 document.addEventListener("DOMContentLoaded", () => {
-    initLanguageButtons();
-    initFontSize();
-    initReduceMotion();
-    initDataActions();
+    inicializarBotoesIdioma();
+    inicializarTamanhoFonte();
+    inicializarReducaoAnimacoes();
+    inicializarAcoesDados();
 });
 
 // --- IDIOMA ---
-function initLanguageButtons() {
-    const opcoes = document.querySelectorAll(".language-option");
+function inicializarBotoesIdioma() {
+    const opcoesIdioma = document.querySelectorAll(".language-option");
 
-    opcoes.forEach(opcao => {
+    opcoesIdioma.forEach(opcao => {
         opcao.addEventListener("click", () => {
             const lingua = opcao.getAttribute("data-language");
-            if (window.selectLanguage) {
-                window.selectLanguage(lingua);
+            if (window.selecionarIdioma) {
+                window.selecionarIdioma(lingua);
             }
         });
     });
 }
 
 // --- TAMANHO DA FONTE ---
-function initFontSize() {
-    const grupo = document.getElementById("fontSizeGroup");
-    if (!grupo) {
+function inicializarTamanhoFonte() {
+    const grupoTamanhosFonte = document.getElementById("fontSizeGroup");
+    if (!grupoTamanhosFonte) {
         return;
     }
 
-    const botoes = grupo.querySelectorAll(".option-btn");
-    const salvo = localStorage.getItem("fg11_tamanho_fonte") || "medio";
+    const botoesTamanhoFonte = grupoTamanhosFonte.querySelectorAll(".option-btn");
+    const tamanhoFonteSalvo = localStorage.getItem("fg11_tamanho_fonte") || "medio";
 
     // --- MARCA O BOTÃO ATIVO ---
-    function destacar(tamanho) {
-        botoes.forEach(botao => {
-            botao.classList.toggle("active", botao.getAttribute("data-size") === tamanho);
+    function destacarTamanhoFonte(tamanho) {
+        botoesTamanhoFonte.forEach(btnSelecionarTamanhoFonte => {
+            btnSelecionarTamanhoFonte.classList.toggle("active", btnSelecionarTamanhoFonte.getAttribute("data-size") === tamanho);
         });
     }
 
-    destacar(salvo);
+    destacarTamanhoFonte(tamanhoFonteSalvo);
 
-    botoes.forEach(botao => {
-        botao.addEventListener("click", () => {
-            const tamanho = botao.getAttribute("data-size");
+    botoesTamanhoFonte.forEach(btnSelecionarTamanhoFonte => {
+        btnSelecionarTamanhoFonte.addEventListener("click", () => {
+            const tamanho = btnSelecionarTamanhoFonte.getAttribute("data-size");
             localStorage.setItem("fg11_tamanho_fonte", tamanho);
             document.documentElement.setAttribute("data-font-size", tamanho);
-            destacar(tamanho);
+            destacarTamanhoFonte(tamanho);
         });
     });
 }
 
 // --- REDUZIR ANIMAÇÕES ---
-function initReduceMotion() {
-    const toggle = document.getElementById("reduceMotionToggle");
-    if (!toggle) {
+function inicializarReducaoAnimacoes() {
+    const alternador = document.getElementById("reduceMotionToggle");
+    if (!alternador) {
         return;
     }
 
-    toggle.checked = localStorage.getItem("fg11_reduzir_animacoes") === "true";
+    alternador.checked = localStorage.getItem("fg11_reduzir_animacoes") === "true";
 
-    toggle.addEventListener("change", () => {
-        localStorage.setItem("fg11_reduzir_animacoes", toggle.checked ? "true" : "false");
-        document.documentElement.setAttribute("data-reduce-motion", toggle.checked ? "true" : "false");
+    alternador.addEventListener("change", () => {
+        let valor;
+        if (alternador.checked) {
+            valor = "true";
+        } else {
+            valor = "false";
+        }
+
+        localStorage.setItem("fg11_reduzir_animacoes", valor);
+        document.documentElement.setAttribute("data-reduce-motion", valor);
     });
 }
 
 // --- DADOS E PROGRESSO ---
-function initDataActions() {
-    const botaoTutoriais = document.getElementById("resetTutorialsBtn");
-    const botaoLimpar = document.getElementById("clearDataBtn");
+function inicializarAcoesDados() {
+    const btnReativarTutoriais = document.getElementById("resetTutorialsBtn");
+    const btnLimparDadosSalvos = document.getElementById("clearDataBtn");
 
     // --- REATIVAR TUTORIAIS ---
-    if (botaoTutoriais) {
-        botaoTutoriais.addEventListener("click", () => {
+    if (btnReativarTutoriais) {
+        btnReativarTutoriais.addEventListener("click", () => {
             const chaves = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                const chave = localStorage.key(i);
+            for (let indice = 0; indice < localStorage.length; indice++) {
+                const chave = localStorage.key(indice);
                 if (chave && chave.startsWith("tutorial_oculto_")) {
                     chaves.push(chave);
                 }
             }
             chaves.forEach(chave => localStorage.removeItem(chave));
-            darFeedback(botaoTutoriais);
+            exibirRetornoVisualBotao(btnReativarTutoriais);
         });
     }
 
     // --- LIMPAR TODOS OS DADOS ---
-    if (botaoLimpar) {
-        botaoLimpar.addEventListener("click", () => {
+    if (btnLimparDadosSalvos) {
+        btnLimparDadosSalvos.addEventListener("click", () => {
             const confirmar = window.confirm(
                 "Isso vai apagar placar, preferências e progresso salvos. Deseja continuar?"
             );
@@ -98,8 +105,8 @@ function initDataActions() {
     }
 }
 
-// --- FEEDBACK VISUAL TEMPORÁRIO NO BOTÃO ---
-function darFeedback(botao) {
-    botao.classList.add("done");
-    setTimeout(() => botao.classList.remove("done"), 1500);
+// --- RETORNO VISUAL TEMPORÁRIO NO BOTÃO ---
+function exibirRetornoVisualBotao(btnConfirmarAcaoDados) {
+    btnConfirmarAcaoDados.classList.add("done");
+    setTimeout(() => btnConfirmarAcaoDados.classList.remove("done"), 1500);
 }

@@ -1,7 +1,7 @@
 import { estado } from "./core.js";
 import { carregarDados, sortearPartidas, obterPartidaAtual } from "./data.js";
 
-const els = {
+const elementosJogo = {
     rodadaAtual:    document.getElementById("rodadaAtual"),
     pontos:         document.getElementById("pontos"),
     competicao:     document.getElementById("competicao"),
@@ -23,15 +23,15 @@ const els = {
 // --- MOSTRAR PARTIDA ---
 function mostrarPartida() {
     const partida = obterPartidaAtual();
-    els.rodadaAtual.textContent = estado.rodadaAtual + 1;
-    els.competicao.textContent = partida.competicao;
-    els.mandante.textContent = partida.mandante;
-    els.visitante.textContent = partida.visitante;
-    els.inputMandante.value = 0;
-    els.inputVisitante.value = 0;
-    els.matchCard.classList.remove("hidden");
-    els.resultFeedback.classList.add("hidden");
-    els.inputMandante.focus();
+    elementosJogo.rodadaAtual.textContent = estado.rodadaAtual + 1;
+    elementosJogo.competicao.textContent = partida.competicao;
+    elementosJogo.mandante.textContent = partida.mandante;
+    elementosJogo.visitante.textContent = partida.visitante;
+    elementosJogo.inputMandante.value = 0;
+    elementosJogo.inputVisitante.value = 0;
+    elementosJogo.matchCard.classList.remove("hidden");
+    elementosJogo.resultFeedback.classList.add("hidden");
+    elementosJogo.inputMandante.focus();
 }
 
 // --- CALCULAR PONTOS ---
@@ -51,41 +51,41 @@ function calcularPontos(palpiteMandante, palpiteVisitante, partida) {
 }
 
 // --- CONFIRMAR PALPITE ---
-function confirmar() {
+function confirmarPalpitePlacar() {
     const partida = obterPartidaAtual();
-    const pm = parseInt(els.inputMandante.value) || 0;
-    const pv = parseInt(els.inputVisitante.value) || 0;
-    const pts = calcularPontos(pm, pv, partida);
+    const palpiteMandante = parseInt(elementosJogo.inputMandante.value) || 0;
+    const palpiteVisitante = parseInt(elementosJogo.inputVisitante.value) || 0;
+    const pontosRodada = calcularPontos(palpiteMandante, palpiteVisitante, partida);
 
-    estado.pontos += pts;
+    estado.pontos += pontosRodada;
     estado.historico.push({ 
         partida, 
-        palpite: [pm, pv], 
-        pontos: pts 
+        palpite: [palpiteMandante, palpiteVisitante],
+        pontos: pontosRodada
     });
 
-    els.pontos.textContent = estado.pontos;
-    els.matchCard.classList.add("hidden");
-    els.resultFeedback.classList.remove("hidden");
+    elementosJogo.pontos.textContent = estado.pontos;
+    elementosJogo.matchCard.classList.add("hidden");
+    elementosJogo.resultFeedback.classList.remove("hidden");
 
     const placarReal = `${partida.placarMandante} × ${partida.placarVisitante}`;
     const detalhe = partida.detalhe ? ` (${partida.detalhe})` : "";
 
-    if (pts === 3) {
-        els.feedbackIcon.className = "feedback-icon perfect";
-        els.feedbackIcon.innerHTML = "<i class='fas fa-check-circle'></i>";
-        els.feedbackText.textContent = "Placar Exato! +3 pontos";
-    } else if (pts === 1) {
-        els.feedbackIcon.className = "feedback-icon partial";
-        els.feedbackIcon.innerHTML = "<i class='fas fa-minus-circle'></i>";
-        els.feedbackText.textContent = "Vencedor correto! +1 ponto";
+    if (pontosRodada === 3) {
+        elementosJogo.feedbackIcon.className = "feedback-icon perfect";
+        elementosJogo.feedbackIcon.innerHTML = "<i class='fas fa-check-circle'></i>";
+        elementosJogo.feedbackText.textContent = "Placar Exato! +3 pontos";
+    } else if (pontosRodada === 1) {
+        elementosJogo.feedbackIcon.className = "feedback-icon partial";
+        elementosJogo.feedbackIcon.innerHTML = "<i class='fas fa-minus-circle'></i>";
+        elementosJogo.feedbackText.textContent = "Vencedor correto! +1 ponto";
     } else {
-        els.feedbackIcon.className = "feedback-icon miss";
-        els.feedbackIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
-        els.feedbackText.textContent = "Errou! 0 pontos";
+        elementosJogo.feedbackIcon.className = "feedback-icon miss";
+        elementosJogo.feedbackIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
+        elementosJogo.feedbackText.textContent = "Errou! 0 pontos";
     }
 
-    els.feedbackScore.textContent = `Placar real: ${placarReal}${detalhe}`;
+    elementosJogo.feedbackScore.textContent = `Placar real: ${placarReal}${detalhe}`;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
         document.getElementById("btnNext").textContent = "Ver Resultado";
@@ -93,7 +93,7 @@ function confirmar() {
 }
 
 // --- PRÓXIMA RODADA ---
-function proxima() {
+function avancarRodada() {
     estado.rodadaAtual++;
     if (estado.rodadaAtual >= estado.totalRodadas) {
         mostrarFinal();
@@ -104,26 +104,26 @@ function proxima() {
 
 // --- MOSTRAR RESULTADO FINAL ---
 function mostrarFinal() {
-    els.matchCard.classList.add("hidden");
-    els.resultFeedback.classList.add("hidden");
-    els.gameInfo.classList.add("hidden");
-    els.finalResult.classList.remove("hidden");
-    els.finalPoints.textContent = estado.pontos;
+    elementosJogo.matchCard.classList.add("hidden");
+    elementosJogo.resultFeedback.classList.add("hidden");
+    elementosJogo.gameInfo.classList.add("hidden");
+    elementosJogo.finalResult.classList.remove("hidden");
+    elementosJogo.finalPoints.textContent = estado.pontos;
 
-    const pct = Math.round((estado.pontos / 30) * 100);
-    let msg = "";
+    const porcentagemPontuacao = Math.round((estado.pontos / 30) * 100);
+    let mensagemResultado = "";
 
-    if (pct >= 80) {
-        msg = "Memória enciclopédica!";
-    } else if (pct >= 50) {
-        msg = "Bom conhecimento de placares!";
-    } else if (pct >= 30) {
-        msg = "Precisa estudar mais os clássicos!";
+    if (porcentagemPontuacao >= 80) {
+        mensagemResultado = "Memória enciclopédica!";
+    } else if (porcentagemPontuacao >= 50) {
+        mensagemResultado = "Bom conhecimento de placares!";
+    } else if (porcentagemPontuacao >= 30) {
+        mensagemResultado = "Precisa estudar mais os clássicos!";
     } else {
-        msg = "Tente novamente!";
+        mensagemResultado = "Tente novamente!";
     }
 
-    if (pct >= 50) {
+    if (porcentagemPontuacao >= 50) {
         if (window.registrarVitoria) {
             window.registrarVitoria();
         }
@@ -133,13 +133,13 @@ function mostrarFinal() {
         }
     }
 
-    const exatos = estado.historico.filter(h => h.pontos === 3).length;
-    els.finalDetails.innerHTML = `<p>${msg}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
+    const exatos = estado.historico.filter(resultadoRodada => resultadoRodada.pontos === 3).length;
+    elementosJogo.finalDetails.innerHTML = `<p>${mensagemResultado}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
 
     if (window.FG11Stats) {
         const total = estado.totalRodadas;
-        const venceu = pct >= 50;
-        const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+        const venceu = porcentagemPontuacao >= 50;
+        const rotulos = Array.from({ length: total + 1 }, (valorIgnorado, indiceAcertos) => String(indiceAcertos));
         window.FG11Stats.registrar("football-placar", {
             venceu,
             bucket: exatos,
@@ -164,51 +164,51 @@ function iniciarJogo() {
     estado.rodadaAtual = 0;
     estado.pontos = 0;
     estado.historico = [];
-    els.pontos.textContent = "0";
-    els.finalResult.classList.add("hidden");
-    els.gameInfo.classList.remove("hidden");
+    elementosJogo.pontos.textContent = "0";
+    elementosJogo.finalResult.classList.add("hidden");
+    elementosJogo.gameInfo.classList.remove("hidden");
     sortearPartidas();
     mostrarPartida();
 }
 
 // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-async function init() {
+async function inicializarJogoPlacar() {
     await carregarDados();
 
-    document.getElementById("btnConfirmar").addEventListener("click", confirmar);
-    document.getElementById("btnNext").addEventListener("click", proxima);
+    document.getElementById("btnConfirmar").addEventListener("click", confirmarPalpitePlacar);
+    document.getElementById("btnNext").addEventListener("click", avancarRodada);
     document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
     document.getElementById("btnHome").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            if (!els.matchCard.classList.contains("hidden")) {
-                confirmar();
-            } else if (!els.resultFeedback.classList.contains("hidden")) {
-                proxima();
+    document.addEventListener("keydown", (eventoTeclado) => {
+        if (eventoTeclado.key === "Enter") {
+            if (!elementosJogo.matchCard.classList.contains("hidden")) {
+                confirmarPalpitePlacar();
+            } else if (!elementosJogo.resultFeedback.classList.contains("hidden")) {
+                avancarRodada();
             }
         }
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-placar-exato";
+    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const chaveDispensaTutorial = "tutorial_skip_football-placar-exato";
 
-    if (localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
         document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
         document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
-            tutorialOverlay.classList.add("hidden");
+            localStorage.setItem(chaveDispensaTutorial, "true");
+            sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
     }
 }
 
-init();
+inicializarJogoPlacar();

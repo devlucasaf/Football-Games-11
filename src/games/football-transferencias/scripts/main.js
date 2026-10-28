@@ -1,9 +1,9 @@
-import { estado, resetEstado } from "./core.js";
+import { estado, reiniciarEstadoTransferencias } from "./core.js";
 import { carregarDados, selecionarModo, escolherJogador, obterNomesJogadores } from "./data.js";
-import { renderizarClubes, atualizarInfo, mostrarFeedback, mostrarResultadoFinal, resetarVisual, configurarAutocomplete } from "./ui.js";
+import { renderizarClubes, atualizarInformacoesRodada, mostrarRetornoPalpite, mostrarResultadoFinal, reiniciarInterfaceRodada, configurarPreenchimentoAutomatico } from "./ui.js";
 
-function normalizar(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+function normalizarNomeJogador(nomeJogador) {
+    return nomeJogador.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
 // --- CALCULA OS PONTOS COM BASE NA QUANTIDADE DE CLUBES REVELADOS ---
@@ -20,18 +20,18 @@ function verificarPalpite(nome) {
         return;
     }
 
-    const correto = normalizar(estado.jogadorAtual.nome) === normalizar(nome);
+    const correto = normalizarNomeJogador(estado.jogadorAtual.nome) === normalizarNomeJogador(nome);
 
     if (correto) {
         const pontos = calcularPontos();
         estado.pontuacao += pontos;
         estado.acertos++;
-        mostrarFeedback(true, pontos);
+        mostrarRetornoPalpite(true, pontos);
     } else {
-        mostrarFeedback(false, 0);
+        mostrarRetornoPalpite(false, 0);
     }
 
-    atualizarInfo();
+    atualizarInformacoesRodada();
 }
 
 // --- REVELA O PRÓXIMO CLUBE DO JOGADOR ---
@@ -62,10 +62,10 @@ function proximaRodada() {
 
 // --- INICIALIZA UMA NOVA RODADA DO JOGO ---
 function iniciarRodada() {
-    resetarVisual();
+    reiniciarInterfaceRodada();
     escolherJogador();
     renderizarClubes();
-    atualizarInfo();
+    atualizarInformacoesRodada();
     document.getElementById("guessInput").focus();
 }
 
@@ -77,7 +77,7 @@ function registrarEstatisticas() {
 
     const total = estado.totalRodadas;
     const venceu = estado.acertos >= Math.ceil(total / 2);
-    const rotulos = Array.from({ length: total + 1 }, (_, i) => String(i));
+    const rotulos = Array.from({ length: total + 1 }, (valorIgnorado, indiceAcertos) => String(indiceAcertos));
     window.FG11Stats.registrar("football-transferencias", {
         venceu,
         bucket: estado.acertos,
@@ -103,9 +103,9 @@ function iniciarJogo() {
     document.getElementById("gameInfo").classList.remove("hidden");
     document.getElementById("clubsArea").classList.remove("hidden");
     document.getElementById("guessArea").classList.remove("hidden");
-    resetEstado();
+    reiniciarEstadoTransferencias();
     selecionarModo(estado.modoAtual);
-    setupAutocomplete();
+    configurarSugestoesJogadores();
     iniciarRodada();
 }
 
@@ -116,7 +116,7 @@ function selecionarModoEIniciar(modo) {
 }
 
 // --- VOLTAR À SELEÇÃO DE MODO ---
-function voltarModo() {
+function voltarSelecaoModo() {
     document.getElementById("modeSelection").classList.remove("hidden");
     document.getElementById("gameInfo").classList.add("hidden");
     document.getElementById("clubsArea").classList.add("hidden");
@@ -130,9 +130,9 @@ document.getElementById("btnReveal").addEventListener("click", revelarProximoClu
 
 // --- BOTÃO DE CONFIRMAR PALPITE ---
 document.getElementById("btnGuess").addEventListener("click", () => {
-    const input = document.getElementById("guessInput");
-    if (input.value.trim()) {
-        verificarPalpite(input.value.trim());
+    const campoPalpite = document.getElementById("guessInput");
+    if (campoPalpite.value.trim()) {
+        verificarPalpite(campoPalpite.value.trim());
     }
 });
 
@@ -145,12 +145,12 @@ document.getElementById("btnHome").addEventListener("click", () => {
 // --- BOTÕES DE SELEÇÃO DE MODO ---
 document.getElementById("btnMundial").addEventListener("click", () => selecionarModoEIniciar("mundial"));
 document.getElementById("btnBrasileiro").addEventListener("click", () => selecionarModoEIniciar("brasileiro"));
-document.getElementById("btnTrocarModo").addEventListener("click", voltarModo);
+document.getElementById("btnTrocarModo").addEventListener("click", voltarSelecaoModo);
 
 // --- CONFIGURA O AUTOCOMPLETAR COM OS NOMES DOS JOGADORES ---
-function setupAutocomplete() {
+function configurarSugestoesJogadores() {
     const nomes = obterNomesJogadores();
-    configurarAutocomplete(nomes, (nome) => {
+    configurarPreenchimentoAutomatico(nomes, (nome) => {
         document.getElementById("guessInput").value = nome;
         document.getElementById("autocompleteList").classList.remove("active");
         verificarPalpite(nome);
@@ -158,8 +158,8 @@ function setupAutocomplete() {
 }
 
 // --- FUNÇÃO PRINCIPAL DE INICIALIZAÇÃO DO JOGO ---
-async function init() {
+async function inicializarJogoTransferencias() {
     await carregarDados();
 }
 
-init();
+inicializarJogoTransferencias();

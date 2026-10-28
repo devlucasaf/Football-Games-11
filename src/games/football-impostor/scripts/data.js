@@ -16,12 +16,12 @@ export function escolherRodada() {
         estado.rodadasUsadas.clear();
     }
 
-    let idx;
+    let indiceRodada;
     do {
-        idx = Math.floor(Math.random() * estado.rodadas.length);  
+        indiceRodada = Math.floor(Math.random() * estado.rodadas.length);
     } 
-    while (estado.rodadasUsadas.has(idx));                        
+    while (estado.rodadasUsadas.has(indiceRodada));
 
-    estado.rodadasUsadas.add(idx);                                
-    estado.rodadaAtual = estado.rodadas[idx];                     
+    estado.rodadasUsadas.add(indiceRodada);
+    estado.rodadaAtual = estado.rodadas[indiceRodada];
 }

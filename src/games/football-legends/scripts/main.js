@@ -1,4 +1,4 @@
-const LegendsConstrutor = {
+const LendasConstrutor = {
     async iniciar() {
         try {
             const parametrosUrl = new URLSearchParams(window.location.search);
@@ -9,11 +9,11 @@ const LegendsConstrutor = {
                 return;
             }
 
-            await LegendsDados.carregarDados();
+            await LendasDados.carregarDados();
 
-            LegendsDados.timeAtual = LegendsDados.timesProcessados.find(t => t.key === chaveTime);
+            LendasDados.timeAtual = LendasDados.timesProcessados.find(time => time.chave === chaveTime);
 
-            if (!LegendsDados.timeAtual) {
+            if (!LendasDados.timeAtual) {
                 window.location.href = "football-legends.html";
                 return;
             }
@@ -31,20 +31,20 @@ const LegendsConstrutor = {
 
     // --- ATUALIZAR INTERFACE DO CONSTRUTOR ---
     atualizarInterfaceConstrutor() {
-        const nomeTimeEl = document.getElementById("teamName");
-        const nomeCompletoEl = document.getElementById("teamFullName");
-        const contagemJogadoresEl = document.getElementById("playerCount");
+        const elementoNomeTime = document.getElementById("teamName");
+        const elementoNomeCompleto = document.getElementById("teamFullName");
+        const elementoContagemJogadores = document.getElementById("playerCount");
 
-        if (nomeTimeEl) {
-            nomeTimeEl.textContent = LegendsDados.timeAtual.name;
+        if (elementoNomeTime) {
+            elementoNomeTime.textContent = LendasDados.timeAtual.nome;
         }
 
-        if (nomeCompletoEl) {
-            nomeCompletoEl.textContent = `Melhor XI Histórico - ${LegendsDados.timeAtual.name}`;
+        if (elementoNomeCompleto) {
+            elementoNomeCompleto.textContent = `Melhor XI Histórico - ${LendasDados.timeAtual.nome}`;
         }
 
-        if (contagemJogadoresEl) {
-            contagemJogadoresEl.textContent = LegendsDados.timeAtual.players.length;
+        if (elementoContagemJogadores) {
+            elementoContagemJogadores.textContent = LendasDados.timeAtual.jogadores.length;
         }
     },
 
@@ -63,7 +63,7 @@ const LegendsConstrutor = {
 
         listaJogadores.innerHTML = "";
 
-        LegendsDados.timeAtual.players.forEach((jogador, indice) => {
+        LendasDados.timeAtual.jogadores.forEach((jogador, indice) => {
             const elemento = this.criarElementoJogador(jogador, indice);
             listaJogadores.appendChild(elemento);
         });
@@ -73,19 +73,19 @@ const LegendsConstrutor = {
 
     // --- CRIAR ELEMENTO DE JOGADOR ---
     criarElementoJogador(jogador, indice) {
-        const div = document.createElement("div");
+        const elementoJogador = document.createElement("div");
 
-        const estaSelecionado = LegendsDados.jogadorEstaSelecionado(jogador.name);
+        const estaSelecionado = LendasDados.jogadorEstaSelecionado(jogador.nome);
 
-        div.className = `player-item${estaSelecionado ? " selected" : ""}`;
-        div.dataset.playerIndex = indice;
+        elementoJogador.className = `player-item${estaSelecionado ? " selected" : ""}`;
+        elementoJogador.dataset.playerIndex = indice;
 
-        const grupoPosicao = LegendsDados.obterGrupoPosicao(jogador.pos);
+        const grupoPosicao = LendasDados.obterGrupoPosicao(jogador.posicao);
 
-        div.innerHTML = `
+        elementoJogador.innerHTML = `
             <div class="player-header">
-                <span class="player-name">${jogador.name}</span>
-                <span class="player-position">${jogador.pos}</span>
+            <span class="player-name">${jogador.nome}</span>
+            <span class="player-position">${jogador.posicao}</span>
             </div>
             <div class="player-info">
                 <span>${grupoPosicao}</span>
@@ -93,14 +93,14 @@ const LegendsConstrutor = {
             </div>
         `;
 
-        div.addEventListener("click", () => {
-            const sucesso = LegendsDados.adicionarJogadorAutomaticamente(indice);
+        elementoJogador.addEventListener("click", () => {
+            const sucesso = LendasDados.adicionarJogadorAutomaticamente(indice);
             if (sucesso) {
                 this.atualizarTudo();
             }
         });
 
-        return div;
+        return elementoJogador;
     },
 
     // --- RENDERIZAR FORMAÇÃO ---
@@ -112,46 +112,46 @@ const LegendsConstrutor = {
 
         posicoesFormacao.innerHTML = "";
 
-        const posicoes = LegendsConfig.formacoes[LegendsDados.formacaoAtual].posicoes;
+        const posicoes = LendasConfiguracao.formacoes[LendasDados.formacaoAtual].posicoes;
 
-        posicoes.forEach(pos => {
-            const slot = this.criarSlotPosicao(pos);
-            posicoesFormacao.appendChild(slot);
+        posicoes.forEach(posicao => {
+            const espacoPosicao = this.criarEspacoPosicao(posicao);
+            posicoesFormacao.appendChild(espacoPosicao);
         });
 
-        const formacaoAtualEl = document.getElementById("currentFormation");
-        if (formacaoAtualEl) {
-            formacaoAtualEl.textContent = LegendsDados.formacaoAtual;
+        const elementoFormacaoAtual = document.getElementById("currentFormation");
+        if (elementoFormacaoAtual) {
+            elementoFormacaoAtual.textContent = LendasDados.formacaoAtual;
         }
     },
 
     // --- CRIAR SLOT DE POSIÇÃO ---
-    criarSlotPosicao(posicao) {
-        const slot = document.createElement("div");
+    criarEspacoPosicao(posicao) {
+        const espacoPosicao = document.createElement("div");
 
-        slot.className = "position-slot";
-        slot.dataset.position = posicao.id;
-        slot.style.left = `${posicao.x}%`;
-        slot.style.top = `${posicao.y}%`;
+        espacoPosicao.className = "position-slot";
+        espacoPosicao.dataset.position = posicao.id;
+        espacoPosicao.style.left = `${posicao.x}%`;
+        espacoPosicao.style.top = `${posicao.y}%`;
 
-        const jogador = LegendsDados.jogadoresSelecionados.get(posicao.id);
+        const jogador = LendasDados.jogadoresSelecionados.get(posicao.id);
         
         if (jogador) {
-            slot.classList.add("filled");
-            slot.innerHTML = `<div class="position-label">${jogador.name}</div>`;
+            espacoPosicao.classList.add("filled");
+            espacoPosicao.innerHTML = `<div class="position-label">${jogador.nome}</div>`;
         } else {
-            slot.innerHTML = `<div class="position-label">${posicao.id}</div>`;
+            espacoPosicao.innerHTML = `<div class="position-label">${posicao.id}</div>`;
         }
 
-        slot.addEventListener("click", (e) => {
-            e.stopPropagation();
+        espacoPosicao.addEventListener("click", (evento) => {
+            evento.stopPropagation();
             if (jogador) {
-                LegendsDados.removerJogadorDaPosicao(posicao.id);
+                LendasDados.removerJogadorDaPosicao(posicao.id);
                 this.atualizarTudo();
             }
         });
 
-        return slot;
+        return espacoPosicao;
     },
 
     configurarArrastarSoltar() {
@@ -177,7 +177,7 @@ const LegendsConstrutor = {
             return;
         }
 
-        if (LegendsDados.jogadoresSelecionados.size === 0) {
+        if (LendasDados.jogadoresSelecionados.size === 0) {
             elementoSelecionados.innerHTML = `
                 <div class="empty-state">
                     <i class="fas fa-hand-pointer"></i>
@@ -190,35 +190,35 @@ const LegendsConstrutor = {
             return;
         }
 
-        const grid = document.createElement("div");
-        grid.className = "selected-players-grid";
+        const gradeJogadoresSelecionados = document.createElement("div");
+        gradeJogadoresSelecionados.className = "selected-players-grid";
 
-        LegendsDados.jogadoresSelecionados.forEach((jogador, posicao) => {
+        LendasDados.jogadoresSelecionados.forEach((jogador, posicao) => {
             const elemento = document.createElement("div");
             elemento.className = "selected-player";
             elemento.innerHTML = `
-                <div class="selected-player-name">${jogador.name}</div>
+                <div class="selected-player-name">${jogador.nome}</div>
                 <div class="selected-player-position">${posicao}</div>
             `;
-            grid.appendChild(elemento);
+            gradeJogadoresSelecionados.appendChild(elemento);
         });
 
         elementoSelecionados.innerHTML = "";
-        elementoSelecionados.appendChild(grid);
+        elementoSelecionados.appendChild(gradeJogadoresSelecionados);
     },
 
     // --- ATUALIZAR CONTAGEM DO CAMPO ---
     atualizarContagemCampo() {
-        const contagemEl = document.getElementById("fieldCount");
-        if (contagemEl) {
-            contagemEl.textContent = `${LegendsDados.jogadoresSelecionados.size}/11`;
+        const elementoContagemCampo = document.getElementById("fieldCount");
+        if (elementoContagemCampo) {
+            elementoContagemCampo.textContent = `${LendasDados.jogadoresSelecionados.size}/11`;
         }
     },
 
     // --- MUDAR FORMAÇÃO ---
     mudarFormacao(formacao) {
-        if (LegendsConfig.formacoes[formacao]) {
-            LegendsDados.formacaoAtual = formacao;
+        if (LendasConfiguracao.formacoes[formacao]) {
+            LendasDados.formacaoAtual = formacao;
             this.renderizarFormacao();
 
             const menu = document.getElementById("formationsMenu");
@@ -234,14 +234,14 @@ const LegendsConstrutor = {
     atualizarPosicoesParaFormacao() {
         const novosJogadores = new Map();
 
-        LegendsDados.jogadoresSelecionados.forEach((jogador, posicaoAntiga) => {
-            const novaPosicao = LegendsDados.encontrarPosicaoSimilar(posicaoAntiga);
+        LendasDados.jogadoresSelecionados.forEach((jogador, posicaoAntiga) => {
+            const novaPosicao = LendasDados.encontrarPosicaoSimilar(posicaoAntiga);
             if (novaPosicao && !novosJogadores.has(novaPosicao)) {
                 novosJogadores.set(novaPosicao, jogador);
             }
         });
 
-        LegendsDados.jogadoresSelecionados = novosJogadores;
+        LendasDados.jogadoresSelecionados = novosJogadores;
         this.atualizarTudo();
     },
 
@@ -256,9 +256,9 @@ const LegendsConstrutor = {
 
         itens.forEach(item => {
             const indice = parseInt(item.dataset.playerIndex);
-            const jogador = LegendsDados.timeAtual.players[indice];
+            const jogador = LendasDados.timeAtual.jogadores[indice];
 
-            if (filtro === "all" || LegendsDados.posicaoCorrespondeAoFiltro(jogador.pos, filtro)) {
+            if (filtro === "all" || LendasDados.posicaoCorrespondeAoFiltro(jogador.posicao, filtro)) {
                 item.style.display = "block";
             } else {
                 item.style.display = "none";
@@ -269,30 +269,30 @@ const LegendsConstrutor = {
     // --- CONFIGURAR FILTRO DE POSIÇÃO ---
     configurarFiltroPosicao() {
         const filtro = document.getElementById("positionFilter");
-        const botao = document.getElementById("positionFilterToggle");
+        const btnAlternarFiltroPosicao = document.getElementById("btnAlternarFiltroPosicao");
         const menu = document.getElementById("positionFilterMenu");
         const rotulo = document.getElementById("positionFilterLabel");
 
-        if (!filtro || !botao || !menu || !rotulo) {
+        if (!filtro || !btnAlternarFiltroPosicao || !menu || !rotulo) {
             return;
         }
 
         const fecharMenu = () => {
             filtro.classList.remove("open");
-            botao.setAttribute("aria-expanded", "false");
+            btnAlternarFiltroPosicao.setAttribute("aria-expanded", "false");
         };
 
-        botao.addEventListener("click", (e) => {
-            e.stopPropagation();
+        btnAlternarFiltroPosicao.addEventListener("click", (evento) => {
+            evento.stopPropagation();
             const estaAberto = filtro.classList.toggle("open");
-            botao.setAttribute("aria-expanded", estaAberto ? "true" : "false");
+            btnAlternarFiltroPosicao.setAttribute("aria-expanded", estaAberto ? "true" : "false");
         });
 
         menu.querySelectorAll(".position-filter-option").forEach(opcao => {
             opcao.addEventListener("click", () => {
                 const valor = opcao.dataset.value;
 
-                menu.querySelectorAll(".position-filter-option").forEach(o => o.classList.remove("selected"));
+                menu.querySelectorAll(".position-filter-option").forEach(opcaoFiltro => opcaoFiltro.classList.remove("selected"));
                 opcao.classList.add("selected");
 
                 filtro.dataset.value = valor;
@@ -304,14 +304,14 @@ const LegendsConstrutor = {
             });
         });
 
-        document.addEventListener("click", (e) => {
-            if (!filtro.contains(e.target)) {
+        document.addEventListener("click", (evento) => {
+            if (!filtro.contains(evento.target)) {
                 fecharMenu();
             }
         });
 
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
+        document.addEventListener("keydown", (evento) => {
+            if (evento.key === "Escape") {
                 fecharMenu();
             }
         });
@@ -319,9 +319,9 @@ const LegendsConstrutor = {
 
     // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
-        const botaoFormacao = document.getElementById("formationToggle");
-        if (botaoFormacao) {
-            botaoFormacao.addEventListener("click", () => {
+        const btnAlternarFormacoes = document.getElementById("btnAlternarFormacoes");
+        if (btnAlternarFormacoes) {
+            btnAlternarFormacoes.addEventListener("click", () => {
                 const menu = document.getElementById("formationsMenu");
                 menu.classList.toggle("active");
             });
@@ -339,21 +339,21 @@ const LegendsConstrutor = {
         this.configurarFiltroPosicao();
 
         // --- REINICIAR TIME ---
-        const botaoReiniciar = document.getElementById("resetTeam");
-        if (botaoReiniciar) {
-            botaoReiniciar.addEventListener("click", () => {
+        const btnReiniciarEscalacao = document.getElementById("btnReiniciarEscalacao");
+        if (btnReiniciarEscalacao) {
+            btnReiniciarEscalacao.addEventListener("click", () => {
                 if (confirm("Tem certeza que deseja reiniciar toda a escalação?")) {
-                    LegendsDados.reiniciarEscalacao();
+                    LendasDados.reiniciarEscalacao();
                     this.atualizarTudo();
                 }
             });
         }
 
         // --- SALVAR TIME ---  
-        const botaoSalvar = document.getElementById("saveTeam");
-        if (botaoSalvar) {
-            botaoSalvar.addEventListener("click", () => {
-                if (LegendsDados.salvarTime()) {
+        const btnSalvarEscalacao = document.getElementById("btnSalvarEscalacao");
+        if (btnSalvarEscalacao) {
+            btnSalvarEscalacao.addEventListener("click", () => {
+                if (LendasDados.salvarTime()) {
                     this.mostrarModalSalvar();
                 } else {
                     alert("Complete todas as 11 posições antes de salvar!");
@@ -362,9 +362,9 @@ const LegendsConstrutor = {
         }
 
         // --- FECHAR MODAL ---
-        const fecharModal = document.getElementById("closeModal");
-        if (fecharModal) {
-            fecharModal.addEventListener("click", () => {
+        const btnFecharModalEscalacaoSalva = document.getElementById("btnFecharModalEscalacaoSalva");
+        if (btnFecharModalEscalacaoSalva) {
+            btnFecharModalEscalacaoSalva.addEventListener("click", () => {
                 const modal = document.getElementById("saveModal");
                 if (modal) {
                     modal.style.display = "none";
@@ -373,10 +373,10 @@ const LegendsConstrutor = {
         }
 
         // --- COMPARTILHAR TIME ---
-        const botaoCompartilhar = document.getElementById("shareTeam");
-        if (botaoCompartilhar) {
-            botaoCompartilhar.addEventListener("click", () => {
-                const texto = LegendsDados.gerarTextoCompartilhamento();
+        const btnCompartilharEscalacao = document.getElementById("btnCompartilharEscalacao");
+        if (btnCompartilharEscalacao) {
+            btnCompartilharEscalacao.addEventListener("click", () => {
+                const texto = LendasDados.gerarTextoCompartilhamento();
                 navigator.clipboard.writeText(texto).then(() => {
                     alert("Escalação copiada para a área de transferência!");
                 }).catch(() => {
@@ -386,19 +386,19 @@ const LegendsConstrutor = {
         }
 
         // --- NOVO TIME ---
-        const botaoNovoTime = document.getElementById("newTeam");
-        if (botaoNovoTime) {
-            botaoNovoTime.addEventListener("click", () => {
+        const btnEscolherNovoTime = document.getElementById("btnEscolherNovoTime");
+        if (btnEscolherNovoTime) {
+            btnEscolherNovoTime.addEventListener("click", () => {
                 window.location.href = "football-legends.html";
             });
         }
 
         // --- FECHAR MENU AO CLICAR FORA ---
-        document.addEventListener("click", (e) => {
+        document.addEventListener("click", (evento) => {
             const menu = document.getElementById("formationsMenu");
-            const toggle = document.getElementById("formationToggle");
+            const btnAlternarFormacoes = document.getElementById("btnAlternarFormacoes");
 
-            if (menu && toggle && !menu.contains(e.target) && !toggle.contains(e.target)) {
+            if (menu && btnAlternarFormacoes && !menu.contains(evento.target) && !btnAlternarFormacoes.contains(evento.target)) {
                 menu.classList.remove("active");
             }
         });

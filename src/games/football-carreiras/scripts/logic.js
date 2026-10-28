@@ -1,7 +1,7 @@
 import estado from "./core.js";
 import { normalizar } from "./utils.js";
 import { revelarProximo, revelarTodos } from "./grid.js";
-import { atualizarInfo, mostrarResultado, esconderSugestoes } from "./ui.js";
+import { atualizarInformacoesCarreira, mostrarResultado, esconderSugestoes } from "./ui.js";
 
 // --- TRATAR PALPITE DO JOGADOR ---
 export function tratarPalpite() {
@@ -9,19 +9,19 @@ export function tratarPalpite() {
         return;
     }
 
-    const input = document.getElementById("playerInput");
-    const palpite = input.value.trim();
+    const campoPalpite = document.getElementById("playerInput");
+    const palpite = campoPalpite.value.trim();
     if (!palpite) {
         return;
     }
 
-    const palpiteNorm = normalizar(palpite);
-    const nomeNorm = normalizar(estado.jogadorAtual.nome);
+    const palpiteNormalizado = normalizar(palpite);
+    const nomeJogadorNormalizado = normalizar(estado.jogadorAtual.nome);
 
-    input.value = "";
+    campoPalpite.value = "";
     esconderSugestoes();
 
-    if (palpiteNorm === nomeNorm || nomeNorm.includes(palpiteNorm) || palpiteNorm.includes(nomeNorm)) {
+    if (palpiteNormalizado === nomeJogadorNormalizado || nomeJogadorNormalizado.includes(palpiteNormalizado) || palpiteNormalizado.includes(nomeJogadorNormalizado)) {
         estado.jogoAtivo = false;
         revelarTodos();
         setTimeout(() => {
@@ -29,10 +29,10 @@ export function tratarPalpite() {
         }, estado.jogadorAtual.clubes.length * 80 + 400);
     } else {
         estado.erros++;
-        atualizarInfo();
+        atualizarInformacoesCarreira();
 
-        input.classList.add("shake");
-        setTimeout(() => input.classList.remove("shake"), 500);
+        campoPalpite.classList.add("shake");
+        setTimeout(() => campoPalpite.classList.remove("shake"), 500);
 
         if (estado.clubesRevelados < estado.jogadorAtual.clubes.length) {
             revelarProximo();
@@ -44,7 +44,7 @@ export function tratarPalpite() {
 }
 
 // --- PULAR RODADA ---
-export function pular() {
+export function pularRodadaCarreira() {
     if (!estado.jogoAtivo) {
         return;
     }

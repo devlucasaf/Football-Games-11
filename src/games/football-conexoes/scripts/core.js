@@ -1,7 +1,7 @@
 export const estado = {
-    puzzles:                [],
-    puzzleAtual:            null,
-    puzzleIndex:            0,
+    desafios:               [],
+    desafioAtual:           null,
+    indiceDesafioAtual:      0,
     selecionados:           [],       
     gruposAcertados:        [],    
     tentativasRestantes:    4,
@@ -9,7 +9,7 @@ export const estado = {
     jogadoresRestantes:     []  
 };
 
-export function resetPuzzle() {
+export function reiniciarEstadoDesafio() {
     estado.selecionados = [];
     estado.gruposAcertados = [];
     estado.tentativasRestantes = 4;

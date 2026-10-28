@@ -1,5 +1,5 @@
 import estado           from "./core.js";
-import { normalizar }   from "./utils.js";
+import { normalizarTexto } from "./utils.js";
 
 // --- CARREGAMENTO DOS DADOS DOS JOGADORES ---
 export async function carregarDados() {
@@ -13,7 +13,7 @@ export async function carregarDados() {
 
 // --- SELEÇÃO DO JOGADOR SECRETO ---
 export function escolherJogador() {
-    const idx = Math.floor(Math.random() * estado.jogadores.length);
-    estado.jogadorSecreto = estado.jogadores[idx];
-    estado.secretoNormalizado = normalizar(estado.jogadorSecreto);
+    const indiceJogadorSorteado = Math.floor(Math.random() * estado.jogadores.length);
+    estado.jogadorSecreto = estado.jogadores[indiceJogadorSorteado];
+    estado.secretoNormalizado = normalizarTexto(estado.jogadorSecreto);
 }

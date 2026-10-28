@@ -5,7 +5,7 @@ export const estado = {
     reveladas:       new Set(),
     usadas:          new Set(),
     erros:           0,
-    maxErros:        6,
+    maximoErros:     6,
     jogoAtivo:       true,
     acertos:         0,
     sequencia:       0,
