@@ -61,6 +61,7 @@ function iniciarQuestionario(identificadorTema) {
     mostrarPergunta();
 }
 
+// --- REINICIAR QUESTIONÁRIO ---
 window.reiniciarQuestionario = () => {
     if (estado.temaAtual) {
         iniciarQuestionario(estado.temaAtual.id);
@@ -78,25 +79,26 @@ async function inicializarJogoPerguntas() {
 
     renderizarTemas(iniciarQuestionario);
 
-    document.getElementById("btnProxima").addEventListener("click", avancarPergunta);
-    document.getElementById("btnRetry").addEventListener("click", () => {
+    document.getElementById("btnAvancarPergunta").addEventListener("click", avancarPergunta);
+    document.getElementById("btnReiniciarPartida").addEventListener("click", () => {
         iniciarQuestionario(estado.temaAtual.id);
     });
+    
     document.getElementById("btnOutroTema").addEventListener("click", voltarSelecaoTemas);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
     const chaveDispensaTutorial = "tutorial_skip_football-quiz";
 
     if (localStorage.getItem(chaveDispensaTutorial)) {
         sobreposicaoTutorial.classList.add("hidden");
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             sobreposicaoTutorial.classList.add("hidden");
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
             localStorage.setItem(chaveDispensaTutorial, "true");
             sobreposicaoTutorial.classList.add("hidden");
         });

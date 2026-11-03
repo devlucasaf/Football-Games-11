@@ -2,22 +2,22 @@ import { estado } from "./core.js";
 import { carregarDados, sortearPartidas, obterPartidaAtual } from "./data.js";
 
 const elementosJogo = {
-    rodadaAtual:    document.getElementById("rodadaAtual"),
-    pontos:         document.getElementById("pontos"),
-    competicao:     document.getElementById("competicao"),
-    mandante:       document.getElementById("mandante"),
-    visitante:      document.getElementById("visitante"),
-    inputMandante:  document.getElementById("inputMandante"),
-    inputVisitante: document.getElementById("inputVisitante"),
-    matchCard:      document.getElementById("matchCard"),
-    resultFeedback: document.getElementById("resultFeedback"),
-    feedbackIcon:   document.getElementById("feedbackIcon"),
-    feedbackText:   document.getElementById("feedbackText"),
-    feedbackScore:  document.getElementById("feedbackScore"),
-    finalResult:    document.getElementById("finalResult"),
-    finalPoints:    document.getElementById("finalPoints"),
-    finalDetails:   document.getElementById("finalDetails"),
-    gameInfo:       document.getElementById("gameInfo")
+    rodadaAtual:            document.getElementById("rodadaAtual"),
+    pontos:                 document.getElementById("pontos"),
+    competicao:             document.getElementById("competicao"),
+    mandante:               document.getElementById("mandante"),
+    visitante:              document.getElementById("visitante"),
+    campoGolsMandante:      document.getElementById("inputMandante"),
+    campoGolsVisitante:     document.getElementById("inputVisitante"),
+    cartaoPartida:          document.getElementById("matchCard"),
+    resultadoPalpite:       document.getElementById("resultFeedback"),
+    iconeResultadoPalpite:  document.getElementById("feedbackIcon"),
+    textoResultadoPalpite:  document.getElementById("feedbackText"),
+    placarResultadoPalpite: document.getElementById("feedbackScore"),
+    resultadoFinal:         document.getElementById("finalResult"),
+    pontosFinais:           document.getElementById("finalPoints"),
+    detalhesResultadoFinal: document.getElementById("finalDetails"),
+    informacoesJogo:        document.getElementById("gameInfo")
 };
 
 // --- MOSTRAR PARTIDA ---
@@ -27,11 +27,11 @@ function mostrarPartida() {
     elementosJogo.competicao.textContent = partida.competicao;
     elementosJogo.mandante.textContent = partida.mandante;
     elementosJogo.visitante.textContent = partida.visitante;
-    elementosJogo.inputMandante.value = 0;
-    elementosJogo.inputVisitante.value = 0;
-    elementosJogo.matchCard.classList.remove("hidden");
-    elementosJogo.resultFeedback.classList.add("hidden");
-    elementosJogo.inputMandante.focus();
+    elementosJogo.campoGolsMandante.value = 0;
+    elementosJogo.campoGolsVisitante.value = 0;
+    elementosJogo.cartaoPartida.classList.remove("hidden");
+    elementosJogo.resultadoPalpite.classList.add("hidden");
+    elementosJogo.campoGolsMandante.focus();
 }
 
 // --- CALCULAR PONTOS ---
@@ -53,8 +53,8 @@ function calcularPontos(palpiteMandante, palpiteVisitante, partida) {
 // --- CONFIRMAR PALPITE ---
 function confirmarPalpitePlacar() {
     const partida = obterPartidaAtual();
-    const palpiteMandante = parseInt(elementosJogo.inputMandante.value) || 0;
-    const palpiteVisitante = parseInt(elementosJogo.inputVisitante.value) || 0;
+    const palpiteMandante = parseInt(elementosJogo.campoGolsMandante.value) || 0;
+    const palpiteVisitante = parseInt(elementosJogo.campoGolsVisitante.value) || 0;
     const pontosRodada = calcularPontos(palpiteMandante, palpiteVisitante, partida);
 
     estado.pontos += pontosRodada;
@@ -65,30 +65,30 @@ function confirmarPalpitePlacar() {
     });
 
     elementosJogo.pontos.textContent = estado.pontos;
-    elementosJogo.matchCard.classList.add("hidden");
-    elementosJogo.resultFeedback.classList.remove("hidden");
+    elementosJogo.cartaoPartida.classList.add("hidden");
+    elementosJogo.resultadoPalpite.classList.remove("hidden");
 
     const placarReal = `${partida.placarMandante} × ${partida.placarVisitante}`;
     const detalhe = partida.detalhe ? ` (${partida.detalhe})` : "";
 
     if (pontosRodada === 3) {
-        elementosJogo.feedbackIcon.className = "feedback-icon perfect";
-        elementosJogo.feedbackIcon.innerHTML = "<i class='fas fa-check-circle'></i>";
-        elementosJogo.feedbackText.textContent = "Placar Exato! +3 pontos";
+        elementosJogo.iconeResultadoPalpite.className = "feedback-icon perfect";
+        elementosJogo.iconeResultadoPalpite.innerHTML = "<i class='fas fa-check-circle'></i>";
+        elementosJogo.textoResultadoPalpite.textContent = "Placar Exato! +3 pontos";
     } else if (pontosRodada === 1) {
-        elementosJogo.feedbackIcon.className = "feedback-icon partial";
-        elementosJogo.feedbackIcon.innerHTML = "<i class='fas fa-minus-circle'></i>";
-        elementosJogo.feedbackText.textContent = "Vencedor correto! +1 ponto";
+        elementosJogo.iconeResultadoPalpite.className = "feedback-icon partial";
+        elementosJogo.iconeResultadoPalpite.innerHTML = "<i class='fas fa-minus-circle'></i>";
+        elementosJogo.textoResultadoPalpite.textContent = "Vencedor correto! +1 ponto";
     } else {
-        elementosJogo.feedbackIcon.className = "feedback-icon miss";
-        elementosJogo.feedbackIcon.innerHTML = "<i class='fas fa-times-circle'></i>";
-        elementosJogo.feedbackText.textContent = "Errou! 0 pontos";
+        elementosJogo.iconeResultadoPalpite.className = "feedback-icon miss";
+        elementosJogo.iconeResultadoPalpite.innerHTML = "<i class='fas fa-times-circle'></i>";
+        elementosJogo.textoResultadoPalpite.textContent = "Errou! 0 pontos";
     }
 
-    elementosJogo.feedbackScore.textContent = `Placar real: ${placarReal}${detalhe}`;
+    elementosJogo.placarResultadoPalpite.textContent = `Placar real: ${placarReal}${detalhe}`;
 
     if (estado.rodadaAtual >= estado.totalRodadas - 1) {
-        document.getElementById("btnNext").textContent = "Ver Resultado";
+        document.getElementById("btnAvancarRodada").textContent = "Ver Resultado";
     }
 }
 
@@ -104,11 +104,11 @@ function avancarRodada() {
 
 // --- MOSTRAR RESULTADO FINAL ---
 function mostrarFinal() {
-    elementosJogo.matchCard.classList.add("hidden");
-    elementosJogo.resultFeedback.classList.add("hidden");
-    elementosJogo.gameInfo.classList.add("hidden");
-    elementosJogo.finalResult.classList.remove("hidden");
-    elementosJogo.finalPoints.textContent = estado.pontos;
+    elementosJogo.cartaoPartida.classList.add("hidden");
+    elementosJogo.resultadoPalpite.classList.add("hidden");
+    elementosJogo.informacoesJogo.classList.add("hidden");
+    elementosJogo.resultadoFinal.classList.remove("hidden");
+    elementosJogo.pontosFinais.textContent = estado.pontos;
 
     const porcentagemPontuacao = Math.round((estado.pontos / 30) * 100);
     let mensagemResultado = "";
@@ -134,7 +134,7 @@ function mostrarFinal() {
     }
 
     const exatos = estado.historico.filter(resultadoRodada => resultadoRodada.pontos === 3).length;
-    elementosJogo.finalDetails.innerHTML = `<p>${mensagemResultado}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
+    elementosJogo.detalhesResultadoFinal.innerHTML = `<p>${mensagemResultado}</p><p>Placares exatos: ${exatos}/${estado.totalRodadas}</p>`;
 
     if (window.FG11Stats) {
         const total = estado.totalRodadas;
@@ -165,8 +165,8 @@ function iniciarJogo() {
     estado.pontos = 0;
     estado.historico = [];
     elementosJogo.pontos.textContent = "0";
-    elementosJogo.finalResult.classList.add("hidden");
-    elementosJogo.gameInfo.classList.remove("hidden");
+    elementosJogo.resultadoFinal.classList.add("hidden");
+    elementosJogo.informacoesJogo.classList.remove("hidden");
     sortearPartidas();
     mostrarPartida();
 }
@@ -175,35 +175,35 @@ function iniciarJogo() {
 async function inicializarJogoPlacar() {
     await carregarDados();
 
-    document.getElementById("btnConfirmar").addEventListener("click", confirmarPalpitePlacar);
-    document.getElementById("btnNext").addEventListener("click", avancarRodada);
-    document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-    document.getElementById("btnHome").addEventListener("click", () => {
+    document.getElementById("btnConfirmarPalpite").addEventListener("click", confirmarPalpitePlacar);
+    document.getElementById("btnAvancarRodada").addEventListener("click", avancarRodada);
+    document.getElementById("btnReiniciarPartida").addEventListener("click", iniciarJogo);
+    document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
     document.addEventListener("keydown", (eventoTeclado) => {
         if (eventoTeclado.key === "Enter") {
-            if (!elementosJogo.matchCard.classList.contains("hidden")) {
+            if (!elementosJogo.cartaoPartida.classList.contains("hidden")) {
                 confirmarPalpitePlacar();
-            } else if (!elementosJogo.resultFeedback.classList.contains("hidden")) {
+            } else if (!elementosJogo.resultadoPalpite.classList.contains("hidden")) {
                 avancarRodada();
             }
         }
     });
 
-    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
     const chaveDispensaTutorial = "tutorial_skip_football-placar-exato";
 
     if (localStorage.getItem(chaveDispensaTutorial)) {
         sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
             localStorage.setItem(chaveDispensaTutorial, "true");
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();

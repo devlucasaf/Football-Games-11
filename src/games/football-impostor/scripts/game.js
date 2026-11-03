@@ -1,6 +1,6 @@
-import estado from "./core.js";
-import { embaralharJogadores } from "./utils.js";
-import { mostrarExplicacao, atualizarPlacar } from "./ui.js";
+import estado                                   from "./core.js";
+import { embaralharJogadores }                  from "./utils.js";
+import { mostrarExplicacao, atualizarPlacar }   from "./ui.js";
 
 // --- CRIAR CARDS DA RODADA ---
 export function criarCartoesJogadores() {
@@ -25,18 +25,21 @@ export function criarCartoesJogadores() {
 
     todosJogadores.forEach((nome, indiceJogador) => {
         const cartaoJogador = document.createElement("div");
+        
         cartaoJogador.className = "impostor-card";
         cartaoJogador.dataset.nome = nome;
         cartaoJogador.style.animation = `fadeInCard 0.4s ease ${indiceJogador * 0.07}s both`;
 
         // --- ÍCONE ---
         const elementoIcone = document.createElement("div");
+        
         elementoIcone.className = "card-icon";
         elementoIcone.innerHTML = '<i class="fas fa-user"></i>';
         cartaoJogador.appendChild(elementoIcone);
 
         // --- NOME ---
         const elementoNome = document.createElement("div");
+        
         elementoNome.className = "card-nome";
         elementoNome.textContent = nome;
         cartaoJogador.appendChild(elementoNome);

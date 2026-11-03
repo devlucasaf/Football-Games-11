@@ -190,42 +190,42 @@ function atualizarSugestaoAtiva(itens) {
 }
 
 function configurarEventos() {
-    const input = document.getElementById("palpiteInput");
+    const campoPalpiteJogador = document.getElementById("palpiteInput");
     const btnConfirmarPalpite = document.getElementById("btnConfirmarPalpite");
     const btnIniciarProximaRodada = document.getElementById("btnIniciarProximaRodada");
     const sugestoesLista = document.getElementById("sugestoesLista");
-    const pistasGrid = document.getElementById("pistasGrid");
+    const gradeCartoesPistas = document.getElementById("pistasGrid");
 
     btnConfirmarPalpite.addEventListener("click", () => {
-        verificarPalpite(input.value);
+        verificarPalpite(campoPalpiteJogador.value);
     });
 
-    input.addEventListener("keydown", (e) => {
+    campoPalpiteJogador.addEventListener("keydown", (eventoTeclado) => {
         const itens = [...document.querySelectorAll("#sugestoesLista .sugestao-item")];
 
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
+        if (eventoTeclado.key === "ArrowDown") {
+            eventoTeclado.preventDefault();
             if (itens.length) {
                 sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
                 atualizarSugestaoAtiva(itens);
             }
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "ArrowUp") {
+            eventoTeclado.preventDefault();
             if (itens.length) {
                 sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
                 atualizarSugestaoAtiva(itens);
             }
-        } else if (e.key === "Enter") {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "Enter") {
+            eventoTeclado.preventDefault();
             if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
-                input.value = itens[sugestaoAtiva].textContent;
+                campoPalpiteJogador.value = itens[sugestaoAtiva].textContent;
                 esconderSugestoes();
                 sugestaoAtiva = -1;
-                verificarPalpite(input.value);
+                verificarPalpite(campoPalpiteJogador.value);
             } else {
-                verificarPalpite(input.value);
+                verificarPalpite(campoPalpiteJogador.value);
             }
-        } else if (e.key === "Escape") {
+        } else if (eventoTeclado.key === "Escape") {
             esconderSugestoes();
             sugestaoAtiva = -1;
         }
@@ -233,25 +233,25 @@ function configurarEventos() {
 
     btnIniciarProximaRodada.addEventListener("click", () => proximaRodada());
 
-    input.addEventListener("input", () => {
+    campoPalpiteJogador.addEventListener("input", () => {
         sugestaoAtiva = -1;
-        filtrarSugestoes(input.value);
+        filtrarSugestoes(campoPalpiteJogador.value);
     });
 
-    sugestoesLista.addEventListener("click", (e) => {
-        const item = e.target.closest(".sugestao-item");
-        if (item) {
-            input.value = item.textContent;
+    sugestoesLista.addEventListener("click", (eventoClique) => {
+        const itemSugestaoJogador = eventoClique.target.closest(".sugestao-item");
+        if (itemSugestaoJogador) {
+            campoPalpiteJogador.value = itemSugestaoJogador.textContent;
             esconderSugestoes();
             sugestaoAtiva = -1;
-            verificarPalpite(input.value);
+            verificarPalpite(campoPalpiteJogador.value);
         }
     });
 
-    pistasGrid.addEventListener("click", tratarCliqueCartaoPista);
+    gradeCartoesPistas.addEventListener("click", tratarCliqueCartaoPista);
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-wrapper")) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".input-wrapper")) {
             esconderSugestoes();
             sugestaoAtiva = -1;
         }

@@ -132,23 +132,23 @@
 
     // --- MOSTRA O SELO DE SEQUÊNCIA DE DIAS NO HERO ---
     function montarSeloSequenciaDias() {
-        if (!window.FG11Stats || !window.FG11Stats.obterStreak) {
+        if (!window.FG11Stats || !window.FG11Stats.obterSequenciaDias) {
             return;
         }
 
-        const sequenciaDias = window.FG11Stats.obterStreak();
+        const sequenciaDias = window.FG11Stats.obterSequenciaDias();
         if (!sequenciaDias.sequencia || sequenciaDias.sequencia < 1) {
             return;
         }
 
         const indicadoresDestaque = document.querySelector(".hero-stats");
-        if (!indicadoresDestaque || document.getElementById("streakBadge")) {
+        if (!indicadoresDestaque || document.getElementById("seloSequenciaDiasJogados")) {
             return;
         }
 
         const seloSequencia = document.createElement("div");
         seloSequencia.className = "stat streak-badge";
-        seloSequencia.id = "streakBadge";
+        seloSequencia.id = "seloSequenciaDiasJogados";
         seloSequencia.innerHTML =
             `<span class="stat-number"><i class="fas fa-fire"></i> ${sequenciaDias.sequencia}</span>` +
             `<span class="stat-label" data-key="streak-label">dias seguidos</span>`;
@@ -207,22 +207,22 @@
             textoBotao = "Concluído hoje";
         }
 
-        const semana = window.FG11Daily.ultimosDias(7).map(item => {
+        const semana = window.FG11Daily.ultimosDias(7).map(diaDesafio => {
             let estado;
-            if (!item.resultado) {
+            if (!diaDesafio.resultado) {
                 estado = "vazio";
-            } else if (item.resultado.venceu) {
+            } else if (diaDesafio.resultado.venceu) {
                 estado = "vitoria";
             } else {
                 estado = "derrota";
             }
 
             let classeHoje = "";
-            if (item.hoje) {
+            if (diaDesafio.hoje) {
                 classeHoje = " hoje";
             }
 
-            return `<span class="desafio-dia-ponto ${estado}${classeHoje}" title="${item.dia}"></span>`;
+            return `<span class="desafio-dia-ponto ${estado}${classeHoje}" title="${diaDesafio.dia}"></span>`;
         }).join("");
 
         let marcacaoSequencia = "";
@@ -250,7 +250,7 @@
                 <span class="desafio-dia-tag" data-key="daily-tag"><i class="fas fa-calendar-day"></i> Desafio do Dia</span>
                 <h3 class="desafio-dia-nome">
                     <i class="fas ${jogo.icone}"></i>
-                    <span data-key="${jogo.tituloKey}">${jogo.titulo || jogo.id}</span>
+                    <span data-key="${jogo.chaveTraducaoTitulo ?? jogo.tituloKey}">${jogo.titulo || jogo.id}</span>
                 </h3>
                 <p class="desafio-dia-sub" data-key="daily-sub">O mesmo desafio para todos, hoje. Volte amanhã para um novo!</p>
                 <div class="desafio-dia-progresso">
@@ -258,16 +258,16 @@
                     ${marcacaoSequencia}
                 </div>
             </div>
-            <a href="${destino}" class="${classeBotao}" id="desafioDiaBtn">
+            <a href="${destino}" class="${classeBotao}" id="btnJogarDesafioDoDia">
                 <i class="fas ${iconeBotao}"></i>
                 <span data-key="${chaveBotao}">${textoBotao}</span>
             </a>`;
 
         secao.insertBefore(bloco, secao.firstChild);
 
-        if (window.applyTranslation) {
+        if (window.aplicarTraducao) {
             const idioma = localStorage.getItem("preferredLanguage") || "traducoes";
-            window.applyTranslation(idioma);
+            window.aplicarTraducao(idioma);
         }
     }
 })();

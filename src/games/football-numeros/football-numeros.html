@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-numeros">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-numeros">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-hashtag"></i>
@@ -27,11 +27,11 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="numeros-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="numeros-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="numeros-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
                                 max="99" 
                                 autocomplete="off"
                             >
-                            <button class="btn-guess" id="btnGuess">
+                            <button class="btn-guess" id="btnEnviarPalpite">
                                 <i class="fas fa-paper-plane"></i>
                             </button>
                         </div>
@@ -89,7 +89,7 @@
                     <div class="round-icon" id="roundIcon"></div>
                     <p class="round-text" id="roundText"></p>
                     <p class="round-answer" id="roundAnswer"></p>
-                    <button class="btn-next" id="btnNext">
+                    <button class="btn-next" id="btnAvancarRodada">
                         <i class="fas fa-arrow-right"></i> 
                         <span data-key="numeros-next">Próximo</span>
                     </button>
@@ -108,12 +108,12 @@
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnReiniciarPartida">
                             <i class="fas fa-redo"></i> 
                             <span data-key="numeros-retry">Novo Jogo</span>
                         </button>
 
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnVoltarPaginaInicial">
                             <i class="fas fa-home"></i> 
                             <span data-key="numeros-home">Menu Principal</span>
                         </button>

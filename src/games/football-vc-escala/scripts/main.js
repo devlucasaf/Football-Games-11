@@ -3,8 +3,8 @@ const EscalaConstrutor = {
 
     async iniciar() {
         try {
-            const parametrosUrl = new URLSearchParams(window.location.search);
-            const chaveTime = parametrosUrl.get("team");
+            const parametrosEndereco = new URLSearchParams(window.location.search);
+            const chaveTime = parametrosEndereco.get("team");
 
             if (!chaveTime) {
                 window.location.href = "football-vc-escala.html";
@@ -158,8 +158,8 @@ const EscalaConstrutor = {
         }
 
         // --- ADICIONA EVENTO DE CLIQUE PARA SELECIONAR OU REMOVER JOGADOR ---
-        elementoPosicao.addEventListener("click", (e) => {
-            e.stopPropagation();
+        elementoPosicao.addEventListener("click", (eventoClique) => {
+            eventoClique.stopPropagation();
             if (jogador) {
                 EscalaDados.removerJogadorDaPosicao(posicao.id);
                 this.posicaoSelecionada = null;
@@ -189,14 +189,14 @@ const EscalaConstrutor = {
     },
 
     // --- FILTRA JOGADORES COMPATÍVEIS COM A POSIÇÃO SELECIONADA ---
-    filtrarJogadoresPorPosicaoSelecionada(posicaoId) {
+    filtrarJogadoresPorPosicaoSelecionada(identificadorPosicao) {
         const listaJogadores = document.getElementById("playersList");
         if (!listaJogadores) {
             return;
         }
 
         const itens = listaJogadores.querySelectorAll(".player-item");
-        const posicaoBase = posicaoId.replace(/[0-9]/g, "");
+        const posicaoBase = identificadorPosicao.replace(/[0-9]/g, "");
 
         let filtro;
         if (posicaoBase === "GK") {
@@ -358,22 +358,22 @@ const EscalaConstrutor = {
     // --- CONFIGURA O DROPDOWN CUSTOMIZADO DO FILTRO DE POSIÇÃO ---
     configurarFiltroPosicao() {
         const filtro = document.getElementById("positionFilter");
-        const botao = document.getElementById("positionFilterToggle");
+        const btnAlternarFiltroPosicoes = document.getElementById("btnAlternarFiltroPosicoes");
         const menu = document.getElementById("positionFilterMenu");
 
-        if (!filtro || !botao || !menu) {
+        if (!filtro || !btnAlternarFiltroPosicoes || !menu) {
             return;
         }
 
         const fecharMenu = () => {
             filtro.classList.remove("open");
-            botao.setAttribute("aria-expanded", "false");
+            btnAlternarFiltroPosicoes.setAttribute("aria-expanded", "false");
         };
 
-        botao.addEventListener("click", (e) => {
-            e.stopPropagation();
+        btnAlternarFiltroPosicoes.addEventListener("click", (eventoClique) => {
+            eventoClique.stopPropagation();
             const estaAberto = filtro.classList.toggle("open");
-            botao.setAttribute("aria-expanded", estaAberto ? "true" : "false");
+            btnAlternarFiltroPosicoes.setAttribute("aria-expanded", estaAberto ? "true" : "false");
         });
 
         menu.querySelectorAll(".position-filter-option").forEach(opcao => {
@@ -383,14 +383,14 @@ const EscalaConstrutor = {
             });
         });
 
-        document.addEventListener("click", (e) => {
-            if (!filtro.contains(e.target)) {
+        document.addEventListener("click", (eventoClique) => {
+            if (!filtro.contains(eventoClique.target)) {
                 fecharMenu();
             }
         });
 
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
+        document.addEventListener("keydown", (eventoTeclado) => {
+            if (eventoTeclado.key === "Escape") {
                 fecharMenu();
             }
         });
@@ -399,9 +399,9 @@ const EscalaConstrutor = {
     // --- CONFIGURA TODOS OS EVENTOS DE CLIQUE E INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
         // --- ALTERNAR FORMAÇÃO ---
-        const botaoFormacao = document.getElementById("formationToggle");
-        if (botaoFormacao) {
-            botaoFormacao.addEventListener("click", () => {
+        const btnAlternarFormacoes = document.getElementById("btnAlternarFormacoes");
+        if (btnAlternarFormacoes) {
+            btnAlternarFormacoes.addEventListener("click", () => {
                 const menu = document.getElementById("formationsMenu");
                 menu.classList.toggle("active");
             });
@@ -419,9 +419,9 @@ const EscalaConstrutor = {
         this.configurarFiltroPosicao();
 
         // --- REINICIAR TIME ---
-        const botaoReiniciar = document.getElementById("resetTeam");
-        if (botaoReiniciar) {
-            botaoReiniciar.addEventListener("click", () => {
+        const btnLimparEscalacao = document.getElementById("btnLimparEscalacao");
+        if (btnLimparEscalacao) {
+            btnLimparEscalacao.addEventListener("click", () => {
                 if (confirm("Tem certeza que deseja reiniciar toda a escalação?")) {
                     EscalaDados.reiniciarEscalacao();
                     this.atualizarTudo();
@@ -430,9 +430,9 @@ const EscalaConstrutor = {
         }
 
         // --- SALVAR TIME ---
-        const botaoSalvar = document.getElementById("saveTeam");
-        if (botaoSalvar) {
-            botaoSalvar.addEventListener("click", () => {
+        const btnSalvarEscalacao = document.getElementById("btnSalvarEscalacao");
+        if (btnSalvarEscalacao) {
+            btnSalvarEscalacao.addEventListener("click", () => {
                 if (EscalaDados.salvarTime()) {
                     this.mostrarModalSalvar();
                 } else {
@@ -442,9 +442,9 @@ const EscalaConstrutor = {
         }
 
         // --- FECHAR MODAL ---
-        const fecharModal = document.getElementById("closeModal");
-        if (fecharModal) {
-            fecharModal.addEventListener("click", () => {
+        const btnFecharModalEscalacaoSalva = document.getElementById("btnFecharModalEscalacaoSalva");
+        if (btnFecharModalEscalacaoSalva) {
+            btnFecharModalEscalacaoSalva.addEventListener("click", () => {
                 const modal = document.getElementById("saveModal");
                 if (modal) {
                     modal.style.display = "none";
@@ -453,9 +453,9 @@ const EscalaConstrutor = {
         }
 
         // --- COMPARTILHAR TIME ---
-        const botaoCompartilhar = document.getElementById("shareTeam");
-        if (botaoCompartilhar) {
-            botaoCompartilhar.addEventListener("click", () => {
+        const btnCompartilharEscalacao = document.getElementById("btnCompartilharEscalacao");
+        if (btnCompartilharEscalacao) {
+            btnCompartilharEscalacao.addEventListener("click", () => {
                 const texto = EscalaDados.gerarTextoCompartilhamento();
                 navigator.clipboard.writeText(texto).then(() => {
                     alert("Escalação copiada para a área de transferência!");
@@ -466,19 +466,19 @@ const EscalaConstrutor = {
         }
 
         // --- NOVO TIME ---
-        const botaoNovoTime = document.getElementById("newTeam");
-        if (botaoNovoTime) {
-            botaoNovoTime.addEventListener("click", () => {
+        const btnCriarNovaEscalacao = document.getElementById("btnCriarNovaEscalacao");
+        if (btnCriarNovaEscalacao) {
+            btnCriarNovaEscalacao.addEventListener("click", () => {
                 window.location.href = "football-vc-escala.html";
             });
         }
 
         // --- FECHAR MENU AO CLICAR FORA ---
-        document.addEventListener("click", (e) => {
+        document.addEventListener("click", (eventoClique) => {
             const menu = document.getElementById("formationsMenu");
-            const btnAlternarFormacoes = document.getElementById("formationToggle");
+            const btnAlternarFormacoes = document.getElementById("btnAlternarFormacoes");
 
-            if (menu && btnAlternarFormacoes && !menu.contains(e.target) && !btnAlternarFormacoes.contains(e.target)) {
+            if (menu && btnAlternarFormacoes && !menu.contains(eventoClique.target) && !btnAlternarFormacoes.contains(eventoClique.target)) {
                 menu.classList.remove("active");
             }
         });

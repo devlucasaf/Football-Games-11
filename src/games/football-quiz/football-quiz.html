@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-quiz">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-quiz">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-question-circle"></i>
@@ -28,11 +28,11 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="quiz-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="quiz-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="quiz-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                         <div class="quiz-pergunta-card" id="perguntaCard">
                             <p class="pergunta-texto" id="perguntaTexto"></p>
                             <div class="opcoes-list" id="opcoesList"></div>
-                            <button class="btn-proxima hidden" id="btnProxima">
+                            <button class="btn-proxima hidden" id="btnAvancarPergunta">
                                 <i class="fas fa-arrow-right"></i> Próxima
                             </button>
                         </div>
@@ -94,7 +94,7 @@
                     <p class="result-text" id="resultText"></p>
                     <div class="result-score" id="resultScore"></div>
                     <div class="result-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnReiniciarPartida">
                             <i class="fas fa-redo"></i> 
                             <span data-key="quiz-retry">Jogar Novamente</span>
                         </button>
@@ -104,7 +104,7 @@
                             <span data-key="quiz-outro-tema">Outro Tema</span>
                         </button>
 
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnVoltarPaginaInicial">
                             <i class="fas fa-home"></i> 
                             <span data-key="quiz-home">Menu Principal</span>
                         </button>

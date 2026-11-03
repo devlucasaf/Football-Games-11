@@ -282,7 +282,7 @@
     font-weight: 500;
 }
 
-/* --- CLUBES OCULTOS (PLACEHOLDER) --- */
+/* --- CLUBES OCULTOS --- */
 .club-item.hidden-club {
     background: var(--bg-secondary);
     border-color: var(--border-color);
@@ -798,7 +798,6 @@
     transform: scale(0.95);
 }
 
-/* --- UTILITÁRIOS --- */
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .transferencias-container {

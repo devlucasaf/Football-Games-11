@@ -38,7 +38,7 @@ export function renderizarGruposPosicoes(aoSelecionarPosicao) {
                 btnSelecionarConvocado.addEventListener("click", () => aoSelecionarPosicao(posicao));
             }
 
-            posicoesConvocacao.apbtnSelecionarConvocadoChild(slot);
+            posicoesConvocacao.appendChild(btnSelecionarConvocado);
         }
 
         gruposPosicoes.appendChild(grupoPosicao);
@@ -48,7 +48,7 @@ export function renderizarGruposPosicoes(aoSelecionarPosicao) {
 // --- ATUALIZA CONTADOR GERAL ---
 export function atualizarContadorConvocados() {
     document.getElementById("squadCount").textContent = obterTotalConvocados();
-    const btnConfirmarConvocacao = document.getElementById("btnConfirm");
+    const btnConfirmarConvocacao = document.getElementById("btnConfirmarConvocacao");
     btnConfirmarConvocacao.disabled = obterTotalConvocados() < 26;
 }
 
@@ -80,7 +80,7 @@ export function abrirModalJogadores(posicao, aoSelecionarJogador) {
             });
         }
 
-        listaJogadores.apbtnSelecionarJogadorChild(item);
+        listaJogadores.appendChild(btnSelecionarJogador);
     });
 
     modal.classList.add("active");

@@ -1,4 +1,4 @@
-import { normalizar as normalizarTexto }                   from "./utils.js";
+import { normalizarTexto }              from "./utils.js";
 import { inserirLetra, apagarLetra }    from "./input.js";
 import { confirmarTentativa }           from "./logic.js";
 
@@ -45,10 +45,12 @@ export function configurarEventos(reiniciarJogo) {
         }
     });
 
+    // --- BOTÕES DE CONTROLE ---
     document.getElementById("btnIniciarNovoJogo").addEventListener("click", () => {
         reiniciarJogo();                        
     });
 
+    // --- BOTÃO DE FECHAR MENSAGEM ---
     document.getElementById("btnFecharMensagem").addEventListener("click", () => {
         reiniciarJogo();                        
     });

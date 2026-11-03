@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-piramide">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-piramide">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-sort-amount-up"></i>
@@ -25,11 +25,11 @@
                     <li><span class="tutorial-step-number">4</span><span data-key="piramide-tutorial-step4"> Use o botão Ajuda (1x) para ver quais estão corretos!</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="piramide-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="piramide-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="piramide-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -48,13 +48,13 @@
                         <p class="mode-subtitle" data-key="piramide-mode-subtitle">Escolha o modo de jogo:</p>
 
                         <div class="mode-buttons">
-                            <button class="btn-mode btn-facil" id="btnFacil">
+                            <button class="btn-mode btn-facil" id="btnSelecionarModoFacil">
                                 <i class="fas fa-star"></i>
                                 <span data-key="piramide-mode-easy">Fácil</span>
                                 <small data-key="piramide-mode-easy-desc">Mostra o tier correto</small>
                             </button>
 
-                            <button class="btn-mode btn-normal" id="btnNormal">
+                            <button class="btn-mode btn-normal" id="btnSelecionarModoNormal">
                                 <i class="fas fa-fire"></i>
                                 <span data-key="piramide-mode-normal">Normal</span>
                                 <small data-key="piramide-mode-normal-desc">Sem dicas de tier</small>
@@ -71,7 +71,7 @@
 
                     <div class="info-right">
                         <span class="info-progresso"><span id="progresso">1/10</span></span>
-                        <button class="btn-ajuda" id="btnAjuda" title="Revelar acertos">
+                        <button class="btn-ajuda" id="btnRevelarAcertos" title="Revelar acertos">
                             <i class="fas fa-life-ring"></i> 
                             <span data-key="piramide-help">Ajuda</span>
                         </button>
@@ -104,12 +104,12 @@
                     <p class="final-message" id="finalMessage"></p>
                     <div class="final-correct" id="finalCorrect"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnReiniciarPartida">
                             <i class="fas fa-redo"></i> 
                             <span data-key="piramide-retry">Novo Jogo</span>
                         </button>
 
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnVoltarPaginaInicial">
                             <i class="fas fa-home"></i> 
                             <span data-key="piramide-home">Menu Principal</span>
                         </button>

@@ -102,7 +102,7 @@
                 <div class="settings-card-body">
                     <div class="settings-row">
                         <span class="settings-row-label" data-key="config-theme-label">Modo escuro</span>
-                        <button class="btn-theme" id="themeToggle" title="Alterar tema">
+                        <button class="btn-theme" id="btnAlternarTema" title="Alterar tema">
                             <i class="fas fa-moon"></i>
                         </button>
                     </div>
@@ -127,7 +127,7 @@
                         <label class="switch">
                             <input 
                                 type="checkbox" 
-                                id="reduceMotionToggle"
+                                id="alternadorReducaoAnimacoes"
                             >
                             <span class="switch-slider"></span>
                         </label>
@@ -135,7 +135,7 @@
 
                     <div class="settings-row">
                         <span class="settings-row-label" data-key="config-font-size">Tamanho da fonte</span>
-                        <div class="option-group" id="fontSizeGroup">
+                        <div class="option-group" id="grupoTamanhoFonte">
                             <button class="option-btn" data-size="pequeno" data-key="config-font-small">Pequeno</button>
                             <button class="option-btn" data-size="medio" data-key="config-font-medium">Médio</button>
                             <button class="option-btn" data-size="grande" data-key="config-font-large">Grande</button>
@@ -160,7 +160,7 @@
                             <small class="settings-row-hint" data-key="config-reset-tutorials-desc">Faz os tutoriais dos jogos aparecerem novamente</small>
                         </div>
 
-                        <button class="btn-settings" id="resetTutorialsBtn">
+                        <button class="btn-settings" id="btnReativarTutoriais">
                             <i class="fas fa-rotate-right"></i>
                             <span data-key="config-reset-tutorials-btn">Reativar</span>
                         </button>
@@ -172,7 +172,7 @@
                             <small class="settings-row-hint" data-key="config-clear-data-desc">Apaga placar, preferências e progresso salvos</small>
                         </div>
 
-                        <button class="btn-settings btn-danger" id="clearDataBtn">
+                        <button class="btn-settings btn-danger" id="btnLimparDados">
                             <i class="fas fa-trash"></i>
                             <span data-key="config-clear-data-btn">Limpar</span>
                         </button>

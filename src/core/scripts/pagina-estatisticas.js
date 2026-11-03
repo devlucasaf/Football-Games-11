@@ -1,3 +1,4 @@
+// --- SCRIPT DE INICIALIZAÇÃO DA PÁGINA DE ESTATÍSTICAS ---
 (function () {
     const catalogo = window.FG11Catalogo;
     const perfil = window.FG11Perfil;
@@ -7,30 +8,32 @@
 
     const CAMINHO_RAIZ_SITE = "../../../";
     const estado = { categoria: "todas", ordem: "vitorias" };
-    let resumo = perfil.resumo();
+    let resumo = perfil.obterResumoPerfil();
 
     // --- CARTA + EDIÇÃO DO APELIDO ---
     function renderizarCartaJogador() {
-        document.getElementById("cartaJogador").innerHTML = perfil.htmlCarta(resumo, { editavel: true });
+        document.getElementById("cartaJogador").innerHTML = perfil.gerarMarcacaoCartaJogador(resumo, { editavel: true });
         document.getElementById("btnEditarApelido")?.addEventListener("click", abrirEdicaoApelido);
     }
 
+    // --- ABRE O FORMULÁRIO DE EDIÇÃO DO APELIDO ---
     function abrirEdicaoApelido() {
-        const formularioApelido = document.getElementById("formApelido");
-        const campoApelido = document.getElementById("inputApelido");
+        const formularioApelido = document.getElementById("formularioApelido");
+        const campoApelido = document.getElementById("campoApelido");
         formularioApelido.hidden = false;
         campoApelido.value = resumo.apelido;
         campoApelido.focus();
     }
 
-    document.getElementById("formApelido").addEventListener("submit", (evento) => {
+    // --- SALVA O APELIDO ---
+    document.getElementById("formularioApelido").addEventListener("submit", (evento) => {
         evento.preventDefault();
         const formularioApelido = evento.currentTarget;
-        perfil.salvarApelido(document.getElementById("inputApelido").value);
-        resumo = perfil.resumo();
+        perfil.salvarApelido(document.getElementById("campoApelido").value);
+        resumo = perfil.obterResumoPerfil();
         formularioApelido.hidden = true;
         renderizarCartaJogador();
-        perfil.retraduzir();
+        perfil.reaplicarTraducoesDocumento();
         document.getElementById("btnEditarApelido")?.focus();
     });
 
@@ -42,17 +45,17 @@
                 <span class="kpi-value">${valor}</span>
             </div>`;
         
-        document.getElementById("kpis").innerHTML =
+        document.getElementById("indicadoresEstatisticas").innerHTML =
             gerarMarcacaoIndicador("fa-futbol", "kpi-played", "Partidas", resumo.partidas) +
             gerarMarcacaoIndicador("fa-trophy", "score-victories", "Vitórias", resumo.vitorias) +
             gerarMarcacaoIndicador("fa-xmark", "score-defeats", "Derrotas", resumo.derrotas) +
-            gerarMarcacaoIndicador("fa-percent", "stat-win-rate", "Aproveitamento", perfil.porcentagem(resumo.aproveitamento)) +
+            gerarMarcacaoIndicador("fa-percent", "stat-win-rate", "Aproveitamento", perfil.formatarPorcentagem(resumo.aproveitamento)) +
             gerarMarcacaoIndicador("fa-compass", "stat-explored", "Jogos explorados", `${resumo.jogosDiferentes}<small>/${resumo.totalJogos}</small>`) +
             gerarMarcacaoIndicador("fa-medal", "ach-title", "Conquistas", `${resumo.desbloqueadas}<small>/${resumo.conquistas.length}</small>`) +
             gerarMarcacaoIndicador("fa-fire", "kpi-streak", "Sequência", `${resumo.sequenciaAtual}<small> / ${resumo.recordeSequencia}</small>`) +
             gerarMarcacaoIndicador("fa-calendar-check", "kpi-dailies", "Desafios do Dia", `${resumo.diariosConcluidos}<small> (${resumo.diariosVencidos}✓)</small>`);
 
-        document.getElementById("progressoNivel").innerHTML = perfil.htmlProgressoNivel(resumo);
+        document.getElementById("progressoNivel").innerHTML = perfil.gerarMarcacaoProgressoNivel(resumo);
     }
 
     // --- CHIPS DE CATEGORIA ---
@@ -65,7 +68,7 @@
 
         document.getElementById("filtrosCategoria").innerHTML =
             gerarMarcacaoFiltroCategoria("todas", "cat-all", "Todos", "fa-border-all") +
-            Object.entries(catalogo.categorias).map(([identificadorCategoria, categoria]) => gerarMarcacaoFiltroCategoria(identificadorCategoria, categoria.rotuloKey, categoria.rotulo, categoria.icone)).join("");
+            Object.entries(catalogo.categorias).map(([identificadorCategoria, categoria]) => gerarMarcacaoFiltroCategoria(identificadorCategoria, categoria.chaveTraducaoRotulo, categoria.rotulo, categoria.icone)).join("");
     }
 
     // --- TABELA DE CLASSIFICAÇÃO ---
@@ -77,15 +80,15 @@
         };
 
         const linhas = resumo.jogos
-            .filter(item => estado.categoria === "todas" || item.jogo.categoria === estado.categoria)
+            .filter(resultadoJogo => estado.categoria === "todas" || resultadoJogo.jogo.categoria === estado.categoria)
             .sort((primeiroResultado, segundoResultado) => (segundoResultado.partidas > 0) - (primeiroResultado.partidas > 0) || criterios[estado.ordem](primeiroResultado, segundoResultado));
 
         const medalhas = ["ouro", "prata", "bronze"];
         let posicao = 0;
 
-        document.getElementById("tabelaJogos").innerHTML = linhas.map(item => {
-            const { jogo } = item;
-            const jogado = item.partidas > 0;
+        document.getElementById("tabelaJogos").innerHTML = linhas.map(resultadoJogo => {
+            const { jogo } = resultadoJogo;
+            const jogado = resultadoJogo.partidas > 0;
             const posicaoClassificacao = jogado ? ++posicao : null;
             const medalha = posicaoClassificacao && posicaoClassificacao <= 3 ? medalhas[posicaoClassificacao - 1] : "";
             const marcacaoPosicao = posicaoClassificacao
@@ -94,7 +97,7 @@
             const semPlacar = !jogo.estatisticas
                 ? ' <small class="tier-progress-hint" data-key="card-free-mode">Modo livre</small>'
                 : "";
-            const taxa = Math.round(item.aproveitamento * 100);
+            const taxa = Math.round(resultadoJogo.aproveitamento * 100);
 
             return `
                 <tr class="${jogado ? "" : "is-empty"}">
@@ -103,13 +106,13 @@
                         <div class="game-cell">
                             <span class="rank-icon" data-cat="${jogo.categoria}" aria-hidden="true"><i class="fas ${jogo.icone}"></i></span>
                             <div>
-                                <a href="${CAMINHO_RAIZ_SITE}${jogo.pagina}" data-key="${jogo.tituloKey}">${jogo.titulo}</a>${semPlacar}
+                                <a href="${CAMINHO_RAIZ_SITE}${jogo.pagina}" data-key="${jogo.chaveTraducaoTitulo}">${jogo.titulo}</a>${semPlacar}
                             </div>
                         </div>
                     </td>
-                    <td>${jogado ? item.partidas : "—"}</td>
-                    <td class="num-strong">${jogado ? item.vitorias : "—"}</td>
-                    <td>${jogado ? item.derrotas : "—"}</td>
+                    <td>${jogado ? resultadoJogo.partidas : "—"}</td>
+                    <td class="num-strong">${jogado ? resultadoJogo.vitorias : "—"}</td>
+                    <td>${jogado ? resultadoJogo.derrotas : "—"}</td>
                     <td>
                         ${jogado
                             ? `<div class="rate-cell"><span class="rate-bar" aria-hidden="true"><span style="width:${taxa}%"></span></span><b>${taxa}%</b></div>`
@@ -134,8 +137,8 @@
             <article class="ach ach--${conquista.medalha}${conquista.desbloqueada ? "" : " is-locked"}">
                 <span class="ach-medal" aria-hidden="true"><i class="fas ${conquista.icone}"></i></span>
                 <div>
-                    <h3 data-key="${conquista.tituloKey}">${conquista.titulo}</h3>
-                    <p data-key="${conquista.descKey}">${conquista.desc}</p>
+                    <h3 data-key="${conquista.chaveTraducaoTitulo}">${conquista.titulo}</h3>
+                    <p data-key="${conquista.chaveTraducaoDescricao}">${conquista.descricao}</p>
                 </div>
                 <div class="ach-progress">
                     <span class="rate-bar" aria-hidden="true"><span style="width:${Math.round(conquista.progresso * 100)}%"></span></span>
@@ -158,16 +161,17 @@
         if (btnFiltrarCategoria) {
             estado.categoria = btnFiltrarCategoria.dataset.categoria;
             renderizarTabelaClassificacao();
-            perfil.retraduzir();
+            perfil.reaplicarTraducoesDocumento();
         }
     });
 
+    // --- EVENTOS DA ORDENAÇÃO ---
     document.getElementById("ordenacao").addEventListener("click", (evento) => {
         const btnOrdenarClassificacao = evento.target.closest("button[data-ordem]");
         if (btnOrdenarClassificacao) {
             estado.ordem = btnOrdenarClassificacao.dataset.ordem;
             renderizarTabelaClassificacao();
-            perfil.retraduzir();
+            perfil.reaplicarTraducoesDocumento();
         }
     });
 })();

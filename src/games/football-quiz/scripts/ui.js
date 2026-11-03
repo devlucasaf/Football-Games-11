@@ -1,34 +1,35 @@
 import { estado } from "./core.js";
 
 const elementosJogo = {
-    temaSelection:  document.getElementById("temaSelection"),
-    temaGrid:       document.getElementById("temaGrid"),
-    quizGame:       document.getElementById("quizGame"),
-    quizInfo:       document.getElementById("quizInfo"),
-    quizTemaBadge:  document.getElementById("quizTemaBadge"),
-    perguntaAtual:  document.getElementById("perguntaAtual"),
-    perguntaTotal:  document.getElementById("perguntaTotal"),
-    acertosCount:   document.getElementById("acertosCount"),
-    progressFill:   document.getElementById("progressFill"),
-    progressLabel:  document.getElementById("progressLabel"),
-    perguntaCard:   document.getElementById("perguntaCard"),
-    perguntaTexto:  document.getElementById("perguntaTexto"),
-    opcoesList:     document.getElementById("opcoesList"),
-    btnProxima:     document.getElementById("btnProxima"),
-    quizFinal:      document.getElementById("quizFinal"),
-    resultIcon:     document.getElementById("resultIcon"),
-    resultTitle:    document.getElementById("resultTitle"),
-    resultText:     document.getElementById("resultText"),
-    resultScore:    document.getElementById("resultScore")
+    selecaoTema:                document.getElementById("temaSelection"),
+    gradeTemas:                 document.getElementById("temaGrid"),
+    areaQuestionario:           document.getElementById("quizGame"),
+    informacoesQuestionario:    document.getElementById("quizInfo"),
+    indicadorTemaQuestionario:  document.getElementById("quizTemaBadge"),
+    perguntaAtual:              document.getElementById("perguntaAtual"),
+    perguntaTotal:              document.getElementById("perguntaTotal"),
+    contadorAcertos:            document.getElementById("acertosCount"),
+    preenchimentoProgresso:     document.getElementById("progressFill"),
+    rotuloProgresso:            document.getElementById("progressLabel"),
+    cartaoPergunta:             document.getElementById("perguntaCard"),
+    perguntaTexto:              document.getElementById("perguntaTexto"),
+    listaOpcoesResposta:        document.getElementById("opcoesList"),
+    btnAvancarPergunta:         document.getElementById("btnAvancarPergunta"),
+    resultadoFinalQuestionario: document.getElementById("quizFinal"),
+    iconeResultadoFinal:        document.getElementById("resultIcon"),
+    tituloResultadoFinal:       document.getElementById("resultTitle"),
+    textoResultadoFinal:        document.getElementById("resultText"),
+    pontuacaoResultadoFinal:    document.getElementById("resultScore")
 };
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 
 // --- RENDERIZAR TEMAS ---
 export function renderizarTemas(aoSelecionarTema) {
-    elementosJogo.temaGrid.innerHTML = "";
+    elementosJogo.gradeTemas.innerHTML = "";
     estado.temas.forEach(tema => {
         const btnSelecionarTema = document.createElement("button");
+        
         btnSelecionarTema.className = "tema-card";
         btnSelecionarTema.style.borderColor = tema.cor;
         btnSelecionarTema.innerHTML = `
@@ -41,49 +42,49 @@ export function renderizarTemas(aoSelecionarTema) {
             <span class="tema-nome">${tema.nome}</span>
         `;
         btnSelecionarTema.addEventListener("click", () => aoSelecionarTema(tema.id));
-        elementosJogo.temaGrid.appendChild(btnSelecionarTema);
+        elementosJogo.gradeTemas.appendChild(btnSelecionarTema);
     });
 }
 
 // --- MOSTRAR QUIZ ---
 export function mostrarQuiz() {
-    elementosJogo.temaSelection.classList.add("hidden");
-    elementosJogo.quizGame.classList.remove("hidden");
-    elementosJogo.quizFinal.classList.add("hidden");
+    elementosJogo.selecaoTema.classList.add("hidden");
+    elementosJogo.areaQuestionario.classList.remove("hidden");
+    elementosJogo.resultadoFinalQuestionario.classList.add("hidden");
 
-    elementosJogo.quizTemaBadge.innerHTML = `<img class="tema-icone-badge" src="${estado.temaAtual.icone}" alt="${estado.temaAtual.nome}"/> ${estado.temaAtual.nome}`;
-    elementosJogo.quizTemaBadge.style.background = estado.temaAtual.cor;
+    elementosJogo.indicadorTemaQuestionario.innerHTML = `<img class="tema-icone-badge" src="${estado.temaAtual.icone}" alt="${estado.temaAtual.nome}"/> ${estado.temaAtual.nome}`;
+    elementosJogo.indicadorTemaQuestionario.style.background = estado.temaAtual.cor;
     elementosJogo.perguntaTotal.textContent = estado.totalPerguntas;
 }
 
 // --- ATUALIZAR INFORMAÇÕES ---
 export function atualizarInformacoesPerguntas() {
     elementosJogo.perguntaAtual.textContent = estado.perguntaAtual + 1;
-    elementosJogo.acertosCount.textContent = estado.acertos;
+    elementosJogo.contadorAcertos.textContent = estado.acertos;
 
     const porcentagemProgresso = ((estado.perguntaAtual) / estado.totalPerguntas) * 100;
-    elementosJogo.progressFill.style.width = `${porcentagemProgresso}%`;
-    elementosJogo.progressLabel.textContent = `${Math.round(porcentagemProgresso)}%`;
+    elementosJogo.preenchimentoProgresso.style.width = `${porcentagemProgresso}%`;
+    elementosJogo.rotuloProgresso.textContent = `${Math.round(porcentagemProgresso)}%`;
 }
 
 // --- EXIBIR PERGUNTA ---
 export function exibirPergunta(pergunta, aoResponderPergunta) {
     elementosJogo.perguntaTexto.textContent = pergunta.pergunta;
-    elementosJogo.opcoesList.innerHTML = "";
-    elementosJogo.btnProxima.classList.add("hidden");
+    elementosJogo.listaOpcoesResposta.innerHTML = "";
+    elementosJogo.btnAvancarPergunta.classList.add("hidden");
 
     pergunta.opcoes.forEach((opcao, indiceOpcao) => {
         const btnSelecionarResposta = document.createElement("button");
         btnSelecionarResposta.className = "btn-opcao";
         btnSelecionarResposta.innerHTML = `<span class="opcao-letra">${LETRAS[indiceOpcao]}</span> ${opcao}`;
         btnSelecionarResposta.addEventListener("click", () => aoResponderPergunta(indiceOpcao));
-        elementosJogo.opcoesList.appendChild(btnSelecionarResposta);
+        elementosJogo.listaOpcoesResposta.appendChild(btnSelecionarResposta);
     });
 }
 
 // --- MOSTRAR RESPOSTA ---
 export function mostrarResposta(indiceSelecionado, indiceCorreto) {
-    const botoes = elementosJogo.opcoesList.querySelectorAll(".btn-opcao");
+    const botoes = elementosJogo.listaOpcoesResposta.querySelectorAll(".btn-opcao");
 
     botoes.forEach((btnSelecionarResposta, indiceOpcao) => {
         btnSelecionarResposta.classList.add("disabled");
@@ -96,38 +97,38 @@ export function mostrarResposta(indiceSelecionado, indiceCorreto) {
         }
     });
 
-    elementosJogo.btnProxima.classList.remove("hidden");
+    elementosJogo.btnAvancarPergunta.classList.remove("hidden");
 
     if (estado.perguntaAtual >= estado.totalPerguntas - 1) {
-        elementosJogo.btnProxima.innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
+        elementosJogo.btnAvancarPergunta.innerHTML = "<i class='fas fa-flag-checkered'></i> Ver Resultado";
     } else {
-        elementosJogo.btnProxima.innerHTML = "<i class='fas fa-arrow-right'></i> Próxima";
+        elementosJogo.btnAvancarPergunta.innerHTML = "<i class='fas fa-arrow-right'></i> Próxima";
     }
 }
 
 // --- MOSTRAR RESULTADO FINAL ---
 export function mostrarFinal() {
-    elementosJogo.quizGame.classList.add("hidden");
-    elementosJogo.quizFinal.classList.remove("hidden");
+    elementosJogo.areaQuestionario.classList.add("hidden");
+    elementosJogo.resultadoFinalQuestionario.classList.remove("hidden");
 
     const acertos = estado.acertos;
     const total = estado.totalPerguntas;
     const porcentagemAcertos = (acertos / total) * 100;
 
-    elementosJogo.resultScore.textContent = `${acertos}/${total}`;
+    elementosJogo.pontuacaoResultadoFinal.textContent = `${acertos}/${total}`;
 
     if (porcentagemAcertos >= 80) {
-        elementosJogo.resultIcon.innerHTML = "<i class='fas fa-trophy' style='color: #f1c40f;'></i>";
-        elementosJogo.resultTitle.textContent = "Excelente!";
-        elementosJogo.resultText.textContent = "Você é um verdadeiro craque do conhecimento!";
+        elementosJogo.iconeResultadoFinal.innerHTML = "<i class='fas fa-trophy' style='color: #f1c40f;'></i>";
+        elementosJogo.tituloResultadoFinal.textContent = "Excelente!";
+        elementosJogo.textoResultadoFinal.textContent = "Você é um verdadeiro craque do conhecimento!";
     } else if (porcentagemAcertos >= 50) {
-        elementosJogo.resultIcon.innerHTML = "<i class='fas fa-thumbs-up' style='color: #3498db;'></i>";
-        elementosJogo.resultTitle.textContent = "Bom trabalho!";
-        elementosJogo.resultText.textContent = "Você manda bem, mas pode melhorar!";
+        elementosJogo.iconeResultadoFinal.innerHTML = "<i class='fas fa-thumbs-up' style='color: #3498db;'></i>";
+        elementosJogo.tituloResultadoFinal.textContent = "Bom trabalho!";
+        elementosJogo.textoResultadoFinal.textContent = "Você manda bem, mas pode melhorar!";
     } else {
-        elementosJogo.resultIcon.innerHTML = "<i class='fas fa-times-circle' style='color: #e74c3c;'></i>";
-        elementosJogo.resultTitle.textContent = "Tente novamente!";
-        elementosJogo.resultText.textContent = "Estude mais sobre o tema e volte para tentar de novo.";
+        elementosJogo.iconeResultadoFinal.innerHTML = "<i class='fas fa-times-circle' style='color: #e74c3c;'></i>";
+        elementosJogo.tituloResultadoFinal.textContent = "Tente novamente!";
+        elementosJogo.textoResultadoFinal.textContent = "Estude mais sobre o tema e volte para tentar de novo.";
     }
 
     if (porcentagemAcertos >= 50) {
@@ -165,16 +166,16 @@ export function mostrarFinal() {
 
 // --- MOSTRAR SELEÇÃO DE TEMA ---
 export function mostrarSelecaoTema() {
-    elementosJogo.temaSelection.classList.remove("hidden");
-    elementosJogo.quizGame.classList.add("hidden");
-    elementosJogo.quizFinal.classList.add("hidden");
+    elementosJogo.selecaoTema.classList.remove("hidden");
+    elementosJogo.areaQuestionario.classList.add("hidden");
+    elementosJogo.resultadoFinalQuestionario.classList.add("hidden");
 }
 
 // --- RESETAR UI ---
 export function reiniciarInterfacePerguntas() {
-    elementosJogo.progressFill.style.width = "0%";
-    elementosJogo.progressLabel.textContent = "0%";
-    elementosJogo.acertosCount.textContent = "0";
-    elementosJogo.btnProxima.classList.add("hidden");
-    elementosJogo.btnProxima.innerHTML = "<i class='fas fa-arrow-right'></i> Próxima";
+    elementosJogo.preenchimentoProgresso.style.width = "0%";
+    elementosJogo.rotuloProgresso.textContent = "0%";
+    elementosJogo.contadorAcertos.textContent = "0";
+    elementosJogo.btnAvancarPergunta.classList.add("hidden");
+    elementosJogo.btnAvancarPergunta.innerHTML = "<i class='fas fa-arrow-right'></i> Próxima";
 }

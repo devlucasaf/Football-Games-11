@@ -88,7 +88,7 @@ document.getElementById("positionGroups").addEventListener("click", (eventoCliqu
 });
 
 // --- FECHAR MODAL ---
-document.getElementById("modalClose").addEventListener("click", fecharModalJogadores);
+document.getElementById("btnFecharModalJogadores").addEventListener("click", fecharModalJogadores);
 document.getElementById("playerModal").addEventListener("click", (eventoClique) => {
     if (eventoClique.target === eventoClique.currentTarget) {
         fecharModalJogadores();
@@ -96,7 +96,7 @@ document.getElementById("playerModal").addEventListener("click", (eventoClique) 
 });
 
 // --- CONFIRMAR CONVOCAÇÃO ---
-document.getElementById("btnConfirm").addEventListener("click", () => {
+document.getElementById("btnConfirmarConvocacao").addEventListener("click", () => {
     if (obterTotalConvocados() < 26) {
         return;
     }
@@ -106,13 +106,14 @@ document.getElementById("btnConfirm").addEventListener("click", () => {
 });
 
 // --- BOTÕES DE NAVEGAÇÃO ---
-document.getElementById("btnBackMode").addEventListener("click", () => mostrarSecao(secaoSelecaoModo));
-document.getElementById("btnBackTeam").addEventListener("click", () => mostrarSecao(secaoSelecaoTime));
-document.getElementById("btnRetry").addEventListener("click", () => {
+document.getElementById("btnVoltarSelecaoModo").addEventListener("click", () => mostrarSecao(secaoSelecaoModo));
+document.getElementById("btnVoltarSelecaoTime").addEventListener("click", () => mostrarSecao(secaoSelecaoTime));
+document.getElementById("btnReiniciarConvocacao").addEventListener("click", () => {
     reiniciarConvocados();
     mostrarSecao(secaoSelecaoTime);
 });
-document.getElementById("btnHome").addEventListener("click", () => {
+
+document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
     window.location.href = "../../../index.html";
 });
 

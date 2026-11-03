@@ -111,7 +111,7 @@
         const valores = Object.values(lerHistorico());
         return {
             concluidos: valores.length,
-            vencidos: valores.filter(item => item.venceu).length,
+            vencidos: valores.filter(resultadoDesafio => resultadoDesafio.venceu).length,
             sequencia: sequenciaDiaria()
         };
     }
@@ -147,11 +147,11 @@
     // --- TEXTO PARA COMPARTILHAR O RESULTADO ---
     function gerarTextoCompartilhamentoDiario(identificadorJogo, venceu, sequencia) {
         const jogos = window.FG11Catalogo ? window.FG11Catalogo.jogos : [];
-        const jogo = jogos.find(item => item.id === identificadorJogo);
+        const jogo = jogos.find(jogoCatalogo => jogoCatalogo.id === identificadorJogo);
         let nome;
         
         if (jogo) {
-            nome = obterTextoDesafioDiario(jogo.tituloKey, jogo.titulo);
+            nome = obterTextoDesafioDiario(jogo.chaveTraducaoTitulo, jogo.titulo);
         } else {
             nome = identificadorJogo;
         }
@@ -204,7 +204,7 @@
 
         setTimeout(() => {
             if (window.FG11Avisos) {
-                window.FG11Avisos.mostrar({
+                window.FG11Avisos.mostrarAviso({
                     icone: "fa-calendar-check",
                     titulo: obterTextoDesafioDiario("daily-complete", "Desafio do Dia concluído!"),
                     texto: `${sequencia} ${obterTextoDesafioDiario("daily-streak-text", "dias seguidos no desafio")}`,

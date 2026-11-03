@@ -77,6 +77,7 @@ function verificarPalpite(palpite) {
     }
 }
 
+// --- REVELAR PRÓXIMA PISTA ---
 function revelarProximaPista() {
     if (!estado.jogoAtivo) {
         return;
@@ -97,6 +98,7 @@ function revelarProximaPista() {
     focarCampoPalpite();
 }
 
+// --- FINALIZAR ERRO ---
 function finalizarErro() {
     estado.jogoAtivo = false;
     estado.totalRodadas++;

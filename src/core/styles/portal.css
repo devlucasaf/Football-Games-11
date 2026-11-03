@@ -2028,39 +2028,39 @@
     }
 
     /* --- CARDS HORIZONTAIS NO CELULAR --- */
-    #gamesGrid .gcard {
+    #gradeJogos .gcard {
         display: grid;
         grid-template-columns: 104px minmax(0, 1fr);
     }
 
-    #gamesGrid .gcard-cover {
+    #gradeJogos .gcard-cover {
         aspect-ratio: auto;
         height: 100%;
     }
 
-    #gamesGrid .gcard-number {
+    #gradeJogos .gcard-number {
         font-size: 3.4rem;
     }
 
-    #gamesGrid .gcard-icon {
+    #gradeJogos .gcard-icon {
         font-size: 2rem;
     }
 
-    #gamesGrid .gcard-body {
+    #gradeJogos .gcard-body {
         padding: 0.8rem 0.9rem;
         gap: 0.4rem;
     }
 
-    #gamesGrid .gcard-title {
+    #gradeJogos .gcard-title {
         font-size: 1.3rem;
     }
 
-    #gamesGrid .gcard-desc {
+    #gradeJogos .gcard-desc {
         min-height: 0;
         font-size: 0.84rem;
     }
 
-    #gamesGrid .gcard-cta {
+    #gradeJogos .gcard-cta {
         min-height: 40px;
         padding: 0.5rem 1rem;
     }

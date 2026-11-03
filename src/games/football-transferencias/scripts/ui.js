@@ -24,7 +24,8 @@ export function renderizarClubes() {
         }
         linhaTempoClubes.appendChild(elementoClube);
     }
-    const btnRevelarProximoClube = document.getElementById("btnReveal");
+    const btnRevelarProximoClube = document.getElementById("btnRevelarProximoClube");
+    
     btnRevelarProximoClube.disabled = estado.clubesRevelados >= clubes.length;
     btnRevelarProximoClube.innerHTML = btnRevelarProximoClube.disabled ? "<i class='fas fa-eye-slash'></i> Todos revelados" : "<i class='fas fa-eye'></i> Revelar próximo clube";
 }
@@ -41,9 +42,12 @@ export function mostrarRetornoPalpite(acertou, pontosGanhos) {
     const iconeRetornoPalpite = document.getElementById("feedbackIcon");
     const textoRetornoPalpite = document.getElementById("feedbackText");
     const respostaPalpite = document.getElementById("feedbackAnswer");
+    
     document.getElementById("clubsArea").classList.add("hidden");
     document.getElementById("guessArea").classList.add("hidden");
+    
     retornoPalpite.classList.remove("hidden");
+    
     if (acertou) {
         iconeRetornoPalpite.innerHTML = "<i class='fas fa-check-circle'></i>";
         iconeRetornoPalpite.className = "feedback-icon correct";
@@ -56,7 +60,7 @@ export function mostrarRetornoPalpite(acertou, pontosGanhos) {
         respostaPalpite.textContent = `Era: ${estado.jogadorAtual.nome}`;
         respostaPalpite.classList.remove("hidden");
     }
-    const btnProximaRodada = document.getElementById("btnNext");
+    const btnProximaRodada = document.getElementById("btnAvancarRodada");
     btnProximaRodada.innerHTML = estado.rodada >= estado.totalRodadas ? "<i class='fas fa-trophy'></i> Ver Resultado" : "<i class='fas fa-arrow-right'></i> Próxima Rodada";
 }
 
@@ -66,21 +70,34 @@ export function mostrarResultadoFinal() {
     document.getElementById("guessArea").classList.add("hidden");
     document.getElementById("feedback").classList.add("hidden");
     document.getElementById("gameInfo").classList.add("hidden");
+    
     const resultadoFinal = document.getElementById("finalResult");
+    
     resultadoFinal.classList.remove("hidden");
     document.getElementById("finalPoints").textContent = estado.pontuacao;
+    
     const pontuacaoMaxima = estado.totalRodadas * 10;
     const detalhesResultado = document.getElementById("finalDetails");
     const porcentagem = Math.round((estado.pontuacao / pontuacaoMaxima) * 100);
     let mensagemResultado = "";
+    
     if (porcentagem >= 80) {
         mensagemResultado = "Excelente! Você é um expert em transferências!";
-    } else if (porcentagem >= 50) mensagemResultado = "Bom trabalho! Conhece bem o mercado!";
-    else if (porcentagem >= 20) mensagemResultado = "Pode melhorar! Tente de novo!";
-    else mensagemResultado = "Difícil, né? Jogue novamente para aprender!";
+    } else if (porcentagem >= 50) {
+        mensagemResultado = "Bom trabalho! Conhece bem o mercado!";
+    } else if (porcentagem >= 20) {
+        mensagemResultado = "Pode melhorar! Tente de novo!";
+    } else {
+        mensagemResultado = "Difícil, né? Jogue novamente para aprender!";
+    }
+
     if (porcentagem >= 50) {
-        if (window.registrarVitoria) window.registrarVitoria();
-    } else if (window.registrarDerrota) window.registrarDerrota();
+        if (window.registrarVitoria) {
+            window.registrarVitoria();
+        }
+    } else if (window.registrarDerrota) {
+        window.registrarDerrota();
+    }
     detalhesResultado.innerHTML = `<div class="detail-item">${mensagemResultado}</div><div class="detail-item">Pontuação máxima possível: ${pontuacaoMaxima} pts</div>`;
 }
 
@@ -100,6 +117,7 @@ export function configurarPreenchimentoAutomatico(nomes, aoSelecionarJogador) {
     const campoPalpite = document.getElementById("guessInput");
     const listaSugestoes = document.getElementById("autocompleteList");
     let indiceSugestaoDestacada = -1;
+    
     campoPalpite.addEventListener("input", () => {
         const valorNormalizado = normalizarTexto(campoPalpite.value.trim());
         listaSugestoes.innerHTML = "";
@@ -108,6 +126,7 @@ export function configurarPreenchimentoAutomatico(nomes, aoSelecionarJogador) {
             listaSugestoes.classList.remove("active");
             return;
         }
+
         const filtrados = nomes.filter(nomeJogador => normalizarTexto(nomeJogador).includes(valorNormalizado)).slice(0, 6);
         if (!filtrados.length) {
             listaSugestoes.classList.remove("active");
@@ -129,7 +148,10 @@ export function configurarPreenchimentoAutomatico(nomes, aoSelecionarJogador) {
     });
     campoPalpite.addEventListener("keydown", eventoTeclado => {
         const itensSugestoes = listaSugestoes.querySelectorAll(".autocomplete-item");
-        if (!itensSugestoes.length && eventoTeclado.key !== "Enter") return;
+        if (!itensSugestoes.length && eventoTeclado.key !== "Enter") {
+            return;
+        }
+        
         if (eventoTeclado.key === "ArrowDown") {
             eventoTeclado.preventDefault();
             indiceSugestaoDestacada = Math.min(indiceSugestaoDestacada + 1, itensSugestoes.length - 1);

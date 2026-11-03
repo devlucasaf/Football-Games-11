@@ -1,8 +1,8 @@
 const LendasConstrutor = {
     async iniciar() {
         try {
-            const parametrosUrl = new URLSearchParams(window.location.search);
-            const chaveTime = parametrosUrl.get("team");
+            const parametrosEndereco = new URLSearchParams(window.location.search);
+            const chaveTime = parametrosEndereco.get("team");
 
             if (!chaveTime) {
                 window.location.href = "football-legends.html";
@@ -184,8 +184,8 @@ const LendasConstrutor = {
                     <p data-key="legends-builder-empty">Clique em um jogador da lista para escalá-lo no campo</p>
                 </div>
             `;
-            if (typeof aplicarTraducao === "function") {
-                aplicarTraducao();
+            if (typeof window.aplicarTraducao === "function") {
+                window.aplicarTraducao(localStorage.getItem("preferredLanguage") || "traducoes");
             }
             return;
         }

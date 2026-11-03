@@ -97,7 +97,8 @@
 
     // --- REGISTRA O RESULTADO DE UMA PARTIDA ---
     function registrarResultadoPartida(identificadorJogo, opcoes) {
-        const { venceu, bucket: indiceDistribuicao, tamanho } = opcoes;
+        // As opções antigas continuam aceitas pelos jogos durante a coordenação.
+        const { venceu, indiceDistribuicao = opcoes.bucket, tamanho } = opcoes;
         const dados = obterEstatisticasJogo(identificadorJogo, tamanho);
 
         if (venceu) {
@@ -130,7 +131,7 @@
 
     // --- FECHA A TELA DE ESTATÍSTICAS ---
     function fecharEstatisticas() {
-        const existente = document.getElementById("fg11StatsOverlay");
+        const existente = document.getElementById("sobreposicaoEstatisticasPartida");
         if (existente) {
             existente.remove();
         }
@@ -166,9 +167,9 @@
             tamanho = 6,
             rotulos = [],
             tituloGrafico = "Distribuição",
-            bucketAtual: indiceDistribuicaoAtual = -1,
-            onReiniciar: aoReiniciarPartida = null,
-            onHome: aoVoltarInicio = null
+            indiceDistribuicaoAtual = opcoes.bucketAtual ?? -1,
+            aoReiniciarPartida = opcoes.onReiniciar ?? null,
+            aoVoltarInicio = opcoes.onHome ?? null
         } = opcoes;
 
         const dados = obterEstatisticasJogo(identificadorJogo, tamanho);
@@ -234,7 +235,7 @@
 
         let marcacaoVoltarInicio = "";
         if (aoVoltarInicio) {
-            marcacaoVoltarInicio = `<button class="fg11-stats-btn" id="fg11StatsHome">
+            marcacaoVoltarInicio = `<button class="fg11-stats-btn" id="btnVoltarInicioEstatisticasPartida">
                     <i class="fas fa-home" aria-hidden="true"></i> Menu
                 </button>`;
         } else {
@@ -256,18 +257,19 @@
         }
 
         const sobreposicaoEstatisticas = document.createElement("div");
+
         sobreposicaoEstatisticas.className = "tutorial-overlay fg11-stats-overlay";
-        sobreposicaoEstatisticas.id = "fg11StatsOverlay";
+        sobreposicaoEstatisticas.id = "sobreposicaoEstatisticasPartida";
         sobreposicaoEstatisticas.innerHTML =
-            `<div class="tutorial-box fg11-stats-box ${classeResultado}" role="dialog" aria-modal="true" aria-labelledby="fg11StatsTitulo">` +
+            `<div class="tutorial-box fg11-stats-box ${classeResultado}" role="dialog" aria-modal="true" aria-labelledby="tituloEstatisticasPartida">` +
                 marcacaoConfete +
-                `<button class="fg11-stats-close" id="fg11StatsFechar" aria-label="${obterTextoEstatisticas("result-close", "Fechar")}">
+                `<button class="fg11-stats-close" id="btnFecharEstatisticasPartida" aria-label="${obterTextoEstatisticas("result-close", "Fechar")}">
                     <i class="fas fa-xmark" aria-hidden="true"></i>
                 </button>` +
                 `<div class="fg11-stats-header">` +
                     `<span class="fg11-stats-kicker">${chamadaResultado}</span>` +
                     `<i class="fas ${icone}" aria-hidden="true"></i>` +
-                    `<h2 id="fg11StatsTitulo">${titulo}</h2>` +
+                    `<h2 id="tituloEstatisticasPartida">${titulo}</h2>` +
                     marcacaoResposta +
                 `</div>` +
                 `<div class="fg11-stats-counts">` +
@@ -287,7 +289,7 @@
                 `<h3 class="fg11-stats-chart-title">${tituloGrafico}</h3>` +
                 `<div class="fg11-stats-chart">${barras}</div>` +
                 `<div class="fg11-stats-actions">` +
-                    `<button class="fg11-stats-btn primary" id="fg11StatsReiniciar">
+                    `<button class="fg11-stats-btn primary" id="btnReiniciarPartidaEstatisticas">
                         <i class="fas fa-redo" aria-hidden="true"></i> ${obterTextoEstatisticas("play-again", "Jogar novamente")}
                     </button>` +
                     marcacaoVoltarInicio +
@@ -296,23 +298,23 @@
 
         document.body.appendChild(sobreposicaoEstatisticas);
 
-        sobreposicaoEstatisticas.querySelector("#fg11StatsFechar").addEventListener("click", fecharEstatisticas);
+        sobreposicaoEstatisticas.querySelector("#btnFecharEstatisticasPartida").addEventListener("click", fecharEstatisticas);
         document.addEventListener("keydown", aoPressionarTeclaEstatisticas);
         setTimeout(() => {
-            const btnReiniciarPartida = sobreposicaoEstatisticas.querySelector("#fg11StatsReiniciar");
+            const btnReiniciarPartida = sobreposicaoEstatisticas.querySelector("#btnReiniciarPartidaEstatisticas");
             if (btnReiniciarPartida) {
                 btnReiniciarPartida.focus();
             }
         }, 50);
 
-        sobreposicaoEstatisticas.querySelector("#fg11StatsReiniciar").addEventListener("click", () => {
+        sobreposicaoEstatisticas.querySelector("#btnReiniciarPartidaEstatisticas").addEventListener("click", () => {
             fecharEstatisticas();
             if (typeof aoReiniciarPartida === "function") {
                 aoReiniciarPartida();
             }
         });
 
-        const btnVoltarInicio = sobreposicaoEstatisticas.querySelector("#fg11StatsHome");
+        const btnVoltarInicio = sobreposicaoEstatisticas.querySelector("#btnVoltarInicioEstatisticasPartida");
         if (btnVoltarInicio) {
             btnVoltarInicio.addEventListener("click", () => {
                 if (typeof aoVoltarInicio === "function") {
@@ -331,6 +333,12 @@
     }
 
     window.FG11Stats = {
+        obterEstatisticasJogo,
+        registrarResultadoPartida,
+        mostrarJanelaEstatisticas,
+        fecharEstatisticas,
+        obterSequenciaDias,
+        atualizarSequenciaDias,
         obter: obterEstatisticasJogo,
         registrar: registrarResultadoPartida,
         mostrarModal: mostrarJanelaEstatisticas,

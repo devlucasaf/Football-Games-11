@@ -150,23 +150,23 @@ async function inicializarJogoAcertaEscalacao() {
         window.location.href = "../../../index.html";
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const gameKey = tutorialOverlay?.dataset.game;
-    const skipKey = gameKey ? `tutorial_skip_${gameKey}` : null;
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
+    const identificadorJogo = sobreposicaoTutorial?.dataset.game;
+    const chaveDispensaTutorial = identificadorJogo ? `tutorial_skip_${identificadorJogo}` : null;
 
-    if (skipKey && localStorage.getItem(skipKey)) {
-        tutorialOverlay.classList.add("hidden");
+    if (chaveDispensaTutorial && localStorage.getItem(chaveDispensaTutorial)) {
+        sobreposicaoTutorial.classList.add("hidden");
         mostrarSelecaoModoJogo();
-    } else if (tutorialOverlay) {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
-            tutorialOverlay.classList.add("hidden");
+    } else if (sobreposicaoTutorial) {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
+            sobreposicaoTutorial.classList.add("hidden");
             mostrarSelecaoModoJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            if (skipKey) {
-                localStorage.setItem(skipKey, "true");
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
+            if (chaveDispensaTutorial) {
+                localStorage.setItem(chaveDispensaTutorial, "true");
             }
-            tutorialOverlay.classList.add("hidden");
+            sobreposicaoTutorial.classList.add("hidden");
             mostrarSelecaoModoJogo();
         });
     } else {

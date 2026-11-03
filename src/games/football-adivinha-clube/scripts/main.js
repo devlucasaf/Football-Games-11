@@ -310,53 +310,53 @@ async function inicializarJogoAdivinhaClube() {
         window.location.href = "../../../index.html";
     });
 
-    document.getElementById("guessInput").addEventListener("keydown", (e) => {
+    document.getElementById("guessInput").addEventListener("keydown", (eventoTeclado) => {
         const itens = [...elementosInterface.suggestions.querySelectorAll(".suggestion-item")];
 
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
+        if (eventoTeclado.key === "ArrowDown") {
+            eventoTeclado.preventDefault();
             if (itens.length) {
                 sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
                 atualizarSugestaoAtiva(itens);
             }
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "ArrowUp") {
+            eventoTeclado.preventDefault();
             if (itens.length) {
                 sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
                 atualizarSugestaoAtiva(itens);
             }
-        } else if (e.key === "Enter") {
+        } else if (eventoTeclado.key === "Enter") {
             if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
                 selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
             } else {
                 verificarPalpite();
             }
-        } else if (e.key === "Escape") {
+        } else if (eventoTeclado.key === "Escape") {
             esconderSugestoes();
         }
     });
 
     elementosInterface.campoPalpite.addEventListener("input", renderizarSugestoes);
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-autocomplete")) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".input-autocomplete")) {
             esconderSugestoes();
         }
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-acerta-time";
+    const tutorialOverlay = document.getElementById("sobreposicaoTutorial");
+    const chaveDispensaTutorial = "tutorial_skip_football-acerta-time";
 
-    if (localStorage.getItem(skipKey)) {
+    if (localStorage.getItem(chaveDispensaTutorial)) {
         tutorialOverlay.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
+            localStorage.setItem(chaveDispensaTutorial, "true");
             tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });

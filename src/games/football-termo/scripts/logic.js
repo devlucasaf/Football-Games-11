@@ -1,8 +1,8 @@
-import estado from "./core.js";
-import { esperarMilissegundos } from "./utils.js";
-import { obterCelulasLinha } from "./board.js";
-import { revelarLinha, animarVitoria, animarLinhaIncompleta } from "./animations.js";
-import { mostrarMensagem } from "./ui.js";
+import estado                                                   from "./core.js";
+import { esperarMilissegundos }                                 from "./utils.js";
+import { obterCelulasLinha }                                    from "./board.js";
+import { revelarLinha, animarVitoria, animarLinhaIncompleta }   from "./animations.js";
+import { mostrarMensagem }                                      from "./ui.js";
 
 // --- CALCULA AS CORES DE CADA LETRA NA TENTATIVA ---
 export function calcularCores(chute) {

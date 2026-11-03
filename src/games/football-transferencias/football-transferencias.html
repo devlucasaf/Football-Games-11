@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-transferencias">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-transferencias">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-exchange-alt"></i>
@@ -27,11 +27,11 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="transf-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="transf-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="transf-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 <section class="clubs-area hidden" id="clubsArea">
                     <h2 class="clubs-title" data-key="transf-clubs-title">Clubes da Carreira</h2>
                     <div class="clubs-timeline" id="clubsTimeline"></div>
-                    <button class="btn-reveal" id="btnReveal">
+                    <button class="btn-reveal" id="btnRevelarProximoClube">
                         <i class="fas fa-eye"></i> 
                         <span data-key="transf-reveal">Revelar próximo clube</span>
                     </button>
@@ -91,7 +91,7 @@
                         <div class="autocomplete-list" id="autocompleteList"></div>
                     </div>
 
-                    <button class="btn-guess" id="btnGuess">
+                    <button class="btn-guess" id="btnEnviarPalpite">
                         <i class="fas fa-check"></i> 
                         <span data-key="transf-confirm">Confirmar</span>
                     </button>
@@ -101,7 +101,7 @@
                     <div class="feedback-icon" id="feedbackIcon"></div>
                     <p class="feedback-text" id="feedbackText"></p>
                     <div class="feedback-answer hidden" id="feedbackAnswer"></div>
-                    <button class="btn-next" id="btnNext">
+                    <button class="btn-next" id="btnAvancarRodada">
                         <i class="fas fa-arrow-right"></i>
                         <span data-key="transf-next">Próxima Rodada</span>
                     </button>
@@ -120,7 +120,7 @@
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnReiniciarPartida">
                             <i class="fas fa-redo"></i> 
                             <span data-key="transf-retry">Jogar Novamente</span>
                         </button>
@@ -130,7 +130,7 @@
                             <span data-key="transf-trocar-modo">Trocar Modo</span>
                         </button>
 
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnVoltarPaginaInicial">
                             <i class="fas fa-home"></i> 
                             <span data-key="transf-home">Menu Principal</span>
                         </button>

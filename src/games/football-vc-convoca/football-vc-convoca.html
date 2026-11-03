@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-vc-convoca">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-vc-convoca">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-clipboard-list"></i>
@@ -27,11 +27,11 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="convoca-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="convoca-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="convoca-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                     <p class="section-subtitle" id="modeLabel"></p>
                     <div class="teams-grid" id="teamsGrid"></div>
 
-                    <button class="btn-back" id="btnBackMode">
+                    <button class="btn-back" id="btnVoltarSelecaoModo">
                         <i class="fas fa-arrow-left"></i> 
                         <span data-key="convoca-back">Voltar</span>
                     </button>
@@ -92,12 +92,12 @@
                     <div class="position-groups" id="positionGroups"></div>
 
                     <div class="squad-actions">
-                        <button class="btn-back" id="btnBackTeam">
+                        <button class="btn-back" id="btnVoltarSelecaoTime">
                             <i class="fas fa-arrow-left"></i> 
                             <span data-key="convoca-back">Voltar</span>
                         </button>
 
-                        <button class="btn-confirm" id="btnConfirm" disabled>
+                        <button class="btn-confirm" id="btnConfirmarConvocacao" disabled>
                             <i class="fas fa-check"></i> 
                             <span data-key="convoca-confirm">Confirmar Convocação</span>
                         </button>
@@ -108,7 +108,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h3 id="modalTitle">Escolher Jogador</h3>
-                            <button class="modal-close" id="modalClose">
+                            <button class="modal-close" id="btnFecharModalJogadores">
                                 <i class="fas fa-xmark"></i>
                             </button>
                         </div>
@@ -141,12 +141,12 @@
                     </div>
 
                     <div class="results-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnReiniciarConvocacao">
                             <i class="fas fa-redo"></i> 
                             <span data-key="convoca-retry">Jogar Novamente</span>
                         </button>
 
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnVoltarPaginaInicial">
                             <i class="fas fa-home"></i> 
                             <span data-key="convoca-home">Menu Principal</span>
                         </button>

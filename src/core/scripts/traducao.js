@@ -1,29 +1,30 @@
+// --- CARREGA OS ARQUIVOS DE TRADUÇÃO ---
 (function () {
-    const atual = document.currentScript;
-    if (!atual) {
+    const arquivoTraducaoAtual = document.currentScript;
+    if (!arquivoTraducaoAtual) {
         return;
     }
 
-    const base = atual.src.replace(/\/scripts\/traducao\.js.*$/, "");
-    const scripts = [
-        `${base}/translation/english.js`,
-        `${base}/translation/german.js`,
-        `${base}/translation/portuguese.js`,
-        `${base}/translation/spanish.js`,
-        `${base}/translation/french.js`,
-        `${base}/translation/italian.js`,
-        `${base}/scripts/catalogo.js`,
-        `${base}/scripts/avisos.js`,
-        `${base}/scripts/diario.js`,
-        `${base}/scripts/perfil.js`,
-        `${base}/scripts/header.js`,
-        `${base}/scripts/script.js`,
-        `${base}/scripts/estatisticas.js`,
-        `${base}/scripts/fg11-extras.js`
+    const enderecoBase = arquivoTraducaoAtual.src.replace(/\/scripts\/traducao\.js.*$/, "");
+    const enderecosArquivos = [
+        `${enderecoBase}/translation/english.js`,
+        `${enderecoBase}/translation/german.js`,
+        `${enderecoBase}/translation/portuguese.js`,
+        `${enderecoBase}/translation/spanish.js`,
+        `${enderecoBase}/translation/french.js`,
+        `${enderecoBase}/translation/italian.js`,
+        `${enderecoBase}/scripts/catalogo.js`,
+        `${enderecoBase}/scripts/avisos.js`,
+        `${enderecoBase}/scripts/diario.js`,
+        `${enderecoBase}/scripts/perfil.js`,
+        `${enderecoBase}/scripts/header.js`,
+        `${enderecoBase}/scripts/script.js`,
+        `${enderecoBase}/scripts/estatisticas.js`,
+        `${enderecoBase}/scripts/fg11-extras.js`
     ];
 
-    scripts.forEach(src => {
-        document.write(`<script src="${src}"><\/script>`);
+    enderecosArquivos.forEach(enderecoArquivo => {
+        document.write(`<script src="${enderecoArquivo}"><\/script>`);
     });
 })();
 
@@ -40,49 +41,49 @@ function obterTraducoes() {
 }
 
 // --- APLICA A TRADUÇÃO NA PÁGINA ---
-function aplicarTraducao(lingua) {
-    const linguas = obterTraducoes();
+function aplicarTraducao(idioma) {
+    const traducoesIdiomas = obterTraducoes();
 
-    if (linguas[lingua] && linguas[lingua]["titulo"]) {
-        document.titulo = linguas[lingua]["titulo"];
+    if (traducoesIdiomas[idioma] && traducoesIdiomas[idioma]["titulo"]) {
+        document.title = traducoesIdiomas[idioma]["titulo"];
     }
 
-        document.querySelectorAll("[data-key]").forEach(element => {
-        const key = element.getAttribute("data-key");
-        if (linguas[lingua] && linguas[lingua][key]) {
-            if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-                element.placeholder = linguas[lingua][key];
+    document.querySelectorAll("[data-key]").forEach(elementoTraduzivel => {
+        const chaveTraducao = elementoTraduzivel.getAttribute("data-key");
+        if (traducoesIdiomas[idioma] && traducoesIdiomas[idioma][chaveTraducao]) {
+            if (elementoTraduzivel.tagName === "INPUT" || elementoTraduzivel.tagName === "TEXTAREA") {
+                elementoTraduzivel.placeholder = traducoesIdiomas[idioma][chaveTraducao];
             } else {
-                element.textContent = linguas[lingua][key];
+                elementoTraduzivel.textContent = traducoesIdiomas[idioma][chaveTraducao];
             }
         }
     });
 
-    atualizaSessaoTitulo(lingua);
+    atualizarTituloSecaoMusica(idioma);
 
-    atualizaElementosClass(lingua);
+    atualizarTraducoesNavegacao(idioma);
 
-    localStorage.setItem("preferredLanguage", lingua);
+    localStorage.setItem("preferredLanguage", idioma);
 }
 
 // --- TRADUZ O TÍTULO DA SEÇÃO DE MÚSICA ---
-function atualizaSessaoTitulo(lingua) {
-    const linguas = obterTraducoes();
-    const sessaoMusicaTitulo = document.querySelector("#music-section .section-title");
-    if (sessaoMusicaTitulo && linguas[lingua] && linguas[lingua]["music-title"]) {
-        const highlightSpan = sessaoMusicaTitulo.querySelector(".highlight");
-        if (highlightSpan) {
-            sessaoMusicaTitulo.innerHTML = linguas[lingua]["music-title"].replace("Agora", "<span class='highlight'>Agora</span>");
+function atualizarTituloSecaoMusica(idioma) {
+    const traducoesIdiomas = obterTraducoes();
+    const tituloSecaoMusica = document.querySelector("#music-section .section-title");
+    if (tituloSecaoMusica && traducoesIdiomas[idioma] && traducoesIdiomas[idioma]["music-title"]) {
+        const elementoDestaque = tituloSecaoMusica.querySelector(".highlight");
+        if (elementoDestaque) {
+            tituloSecaoMusica.innerHTML = traducoesIdiomas[idioma]["music-title"].replace("Agora", "<span class='highlight'>Agora</span>");
         } else {
-            sessaoMusicaTitulo.textContent = linguas[lingua]["music-title"];
+            tituloSecaoMusica.textContent = traducoesIdiomas[idioma]["music-title"];
         }
     }
 }
 
 // --- TRADUZ ELEMENTOS DE NAVEGAÇÃO POR CLASSE ---
-function atualizaElementosClass(lingua) {
-    const linguas = obterTraducoes();
-    const navClasses = [
+function atualizarTraducoesNavegacao(idioma) {
+    const traducoesIdiomas = obterTraducoes();
+    const classesNavegacao = [
         "nav-home", 
         "nav-sobre", 
         "nav-musica", 
@@ -92,11 +93,11 @@ function atualizaElementosClass(lingua) {
         "nav-contatos"
     ];
     
-    navClasses.forEach(className => {
-        const elementos = document.getElementsByClassName(className);
-        if (elementos.length > 0 && linguas[lingua] && linguas[lingua][className]) {
-            for (let element of elementos) {
-                element.textContent = linguas[lingua][className];
+    classesNavegacao.forEach(nomeClasseNavegacao => {
+        const elementosNavegacao = document.getElementsByClassName(nomeClasseNavegacao);
+        if (elementosNavegacao.length > 0 && traducoesIdiomas[idioma] && traducoesIdiomas[idioma][nomeClasseNavegacao]) {
+            for (const elementoNavegacao of elementosNavegacao) {
+                elementoNavegacao.textContent = traducoesIdiomas[idioma][nomeClasseNavegacao];
             }
         }
     });
@@ -107,6 +108,17 @@ Object.defineProperty(window, "translations", {
     get: obterTraducoes,
     configurable: true
 });
+
+Object.defineProperty(window, "traducoesIdiomas", {
+    get: obterTraducoes,
+    configurable: true
+});
+
+window.aplicarTraducao = aplicarTraducao;
+window.atualizarTituloSecaoMusica = atualizarTituloSecaoMusica;
+window.atualizarTraducoesNavegacao = atualizarTraducoesNavegacao;
+
+// --- COMPATIBILIDADE COM INTEGRAÇÕES ANTERIORES ---
 window.applyTranslation = aplicarTraducao;
-window.updateSectionTitles = atualizaSessaoTitulo;
-window.updateElementsByClass = atualizaElementosClass;
+window.updateSectionTitles = atualizarTituloSecaoMusica;
+window.updateElementsByClass = atualizarTraducoesNavegacao;

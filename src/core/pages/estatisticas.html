@@ -33,9 +33,16 @@
                     <div class="profile-side">
                         <div id="cartaJogador"></div>
 
-                        <form class="nick-form" id="formApelido" hidden>
-                            <label class="sr-only" for="inputApelido" data-key="profile-nick-label">Seu apelido</label>
-                            <input type="text" id="inputApelido" maxlength="18" placeholder="Seu apelido" data-key="profile-nick-label" autocomplete="nickname">
+                        <form class="nick-form" id="formularioApelido" hidden>
+                            <label class="sr-only" for="campoApelido" data-key="profile-nick-label">Seu apelido</label>
+                            <input 
+                                type="text" 
+                                id="campoApelido" 
+                                maxlength="18" 
+                                placeholder="Seu apelido" 
+                                data-key="profile-nick-label" 
+                                autocomplete="nickname"
+                            >
                             <button type="submit" class="btn btn-sm">
                                 <i class="fas fa-check" aria-hidden="true"></i>
                                 <span data-key="profile-nick-save">Salvar</span>
@@ -44,7 +51,7 @@
                     </div>
 
                     <div>
-                        <div class="kpi-grid" id="kpis"></div>
+                        <div class="kpi-grid" id="indicadoresEstatisticas"></div>
                         <div class="panel">
                             <h2 class="panel-title">
                                 <i class="fas fa-shield-halved" aria-hidden="true"></i>

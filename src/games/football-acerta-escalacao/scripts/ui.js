@@ -2,21 +2,21 @@ import { estado } from "./core.js";
 import { obterPosicao, obterRotuloPosicao } from "./data.js";
 
 const elementos = {
-    timer:              document.getElementById("timer"),
-    gameTimerArea:      document.getElementById("gameTimerArea"),
-    gameInfo:           document.getElementById("gameInfo"),
-    matchInfo:          document.getElementById("matchInfo"),
+    valorCronometro: document.getElementById("timer"),
+    areaCronometro: document.getElementById("gameTimerArea"),
+    informacoesJogo: document.getElementById("gameInfo"),
+    informacoesPartida: document.getElementById("matchInfo"),
     acertos:            document.getElementById("acertos"),
-    playersLayer:       document.getElementById("playersLayer"),
-    guessInput:         document.getElementById("guessInput"),
-    autocompleteList:   document.getElementById("autocompleteList"),
-    finalResult:        document.getElementById("finalResult"),
-    finalPoints:        document.getElementById("finalPoints"),
-    finalDetails:       document.getElementById("finalDetails"),
-    fieldWrapper:       document.querySelector(".field-wrapper"),
-    guessInputArea:     document.querySelector(".guess-input-area"),
-    giveUpArea:         document.querySelector(".give-up-area"),
-    modeSelect:         document.getElementById("modeSelect")
+    camadaJogadores: document.getElementById("playersLayer"),
+    campoPalpite: document.getElementById("guessInput"),
+    listaSugestoesJogadores: document.getElementById("autocompleteList"),
+    resultadoFinal: document.getElementById("finalResult"),
+    pontosFinais: document.getElementById("finalPoints"),
+    detalhesResultadoFinal: document.getElementById("finalDetails"),
+    recipienteCampo: document.querySelector(".field-wrapper"),
+    areaCampoPalpite: document.querySelector(".guess-input-area"),
+    areaDesistirPartida: document.querySelector(".give-up-area"),
+    selecaoModo: document.getElementById("modeSelect")
 };
 
 let tratarSelecaoJogadorAtual = null;
@@ -24,8 +24,8 @@ let nomesJogadoresDisponiveis    = [];
 
 // --- RENDERIZAÇÃO DO CAMPO ---
 export function renderizarCampo(escalacao) {
-    elementos.playersLayer.innerHTML = "";
-    elementos.matchInfo.textContent = `${escalacao.time} — ${escalacao.evento} (${escalacao.formacao})`;
+    elementos.camadaJogadores.innerHTML = "";
+    elementos.informacoesPartida.textContent = `${escalacao.time} — ${escalacao.evento} (${escalacao.formacao})`;
 
     escalacao.jogadores.forEach((jogador, indiceJogador) => {
         const coordenadasPosicao = obterPosicao(jogador.posicao, escalacao.formacao);
@@ -42,7 +42,7 @@ export function renderizarCampo(escalacao) {
             <span class="player-label">?</span>
         `;
 
-        elementos.playersLayer.appendChild(posicaoJogador);
+        elementos.camadaJogadores.appendChild(posicaoJogador);
     });
 }
 
@@ -72,12 +72,12 @@ export function revelarNaoAcertado(indiceJogador, nome) {
 export function atualizarCronometro() {
     const minutosRestantes = Math.floor(estado.tempoRestante / 60);
     const segundosRestantes = estado.tempoRestante % 60;
-    elementos.timer.textContent = `${minutosRestantes}:${segundosRestantes.toString().padStart(2, "0")}`;
+    elementos.valorCronometro.textContent = `${minutosRestantes}:${segundosRestantes.toString().padStart(2, "0")}`;
 
     if (estado.tempoRestante <= 30) {
-        elementos.gameTimerArea.classList.add("danger");
+        elementos.areaCronometro.classList.add("danger");
     } else {
-        elementos.gameTimerArea.classList.remove("danger");
+        elementos.areaCronometro.classList.remove("danger");
     }
 }
 
@@ -88,32 +88,32 @@ export function atualizarAcertos() {
 
 // --- ESCONDER TIMER ---
 export function esconderCronometro() {
-    elementos.gameTimerArea.classList.add("hidden");
+    elementos.areaCronometro.classList.add("hidden");
 }
 
 // --- MOSTRAR SELEÇÃO DE MODO ---
 export function mostrarSelecaoModoJogo() {
-    elementos.modeSelect.classList.remove("hidden");
-    elementos.gameInfo.classList.add("hidden");
-    elementos.fieldWrapper.classList.add("hidden");
-    elementos.guessInputArea.classList.add("hidden");
-    elementos.giveUpArea.classList.add("hidden");
-    elementos.finalResult.classList.add("hidden");
+    elementos.selecaoModo.classList.remove("hidden");
+    elementos.informacoesJogo.classList.add("hidden");
+    elementos.recipienteCampo.classList.add("hidden");
+    elementos.areaCampoPalpite.classList.add("hidden");
+    elementos.areaDesistirPartida.classList.add("hidden");
+    elementos.resultadoFinal.classList.add("hidden");
 }
 
 // --- ESCONDER SELEÇÃO DE MODO ---
 export function esconderSelecaoModoJogo() {
-    elementos.modeSelect.classList.add("hidden");
-    elementos.gameInfo.classList.remove("hidden");
-    elementos.fieldWrapper.classList.remove("hidden");
-    elementos.guessInputArea.classList.remove("hidden");
-    elementos.giveUpArea.classList.remove("hidden");
-    elementos.gameTimerArea.classList.remove("hidden");
+    elementos.selecaoModo.classList.add("hidden");
+    elementos.informacoesJogo.classList.remove("hidden");
+    elementos.recipienteCampo.classList.remove("hidden");
+    elementos.areaCampoPalpite.classList.remove("hidden");
+    elementos.areaDesistirPartida.classList.remove("hidden");
+    elementos.areaCronometro.classList.remove("hidden");
 }
 
 // --- ATUALIZAÇÃO DA LISTA DE AUTOCOMPLETE ---
 function atualizarListaSugestoes(valorPalpite) {
-    const listaSugestoes = elementos.autocompleteList;
+    const listaSugestoes = elementos.listaSugestoesJogadores;
     listaSugestoes.innerHTML = "";
 
     if (valorPalpite.length < 2) {
@@ -144,7 +144,7 @@ function atualizarListaSugestoes(valorPalpite) {
         itemSugestao.textContent = nome;
         itemSugestao.addEventListener("click", () => {
             tratarSelecaoJogadorAtual(nome);
-            elementos.guessInput.value = "";
+            elementos.campoPalpite.value = "";
             listaSugestoes.classList.add("hidden");
         });
         listaSugestoes.appendChild(itemSugestao);
@@ -158,12 +158,12 @@ export function configurarSugestoesJogadores(nomes, tratarSelecaoJogador) {
     nomesJogadoresDisponiveis    = nomes;
     tratarSelecaoJogadorAtual = tratarSelecaoJogador;
 
-    const campoPalpite = elementos.guessInput;
-    const listaSugestoes = elementos.autocompleteList;
+    const campoPalpite = elementos.campoPalpite;
+    const listaSugestoes = elementos.listaSugestoesJogadores;
 
     const novoCampoPalpite = campoPalpite.cloneNode(true);
     campoPalpite.parentNode.replaceChild(novoCampoPalpite, campoPalpite);
-    elementos.guessInput = novoCampoPalpite;
+    elementos.campoPalpite = novoCampoPalpite;
 
     novoCampoPalpite.addEventListener("input", () => {
         atualizarListaSugestoes(novoCampoPalpite.value.trim().toLowerCase());
@@ -229,26 +229,26 @@ export function configurarSugestoesJogadores(nomes, tratarSelecaoJogador) {
 
 // --- FOCAR NO INPUT ---
 export function focarCampoPalpite() {
-    elementos.guessInput.focus();
+    elementos.campoPalpite.focus();
 }
 
-// --- HELPER DE TRADUÇÃO ---
+// --- TEXTO TRADUZIDO ---
 function obterTextoTraduzido(chaveTraducao, textoAlternativo) {
     const lingua = localStorage.getItem("preferredLanguage") || "traducoes";
-    if (window.translations && window.translations[lingua] && window.translations[lingua][chaveTraducao]) {
-        return window.translations[lingua][chaveTraducao];
+    if (window.traducoesIdiomas && window.traducoesIdiomas[lingua] && window.traducoesIdiomas[lingua][chaveTraducao]) {
+        return window.traducoesIdiomas[lingua][chaveTraducao];
     }
     return textoAlternativo;
 }
 
 // --- EXIBIR RESULTADO FINAL ---
 export function mostrarResultadoFinal() {
-    elementos.fieldWrapper.classList.add("hidden");
-    elementos.guessInputArea.classList.add("hidden");
-    elementos.giveUpArea.classList.add("hidden");
-    elementos.finalResult.classList.remove("hidden");
+    elementos.recipienteCampo.classList.add("hidden");
+    elementos.areaCampoPalpite.classList.add("hidden");
+    elementos.areaDesistirPartida.classList.add("hidden");
+    elementos.resultadoFinal.classList.remove("hidden");
 
-    elementos.finalPoints.textContent = estado.acertos;
+    elementos.pontosFinais.textContent = estado.acertos;
 
     const porcentagem = Math.round((estado.acertos / 11) * 100);
     if (porcentagem === 100) {
@@ -282,16 +282,16 @@ export function mostrarResultadoFinal() {
         detalhes += `<p>${obterTextoTraduzido("acerta-mode-no-time-result", "Modo: Sem Tempo")}</p>`;
     }
     detalhes += `<p><strong>${estado.escalacaoAtual.time}</strong> — ${estado.escalacaoAtual.evento}</p>`;
-    elementos.finalDetails.innerHTML = detalhes;
+    elementos.detalhesResultadoFinal.innerHTML = detalhes;
 }
 
-// --- RESETAR INTERFACE ---
+// --- REINICIAR INTERFACE ---
 export function reiniciarInterfaceJogo() {
-    elementos.finalResult.classList.add("hidden");
-    elementos.fieldWrapper.classList.remove("hidden");
-    elementos.guessInputArea.classList.remove("hidden");
-    elementos.giveUpArea.classList.remove("hidden");
-    elementos.guessInput.value = "";
-    elementos.autocompleteList.classList.add("hidden");
-    elementos.gameTimerArea.classList.remove("danger");
+    elementos.resultadoFinal.classList.add("hidden");
+    elementos.recipienteCampo.classList.remove("hidden");
+    elementos.areaCampoPalpite.classList.remove("hidden");
+    elementos.areaDesistirPartida.classList.remove("hidden");
+    elementos.campoPalpite.value = "";
+    elementos.listaSugestoesJogadores.classList.add("hidden");
+    elementos.areaCronometro.classList.remove("danger");
 }

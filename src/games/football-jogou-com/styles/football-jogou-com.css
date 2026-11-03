@@ -92,7 +92,7 @@
     font-size: clamp(1rem, 1.2vw, 1.1rem);
 }
 
-/* --- CARD DO JOGADOR MISTERIOSO (TOPO) --- */
+/* --- CARD DO JOGADOR MISTERIOSO --- */
 .jogou-resposta-card {
     display: flex;
     align-items: center;

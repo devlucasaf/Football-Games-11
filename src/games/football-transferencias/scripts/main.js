@@ -1,7 +1,9 @@
 import { estado, reiniciarEstadoTransferencias } from "./core.js";
 import { carregarDados, selecionarModo, escolherJogador, obterNomesJogadores } from "./data.js";
-import { renderizarClubes, atualizarInformacoesRodada, mostrarRetornoPalpite, mostrarResultadoFinal, reiniciarInterfaceRodada, configurarPreenchimentoAutomatico } from "./ui.js";
+import { renderizarClubes, atualizarInformacoesRodada, mostrarRetornoPalpite, 
+    mostrarResultadoFinal, reiniciarInterfaceRodada, configurarPreenchimentoAutomatico } from "./ui.js";
 
+// --- NORMALIZA O NOME DO JOGADOR PARA COMPARAÇÃO ---
 function normalizarNomeJogador(nomeJogador) {
     return nomeJogador.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
@@ -103,6 +105,7 @@ function iniciarJogo() {
     document.getElementById("gameInfo").classList.remove("hidden");
     document.getElementById("clubsArea").classList.remove("hidden");
     document.getElementById("guessArea").classList.remove("hidden");
+    
     reiniciarEstadoTransferencias();
     selecionarModo(estado.modoAtual);
     configurarSugestoesJogadores();
@@ -126,19 +129,19 @@ function voltarSelecaoModo() {
 }
 
 // --- BOTÃO DE REVELAR PRÓXIMO CLUBE ---
-document.getElementById("btnReveal").addEventListener("click", revelarProximoClube);
+document.getElementById("btnRevelarProximoClube").addEventListener("click", revelarProximoClube);
 
 // --- BOTÃO DE CONFIRMAR PALPITE ---
-document.getElementById("btnGuess").addEventListener("click", () => {
+document.getElementById("btnEnviarPalpite").addEventListener("click", () => {
     const campoPalpite = document.getElementById("guessInput");
     if (campoPalpite.value.trim()) {
         verificarPalpite(campoPalpite.value.trim());
     }
 });
 
-document.getElementById("btnNext").addEventListener("click", proximaRodada);
-document.getElementById("btnRetry").addEventListener("click", iniciarJogo);
-document.getElementById("btnHome").addEventListener("click", () => {
+document.getElementById("btnAvancarRodada").addEventListener("click", proximaRodada);
+document.getElementById("btnReiniciarPartida").addEventListener("click", iniciarJogo);
+document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
     window.location.href = "../../../index.html";
 });
 

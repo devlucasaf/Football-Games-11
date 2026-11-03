@@ -473,7 +473,6 @@
     box-shadow: var(--shadow-md);
 }
 
-/* --- UTILITÁRIOS --- */
 /* --- ANIMAÇÕES --- */
 @keyframes fadeInUp {
     from {

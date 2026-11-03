@@ -137,11 +137,11 @@ async function iniciar(modo = "mundial") {
 
 // --- INICIAR AO CARREGAR A PÁGINA ---
 document.addEventListener("DOMContentLoaded", () => {
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-bingo";
+    const tutorialOverlay = document.getElementById("sobreposicaoTutorial");
+    const chaveDispensaTutorial = "tutorial_skip_football-bingo";
     const modoSalvo = localStorage.getItem("bingo_modo") || "mundial";
 
-    if (localStorage.getItem(skipKey)) {
+    if (localStorage.getItem(chaveDispensaTutorial)) {
         tutorialOverlay.classList.add("hidden");
         iniciar(modoSalvo);
     } else {
@@ -157,8 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
             iniciar("brasileiro");
         });
 
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
+            localStorage.setItem(chaveDispensaTutorial, "true");
             localStorage.setItem("bingo_modo", "mundial");
             tutorialOverlay.classList.add("hidden");
             iniciar("mundial");

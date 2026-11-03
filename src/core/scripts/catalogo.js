@@ -1,3 +1,4 @@
+// --- CATÁLOGO DE JOGOS ---
 (function () {
     const categoriasJogos = {
         "adivinhacao":  { 
@@ -324,6 +325,13 @@
     // --- CAMINHO DA PÁGINA DE CADA JOGO ---
     jogosCatalogo.forEach(jogo => {
         jogo.pagina = `src/games/${jogo.id}/${jogo.id}.html`;
+        jogo.chaveTraducaoTitulo = jogo.tituloKey;
+        jogo.chaveTraducaoDescricao = jogo.descKey;
+        jogo.descricao = jogo.desc;
+    });
+
+    Object.values(categoriasJogos).forEach(categoria => {
+        categoria.chaveTraducaoRotulo = categoria.rotuloKey;
     });
 
     window.FG11Catalogo = { 

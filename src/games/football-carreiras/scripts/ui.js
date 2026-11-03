@@ -1,5 +1,5 @@
-import estado from "./core.js";
-import { normalizar } from "./utils.js";
+import estado           from "./core.js";
+import { normalizar }   from "./utils.js";
 
 // --- ATUALIZAR INFORMAÇÕES NA TELA ---
 export function atualizarInformacoesCarreira() {
@@ -35,6 +35,7 @@ export function mostrarResultado(acertou) {
         if (window.registrarDerrota) {
             window.registrarDerrota();
         }
+        
         if (window.FG11Stats) {
             window.FG11Stats.registrar("football-carreiras", {
                 venceu: false,

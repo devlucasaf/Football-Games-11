@@ -1,6 +1,7 @@
 import { estado, reiniciarEstadoDesafio } from "./core.js";
 import { carregarDados, escolherDesafio, obterTodosJogadores, embaralharJogadores, verificarGrupo } from "./data.js";
-import { renderizarGradeJogadores, renderizarVidas, renderizarGrupoAcertado, mostrarMensagemSelecao, animarErro, animarQuaseLa, embaralharGradeJogadores, limparSelecao, mostrarResultadoFinal, reiniciarInterfaceDesafio } from "./ui.js";
+import { renderizarGradeJogadores, renderizarVidas, renderizarGrupoAcertado, mostrarMensagemSelecao, animarErro, animarQuaseLa, 
+    embaralharGradeJogadores, limparSelecao, mostrarResultadoFinal, reiniciarInterfaceDesafio } from "./ui.js";
 
 // --- INICIAR PUZZLE ---
 function iniciarDesafio() {
@@ -79,12 +80,14 @@ function registrarEstatisticas(venceu) {
     if (!window.FG11Stats) {
         return;
     }
+
     const acertados = estado.gruposAcertados.length;
     window.FG11Stats.registrar("football-conexoes", {
         venceu,
         bucket: acertados,
         tamanho: 5
     });
+    
     window.FG11Stats.mostrarModal("football-conexoes", {
         venceu,
         titulo: venceu ? "Você conectou tudo!" : "Fim de jogo!",

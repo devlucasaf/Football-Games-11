@@ -1,7 +1,7 @@
 // --- DERIVA O CAMINHO BASE DO CORE ---
 const caminhoBaseCabecalho = (function () {
-    const atual = document.currentScript;
-    return atual ? atual.src.replace(/\/scripts\/header\.js.*$/, "") : "";
+    const elementoScriptCabecalho = document.currentScript;
+    return elementoScriptCabecalho ? elementoScriptCabecalho.src.replace(/\/scripts\/header\.js.*$/, "") : "";
 })();
 
 // --- CONSIDERA "/" EQUIVALENTE A "/index.html" ---
@@ -84,33 +84,33 @@ function renderizarCabecalho() {
         }
     ];
 
-    const menu = itensMenu.map(item => `
+    const menu = itensMenu.map(itemNavegacao => `
                         <li>
-                            <a class="nav-link" href="${item.href}"${item.atual ? ' aria-current="page"' : ""}>
-                                <i class="fas ${item.icone}" aria-hidden="true"></i>
-                                <span data-key="${item.chave}">${item.texto}</span>
+                            <a class="nav-link" href="${itemNavegacao.href}"${itemNavegacao.atual ? ' aria-current="page"' : ""}>
+                                <i class="fas ${itemNavegacao.icone}" aria-hidden="true"></i>
+                                <span data-key="${itemNavegacao.chave}">${itemNavegacao.texto}</span>
                             </a>
                         </li>`).join("");
 
     const marcacaoBotaoAjuda = temTutorial
-        ? ` <button class="btn-help" id="tutorialHelpBtn" title="Ver tutorial" aria-label="Ver tutorial">
+        ? ` <button class="btn-help" id="btnAbrirTutorial" title="Ver tutorial" aria-label="Ver tutorial">
                 <i class="fas fa-question" aria-hidden="true"></i>
             </button>`
         : "";
 
     // --- BUSCA DE JOGOS ---
     const buscaJogos = ehInicio
-        ? `<div class="header-search" id="headerSearch">
+        ? `<div class="header-search" id="recipienteBuscaJogos">
                 <input
                     type="search"
-                    id="searchGamesInput"
+                    id="campoBuscaJogos"
                     class="search-input"
                     placeholder="Buscar jogos..."
                     data-key="search-placeholder"
                     aria-label="Buscar jogos"
                     autocomplete="off"
                 />
-                <button class="btn-search" id="btnSearchGames" title="Buscar jogos" aria-label="Buscar jogos" aria-expanded="false" aria-controls="searchGamesInput">
+                <button class="btn-search" id="btnBuscarJogos" title="Buscar jogos" aria-label="Buscar jogos" aria-expanded="false" aria-controls="campoBuscaJogos">
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </button>
             </div>`
@@ -130,7 +130,7 @@ function renderizarCabecalho() {
                         </a>
                     </div>
 
-                    <nav class="main-nav" id="mainNav" aria-label="Principal">
+                    <nav class="main-nav" id="navegacaoPrincipal" aria-label="Principal">
                         <ul>${menu}
                         </ul>
                     </nav>
@@ -141,14 +141,13 @@ function renderizarCabecalho() {
                         <button class="btn-theme" data-theme-toggle title="Alterar tema" aria-label="Alterar tema">
                             <i class="fas fa-moon" aria-hidden="true"></i>
                         </button>
-                        <button class="btn-menu" id="btnMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+                        <button class="btn-menu" id="btnAlternarMenuPrincipal" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacaoPrincipal">
                             <i class="fas fa-bars" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
             </div>`;
 
-    // --- INSERE NO CABEÇALHO EXISTENTE OU CRIA UM NOVO ---
     if (!cabecalho) {
         cabecalho = document.createElement("header");
         cabecalho.className = "main-header";
@@ -161,8 +160,8 @@ function renderizarCabecalho() {
 
 // --- MENU RESPONSIVO ---
 function inicializarMenuResponsivo(cabecalho) {
-    const btnAlternarMenu = cabecalho.querySelector("#btnMenu");
-    const navegacaoPrincipal = cabecalho.querySelector("#mainNav");
+    const btnAlternarMenu = cabecalho.querySelector("#btnAlternarMenuPrincipal");
+    const navegacaoPrincipal = cabecalho.querySelector("#navegacaoPrincipal");
     if (!btnAlternarMenu || !navegacaoPrincipal) {
         return;
     }
@@ -201,11 +200,12 @@ function garantirAlvoDoConteudo() {
     if (document.getElementById("conteudo")) {
         return;
     }
+
     const principal = document.querySelector("main");
     if (principal) {
         principal.id = principal.id || "conteudo";
         if (principal.id !== "conteudo") {
-            principal.setAttribute("data-skip-target", "");
+            principal.setAttribute("data-alvo-atalho-conteudo", "");
         }
     }
 }
@@ -238,13 +238,41 @@ function renderizarRodape() {
 
     const rotas = obterRotas();
     const redes = [
-        { href: "https://instagram.com/__.fr3it4s.__", icone: "fab fa-instagram", nome: "Instagram" },
-        { href: "https://gitlab.com/devlucasaf/Football-Games-11", icone: "fab fa-gitlab", nome: "GitLab" },
-        { href: "https://github.com/devlucasaf/Football-Games-11", icone: "fab fa-github", nome: "GitHub" },
-        { href: "mailto:freitas.lucasaf@gmail.com", icone: "fas fa-envelope", nome: "Email" },
-        { href: "https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8", icone: "fab fa-spotify", nome: "Spotify" },
-        { href: "https://discord.com/users/1043680764140736612", icone: "fab fa-discord", nome: "Discord" },
-        { href: "https://www.linkedin.com/in/lucasfr3itas/", icone: "fab fa-linkedin", nome: "LinkedIn" }
+        { 
+            href: "https://instagram.com/__.fr3it4s.__", 
+            icone: "fab fa-instagram", 
+            nome: "Instagram" 
+        },
+        { 
+            href: "https://gitlab.com/devlucasaf/Football-Games-11", 
+            icone: "fab fa-gitlab", 
+            nome: "GitLab" 
+        },
+        { 
+            href: "https://github.com/devlucasaf/Football-Games-11", 
+            icone: "fab fa-github", 
+            nome: "GitHub" 
+        },
+        { 
+            href: "mailto:freitas.lucasaf@gmail.com", 
+            icone: "fas fa-envelope", 
+            nome: "Email" 
+        },
+        { 
+            href: "https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8", 
+            icone: "fab fa-spotify", 
+            nome: "Spotify" 
+        },
+        { 
+            href: "https://discord.com/users/1043680764140736612", 
+            icone: "fab fa-discord", 
+            nome: "Discord" 
+        },
+        { 
+            href: "https://www.linkedin.com/in/lucasfr3itas/", 
+            icone: "fab fa-linkedin", 
+            nome: "LinkedIn" 
+        }
     ];
 
     const icones = redes.map(rede => {
@@ -287,18 +315,58 @@ function renderizarRodape() {
                         <div class="social-icons">${icones}</div>
                     </div>
                     ${gerarColunaRodape("footer-col-play", "Jogar", [
-                        { href: rotas.inicio, icone: "fa-house", chave: "menu-home", texto: "Início" },
-                        { href: rotas.jogos, icone: "fa-gamepad", chave: "menu-games", texto: "Jogos" },
-                        { href: rotas.estatisticas, icone: "fa-chart-simple", chave: "menu-stats", texto: "Estatísticas" }
+                        { 
+                            href: rotas.inicio, 
+                            icone: "fa-house", 
+                            chave: "menu-home", 
+                            texto: "Início" 
+                        },
+                        { 
+                            href: rotas.jogos, 
+                            icone: "fa-gamepad", 
+                            chave: "menu-games", 
+                            texto: "Jogos" 
+                        },
+                        { 
+                            href: rotas.estatisticas, 
+                            icone: "fa-chart-simple", 
+                            chave: "menu-stats", 
+                            texto: "Estatísticas" 
+                        }
                     ])}
                     ${gerarColunaRodape("footer-col-project", "Projeto", [
-                        { href: rotas.sobre, icone: "fa-circle-info", chave: "footer-about", texto: "Sobre" },
-                        { href: rotas.perguntasFrequentes, icone: "fa-circle-question", chave: "footer-faq", texto: "FAQ" },
-                        { href: rotas.configuracoes, icone: "fa-sliders", chave: "footer-settings", texto: "Configurações" }
+                        { 
+                            href: rotas.sobre, 
+                            icone: "fa-circle-info", 
+                            chave: "footer-about", 
+                            texto: "Sobre" 
+                        },
+                        { 
+                            href: rotas.perguntasFrequentes, 
+                            icone: "fa-circle-question", 
+                            chave: "footer-faq", 
+                            texto: "FAQ" 
+                        },
+                        { 
+                            href: rotas.configuracoes, 
+                            icone: "fa-sliders", 
+                            chave: "footer-settings", 
+                            texto: "Configurações" 
+                        }
                     ])}
                     ${gerarColunaRodape("footer-col-legal", "Legal", [
-                        { href: rotas.privacidade, icone: "fa-shield-halved", chave: "footer-privacy", texto: "Privacidade" },
-                        { href: rotas.licenca, icone: "fa-scale-balanced", chave: "footer-license", texto: "Licença" }
+                        { 
+                            href: rotas.privacidade, 
+                            icone: "fa-shield-halved", 
+                            chave: "footer-privacy", 
+                            texto: "Privacidade" 
+                        },
+                        { 
+                            href: rotas.licenca, 
+                            icone: "fa-scale-balanced", 
+                            chave: "footer-license", 
+                            texto: "Licença" 
+                        }
                     ])}
                 </div>
 
@@ -309,20 +377,23 @@ function renderizarRodape() {
             </div>`;
 }
 
-// --- FAVICON EMBUTIDO (EVITA 404 DE /favicon.ico) ---
+// --- FAVICON EMBUTIDO ---
 function inserirIconeSite() {
     if (document.querySelector('link[rel~="icon"]')) {
         return;
     }
     const imagemVetorialIcone = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a5632'/><circle cx='32' cy='32' r='18' fill='%23fff'/><path d='M32 20l8 6-3 10h-10l-3-10z' fill='%2307190f'/><rect x='38' y='40' width='22' height='18' rx='5' fill='%23b4f03c'/><text x='49' y='54' font-family='Arial' font-weight='900' font-size='13' text-anchor='middle' fill='%230b2618'>11</text></svg>";
     const ligacaoIconeSite = document.createElement("link");
+    
     ligacaoIconeSite.rel = "icon";
     ligacaoIconeSite.href = `data:image/svg+xml,${imagemVetorialIcone}`;
+    
     document.head.appendChild(ligacaoIconeSite);
 }
 
 inserirIconeSite();
 
+// --- INICIALIZAÇÃO DO CABEÇALHO E RODAPÉ ---
 document.addEventListener("DOMContentLoaded", () => {
     renderizarCabecalho();
     renderizarRodape();

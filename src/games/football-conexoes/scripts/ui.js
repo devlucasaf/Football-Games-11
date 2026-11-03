@@ -1,5 +1,5 @@
-import { estado } from "./core.js";
-import { embaralharJogadores } from "./data.js";
+import { estado }               from "./core.js";
+import { embaralharJogadores }  from "./data.js";
 
 // --- RENDERIZAR GRID DE JOGADORES ---
 export function renderizarGradeJogadores() {

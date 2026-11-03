@@ -1,5 +1,5 @@
 import { carregarDados, escolherRodada }        from "./data.js";
-import { criarCartoesJogadores }                 from "./game.js";
+import { criarCartoesJogadores }                from "./game.js";
 import { atualizarPlacar, esconderResultado }   from "./ui.js";
 
 // --- PRÓXIMA RODADA ---

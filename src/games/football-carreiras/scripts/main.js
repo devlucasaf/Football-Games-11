@@ -1,7 +1,7 @@
-import { carregarDados, escolherJogador } from "./data.js";
-import { criarGradeClubesCarreira } from "./grid.js";
-import { esconderResultado, esconderSugestoes, mostrarSugestoes } from "./ui.js";
-import { tratarPalpite, pularRodadaCarreira } from "./logic.js";
+import { carregarDados, escolherJogador }                           from "./data.js";
+import { criarGradeClubesCarreira }                                 from "./grid.js";
+import { esconderResultado, esconderSugestoes, mostrarSugestoes }   from "./ui.js";
+import { tratarPalpite, pularRodadaCarreira }                       from "./logic.js";
 
 // -- NOVO JOGO ---
 function novoJogo() {

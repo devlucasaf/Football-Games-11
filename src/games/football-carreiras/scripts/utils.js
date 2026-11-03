@@ -1,3 +1,4 @@
+// --- FUNÇÕES UTILITÁRIAS ---
 export function normalizar(texto) {
     return (texto ?? "")
         .normalize("NFD")

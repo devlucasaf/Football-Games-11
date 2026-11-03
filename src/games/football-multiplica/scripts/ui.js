@@ -1,32 +1,33 @@
-import { estado } from "./core.js";
+import { estado }   from "./core.js";
 import { nomeTipo } from "./data.js";
 
+// --- ELEMENTOS DA MULTIPLICAÇÃO ---
 const elementosMultiplicacao = {
     desafioTema:            document.getElementById("desafioTema"),
     metaValor:              document.getElementById("metaValor"),
     rodadaAtual:            document.getElementById("rodadaAtual"),
     rodadaTotal:            document.getElementById("rodadaTotal"),
     totalAcumulado:         document.getElementById("totalAcumulado"),
-    preenchimentoProgresso:           document.getElementById("progressFill"),
-    rotuloProgresso:          document.getElementById("progressLabel"),
+    preenchimentoProgresso: document.getElementById("progressFill"),
+    rotuloProgresso:        document.getElementById("progressLabel"),
     jogadorNome:            document.getElementById("jogadorNome"),
-    estatisticasJogador:           document.getElementById("jogadorStats"),
-    rotuloValor:             document.getElementById("valorLabel"),
+    estatisticasJogador:    document.getElementById("jogadorStats"),
+    rotuloValor:            document.getElementById("valorLabel"),
     valorNumero:            document.getElementById("valorNumero"),
-    cartaoJogador:            document.getElementById("jogadorCard"),
-    gradeMultiplicadores:    document.getElementById("multiplicadoresGrid"),
+    cartaoJogador:          document.getElementById("jogadorCard"),
+    gradeMultiplicadores:   document.getElementById("multiplicadoresGrid"),
     multiplicacaoResultado: document.getElementById("multiplicacaoResultado"),
     resultadoCalculo:       document.getElementById("resultadoCalculo"),
-    resultadoFinal:            document.getElementById("finalResult"),
-    iconeResultado:             document.getElementById("resultIcon"),
-    tituloResultado:            document.getElementById("resultTitle"),
-    textoResultado:             document.getElementById("resultText"),
-    detalhesResultado:          document.getElementById("resultDetails"),
-    informacoesJogo:               document.getElementById("gameInfo"),
-    btnPularJogador:               document.getElementById("btnPularJogador"),
+    resultadoFinal:         document.getElementById("finalResult"),
+    iconeResultado:         document.getElementById("resultIcon"),
+    tituloResultado:        document.getElementById("resultTitle"),
+    textoResultado:         document.getElementById("resultText"),
+    detalhesResultado:      document.getElementById("resultDetails"),
+    informacoesJogo:        document.getElementById("gameInfo"),
+    btnPularJogador:        document.getElementById("btnPularJogador"),
     pulosRestantes:         document.getElementById("pulosRestantes"),
-    informacoesPulos:              document.getElementById("pulosInfo"),
-    secaoPularJogador:            document.getElementById("skipSection")
+    informacoesPulos:       document.getElementById("pulosInfo"),
+    secaoPularJogador:      document.getElementById("skipSection")
 };
 
 // --- FORMATAR NÚMERO ---
@@ -74,16 +75,56 @@ export function exibirJogador(jogador, valorTipo) {
     const tipoNome = nomeTipo(estatistica);
 
     const definicoesEstatisticas = [
-        { chave: "gols",            icone: "fa-futbol",         label: "Gols"     },
-        { chave: "titulos",         icone: "fa-trophy",         label: "Títulos"  },
-        { chave: "assistencias",    icone: "fa-hands-helping",  label: "Assist."  },
-        { chave: "copas",           icone: "fa-trophy",         label: "Copas"    },
-        { chave: "quantidadeCopas", icone: "fa-globe",          label: "Copas"    },
-        { chave: "champions",       icone: "fa-star",           label: "UCL"      },
-        { chave: "libertadores",    icone: "fa-award",          label: "Liberta." },
-        { chave: "bolasDeOuro",     icone: "fa-medal",          label: "B. Ouro"  },
-        { chave: "brasileirao",     icone: "fa-shield-alt",     label: "BR"       },
-        { chave: "premierLeague",   icone: "fa-shield-alt",     label: "PL"       }
+        { 
+            chave: "gols",            
+            icone: "fa-futbol",         
+            label: "Gols"     
+        },
+        { 
+            chave: "titulos",         
+            icone: "fa-trophy",         
+            label: "Títulos"  
+        },
+        { 
+            chave: "assistencias",    
+            icone: "fa-hands-helping",  
+            label: "Assist."  
+        },
+        { 
+            chave: "copas",           
+            icone: "fa-trophy",         
+            label: "Copas"    
+        },
+        { 
+            chave: "quantidadeCopas", 
+            icone: "fa-globe",          
+            label: "Copas"    
+        },
+        { 
+            chave: "champions",       
+            icone: "fa-star",           
+            label: "UCL"      
+        },
+        { 
+            chave: "libertadores",    
+            icone: "fa-award",          
+            label: "Liberta." 
+        },
+        { 
+            chave: "bolasDeOuro",     
+            icone: "fa-medal",          
+            label: "B. Ouro"  
+        },
+        { 
+            chave: "brasileirao",     
+            icone: "fa-shield-alt",     
+            label: "BR"       
+        },
+        { 
+            chave: "premierLeague",   
+            icone: "fa-shield-alt",     
+            label: "PL"       
+        }
     ];
 
     elementosMultiplicacao.estatisticasJogador.innerHTML = "";

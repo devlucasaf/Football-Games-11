@@ -5,13 +5,13 @@ document.documentElement.setAttribute("data-font-size", localStorage.getItem("fg
 // --- TEXTO TRADUZIDO PARA CONTEÚDO GERADO VIA JS ---
 function fg11Texto(chave, padrao) {
     const lingua = localStorage.getItem("preferredLanguage") || "traducoes";
-    const linguas = window.translations || {};
+    const linguas = window.traducoesIdiomas || {};
     return (linguas[lingua] && linguas[lingua][chave]) || padrao;
 }
 
 // --- BOTÕES DE TEMA ---
 function obterBotoesTema() {
-    return document.querySelectorAll("#themeToggle, [data-theme-toggle]");
+    return document.querySelectorAll("#btnAlternarTema, [data-theme-toggle]");
 }
 
 // --- APLICA O TEMA SALVO ---
@@ -33,7 +33,7 @@ function inicializarAlternadorTema() {
 
             localStorage.setItem("theme", novoTema);
 
-            obterBotoesTema().forEach(btnTema => atualizarIconeTema(novoTema, btnTema.querySelector("i")));
+            obterBotoesTema().forEach(btnAlternarTemaPagina => atualizarIconeTema(novoTema, btnAlternarTemaPagina.querySelector("i")));
 
             const icone = btnAlternarTema.querySelector("i");
             if (icone) {
@@ -67,12 +67,12 @@ function atualizarIconeTema(tema, elementoIcone) {
 function aplicarIdiomaSalvo() {
     const idiomaSalvo = localStorage.getItem("preferredLanguage") || "traducoes";
 
-    if (window.applyTranslation) {
-        window.applyTranslation(idiomaSalvo);
+    if (window.aplicarTraducao) {
+        window.aplicarTraducao(idiomaSalvo);
     } else {
         setTimeout(() => {
-            if (window.applyTranslation) {
-                window.applyTranslation(idiomaSalvo);
+            if (window.aplicarTraducao) {
+                window.aplicarTraducao(idiomaSalvo);
             }
         }, 100);
     }
@@ -82,8 +82,8 @@ function aplicarIdiomaSalvo() {
 
 // --- SELETOR DE IDIOMA ---
 function inicializarSeletorIdioma() {
-    const btnAlternarMenuIdiomas = document.getElementById("languageToggle");
-    const menuIdiomas = document.getElementById("languageDropdown");
+    const btnAlternarMenuIdiomas = document.getElementById("btnAlternarIdioma");
+    const menuIdiomas = document.getElementById("menuIdiomas");
     const opcoesIdioma = document.querySelectorAll(".language-option");
 
     if (!btnAlternarMenuIdiomas || !menuIdiomas) {
@@ -117,13 +117,13 @@ function inicializarSeletorIdioma() {
 function selecionarIdioma(idioma) {
     atualizarExibicaoIdioma(idioma);
     
-    if (window.applyTranslation) {
-        window.applyTranslation(idioma);
+    if (window.aplicarTraducao) {
+        window.aplicarTraducao(idioma);
     } else {
         console.warn("Função de tradução não está disponível ainda");
         setTimeout(() => {
-            if (window.applyTranslation) {
-                window.applyTranslation(idioma);
+            if (window.aplicarTraducao) {
+                window.aplicarTraducao(idioma);
             }
         }, 100);
     }
@@ -133,7 +133,7 @@ function selecionarIdioma(idioma) {
 
 // --- ATUALIZA A BANDEIRA E A OPÇÃO ATIVA ---
 function atualizarExibicaoIdioma(idioma) {
-    const bandeiraIdiomaAtual = document.getElementById("currentLanguageFlag");
+    const bandeiraIdiomaAtual = document.getElementById("bandeiraIdiomaAtual");
     const opcoesIdioma = document.querySelectorAll(".language-option");
 
     opcoesIdioma.forEach(opcao => {
@@ -160,9 +160,9 @@ function aplicarAcessibilidadeSalva() {
 
 // --- BUSCA DE JOGOS NO CABEÇALHO ---
 function inicializarBuscaJogos() {
-    const recipienteBusca = document.getElementById("headerSearch");
-    const btnAlternarBuscaJogos = document.getElementById("btnSearchGames");
-    const campoBusca = document.getElementById("searchGamesInput");
+    const recipienteBusca = document.getElementById("recipienteBuscaJogos");
+    const btnAlternarBuscaJogos = document.getElementById("btnBuscarJogos");
+    const campoBusca = document.getElementById("campoBuscaJogos");
 
     if (!recipienteBusca || !btnAlternarBuscaJogos || !campoBusca) {
         return;
@@ -246,18 +246,19 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarTransicoesPagina();
 });
 
+// --- BOTÃO FOOTBALL GRID ---
 document.getElementById("btn-football-grid")?.addEventListener("click", function() {
     window.location.href = "src/games/football-grid/football-grid.html";
 });
 
 // --- ABRE O MODAL DE SELEÇÃO DE TIME ---
 function abrirSelecaoTime() {
-    document.getElementById("timeModal").style.display = "flex";
+    document.getElementById("modalSelecaoTime").style.display = "flex";
 }
 
 // --- FECHA O MODAL ---
 function fecharModal() {
-    document.getElementById("timeModal").style.display = "none";
+    document.getElementById("modalSelecaoTime").style.display = "none";
 }
 
 // --- INICIA O GRID NO MODO ESCOLHIDO ---
@@ -267,7 +268,7 @@ function iniciarJogo(modo) {
 
 // --- FECHA O MODAL AO CLICAR FORA ---
 window.onclick = function(evento) {
-    const modal = document.getElementById("timeModal");
+    const modal = document.getElementById("modalSelecaoTime");
     if (modal && evento.target == modal) {
         fecharModal();
     }
@@ -275,7 +276,7 @@ window.onclick = function(evento) {
 
 // --- SISTEMA DE TUTORIAL ---
 function inicializarTutorial() {
-    const tutorial = document.getElementById("tutorialOverlay");
+    const tutorial = document.getElementById("sobreposicaoTutorial");
     if (!tutorial) {
         return;
     }
@@ -285,11 +286,12 @@ function inicializarTutorial() {
         return;
     }
 
-    const chave = `tutorial_oculto_${identificadorJogo}`;
+    const chavePreferenciaTutorial = `tutorial_oculto_${identificadorJogo}`;
+    const chavePreferenciaTutorialLegada = `tutorial_skip_${identificadorJogo}`;
 
-    const btnIniciarPartida = document.getElementById("tutorialStartBtn");
-    const btnNaoMostrarTutorialNovamente = document.getElementById("tutorialSkipBtn");
-    const btnAbrirTutorial = document.getElementById("tutorialHelpBtn");
+    const btnIniciarPartida = document.getElementById("btnIniciarJogoTutorial");
+    const btnNaoMostrarTutorialNovamente = document.getElementById("btnOcultarTutorial");
+    const btnAbrirTutorial = document.getElementById("btnAbrirTutorial");
 
     // --- SEMÂNTICA DE DIÁLOGO PARA LEITORES DE TELA ---
     const caixa = tutorial.querySelector(".tutorial-box");
@@ -317,7 +319,7 @@ function inicializarTutorial() {
 
     // --- NÃO MOSTRAR NOVAMENTE ---
     function ocultarTutorialNasProximasVisitas() {
-        localStorage.setItem(chave, "true");
+        localStorage.setItem(chavePreferenciaTutorial, "true");
         fecharTutorial();
     }
 
@@ -338,7 +340,7 @@ function inicializarTutorial() {
         }
     });
 
-    if (localStorage.getItem(chave)) {
+    if (localStorage.getItem(chavePreferenciaTutorial) || localStorage.getItem(chavePreferenciaTutorialLegada)) {
         tutorial.classList.add("hidden");
     } else {
         tutorial.classList.remove("hidden");
@@ -346,6 +348,7 @@ function inicializarTutorial() {
     }
 }
 
+// --- BOTÃO FOOTBALL GRID ---
 document.addEventListener("DOMContentLoaded", () => {
     inicializarTutorial();
 });

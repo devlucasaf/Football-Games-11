@@ -1,22 +1,34 @@
-import { estado } from "./core.js";
-import { carregarDados, escolherJogador } from "./data.js";
+import { estado }                           from "./core.js";
+import { carregarDados, escolherJogador }   from "./data.js";
 
-const ALFABETO = ["ABCDEFGHI", "JKLMNOPQR", "STUVWXYZ"];
-const PARTES = ["p-cabeca", "p-tronco", "p-braco-e", "p-braco-d", "p-perna-e", "p-perna-d"];
+const ALFABETO = [
+    "ABCDEFGHI", 
+    "JKLMNOPQR", 
+    "STUVWXYZ"
+];
+
+const PARTES = [
+    "p-cabeca", 
+    "p-tronco", 
+    "p-braco-e", 
+    "p-braco-d", 
+    "p-perna-e", 
+    "p-perna-d"
+];
 
 const elementosForca = {
-    palavra:        document.getElementById("palavra"),
-    teclado:        document.getElementById("teclado"),
-    dica:           document.getElementById("dica"),
-    quantidadeErros:     document.getElementById("errosCount"),
-    letrasErradas:  document.getElementById("letrasErradas"),
-    acertos:        document.getElementById("acertos"),
-    sequencia:      document.getElementById("sequencia"),
-    areaJogo:       document.getElementById("gameArea"),
+    palavra:            document.getElementById("palavra"),
+    teclado:            document.getElementById("teclado"),
+    dica:               document.getElementById("dica"),
+    quantidadeErros:    document.getElementById("errosCount"),
+    letrasErradas:      document.getElementById("letrasErradas"),
+    acertos:            document.getElementById("acertos"),
+    sequencia:          document.getElementById("sequencia"),
+    areaJogo:           document.getElementById("gameArea"),
     resultadoRodada:    document.getElementById("roundResult"),
-    iconeRodada:      document.getElementById("roundIcon"),
-    textoRodada:      document.getElementById("roundText"),
-    respostaRodada:    document.getElementById("roundAnswer")
+    iconeRodada:        document.getElementById("roundIcon"),
+    textoRodada:        document.getElementById("roundText"),
+    respostaRodada:     document.getElementById("roundAnswer")
 };
 
 // --- MONTA O TECLADO VIRTUAL ---
@@ -47,6 +59,7 @@ function renderizarPalavra() {
             elementosForca.palavra.appendChild(espaco);
             return;
         }
+        
         const espacoLetra = document.createElement("span");
         espacoLetra.className = "letra-slot";
         if (estado.reveladas.has(caractere)) {
@@ -172,7 +185,11 @@ function verificarDerrota() {
     mostrarResultado(false);
 
     if (window.FG11Stats) {
-        window.FG11Stats.registrar("football-forca", { venceu: false, tamanho: estado.maximoErros });
+        window.FG11Stats.registrar("football-forca", { 
+            venceu: false, 
+            tamanho: estado.maximoErros 
+        });
+
         window.FG11Stats.mostrarModal("football-forca", {
             venceu: false,
             titulo: "Enforcado! Fim da linha.",
@@ -228,7 +245,7 @@ async function inicializarJogoForca() {
     });
 
     document.addEventListener("keydown", (evento) => {
-        const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+        const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
         if (sobreposicaoTutorial && !sobreposicaoTutorial.classList.contains("hidden")) {
             return;
         }

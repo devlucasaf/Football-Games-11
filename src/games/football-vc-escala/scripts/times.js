@@ -105,7 +105,7 @@ const EscalaTimes = {
 
     // --- CONFIGURA TODOS OS EVENTOS DE INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
-        const botaoTema = document.getElementById("themeToggle");
+        const botaoTema = document.getElementById("btnAlternarTema");
         if (botaoTema) {
             botaoTema.addEventListener("click", EscalaUtilitarios.alternarTema);
         }

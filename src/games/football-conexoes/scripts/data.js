@@ -1,5 +1,6 @@
 import { estado } from "./core.js";
 
+// --- CARREGAR DADOS DO PUZZLE ---
 export async function carregarDados() {
     const respostaCarregamento = await fetch("data/football-conexoes.json");
     const dadosDesafios = await respostaCarregamento.json();

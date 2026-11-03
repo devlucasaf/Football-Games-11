@@ -1,3 +1,4 @@
+// --- SCRIPT DE INICIALIZAÇÃO DA PÁGINA INICIAL ---
 (function () {
     const catalogo = window.FG11Catalogo;
     const perfil = window.FG11Perfil;
@@ -6,10 +7,10 @@
     }
 
     const estado = { categoria: "todas", termo: "" };
-    const resumo = perfil.resumo();
-    const estatisticasPorJogo = new Map(resumo.jogos.map(item => [item.jogo.id, item]));
+    const resumo = perfil.obterResumoPerfil();
+    const estatisticasPorJogo = new Map(resumo.jogos.map(resultadoJogo => [resultadoJogo.jogo.id, resultadoJogo]));
 
-    const grade = document.getElementById("gamesGrid");
+    const grade = document.getElementById("gradeJogos");
     const gradeDestaques = document.getElementById("gradeDestaques");
     const filtros = document.getElementById("filtrosCategoria");
     const busca = document.getElementById("buscaCatalogo");
@@ -52,7 +53,7 @@
                     <strong>${estatisticasJogo.derrotas}</strong>
                     <span data-key="ranking-losses-short">D</span>
                 </span>
-                <span class="gcard-rate" title="Aproveitamento">${perfil.porcentagem(estatisticasJogo.aproveitamento)}</span>
+                <span class="gcard-rate" title="Aproveitamento">${perfil.formatarPorcentagem(estatisticasJogo.aproveitamento)}</span>
                 <span class="gcard-meter" aria-hidden="true">
                     <span style="width:${Math.round(estatisticasJogo.aproveitamento * 100)}%"></span>
                 </span>
@@ -62,7 +63,7 @@
     // --- CARD DE JOGO ---
     function gerarMarcacaoCartaoJogo(jogo, indice, opcoes = {}) {
         const categoria = catalogo.categorias[jogo.categoria];
-        const identificadorTitulo = `${opcoes.prefixo || "g"}-${jogo.id}`;
+        const identificadorTitulo = `${opcoes.prefixo || "titulo-jogo"}-${jogo.id}`;
         const numero = String(indice + 1).padStart(2, "0");
 
         return `
@@ -75,10 +76,10 @@
                 <div class="gcard-body">
                     <span class="gcard-cat">
                         <i class="fas ${categoria.icone}" aria-hidden="true"></i>
-                        <span data-key="${categoria.rotuloKey}">${categoria.rotulo}</span>
+                        <span data-key="${categoria.chaveTraducaoRotulo}">${categoria.rotulo}</span>
                     </span>
-                    <h3 class="gcard-title" id="${identificadorTitulo}" data-key="${jogo.tituloKey}">${jogo.titulo}</h3>
-                    <p class="gcard-desc" data-key="${jogo.descKey}">${jogo.desc}</p>
+                    <h3 class="gcard-title" id="${identificadorTitulo}" data-key="${jogo.chaveTraducaoTitulo}">${jogo.titulo}</h3>
+                    <p class="gcard-desc" data-key="${jogo.chaveTraducaoDescricao}">${jogo.descricao}</p>
                     ${gerarMarcacaoPlacarJogo(jogo)}
                     <a class="btn gcard-cta" href="${jogo.pagina}" data-jogo="${jogo.id}">
                         <i class="fas fa-play" aria-hidden="true"></i>
@@ -105,7 +106,7 @@
         filtros.innerHTML =
             gerarMarcacaoFiltroCategoria("todas", "cat-all", "Todos", "fa-border-all", catalogo.jogos.length) +
             Object.entries(catalogo.categorias)
-                .map(([identificadorCategoria, categoria]) => gerarMarcacaoFiltroCategoria(identificadorCategoria, categoria.rotuloKey, categoria.rotulo, categoria.icone, contagens[identificadorCategoria] || 0))
+                .map(([identificadorCategoria, categoria]) => gerarMarcacaoFiltroCategoria(identificadorCategoria, categoria.chaveTraducaoRotulo, categoria.rotulo, categoria.icone, contagens[identificadorCategoria] || 0))
                 .join("");
     }
 
@@ -136,6 +137,7 @@
         });
     }
 
+    // --- DEFINE O TERMO DE BUSCA ---
     function definirTermoBusca(termo) {
         estado.termo = termo;
         if (busca.value !== termo) {
@@ -159,8 +161,8 @@
                     <a class="quick-item" href="${jogo.pagina}" data-jogo="${jogo.id}" data-cat="${jogo.categoria}">
                         <span class="quick-icon" aria-hidden="true"><i class="fas ${jogo.icone}"></i></span>
                         <span class="quick-text">
-                            <strong data-key="${jogo.tituloKey}">${jogo.titulo}</strong>
-                            <small data-key="${categoria.rotuloKey}">${categoria.rotulo}</small>
+                            <strong data-key="${jogo.chaveTraducaoTitulo}">${jogo.titulo}</strong>
+                            <small data-key="${categoria.chaveTraducaoRotulo}">${categoria.rotulo}</small>
                         </span>
                         <span class="quick-play" aria-hidden="true"><i class="fas fa-play"></i></span>
                     </a>
@@ -179,10 +181,10 @@
         };
 
         definirValorIndicador("heroPartidas", resumo.partidas);
-        definirValorIndicador("heroAproveitamento", perfil.porcentagem(resumo.aproveitamento));
+        definirValorIndicador("heroAproveitamento", perfil.formatarPorcentagem(resumo.aproveitamento));
         definirValorIndicador("heroExplorados", resumo.jogosDiferentes);
         definirValorIndicador("heroTotal", resumo.totalJogos);
-        definirValorIndicador("heroOvr", resumo.ovr);
+        definirValorIndicador("pontuacaoGeralDestaque", resumo.avaliacaoGeral);
 
         const nivel = document.getElementById("heroNivel");
         if (nivel) {
@@ -200,15 +202,15 @@
         const classificacaoJogos = document.getElementById("rankingResumo");
 
         if (carta) {
-            carta.innerHTML = perfil.htmlCarta(resumo);
+            carta.innerHTML = perfil.gerarMarcacaoCartaJogador(resumo);
         }
 
         if (progresso) {
-            progresso.innerHTML = perfil.htmlProgressoNivel(resumo);
+            progresso.innerHTML = perfil.gerarMarcacaoProgressoNivel(resumo);
         }
         
         if (classificacaoJogos) {
-            classificacaoJogos.innerHTML = perfil.htmlRanking(resumo, 5, "");
+            classificacaoJogos.innerHTML = perfil.gerarMarcacaoClassificacaoJogos(resumo, 5, "");
         }
     }
 
@@ -258,7 +260,7 @@
 
     // --- RENDERIZAÇÃO INICIAL ---
     const destaques = catalogo.jogos.filter(jogo => jogo.destaque);
-    gradeDestaques.innerHTML = destaques.map((jogo, indiceJogo) => gerarMarcacaoCartaoJogo(jogo, indiceJogo, { destaque: true, prefixo: "d" })).join("");
+    gradeDestaques.innerHTML = destaques.map((jogo, indiceJogo) => gerarMarcacaoCartaoJogo(jogo, indiceJogo, { destaque: true, prefixo: "titulo-jogo-destaque" })).join("");
     grade.innerHTML = catalogo.jogos.map((jogo, indiceJogo) => gerarMarcacaoCartaoJogo(jogo, indiceJogo)).join("");
 
     renderizarFiltrosCategorias();

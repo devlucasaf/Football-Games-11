@@ -2,22 +2,22 @@ import estado from "./core.js";
 import { carregarDados, sortearGols, verificarResposta, obterNomesUnicos, normalizarNomeJogador } from "./data.js";
 
 const elementosGols = {
-    rodadaAtual:        document.getElementById("rodadaAtual"),
-    acertos:            document.getElementById("acertos"),
-    tentativas:         document.getElementById("tentativas"),
-    listaDicas:          document.getElementById("dicasList"),
-    campoPalpite:       document.getElementById("palpiteInput"),
-    listaSugestoesJogadores:   document.getElementById("autocompleteList"),
-    mensagemPalpite:      document.getElementById("guessFeedback"),
-    areaJogo:           document.getElementById("gameArea"),
-    resultadoRodada:        document.getElementById("roundResult"),
-    iconeRodada:          document.getElementById("roundIcon"),
-    textoRodada:          document.getElementById("roundText"),
-    respostaRodada:        document.getElementById("roundAnswer"),
-    resultadoFinal:        document.getElementById("finalResult"),
-    pontosFinais:        document.getElementById("finalPoints"),
-    detalhesResultadoFinal:       document.getElementById("finalDetails"),
-    informacoesJogo:           document.getElementById("gameInfo")
+    rodadaAtual:                document.getElementById("rodadaAtual"),
+    acertos:                    document.getElementById("acertos"),
+    tentativas:                 document.getElementById("tentativas"),
+    listaDicas:                 document.getElementById("dicasList"),
+    campoPalpite:               document.getElementById("palpiteInput"),
+    listaSugestoesJogadores:    document.getElementById("autocompleteList"),
+    mensagemPalpite:            document.getElementById("guessFeedback"),
+    areaJogo:                   document.getElementById("gameArea"),
+    resultadoRodada:            document.getElementById("roundResult"),
+    iconeRodada:                document.getElementById("roundIcon"),
+    textoRodada:                document.getElementById("roundText"),
+    respostaRodada:             document.getElementById("roundAnswer"),
+    resultadoFinal:             document.getElementById("finalResult"),
+    pontosFinais:               document.getElementById("finalPoints"),
+    detalhesResultadoFinal:     document.getElementById("finalDetails"),
+    informacoesJogo:            document.getElementById("gameInfo")
 };
 
 let nomes = [];
@@ -279,18 +279,19 @@ async function inicializarJogoGols() {
         window.location.href = "../../../index.html";
     });
 
-    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
     const chaveDispensaTutorial = "tutorial_skip_football-gol-a-gol";
 
     if (localStorage.getItem(chaveDispensaTutorial)) {
         sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+        
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
             localStorage.setItem(chaveDispensaTutorial, "true");
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();

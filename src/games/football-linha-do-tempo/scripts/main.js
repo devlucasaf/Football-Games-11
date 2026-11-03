@@ -74,18 +74,18 @@ async function inicializarLinhaTempo() {
         window.location.href = "../../../index.html";
     });
 
-    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
     const chaveDispensaTutorial = "tutorial_skip_football-linha-do-tempo";
 
     if (localStorage.getItem(chaveDispensaTutorial)) {
         sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
             localStorage.setItem(chaveDispensaTutorial, "true");
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();

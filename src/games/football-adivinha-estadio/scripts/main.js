@@ -299,36 +299,36 @@ async function inicializarJogoAdivinhaEstadio() {
         window.location.href = "../../../index.html";
     });
 
-    document.getElementById("guessInput").addEventListener("keydown", (e) => {
+    document.getElementById("guessInput").addEventListener("keydown", (eventoTeclado) => {
         const itens = [...elementosInterface.suggestions.querySelectorAll(".suggestion-item")];
 
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
+        if (eventoTeclado.key === "ArrowDown") {
+            eventoTeclado.preventDefault();
             if (itens.length) {
                 sugestaoAtiva = (sugestaoAtiva + 1) % itens.length;
                 atualizarSugestaoAtiva(itens);
             }
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
+        } else if (eventoTeclado.key === "ArrowUp") {
+            eventoTeclado.preventDefault();
             if (itens.length) {
                 sugestaoAtiva = (sugestaoAtiva - 1 + itens.length) % itens.length;
                 atualizarSugestaoAtiva(itens);
             }
-        } else if (e.key === "Enter") {
+        } else if (eventoTeclado.key === "Enter") {
             if (sugestaoAtiva >= 0 && itens[sugestaoAtiva]) {
                 selecionarSugestao(itens[sugestaoAtiva].querySelector("span").textContent);
             } else {
                 verificarPalpite();
             }
-        } else if (e.key === "Escape") {
+        } else if (eventoTeclado.key === "Escape") {
             esconderSugestoes();
         }
     });
 
     elementosInterface.campoPalpite.addEventListener("input", renderizarSugestoes);
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".input-autocomplete")) {
+    document.addEventListener("click", (eventoClique) => {
+        if (!eventoClique.target.closest(".input-autocomplete")) {
             esconderSugestoes();
         }
     });

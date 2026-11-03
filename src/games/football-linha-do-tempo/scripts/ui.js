@@ -1,18 +1,19 @@
 import { estado } from "./core.js";
 
+// --- ELEMENTOS DA LINHA DO TEMPO ---
 const elementosLinhaTempo = {
-    rodadaAtual:    document.getElementById("rodadaAtual"),
-    pontos:         document.getElementById("pontos"),
-    tema:           document.getElementById("tema"),
-    listaEventos:   document.getElementById("timelineList"),
-    cartaoLinhaTempo:   document.getElementById("timelineCard"),
-    resultadoRodada:    document.getElementById("roundResult"),
-    pontuacaoRodada:     document.getElementById("roundScore"),
-    ordemCorretaRodada:   document.getElementById("roundCorrect"),
-    resultadoFinal:    document.getElementById("finalResult"),
-    pontosFinais:    document.getElementById("finalPoints"),
-    detalhesResultadoFinal:   document.getElementById("finalDetails"),
-    informacoesJogo:       document.getElementById("gameInfo")
+    rodadaAtual:            document.getElementById("rodadaAtual"),
+    pontos:                 document.getElementById("pontos"),
+    tema:                   document.getElementById("tema"),
+    listaEventos:           document.getElementById("timelineList"),
+    cartaoLinhaTempo:       document.getElementById("timelineCard"),
+    resultadoRodada:        document.getElementById("roundResult"),
+    pontuacaoRodada:        document.getElementById("roundScore"),
+    ordemCorretaRodada:     document.getElementById("roundCorrect"),
+    resultadoFinal:         document.getElementById("finalResult"),
+    pontosFinais:           document.getElementById("finalPoints"),
+    detalhesResultadoFinal: document.getElementById("finalDetails"),
+    informacoesJogo:        document.getElementById("gameInfo")
 };
 
 let eventoArrastado = null;
@@ -22,6 +23,7 @@ export function renderizarLista() {
     elementosLinhaTempo.listaEventos.innerHTML = "";
     estado.ordemAtual.forEach((evento, indiceEvento) => {
         const item = document.createElement("div");
+        
         item.className = "timeline-item";
         item.draggable = true;
         item.dataset.indiceEvento = indiceEvento;
@@ -170,7 +172,7 @@ export function mostrarFinal() {
         }
     }
 
-    elementosLinhaTempo.detalhesResultadoFinal.innerHTMmensagemResultado `<p>${msg}</p><p>${estado.pontuacaoMaxima}/${maxPts} eventos na posição correta</p>`;
+    elementosLinhaTempo.detalhesResultadoFinal.innerHTML = `<p>${mensagemResultado}</p><p>${estado.pontos}/${pontuacaoMaxima} eventos na posição correta</p>`;
 
     if (window.FG11Stats) {
         const total = estado.totalRodadas;

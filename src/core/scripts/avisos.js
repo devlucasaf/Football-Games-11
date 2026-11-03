@@ -16,7 +16,14 @@
     // --- MOSTRA UM AVISO ---
     function mostrarAviso({ icone = "fa-medal", titulo = "", texto = "", iconeTexto = null, acao = null, duracao = 7000 }) {
         if (!document.body) {
-            document.addEventListener("DOMContentLoaded", () => mostrarAviso({ icone, titulo, texto, iconeTexto, acao, duracao }));
+            document.addEventListener("DOMContentLoaded", () => mostrarAviso({
+                icone,
+                titulo,
+                texto,
+                iconeTexto,
+                acao,
+                duracao
+            }));
             return null;
         }
 
@@ -87,5 +94,5 @@
         }
     }
 
-    window.FG11Avisos = { mostrar: mostrarAviso };
+    window.FG11Avisos = { mostrarAviso, mostrar: mostrarAviso };
 })();

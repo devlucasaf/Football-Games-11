@@ -75,17 +75,18 @@ function iniciarDuelo() {
 async function inicializarDuelo() {
     await carregarDados();
 
-    document.getElementById("cardA").addEventListener("click", () => verificarEscolha("A"));
-    document.getElementById("cardB").addEventListener("click", () => verificarEscolha("B"));
+    document.getElementById("btnEscolherJogadorTimeA").addEventListener("click", () => verificarEscolha("A"));
+    document.getElementById("btnEscolherJogadorTimeB").addEventListener("click", () => verificarEscolha("B"));
     document.getElementById("btnIniciarNovoDuelo").addEventListener("click", () => {
         document.getElementById("finalResult").classList.add("hidden");
         iniciarDuelo();
     });
+    
     document.getElementById("btnVoltarPaginaInicial").addEventListener("click", () => {
         window.location.href = "../../../index.html";
     });
 
-    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
     const chaveJogo = sobreposicaoTutorial?.dataset.game;
     const chaveDispensaTutorial = chaveJogo ? `tutorial_skip_${chaveJogo}` : null;
 
@@ -93,11 +94,11 @@ async function inicializarDuelo() {
         sobreposicaoTutorial.classList.add("hidden");
         iniciarDuelo();
     } else if (sobreposicaoTutorial) {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             sobreposicaoTutorial.classList.add("hidden");
             iniciarDuelo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
             if (chaveDispensaTutorial) {
                 localStorage.setItem(chaveDispensaTutorial, "true");
             }

@@ -1,27 +1,28 @@
-import { estado } from "./core.js";
-import { obterCoordenadasPosicao, obterRotuloPosicao } from "./data.js";
+import { estado }                                       from "./core.js";
+import { obterCoordenadasPosicao, obterRotuloPosicao }  from "./data.js";
 
+// --- ELEMENTOS DO DUELO ---
 const elementosDuelo = {
     posicaoAtual: () => document.getElementById("posicaoAtual"),
-    timeANome:    () => document.getElementById("timeANome"),
-    temporadaTimeA:    () => document.getElementById("timeATemp"),
-    timeAEscudo:  () => document.getElementById("timeAEscudo"),
-    timeBNome:    () => document.getElementById("timeBNome"),
-    temporadaTimeB:    () => document.getElementById("timeBTemp"),
-    timeBEscudo:  () => document.getElementById("timeBEscudo"),
-    escolhaArea:  () => document.getElementById("escolhaArea"),
-    btnEscolherJogadorTimeA:        () => document.getElementById("cardA"),
-    btnEscolherJogadorTimeB:        () => document.getElementById("cardB"),
-    nomeA:        () => document.getElementById("nomeA"),
-    nomeB:        () => document.getElementById("nomeB"),
-    rotuloPosicaoTimeA:    () => document.getElementById("posLabelA"),
-    rotuloPosicaoTimeB:    () => document.getElementById("posLabelB"),
-    escudoA:      () => document.getElementById("escudoA"),
-    escudoB:      () => document.getElementById("escudoB"),
+    timeANome: () => document.getElementById("timeANome"),
+    temporadaTimeA: () => document.getElementById("timeATemp"),
+    timeAEscudo: () => document.getElementById("timeAEscudo"),
+    timeBNome: () => document.getElementById("timeBNome"),
+    temporadaTimeB: () => document.getElementById("timeBTemp"),
+    timeBEscudo: () => document.getElementById("timeBEscudo"),
+    escolhaArea: () => document.getElementById("escolhaArea"),
+    btnEscolherJogadorTimeA: () => document.getElementById("btnEscolherJogadorTimeA"),
+    btnEscolherJogadorTimeB: () => document.getElementById("btnEscolherJogadorTimeB"),
+    nomeA: () => document.getElementById("nomeA"),
+    nomeB: () => document.getElementById("nomeB"),
+    rotuloPosicaoTimeA: () => document.getElementById("posLabelA"),
+    rotuloPosicaoTimeB: () => document.getElementById("posLabelB"),
+    escudoA: () => document.getElementById("escudoA"),
+    escudoB: () => document.getElementById("escudoB"),
     camadaJogadores: () => document.getElementById("playersLayer"),
     recipienteCampo: () => document.querySelector(".field-wrapper"),
-    cabecalhoDuelo:  () => document.getElementById("dueloHeader"),
-    resultadoFinal:  () => document.getElementById("finalResult"),
+    cabecalhoDuelo: () => document.getElementById("dueloHeader"),
+    resultadoFinal: () => document.getElementById("finalResult"),
     detalhesResultadoFinal: () => document.getElementById("finalDetails")
 };
 
@@ -86,6 +87,7 @@ function renderizarCampoVazio() {
 // --- MOSTRAR POSIÇÃO PARA ESCOLHA ---
 export function mostrarEscolha(posicao) {
     const rotuloPosicao = obterRotuloPosicao(posicao.posicao);
+    
     elementosDuelo.posicaoAtual().textContent = `${estado.indicePosicao + 1}/11 — ${rotuloPosicao}`;
     elementosDuelo.nomeA().textContent = posicao.jogadorA;
     elementosDuelo.nomeB().textContent = posicao.jogadorB;
@@ -96,6 +98,7 @@ export function mostrarEscolha(posicao) {
 
     const btnEscolherJogadorTimeA = elementosDuelo.btnEscolherJogadorTimeA();
     const btnEscolherJogadorTimeB = elementosDuelo.btnEscolherJogadorTimeB();
+    
     btnEscolherJogadorTimeA.classList.remove("chosen", "disabled");
     btnEscolherJogadorTimeB.classList.remove("chosen", "disabled");
     btnEscolherJogadorTimeA.disabled = false;
@@ -106,6 +109,7 @@ export function mostrarEscolha(posicao) {
 export function registrarEscolha(escolha) {
     const btnEscolherJogadorTimeA = elementosDuelo.btnEscolherJogadorTimeA();
     const btnEscolherJogadorTimeB = elementosDuelo.btnEscolherJogadorTimeB();
+    
     btnEscolherJogadorTimeA.disabled = true;
     btnEscolherJogadorTimeB.disabled = true;
 
@@ -126,6 +130,7 @@ export function colocarJogadorNoCampo(indicePosicao, nome, escolha) {
     }
 
     const timeClasse = escolha === "A" ? "time-a" : "time-b";
+    
     espacoJogador.classList.add("revealed", timeClasse);
     espacoJogador.querySelector(".player-circle").innerHTML = "<i class=\"fas fa-check\"></i>";
     espacoJogador.querySelector(".player-label").textContent = nome;

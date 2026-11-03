@@ -1,8 +1,8 @@
-import estado from "./core.js";
-import { carregarDados, escolherJogador } from "./data.js";
-import { criarTabuleiroTermo } from "./board.js";
-import { esconderMensagem } from "./ui.js";
-import { configurarEventos } from "./events.js";
+import estado                               from "./core.js";
+import { carregarDados, escolherJogador }   from "./data.js";
+import { criarTabuleiroTermo }              from "./board.js";
+import { esconderMensagem }                 from "./ui.js";
+import { configurarEventos }                from "./events.js";
 
 // --- REINICIALIZAÇÃO COMPLETA DO JOGO ---
 function reiniciarJogo() {

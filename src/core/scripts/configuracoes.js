@@ -22,7 +22,7 @@ function inicializarBotoesIdioma() {
 
 // --- TAMANHO DA FONTE ---
 function inicializarTamanhoFonte() {
-    const grupoTamanhosFonte = document.getElementById("fontSizeGroup");
+    const grupoTamanhosFonte = document.getElementById("grupoTamanhoFonte");
     if (!grupoTamanhosFonte) {
         return;
     }
@@ -51,7 +51,7 @@ function inicializarTamanhoFonte() {
 
 // --- REDUZIR ANIMAÇÕES ---
 function inicializarReducaoAnimacoes() {
-    const alternador = document.getElementById("reduceMotionToggle");
+    const alternador = document.getElementById("alternadorReducaoAnimacoes");
     if (!alternador) {
         return;
     }
@@ -73,8 +73,8 @@ function inicializarReducaoAnimacoes() {
 
 // --- DADOS E PROGRESSO ---
 function inicializarAcoesDados() {
-    const btnReativarTutoriais = document.getElementById("resetTutorialsBtn");
-    const btnLimparDadosSalvos = document.getElementById("clearDataBtn");
+    const btnReativarTutoriais = document.getElementById("btnReativarTutoriais");
+    const btnLimparDadosSalvos = document.getElementById("btnLimparDados");
 
     // --- REATIVAR TUTORIAIS ---
     if (btnReativarTutoriais) {
@@ -82,7 +82,7 @@ function inicializarAcoesDados() {
             const chaves = [];
             for (let indice = 0; indice < localStorage.length; indice++) {
                 const chave = localStorage.key(indice);
-                if (chave && chave.startsWith("tutorial_oculto_")) {
+                if (chave && (chave.startsWith("tutorial_oculto_") || chave.startsWith("tutorial_skip_"))) {
                     chaves.push(chave);
                 }
             }

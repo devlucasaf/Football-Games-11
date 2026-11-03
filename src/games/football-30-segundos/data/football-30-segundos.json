@@ -3,7 +3,13 @@
         {
             "pergunta": "Quantos jogadores brasileiros campeões da Copa do Mundo você lembra?",
             "respostas": [
-                { "nome": "Pelé", "aliases": ["pele", "edson arantes"] },
+                { 
+                    "nome": "Pelé", 
+                    "aliases": [
+                        "pele", 
+                        "edson arantes"
+                    ] 
+                },
                 { "nome": "Garrincha", "aliases": ["garrincha", "mane garrincha"] },
                 { "nome": "Cafu", "aliases": ["cafu"] },
                 { "nome": "Roberto Carlos", "aliases": ["roberto carlos"] },

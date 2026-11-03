@@ -18,9 +18,9 @@ import {
 } from "./ui.js";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DOM ---
-const btnConfirmarPalpite = document.getElementById("confirmarBtn");
-const btnDesistirRodada = document.getElementById("desistirBtn");
-const btnProximaRodada = document.getElementById("proximaRodadaBtn");
+const btnConfirmarPalpite = document.getElementById("btnConfirmarPalpite");
+const btnDesistirRodada = document.getElementById("btnDesistirRodada");
+const btnProximaRodada = document.getElementById("btnAvancarRodada");
 const campoPalpite = document.getElementById("palpiteInput");
 
 // --- INÍCIO DE UMA NOVA RODADA ---

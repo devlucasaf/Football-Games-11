@@ -119,7 +119,7 @@ const LendasTimes = {
 
     // --- CONFIGURAR EVENTOS ---
     configurarEventos() {
-        const btnAlternarTema = document.getElementById("themeToggle");
+        const btnAlternarTema = document.getElementById("btnAlternarTema");
         if (btnAlternarTema) {
             btnAlternarTema.addEventListener("click", LendasUtilitarios.alternarTema);
         }

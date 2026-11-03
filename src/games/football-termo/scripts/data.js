@@ -1,5 +1,5 @@
-import estado           from "./core.js";
-import { normalizarTexto } from "./utils.js";
+import estado               from "./core.js";
+import { normalizarTexto }  from "./utils.js";
 
 // --- CARREGAMENTO DOS DADOS DOS JOGADORES ---
 export async function carregarDados() {

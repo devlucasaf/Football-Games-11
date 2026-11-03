@@ -9,6 +9,7 @@ export const estado = {
     jogadoresRestantes:     []  
 };
 
+// --- REINICIAR ESTADO DO DESAFIO ---
 export function reiniciarEstadoDesafio() {
     estado.selecionados = [];
     estado.gruposAcertados = [];

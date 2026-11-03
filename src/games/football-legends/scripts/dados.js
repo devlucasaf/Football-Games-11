@@ -20,11 +20,11 @@ const LendasDados = {
         this.timesProcessados = [];
 
         const mapaPosicao = {
-            goleiro:    "GK",
-            zagueiro:   "ZAG",
-            lateral:    "LAT",
-            meioCampo:  "MEI",
-            atacante:   "ATA"
+            goleiro: "GK",
+            zagueiro: "ZAG",
+            lateral: "LAT",
+            meioCampo: "MEI",
+            atacante: "ATA"
         };
 
         const criarIdentificadorTexto = (texto) => texto

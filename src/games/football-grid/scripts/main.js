@@ -15,8 +15,8 @@
         GradeJogo.configurarEventos();
 
         // --- TIMER ---
-        const parametrosUrl = new URLSearchParams(window.location.search);
-        const modoTempo = parametrosUrl.get("time") || "unlimited";
+        const parametrosEndereco = new URLSearchParams(window.location.search);
+        const modoTempo = parametrosEndereco.get("time") || "unlimited";
         GradeTemporizador.iniciarTemporizador(modoTempo);
     } catch (erro) {
         console.error(erro);

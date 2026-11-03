@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-placar">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-placar">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-futbol"></i>
@@ -27,11 +27,11 @@
                 </ul>
 
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="placar-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="placar-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="placar-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
                             <span class="team-name" id="visitante"></span>
                         </div>
                     </div>
-                    <button class="btn-confirm" id="btnConfirmar">
+                    <button class="btn-confirm" id="btnConfirmarPalpite">
                         <i class="fas fa-check"></i> 
                         <span data-key="placar-confirm">Confirmar</span>
                     </button>
@@ -91,7 +91,7 @@
                     <div class="feedback-icon" id="feedbackIcon"></div>
                     <div class="feedback-text" id="feedbackText"></div>
                     <div class="feedback-score" id="feedbackScore"></div>
-                    <button class="btn-next" id="btnNext">
+                    <button class="btn-next" id="btnAvancarRodada">
                         <i class="fas fa-arrow-right"></i> 
                         <span data-key="placar-next">Próximo</span>
                     </button>
@@ -110,12 +110,12 @@
 
                     <div class="final-details" id="finalDetails"></div>
                     <div class="final-actions">
-                        <button class="btn-retry" id="btnRetry">
+                        <button class="btn-retry" id="btnReiniciarPartida">
                             <i class="fas fa-redo"></i> 
                             <span data-key="placar-retry">Novo Jogo</span>
                         </button>
                         
-                        <button class="btn-home" id="btnHome">
+                        <button class="btn-home" id="btnVoltarPaginaInicial">
                             <i class="fas fa-home"></i> 
                             <span data-key="placar-home">Menu Principal</span>
                         </button>

@@ -253,11 +253,11 @@
     opacity: 0.7;
 }
 
-#cardA .card-team {
+#btnEscolherJogadorTimeA .card-team {
     color: #2980b9;
 }
 
-#cardB .card-team {
+#btnEscolherJogadorTimeB .card-team {
     color: #c0392b;
 }
 
@@ -690,7 +690,6 @@
     transform: scale(0.96);
 }
 
-/* --- UTILITÁRIOS --- */
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 640px) {
     .duelo-container {
@@ -889,10 +888,10 @@
     color: var(--primary-green);
 }
 
-#cardA:not(:disabled):hover .card-player {
+#btnEscolherJogadorTimeA:not(:disabled):hover .card-player {
     color: #2980b9;
 }
 
-#cardB:not(:disabled):hover .card-player {
+#btnEscolherJogadorTimeB:not(:disabled):hover .card-player {
     color: #c0392b;
 }

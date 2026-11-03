@@ -1,5 +1,5 @@
-import estado from "./core.js";
-import { buscarEscudo } from "./data.js";
+import estado                           from "./core.js";
+import { buscarEscudo }                 from "./data.js";
 import { atualizarInformacoesCarreira } from "./ui.js";
 
 // --- CRIA A GRADE DE CLUBES ---

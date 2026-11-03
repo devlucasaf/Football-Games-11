@@ -5,7 +5,7 @@ const LendasUtilitarios = {
         document.documentElement.setAttribute("data-theme", novoTema);
         localStorage.setItem("theme", novoTema);
 
-        const icone = document.querySelector("#themeToggle i");
+        const icone = document.querySelector("#btnAlternarTema i");
         if (icone) {
             icone.className = novoTema === "dark" ? "fas fa-sun" : "fas fa-moon";
         }
@@ -15,7 +15,7 @@ const LendasUtilitarios = {
         const temaSalvo = localStorage.getItem("theme") || "light";
         document.documentElement.setAttribute("data-theme", temaSalvo);
 
-        const icone = document.querySelector("#themeToggle i");
+        const icone = document.querySelector("#btnAlternarTema i");
         if (icone) {
             icone.className = temaSalvo === "dark" ? "fas fa-sun" : "fas fa-moon";
         }

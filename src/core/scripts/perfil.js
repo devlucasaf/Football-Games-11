@@ -250,7 +250,7 @@
 
     // --- REGISTRA O ACESSO A UM JOGO NA LISTA DE RECENTES ---
     function registrarAcesso(identificadorJogo) {
-        const lista = obterRecentes().filter(item => item !== identificadorJogo);
+        const lista = obterRecentes().filter(identificadorJogoRecente => identificadorJogoRecente !== identificadorJogo);
         lista.unshift(identificadorJogo);
         try {
             localStorage.setItem(CHAVE_RECENTES, JSON.stringify(lista.slice(0, QUANTIDADE_MAXIMA_JOGOS_RECENTES)));
@@ -321,9 +321,9 @@
         }
 
         const jogados = new Set(recentes);
-        jogos.forEach(item => {
-            if (item.partidas > 0) {
-                jogados.add(item.jogo.id);
+        jogos.forEach(resultadoJogo => {
+            if (resultadoJogo.partidas > 0) {
+                jogados.add(resultadoJogo.jogo.id);
             }
         });
         const jogosDiferentes = catalogo.filter(jogo => jogados.has(jogo.id)).length;
@@ -354,8 +354,11 @@
         const avaliacaoGeral = Math.min(99, Math.round(50 + 30 * aproveitamento * confianca + 19 * variedade));
 
         const classificacaoJogos = jogos
-            .filter(item => item.partidas > 0)
-            .sort((primeiroResultado, segundoResultado) => segundoResultado.vitorias - primeiroResultado.vitorias || segundoResultado.aproveitamento - primeiroResultado.aproveitamento || segundoResultado.partidas - primeiroResultado.partidas);
+            .filter(resultadoJogo => resultadoJogo.partidas > 0)
+            .sort((primeiroResultado, segundoResultado) => segundoResultado.vitorias - primeiroResultado.vitorias 
+                || segundoResultado.aproveitamento - primeiroResultado.aproveitamento 
+                || segundoResultado.partidas - primeiroResultado.partidas
+            );
 
         const sequenciaDias = lerDadosArmazenados("fg11_streak", {});
         let diario;
@@ -383,6 +386,9 @@
             const valor = conquista.valor(base);
             return { 
                 ...conquista, 
+                chaveTraducaoTitulo: conquista.tituloKey,
+                chaveTraducaoDescricao: conquista.descKey,
+                descricao: conquista.desc,
                 meta, 
                 valor, 
                 desbloqueada: valor >= meta, 
@@ -396,8 +402,10 @@
             nivel,
             proximo,
             progressoNivel,
-            ovr: avaliacaoGeral,
+            avaliacaoGeral,
+            ovr: avaliacaoGeral, 
             jogos,
+            classificacaoJogos,
             ranking: classificacaoJogos,
             conquistas,
             desbloqueadas: conquistas.filter(conquista => conquista.desbloqueada).length,
@@ -431,6 +439,7 @@
         if (lerConquistasVistas() !== null) {
             return;
         }
+
         try {
             salvarConquistasVistas(obterResumoPerfil().conquistas.filter(conquista => conquista.desbloqueada).map(conquista => conquista.id));
         } catch (erro) {
@@ -455,6 +464,7 @@
             if (!window.FG11Avisos) {
                 return;
             }
+
             const obterTextoConquista = (chave, padrao) => {
                 if (window.fg11Texto) {
                     return window.fg11Texto(chave, padrao);
@@ -462,10 +472,11 @@
                     return padrao;
                 }
             };
-            window.FG11Avisos.mostrar({
+
+            window.FG11Avisos.mostrarAviso({
                 icone: conquista.icone,
-                titulo: `${obterTextoConquista("ach-toast-unlocked", "Conquista desbloqueada!")} ${obterTextoConquista(conquista.tituloKey, conquista.titulo)}`,
-                texto: obterTextoConquista(conquista.descKey, conquista.desc),
+                titulo: `${obterTextoConquista("ach-toast-unlocked", "Conquista desbloqueada!")} ${obterTextoConquista(conquista.chaveTraducaoTitulo, conquista.titulo)}`,
+                texto: obterTextoConquista(conquista.chaveTraducaoDescricao, conquista.descricao),
                 duracao: 8000
             });
         });
@@ -499,7 +510,7 @@
                 <div class="pcard-shine" aria-hidden="true"></div>
                 <div class="pcard-top">
                     <div class="pcard-ovr">
-                        <span class="pcard-ovr-num">${resumoPerfil.ovr}</span>
+                        <span class="pcard-ovr-num">${resumoPerfil.avaliacaoGeral ?? resumoPerfil.ovr}</span>
                         <span class="pcard-ovr-label">OVR</span>
                     </div>
                     <div class="pcard-tier">
@@ -573,7 +584,8 @@
 
     // --- GERA O HTML DO RANKING DE JOGOS ---
     function gerarMarcacaoClassificacaoJogos(resumoPerfil, limite, raiz) {
-        if (resumoPerfil.ranking.length === 0) {
+        const classificacaoJogos = resumoPerfil.classificacaoJogos ?? resumoPerfil.ranking;
+        if (classificacaoJogos.length === 0) {
             return `
                 <div class="empty-state empty-state--compact">
                     <i class="fas fa-ranking-star" aria-hidden="true"></i>
@@ -582,7 +594,7 @@
         }
 
         const medalhas = ["ouro", "prata", "bronze"];
-        const itens = resumoPerfil.ranking.slice(0, limite).map((item, indiceClassificacao) => {
+        const itens = classificacaoJogos.slice(0, limite).map((resultadoJogo, indiceClassificacao) => {
             let classeMedalha = "";
             if (medalhas[indiceClassificacao]) {
                 classeMedalha = ` rank-pos--${medalhas[indiceClassificacao]}`;
@@ -596,10 +608,15 @@
             return `
                 <li class="rank-item">
                     <span class="rank-pos${classeMedalha}">${iconeMedalha}<span>${indiceClassificacao + 1}</span></span>
-                    <span class="rank-icon" data-cat="${item.jogo.categoria}" aria-hidden="true"><i class="fas ${item.jogo.icone}"></i></span>
-                    <a class="rank-name" href="${raiz}${item.jogo.pagina}" data-key="${item.jogo.tituloKey}">${item.jogo.titulo}</a>
-                    <span class="rank-score"><strong>${item.vitorias}</strong> <span data-key="ranking-wins-short">V</span></span>
-                    <span class="rank-rate">${formatarPorcentagem(item.aproveitamento)}</span>
+                    <span class="rank-icon" data-cat="${resultadoJogo.jogo.categoria}" aria-hidden="true">
+                        <i class="fas ${resultadoJogo.jogo.icone}"></i>
+                    </span>
+                    <a class="rank-name" href="${raiz}${resultadoJogo.jogo.pagina}" data-key="${resultadoJogo.jogo.chaveTraducaoTitulo ?? resultadoJogo.jogo.tituloKey}">${resultadoJogo.jogo.titulo}</a>
+                    <span class="rank-score">
+                        <strong>${resultadoJogo.vitorias}</strong> 
+                        <span data-key="ranking-wins-short">V</span>
+                    </span>
+                    <span class="rank-rate">${formatarPorcentagem(resultadoJogo.aproveitamento)}</span>
                 </li>`;
         }).join("");
 
@@ -613,12 +630,19 @@
 
     // --- REAPLICA AS TRADUÇÕES NO DOCUMENTO ---
     function reaplicarTraducoesDocumento() {
-        if (window.applyTranslation && document.readyState !== "loading") {
-            window.applyTranslation(localStorage.getItem("preferredLanguage") || "traducoes");
+        if (window.aplicarTraducao && document.readyState !== "loading") {
+            window.aplicarTraducao(localStorage.getItem("preferredLanguage") || "traducoes");
         }
     }
 
     window.FG11Perfil = {
+        obterResumoPerfil,
+        gerarMarcacaoCartaJogador,
+        gerarMarcacaoProgressoNivel,
+        gerarMarcacaoClassificacaoJogos,
+        formatarPorcentagem,
+        escaparTextoMarcacao,
+        reaplicarTraducoesDocumento,
         resumo: obterResumoPerfil,
         registrarAcesso,
         obterApelido,

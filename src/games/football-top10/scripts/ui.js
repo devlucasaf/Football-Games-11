@@ -1,5 +1,5 @@
-import estado from "./core.js";
-import { normalizarTexto } from "./utils.js";
+import estado                           from "./core.js";
+import { normalizarTexto }              from "./utils.js";
 import { obterNomesItens, obterOpcoes } from "./data.js";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DOM ---
@@ -221,15 +221,15 @@ export function focarCampoPalpite() {
 // --- DESABILITA INPUT E BOTÕES ---
 export function desabilitarCampoPalpite() {
     campoPalpite.disabled = true;
-    document.getElementById("confirmarBtn").disabled = true;
-    document.getElementById("desistirBtn").disabled  = true;
+    document.getElementById("btnConfirmarPalpite").disabled = true;
+    document.getElementById("btnDesistirRodada").disabled  = true;
 }
 
 // --- HABILITA INPUT E BOTÕES ---
 export function habilitarCampoPalpite() {
     campoPalpite.disabled = false;
-    document.getElementById("confirmarBtn").disabled = false;
-    document.getElementById("desistirBtn").disabled  = false;
+    document.getElementById("btnConfirmarPalpite").disabled = false;
+    document.getElementById("btnDesistirRodada").disabled  = false;
 }
 
 // --- EXIBIÇÃO DO OVERLAY DE RESULTADO DA RODADA ---

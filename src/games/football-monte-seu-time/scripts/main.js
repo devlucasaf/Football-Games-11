@@ -30,25 +30,25 @@ const IDENTIFICADOR_JOGO = "football-monte-seu-time";
 
 // --- REFERÊNCIAS AOS ELEMENTOS DO DOM ---
 const elementosMontagemTime = {
-    painelRodada:      document.getElementById("hudRodada"),
-    painelTotalRodadas:       document.getElementById("hudTotal"),
-    painelCategoriasLivres:       document.getElementById("hudSlots"),
-    areaSorteio:       document.getElementById("drawArea"),
-    escudoTimeSorteado:      document.getElementById("drawBadge"),
-    nomeTimeSorteado:       document.getElementById("drawName"),
-    informacoesTimeSorteado:       document.getElementById("drawInfo"),
-    acoesTimeSorteado:    document.getElementById("drawActions"),
-    gradeCategorias:      document.getElementById("slotsGrid"),
-    estadoCarregamento:   document.getElementById("loadingState"),
-    estadoErro:     document.getElementById("errorState"),
-    sobreposicaoResultadoFinal:   document.getElementById("finalOverlay"),
-    btnFecharResultadoFinal:     document.getElementById("btnFecharResultadoFinal"),
-    resumoResultadoFinal:    document.getElementById("finalKicker"),
-    tituloResultadoFinal:     document.getElementById("finalTitle"),
-    subtituloResultadoFinal:  document.getElementById("finalSubtitle"),
-    painelTimeFinal:    document.getElementById("finalBanner"),
-    btnJogarNovamente:     document.getElementById("btnJogarNovamente"),
-    btnVoltarPaginaInicial:      document.getElementById("btnVoltarPaginaInicial")
+    painelRodada:               document.getElementById("hudRodada"),
+    painelTotalRodadas:         document.getElementById("hudTotal"),
+    painelCategoriasLivres:     document.getElementById("hudSlots"),
+    areaSorteio:                document.getElementById("drawArea"),
+    escudoTimeSorteado:         document.getElementById("drawBadge"),
+    nomeTimeSorteado:           document.getElementById("drawName"),
+    informacoesTimeSorteado:    document.getElementById("drawInfo"),
+    acoesTimeSorteado:          document.getElementById("drawActions"),
+    gradeCategorias:            document.getElementById("slotsGrid"),
+    estadoCarregamento:         document.getElementById("loadingState"),
+    estadoErro:                 document.getElementById("errorState"),
+    sobreposicaoResultadoFinal: document.getElementById("finalOverlay"),
+    btnFecharResultadoFinal:    document.getElementById("btnFecharResultadoFinal"),
+    resumoResultadoFinal:       document.getElementById("finalKicker"),
+    tituloResultadoFinal:       document.getElementById("finalTitle"),
+    subtituloResultadoFinal:    document.getElementById("finalSubtitle"),
+    painelTimeFinal:            document.getElementById("finalBanner"),
+    btnJogarNovamente:          document.getElementById("btnJogarNovamente"),
+    btnVoltarPaginaInicial:     document.getElementById("btnVoltarPaginaInicial")
 };
 
 // --- TEXTO TRADUZIDO COM FALLBACK ---
@@ -61,7 +61,7 @@ function obterIconeCategoria(categoria) {
     return categoria.icone || "fa-question-circle";
 }
 
-// --- CATEGORIAS CUJA IMAGEM É UM LOGO/PEÇA (aparece inteira, sem cortar) ---
+// --- CATEGORIAS CUJA IMAGEM É UM LOGO/PEÇA ---
 const CATEGORIAS_AJUSTADAS = ["escudo", "dinheiro", "uniforme"];
 
 function imagemCategoriaAjustada(identificadorCategoria, time) {

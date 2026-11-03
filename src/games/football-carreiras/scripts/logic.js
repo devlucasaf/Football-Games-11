@@ -1,7 +1,7 @@
-import estado from "./core.js";
-import { normalizar } from "./utils.js";
-import { revelarProximo, revelarTodos } from "./grid.js";
-import { atualizarInformacoesCarreira, mostrarResultado, esconderSugestoes } from "./ui.js";
+import estado                                                                   from "./core.js";
+import { normalizar }                                                           from "./utils.js";
+import { revelarProximo, revelarTodos }                                         from "./grid.js";
+import { atualizarInformacoesCarreira, mostrarResultado, esconderSugestoes }    from "./ui.js";
 
 // --- TRATAR PALPITE DO JOGADOR ---
 export function tratarPalpite() {

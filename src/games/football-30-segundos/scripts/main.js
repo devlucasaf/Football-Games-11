@@ -25,18 +25,21 @@ const elementosInterface = {
 let nomesDisponiveis = [];
 let sugestaoAtiva = -1;
 
+// --- ESCONDE AS SUGESTÕES ---
 function esconderSugestoes() {
     elementosInterface.listaSugestoes.classList.add("hidden");
     elementosInterface.listaSugestoes.innerHTML = "";
     sugestaoAtiva = -1;
 }
 
+// --- SELECIONA UMA SUGESTÃO ---
 function selecionarSugestao(nome) {
     elementosInterface.campoPalpite.value = nome;
     esconderSugestoes();
     elementosInterface.campoPalpite.focus();
 }
 
+// --- ATUALIZA AS SUGESTÕES ATIVAS ---
 function atualizarSugestaoAtiva(itens) {
     itens.forEach((item, indiceSugestao) => {
         item.classList.toggle("active", indiceSugestao === sugestaoAtiva);
@@ -46,6 +49,7 @@ function atualizarSugestaoAtiva(itens) {
     });
 }
 
+// --- RENDERIZA AS SUGESTÕES ---
 function renderizarSugestoes() {
     const termo = elementosInterface.campoPalpite.value
         .normalize("NFD")
@@ -86,8 +90,9 @@ function renderizarSugestoes() {
     elementosInterface.listaSugestoes.classList.remove("hidden");
 }
 
-// --- MOSTRA FEEDBACK RÁPIDO NO CAMPO ---
 let identificadorOcultacaoMensagem = null;
+
+// --- MOSTRA FEEDBACK RÁPIDO NO CAMPO ---
 function mostrarMensagemPalpite(texto, tipo) {
     elementosInterface.mensagemPalpite.textContent = texto;
     elementosInterface.mensagemPalpite.className = `guess-feedback ${tipo}`;
@@ -220,6 +225,7 @@ function finalizarPartida() {
             bucket: acertos,
             tamanho: total + 1
         });
+
         window.FG11Stats.mostrarModal("football-30-segundos", {
             venceu,
             titulo: "Tempo esgotado!",
@@ -302,18 +308,19 @@ async function inicializarJogoTrintaSegundos() {
         }
     });
 
-    const sobreposicaoTutorial = document.getElementById("tutorialOverlay");
+    const sobreposicaoTutorial = document.getElementById("sobreposicaoTutorial");
     const chaveDispensaTutorial = "tutorial_skip_football-30-segundos";
 
     if (localStorage.getItem(chaveDispensaTutorial)) {
         sobreposicaoTutorial.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
+
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
             localStorage.setItem(chaveDispensaTutorial, "true");
             sobreposicaoTutorial.classList.add("hidden");
             iniciarJogo();

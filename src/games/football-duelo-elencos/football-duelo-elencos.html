@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="tutorial-overlay" id="tutorialOverlay" data-game="football-duelo-elencos">
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-duelo-elencos">
             <div class="tutorial-box">
                 <div class="tutorial-header">
                     <i class="fas fa-users"></i>
@@ -25,11 +25,11 @@
                     <li><span class="tutorial-step-number">4</span><span data-key="duelo-tutorial-step4"> No final, veja a escalação que você montou.</span></li>
                 </ul>
                 <div class="tutorial-footer">
-                    <button class="btn-tutorial-start" id="tutorialStartBtn">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
                         <i class="fas fa-play"></i> 
                         <span data-key="duelo-tutorial-play">Jogar</span>
                     </button>
-                    <button class="tutorial-skip" id="tutorialSkipBtn" data-key="duelo-tutorial-skip">Não mostrar novamente</button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="duelo-tutorial-skip">Não mostrar novamente</button>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                         <span id="posicaoAtual">1/11 — GOL</span>
                     </div>
                     <div class="escolha-cards">
-                        <button class="escolha-card" id="cardA">
+                        <button class="escolha-card" id="btnEscolherJogadorTimeA">
                             <img 
                                 class="card-escudo" 
                                 id="escudoA" 
@@ -83,7 +83,7 @@
                         </button>
 
                         <span class="escolha-ou" data-key="duelo-ou">ou</span>
-                        <button class="escolha-card" id="cardB">
+                        <button class="escolha-card" id="btnEscolherJogadorTimeB">
                             <img 
                                 class="card-escudo" 
                                 id="escudoB" 

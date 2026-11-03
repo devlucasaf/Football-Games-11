@@ -601,7 +601,6 @@
     transform: scale(0.96);
 }
 
-/* --- UTILITÁRIOS --- */
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 640px) {
     .conecta-container {

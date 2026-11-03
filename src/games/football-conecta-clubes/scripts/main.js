@@ -197,19 +197,19 @@ async function inicializarJogoConectaClubes() {
         }
     });
 
-    const tutorialOverlay = document.getElementById("tutorialOverlay");
-    const skipKey = "tutorial_skip_football-conecta-clubes";
+    const tutorialOverlay = document.getElementById("sobreposicaoTutorial");
+    const chaveDispensaTutorial = "tutorial_skip_football-conecta-clubes";
 
-    if (localStorage.getItem(skipKey)) {
+    if (localStorage.getItem(chaveDispensaTutorial)) {
         tutorialOverlay.classList.add("hidden");
         iniciarJogo();
     } else {
-        document.getElementById("tutorialStartBtn").addEventListener("click", () => {
+        document.getElementById("btnIniciarJogoTutorial").addEventListener("click", () => {
             tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
-        document.getElementById("tutorialSkipBtn").addEventListener("click", () => {
-            localStorage.setItem(skipKey, "true");
+        document.getElementById("btnOcultarTutorial").addEventListener("click", () => {
+            localStorage.setItem(chaveDispensaTutorial, "true");
             tutorialOverlay.classList.add("hidden");
             iniciarJogo();
         });
