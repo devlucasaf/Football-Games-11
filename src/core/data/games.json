@@ -266,6 +266,16 @@
             "dificuldade": false 
         },
         { 
+            "id": "football-memoria", 
+            "tituloKey": "football-memoria-title", 
+            "descKey": "football-memoria-desc", 
+            "icone": "fa-clone", 
+            "categoria": "memoria", 
+            "pagina": "src/games/football-memoria/football-memoria.html", 
+            "estatisticas": true, 
+            "dificuldade": true 
+        },
+        { 
             "id": "football-legends", 
             "tituloKey": "football-legends-title", 
             "descKey": "football-legends-desc", 

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memória | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-memoria.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-memoria">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-clone"></i>
+                    <h2 data-key="memoria-tutorial-title">Como jogar Memória</h2>
+                    <p data-key="memoria-tutorial-subtitle">Encontre os pares de cartas do futebol!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="memoria-tutorial-step1"> Escolha um tema: jogador e nacionalidade, clube e estádio ou seleção e escudo.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="memoria-tutorial-step2"> No início, as cartas ficam abertas por alguns segundos. Memorize!</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="memoria-tutorial-step3"> Vire duas cartas por vez. Se elas combinarem, o par fica aberto.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="memoria-tutorial-step4"> Jogue contra o relógio, com movimentos limitados ou no modo livre. A cada par, uma curiosidade!</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
+                        <i class="fas fa-play"></i> 
+                        <span data-key="memoria-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="memoria-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="memoria-container">
+            <div class="container">
+                <section class="memoria-configuracao" id="painelConfiguracao" aria-labelledby="tituloConfiguracao">
+                    <h1 class="memoria-titulo" id="tituloConfiguracao">
+                        <i class="fas fa-clone" aria-hidden="true"></i>
+                        <span data-key="memoria-setup-title">Monte sua partida</span>
+                    </h1>
+                    <p class="memoria-subtitulo" data-key="memoria-setup-subtitle">Não precisa saber estatísticas: basta ligar os nomes e usar a memória.</p>
+
+                    <div class="memoria-grupo" role="group" aria-labelledby="rotuloTema">
+                        <h2 class="memoria-grupo-titulo" id="rotuloTema" data-key="memoria-setup-theme">Tema</h2>
+                        <div class="memoria-opcoes">
+                            <button type="button" class="memoria-opcao" data-opcao="tema" data-valor="nacionalidade">
+                                <i class="fas fa-earth-americas" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-theme-nacionalidade">Jogador e nacionalidade</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="tema" data-valor="estadio">
+                                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-theme-estadio">Clube e estádio</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="tema" data-valor="escudo">
+                                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-theme-escudo">Seleção e escudo</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="tema" data-valor="misto">
+                                <i class="fas fa-shuffle" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-theme-misto">Misturado</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="memoria-grupo" role="group" aria-labelledby="rotuloModo">
+                        <h2 class="memoria-grupo-titulo" id="rotuloModo" data-key="memoria-setup-mode">Desafio</h2>
+                        <div class="memoria-opcoes">
+                            <button type="button" class="memoria-opcao" data-opcao="modo" data-valor="tempo">
+                                <i class="fas fa-stopwatch" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-mode-tempo">Contra o relógio</span>
+                                <span class="memoria-opcao-desc" data-key="memoria-mode-tempo-desc">Encontre todos os pares antes do tempo acabar.</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="modo" data-valor="movimentos">
+                                <i class="fas fa-shoe-prints" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-mode-movimentos">Movimentos limitados</span>
+                                <span class="memoria-opcao-desc" data-key="memoria-mode-movimentos-desc">Cada duas cartas viradas contam um movimento.</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="modo" data-valor="livre">
+                                <i class="fas fa-mug-hot" aria-hidden="true"></i>
+                                <span class="memoria-opcao-nome" data-key="memoria-mode-livre">Livre</span>
+                                <span class="memoria-opcao-desc" data-key="memoria-mode-livre-desc">Sem limites, no seu ritmo. Ideal para aprender.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="memoria-grupo" role="group" aria-labelledby="rotuloTamanho">
+                        <h2 class="memoria-grupo-titulo" id="rotuloTamanho" data-key="memoria-setup-size">Tamanho</h2>
+                        <div class="memoria-opcoes">
+                            <button type="button" class="memoria-opcao" data-opcao="tamanho" data-valor="facil">
+                                <span class="memoria-opcao-nome" data-key="memoria-size-facil">Fácil · 6 pares</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="tamanho" data-valor="medio">
+                                <span class="memoria-opcao-nome" data-key="memoria-size-medio">Médio · 8 pares</span>
+                            </button>
+                            <button type="button" class="memoria-opcao" data-opcao="tamanho" data-valor="dificil">
+                                <span class="memoria-opcao-nome" data-key="memoria-size-dificil">Difícil · 10 pares</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-next memoria-comecar" id="btnComecarPartida">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        <span data-key="memoria-start">Começar partida</span>
+                    </button>
+                </section>
+
+                <section class="game-area hidden" id="areaJogo">
+                    <p class="memoria-rotulo-partida" id="rotuloPartida"></p>
+
+                    <div class="memoria-painel">
+                        <div class="memoria-indicador" id="caixaLimite">
+                            <i class="fas fa-stopwatch" id="iconeLimite" aria-hidden="true"></i>
+                            <span id="rotuloLimite">Tempo</span>:
+                            <strong id="valorLimite">0:00</strong>
+                        </div>
+                        <div class="memoria-indicador">
+                            <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
+                            <span data-key="memoria-moves">Movimentos</span>:
+                            <strong id="contadorMovimentos">0</strong>
+                        </div>
+                        <div class="memoria-indicador">
+                            <i class="fas fa-clone" aria-hidden="true"></i>
+                            <span data-key="memoria-pairs">Pares</span>:
+                            <strong id="contadorPares">0/0</strong>
+                        </div>
+                    </div>
+
+                    <div class="memoria-barra" aria-hidden="true">
+                        <div class="memoria-barra-preenchimento" id="preenchimentoBarra"></div>
+                    </div>
+
+                    <p class="memoria-aviso-previa hidden" id="avisoPrevia">
+                        <i class="fas fa-eye" aria-hidden="true"></i>
+                        <span data-key="memoria-memorize">Memorize as cartas!</span>
+                    </p>
+
+                    <div class="memoria-tabuleiro" id="tabuleiro"></div>
+
+                    <aside class="memoria-curiosidade vazio" id="painelCuriosidade" aria-live="polite">
+                        <span class="memoria-curiosidade-rotulo">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            <span data-key="memoria-did-you-know">Você sabia?</span>
+                        </span>
+                        <strong class="memoria-curiosidade-par" id="parCuriosidade"></strong>
+                        <p class="memoria-curiosidade-texto" id="textoCuriosidade"></p>
+                    </aside>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-home" id="btnReiniciarPartida">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span data-key="memoria-restart">Reiniciar</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnMudarModo">
+                            <i class="fas fa-sliders" aria-hidden="true"></i>
+                            <span data-key="memoria-change-mode">Mudar modo</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="round-result hidden" id="resultadoFinal">
+                    <div class="round-icon" id="iconeResultado"></div>
+                    <p class="round-text" id="textoResultado"></p>
+                    <div class="memoria-estrelas" id="estrelasResultado" role="img"></div>
+                    <p class="round-answer" id="resumoResultado"></p>
+
+                    <h2 class="memoria-aprendizado-titulo">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <span data-key="memoria-learned">O que você aprendeu</span>
+                    </h2>
+                    <ul class="memoria-aprendizado" id="listaAprendizado"></ul>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-next" id="btnJogarNovamente">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span data-key="memoria-play-again">Jogar novamente</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnMudarModoFinal">
+                            <i class="fas fa-sliders" aria-hidden="true"></i>
+                            <span data-key="memoria-change-mode">Mudar modo</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnVoltarPaginaInicial">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span data-key="memoria-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="sr-only" id="anuncioLeitorTela" aria-live="assertive"></div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-title">Football Games 11</span> 
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

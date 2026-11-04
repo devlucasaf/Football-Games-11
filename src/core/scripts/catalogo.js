@@ -271,6 +271,16 @@
             estatisticas: true 
         },
         { 
+            id: "football-memoria", 
+            tituloKey: "football-memoria-title", 
+            titulo: "Memória", 
+            descKey: "football-memoria-desc", 
+            desc: "Encontre os pares: jogador e país, clube e estádio, seleção e escudo!", 
+            icone: "fa-clone", 
+            categoria: "memoria", 
+            estatisticas: true 
+        },
+        { 
             id: "football-vc-escala", 
             tituloKey: "football-vc-escala-title", 
             titulo: "Vc Escala!", 

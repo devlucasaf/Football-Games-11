@@ -49,6 +49,7 @@ A proposta é reunir em um único site diversos jogos inspirados em plataformas 
 | 26 | **Football Pirâmide** | Ordene 10 jogadores na pirâmide pela categoria |
 | 27 | **Football 30 segundos** | Cite o máximo de jogadores que conseguir em 30 segundos |
 | 28 | **Football Adivinha o Clube** | Adivinhe o clube por pistas |
+| 29 | **Football Memória** | Encontre pares de cartas: jogador e nacionalidade, clube e estádio, seleção e escudo |
 
 ---
 
@@ -110,6 +111,7 @@ Football-Games-11/
 │       ├── football-jogou-com/
 │       ├── football-legends/
 │       ├── football-linha-do-tempo/
+│       ├── football-memoria/
 │       ├── football-multiplica/
 │       ├── football-numeros/
 │       ├── football-piramide/

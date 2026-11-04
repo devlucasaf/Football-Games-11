@@ -1,0 +1,436 @@
+{
+    "temas": {
+        "nacionalidade": [
+            {
+                "id": "messi",
+                "pais": "ar",
+                "a": { "tipo": "jogador", "texto": "Lionel Messi" },
+                "b": { "tipo": "pais", "texto": "Argentina", "bandeira": "ar" },
+                "curiosidade": "Messi nasceu em Rosário e levantou a Copa do Mundo com a Argentina em 2022."
+            },
+            {
+                "id": "cristiano",
+                "pais": "pt",
+                "a": { "tipo": "jogador", "texto": "Cristiano Ronaldo" },
+                "b": { "tipo": "pais", "texto": "Portugal", "bandeira": "pt" },
+                "curiosidade": "Cristiano Ronaldo nasceu na Ilha da Madeira e é o grande ídolo da seleção portuguesa."
+            },
+            {
+                "id": "neymar",
+                "pais": "br",
+                "a": { "tipo": "jogador", "texto": "Neymar" },
+                "b": { "tipo": "pais", "texto": "Brasil", "bandeira": "br" },
+                "curiosidade": "Neymar foi revelado pelo Santos, o mesmo clube que lançou Pelé."
+            },
+            {
+                "id": "mbappe",
+                "pais": "fr",
+                "a": { "tipo": "jogador", "texto": "Kylian Mbappé" },
+                "b": { "tipo": "pais", "texto": "França", "bandeira": "fr" },
+                "curiosidade": "Mbappé cresceu em Bondy, na região de Paris, e foi campeão do mundo com apenas 19 anos."
+            },
+            {
+                "id": "haaland",
+                "pais": "no",
+                "a": { "tipo": "jogador", "texto": "Erling Haaland" },
+                "b": { "tipo": "pais", "texto": "Noruega", "bandeira": "no" },
+                "curiosidade": "Haaland nasceu na Inglaterra, mas cresceu na Noruega, país do pai, que também foi jogador."
+            },
+            {
+                "id": "salah",
+                "pais": "eg",
+                "a": { "tipo": "jogador", "texto": "Mohamed Salah" },
+                "b": { "tipo": "pais", "texto": "Egito", "bandeira": "eg" },
+                "curiosidade": "Salah é chamado de \"Rei do Egito\" pelos torcedores do Liverpool."
+            },
+            {
+                "id": "modric",
+                "pais": "hr",
+                "a": { "tipo": "jogador", "texto": "Luka Modrić" },
+                "b": { "tipo": "pais", "texto": "Croácia", "bandeira": "hr" },
+                "curiosidade": "Modrić levou a pequena Croácia à final da Copa do Mundo de 2018."
+            },
+            {
+                "id": "kane",
+                "pais": "gb-eng",
+                "a": { "tipo": "jogador", "texto": "Harry Kane" },
+                "b": { "tipo": "pais", "texto": "Inglaterra", "bandeira": "gb-eng" },
+                "curiosidade": "Harry Kane é o capitão da Inglaterra, país considerado o berço do futebol moderno."
+            },
+            {
+                "id": "lewandowski",
+                "pais": "pl",
+                "a": { "tipo": "jogador", "texto": "Robert Lewandowski" },
+                "b": { "tipo": "pais", "texto": "Polônia", "bandeira": "pl" },
+                "curiosidade": "Lewandowski nasceu em Varsóvia, a capital da Polônia."
+            },
+            {
+                "id": "de-bruyne",
+                "pais": "be",
+                "a": { "tipo": "jogador", "texto": "Kevin De Bruyne" },
+                "b": { "tipo": "pais", "texto": "Bélgica", "bandeira": "be" },
+                "curiosidade": "De Bruyne fez parte da geração belga apelidada de \"geração de ouro\"."
+            },
+            {
+                "id": "son",
+                "pais": "kr",
+                "a": { "tipo": "jogador", "texto": "Son Heung-min" },
+                "b": { "tipo": "pais", "texto": "Coreia do Sul", "bandeira": "kr" },
+                "curiosidade": "Son é um dos jogadores asiáticos mais famosos da história do futebol europeu."
+            },
+            {
+                "id": "mane",
+                "pais": "sn",
+                "a": { "tipo": "jogador", "texto": "Sadio Mané" },
+                "b": { "tipo": "pais", "texto": "Senegal", "bandeira": "sn" },
+                "curiosidade": "Mané ajudou o Senegal a conquistar a Copa Africana de Nações pela primeira vez."
+            },
+            {
+                "id": "suarez",
+                "pais": "uy",
+                "a": { "tipo": "jogador", "texto": "Luis Suárez" },
+                "b": { "tipo": "pais", "texto": "Uruguai", "bandeira": "uy" },
+                "curiosidade": "Suárez nasceu em Salto, no Uruguai, um país pequeno com duas Copas do Mundo."
+            },
+            {
+                "id": "ibrahimovic",
+                "pais": "se",
+                "a": { "tipo": "jogador", "texto": "Zlatan Ibrahimović" },
+                "b": { "tipo": "pais", "texto": "Suécia", "bandeira": "se" },
+                "curiosidade": "Ibrahimović nasceu em Malmö, na Suécia, e ficou famoso pelos gols acrobáticos."
+            },
+            {
+                "id": "kubo",
+                "pais": "jp",
+                "a": { "tipo": "jogador", "texto": "Takefusa Kubo" },
+                "b": { "tipo": "pais", "texto": "Japão", "bandeira": "jp" },
+                "curiosidade": "Kubo passou parte da infância nas categorias de base do Barcelona."
+            },
+            {
+                "id": "pulisic",
+                "pais": "us",
+                "a": { "tipo": "jogador", "texto": "Christian Pulisic" },
+                "b": { "tipo": "pais", "texto": "Estados Unidos", "bandeira": "us" },
+                "curiosidade": "Pulisic é apelidado de \"Capitão América\" pelos torcedores."
+            },
+            {
+                "id": "chicharito",
+                "pais": "mx",
+                "a": { "tipo": "jogador", "texto": "Chicharito" },
+                "b": { "tipo": "pais", "texto": "México", "bandeira": "mx" },
+                "curiosidade": "Javier Hernández ganhou o apelido \"Chicharito\" (ervilhinha) por causa do pai, \"Chícharo\"."
+            },
+            {
+                "id": "james",
+                "pais": "co",
+                "a": { "tipo": "jogador", "texto": "James Rodríguez" },
+                "b": { "tipo": "pais", "texto": "Colômbia", "bandeira": "co" },
+                "curiosidade": "James marcou um golaço de voleio pela Colômbia na Copa do Mundo de 2014."
+            },
+            {
+                "id": "pirlo",
+                "pais": "it",
+                "a": { "tipo": "jogador", "texto": "Andrea Pirlo" },
+                "b": { "tipo": "pais", "texto": "Itália", "bandeira": "it" },
+                "curiosidade": "Pirlo era chamado de \"maestro\" pela elegância com a bola."
+            },
+            {
+                "id": "muller",
+                "pais": "de",
+                "a": { "tipo": "jogador", "texto": "Thomas Müller" },
+                "b": { "tipo": "pais", "texto": "Alemanha", "bandeira": "de" },
+                "curiosidade": "Thomas Müller passou quase toda a carreira no Bayern de Munique, na Alemanha."
+            },
+            {
+                "id": "hakimi",
+                "pais": "ma",
+                "a": { "tipo": "jogador", "texto": "Achraf Hakimi" },
+                "b": { "tipo": "pais", "texto": "Marrocos", "bandeira": "ma" },
+                "curiosidade": "Hakimi nasceu em Madri, mas escolheu defender Marrocos, país dos pais."
+            },
+            {
+                "id": "iniesta",
+                "pais": "es",
+                "a": { "tipo": "jogador", "texto": "Andrés Iniesta" },
+                "b": { "tipo": "pais", "texto": "Espanha", "bandeira": "es" },
+                "curiosidade": "Iniesta marcou o gol do título da Espanha na final da Copa do Mundo de 2010."
+            },
+            {
+                "id": "van-dijk",
+                "pais": "nl",
+                "a": { "tipo": "jogador", "texto": "Virgil van Dijk" },
+                "b": { "tipo": "pais", "texto": "Holanda", "bandeira": "nl" },
+                "curiosidade": "Van Dijk é zagueiro e capitão da seleção da Holanda, a famosa \"Laranja\"."
+            },
+            {
+                "id": "bale",
+                "pais": "gb-wls",
+                "a": { "tipo": "jogador", "texto": "Gareth Bale" },
+                "b": { "tipo": "pais", "texto": "País de Gales", "bandeira": "gb-wls" },
+                "curiosidade": "Bale levou o País de Gales de volta a uma Copa do Mundo depois de mais de 60 anos."
+            }
+        ],
+        "estadio": [
+            {
+                "id": "flamengo",
+                "a": { "tipo": "clube", "texto": "Flamengo", "cores": ["#c8102e", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "Maracanã", "subtexto": "Rio de Janeiro" },
+                "curiosidade": "O Maracanã recebeu as finais das Copas do Mundo de 1950 e 2014."
+            },
+            {
+                "id": "corinthians",
+                "a": { "tipo": "clube", "texto": "Corinthians", "cores": ["#ffffff", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "Neo Química Arena", "subtexto": "São Paulo" },
+                "curiosidade": "A arena do Corinthians, em Itaquera, recebeu a abertura da Copa do Mundo de 2014."
+            },
+            {
+                "id": "palmeiras",
+                "a": { "tipo": "clube", "texto": "Palmeiras", "cores": ["#006437", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Allianz Parque", "subtexto": "São Paulo" },
+                "curiosidade": "O Allianz Parque foi construído no lugar do antigo Palestra Itália."
+            },
+            {
+                "id": "sao-paulo",
+                "a": { "tipo": "clube", "texto": "São Paulo", "cores": ["#ffffff", "#d00000", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "Morumbi", "subtexto": "São Paulo" },
+                "curiosidade": "O Morumbi é um dos maiores estádios particulares do Brasil."
+            },
+            {
+                "id": "gremio",
+                "a": { "tipo": "clube", "texto": "Grêmio", "cores": ["#0d80bf", "#000000", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Arena do Grêmio", "subtexto": "Porto Alegre" },
+                "curiosidade": "A Arena do Grêmio substituiu o antigo Estádio Olímpico Monumental."
+            },
+            {
+                "id": "internacional",
+                "a": { "tipo": "clube", "texto": "Internacional", "cores": ["#e30613", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Beira-Rio", "subtexto": "Porto Alegre" },
+                "curiosidade": "O Beira-Rio fica às margens do Lago Guaíba e é apelidado de \"Gigante\"."
+            },
+            {
+                "id": "atletico-mg",
+                "a": { "tipo": "clube", "texto": "Atlético Mineiro", "cores": ["#000000", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Arena MRV", "subtexto": "Belo Horizonte" },
+                "curiosidade": "A Arena MRV foi inaugurada em 2023 e é a casa própria do Galo."
+            },
+            {
+                "id": "santos",
+                "a": { "tipo": "clube", "texto": "Santos", "cores": ["#ffffff", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "Vila Belmiro", "subtexto": "Santos" },
+                "curiosidade": "A Vila Belmiro foi o palco de muitos gols de Pelé."
+            },
+            {
+                "id": "boca",
+                "a": { "tipo": "clube", "texto": "Boca Juniors", "cores": ["#003a8c", "#ffd100"] },
+                "b": { "tipo": "estadio", "texto": "La Bombonera", "subtexto": "Buenos Aires" },
+                "curiosidade": "La Bombonera tem esse nome por parecer uma caixa de bombons."
+            },
+            {
+                "id": "river",
+                "a": { "tipo": "clube", "texto": "River Plate", "cores": ["#ffffff", "#e30613"] },
+                "b": { "tipo": "estadio", "texto": "Monumental de Núñez", "subtexto": "Buenos Aires" },
+                "curiosidade": "O Monumental é o maior estádio da Argentina e recebeu a final da Copa de 1978."
+            },
+            {
+                "id": "barcelona",
+                "a": { "tipo": "clube", "texto": "Barcelona", "cores": ["#a50044", "#004d98"] },
+                "b": { "tipo": "estadio", "texto": "Camp Nou", "subtexto": "Barcelona" },
+                "curiosidade": "O Camp Nou é o maior estádio de futebol da Europa."
+            },
+            {
+                "id": "real-madrid",
+                "a": { "tipo": "clube", "texto": "Real Madrid", "cores": ["#ffffff", "#febe10"] },
+                "b": { "tipo": "estadio", "texto": "Santiago Bernabéu", "subtexto": "Madri" },
+                "curiosidade": "O estádio leva o nome de Santiago Bernabéu, ex-jogador e lendário presidente do clube."
+            },
+            {
+                "id": "manchester-united",
+                "a": { "tipo": "clube", "texto": "Manchester United", "cores": ["#da291c", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "Old Trafford", "subtexto": "Manchester" },
+                "curiosidade": "Old Trafford é conhecido como \"Teatro dos Sonhos\"."
+            },
+            {
+                "id": "liverpool",
+                "a": { "tipo": "clube", "texto": "Liverpool", "cores": ["#c8102e", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Anfield", "subtexto": "Liverpool" },
+                "curiosidade": "Em Anfield, a torcida canta \"You'll Never Walk Alone\" antes dos jogos."
+            },
+            {
+                "id": "arsenal",
+                "a": { "tipo": "clube", "texto": "Arsenal", "cores": ["#ef0107", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Emirates Stadium", "subtexto": "Londres" },
+                "curiosidade": "O Arsenal se mudou para o Emirates em 2006, depois de quase cem anos em Highbury."
+            },
+            {
+                "id": "bayern",
+                "a": { "tipo": "clube", "texto": "Bayern de Munique", "cores": ["#dc052d", "#0066b2"] },
+                "b": { "tipo": "estadio", "texto": "Allianz Arena", "subtexto": "Munique" },
+                "curiosidade": "A fachada da Allianz Arena muda de cor e pode ficar toda vermelha nos jogos do Bayern."
+            },
+            {
+                "id": "dortmund",
+                "a": { "tipo": "clube", "texto": "Borussia Dortmund", "cores": ["#fde100", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "Signal Iduna Park", "subtexto": "Dortmund" },
+                "curiosidade": "O estádio tem a \"Muralha Amarela\", uma enorme arquibancada só de torcedores em pé."
+            },
+            {
+                "id": "juventus",
+                "a": { "tipo": "clube", "texto": "Juventus", "cores": ["#000000", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Allianz Stadium", "subtexto": "Turim" },
+                "curiosidade": "A Juventus é de Turim e é apelidada de \"Velha Senhora\"."
+            },
+            {
+                "id": "psg",
+                "a": { "tipo": "clube", "texto": "Paris Saint-Germain", "cores": ["#004170", "#da291c"] },
+                "b": { "tipo": "estadio", "texto": "Parc des Princes", "subtexto": "Paris" },
+                "curiosidade": "O Parc des Princes fica em Paris e é a casa do PSG desde os anos 1970."
+            },
+            {
+                "id": "benfica",
+                "a": { "tipo": "clube", "texto": "Benfica", "cores": ["#e30613", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Estádio da Luz", "subtexto": "Lisboa" },
+                "curiosidade": "Antes dos jogos no Estádio da Luz, uma águia voa sobre o gramado."
+            },
+            {
+                "id": "celtic",
+                "a": { "tipo": "clube", "texto": "Celtic", "cores": ["#018749", "#ffffff"] },
+                "b": { "tipo": "estadio", "texto": "Celtic Park", "subtexto": "Glasgow" },
+                "curiosidade": "O Celtic Park, em Glasgow, é chamado pelos torcedores de \"Paradise\"."
+            },
+            {
+                "id": "milan",
+                "a": { "tipo": "clube", "texto": "Milan", "cores": ["#fb090b", "#000000"] },
+                "b": { "tipo": "estadio", "texto": "San Siro", "subtexto": "Milão" },
+                "curiosidade": "O San Siro é dividido entre Milan e Inter, os dois grandes rivais de Milão."
+            }
+        ],
+        "escudo": [
+            {
+                "id": "brasil",
+                "pais": "br",
+                "a": { "tipo": "selecao", "texto": "Brasil", "subtexto": "América do Sul" },
+                "b": { "tipo": "escudo", "texto": "CBF", "cores": ["#009c3b", "#ffdf00", "#002776"], "estrelas": 5, "subtexto": "Canarinho" },
+                "curiosidade": "As cinco estrelas no escudo da CBF representam os cinco títulos mundiais do Brasil."
+            },
+            {
+                "id": "argentina",
+                "pais": "ar",
+                "a": { "tipo": "selecao", "texto": "Argentina", "subtexto": "América do Sul" },
+                "b": { "tipo": "escudo", "texto": "AFA", "cores": ["#75aadb", "#ffffff", "#75aadb"], "estrelas": 3, "subtexto": "Albiceleste" },
+                "curiosidade": "\"Albiceleste\" vem das cores da camisa: branco e azul-celeste."
+            },
+            {
+                "id": "alemanha",
+                "pais": "de",
+                "a": { "tipo": "selecao", "texto": "Alemanha", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "DFB", "cores": ["#000000", "#dd0000", "#ffce00"], "estrelas": 4, "subtexto": "Die Mannschaft" },
+                "curiosidade": "O escudo da federação alemã traz uma águia e quatro estrelas de campeã do mundo."
+            },
+            {
+                "id": "italia",
+                "pais": "it",
+                "a": { "tipo": "selecao", "texto": "Itália", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "FIGC", "cores": ["#009246", "#ffffff", "#ce2b37"], "estrelas": 4, "subtexto": "Azzurra" },
+                "curiosidade": "A Itália joga de azul, cor da antiga família real italiana, mesmo sem azul na bandeira."
+            },
+            {
+                "id": "franca",
+                "pais": "fr",
+                "a": { "tipo": "selecao", "texto": "França", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "FFF", "cores": ["#0055a4", "#ffffff", "#ef4135"], "estrelas": 2, "subtexto": "Les Bleus" },
+                "curiosidade": "O escudo da seleção francesa tem um galo, símbolo tradicional da França."
+            },
+            {
+                "id": "uruguai",
+                "pais": "uy",
+                "a": { "tipo": "selecao", "texto": "Uruguai", "subtexto": "América do Sul" },
+                "b": { "tipo": "escudo", "texto": "AUF", "cores": ["#5eb6e4", "#ffffff"], "estrelas": 4, "subtexto": "Celeste Olímpica" },
+                "curiosidade": "O Uruguai usa quatro estrelas: duas Copas do Mundo e dois ouros olímpicos."
+            },
+            {
+                "id": "espanha",
+                "pais": "es",
+                "a": { "tipo": "selecao", "texto": "Espanha", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "RFEF", "cores": ["#aa151b", "#f1bf00", "#aa151b"], "estrelas": 1, "subtexto": "La Roja" },
+                "curiosidade": "\"La Roja\" é o apelido da Espanha por causa da camisa vermelha."
+            },
+            {
+                "id": "inglaterra",
+                "pais": "gb-eng",
+                "a": { "tipo": "selecao", "texto": "Inglaterra", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "FA", "cores": ["#ffffff", "#ce1124", "#ffffff"], "estrelas": 1, "subtexto": "Three Lions" },
+                "curiosidade": "O escudo da Inglaterra tem três leões, por isso o apelido \"Three Lions\"."
+            },
+            {
+                "id": "portugal",
+                "pais": "pt",
+                "a": { "tipo": "selecao", "texto": "Portugal", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "FPF", "cores": ["#006600", "#ff0000"], "estrelas": 0, "subtexto": "Seleção das Quinas" },
+                "curiosidade": "As \"quinas\" são os cinco pequenos escudos azuis da bandeira de Portugal."
+            },
+            {
+                "id": "holanda",
+                "pais": "nl",
+                "a": { "tipo": "selecao", "texto": "Holanda", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "KNVB", "cores": ["#ff6200", "#ff8c00"], "estrelas": 0, "subtexto": "Laranja Mecânica" },
+                "curiosidade": "A Holanda joga de laranja em homenagem à família real, a Casa de Orange."
+            },
+            {
+                "id": "belgica",
+                "pais": "be",
+                "a": { "tipo": "selecao", "texto": "Bélgica", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "RBFA", "cores": ["#000000", "#fdda24", "#ef3340"], "estrelas": 0, "subtexto": "Diabos Vermelhos" },
+                "curiosidade": "A seleção belga é chamada de \"Diabos Vermelhos\" desde o início do século XX."
+            },
+            {
+                "id": "croacia",
+                "pais": "hr",
+                "a": { "tipo": "selecao", "texto": "Croácia", "subtexto": "Europa" },
+                "b": { "tipo": "escudo", "texto": "HNS", "cores": ["#ff0000", "#ffffff", "#ff0000"], "estrelas": 0, "subtexto": "Vatreni" },
+                "curiosidade": "A camisa quadriculada da Croácia vem do brasão do país."
+            },
+            {
+                "id": "mexico",
+                "pais": "mx",
+                "a": { "tipo": "selecao", "texto": "México", "subtexto": "América do Norte" },
+                "b": { "tipo": "escudo", "texto": "FMF", "cores": ["#006847", "#ffffff", "#ce1126"], "estrelas": 0, "subtexto": "El Tri" },
+                "curiosidade": "\"El Tri\" vem das três cores da bandeira mexicana."
+            },
+            {
+                "id": "japao",
+                "pais": "jp",
+                "a": { "tipo": "selecao", "texto": "Japão", "subtexto": "Ásia" },
+                "b": { "tipo": "escudo", "texto": "JFA", "cores": ["#000555", "#ffffff"], "estrelas": 0, "subtexto": "Samurai Blue" },
+                "curiosidade": "O escudo do Japão tem um corvo de três pernas, símbolo mitológico japonês."
+            },
+            {
+                "id": "estados-unidos",
+                "pais": "us",
+                "a": { "tipo": "selecao", "texto": "Estados Unidos", "subtexto": "América do Norte" },
+                "b": { "tipo": "escudo", "texto": "USSF", "cores": ["#002868", "#ffffff", "#bf0a30"], "estrelas": 0, "subtexto": "Stars and Stripes" },
+                "curiosidade": "Os Estados Unidos sediaram a Copa do Mundo de 1994."
+            },
+            {
+                "id": "marrocos",
+                "pais": "ma",
+                "a": { "tipo": "selecao", "texto": "Marrocos", "subtexto": "África" },
+                "b": { "tipo": "escudo", "texto": "FRMF", "cores": ["#c1272d", "#006233"], "estrelas": 0, "subtexto": "Leões do Atlas" },
+                "curiosidade": "Em 2022, Marrocos se tornou a primeira seleção africana a chegar a uma semifinal de Copa."
+            },
+            {
+                "id": "senegal",
+                "pais": "sn",
+                "a": { "tipo": "selecao", "texto": "Senegal", "subtexto": "África" },
+                "b": { "tipo": "escudo", "texto": "FSF", "cores": ["#00853f", "#fdef42", "#e31b23"], "estrelas": 0, "subtexto": "Leões de Teranga" },
+                "curiosidade": "\"Teranga\" significa hospitalidade na língua wolof, falada no Senegal."
+            },
+            {
+                "id": "colombia",
+                "pais": "co",
+                "a": { "tipo": "selecao", "texto": "Colômbia", "subtexto": "América do Sul" },
+                "b": { "tipo": "escudo", "texto": "FCF", "cores": ["#fcd116", "#003893", "#ce1126"], "estrelas": 0, "subtexto": "Los Cafeteros" },
+                "curiosidade": "\"Los Cafeteros\" lembra o café, um dos produtos mais famosos da Colômbia."
+            }
+        ]
+    }
+}
