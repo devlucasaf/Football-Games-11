@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sem Repetir | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-sem-repetir.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-sem-repetir">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-ban"></i>
+                    <h2 data-key="semrepetir-tutorial-title">Como jogar Sem Repetir</h2>
+                    <p data-key="semrepetir-tutorial-subtitle">Cada jogador só pode ser usado uma vez!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="semrepetir-tutorial-step1"> Você recebe uma sequência de desafios, como "Um brasileiro" ou "Alguém que jogou no Milan".</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="semrepetir-tutorial-step2"> Escolha um desafio, digite o nome de um jogador que atenda e confirme. A ordem é livre.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="semrepetir-tutorial-step3"> Nenhum jogador pode ser usado duas vezes. Gastar um nome versátil cedo pode deixar um desafio sem saída.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="semrepetir-tutorial-step4"> Você pode errar até 2 vezes. No terceiro erro, ou se algum desafio ficar impossível, o jogo termina.</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
+                        <i class="fas fa-play"></i>
+                        <span data-key="semrepetir-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="semrepetir-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="semrepetir-container">
+            <div class="container">
+                <section class="semrepetir-configuracao" id="painelConfiguracao" aria-labelledby="tituloConfiguracao">
+                    <h1 class="semrepetir-titulo" id="tituloConfiguracao">
+                        <i class="fas fa-ban" aria-hidden="true"></i>
+                        <span data-key="football-sem-repetir-title">Sem Repetir</span>
+                    </h1>
+                    <p class="semrepetir-subtitulo" data-key="semrepetir-setup-subtitle">Responda todos os desafios, mas nunca use o mesmo jogador duas vezes. Planejar a ordem é o segredo.</p>
+
+                    <div class="semrepetir-grupo" role="group" aria-labelledby="rotuloNivel">
+                        <h2 class="semrepetir-grupo-titulo" id="rotuloNivel" data-key="semrepetir-setup-level">Nível</h2>
+                        <div class="semrepetir-opcoes">
+                            <button type="button" class="semrepetir-opcao" data-nivel="facil">
+                                <span class="semrepetir-opcao-nome" data-key="semrepetir-level-facil">Fácil</span>
+                                <span class="semrepetir-opcao-desc" data-key="semrepetir-level-facil-desc">5 desafios simples e o número de opções aparece em cada um.</span>
+                            </button>
+                            <button type="button" class="semrepetir-opcao" data-nivel="medio">
+                                <span class="semrepetir-opcao-nome" data-key="semrepetir-level-medio">Médio</span>
+                                <span class="semrepetir-opcao-desc" data-key="semrepetir-level-medio-desc">6 desafios, alguns combinados, sem mostrar as opções.</span>
+                            </button>
+                            <button type="button" class="semrepetir-opcao" data-nivel="dificil">
+                                <span class="semrepetir-opcao-nome" data-key="semrepetir-level-dificil">Difícil</span>
+                                <span class="semrepetir-opcao-desc" data-key="semrepetir-level-dificil-desc">7 desafios combinados e poucas opções para cada um.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-next" id="btnComecarDesafio">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        <span data-key="semrepetir-start">Começar</span>
+                    </button>
+                </section>
+
+                <section class="game-area hidden" id="areaJogo">
+                    <div class="semrepetir-painel">
+                        <div class="semrepetir-indicador">
+                            <i class="fas fa-circle-check" aria-hidden="true"></i>
+                            <span data-key="semrepetir-solved">Resolvidos</span>:
+                            <strong id="contadorResolvidos">0/0</strong>
+                        </div>
+                        <div class="semrepetir-indicador">
+                            <i class="fas fa-heart-crack" aria-hidden="true"></i>
+                            <span data-key="semrepetir-mistakes">Erros</span>:
+                            <strong id="contadorErros">0/3</strong>
+                        </div>
+                    </div>
+
+                    <div class="semrepetir-layout">
+                        <section class="semrepetir-bloco" aria-labelledby="tituloDesafios">
+                            <h2 class="semrepetir-bloco-titulo" id="tituloDesafios">
+                                <i class="fas fa-list-check" aria-hidden="true"></i>
+                                <span data-key="semrepetir-challenges">Desafios</span>
+                            </h2>
+                            <ol class="semrepetir-desafios" id="listaDesafios"></ol>
+                        </section>
+
+                        <section class="semrepetir-bloco" aria-labelledby="tituloResposta">
+                            <h2 class="semrepetir-bloco-titulo" id="tituloResposta">
+                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                <span data-key="semrepetir-your-answer">Sua resposta</span>
+                            </h2>
+
+                            <p class="semrepetir-ativo" id="desafioAtivo"></p>
+
+                            <div class="semrepetir-busca">
+                                <label class="sr-only" for="campoJogador" data-key="semrepetir-search-label">Nome do jogador</label>
+                                <input type="text" id="campoJogador" autocomplete="off" placeholder="Digite o nome de um jogador" data-key="semrepetir-search-placeholder" role="combobox" aria-expanded="false" aria-controls="listaSugestoes" aria-autocomplete="list">
+                                <ul class="semrepetir-sugestoes hidden" id="listaSugestoes" role="listbox"></ul>
+                            </div>
+
+                            <p class="semrepetir-mensagem" id="mensagemJogo" aria-live="polite"></p>
+
+                            <h3 class="semrepetir-subtitulo-bloco">
+                                <i class="fas fa-user-lock" aria-hidden="true"></i>
+                                <span data-key="semrepetir-used">Já usados</span>
+                            </h3>
+                            <ul class="semrepetir-usados" id="listaUsados"></ul>
+
+                            <div class="final-actions">
+                                <button type="button" class="btn-home" id="btnDesistir">
+                                    <i class="fas fa-flag" aria-hidden="true"></i>
+                                    <span data-key="semrepetir-give-up">Desistir</span>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="round-result hidden" id="resultadoFinal">
+                    <div class="round-icon" id="iconeResultado"></div>
+                    <p class="round-text" id="textoResultado"></p>
+                    <div class="semrepetir-estrelas" id="estrelasResultado" role="img"></div>
+                    <p class="round-answer" id="resumoResultado"></p>
+
+                    <h2 class="semrepetir-bloco-titulo semrepetir-centro">
+                        <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                        <span data-key="semrepetir-review">Revisão do caso</span>
+                    </h2>
+                    <ul class="semrepetir-revisao" id="listaRevisao"></ul>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-next" id="btnJogarNovamente">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span data-key="semrepetir-play-again">Jogar novamente</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnMudarNivel">
+                            <i class="fas fa-sliders" aria-hidden="true"></i>
+                            <span data-key="semrepetir-change-level">Mudar nível</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnVoltarPaginaInicial">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span data-key="memoria-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="sr-only" id="anuncioLeitorTela" aria-live="assertive"></div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-title">Football Games 11</span> 
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
