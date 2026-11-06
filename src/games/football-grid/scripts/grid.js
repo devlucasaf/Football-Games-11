@@ -1,4 +1,5 @@
 const GradeGerador = {
+    // --- ESCOLHA DE PESO PONDERADO ---
     escolhaPesoPonderado(objetoPesos) {
         const entradas = Object.entries(objetoPesos);
         const total = entradas.reduce((pesoAcumulado, [, peso]) => pesoAcumulado + peso, 0);
@@ -80,8 +81,19 @@ const GradeGerador = {
         const { listaClubes, listaPaises } = GradeDados;
         const { TAMANHO_GRADE } = GradeConfiguracao;
 
-        const listaLinhas = linhasTipo  === "clube" ? listaClubes : listaPaises;
-        const listaColunas = colunasTipo === "clube" ? listaClubes : listaPaises;
+        let listaLinhas;
+        if (linhasTipo === "clube") {
+            listaLinhas = listaClubes;
+        } else {
+            listaLinhas = listaPaises;
+        }
+
+        let listaColunas;
+        if (colunasTipo === "clube") {
+            listaColunas = listaClubes;
+        } else {
+            listaColunas = listaPaises;
+        }
 
         const linhas = this.sortearUnicos(listaLinhas, TAMANHO_GRADE);
         if (!linhas) {

@@ -1,3 +1,4 @@
+// --- UTILITÁRIOS PARA GERENCIAR O TEMA ---
 const EscalaUtilitarios = {
     alternarTema() {
         const temaAtual = document.documentElement.getAttribute("data-theme");

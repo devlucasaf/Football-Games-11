@@ -1,3 +1,4 @@
+// --- NORMALIZA TEXTO ---
 export function normalizar(texto) {
     return texto
         .toLowerCase()

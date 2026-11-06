@@ -1,6 +1,6 @@
-import estado from "./core.js";
-import { carregarDados, escolherJogador, obterNomesJogadores } from "./data.js";
-import { normalizar } from "./utils.js";
+import estado                                                   from "./core.js";
+import { carregarDados, escolherJogador, obterNomesJogadores }  from "./data.js";
+import { normalizar }                                           from "./utils.js";
 import {
     preencherPistas, reiniciarCartoesPistas, revelarCartaoPista, revelarTodos,
     atualizarContador, atualizarPlacar,
@@ -189,6 +189,7 @@ function atualizarSugestaoAtiva(itens) {
     }
 }
 
+// --- CONFIGURA EVENTOS DE INTERAÇÃO ---
 function configurarEventos() {
     const campoPalpiteJogador = document.getElementById("palpiteInput");
     const btnConfirmarPalpite = document.getElementById("btnConfirmarPalpite");

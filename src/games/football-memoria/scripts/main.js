@@ -6,6 +6,7 @@ const TEMPO_DESVIRAR = 1100;
 const PADRAO_COR = /^#[0-9a-f]{3}([0-9a-f]{3})?$/i;
 const PADRAO_BANDEIRA = /^[a-z]{2}(-[a-z]{3})?$/;
 
+// --- RÓTULOS PARA LEITORES DE TELA ---
 const ROTULOS_TIPO = {
     jogador: [
         "memoria-tipo-jogador", 
@@ -33,6 +34,7 @@ const ROTULOS_TIPO = {
     ]
 };
 
+// --- RÓTULOS DE TEMAS E MODOS ---
 const ROTULOS_TEMA = {
     nacionalidade: [
         "memoria-theme-nacionalidade", 
@@ -52,6 +54,7 @@ const ROTULOS_TEMA = {
     ]
 };
 
+// --- RÓTULOS DE MODOS ---
 const ROTULOS_MODO = {
     tempo: [
         "memoria-mode-tempo",      
@@ -67,6 +70,7 @@ const ROTULOS_MODO = {
     ]
 };
 
+// --- ELEMENTOS DO DOM ---
 const elementosMemoria = {
     painelConfiguracao:  document.getElementById("painelConfiguracao"),
     areaJogo:            document.getElementById("areaJogo"),

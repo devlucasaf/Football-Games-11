@@ -1,4 +1,5 @@
 const LendasConstrutor = {
+    // --- INICIAR CONSTRUTOR ---
     async iniciar() {
         try {
             const parametrosEndereco = new URLSearchParams(window.location.search);

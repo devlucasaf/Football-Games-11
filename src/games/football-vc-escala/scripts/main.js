@@ -1,6 +1,7 @@
 const EscalaConstrutor = {
     posicaoSelecionada: null,
 
+    // --- INICIALIZA O CONSTRUTOR DE ESCALAÇÃO ---
     async iniciar() {
         try {
             const parametrosEndereco = new URLSearchParams(window.location.search);
@@ -334,7 +335,7 @@ const EscalaConstrutor = {
         });
     },
 
-    // --- DEFINE O VALOR DO FILTRO DE POSIÇÃO (DROPDOWN CUSTOMIZADO) ---
+    // --- DEFINE O VALOR DO FILTRO DE POSIÇÃO ---
     definirFiltroPosicao(valor) {
         const filtro = document.getElementById("positionFilter");
         const menu = document.getElementById("positionFilterMenu");
@@ -365,6 +366,7 @@ const EscalaConstrutor = {
             return;
         }
 
+        // --- FUNÇÃO PARA FECHAR O MENU DE FILTRO ---
         const fecharMenu = () => {
             filtro.classList.remove("open");
             btnAlternarFiltroPosicoes.setAttribute("aria-expanded", "false");
@@ -398,7 +400,6 @@ const EscalaConstrutor = {
 
     // --- CONFIGURA TODOS OS EVENTOS DE CLIQUE E INTERAÇÃO DA PÁGINA ---
     configurarEventos() {
-        // --- ALTERNAR FORMAÇÃO ---
         const btnAlternarFormacoes = document.getElementById("btnAlternarFormacoes");
         if (btnAlternarFormacoes) {
             btnAlternarFormacoes.addEventListener("click", () => {

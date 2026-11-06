@@ -52,12 +52,14 @@ export function montarPartida() {
     const pares = sortearPares(tema, TAMANHOS[tamanho].pares);
 
     const cartas = [];
+
     pares.forEach((par) => {
         cartas.push({ 
             parId: par.id, 
             lado: "a", 
             ...par.a 
         });
+        
         cartas.push({ 
             parId: par.id, 
             lado: "b", 

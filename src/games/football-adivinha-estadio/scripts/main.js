@@ -1,11 +1,11 @@
-import { estado } from "./core.js";
+import { estado }                                                                       from "./core.js";
 import { carregarDados, sortearEstadiosRodadas, normalizarTextoComparacao, obterDicas } from "./data.js";
 
 const elementosInterface = {
     rodadaAtual:    document.getElementById("rodadaAtual"),
     pontos:         document.getElementById("pontos"),
     dicasGrid:      document.getElementById("dicasGrid"),
-    campoPalpite:     document.getElementById("guessInput"),
+    campoPalpite:   document.getElementById("guessInput"),
     guessFeedback:  document.getElementById("guessFeedback"),
     suggestions:    document.getElementById("suggestions"),
     gameArea:       document.getElementById("gameArea"),

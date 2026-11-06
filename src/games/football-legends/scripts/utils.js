@@ -1,4 +1,5 @@
 const LendasUtilitarios = {
+    // --- CRIAR CARTÃO DE TIME ---
     alternarTema() {
         const temaAtual = document.documentElement.getAttribute("data-theme");
         const novoTema = temaAtual === "dark" ? "light" : "dark";
@@ -11,6 +12,7 @@ const LendasUtilitarios = {
         }
     },
 
+    // --- CRIAR CARTÃO DE TIME ---
     inicializarTema() {
         const temaSalvo = localStorage.getItem("theme") || "light";
         document.documentElement.setAttribute("data-theme", temaSalvo);

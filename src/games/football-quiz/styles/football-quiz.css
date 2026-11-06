@@ -733,7 +733,6 @@
     transform: scale(0.95);
 }
 
-/* --- UTILITÁRIOS --- */
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 640px) {
     .quiz-container {

@@ -1,5 +1,5 @@
-import estado from "./core.js";
-import { embaralhar } from "./utils.js";
+import estado           from "./core.js";
+import { embaralhar }   from "./utils.js";
 
 // --- CARREGA OS DADOS DO JOGO ---
 export async function carregarDados(modo = "mundial") {
@@ -18,9 +18,9 @@ export async function carregarDados(modo = "mundial") {
         throw new Error(`Erro ao carregar dados (${resposta.status})`);
     }
     const dados = await resposta.json();
-    estado.categorias         = dados.categorias;
-    estado.jogadores          = dados.jogadores;
-    estado.mapeamentoSelecao  = dados.mapeamentoSelecao || {};
+    estado.categorias = dados.categorias;
+    estado.jogadores = dados.jogadores;
+    estado.mapeamentoSelecao = dados.mapeamentoSelecao || {};
 }
 
 // --- ESCOLHER JOGADOR ALEATÓRIO ---

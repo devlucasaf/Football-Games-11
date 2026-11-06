@@ -482,7 +482,6 @@
     transform: scale(0.96);
 }
 
-/* --- UTILITÁRIOS --- */
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 640px) {
     .placar-container {
@@ -613,6 +612,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+    
     to {
         opacity: 1;
         transform: translateY(0);

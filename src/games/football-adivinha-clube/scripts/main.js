@@ -1,5 +1,5 @@
-import { estado } from "./core.js";
-import { carregarDados, sortearTimesRodadas, normalizarTextoComparacao, obterDicas } from "./data.js";
+import { estado }                                                                       from "./core.js";
+import { carregarDados, sortearTimesRodadas, normalizarTextoComparacao, obterDicas }    from "./data.js";
 
 const elementosInterface = {
     rodadaAtual:    document.getElementById("rodadaAtual"),

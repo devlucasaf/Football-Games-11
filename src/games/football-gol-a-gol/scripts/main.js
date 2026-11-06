@@ -1,6 +1,7 @@
 import estado from "./core.js";
 import { carregarDados, sortearGols, verificarResposta, obterNomesUnicos, normalizarNomeJogador } from "./data.js";
 
+/// --- ELEMENTOS DO DOM ---
 const elementosGols = {
     rodadaAtual:                document.getElementById("rodadaAtual"),
     acertos:                    document.getElementById("acertos"),

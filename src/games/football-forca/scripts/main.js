@@ -1,12 +1,14 @@
 import { estado }                           from "./core.js";
 import { carregarDados, escolherJogador }   from "./data.js";
 
+/// --- INICIALIZA O JOGO ---
 const ALFABETO = [
     "ABCDEFGHI", 
     "JKLMNOPQR", 
     "STUVWXYZ"
 ];
 
+// --- ESTADOS DO JOGO ---
 const PARTES = [
     "p-cabeca", 
     "p-tronco", 
@@ -16,6 +18,7 @@ const PARTES = [
     "p-perna-d"
 ];
 
+// --- ELEMENTOS DO DOM ---
 const elementosForca = {
     palavra:            document.getElementById("palavra"),
     teclado:            document.getElementById("teclado"),

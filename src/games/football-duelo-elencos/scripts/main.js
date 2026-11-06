@@ -16,8 +16,15 @@ function verificarEscolha(escolha) {
     estado.respondido = true;
 
     const posicao = obterPosicaoAtual();
-    const time = escolha === "A" ? estado.dueloAtual.timeA : estado.dueloAtual.timeB;
-    const jogador = escolha === "A" ? posicao.jogadorA : posicao.jogadorB;
+    let time;
+    let jogador;
+    if (escolha === "A") {
+        time = estado.dueloAtual.timeA;
+        jogador = posicao.jogadorA;
+    } else {
+        time = estado.dueloAtual.timeB;
+        jogador = posicao.jogadorB;
+    }
 
     estado.escolhas.push({
         posicao: posicao.posicao,
@@ -26,8 +33,8 @@ function verificarEscolha(escolha) {
         escolha,
         jogador,
         time: time.nome,
-        temporada:  time.temporada,
-        escudo:     time.escudo
+        temporada: time.temporada,
+        escudo: time.escudo
     });
 
     registrarEscolha(escolha);

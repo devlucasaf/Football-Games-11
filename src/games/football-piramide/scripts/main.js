@@ -1,5 +1,5 @@
-import estado from "./core.js";
-import { carregarDados, sortearCategoria, obterNivelDoJogador, calcularAcertos, obterPosicoesDoNivel } from "./data.js";
+import estado                                                                                           from "./core.js";
+import { carregarDados, sortearCategoria, obterNivelDoJogador, calcularAcertos, obterPosicoesDoNivel }  from "./data.js";
 
 const elementosJogo = {
     selecaoModo:                    document.getElementById("modeSelect"),

@@ -65,6 +65,7 @@ const GradeConfiguracao = {
         ["polônia", "polonia"]
     ]),
 
+    // --- NORMALIZA PARA LETRAS A-Z E ESPAÇOS ---
     normalizarTexto(texto) {
         return (texto ?? "")
             .toString()
@@ -74,6 +75,7 @@ const GradeConfiguracao = {
             .trim();
     },
 
+    /// --- CANONIZA O NOME DO JOGADOR OU CLUBE, RETORNANDO O APELIDO SE EXISTIR ---
     canonizarNome(texto) {
         return this.APELIDOS.get(this.normalizarTexto(texto)) || this.normalizarTexto(texto);
     }

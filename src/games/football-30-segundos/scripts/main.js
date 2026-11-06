@@ -193,6 +193,7 @@ function finalizarPartida() {
 
     estado.categoriaAtual.respostas.forEach((respostaCategoria) => {
         const item = document.createElement("div");
+        
         item.className = "s30-final-item";
         item.textContent = respostaCategoria.nome;
 
@@ -220,6 +221,7 @@ function finalizarPartida() {
         const acertos = estado.acertos.length;
         const venceu = acertos >= Math.ceil(total / 2);
         const rotulos = Array.from({ length: total + 1 }, (valorNaoUtilizado, indicePontuacao) => String(indicePontuacao));
+        
         window.FG11Stats.registrar("football-30-segundos", {
             venceu,
             bucket: acertos,

@@ -8,6 +8,7 @@ export function renderizarGradeJogadores() {
 
     estado.jogadoresRestantes.forEach(nome => {
         const btnSelecionarJogador = document.createElement("button");
+        
         btnSelecionarJogador.className = "player-tile";
         btnSelecionarJogador.textContent = nome;
         btnSelecionarJogador.dataset.nome = nome;
@@ -54,6 +55,7 @@ export function atualizarBotoes() {
 // --- RENDERIZAR VIDAS ---
 export function renderizarVidas() {
     const indicadoresVidas = document.querySelectorAll("#livesDots .dot");
+    
     indicadoresVidas.forEach((indicadorVida, indiceVida) => {
         if (indiceVida >= estado.tentativasRestantes) {
             indicadorVida.classList.add("lost");

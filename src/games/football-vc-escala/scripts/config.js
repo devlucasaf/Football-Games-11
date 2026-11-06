@@ -25,6 +25,7 @@ const EscalaConfiguracoes = {
         "Vitória":       { sigla: "VIT", cor: "#FF0000", url: "https://r2.thesportsdb.com/images/media/team/badge/tysrrx1473538156.png" }
     },
 
+    // --- FUNÇÃO PARA OBTER A MARCAÇÃO DO ESCUDO ---
     obterMarcacaoEscudo(nomeTime, tamanho) {
         const informacoesEscudo = this.escudos[nomeTime];
         const classe = tamanho === "sm" ? "badge-sm" : "";

@@ -1,3 +1,4 @@
+// --- INICIALIZAÇÃO DO JOGO ---
 (async function inicializarJogoGrade() {
     try {
         GradeInterface.iniciarElementos();

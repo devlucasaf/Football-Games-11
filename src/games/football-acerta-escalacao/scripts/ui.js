@@ -1,4 +1,4 @@
-import { estado } from "./core.js";
+import { estado }                           from "./core.js";
 import { obterPosicao, obterRotuloPosicao } from "./data.js";
 
 const elementos = {
@@ -32,6 +32,7 @@ export function renderizarCampo(escalacao) {
         const rotuloPosicao = obterRotuloPosicao(jogador.posicao);
 
         const posicaoJogador = document.createElement("div");
+        
         posicaoJogador.className = "player-slot";
         posicaoJogador.id = `slot-${indiceJogador}`;
         posicaoJogador.style.top = `${coordenadasPosicao.top}%`;
@@ -155,7 +156,7 @@ function atualizarListaSugestoes(valorPalpite) {
 
 // --- CONFIGURAÇÃO DO AUTOCOMPLETE ---
 export function configurarSugestoesJogadores(nomes, tratarSelecaoJogador) {
-    nomesJogadoresDisponiveis    = nomes;
+    nomesJogadoresDisponiveis = nomes;
     tratarSelecaoJogadorAtual = tratarSelecaoJogador;
 
     const campoPalpite = elementos.campoPalpite;

@@ -1,5 +1,5 @@
-import estado from "./core.js";
-import { carregarDados, selecionarGradeCategorias, selecionarFila, jogadorAtual, proximoJogador, jogadorCorresponde } from "./data.js";
+import estado                                                                                                                                   from "./core.js";
+import { carregarDados, selecionarGradeCategorias, selecionarFila, jogadorAtual, proximoJogador, jogadorCorresponde }                           from "./data.js";
 import { renderizarGradeCategorias, exibirJogador, mostrarBotaoProximo, atualizarPlacar, mostrarResultado, esconderResultado, verificarBingos } from "./ui.js";
 
 // --- SELECIONAR/DESSELECIONAR CÉLULA ---
@@ -19,8 +19,8 @@ function confirmarMarcacoes() {
     }
 
     const botoesCategorias = document.querySelectorAll(".bingo-cell");
-    let acertosRodada   = 0;
-    let errosRodada     = 0;
+    let acertosRodada = 0;
+    let errosRodada = 0;
 
     botoesCategorias.forEach((btnMarcarCategoria, indiceCategoria) => {
         if (btnMarcarCategoria.classList.contains("locked")) {

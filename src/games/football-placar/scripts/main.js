@@ -1,5 +1,5 @@
-import { estado } from "./core.js";
-import { carregarDados, sortearPartidas, obterPartidaAtual } from "./data.js";
+import { estado }                                               from "./core.js";
+import { carregarDados, sortearPartidas, obterPartidaAtual }    from "./data.js";
 
 const elementosJogo = {
     rodadaAtual:            document.getElementById("rodadaAtual"),
