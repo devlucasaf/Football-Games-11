@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caminho da Taça | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-caminho-da-taca.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-caminho-da-taca">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-trophy"></i>
+                    <h2 data-key="taca-tutorial-title">Como jogar Caminho da Taça</h2>
+                    <p data-key="taca-tutorial-subtitle">Reconstrua a campanha de um campeão!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="taca-tutorial-step1"> Você recebe uma edição, como "Copa do Mundo 2018", e o campeão daquela edição.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="taca-tutorial-step2"> Descubra contra quem o campeão jogou em cada fase: grupos, mata-mata e final.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="taca-tutorial-step3"> Digite uma seleção para preencher a campanha. Se ela jogou em outra fase, o jogo encaixa no lugar certo.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="taca-tutorial-step4"> As dicas são opcionais (país, escudo e resultado), mas reduzem os pontos do jogo. Você pode errar até 7 vezes.</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
+                        <i class="fas fa-play"></i>
+                        <span data-key="taca-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="taca-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="taca-container">
+            <div class="container">
+                <section class="taca-configuracao" id="painelConfiguracao" aria-labelledby="tituloConfiguracao">
+                    <h1 class="taca-titulo" id="tituloConfiguracao">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <span data-key="football-caminho-da-taca-title">Caminho da Taça</span>
+                    </h1>
+                    <p class="taca-subtitulo" data-key="taca-setup-subtitle">Lembrar quem foi campeão é fácil. Difícil é lembrar quem ficou pelo caminho. Reconstrua a campanha jogo a jogo.</p>
+
+                    <div class="taca-grupo" role="group" aria-labelledby="rotuloCompeticao">
+                        <h2 class="taca-grupo-titulo" id="rotuloCompeticao" data-key="taca-setup-competition">Competição</h2>
+                        <div class="taca-opcoes">
+                            <button type="button" class="taca-opcao" data-competicao="todas">
+                                <i class="fas fa-shuffle" aria-hidden="true"></i>
+                                <span class="taca-opcao-nome" data-key="taca-comp-todas">Surpresa</span>
+                            </button>
+                            <button type="button" class="taca-opcao" data-competicao="copa-do-mundo">
+                                <i class="fas fa-earth-americas" aria-hidden="true"></i>
+                                <span class="taca-opcao-nome" data-key="taca-comp-copa">Copa do Mundo</span>
+                            </button>
+                            <button type="button" class="taca-opcao" data-competicao="eurocopa">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span class="taca-opcao-nome" data-key="taca-comp-euro">Eurocopa</span>
+                            </button>
+                            <button type="button" class="taca-opcao" data-competicao="copa-america">
+                                <i class="fas fa-compass" aria-hidden="true"></i>
+                                <span class="taca-opcao-nome" data-key="taca-comp-america">Copa América</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-next" id="btnComecarPartida">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        <span data-key="taca-start">Começar</span>
+                    </button>
+                </section>
+
+                <section class="game-area hidden" id="areaJogo">
+                    <header class="taca-cabecalho">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <div>
+                            <h2 class="taca-edicao" id="tituloEdicao"></h2>
+                            <p class="taca-campea" id="subtituloEdicao"></p>
+                        </div>
+                    </header>
+
+                    <div class="taca-painel">
+                        <div class="taca-indicador">
+                            <i class="fas fa-circle-check" aria-hidden="true"></i>
+                            <span data-key="taca-found">Jogos descobertos</span>:
+                            <strong id="contadorAcertos">0/0</strong>
+                        </div>
+                        <div class="taca-indicador">
+                            <i class="fas fa-medal" aria-hidden="true"></i>
+                            <span data-key="taca-points">Pontos</span>:
+                            <strong id="contadorPontos">0</strong>
+                        </div>
+                        <div class="taca-indicador">
+                            <i class="fas fa-heart-crack" aria-hidden="true"></i>
+                            <span data-key="taca-mistakes">Erros</span>:
+                            <strong id="contadorErros">0/8</strong>
+                        </div>
+                    </div>
+
+                    <div class="taca-busca">
+                        <label class="sr-only" for="campoSelecao" data-key="taca-search-label">Nome da seleção</label>
+                        <input type="text" id="campoSelecao" autocomplete="off" placeholder="Digite o nome de uma seleção" data-key="taca-search-placeholder" role="combobox" aria-expanded="false" aria-controls="listaSugestoes" aria-autocomplete="list">
+                        <ul class="taca-sugestoes hidden" id="listaSugestoes" role="listbox"></ul>
+                    </div>
+
+                    <p class="taca-mensagem" id="mensagemJogo" aria-live="polite"></p>
+
+                    <ol class="taca-jogos" id="listaJogos"></ol>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-home" id="btnDesistir">
+                            <i class="fas fa-flag" aria-hidden="true"></i>
+                            <span data-key="taca-give-up">Desistir</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="round-result hidden" id="resultadoFinal">
+                    <div class="round-icon" id="iconeResultado"></div>
+                    <p class="round-text" id="textoResultado"></p>
+                    <div class="taca-estrelas" id="estrelasResultado" role="img"></div>
+                    <p class="round-answer" id="resumoResultado"></p>
+
+                    <h2 class="taca-bloco-titulo">
+                        <i class="fas fa-route" aria-hidden="true"></i>
+                        <span data-key="taca-path">A campanha completa</span>
+                    </h2>
+                    <ul class="taca-revisao" id="listaRevisao"></ul>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-next" id="btnJogarNovamente">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span data-key="taca-play-again">Outra campanha</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnMudarCompeticao">
+                            <i class="fas fa-sliders" aria-hidden="true"></i>
+                            <span data-key="taca-change-competition">Mudar competição</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnVoltarPaginaInicial">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span data-key="memoria-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="sr-only" id="anuncioLeitorTela" aria-live="assertive"></div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-title">Football Games 11</span> 
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
