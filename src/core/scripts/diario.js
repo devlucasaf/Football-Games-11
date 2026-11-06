@@ -37,7 +37,7 @@
         return valorSemente;
     }
 
-    // --- GERADOR ALEATÓRIO COM SEMENTE (MULBERRY32) ---
+    // --- GERADOR ALEATÓRIO COM SEMENTE ---
     function criarAleatorio(sementeInicial) {
         let estado = sementeInicial >>> 0;
         return function () {

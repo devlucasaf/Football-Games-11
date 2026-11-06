@@ -281,6 +281,56 @@
             estatisticas: true 
         },
         { 
+            id: "football-detetive", 
+            tituloKey: "football-detetive-title", 
+            titulo: "Detetive", 
+            descKey: "football-detetive-desc", 
+            desc: "Resolva o caso usando pistas e eliminação lógica!", 
+            icone: "fa-user-secret", 
+            categoria: "conhecimento", 
+            estatisticas: true 
+        },
+        { 
+            id: "football-leilao", 
+            tituloKey: "football-leilao-title", 
+            titulo: "Leilão", 
+            descKey: "football-leilao-desc", 
+            desc: "Dispute jogadores em um leilão contra o computador!", 
+            icone: "fa-gavel", 
+            categoria: "montar-time", 
+            estatisticas: true 
+        },
+        { 
+            id: "football-sem-repetir", 
+            tituloKey: "football-sem-repetir-title", 
+            titulo: "Sem Repetir", 
+            descKey: "football-sem-repetir-desc", 
+            desc: "Resolva a sequência de desafios sem usar o mesmo jogador duas vezes!", 
+            icone: "fa-ban", 
+            categoria: "conhecimento", 
+            estatisticas: true 
+        },
+        { 
+            id: "football-resposta-rara", 
+            tituloKey: "football-resposta-rara-title", 
+            titulo: "Resposta Rara", 
+            descKey: "football-resposta-rara-desc", 
+            desc: "Ache a resposta certa menos óbvia: quanto menos famoso, mais pontos!", 
+            icone: "fa-gem", 
+            categoria: "conhecimento", 
+            estatisticas: true 
+        },
+        { 
+            id: "football-caminho-da-taca", 
+            tituloKey: "football-caminho-da-taca-title", 
+            titulo: "Caminho da Taça", 
+            descKey: "football-caminho-da-taca-desc", 
+            desc: "Reconstrua a campanha de um campeão: quem ele enfrentou em cada fase?", 
+            icone: "fa-trophy", 
+            categoria: "conhecimento", 
+            estatisticas: true 
+        },
+        { 
             id: "football-vc-escala", 
             tituloKey: "football-vc-escala-title", 
             titulo: "Vc Escala!", 

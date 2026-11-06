@@ -223,6 +223,7 @@
             window.location.href = enderecoDestino;
             return;
         }
+        
         document.body.classList.add("is-leaving");
         setTimeout(() => {
             window.location.href = enderecoDestino;

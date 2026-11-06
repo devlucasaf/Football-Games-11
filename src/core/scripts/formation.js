@@ -1,3 +1,4 @@
+// --- FORMAÇÕES TÁTICAS E POSIÇÕES ---
 const formacoesTaticas = {
     "4-4-2": {
         nome: "4-4-2",
@@ -161,6 +162,7 @@ const codigosPosicoesLegados = {
     ATA: "atacante"
 };
 
+// --- FORMAÇÕES TÁTICAS E POSIÇÕES ---
 const formations = Object.fromEntries(Object.entries(formacoesTaticas).map(([nomeFormacao, formacao]) => [nomeFormacao, {
     name: formacao.nome,
     positions: Object.fromEntries(Object.entries(formacao.posicoes).map(([nomePosicao, coordenadas]) => {

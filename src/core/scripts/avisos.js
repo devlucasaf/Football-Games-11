@@ -1,7 +1,9 @@
 // --- AVISOS DO SITE ---
 (function () {
+    // --- OBTÉM O RECIPIENTE DE AVISOS ---
     function obterRecipienteAvisos() {
         let recipienteAvisos = document.getElementById("fg11Avisos");
+        
         if (!recipienteAvisos) {
             recipienteAvisos = document.createElement("div");
             recipienteAvisos.id = "fg11Avisos";
@@ -50,6 +52,7 @@
             const elementoTextoAviso = document.createElement("span");
             if (iconeTexto) {
                 const elementoIconeTextoAviso = document.createElement("i");
+                
                 elementoIconeTextoAviso.className = `fas ${iconeTexto}`;
                 elementoIconeTextoAviso.setAttribute("aria-hidden", "true");
                 elementoTextoAviso.append(elementoIconeTextoAviso, " ");

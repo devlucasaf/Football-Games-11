@@ -166,6 +166,7 @@ function inicializarMenuResponsivo(cabecalho) {
         return;
     }
 
+    // --- DEFINE O ESTADO DE ABERTURA DO MENU ---
     function definirAberturaMenu(aberto) {
         navegacaoPrincipal.classList.toggle("open", aberto);
         btnAlternarMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
@@ -181,6 +182,7 @@ function inicializarMenuResponsivo(cabecalho) {
         }
     });
 
+    // --- FECHA O MENU AO CLICAR FORA OU PRESSIONAR ESC ---
     document.addEventListener("keydown", (evento) => {
         if (evento.key === "Escape" && navegacaoPrincipal.classList.contains("open")) {
             definirAberturaMenu(false);
@@ -188,6 +190,7 @@ function inicializarMenuResponsivo(cabecalho) {
         }
     });
 
+    // --- FECHA O MENU AO CLICAR FORA ---
     document.addEventListener("click", (evento) => {
         if (navegacaoPrincipal.classList.contains("open") && !cabecalho.contains(evento.target)) {
             definirAberturaMenu(false);
@@ -222,10 +225,12 @@ function inserirLinkDeAtalho() {
     }
 
     const ligacaoAtalho = document.createElement("a");
+    
     ligacaoAtalho.className = "skip-link";
     ligacaoAtalho.href = `#${alvo.id}`;
     ligacaoAtalho.setAttribute("data-key", "skip-to-content");
     ligacaoAtalho.textContent = "Pular para o conteúdo";
+    
     document.body.insertBefore(ligacaoAtalho, document.body.firstChild);
 }
 

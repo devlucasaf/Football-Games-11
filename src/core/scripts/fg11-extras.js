@@ -27,6 +27,7 @@
     function alternarFavorito(identificadorJogo) {
         const lista = obterFavoritos();
         const indiceFavorito = lista.indexOf(identificadorJogo);
+        
         if (indiceFavorito >= 0) {
             lista.splice(indiceFavorito, 1);
         } else {
@@ -147,6 +148,7 @@
         }
 
         const seloSequencia = document.createElement("div");
+        
         seloSequencia.className = "stat streak-badge";
         seloSequencia.id = "seloSequenciaDiasJogados";
         seloSequencia.innerHTML =

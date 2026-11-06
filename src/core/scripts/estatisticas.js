@@ -80,6 +80,7 @@
             const anterior = new Date(dados.ultimoDia + "T00:00:00");
             const atual = new Date(hoje + "T00:00:00");
             const diferencaDias = Math.round((atual - anterior) / 86400000);
+            
             if (diferencaDias === 1) {
                 sequenciaNova = dados.sequencia + 1;
             }
