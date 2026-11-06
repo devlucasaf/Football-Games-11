@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leilão | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-leilao.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-leilao">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-gavel"></i>
+                    <h2 data-key="leilao-tutorial-title">Como jogar Leilão</h2>
+                    <p data-key="leilao-tutorial-subtitle">Monte o melhor elenco sem estourar o orçamento!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="leilao-tutorial-step1"> Você precisa de 1 goleiro, 2 defensores, 2 meias e 2 atacantes. O orçamento é limitado.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="leilao-tutorial-step2"> Um jogador por vez vai a leilão. Cubra o lance ou desista para guardar dinheiro.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="leilao-tutorial-step3"> Cada adversário tem uma estratégia diferente. Observe como eles gastam e aproveite.</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="leilao-tutorial-step4"> Vaga sem jogador vira reserva fraco. Vence quem fechar o elenco com a maior nota total.</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
+                        <i class="fas fa-play"></i>
+                        <span data-key="leilao-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="leilao-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="leilao-container">
+            <div class="container">
+                <section class="leilao-configuracao" id="painelConfiguracao" aria-labelledby="tituloConfiguracao">
+                    <h1 class="leilao-titulo" id="tituloConfiguracao">
+                        <i class="fas fa-gavel" aria-hidden="true"></i>
+                        <span data-key="football-leilao-title">Leilão</span>
+                    </h1>
+                    <p class="leilao-subtitulo" data-key="leilao-setup-subtitle">Dispute jogadores contra o computador. Saber a hora de desistir vale tanto quanto saber dar o lance.</p>
+
+                    <div class="leilao-grupo" role="group" aria-labelledby="rotuloNivel">
+                        <h2 class="leilao-grupo-titulo" id="rotuloNivel" data-key="leilao-setup-level">Nível</h2>
+                        <div class="leilao-opcoes">
+                            <button type="button" class="leilao-opcao" data-nivel="facil">
+                                <span class="leilao-opcao-nome" data-key="leilao-level-facil">Fácil</span>
+                                <span class="leilao-opcao-desc" data-key="leilao-level-facil-desc">2 adversários cautelosos e orçamento folgado.</span>
+                            </button>
+                            <button type="button" class="leilao-opcao" data-nivel="medio">
+                                <span class="leilao-opcao-nome" data-key="leilao-level-medio">Médio</span>
+                                <span class="leilao-opcao-desc" data-key="leilao-level-medio-desc">3 adversários com estilos diferentes.</span>
+                            </button>
+                            <button type="button" class="leilao-opcao" data-nivel="dificil">
+                                <span class="leilao-opcao-nome" data-key="leilao-level-dificil">Difícil</span>
+                                <span class="leilao-opcao-desc" data-key="leilao-level-dificil-desc">3 adversários mais ricos e você com menos dinheiro.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-next" id="btnComecarLeilao">
+                        <i class="fas fa-gavel" aria-hidden="true"></i>
+                        <span data-key="leilao-start">Abrir o leilão</span>
+                    </button>
+                </section>
+
+                <section class="game-area hidden" id="areaJogo">
+                    <div class="leilao-painel">
+                        <div class="leilao-indicador">
+                            <i class="fas fa-wallet" aria-hidden="true"></i>
+                            <span data-key="leilao-budget">Orçamento</span>:
+                            <strong id="valorOrcamento">0</strong>
+                        </div>
+                        <div class="leilao-indicador">
+                            <i class="fas fa-list-ol" aria-hidden="true"></i>
+                            <span data-key="leilao-lot">Lote</span>:
+                            <strong id="valorLote">0/0</strong>
+                        </div>
+                        <div class="leilao-indicador">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <span data-key="leilao-slots">Vagas</span>:
+                            <strong id="valorVagas">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="leilao-layout">
+                        <section class="leilao-palco" aria-labelledby="tituloPalco">
+                            <h2 class="leilao-bloco-titulo" id="tituloPalco">
+                                <i class="fas fa-gavel" aria-hidden="true"></i>
+                                <span data-key="leilao-on-stage">Em leilão</span>
+                            </h2>
+
+                            <div class="leilao-jogador" id="cartaJogador">
+                                <span class="leilao-pos" id="posJogador"></span>
+                                <strong class="leilao-nome" id="nomeJogador"></strong>
+                                <span class="leilao-nota"><span data-key="leilao-rating">Nota</span> <b id="notaJogador"></b></span>
+                                <span class="leilao-valor"><span data-key="leilao-market">Valor de mercado</span>: <b id="valorMercado"></b></span>
+                            </div>
+
+                            <div class="leilao-lance">
+                                <span class="leilao-lance-rotulo" data-key="leilao-current-bid">Lance atual</span>
+                                <strong class="leilao-lance-valor" id="precoAtual">-</strong>
+                                <span class="leilao-lance-lider" id="liderAtual"></span>
+                            </div>
+
+                            <div class="leilao-acoes" id="acoesLance">
+                                <button type="button" class="btn-next leilao-botao-lance" id="btnLance1" data-incremento="1"></button>
+                                <button type="button" class="btn-next leilao-botao-lance" id="btnLance2" data-incremento="2"></button>
+                                <button type="button" class="btn-next leilao-botao-lance" id="btnLance5" data-incremento="5"></button>
+                                <button type="button" class="btn-home" id="btnDesistirLote">
+                                    <i class="fas fa-hand" aria-hidden="true"></i>
+                                    <span data-key="leilao-pass">Desistir deste jogador</span>
+                                </button>
+                            </div>
+
+                            <p class="leilao-aviso" id="avisoLote" aria-live="polite"></p>
+                        </section>
+
+                        <aside class="leilao-lateral">
+                            <section class="leilao-bloco" aria-labelledby="tituloAdversarios">
+                                <h2 class="leilao-bloco-titulo" id="tituloAdversarios">
+                                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                                    <span data-key="leilao-rivals">Adversários</span>
+                                </h2>
+                                <ul class="leilao-adversarios" id="listaAdversarios"></ul>
+                            </section>
+
+                            <section class="leilao-bloco" aria-labelledby="tituloElenco">
+                                <h2 class="leilao-bloco-titulo" id="tituloElenco">
+                                    <i class="fas fa-people-group" aria-hidden="true"></i>
+                                    <span data-key="leilao-your-squad">Seu elenco</span>
+                                </h2>
+                                <ul class="leilao-elenco" id="listaElenco"></ul>
+                            </section>
+
+                            <section class="leilao-bloco" aria-labelledby="tituloHistorico">
+                                <h2 class="leilao-bloco-titulo" id="tituloHistorico">
+                                    <i class="fas fa-clock-rotate-left" aria-hidden="true"></i>
+                                    <span data-key="leilao-log">Mesa do leilão</span>
+                                </h2>
+                                <ol class="leilao-historico" id="listaHistorico" aria-live="polite"></ol>
+                            </section>
+                        </aside>
+                    </div>
+                </section>
+
+                <section class="round-result hidden" id="resultadoFinal">
+                    <div class="round-icon" id="iconeResultado"></div>
+                    <p class="round-text" id="textoResultado"></p>
+                    <div class="leilao-estrelas" id="estrelasResultado" role="img"></div>
+                    <p class="round-answer" id="resumoResultado"></p>
+
+                    <h2 class="leilao-bloco-titulo leilao-centro">
+                        <i class="fas fa-ranking-star" aria-hidden="true"></i>
+                        <span data-key="leilao-ranking">Classificação final</span>
+                    </h2>
+                    <ol class="leilao-classificacao" id="listaClassificacao"></ol>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-next" id="btnNovoLeilao">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span data-key="leilao-play-again">Novo leilão</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnMudarNivel">
+                            <i class="fas fa-sliders" aria-hidden="true"></i>
+                            <span data-key="leilao-change-level">Mudar nível</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnVoltarPaginaInicial">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span data-key="memoria-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="sr-only" id="anuncioLeitorTela" aria-live="assertive"></div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-title">Football Games 11</span> 
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>

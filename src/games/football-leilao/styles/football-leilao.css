@@ -1,0 +1,413 @@
+.leilao-container {
+    padding: var(--spacing-md) 0;
+    min-height: calc(100vh - 80px);
+    animation: fadeInUp 0.6s ease;
+}
+
+/* --- ESCOLHA DO NÍVEL --- */
+.leilao-configuracao {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.leilao-titulo {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+.leilao-titulo i {
+    color: var(--primary-green);
+}
+
+.leilao-subtitulo {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.leilao-grupo {
+    margin-bottom: var(--spacing-md);
+}
+
+.leilao-grupo-titulo {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.leilao-opcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: var(--spacing-xs);
+}
+
+.leilao-opcao {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0.9rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.leilao-opcao-nome {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.leilao-opcao-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+.leilao-opcao:hover {
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.leilao-opcao.ativa {
+    border-color: var(--primary-green);
+    background: rgba(47, 144, 85, 0.12);
+    box-shadow: var(--shadow-glow);
+}
+
+.leilao-opcao:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+/* --- PAINEL SUPERIOR --- */
+.leilao-painel {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.leilao-indicador {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.leilao-indicador i {
+    color: var(--primary-green);
+}
+
+.leilao-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--spacing-md);
+    align-items: start;
+}
+
+.leilao-palco,
+.leilao-bloco {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.leilao-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.leilao-bloco-titulo {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+.leilao-bloco-titulo i {
+    color: var(--primary-green);
+}
+
+.leilao-centro {
+    justify-content: center;
+}
+
+/* --- JOGADOR EM LEILÃO --- */
+.leilao-jogador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    text-align: center;
+}
+
+.leilao-pos {
+    padding: 2px 12px;
+    border-radius: var(--radius-full);
+    background: var(--primary-green);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.leilao-nome {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    color: var(--text-primary);
+}
+
+.leilao-nota,
+.leilao-valor {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.leilao-nota b {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+.leilao-valor b {
+    color: var(--text-primary);
+}
+
+.leilao-lance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.leilao-lance-rotulo {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+}
+
+.leilao-lance-valor {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+    color: var(--primary-green);
+}
+
+.leilao-lance-lider {
+    font-weight: 700;
+    color: var(--text-secondary);
+    min-height: 1.3rem;
+}
+
+.leilao-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.leilao-acoes button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.leilao-aviso {
+    min-height: 1.4rem;
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    font-weight: 700;
+    color: var(--accent-red);
+}
+
+/* --- ADVERSÁRIOS --- */
+.leilao-adversarios,
+.leilao-elenco,
+.leilao-historico {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.leilao-adversario {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--border-color);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    transition: border-color var(--transition-fast);
+}
+
+.leilao-adversario strong {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.leilao-adversario strong i {
+    color: var(--primary-green);
+}
+
+.leilao-adversario small {
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+.leilao-adversario.lider {
+    border-left-color: var(--accent-gold);
+    background: rgba(255, 193, 7, 0.12);
+}
+
+/* --- SEU ELENCO --- */
+.leilao-elenco li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.leilao-elenco li.preenchida {
+    border-left: 4px solid var(--color-success);
+    color: var(--text-primary);
+}
+
+.leilao-elenco li.vazia {
+    border-left: 4px dashed var(--border-strong);
+    font-style: italic;
+}
+
+.leilao-elenco-pos {
+    min-width: 2.6rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.75rem;
+    color: var(--primary-green);
+}
+
+/* --- MESA DO LEILÃO --- */
+.leilao-historico li {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--border-color);
+}
+
+.leilao-historico li[data-tipo="vitoria"] {
+    border-left-color: var(--color-success);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.leilao-historico li[data-tipo="venda"] {
+    border-left-color: var(--accent-gold);
+}
+
+.leilao-historico li[data-tipo="desiste"] {
+    opacity: 0.7;
+}
+
+/* --- RESULTADO --- */
+.leilao-estrelas {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1.8rem;
+    color: var(--border-strong);
+    margin-bottom: var(--spacing-xs);
+}
+
+.leilao-estrelas .cheia {
+    color: var(--accent-gold);
+}
+
+.leilao-classificacao {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.leilao-classificacao-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--border-color);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.leilao-classificacao-item strong {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.leilao-classificacao-item small {
+    font-size: 0.76rem;
+    line-height: 1.4;
+}
+
+.leilao-classificacao-item.voce {
+    border-left-color: var(--primary-green);
+    background: rgba(47, 144, 85, 0.12);
+}
+
+@media (max-width: 860px) {
+    .leilao-layout {
+        grid-template-columns: 1fr;
+    }
+}
