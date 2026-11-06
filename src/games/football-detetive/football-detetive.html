@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detetive | Football Games 11</title>
+        <link rel="stylesheet" href="../../core/styles/global.css">
+        <link rel="stylesheet" href="styles/football-detetive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="tutorial-overlay" id="sobreposicaoTutorial" data-game="football-detetive">
+            <div class="tutorial-box">
+                <div class="tutorial-header">
+                    <i class="fas fa-user-secret"></i>
+                    <h2 data-key="detetive-tutorial-title">Como jogar Detetive</h2>
+                    <p data-key="detetive-tutorial-subtitle">Resolva o caso usando só as pistas e a lógica!</p>
+                </div>
+
+                <ul class="tutorial-steps">
+                    <li><span class="tutorial-step-number">1</span><span data-key="detetive-tutorial-step1"> Cada caso tem jogadores, clubes e temporadas. Descubra quem foi para qual clube e em qual temporada.</span></li>
+                    <li><span class="tutorial-step-number">2</span><span data-key="detetive-tutorial-step2"> Leia as pistas. Elas são fictícias, então não precisa decorar nada: é só raciocinar.</span></li>
+                    <li><span class="tutorial-step-number">3</span><span data-key="detetive-tutorial-step3"> Nas tabelas, clique em uma célula para marcar ✗ (descartado) e clique de novo para marcar ✓ (confirmado).</span></li>
+                    <li><span class="tutorial-step-number">4</span><span data-key="detetive-tutorial-step4"> Quando tiver um ✓ para cada jogador, clique em Verificar. Menos erros e menos dicas rendem mais estrelas.</span></li>
+                </ul>
+
+                <div class="tutorial-footer">
+                    <button class="btn-tutorial-start" id="btnIniciarJogoTutorial">
+                        <i class="fas fa-play"></i>
+                        <span data-key="detetive-tutorial-play">Jogar</span>
+                    </button>
+                    <button class="tutorial-skip" id="btnOcultarTutorial" data-key="detetive-tutorial-skip">Não mostrar novamente</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header"></header>
+
+        <main class="detetive-container">
+            <div class="container">
+                <section class="detetive-configuracao" id="painelConfiguracao" aria-labelledby="tituloConfiguracao">
+                    <h1 class="detetive-titulo" id="tituloConfiguracao">
+                        <i class="fas fa-user-secret" aria-hidden="true"></i>
+                        <span data-key="football-detetive-title">Detetive</span>
+                    </h1>
+                    <p class="detetive-subtitulo" data-key="detetive-setup-subtitle">Resolva o caso com pistas e eliminação lógica. Os casos são fictícios e sempre têm uma única solução.</p>
+
+                    <div class="detetive-grupo" role="group" aria-labelledby="rotuloNivel">
+                        <h2 class="detetive-grupo-titulo" id="rotuloNivel" data-key="detetive-setup-level">Nível do caso</h2>
+                        <div class="detetive-opcoes">
+                            <button type="button" class="detetive-opcao" data-nivel="facil">
+                                <span class="detetive-opcao-nome" data-key="detetive-level-facil">Fácil · 3 contratações</span>
+                            </button>
+                            <button type="button" class="detetive-opcao" data-nivel="medio">
+                                <span class="detetive-opcao-nome" data-key="detetive-level-medio">Médio · 4 contratações</span>
+                            </button>
+                            <button type="button" class="detetive-opcao" data-nivel="dificil">
+                                <span class="detetive-opcao-nome" data-key="detetive-level-dificil">Difícil · 5 contratações</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-next" id="btnComecarCaso">
+                        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                        <span data-key="detetive-start">Abrir caso</span>
+                    </button>
+                </section>
+
+                <section class="game-area hidden" id="areaJogo">
+                    <p class="detetive-rotulo-caso" id="rotuloCaso"></p>
+
+                    <div class="detetive-painel">
+                        <div class="detetive-indicador">
+                            <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                            <span data-key="detetive-wrong-checks">Erros</span>:
+                            <strong id="contadorErros">0</strong>
+                        </div>
+                        <div class="detetive-indicador">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            <span data-key="detetive-hints">Dicas</span>:
+                            <strong id="contadorDicas">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="detetive-layout">
+                        <section class="detetive-bloco" aria-labelledby="tituloPistas">
+                            <h2 class="detetive-bloco-titulo" id="tituloPistas">
+                                <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                                <span data-key="detetive-clues">Pistas</span>
+                            </h2>
+                            <p class="detetive-dica-uso" data-key="detetive-clues-tip">Clique em uma pista para riscá-la depois de usar.</p>
+                            <ol class="detetive-pistas" id="listaPistas"></ol>
+                        </section>
+
+                        <section class="detetive-bloco" aria-labelledby="tituloCaderno">
+                            <h2 class="detetive-bloco-titulo" id="tituloCaderno">
+                                <i class="fas fa-table-cells" aria-hidden="true"></i>
+                                <span data-key="detetive-notebook">Caderno de eliminação</span>
+                            </h2>
+                            <div class="detetive-tabela-envoltorio" id="envoltorioClube"></div>
+                            <div class="detetive-tabela-envoltorio" id="envoltorioTemporada"></div>
+                        </section>
+                    </div>
+
+                    <p class="detetive-mensagem" id="mensagemCaso" aria-live="polite"></p>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-next" id="btnVerificar">
+                            <i class="fas fa-check-double" aria-hidden="true"></i>
+                            <span data-key="detetive-check">Verificar</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnDica">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            <span data-key="detetive-hint">Dica</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnLimpar">
+                            <i class="fas fa-eraser" aria-hidden="true"></i>
+                            <span data-key="detetive-clear">Limpar caderno</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnDesistir">
+                            <i class="fas fa-flag" aria-hidden="true"></i>
+                            <span data-key="detetive-give-up">Desistir</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="round-result hidden" id="resultadoFinal">
+                    <div class="round-icon" id="iconeResultado"></div>
+                    <p class="round-text" id="textoResultado"></p>
+                    <div class="detetive-estrelas" id="estrelasResultado" role="img"></div>
+                    <p class="round-answer" id="resumoResultado"></p>
+
+                    <h2 class="detetive-solucao-titulo">
+                        <i class="fas fa-folder-open" aria-hidden="true"></i>
+                        <span data-key="detetive-solution">Caso encerrado</span>
+                    </h2>
+                    <ul class="detetive-solucao" id="listaSolucao"></ul>
+
+                    <div class="final-actions">
+                        <button type="button" class="btn-next" id="btnNovoCaso">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            <span data-key="detetive-new-case">Novo caso</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnMudarNivel">
+                            <i class="fas fa-sliders" aria-hidden="true"></i>
+                            <span data-key="detetive-change-level">Mudar nível</span>
+                        </button>
+                        <button type="button" class="btn-home" id="btnVoltarPaginaInicial">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span data-key="memoria-home">Menu Principal</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="sr-only" id="anuncioLeitorTela" aria-live="assertive"></div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>
+                            <i class="fas fa-futbol"></i>
+                            <span data-key="site-title">Football Games 11</span> 
+                        </h3>
+                        <p data-key="footer-made-with">Feito com ❤️ para fãs de futebol</p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://instagram.com/__.fr3it4s.__" class="social-icon" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://gitlab.com/devlucasaf/Football-Games-11" class="social-icon" title="GitLab" aria-label="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://github.com/devlucasaf/Football-Games-11" class="social-icon" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:freitas.lucasaf@gmail.com" class="social-icon" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-icon" title="Spotify" aria-label="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://discord.com/users/1043680764140736612" class="social-icon" title="Discord" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="copyright" data-key="footer-copyright">© 2026 Football Games 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../core/scripts/traducao.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
