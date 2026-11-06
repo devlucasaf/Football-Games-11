@@ -17,7 +17,9 @@ export async function carregarDados(modo = "mundial") {
     if (!resposta.ok) {
         throw new Error(`Erro ao carregar dados (${resposta.status})`);
     }
+
     const dados = await resposta.json();
+    
     estado.categorias = dados.categorias;
     estado.jogadores = dados.jogadores;
     estado.mapeamentoSelecao = dados.mapeamentoSelecao || {};

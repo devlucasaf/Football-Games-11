@@ -2,21 +2,21 @@ import { estado }                           from "./core.js";
 import { obterPosicao, obterRotuloPosicao } from "./data.js";
 
 const elementos = {
-    valorCronometro: document.getElementById("timer"),
-    areaCronometro: document.getElementById("gameTimerArea"),
-    informacoesJogo: document.getElementById("gameInfo"),
-    informacoesPartida: document.getElementById("matchInfo"),
-    acertos:            document.getElementById("acertos"),
-    camadaJogadores: document.getElementById("playersLayer"),
-    campoPalpite: document.getElementById("guessInput"),
-    listaSugestoesJogadores: document.getElementById("autocompleteList"),
-    resultadoFinal: document.getElementById("finalResult"),
-    pontosFinais: document.getElementById("finalPoints"),
-    detalhesResultadoFinal: document.getElementById("finalDetails"),
-    recipienteCampo: document.querySelector(".field-wrapper"),
-    areaCampoPalpite: document.querySelector(".guess-input-area"),
-    areaDesistirPartida: document.querySelector(".give-up-area"),
-    selecaoModo: document.getElementById("modeSelect")
+    valorCronometro:            document.getElementById("timer"),
+    areaCronometro:             document.getElementById("gameTimerArea"),
+    informacoesJogo:            document.getElementById("gameInfo"),
+    informacoesPartida:         document.getElementById("matchInfo"),
+    acertos:                    document.getElementById("acertos"),
+    camadaJogadores:            document.getElementById("playersLayer"),
+    campoPalpite:               document.getElementById("guessInput"),
+    listaSugestoesJogadores:    document.getElementById("autocompleteList"),
+    resultadoFinal:             document.getElementById("finalResult"),
+    pontosFinais:               document.getElementById("finalPoints"),
+    detalhesResultadoFinal:     document.getElementById("finalDetails"),
+    recipienteCampo:            document.querySelector(".field-wrapper"),
+    areaCampoPalpite:           document.querySelector(".guess-input-area"),
+    areaDesistirPartida:        document.querySelector(".give-up-area"),
+    selecaoModo:                document.getElementById("modeSelect")
 };
 
 let tratarSelecaoJogadorAtual = null;

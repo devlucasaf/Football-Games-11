@@ -5,7 +5,7 @@ const elementosInterface = {
     rodadaAtual:    document.getElementById("rodadaAtual"),
     pontos:         document.getElementById("pontos"),
     dicasGrid:      document.getElementById("dicasGrid"),
-    campoPalpite:     document.getElementById("guessInput"),
+    campoPalpite:   document.getElementById("guessInput"),
     guessFeedback:  document.getElementById("guessFeedback"),
     suggestions:    document.getElementById("suggestions"),
     gameArea:       document.getElementById("gameArea"),

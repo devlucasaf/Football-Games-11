@@ -129,6 +129,7 @@ function renderizarPainel() {
 // --- CRIA UM BOTÃO DE DICA ---
 function criarBotaoDica(jogo, tipo, icone, rotulo) {
     const botao = document.createElement("button");
+    
     botao.type = "button";
     botao.className = "taca-dica";
     botao.disabled = jogo.dicas[tipo] || jogo.status !== "aberto";
@@ -137,6 +138,7 @@ function criarBotaoDica(jogo, tipo, icone, rotulo) {
         evento.stopPropagation();
         pedirDica(jogo, tipo);
     });
+    
     return botao;
 }
 

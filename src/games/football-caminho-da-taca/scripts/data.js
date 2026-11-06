@@ -62,11 +62,13 @@ export function buscarSelecoes(termo, limite) {
 // --- TEXTO DO PLACAR ---
 export function textoDoPlacar(jogo) {
     let placar = `${jogo.golsCampeao} x ${jogo.golsAdversario}`;
+    
     if (jogo.penCampeao !== null) {
         placar += ` (pên. ${jogo.penCampeao} x ${jogo.penAdversario})`;
     } else if (jogo.prorrogacao) {
         placar += " (prorrogação)";
     }
+    
     return placar;
 }
 
