@@ -101,14 +101,17 @@ Football-Games-11/
 │       ├── football-adivinha-treinador/
 │       ├── football-bingo/
 │       ├── football-carreiras/
+│       ├── football-caminho-da-taca/
 │       ├── football-conecta-clubes/
 │       ├── football-conexoes/
+│       ├── football-detetive/
 │       ├── football-duelo-elencos/
 │       ├── football-forca/
 │       ├── football-gol-a-gol/
 │       ├── football-grid/
 │       ├── football-impostor/
 │       ├── football-jogou-com/
+│       ├── football-leilao/
 │       ├── football-legends/
 │       ├── football-linha-do-tempo/
 │       ├── football-memoria/
@@ -117,6 +120,8 @@ Football-Games-11/
 │       ├── football-piramide/
 │       ├── football-placar/
 │       ├── football-quiz/
+│       ├── football-resposta-rara/
+│       ├── football-sem-repetir/
 │       ├── football-termo/
 │       ├── football-top10/
 │       ├── football-transferencias/
