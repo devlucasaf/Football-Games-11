@@ -276,6 +276,56 @@
             "dificuldade": true 
         },
         { 
+            "id": "football-detetive", 
+            "tituloKey": "football-detetive-title", 
+            "descKey": "football-detetive-desc", 
+            "icone": "fa-user-secret", 
+            "categoria": "conhecimento", 
+            "pagina": "src/games/football-detetive/football-detetive.html", 
+            "estatisticas": true, 
+            "dificuldade": false 
+        },
+        { 
+            "id": "football-leilao", 
+            "tituloKey": "football-leilao-title", 
+            "descKey": "football-leilao-desc", 
+            "icone": "fa-gavel", 
+            "categoria": "montar-time", 
+            "pagina": "src/games/football-leilao/football-leilao.html", 
+            "estatisticas": true, 
+            "dificuldade": false 
+        },
+        { 
+            "id": "football-sem-repetir", 
+            "tituloKey": "football-sem-repetir-title", 
+            "descKey": "football-sem-repetir-desc", 
+            "icone": "fa-ban", 
+            "categoria": "conhecimento", 
+            "pagina": "src/games/football-sem-repetir/football-sem-repetir.html", 
+            "estatisticas": true, 
+            "dificuldade": false 
+        },
+        { 
+            "id": "football-resposta-rara", 
+            "tituloKey": "football-resposta-rara-title", 
+            "descKey": "football-resposta-rara-desc", 
+            "icone": "fa-gem", 
+            "categoria": "conhecimento", 
+            "pagina": "src/games/football-resposta-rara/football-resposta-rara.html", 
+            "estatisticas": true, 
+            "dificuldade": false 
+        },
+        { 
+            "id": "football-caminho-da-taca", 
+            "tituloKey": "football-caminho-da-taca-title", 
+            "descKey": "football-caminho-da-taca-desc", 
+            "icone": "fa-trophy", 
+            "categoria": "conhecimento", 
+            "pagina": "src/games/football-caminho-da-taca/football-caminho-da-taca.html", 
+            "estatisticas": true, 
+            "dificuldade": false 
+        },
+        { 
             "id": "football-legends", 
             "tituloKey": "football-legends-title", 
             "descKey": "football-legends-desc", 
